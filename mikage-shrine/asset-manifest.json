@@ -1,0 +1,252 @@
+[
+  {
+    "path": "assets/opening/ema-api-glyphs.ttf",
+    "sha256": "f50454044ae855af734d164858c62a11915710bd9058c7ab2fb2587820a815f3",
+    "bytes": 21888
+  },
+  {
+    "path": "assets/opening/heroine-v1.webp",
+    "sha256": "43cd76be10b8ffb3956810b15430f0f7d23a982dae19ce06380eb4e54af58a0d",
+    "bytes": 149056
+  },
+  {
+    "path": "assets/opening/title-font-0.ttf",
+    "sha256": "ebc5445b2d345f3051db05c89aa18d0ef9eb4ba0d16558b452c264ddd3ad97d1",
+    "bytes": 243800
+  },
+  {
+    "path": "assets/opening/tomoe-v1.webp",
+    "sha256": "a5b5e379f5fe498a2cec891ffb8a3416a004b4fac963b2472baa3bdab6d98e36",
+    "bytes": 114164
+  },
+  {
+    "path": "assets/opening/wardrobe-glyphs.ttf",
+    "sha256": "112776c859e590f6615f01b6713f665972036d17fbd5e7c603aace00fd5be403",
+    "bytes": 41780
+  },
+  {
+    "path": "assets/statusbar/shrine-courtyard-v1.webp",
+    "sha256": "d14f6149338591c6217ac56b2b7146d149ec5fecf7a53cb19d0a154992d43457",
+    "bytes": 659496
+  },
+  {
+    "path": "assets/wardrobe/player-atlas.webp",
+    "sha256": "d4e2ff15372e6b6ecce2ea112678cae77e07892ad458e22c48dbbe72781204b7",
+    "bytes": 392852
+  },
+  {
+    "path": "assets/wardrobe/player-daily.webp",
+    "sha256": "7030355063206b16eb96ee747fc3b9842736c65c20b6252177f2b9f6547cfc05",
+    "bytes": 121910
+  },
+  {
+    "path": "assets/wardrobe/player-festival.webp",
+    "sha256": "65d69fe9c6364a9d09c72451b4ae681e9234c90b6ec961eb1391c44daf94d8ae",
+    "bytes": 148364
+  },
+  {
+    "path": "assets/wardrobe/player-walk-a.webp",
+    "sha256": "8ec012fa870d47c508747729e671e965f0ae2806b815bcc5a4525ab7a220eb5b",
+    "bytes": 369426
+  },
+  {
+    "path": "assets/wardrobe/player-walk-b.webp",
+    "sha256": "e77fe320573851df9b6bd35968e316a6dcc858506c824651ac9b77f60ac9c418",
+    "bytes": 376090
+  },
+  {
+    "path": "assets/wardrobe/player-work.webp",
+    "sha256": "e601ddd5e47e26819c8414bf6460f3b668d03da8f4bd9781fd4dc0306ea0ba03",
+    "bytes": 115920
+  },
+  {
+    "path": "assets/wardrobe/tomoe-atlas.webp",
+    "sha256": "79224d2b7a55dd44244614268b264bc3a1ce9691ffe6800eeaadb61587ef001a",
+    "bytes": 419788
+  },
+  {
+    "path": "assets/wardrobe/tomoe-festival.webp",
+    "sha256": "fe0a4c6b40323554eea790c9e5a99c66cbe14fa6c5927f28aac3cc9339c18c7c",
+    "bytes": 552058
+  },
+  {
+    "path": "assets/wardrobe/tomoe-walk-a.webp",
+    "sha256": "3a0811296df7a48fb221c96786ebe7b227d748e80b2756e76a8c6742bb19cfd6",
+    "bytes": 390878
+  },
+  {
+    "path": "assets/wardrobe/tomoe-walk-b.webp",
+    "sha256": "60026866a3fcf3400d4fb63a7a6bf07a80f4b6eccab9ffae25aff6e883ad3d0f",
+    "bytes": 383214
+  },
+  {
+    "path": "assets/wardrobe/tomoe-work.webp",
+    "sha256": "5d55ad7096e259d30fff2b1c7fda3f904b351b61dbfbab3b3756d0b017d15900",
+    "bytes": 528988
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-ceremony-portrait.webp",
+    "sha256": "37a9f1b30a9fc74561b228e0f69b2f787fcf88114061b99470fc188a1040276a",
+    "bytes": 165638
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-ceremony-sprites.webp",
+    "sha256": "0de4cbff197d748d3897f82ad8f3af7e70b0a4cfcde1b1004979ab19541f974f",
+    "bytes": 593826
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-forest-portrait.webp",
+    "sha256": "c968010ce48b68a553ed59c44449ff5d65f403ad322e982ec6f6dfa5b21b0db6",
+    "bytes": 116076
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-forest-sprites.webp",
+    "sha256": "75cc0f6eeeb00daf1c863dbaf0dcaadaacca0ea550ff3eaa4838066206a1163e",
+    "bytes": 498896
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-sakura-portrait.webp",
+    "sha256": "ab2b9a339abab632156903b5af9521895bbe15ccc3b960b18be1b26a7bd8f149",
+    "bytes": 126596
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-sakura-sprites.webp",
+    "sha256": "691282fa55e3615c0a9f18408bcc715bd7ee74755a5174783d6c4c8b7eec4b71",
+    "bytes": 536786
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-seabreeze-portrait.webp",
+    "sha256": "16605791eb9a72a253d9c98f73abcbe00207849ba5cd3604a7e9528edc008c92",
+    "bytes": 120070
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-seabreeze-sprites.webp",
+    "sha256": "a8e5a90991fbd178c6ff24194efd173aca3e076eecd0af6b1d2e1076640f2e55",
+    "bytes": 497316
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-swim-portrait.webp",
+    "sha256": "1ebf722b17c65dc4d45170b84bf78110764df0ef74417c74e7b7dc8f589aabe8",
+    "bytes": 201092
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-swim-sprites.webp",
+    "sha256": "e9c6e7dd29d4549e04aaadeb7e80a2e827cc5013e621207f3797890ef44ce3cb",
+    "bytes": 548604
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-aoba-portrait.webp",
+    "sha256": "e521c31203907db8d592434b1359d0bb58b69b873fb804fd86503e89856af288",
+    "bytes": 103044
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-aoba-sprites.webp",
+    "sha256": "e2950c9e59adb0f540791a4b47058fb4e25dec8eef515163320e1e35f539f197",
+    "bytes": 484896
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-grove-portrait.webp",
+    "sha256": "8eac95f03a512599d8ef71f2625655caa7970308dc4deeba31673134164533ca",
+    "bytes": 105240
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-grove-sprites.webp",
+    "sha256": "c650d3a7bda0c407adc41bfbcce0eaea5605d688ceda7dd1da4c9a6e5913e5b0",
+    "bytes": 516790
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-journey-portrait.webp",
+    "sha256": "0b3f65ebddefa35e60bfe35f3fa664aa72199fa7ad7df70f296a1df088733d7f",
+    "bytes": 148644
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-journey-sprites.webp",
+    "sha256": "23abfb865eda3272b0b3fc20ccb4ede3f6599193610449032eeead818bb23f41",
+    "bytes": 542254
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-moon-portrait.webp",
+    "sha256": "b45f55bbc26a9953b2cc38ca452e0f9f15615e0e7ae90367367108f4917e461b",
+    "bytes": 114540
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-moon-sprites.webp",
+    "sha256": "22a717fa4d95ade10072a6606af4ee2c7725de9e15ad34c2d861c842a80f0bc4",
+    "bytes": 501032
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-swim-portrait.webp",
+    "sha256": "e39492472b751c2da20c95f0a81a6cd4962d43b409940b4adb2ab78b5c19cb0b",
+    "bytes": 201770
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-swim-sprites.webp",
+    "sha256": "c8b943250cf8b4aca478a1954171ed4304c62e27e69c38b1e0633a86ca7afb8d",
+    "bytes": 514344
+  },
+  {
+    "path": "assets/ui/walking-actors.webp",
+    "sha256": "28d25cd52bf67647ced07fbd7bd0309c46fabe59755b691b49924a24389754b9",
+    "bytes": 947938
+  },
+  {
+    "path": "assets/map/overworld.webp",
+    "sha256": "663a369827b900a7426477577f02b5eba024b62f50cc43c14881a4aac4abc908",
+    "bytes": 784960
+  },
+  {
+    "path": "assets/regions/r01.webp",
+    "sha256": "283b9cb9b502f9696a3b711699c41433de5902883066bb1cc2725e7b251a66fd",
+    "bytes": 212888
+  },
+  {
+    "path": "assets/regions/r02.webp",
+    "sha256": "1050cd0cd63dac834b7b0a82110c6d79490ed636bbf64bb15d5a29812765e586",
+    "bytes": 226788
+  },
+  {
+    "path": "assets/regions/r05.webp",
+    "sha256": "e7e5a88e68ac7ba1609fa88960808ac1d29fba021f46754b121b721d7f687875",
+    "bytes": 193006
+  },
+  {
+    "path": "assets/regions/r07.webp",
+    "sha256": "7871b8985f7485ebf9f6a5636e0909c0e6362e2bd60026c79ee1846666c690db",
+    "bytes": 282524
+  },
+  {
+    "path": "assets/regions/r09.webp",
+    "sha256": "dab651c2fc670773a37f084952530a7ed39207214f8f14ab4dd7ea9f1e9a01d0",
+    "bytes": 158914
+  },
+  {
+    "path": "assets/regions/r10.webp",
+    "sha256": "6dc9c9cc9cc61f64c05bc027cf5bc962274e45e631b3fc18fb24d97c6a2d0f76",
+    "bytes": 188954
+  },
+  {
+    "path": "assets/regions/region-scenes-atlas.webp",
+    "sha256": "d6834d35bd20e1ca2372cc9f0659380b6d0f3887e2c8239c9d75397dcd55d52a",
+    "bytes": 590050
+  },
+  {
+    "path": "assets/ui/map-header.webp",
+    "sha256": "37ab6279f856afb1587bad6b75ba51607ee3e8c25f63d0ed4a7b98f201a0465e",
+    "bytes": 227792
+  },
+  {
+    "path": "assets/ui/ema-board.webp",
+    "sha256": "13afa6f2e3c3f171064cf1f7cf724a461eb939f9a06648530e69635492f09f64",
+    "bytes": 216420
+  },
+  {
+    "path": "assets/ui/wardrobe.webp",
+    "sha256": "f2430488844e2ab0933a809a7e6d92ecb53bb9bd5b523ad6862d57e63d8356a3",
+    "bytes": 174104
+  },
+  {
+    "path": "assets/opening/title-backdrop.webp",
+    "sha256": "a6e048eece4f152d34ebeaa218ee1f1862dd2652398c7e5c1358b6b332f999f9",
+    "bytes": 364844
+  }
+]
