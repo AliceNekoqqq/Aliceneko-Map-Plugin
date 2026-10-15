@@ -1,23 +1,27 @@
-[
-  {
-    "script": "mvu",
-    "HTTP": 200,
-    "mime": "application/javascript; charset=utf-8",
-    "bytes": 174122,
-    "sha256": "05f11079675b494cfc1c022d8eca83743a1b103bf72f13699c896fbf6e5312f0"
-  },
-  {
-    "script": "panels",
-    "HTTP": 200,
-    "mime": "application/javascript; charset=utf-8",
-    "bytes": 221921,
-    "sha256": "4e79337e4a3fd968107aa09e3f44aa06495cf39547e0c97992ada5722729e4b7"
-  },
-  {
-    "script": "scene",
-    "HTTP": 200,
-    "mime": "application/javascript; charset=utf-8",
-    "bytes": 124344,
-    "sha256": "6d98ad5e547eb361d760e9d2f6da7ed27dac677834f020a98b43005e4b7d0a2f"
-  }
-]
+{
+  "version": "1.8.0",
+  "runtimeCommit": "500221a9312b963fd2a972195521ac1aa6681cb9",
+  "scripts": [
+    {
+      "script": "mvu",
+      "HTTP": 200,
+      "mime": "application/javascript; charset=utf-8",
+      "bytes": 174122,
+      "sha256": "559db48e9f3666489339677ca178dddecd3b6951dae52dbbcb0ed2b1f53d7bd7"
+    },
+    {
+      "script": "panels",
+      "HTTP": 200,
+      "mime": "application/javascript; charset=utf-8",
+      "bytes": 227262,
+      "sha256": "e06b40b2b6e498c88390bf07411aef8a3e007d8b24b0010cf1236e1227035e53"
+    },
+    {
+      "script": "scene",
+      "HTTP": 200,
+      "mime": "application/javascript; charset=utf-8",
+      "bytes": 199165,
+      "sha256": "4ba0a456551625e7669fd0702aa05b74de49a83880f89a7c4cf6b472aa75783c"
+    }
+  ]
+}
