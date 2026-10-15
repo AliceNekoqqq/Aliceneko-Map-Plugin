@@ -1,0 +1,23 @@
+[
+  {
+    "script": "mvu",
+    "HTTP": 200,
+    "mime": "application/javascript; charset=utf-8",
+    "bytes": 174122,
+    "sha256": "05f11079675b494cfc1c022d8eca83743a1b103bf72f13699c896fbf6e5312f0"
+  },
+  {
+    "script": "panels",
+    "HTTP": 200,
+    "mime": "application/javascript; charset=utf-8",
+    "bytes": 221921,
+    "sha256": "4e79337e4a3fd968107aa09e3f44aa06495cf39547e0c97992ada5722729e4b7"
+  },
+  {
+    "script": "scene",
+    "HTTP": 200,
+    "mime": "application/javascript; charset=utf-8",
+    "bytes": 124344,
+    "sha256": "6d98ad5e547eb361d760e9d2f6da7ed27dac677834f020a98b43005e4b7d0a2f"
+  }
+]
