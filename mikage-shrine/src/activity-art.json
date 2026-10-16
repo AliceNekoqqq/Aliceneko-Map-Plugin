@@ -13,5 +13,7 @@
   "R08": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@f616ec7a3587810407df23f4e8e685786306e8f7/mikage-shrine/assets/activities/r08-firefly-marsh-v1.webp",
   "R09": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@f616ec7a3587810407df23f4e8e685786306e8f7/mikage-shrine/assets/activities/r09-taiko-hall-v1.webp",
   "R10": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@f616ec7a3587810407df23f4e8e685786306e8f7/mikage-shrine/assets/activities/r10-lantern-path-v1.webp",
-  "cat": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cec073c4ac5ef62ed0b6795cc7de5ab1f33dfa0c/mikage-shrine/assets/activities/neighborhood-cat-v1.webp"
+  "cat": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cec073c4ac5ef62ed0b6795cc7de5ab1f33dfa0c/mikage-shrine/assets/activities/neighborhood-cat-v1.webp",
+  "tomoe": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/opening/tomoe-v1.webp",
+  "heroine": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/player-daily.webp"
 }

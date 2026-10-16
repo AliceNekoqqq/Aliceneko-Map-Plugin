@@ -353,5 +353,10 @@
     "path": "assets/opening/minigames-v112-glyphs.ttf",
     "sha256": "06f377f7788d2d1a1df0dcce0fa47c141d023c23bf449c2b1c4ef604ed5508ed",
     "bytes": 102064
+  },
+  {
+    "path": "assets/opening/minigames-v114-glyphs.ttf",
+    "sha256": "6a1a38dce21875ef52930a0fffc8ea66285a427ad0b8bd8ad4432f5c97501ce9",
+    "bytes": 114928
   }
 ]

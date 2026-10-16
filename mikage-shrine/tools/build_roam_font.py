@@ -35,7 +35,9 @@ def main() -> None:
     covered: set[int] = set()
     existing_counts: dict[str, int] = {}
     for path in (ROOT / "assets/opening").glob("*.ttf"):
-        if path.name == "roam-glyphs.ttf" or path.name == args.output_name:
+        # Activity supplements are independently loaded, so each release subset must
+        # cover its own characters without assuming another supplement is installed.
+        if path.name == "roam-glyphs.ttf" or path.name.startswith("minigames-") or path.name == args.output_name:
             continue
         cmap = set(TTFont(path).getBestCmap())
         covered.update(cmap)

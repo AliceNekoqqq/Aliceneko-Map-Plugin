@@ -23,6 +23,7 @@ def build():
         '__MINIGAME_CSS__': json.dumps((SRC / 'activities.css').read_text() + '\n' + (SRC / 'minigames.css').read_text(), ensure_ascii=False).replace('</', r'<\/'),
         '__MINIGAME_ART__': json.dumps(art, ensure_ascii=False),
         '__MINIGAME_FONT_URL__': json.dumps(font_url),
+        '__MINIGAME_FONT_RANGE__': json.dumps(font_manifest['unicodeRange']),
         '__ACTIVITY_FACTORY__': activity,
     }
     for marker, value in values.items():
@@ -39,4 +40,4 @@ def build():
 
 if __name__ == '__main__':
     target = build()
-    print(json.dumps({'file': str(target), 'bytes': target.stat().st_size, 'version': '1.13.0'}))
+    print(json.dumps({'file': str(target), 'bytes': target.stat().st_size, 'version': '1.14.0'}))
