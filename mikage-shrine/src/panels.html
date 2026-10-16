@@ -353,7 +353,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
 .ema-mode-description{color:#d0cfb8;line-height:1.9;font-size:13px;padding:20px 0;margin:0}.ema-profile-editor{margin:22px 0;padding:24px;background:#102c24;border:1px solid #5d6a51;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.ema-profile-editor[hidden]{display:none}.ema-field{min-width:0;display:flex;flex-direction:column;gap:9px}.ema-field:nth-child(n+3){grid-column:1/-1}.ema-field>label{color:#e9d2a4;font-size:13px;letter-spacing:1px}.ema-field input,.ema-field select{font-family:system-ui,sans-serif;font-size:16px;line-height:1.5;width:100%;min-width:0;border:1px solid #72765b;border-radius:4px;background:#edf0de;color:#243c30;padding:12px;box-sizing:border-box}.ema-field input:focus-visible,.ema-field select:focus-visible{outline:2px solid #e6bc6e;outline-offset:3px}.ema-field small{color:#adbda8;font-size:12px;line-height:1.8}.ema-input-action{display:flex;align-items:stretch;gap:8px;min-width:0}.ema-input-action input{flex:1;min-width:0}.ema-input-action button{flex:none;white-space:nowrap;min-height:46px}.ema-profile-actions{display:flex;gap:10px;flex-wrap:wrap;grid-column:1/-1;border-top:1px solid #4b5f47;padding-top:20px}.ema-local-note{color:#b6c0a8;line-height:1.9;font-size:12px;margin:18px 0}.ema-settings-footer{display:flex;gap:12px;flex-wrap:wrap;padding-top:20px;border-top:1px solid #596b4d}#ema-settings-feedback{color:#efdbb4;font-size:13px;line-height:1.9;overflow-wrap:anywhere}#ema-settings-feedback[data-error=true]{color:#f4c0ac}.ema-settings-footer button{min-height:46px}#ema-api-form button:disabled{opacity:.5;cursor:wait}
 @media(max-width:600px){.ema-mode-grid{grid-template-columns:minmax(0,1fr);gap:12px}.ema-mode-card{padding:17px 15px}.ema-profile-editor{grid-template-columns:minmax(0,1fr);padding:18px 14px;gap:18px}.ema-field{grid-column:1/-1}.ema-settings-top{align-items:flex-start}.ema-settings-top>span{max-width:55%;text-align:right}.ema-input-action{flex-wrap:wrap}.ema-input-action input{flex-basis:160px}.ema-request-actions{gap:6px;justify-content:flex-start}.ema-mode-card strong{font-size:15px}.ema-settings-footer{gap:9px}.ema-settings-footer button{flex:1 1 auto}.ema-profile-actions button{min-height:44px}}
 .ema-field input,.ema-field select{font-family:"Mikage Serif",system-ui,sans-serif}
-</style><style>.life-region-art{aspect-ratio:3/2!important}.place-experience{display:flex;gap:13px;border-top:1px solid #c9bea0;border-bottom:1px solid #d8ccb0;padding:14px 2px;margin:17px 0 5px}.experience-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e2e8d5;color:#718567;flex:none}.experience-mark svg{width:23px;height:23px}.experience-copy{min-width:0}.experience-copy small{display:block;font-size:9px;letter-spacing:2px;color:#9a8c6d}.experience-copy strong{display:block;font-size:15px;letter-spacing:2px;color:#5c6b4e;margin-top:5px;font-weight:500}.experience-copy p{margin:5px 0 0;font-size:11px;line-height:1.8}.place-card .experience-guide{font-size:10px;color:#978b72}</style></head>
+</style><style>.wardrobe-quest{margin:12px 0;display:flex;flex-wrap:wrap;gap:8px}.wardrobe-quest button{font:inherit;font-size:11px;min-height:42px}</style><style>.life-region-art{aspect-ratio:3/2!important}.place-experience{display:flex;gap:13px;border-top:1px solid #c9bea0;border-bottom:1px solid #d8ccb0;padding:14px 2px;margin:17px 0 5px}.experience-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e2e8d5;color:#718567;flex:none}.experience-mark svg{width:23px;height:23px}.experience-copy{min-width:0}.experience-copy small{display:block;font-size:9px;letter-spacing:2px;color:#9a8c6d}.experience-copy strong{display:block;font-size:15px;letter-spacing:2px;color:#5c6b4e;margin-top:5px;font-weight:500}.experience-copy p{margin:5px 0 0;font-size:11px;line-height:1.8}.place-card .experience-guide{font-size:10px;color:#978b72}</style></head>
 <body>
   <main class="shrine-ui" aria-label="御影神社状态栏">
     <header class="topbar">
@@ -901,17 +901,19 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
     const playerOutfit = outfitFor('player'), tomoeOutfit = outfitFor('tomoe');
     $$('[data-art="player"]').forEach(el => paintCharacter(el, 'player', playerOutfit, false));
     $$('[data-art="tomoe"]').forEach(el => paintCharacter(el, 'tomoe', tomoeOutfit, false));
-    paintCharacter($('[data-art="wardrobe-mini"]'), wardrobeActor, wardrobePreviewId || wardrobeChoice || outfitFor(wardrobeActor), false);
-    paintCharacter($('[data-art="portrait"]'), wardrobeActor, wardrobePreviewId || wardrobeChoice || outfitFor(wardrobeActor), true);
+    const wardrobeLook=wardrobePreviewId || (wardrobeChoice==='school'&&outfitFor(wardrobeActor)==='school-human'?'school-human':wardrobeChoice) || outfitFor(wardrobeActor);
+    paintCharacter($('[data-art="wardrobe-mini"]'), wardrobeActor, wardrobeLook, false);
+    paintCharacter($('[data-art="portrait"]'), wardrobeActor, wardrobeLook, true);
   }
   function renderWardrobe() {
     const options = $('#wardrobe-options');
     if (!options) return;
     const art = artApi();
     const outfits = art && typeof art.outfits === 'function' ? art.outfits(wardrobeActor) : [];
-    const list = Array.isArray(outfits) ? outfits : [];
+    const list = Array.isArray(outfits) ? outfits.filter(item=>!item.variantOf) : [];
     const current = outfitFor(wardrobeActor);
-    if (!list.some(item => item && String(item.id) === wardrobeChoice)) wardrobeChoice = current;
+    const displayCurrent=current==='school-human'?'school':current;
+    if (!list.some(item => item && String(item.id) === wardrobeChoice)) wardrobeChoice = displayCurrent;
     const rewards = Array.isArray(GAME_CONFIG.wardrobeRewards) ? GAME_CONFIG.wardrobeRewards : [];
     const baseOutfitIds = new Set(['daily', 'shrine', 'work', 'festival', 'usual']);
     const rewardFor = (actor, outfitId) => {
@@ -942,14 +944,14 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
       return unlocked.some(row => row && row.角色 === actor && String(row.衣装) === outfitId);
     };
     if (wardrobePreviewId && isOwned(wardrobeActor, wardrobePreviewId)) wardrobePreviewId = '';
-    const preview = wardrobePreviewId || wardrobeChoice || current;
+    const preview = wardrobePreviewId || (wardrobeChoice==='school'&&current==='school-human'?'school-human':wardrobeChoice) || current;
     options.replaceChildren();
     list.forEach(item => {
       if (!item || item.id == null) return;
       const outfitId = String(item.id);
       const reward = rewardFor(wardrobeActor, outfitId);
       const locked = (!baseOutfitIds.has(outfitId) || !!reward) && !isOwned(wardrobeActor, outfitId);
-      const worn = outfitId === current && !locked;
+      const worn = outfitId === displayCurrent && !locked;
       const previewing = outfitId === wardrobePreviewId;
       const button = make('button', 'outfit-choice' + (worn ? ' is-worn' : '') + (locked ? ' is-locked' : '') + (previewing ? ' is-previewing' : ''), '');
       const thumb = make('span', 'outfit-thumb character-sprite');
@@ -982,7 +984,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
     if (!list.length) options.append(make('span', 'wardrobe-current', '服装图册尚未加载。'));
     const currentLabel = $('#wardrobe-current');
     const ownedCount = list.filter(item => item && isOwned(wardrobeActor, String(item.id))).length;
-    if (currentLabel) currentLabel.textContent = '当前服装：' + (list.find(item => item && String(item.id) === current)?.name || current);
+    if (currentLabel) currentLabel.textContent = '当前服装：' + (outfits.find(item => item && String(item.id) === current)?.name || current);
     const wardrobeActions = $('.wardrobe-collection-head');
     if (wardrobeActions) {
       let countLabel = $('.wardrobe-collection-count', wardrobeActions);
@@ -990,7 +992,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
       countLabel.textContent = ownedCount + ' / ' + list.length + ' 已收集';
       countLabel.setAttribute('aria-label', '已收集 ' + ownedCount + ' 套，共 ' + list.length + ' 套');
     }
-    const look=list.find(item=>item&&String(item.id)===preview);const lookOwned=isOwned(wardrobeActor,preview);
+    const look=outfits.find(item=>item&&String(item.id)===preview);const lookOwned=isOwned(wardrobeActor,preview);
     const lookName=$('#wardrobe-look-name'),lookState=$('#wardrobe-look-state'),lookSource=$('#wardrobe-look-source');
     if(lookName)lookName.textContent=look?.name||preview;
     if(lookState)lookState.textContent=!lookOwned?'仅供预览':preview===current?'当前穿着':'已拥有';
@@ -998,6 +1000,27 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
     const hint=$('#wardrobe-hint');if(hint)hint.textContent=outfitApplyPending?'正在保存衣装…':wardrobePreviewId?'未获得的衣装仅供静态预览；解锁后需要再次点选才会更换。':'点选已拥有的衣装即更换，衣装会同步到标题、地图和状态栏。';
     const miniCaption=$('.wardrobe-mini-wrap>small');if(miniCaption)miniCaption.textContent=wardrobeActor==='player'?'庭院里的你':'庭院里的他';
     $$('[data-wardrobe-actor]').forEach(button => {button.disabled=!!outfitApplyPending;button.setAttribute('aria-pressed', button.dataset.wardrobeActor === wardrobeActor ? 'true' : 'false');});
+
+    let questBox=$('#wardrobe-quest');
+    if(!questBox){questBox=make('div','wardrobe-quest');questBox.id='wardrobe-quest';$('#wardrobe-look-source')?.after(questBox);}
+    questBox.replaceChildren();
+    const selectedReward=rewardFor(wardrobeActor,preview),questId=selectedReward?.reward?.sideQuest;
+    if(questId&&!lookOwned){
+      const quest=(currentState().衣装支线||[]).find(q=>q.id===questId);
+      if(quest){
+        const control=make('button','secondary-button',quest.done?'衣装已收录':quest.status==='暂停'?'去绘马板继续支线':quest.status!=='未悬挂'?'去绘马板查看支线':quest.ready?'悬挂衣装支线':'尚未达到开放条件');
+        control.type='button';control.disabled=(!quest.ready&&quest.status==='未悬挂')||quest.done||!!outfitApplyPending;
+        control.addEventListener('click',async()=>{
+          if(quest.status!=='未悬挂'){openDialog('board');return;}
+          const ok=await invokeAction('addWardrobeQuest',{id:questId},'支线已悬挂，请在绘马板选择接取。',control);
+          if(ok)openDialog('board');
+        });questBox.append(control);
+      }
+    }
+    if(wardrobeActor==='tomoe'&&['school','school-human'].includes(preview)&&isOwned('tomoe','school')){
+      const human=current==='school-human',toggle=make('button','secondary-button',human?'显露狐耳':'切换人间伪装');toggle.type='button';toggle.disabled=!!outfitApplyPending;
+      toggle.addEventListener('click',async()=>{const outfit=human?'school':'school-human';outfitApplyPending={actor:'tomoe',outfit};renderWardrobe();await invokeAction('setOutfit',{actor:'tomoe',outfit},'校服外观已保存。');outfitApplyPending=null;wardrobeChoice='school';renderWardrobe();});questBox.append(toggle);
+    }
     renderWardrobeDirections(art, wardrobeActor, preview);
     renderCharacterMinis();
   }
@@ -1125,6 +1148,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
       const person = String(entry.祈愿人 || '匿名来客');
       const status = String(entry.状态 || '未接');
       const isMain = entry.性质 === '主线';
+      const isWardrobe=(GAME_CONFIG.wardrobeQuests||[]).some(q=>q.id===id);
       const region = REGION_BY_ID.get(String(entry.地区 || ''));
       const regionName = region ? region.name : String(entry.地区 || '地区未定');
       const kind = String(entry.类型 || '心愿');
@@ -1138,7 +1162,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
       const stamp = make('span', 'ema-stamp', isMain ? '主' : '願');
       stamp.setAttribute('aria-hidden', 'true');
       const number = make('span', 'ema-number', String(index + 1).padStart(2, '0'));
-      const kindLabel = make('span', 'ema-kind', isMain ? '阶段主线' : '来访心愿');
+      const kindLabel = make('span', 'ema-kind', isMain ? '阶段主线' : isWardrobe ? '衣装支线' : '来访心愿');
       const tags = make('span', 'ema-tags');
       tags.append(make('span', 'ema-status', status), make('span', 'ema-region', regionName), make('span', 'ema-category', kind));
       const frontTitle = make('strong', 'ema-title', title);
@@ -1395,6 +1419,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
       else if (type === 'resumeEma') result = await bridge.act('resumeEma', payload);
       else if (type === 'travel') result = await bridge.act('travel', payload);
       else if (type === 'setOutfit') result = await bridge.act('setOutfit', payload);
+      else if (type === 'addWardrobeQuest') result = await bridge.act('addWardrobeQuest', payload);
       if (result && (result.ok === false || result.accepted === false)) throw new Error(result.error || '该操作未能提交。');
       let next = result && (result.snapshot || result.state);
       if (!next && typeof bridge.getState === 'function') next = await bridge.getState();

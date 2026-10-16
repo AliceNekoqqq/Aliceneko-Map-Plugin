@@ -91,4 +91,4 @@ def build():
 
 if __name__ == '__main__':
     result = build()
-    print(json.dumps({'version':'1.9.0','statusbarBytes':len(result.encode()),'source':'src/statusbar.html'}))
+    print(json.dumps({'version':'1.10.0','statusbarBytes':len(result.encode()),'source':'src/statusbar.html'}))

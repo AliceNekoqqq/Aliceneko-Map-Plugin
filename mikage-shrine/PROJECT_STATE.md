@@ -1,10 +1,10 @@
 # 御影神社项目状态
 
-当前发布：1.9.0 三时景版。十地白天/黄昏/夜晚30张背景全部可用。
+当前发布：1.10.0 樱坂衣装版。新增五套衣装与DK人间伪装，十地三时景保留。
 
-- 资源提交：8bd6001ee4595c0a4ccadbcab8736308c0c39633。
-- `src/time-scenes.json`固定图片提交；运行脚本和卡加载器同样固定提交，禁止追踪main。
-- `tools/build_roam.py`重建scene/panels；`tools/build_card.py`按运行脚本提交生成轻量角色卡。
-- 新卡：`cards/巴卫_御影神社_街区漫游_v1.9.0_三时景版.json`。
-- 角色资料、开场白、世界书和MVU字段保留。时段手动预览不写MVU。
-- 检查证据与实机待验收项见QA-1.9.0.md，不能误报真实酒馆或本轮浏览器验证通过。
+- 衣装/字体资源提交：948d6c45abf43f8df982f29235457e99130e2b8c
+- 现有素材提交与三时景资源提交保留，新素材同样固定完整提交。
+- `src/wardrobe-quests.json`定义四条固定支线；`src/wardrobe-config.json`为发布配置。
+- `tools/register_wardrobe_art.py --asset-commit <完整提交>`更新共享外观图册与显示定位；`tools/build_roam.py`重建scene/panels。
+- `tools/build_card.py`从原1.9.0卡与固定运行提交生成1.10.0卡；`wardrobe_worldbook.py`更新相关世界书和EJS，其他角色资料不变。
+- 检查证据与真实酒馆待验收项见QA-1.10.0.md。

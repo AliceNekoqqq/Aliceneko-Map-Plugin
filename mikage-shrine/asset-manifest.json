@@ -258,5 +258,70 @@
     "path": "assets/opening/patch-glyphs-v181.ttf",
     "sha256": "252f61f3502dc7d2c4bc9d0dca7a3093fda0687620482351ed766192770fbd0e",
     "bytes": 36156
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-school-portrait.png",
+    "sha256": "c1c2d171281ad1e52b396b934850c37b6bccfee3652f528f79a55cb7f9621b4b",
+    "bytes": 1200640
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-yako-portrait.png",
+    "sha256": "6ea6daff911e679e4de90dcba68a4a42e196219d3f9a43cc1dc748e502f928af",
+    "bytes": 1497482
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-school-human-sprites.png",
+    "sha256": "20d85e2d8a9cecc8d4212eb4b37202edc57bcbf71181c766f801c23e891b827d",
+    "bytes": 1240003
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-school-sprites.png",
+    "sha256": "c6a1defda804554fd97449e1f9d5b691a6e61455f7c21bfccd4b3b5af1f8891a",
+    "bytes": 1466656
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-winter-sprites.png",
+    "sha256": "284bde9aefe2308a67bd3b32dff8b27104c47a4b40878acc8584ade9e292f0cd",
+    "bytes": 1594624
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-school-human-portrait.png",
+    "sha256": "83e720ca0a8c1d64541f1da0dffd5296611dcf4db29e829a0f0dbd5806b5899b",
+    "bytes": 850510
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-winter-portrait.png",
+    "sha256": "4c54314f1183eb7799e666103aa200bffbfeb1a865192e442926c2dc0f48e768",
+    "bytes": 1177243
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-city-portrait.png",
+    "sha256": "95d57359002c466c3729c4314c6aa00674ed96e9f12c761c8d178f5ed963f46f",
+    "bytes": 1278450
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-yako-sprites.png",
+    "sha256": "63286d50be2efa8b08d08d435d8588de06e769c708f86f3f2d68ea3c0a5a5df6",
+    "bytes": 1699667
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-school-sprites.png",
+    "sha256": "251a666823e6c09377c633cf82f5c1cfd54e946707e331e0a9cd05aba983728a",
+    "bytes": 1455809
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-school-portrait.png",
+    "sha256": "ec85ca44b251eadda03d23f221e874a833b1e7479531f8c92b90c7259a6f36b3",
+    "bytes": 979078
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-city-sprites.png",
+    "sha256": "4b0067a0d51d32f11b157d43a554ebb88ddcf8e94e179254a562366375201a6e",
+    "bytes": 1523051
+  },
+  {
+    "path": "assets/opening/wardrobe-v110-glyphs.ttf",
+    "sha256": "130c848bf33cbdaabde3a26ce784150693be05f91895c70687a0483cb4b19a97",
+    "bytes": 26332
   }
 ]

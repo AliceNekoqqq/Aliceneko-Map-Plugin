@@ -10,7 +10,7 @@ vm.runInNewContext(sandbox,{window:{parent:host},TextEncoder,console});
  const before=JSON.stringify(ctx.initial);
  await assert.rejects(api.enter('wrong'));assert.equal(api.active,false);
  const key=process.env.MIKAGE_TEST_KEY;if(!key)throw Error('Set MIKAGE_TEST_KEY for the authenticated sandbox test');
- await api.enter(key);let state=api.getState();assert.equal(state.进度.阶段,5);assert.equal(state.地图.开放地区.length,10);assert.equal(state.衣橱.已解锁.length,10);assert.equal(state.主线.已完成.length,5);
+ await api.enter(key);let state=api.getState();assert.equal(state.进度.阶段,5);assert.equal(state.地图.开放地区.length,10);assert.equal(state.衣橱.已解锁.length,16);assert.equal(state.主线.已完成.length,5);
  api.travel('R10');assert.equal(api.getState().地图.当前地区,'R10');
  api.act('setOutfit',{actor:'player',outfit:'swim'});assert.equal(api.getState().玩家.衣装,'swim');
  assert.equal(JSON.stringify(ctx.initial),before,'canonical initial data must not mutate');
