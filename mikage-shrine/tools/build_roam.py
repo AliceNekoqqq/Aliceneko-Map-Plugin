@@ -41,7 +41,9 @@ def build():
     # Stored decoration slots are display coordinates, not movement coordinates.
     html = html.replace("b.style.left=slot.x+'%';b.style.top=slot.y+'%';", "const anchors={north_eave:[84,22],south_eave:[91,34],floor_left:[84,81],floor_right:[93,67],garden_edge:[22,70],stone_path:[48,78],gate_eave:[29,39],gate_stand:[20,65],seat_left:[78,88],seat_right:[86,88]};const at=anchors[d.slot]||[slot.x,slot.y];b.style.left=at[0]+'%';b.style.top=at[1]+'%';")
     css = '\n'.join((SRC / name).read_text() for name in ['roam.css', 'activities.css'])
-    daylight = 'window.MikageTimeSceneCatalog='+literal(json.loads((SRC / 'time-scenes.json').read_text()))+';\n'+(SRC / 'time-of-day.js').read_text()
+    activity_art_path = SRC / 'activity-art.json'
+    activity_art = json.loads(activity_art_path.read_text()) if activity_art_path.exists() else {}
+    daylight = 'window.MikageActivityArtCatalog='+literal(activity_art)+';\nwindow.MikageTimeSceneCatalog='+literal(json.loads((SRC / 'time-scenes.json').read_text()))+';\n'+(SRC / 'time-of-day.js').read_text()
     js = daylight+'\n'+'\n'.join((SRC / name).read_text() for name in ['icons.js','navigation.js','activities.js','roam-controller.js','dev-ui.js'])
     html = html.replace('</head>', '<style>\n'+css+'\n</style></head>')
     html = html.replace('</body>', '<script>\n'+js.replace('</script', '<\\/script')+'\n</script></body>')
@@ -91,4 +93,4 @@ def build():
 
 if __name__ == '__main__':
     result = build()
-    print(json.dumps({'version':'1.10.0','statusbarBytes':len(result.encode()),'source':'src/statusbar.html'}))
+    print(json.dumps({'version':'1.11.0','statusbarBytes':len(result.encode()),'source':'src/statusbar.html'}))

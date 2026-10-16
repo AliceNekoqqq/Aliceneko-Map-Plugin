@@ -1,0 +1,11 @@
+{
+  "R01": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cec073c4ac5ef62ed0b6795cc7de5ab1f33dfa0c/mikage-shrine/assets/activities/r01-courtyard-v1.webp",
+  "R02": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cec073c4ac5ef62ed0b6795cc7de5ab1f33dfa0c/mikage-shrine/assets/activities/r02-garden-v1.webp",
+  "R04": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cec073c4ac5ef62ed0b6795cc7de5ab1f33dfa0c/mikage-shrine/assets/activities/r04-stream-v1.webp",
+  "R06": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@8bd6001ee4595c0a4ccadbcab8736308c0c39633/mikage-shrine/assets/regions/time-of-day/r06-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cec073c4ac5ef62ed0b6795cc7de5ab1f33dfa0c/mikage-shrine/assets/activities/r06-coastal-platform-v1.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@8bd6001ee4595c0a4ccadbcab8736308c0c39633/mikage-shrine/assets/regions/time-of-day/r06-night.webp"
+  },
+  "cat": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cec073c4ac5ef62ed0b6795cc7de5ab1f33dfa0c/mikage-shrine/assets/activities/neighborhood-cat-v1.webp"
+}
