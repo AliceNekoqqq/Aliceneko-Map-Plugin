@@ -9,4 +9,4 @@
 - `tools/register_wardrobe_art.py --asset-commit <完整提交>`更新共享外观图册与显示定位；`tools/build_roam.py`重建 scene/panels；`tools/build_minigames.py`从活动源码、样式和美术表构建独立小游戏模块。
 - `tools/build_card.py`从原1.10.0卡及固定提交生成1.12.0卡；卡片保留角色资料，仅有四个约5KB远程加载器。检查证据与实机待验收项见 `QA-1.12.0.md`。
 - `assets/activities/`新增六张第二批专属场景插画；对应玩法与CSS在`src/activities.js`、`src/activities.css`，构建产物为`runtime/minigames.mjs`。测试及当前SillyTavern实机验收状态见`QA-1.13.0.md`。
-- 1.13.0六张活动插画固定于素材提交`f616ec7a3587810407df23f4e8e685786306e8f7`，互动代码提交`05f83324ba9af0060ccbf3d23b803d8291e3e727`。角色卡约295KB，四个加载器各约5.3KB；真实SillyTavern导入待验收。
+- 1.13.0六张活动插画固定于素材提交`f616ec7a3587810407df23f4e8e685786306e8f7`，互动代码提交`1e925c3e56a8b303d0e0134ad2cb5ead65654a06`。角色卡约295KB，四个加载器各约5.3KB；真实SillyTavern导入待验收。
