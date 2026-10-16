@@ -46,6 +46,12 @@ const moduleUrl='data:text/javascript;base64,'+Buffer.from(moduleSource).toStrin
   assert.equal(await page.locator('.mkg-cat').evaluate(img=>img.decode().then(()=>img.naturalWidth)),1536,'cat scene art is available in the popup');
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=375),'375px popup has no page-level horizontal overflow');
   await page.keyboard.press('Escape');
+  await page.evaluate(()=>window.MikageMinigames.open({region:'R03',period:'day',reducedMotion:true}));
+  assert.equal(await page.locator('.mkg-cover').evaluate(img=>img.decode().then(()=>img.naturalWidth)),1536,'dango shop scene appears before play');
+  await page.getByRole('button',{name:'开始这段散策',exact:true}).click();
+  assert.equal(await page.locator('.mka-scene-art').evaluate(img=>img.decode().then(()=>img.naturalWidth)),1536,'dango gameplay loads the same prepared art on demand');
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=375),'dango popup remains within 375px mobile width');
+  await page.keyboard.press('Escape');
   assert.deepEqual(errors,[]);
   console.log('PASS: separate popup; no statusbar expansion; intro-to-game flow; result bridge; close and Escape; scroll restoration; 375px viewport; prepared art');
   await browser.close();

@@ -39,4 +39,4 @@ def build():
 
 if __name__ == '__main__':
     target = build()
-    print(json.dumps({'file': str(target), 'bytes': target.stat().st_size, 'version': '1.12.0'}))
+    print(json.dumps({'file': str(target), 'bytes': target.stat().st_size, 'version': '1.13.0'}))
