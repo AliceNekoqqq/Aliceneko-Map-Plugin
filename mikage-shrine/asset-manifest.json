@@ -1,5 +1,35 @@
 [
   {
+    "path": "assets/activities/neighborhood-cat-v1.webp",
+    "sha256": "5e96b8e209e4b95b2d9aa5bce2e3f0e11ff1d5767156014d4a72c1571a2fcfcc",
+    "bytes": 93564
+  },
+  {
+    "path": "assets/activities/r01-courtyard-v1.webp",
+    "sha256": "ade57662d51eb11cefae3a3a39f1c80614f195dfabcc033ce4ac594a86aed7c9",
+    "bytes": 318546
+  },
+  {
+    "path": "assets/activities/r02-garden-v1.webp",
+    "sha256": "19d19c63deb274e7aa68fca88d486b8da706784e555e9ff15d075a5b7061d42b",
+    "bytes": 259274
+  },
+  {
+    "path": "assets/activities/r04-stream-v1.webp",
+    "sha256": "66ad5ca607662d3484b607d64659a7229cfb15ca67d4f745cac3d0c10d559da1",
+    "bytes": 384170
+  },
+  {
+    "path": "assets/activities/r06-coastal-platform-v1.webp",
+    "sha256": "040d4567777ae783a7ea102235cf0af1c355662b28d15c5019f787e273837dd8",
+    "bytes": 275304
+  },
+  {
+    "path": "assets/map/overworld.webp",
+    "sha256": "663a369827b900a7426477577f02b5eba024b62f50cc43c14881a4aac4abc908",
+    "bytes": 784960
+  },
+  {
     "path": "assets/opening/ema-api-glyphs.ttf",
     "sha256": "f50454044ae855af734d164858c62a11915710bd9058c7ab2fb2587820a815f3",
     "bytes": 21888
@@ -8,6 +38,21 @@
     "path": "assets/opening/heroine-v1.webp",
     "sha256": "43cd76be10b8ffb3956810b15430f0f7d23a982dae19ce06380eb4e54af58a0d",
     "bytes": 149056
+  },
+  {
+    "path": "assets/opening/patch-glyphs-v181.ttf",
+    "sha256": "252f61f3502dc7d2c4bc9d0dca7a3093fda0687620482351ed766192770fbd0e",
+    "bytes": 36156
+  },
+  {
+    "path": "assets/opening/roam-glyphs.ttf",
+    "sha256": "bfbb2642a5489e1aa1839a3ac4c90fc5ce4d5010e712130bca5fa1d16dead544",
+    "bytes": 90324
+  },
+  {
+    "path": "assets/opening/title-backdrop.webp",
+    "sha256": "a6e048eece4f152d34ebeaa218ee1f1862dd2652398c7e5c1358b6b332f999f9",
+    "bytes": 364844
   },
   {
     "path": "assets/opening/title-font-0.ttf",
@@ -25,9 +70,69 @@
     "bytes": 41780
   },
   {
+    "path": "assets/opening/wardrobe-v110-glyphs.ttf",
+    "sha256": "130c848bf33cbdaabde3a26ce784150693be05f91895c70687a0483cb4b19a97",
+    "bytes": 26332
+  },
+  {
+    "path": "assets/regions/r01.webp",
+    "sha256": "283b9cb9b502f9696a3b711699c41433de5902883066bb1cc2725e7b251a66fd",
+    "bytes": 212888
+  },
+  {
+    "path": "assets/regions/r02.webp",
+    "sha256": "1050cd0cd63dac834b7b0a82110c6d79490ed636bbf64bb15d5a29812765e586",
+    "bytes": 226788
+  },
+  {
+    "path": "assets/regions/r05.webp",
+    "sha256": "e7e5a88e68ac7ba1609fa88960808ac1d29fba021f46754b121b721d7f687875",
+    "bytes": 193006
+  },
+  {
+    "path": "assets/regions/r07.webp",
+    "sha256": "7871b8985f7485ebf9f6a5636e0909c0e6362e2bd60026c79ee1846666c690db",
+    "bytes": 282524
+  },
+  {
+    "path": "assets/regions/r09.webp",
+    "sha256": "dab651c2fc670773a37f084952530a7ed39207214f8f14ab4dd7ea9f1e9a01d0",
+    "bytes": 158914
+  },
+  {
+    "path": "assets/regions/r10.webp",
+    "sha256": "6dc9c9cc9cc61f64c05bc027cf5bc962274e45e631b3fc18fb24d97c6a2d0f76",
+    "bytes": 188954
+  },
+  {
+    "path": "assets/regions/region-scenes-atlas.webp",
+    "sha256": "d6834d35bd20e1ca2372cc9f0659380b6d0f3887e2c8239c9d75397dcd55d52a",
+    "bytes": 590050
+  },
+  {
     "path": "assets/statusbar/shrine-courtyard-v1.webp",
     "sha256": "d14f6149338591c6217ac56b2b7146d149ec5fecf7a53cb19d0a154992d43457",
     "bytes": 659496
+  },
+  {
+    "path": "assets/ui/ema-board.webp",
+    "sha256": "13afa6f2e3c3f171064cf1f7cf724a461eb939f9a06648530e69635492f09f64",
+    "bytes": 216420
+  },
+  {
+    "path": "assets/ui/map-header.webp",
+    "sha256": "37ab6279f856afb1587bad6b75ba51607ee3e8c25f63d0ed4a7b98f201a0465e",
+    "bytes": 227792
+  },
+  {
+    "path": "assets/ui/walking-actors.webp",
+    "sha256": "28d25cd52bf67647ced07fbd7bd0309c46fabe59755b691b49924a24389754b9",
+    "bytes": 947938
+  },
+  {
+    "path": "assets/ui/wardrobe.webp",
+    "sha256": "f2430488844e2ab0933a809a7e6d92ecb53bb9bd5b523ad6862d57e63d8356a3",
+    "bytes": 174104
   },
   {
     "path": "assets/wardrobe/player-atlas.webp",
@@ -115,6 +220,16 @@
     "bytes": 536786
   },
   {
+    "path": "assets/wardrobe/unlocks/player-school-portrait.png",
+    "sha256": "c1c2d171281ad1e52b396b934850c37b6bccfee3652f528f79a55cb7f9621b4b",
+    "bytes": 1200640
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-school-sprites.png",
+    "sha256": "251a666823e6c09377c633cf82f5c1cfd54e946707e331e0a9cd05aba983728a",
+    "bytes": 1455809
+  },
+  {
     "path": "assets/wardrobe/unlocks/player-seabreeze-portrait.webp",
     "sha256": "16605791eb9a72a253d9c98f73abcbe00207849ba5cd3604a7e9528edc008c92",
     "bytes": 120070
@@ -143,6 +258,16 @@
     "path": "assets/wardrobe/unlocks/tomoe-aoba-sprites.webp",
     "sha256": "e2950c9e59adb0f540791a4b47058fb4e25dec8eef515163320e1e35f539f197",
     "bytes": 484896
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-city-portrait.png",
+    "sha256": "95d57359002c466c3729c4314c6aa00674ed96e9f12c761c8d178f5ed963f46f",
+    "bytes": 1278450
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-city-sprites.png",
+    "sha256": "4b0067a0d51d32f11b157d43a554ebb88ddcf8e94e179254a562366375201a6e",
+    "bytes": 1523051
   },
   {
     "path": "assets/wardrobe/unlocks/tomoe-grove-portrait.webp",
@@ -175,6 +300,26 @@
     "bytes": 501032
   },
   {
+    "path": "assets/wardrobe/unlocks/tomoe-school-human-portrait.png",
+    "sha256": "83e720ca0a8c1d64541f1da0dffd5296611dcf4db29e829a0f0dbd5806b5899b",
+    "bytes": 850510
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-school-human-sprites.png",
+    "sha256": "20d85e2d8a9cecc8d4212eb4b37202edc57bcbf71181c766f801c23e891b827d",
+    "bytes": 1240003
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-school-portrait.png",
+    "sha256": "ec85ca44b251eadda03d23f221e874a833b1e7479531f8c92b90c7259a6f36b3",
+    "bytes": 979078
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-school-sprites.png",
+    "sha256": "c6a1defda804554fd97449e1f9d5b691a6e61455f7c21bfccd4b3b5af1f8891a",
+    "bytes": 1466656
+  },
+  {
     "path": "assets/wardrobe/unlocks/tomoe-swim-portrait.webp",
     "sha256": "e39492472b751c2da20c95f0a81a6cd4962d43b409940b4adb2ab78b5c19cb0b",
     "bytes": 201770
@@ -185,99 +330,9 @@
     "bytes": 514344
   },
   {
-    "path": "assets/ui/walking-actors.webp",
-    "sha256": "28d25cd52bf67647ced07fbd7bd0309c46fabe59755b691b49924a24389754b9",
-    "bytes": 947938
-  },
-  {
-    "path": "assets/map/overworld.webp",
-    "sha256": "663a369827b900a7426477577f02b5eba024b62f50cc43c14881a4aac4abc908",
-    "bytes": 784960
-  },
-  {
-    "path": "assets/regions/r01.webp",
-    "sha256": "283b9cb9b502f9696a3b711699c41433de5902883066bb1cc2725e7b251a66fd",
-    "bytes": 212888
-  },
-  {
-    "path": "assets/regions/r02.webp",
-    "sha256": "1050cd0cd63dac834b7b0a82110c6d79490ed636bbf64bb15d5a29812765e586",
-    "bytes": 226788
-  },
-  {
-    "path": "assets/regions/r05.webp",
-    "sha256": "e7e5a88e68ac7ba1609fa88960808ac1d29fba021f46754b121b721d7f687875",
-    "bytes": 193006
-  },
-  {
-    "path": "assets/regions/r07.webp",
-    "sha256": "7871b8985f7485ebf9f6a5636e0909c0e6362e2bd60026c79ee1846666c690db",
-    "bytes": 282524
-  },
-  {
-    "path": "assets/regions/r09.webp",
-    "sha256": "dab651c2fc670773a37f084952530a7ed39207214f8f14ab4dd7ea9f1e9a01d0",
-    "bytes": 158914
-  },
-  {
-    "path": "assets/regions/r10.webp",
-    "sha256": "6dc9c9cc9cc61f64c05bc027cf5bc962274e45e631b3fc18fb24d97c6a2d0f76",
-    "bytes": 188954
-  },
-  {
-    "path": "assets/regions/region-scenes-atlas.webp",
-    "sha256": "d6834d35bd20e1ca2372cc9f0659380b6d0f3887e2c8239c9d75397dcd55d52a",
-    "bytes": 590050
-  },
-  {
-    "path": "assets/ui/map-header.webp",
-    "sha256": "37ab6279f856afb1587bad6b75ba51607ee3e8c25f63d0ed4a7b98f201a0465e",
-    "bytes": 227792
-  },
-  {
-    "path": "assets/ui/ema-board.webp",
-    "sha256": "13afa6f2e3c3f171064cf1f7cf724a461eb939f9a06648530e69635492f09f64",
-    "bytes": 216420
-  },
-  {
-    "path": "assets/ui/wardrobe.webp",
-    "sha256": "f2430488844e2ab0933a809a7e6d92ecb53bb9bd5b523ad6862d57e63d8356a3",
-    "bytes": 174104
-  },
-  {
-    "path": "assets/opening/title-backdrop.webp",
-    "sha256": "a6e048eece4f152d34ebeaa218ee1f1862dd2652398c7e5c1358b6b332f999f9",
-    "bytes": 364844
-  },
-  {
-    "path": "assets/opening/roam-glyphs.ttf",
-    "sha256": "bfbb2642a5489e1aa1839a3ac4c90fc5ce4d5010e712130bca5fa1d16dead544",
-    "bytes": 90324
-  },
-  {
-    "path": "assets/opening/patch-glyphs-v181.ttf",
-    "sha256": "252f61f3502dc7d2c4bc9d0dca7a3093fda0687620482351ed766192770fbd0e",
-    "bytes": 36156
-  },
-  {
-    "path": "assets/wardrobe/unlocks/player-school-portrait.png",
-    "sha256": "c1c2d171281ad1e52b396b934850c37b6bccfee3652f528f79a55cb7f9621b4b",
-    "bytes": 1200640
-  },
-  {
-    "path": "assets/wardrobe/unlocks/tomoe-yako-portrait.png",
-    "sha256": "6ea6daff911e679e4de90dcba68a4a42e196219d3f9a43cc1dc748e502f928af",
-    "bytes": 1497482
-  },
-  {
-    "path": "assets/wardrobe/unlocks/tomoe-school-human-sprites.png",
-    "sha256": "20d85e2d8a9cecc8d4212eb4b37202edc57bcbf71181c766f801c23e891b827d",
-    "bytes": 1240003
-  },
-  {
-    "path": "assets/wardrobe/unlocks/tomoe-school-sprites.png",
-    "sha256": "c6a1defda804554fd97449e1f9d5b691a6e61455f7c21bfccd4b3b5af1f8891a",
-    "bytes": 1466656
+    "path": "assets/wardrobe/unlocks/tomoe-winter-portrait.png",
+    "sha256": "4c54314f1183eb7799e666103aa200bffbfeb1a865192e442926c2dc0f48e768",
+    "bytes": 1177243
   },
   {
     "path": "assets/wardrobe/unlocks/tomoe-winter-sprites.png",
@@ -285,43 +340,13 @@
     "bytes": 1594624
   },
   {
-    "path": "assets/wardrobe/unlocks/tomoe-school-human-portrait.png",
-    "sha256": "83e720ca0a8c1d64541f1da0dffd5296611dcf4db29e829a0f0dbd5806b5899b",
-    "bytes": 850510
-  },
-  {
-    "path": "assets/wardrobe/unlocks/tomoe-winter-portrait.png",
-    "sha256": "4c54314f1183eb7799e666103aa200bffbfeb1a865192e442926c2dc0f48e768",
-    "bytes": 1177243
-  },
-  {
-    "path": "assets/wardrobe/unlocks/tomoe-city-portrait.png",
-    "sha256": "95d57359002c466c3729c4314c6aa00674ed96e9f12c761c8d178f5ed963f46f",
-    "bytes": 1278450
+    "path": "assets/wardrobe/unlocks/tomoe-yako-portrait.png",
+    "sha256": "6ea6daff911e679e4de90dcba68a4a42e196219d3f9a43cc1dc748e502f928af",
+    "bytes": 1497482
   },
   {
     "path": "assets/wardrobe/unlocks/tomoe-yako-sprites.png",
     "sha256": "63286d50be2efa8b08d08d435d8588de06e769c708f86f3f2d68ea3c0a5a5df6",
     "bytes": 1699667
-  },
-  {
-    "path": "assets/wardrobe/unlocks/player-school-sprites.png",
-    "sha256": "251a666823e6c09377c633cf82f5c1cfd54e946707e331e0a9cd05aba983728a",
-    "bytes": 1455809
-  },
-  {
-    "path": "assets/wardrobe/unlocks/tomoe-school-portrait.png",
-    "sha256": "ec85ca44b251eadda03d23f221e874a833b1e7479531f8c92b90c7259a6f36b3",
-    "bytes": 979078
-  },
-  {
-    "path": "assets/wardrobe/unlocks/tomoe-city-sprites.png",
-    "sha256": "4b0067a0d51d32f11b157d43a554ebb88ddcf8e94e179254a562366375201a6e",
-    "bytes": 1523051
-  },
-  {
-    "path": "assets/opening/wardrobe-v110-glyphs.ttf",
-    "sha256": "130c848bf33cbdaabde3a26ce784150693be05f91895c70687a0483cb4b19a97",
-    "bytes": 26332
   }
 ]

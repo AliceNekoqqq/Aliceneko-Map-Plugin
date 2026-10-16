@@ -1,0 +1,37 @@
+{
+  "version": "1",
+  "source": "built-in image_gen",
+  "assets": [
+    {
+      "file": "r01-courtyard-v1.webp",
+      "source": "built-in image_gen",
+      "reference": "assets/regions/time-of-day/r01-dusk.webp (style reference)",
+      "prompt": "Use case: illustration-story\nAsset type: wide interactive game stage background for the shrine courtyard leaf-gathering minigame\nInput images: Image 1 is a style reference for this project's warm, detailed Japanese neighborhood environment; create a new close-up location, do not copy its layout.\nScene/backdrop: a quiet Japanese shrine courtyard in late autumn, stone paving, wooden veranda and a glimpse of vermilion architecture, distant maple trees in soft afternoon light.\nSubject: a welcoming, tactile courtyard clearing where the player gathers fallen leaves.\nStyle/medium: polished painterly anime game background with crisp hand-painted detail, gentle filmic light, matching the supplied environment reference.\nComposition/framing: wide 3:2 landscape; camera close to the ground at a slight angle; keep the central paving uncluttered so interactive leaves, basket and controls can be layered on top; detailed garden edges frame the scene.\nLighting/mood: golden afternoon, calm, warm and quietly magical.\nConstraints: no people, no characters, no basket, no UI, no icons, no text, no symbols, no watermark."
+    },
+    {
+      "file": "r02-garden-v1.webp",
+      "source": "built-in image_gen",
+      "reference": "assets/regions/time-of-day/r02-dusk.webp (style reference)",
+      "prompt": "Use case: illustration-story\nAsset type: wide interactive game stage background for a gentle neighborhood-cat minigame\nInput images: Image 1 is a style reference for this project's warmly lit Japanese residential lane; create a new close-up garden corner, do not copy the street composition.\nScene/backdrop: the quiet side garden of an old Japanese home, with a low stone wall, potted camellia, weathered wooden engawa and a small patch of sunlit ground.\nSubject: an inviting calm corner where a cautious neighborhood cat might sit, leaving the middle-right foreground open for the cat illustration.\nStyle/medium: polished painterly anime game background with crisp hand-painted detail, matching the supplied environment reference.\nComposition/framing: wide 3:2 landscape; eye-level with a small cat; layered plants at the far edges, open clear ground through the center; intimate close-up rather than a street view.\nLighting/mood: gentle late-afternoon light, safe, patient and serene.\nConstraints: no cat, no people, no characters, no UI, no icons, no text, no symbols, no watermark."
+    },
+    {
+      "file": "r04-stream-v1.webp",
+      "source": "built-in image_gen",
+      "reference": "assets/regions/time-of-day/r04-dusk.webp (style reference)",
+      "prompt": "Use case: illustration-story\nAsset type: wide interactive game stage background for an origami boat minigame\nInput images: Image 1 is a style reference for this project's richly detailed Japanese riverside setting; create a closer view of the water, do not copy the path and bench layout.\nScene/backdrop: a shallow clear stream in a Japanese riverside park, water flowing between mossy banks, reeds and small flowers, a few rounded stones visible in the channel.\nSubject: a friendly miniature watercourse for a folded paper boat, clearly readable as a stream.\nStyle/medium: polished painterly anime game background with crisp hand-painted detail, matching the supplied environment reference.\nComposition/framing: wide 3:2 landscape; slight overhead three-quarter view; make the flowing water occupy the center and leave a navigable open channel from the upper middle toward the foreground; keep the banks along the sides.\nLighting/mood: fresh afternoon light, tranquil, softly sparkling water.\nConstraints: no paper boat, no people, no characters, no buildings, no UI, no icons, no text, no symbols, no watermark."
+    },
+    {
+      "file": "r06-coastal-platform-v1.webp",
+      "source": "built-in image_gen",
+      "reference": "assets/regions/time-of-day/r06-dusk.webp (style reference)",
+      "prompt": "Use case: illustration-story\nAsset type: wide interactive game stage background for a coastal railway-station postcard minigame\nInput images: Image 1 is a style reference for this project's coastal Japanese tram-stop environment; create a new close-up passenger viewpoint, do not copy its shoreline layout.\nScene/backdrop: a small seaside local-train platform with a wooden bench, tiled platform, safe guard fence, curving rails clearly separated from the waiting area, blue sea, distant lighthouse and green headland.\nSubject: an inviting postcard-worthy view from safely inside the station platform.\nStyle/medium: polished painterly anime game background with crisp hand-painted detail, matching the supplied environment reference.\nComposition/framing: wide 3:2 landscape; view from the passenger side of the platform looking past a fence toward the sea and lighthouse; keep the foreground bench and lower third relatively calm for an overlaid postcard card; no one is on the tracks or shore.\nLighting/mood: late-day sea breeze, soft coral-gold reflections and a peaceful travel mood.\nConstraints: no people, no characters, no visible train, no UI, no icons, no text, no symbols, no watermark."
+    },
+    {
+      "file": "neighborhood-cat-v1.webp",
+      "source": "built-in image_gen",
+      "reference": "assets/regions/time-of-day/r02-dusk.webp (style reference)",
+      "transparent_background": true,
+      "prompt": "Use case: illustration-story\nAsset type: transparent character illustration used as a responsive neighborhood cat in a gentle minigame\nScene/backdrop: fully transparent.\nSubject: one small Japanese neighborhood cat, a distinctive consistent individual with cream-white fur, a charcoal patch over one ear and across the tail, soft amber-green eyes, modestly fluffy fur; cautious seated pose, ears alert but relaxed, tail wrapped near paws.\nStyle/medium: polished hand-painted anime game illustration with clean readable silhouette and natural cat proportions, matching the project's warm Japanese neighborhood environment.\nComposition/framing: centered full body, facing three-quarters toward the viewer, generous transparent margin, designed to scale from small distant cat to closer foreground cat.\nLighting/mood: soft warm natural light, gentle and curious.\nConstraints: transparent background, only one cat, no collar, no props, no ground plane or cast shadow, no text, no icon, no border, no watermark."
+    }
+  ]
+}
