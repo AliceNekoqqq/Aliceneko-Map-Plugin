@@ -64,16 +64,17 @@ function createMikageActivities(global) {
     {at:11,title:'灯火收摊后',text:'摊主记得的不是最热闹的一年，而是散场时有人把最后一盏纸灯送回店里。巴卫轻声说，记住一件小事，比记住一整段年月容易。你们合上旧物册，也留下一页新的空白。'},
   ];
   let volatileMemoryBook = {schema:1,entries:{}};
+  let memoryStoragePersistent = true;
   function readMemoryBook(){
     const entries={...(volatileMemoryBook.entries||{})};
-    try{const raw=global.localStorage?.getItem(MEMORY_STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(parsed?.schema===1&&parsed.entries&&typeof parsed.entries==='object')Object.assign(entries,parsed.entries);}}
-    catch{}
+    try{const storage=global.localStorage;if(!storage)memoryStoragePersistent=false;const raw=storage?.getItem(MEMORY_STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(parsed?.schema===1&&parsed.entries&&typeof parsed.entries==='object')Object.assign(entries,parsed.entries);}}
+    catch{memoryStoragePersistent=false;}
     return {schema:1,entries};
   }
   function writeMemoryBook(book){
     volatileMemoryBook={schema:1,entries:{...(book.entries||{})}};
-    try{global.localStorage?.setItem(MEMORY_STORAGE_KEY,JSON.stringify(volatileMemoryBook));return true;}
-    catch{return false;}
+    try{const storage=global.localStorage;if(!storage)throw new Error('local storage unavailable');storage.setItem(MEMORY_STORAGE_KEY,JSON.stringify(volatileMemoryBook));memoryStoragePersistent=true;return true;}
+    catch{memoryStoragePersistent=false;return false;}
   }
   function saveMemories(region,detail,ids){
     const book=readMemoryBook(),now=new Date().toISOString(),saved=[];
@@ -83,8 +84,8 @@ function createMikageActivities(global) {
       const entry={id,region:meta.region,place:meta.place,item:meta.item,line:meta.line,detail:String(detail||'').slice(0,320),firstSeen:previous?.firstSeen||now,lastSeen:now,plays:(Number(previous?.plays)||0)+1};
       book.entries[id]=entry;saved.push({...entry,newlyAdded:!previous});
     }
-    writeMemoryBook(book);
-    return saved;
+    const persistent=writeMemoryBook(book);
+    return saved.map(entry=>({...entry,persistent}));
   }
   function el(tag, cls, text) { const n=document.createElement(tag); if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n; }
   function icon(name, cls) {
@@ -131,9 +132,9 @@ function createMikageActivities(global) {
       const episodes=el('div','mka-memory-episodes');
       MEMORY_EPISODES.forEach(episode=>{const unlocked=count>=episode.at,row=el('article',`mka-memory-episode${unlocked?' is-unlocked':''}`);row.append(el('span','mka-memory-number',unlocked?'已解锁':`再收 ${episode.at-count} 件`),el('h4','',episode.title),el('p','',unlocked?episode.text:'散策手帖里的小物件会慢慢拼出这段故事。'));episodes.append(row);});
       panel.append(episodes);
-      const actions=el('div','mka-memory-actions'),status=el('p','mka-memory-status','仅保存在本设备当前浏览器，不调用模型；可以导出备份后换设备继续。');
-      button('导出备份',()=>{try{const payload={schema:1,exportedAt:new Date().toISOString(),entries:readMemoryBook().entries},blob=new global.Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=global.URL.createObjectURL(blob),link=el('a');link.href=url;link.download='御影神社_旧物回忆册.json';link.click();global.setTimeout(()=>global.URL.revokeObjectURL(url),1000);status.textContent='回忆册备份已开始下载。';}catch{status.textContent='当前浏览器暂不支持下载备份。';}},'mka-quiet',actions);
-      button('复制已收录摘要',async()=>{const lines=MEMORY_ITEMS.filter(item=>known.has(item.id)).map(item=>{const record=book.entries[item.id];return `- ${item.item}（${item.place}）：${item.line}${record?.detail?`\n  ${record.detail}`:''}`;});const summary=`【御影神社·旧物回忆册 ${count}/${MEMORY_ITEMS.length}】\n${lines.join('\n')||'还没有收录旧物。'}`;try{await global.navigator?.clipboard?.writeText(summary);status.textContent='摘要已复制；粘贴到对话里，巴卫就能接着回忆。';}catch{const area=el('textarea','mka-memory-copy-area');area.value=summary;panel.append(area);area.focus();area.select();let copied=false;try{copied=!!document.execCommand('copy');}catch{}area.remove();status.textContent=copied?'摘要已复制；粘贴到对话里，巴卫就能接着回忆。':'复制受限，可以用导出备份保存。';}},'mka-quiet',actions);
+      const actions=el('div','mka-memory-actions'),status=el('p','mka-memory-status',memoryStoragePersistent?'仅保存在本设备当前浏览器，不调用模型；可以导出备份后换设备继续。':'当前浏览器没有允许本地保存；回忆暂留在打开的页面里，建议马上导出备份。');
+      button('导出备份',()=>{try{const payload={schema:1,exportedAt:new Date().toISOString(),entries:readMemoryBook().entries},blob=new global.Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=global.URL.createObjectURL(blob),link=el('a');link.href=url;link.download='御影神社_旧物回忆册.json';global.document.body.append(link);link.click();link.remove();global.setTimeout(()=>global.URL.revokeObjectURL(url),1000);status.textContent='回忆册备份已开始下载。';}catch{status.textContent='当前浏览器暂不支持下载备份。';}},'mka-quiet',actions);
+      button('复制已收录摘要',async()=>{const lines=MEMORY_ITEMS.filter(item=>known.has(item.id)).map(item=>{const record=book.entries[item.id];return `- ${item.item}（${item.place}）：${item.line}${record?.detail?`\n  ${record.detail}`:''}`;});const summary=`【御影神社·旧物回忆册 ${count}/${MEMORY_ITEMS.length}】\n${lines.join('\n')||'还没有收录旧物。'}`;try{const clipboard=global.navigator?.clipboard;if(!clipboard?.writeText)throw new Error('clipboard unavailable');await clipboard.writeText(summary);status.textContent='摘要已复制；粘贴到对话里，巴卫就能接着回忆。';}catch{const area=el('textarea','mka-memory-copy-area');area.value=summary;panel.append(area);area.focus();area.select();let copied=false;try{copied=!!document.execCommand('copy');}catch{}area.remove();status.textContent=copied?'摘要已复制；粘贴到对话里，巴卫就能接着回忆。':'复制受限，可以用导出备份保存。';}},'mka-quiet',actions);
       const input=el('input','mka-memory-import');input.type='file';input.accept='application/json,.json';input.hidden=true;input.addEventListener('change',async()=>{const file=input.files?.[0];if(!file)return;if(file.size>500000){status.textContent='备份文件过大，未导入。';return;}try{const parsed=JSON.parse(await file.text()),incoming=parsed?.entries;if(!incoming||typeof incoming!=='object')throw new Error('invalid');const merged=readMemoryBook();for(const item of MEMORY_ITEMS){const record=incoming[item.id];if(record&&record.id===item.id)merged.entries[item.id]={...merged.entries[item.id],...record,region:item.region,item:item.item,line:item.line,detail:String(record.detail||'').slice(0,320)};}writeMemoryBook(merged);overlay.remove();showMemoryBook();}catch{status.textContent='没有识别到有效的御影神社回忆册备份。';}});
       button('导入备份',()=>input.click(),'mka-quiet',actions);actions.append(input);panel.append(actions,status);overlay.append(panel);
       overlay.addEventListener('click',event=>{if(event.target===overlay){overlay.remove();bookButton?.focus({preventScroll:true});}});root.append(overlay);close.focus({preventScroll:true});
@@ -154,6 +155,7 @@ function createMikageActivities(global) {
       result.hidden=false;result.replaceChildren(icon('seal'),el('div','',`小事完成 · ${meta[3]}`),el('p','',detail||meta[4]));
       const newlyAdded=memories.filter(item=>item.newlyAdded);
       result.append(el('p','mka-memory-found',newlyAdded.length?`回忆册新添：${newlyAdded.map(item=>item.item).join('、')}`:'回忆册已收好这件小物，今天的记录也更新了。'));
+      if(memories.some(item=>item.persistent===false))result.append(el('p','mka-memory-storage-warning','浏览器暂不允许本地保存；关闭页面前可以打开回忆册导出备份。'));
       say('这一刻已经收好。也可以再玩一次，换一种搭配。');
       if(typeof opts.onComplete==='function')opts.onComplete({region,title:meta[1],detail:detail||meta[4],stamp:meta[3],...(extra||{}),memories});
     }
