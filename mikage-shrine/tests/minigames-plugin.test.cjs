@@ -1,0 +1,52 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+
+const root=path.resolve(__dirname,'..');
+const moduleSource=fs.readFileSync(path.join(root,'runtime/minigames.mjs'),'utf8');
+const moduleUrl='data:text/javascript;base64,'+Buffer.from(moduleSource).toString('base64');
+
+(async()=>{
+  const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/tmp/mikage-audit/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+  const page=await browser.newPage({viewport:{width:375,height:812},deviceScaleFactor:1});
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.route('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@**',async route=>{
+    const name=new URL(route.request().url()).pathname.split('/').pop();
+    const file=name.endsWith('.ttf')?path.join(root,'assets/opening',name):path.join(root,'assets/activities',name);
+    if(!fs.existsSync(file))return route.abort();
+    return route.fulfill({path:file,contentType:name.endsWith('.ttf')?'font/ttf':'image/webp',headers:{'access-control-allow-origin':'*'}});
+  });
+  await page.setContent('<!doctype html><html><body style="margin:0;overflow:auto"><main id="statusbar" style="height:120px">map only</main></body></html>');
+  await page.evaluate(async url=>{const module=await import(url);module.start();},moduleUrl);
+  assert.equal(await page.evaluate(()=>typeof window.MikageMinigames.open),'function','fourth script registers its open API');
+  await page.evaluate(()=>{window.completions=[];window.closes=0;window.MikageMinigames.open({region:'R01',period:'day',reducedMotion:true,onComplete:r=>completions.push(r),onClose:()=>closes++});});
+  assert.equal(await page.locator('[data-mikage-minigame-host]').count(),1,'launch creates one isolated popup host');
+  assert.equal(await page.evaluate(()=>document.querySelector('#statusbar').offsetHeight),120,'popup does not expand statusbar');
+  assert.equal(await page.evaluate(()=>document.body.style.overflow),'hidden','popup locks background scrolling');
+  assert.equal(await page.getByRole('heading',{name:'庭前拾叶',exact:true}).count(),1,'intro card previews the selected activity');
+  assert.equal(await page.locator('.mkg-cover').evaluate(img=>img.decode().then(()=>img.naturalWidth)),1536,'prepared scene art loads into the popup');
+  await page.getByRole('button',{name:'开始这段散策',exact:true}).click();
+  assert.equal(await page.locator('.mka').count(),1,'game mounts only after the intro step');
+  await page.getByRole('button',{name:'穿堂风',exact:true}).click();
+  for(let i=1;i<=5;i++)await page.getByRole('button',{name:`收起第${i}片落叶`,exact:true}).click();
+  await page.getByRole('button',{name:'树下留几片，铺成柔软一角',exact:true}).click();
+  assert.equal(await page.evaluate(()=>completions.length),1,'game result reaches the map callback');
+  assert.equal(await page.evaluate(()=>completions[0].region),'R01');
+  assert.ok(await page.getByText('小事完成 · 庭前拾叶',{exact:true}).count());
+  await page.getByRole('button',{name:'关闭互动弹窗',exact:true}).click();
+  assert.equal(await page.locator('[data-mikage-minigame-host]').count(),0,'close removes the entire popup');
+  assert.equal(await page.evaluate(()=>document.body.style.overflow),'auto','close restores prior page scrolling');
+  assert.equal(await page.evaluate(()=>closes),1,'close callback runs once');
+  await page.evaluate(()=>window.MikageMinigames.open({region:'R06',period:'dusk',reducedMotion:true,onClose:()=>closes++}));
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('[data-mikage-minigame-host]').count(),0,'Escape closes from the intro view');
+  assert.equal(await page.evaluate(()=>closes),2);
+  await page.evaluate(()=>window.MikageMinigames.open({region:'R02',period:'day',reducedMotion:true}));
+  assert.equal(await page.locator('.mkg-cat').evaluate(img=>img.decode().then(()=>img.naturalWidth)),1536,'cat scene art is available in the popup');
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=375),'375px popup has no page-level horizontal overflow');
+  await page.keyboard.press('Escape');
+  assert.deepEqual(errors,[]);
+  console.log('PASS: separate popup; no statusbar expansion; intro-to-game flow; result bridge; close and Escape; scroll restoration; 375px viewport; prepared art');
+  await browser.close();
+})().catch(error=>{console.error(error);process.exitCode=1});

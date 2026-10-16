@@ -13,7 +13,7 @@ from fontTools.varLib.instancer import instantiateVariableFont
 
 
 ROOT = Path(__file__).resolve().parent.parent
-SCAN_FILES = ["roam-controller.js", "activities.js", "panels.html", "roam.css"]
+SCAN_FILES = ["roam-controller.js", "activities.js", "panels.html", "roam.css", "minigames-host.mjs", "minigames.css"]
 SOURCE_URL = "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf"
 LICENSE_URL = "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/OFL.txt"
 
@@ -25,6 +25,8 @@ def sha256(path: Path) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--font-source", type=Path, required=True, help="NotoSerifSC[wght].ttf from Google Fonts")
+    parser.add_argument("--output-name", default="roam-glyphs.ttf", help="Subset file name under assets/opening")
+    parser.add_argument("--manifest-name", default="roam-font-manifest.json", help="Manifest file under src")
     args = parser.parse_args()
     source = args.font_source.resolve()
     if not source.is_file():
@@ -33,7 +35,7 @@ def main() -> None:
     covered: set[int] = set()
     existing_counts: dict[str, int] = {}
     for path in (ROOT / "assets/opening").glob("*.ttf"):
-        if path.name == "roam-glyphs.ttf":
+        if path.name == "roam-glyphs.ttf" or path.name == args.output_name:
             continue
         cmap = set(TTFont(path).getBestCmap())
         covered.update(cmap)
@@ -62,7 +64,7 @@ def main() -> None:
     subsetter.populate(unicodes=missing)
     subsetter.subset(font)
 
-    out = ROOT / "assets/opening/roam-glyphs.ttf"
+    out = ROOT / "assets/opening" / args.output_name
     font.save(out)
     actual = set(TTFont(out).getBestCmap())
     if actual != missing:
@@ -82,7 +84,7 @@ def main() -> None:
     )
 
     manifest = {
-        "file": "assets/opening/roam-glyphs.ttf",
+        "file": f"assets/opening/{args.output_name}",
         "family": "Mikage Serif",
         "weight": 500,
         "style": "normal",
@@ -102,13 +104,16 @@ def main() -> None:
         "coverageVerified": True,
         "remainingMissing": [],
     }
-    (ROOT / "src/roam-font-manifest.json").write_text(
+    (ROOT / "src" / args.manifest_name).write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
     asset_manifest_path = ROOT / "asset-manifest.json"
     assets = json.loads(asset_manifest_path.read_text(encoding="utf-8"))
-    entry = next(item for item in assets if item["path"] == manifest["file"])
+    entry = next((item for item in assets if item["path"] == manifest["file"]), None)
+    if entry is None:
+        entry = {"path": manifest["file"]}
+        assets.append(entry)
     entry.update(sha256=manifest["sha256"], bytes=manifest["bytes"])
     asset_manifest_path.write_text(json.dumps(assets, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

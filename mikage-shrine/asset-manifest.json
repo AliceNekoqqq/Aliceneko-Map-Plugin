@@ -348,5 +348,10 @@
     "path": "assets/wardrobe/unlocks/tomoe-yako-sprites.png",
     "sha256": "63286d50be2efa8b08d08d435d8588de06e769c708f86f3f2d68ea3c0a5a5df6",
     "bytes": 1699667
+  },
+  {
+    "path": "assets/opening/minigames-v112-glyphs.ttf",
+    "sha256": "06f377f7788d2d1a1df0dcce0fa47c141d023c23bf449c2b1c4ef604ed5508ed",
+    "bytes": 102064
   }
 ]

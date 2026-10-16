@@ -33,6 +33,16 @@ const sceneCatalog=JSON.parse(sceneSource.slice(catalogStart,catalogEnd));
   assert.equal(await page.evaluate(()=>document.activeElement.getAttribute('aria-label')),'樱粉','persistent action retains keyboard focus');
   for(const c of ['米白','抹茶'])await click(c);await click('黑蜜黄豆粉');await click('完成这一签');await completed('R03');
   await mount('R04');await click('竹青');await click('尖首快行');await click('选好纸与船形');for(const c of ['对折纸角','折起两边','展开船身'])await click(c);await click('向右引导');assert.equal(await count(),0,'wrong route retries');for(const c of ['顺着中间','向左引导','向右引导'])await click(c);await completed('R04');
+  await mount('R04');await click('樱色');await click('宽底稳航');await click('选好纸与船形');for(const c of ['对折纸角','折起两边','展开船身'])await click(c);
+  await page.locator('.mka-stage').screenshot({path:'/tmp/mikage-audit/paperboat-mobile.png'});
+  async function dragRiver(step,direction){
+    const canvas=page.locator('.mka-river-canvas');const rect=await canvas.boundingBox();const lane={left:116,center:360,right:604}[direction],source=step?({left:116,center:360,right:604}[['left','right','center'][step-1]]):360;
+    const from={x:source,y:step?([126,232][step-1]+36):43},gateY=[126,232,338][step];
+    const xy=(p)=>({x:rect.x+p.x*rect.width/720,y:rect.y+p.y*rect.height/420});const a=xy(from),b=xy({x:lane,y:gateY}),c=xy({x:lane,y:gateY+42});
+    await page.mouse.move(a.x,a.y);await page.mouse.down();await page.mouse.move(b.x,b.y,{steps:16});await page.mouse.move(c.x,c.y,{steps:6});await page.mouse.up();
+  }
+  await dragRiver(0,'center');assert.match(await page.locator('.mka-progress').innerText(),/水门边打了个转/,'wrong dragged water gate can recover');
+  for(const [i,direction] of ['left','right','center'].entries())await dragRiver(i,direction);await completed('R04');
   await mount('R05');await click('往临海');await click('停靠展望坡');await click('沿途拍照');await click('把这段行程盖进票根');for(const c of ['盖一枚叶影','盖一枚花结','盖一枚电车'])await click(c);await completed('R05');
   await mount('R06');assert.equal(await page.locator('.mka-scene-art').evaluate(img=>img.decode().then(()=>img.naturalWidth)),1536,'coastal platform illustration loads locally');await page.locator('.mka-stage').screenshot({path:'/tmp/mikage-audit/activity-coast-375.png'});await click('海蓝胶片');await click('电车入站');await click('选好构图，开始留影');await click('盖下站台邮戳');await click('盖下海鸥邮戳');await click('愿每一次相逢都有回声。');await click('收好这张明信片');await completed('R06');assert.match(await page.locator('.mka-help').innerText(),/安全的站台/);
   await mount('R07');await click('看树皮的纹路');for(const c of ['寻找银杏','寻找蕨叶','寻找椿叶'])await click(c);await click('把叶片放到拓纸上');await click('樱粉');await click('轻轻压出叶脉');await completed('R07');
@@ -52,6 +62,6 @@ const sceneCatalog=JSON.parse(sceneSource.slice(catalogStart,catalogEnd));
   assert.equal(await page.evaluate(()=>document.activeElement.id),'outside-focus','async render never steals external focus');
   await page.evaluate(()=>current.dispose());await page.waitForTimeout(2900);assert.equal(await page.locator('.mka').count(),0,'dispose during flashing cleans timers');
   assert.deepEqual(errors,[]);
-  console.log('PASS: all ten completions; replay; cat patience; route retry; postcard context; firefly hints; drum freeplay; once-only callbacks; dispose; 375px overflow; keyboard/native controls; 44px hit targets');
+  console.log('PASS: all ten completions; replay; cat patience; paper-boat drag and button routes; wrong-gate recovery; postcard context; firefly hints; drum freeplay; once-only callbacks; dispose; 375px overflow; keyboard/native controls; 44px hit targets');
   await browser.close();
 })().catch(e=>{console.error(e);process.exitCode=1});
