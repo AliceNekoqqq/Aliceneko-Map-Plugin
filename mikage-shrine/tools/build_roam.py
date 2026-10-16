@@ -28,7 +28,7 @@ def build():
       <button class="dock-button" id="life" data-open="life" aria-label="打开布置与生活">@life@<span>生活</span></button>
       <button class="dock-button" id="journal-button" aria-expanded="false" aria-label="打开散策手帖">@journal@<span>小记</span></button>
       <button class="dock-button" id="buildings" aria-expanded="false" aria-label="打开修缮手帖">@repair@<span>修缮</span></button>
-    </nav><div id="roam-toast" class="roam-toast" role="status" hidden>@flower@<span id="roam-toast-text"></span></div>
+    </nav><div id="scene-dock-anchor"></div><section id="prop-sheet" class="prop-sheet" hidden></section><div id="roam-toast" class="roam-toast" role="status" hidden>@flower@<span id="roam-toast-text"></span></div>
     <section id="roam-activity" class="roam-activity" hidden aria-label="此地散策"></section>
     <section id="roam-journal" class="roam-journal" hidden aria-label="散策手帖"><header><h3>散策小记 <small id="journal-count"></small></h3><button id="close-journal" aria-label="收起散策手帖">@close@</button></header><p>把喜欢的一幕留在这里，也可以带入接下来的对话。</p><div class="memory-grid" id="memory-grid"></div></section>'''
     html = re.sub(r' <button class="world-object.*?</button>\n', '', html)
@@ -41,7 +41,7 @@ def build():
     # Stored decoration slots are display coordinates, not movement coordinates.
     html = html.replace("b.style.left=slot.x+'%';b.style.top=slot.y+'%';", "const anchors={north_eave:[84,22],south_eave:[91,34],floor_left:[84,81],floor_right:[93,67],garden_edge:[22,70],stone_path:[48,78],gate_eave:[29,39],gate_stand:[20,65],seat_left:[78,88],seat_right:[86,88]};const at=anchors[d.slot]||[slot.x,slot.y];b.style.left=at[0]+'%';b.style.top=at[1]+'%';")
     css = '\n'.join((SRC / name).read_text() for name in ['roam.css', 'activities.css'])
-    js = '\n'.join((SRC / name).read_text() for name in ['icons.js','navigation.js','activities.js','roam-controller.js'])
+    js = '\n'.join((SRC / name).read_text() for name in ['icons.js','navigation.js','activities.js','roam-controller.js','dev-ui.js'])
     html = html.replace('</head>', '<style>\n'+css+'\n</style></head>')
     html = html.replace('</body>', '<script>\n'+js.replace('</script', '<\\/script')+'\n</script></body>')
     # Resolve the exact same shared SVGs into the static dock, without a runtime
@@ -54,6 +54,12 @@ def build():
     (SRC / 'statusbar.html').write_text(html)
     scene = (SRC / 'scene-host.mjs').read_text()
     scene = replace_literal(scene, 'StatusbarHTML', html)
+    scene = replace_literal(scene, 'OpeningHTML', (SRC / 'opening.html').read_text())
+    mvu = (ROOT / 'runtime/mvu.mjs').read_text()
+    offset = mvu.index('const ShrineInitial = ') + len('const ShrineInitial = ')
+    initial, _ = json.JSONDecoder().raw_decode(mvu[offset:])
+    sandbox = (SRC / 'dev-sandbox.js').read_text().replace('__MIKAGE_INITIAL__', json.dumps(initial, ensure_ascii=False))
+    scene = scene.replace('export function start() {', 'export function start() {\n'+sandbox, 1)
     (ROOT / 'runtime/scene.mjs').write_text(scene)
     panel = (SRC / 'panels-base.html').read_text()
     preview = {
@@ -84,4 +90,4 @@ def build():
 
 if __name__ == '__main__':
     result = build()
-    print(json.dumps({'version':'1.8.0','statusbarBytes':len(result.encode()),'source':'src/statusbar.html'}))
+    print(json.dumps({'version':'1.8.1','statusbarBytes':len(result.encode()),'source':'src/statusbar.html'}))

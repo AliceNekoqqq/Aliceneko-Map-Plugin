@@ -68,17 +68,25 @@
 <section class="buildings-sheet" id="buildings-sheet" hidden aria-label="神社修缮手帖"><header><strong>神社修缮手帖</strong><button id="close-buildings" aria-label="收起修缮手帖">×</button></header><div id="facility-list"></div><div class="materials" id="materials"></div><p>和巴卫商量方案后，在故事中一起开工。庭院漫步、点灯与扫落叶不会推进故事时间。</p></section>
 </main><script>/* Decoration sprites read the same per-message snapshot as prose context. */
 (()=>{
+ const interactionTimers=new WeakMap();
+ const interactions={wind_chime:['wind','轻轻拨动风铃'],zabuton:['sit','在坐垫上歇一会儿'],morning_glory:['observe','看看花草'],lantern:['light','看看灯光'],bento:['food','看看便当'],tea_set:['food','看看茶具'],flower_tea:['food','看看花茶']};
  function render(doc,state){
-  const container=doc.querySelector('#life-scene-objects');if(!container)return;container.replaceChildren();if(state?.地图?.当前地区&&state.地图.当前地区!=='R01')return;
+  const container=doc.querySelector('#life-scene-objects');if(!container)return;
+  container.querySelectorAll('.life-scene-object').forEach(b=>clearTimeout(interactionTimers.get(b)));
+  container.replaceChildren();if(state?.地图?.当前地区&&state.地图.当前地区!=='R01')return;
   const engine=window.parent?.MikageShrineRuntime?.engine||window.MikageShrineRuntime?.engine;
   if(!engine?.life||!state?.生活)return;
   let view;try{view=engine.life.view(state);}catch{return;}
   for(const d of view.decorations){
    const zone=view.zones.find(x=>x.id===d.zone),slot=zone?.slots.find(x=>x.id===d.slot);if(!slot)continue;
-   const item=view.items.find(x=>x.id===d.item),b=doc.createElement('button');b.type='button';b.className='life-scene-object';b.style.left=slot.x+'%';b.style.top=slot.y+'%';b.dataset.item=d.item;b.dataset.lit=String(!!d.state?.lit);b.title=(item?.name||d.item)+' · '+(zone?.name||d.zone);b.setAttribute('aria-label',b.title+'，打开神社生活');
+   const item=view.items.find(x=>x.id===d.item),b=doc.createElement('button');b.type='button';b.className='life-scene-object';b.style.left=slot.x+'%';b.style.top=slot.y+'%';b.dataset.item=d.item;b.dataset.lit=String(!!d.state?.lit);b.title=(item?.name||d.item)+' · '+(zone?.name||d.zone);const interaction=interactions[d.item]||['observe','细看这件陈设'];b.dataset.interaction=interaction[0];b.setAttribute('aria-label',b.title+'，'+interaction[1]);
    const sprite=doc.createElement('span');sprite.className='life-prop prop-'+d.item;sprite.setAttribute('aria-hidden','true');
    if(!['wind_chime','lantern','zabuton','morning_glory','bento','tea_set'].includes(d.item)){sprite.classList.add('prop-fallback');sprite.textContent=(item?.name||d.item).slice(0,1);}
-   const label=doc.createElement('small');label.textContent=item?.name||d.item;b.append(sprite,label);b.addEventListener('click',()=>{if(window.MikageStatusBridge?.open)window.MikageStatusBridge.open('life');else if(window.ShrinePanel?.openLife)window.ShrinePanel.openLife();});container.append(b);
+   const label=doc.createElement('small');label.textContent=item?.name||d.item;b.append(sprite,label);b.addEventListener('click',()=>{
+    clearTimeout(interactionTimers.get(b));b.classList.remove('is-interacting');void sprite.offsetWidth;b.classList.add('is-interacting');
+    interactionTimers.set(b,setTimeout(()=>{b.classList.remove('is-interacting');interactionTimers.delete(b);},1400));
+    b.dispatchEvent(new CustomEvent('mikage:decoration-interact',{bubbles:true,composed:true,detail:{item:d.item,name:item?.name||d.item,zone:d.zone,slot:d.slot}}));
+   });container.append(b);
   }
  }
  window.MikageLifeScene={render};

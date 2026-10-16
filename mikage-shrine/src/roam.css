@@ -32,3 +32,20 @@
 @media(prefers-reduced-motion:reduce){.region-hotspot:before{animation:none}.region-hotspot .spot-icon{transition:none}}
 
 .life-scene-objects{z-index:1060}.life-scene-object .life-prop{width:30px;height:30px}.life-scene-object small{font-size:9px}
+/* In-place decoration gestures affect the original sprite only, never saved state. */
+.life-scene-object .life-prop{transform-origin:50% 85%}
+.life-scene-object.is-interacting .life-prop{filter:drop-shadow(0 0 5px #ffe5a2c4);animation:life-prop-observe 1.2s ease-in-out both}
+.life-scene-object.is-interacting[data-interaction=wind] .life-prop{transform-origin:50% 8%;animation:life-prop-wind 1.2s ease-in-out both}
+.life-scene-object.is-interacting[data-interaction=sit] .life-prop{animation:life-prop-sit 1.2s ease-in-out both}
+.life-scene-object.is-interacting[data-interaction=light] .life-prop{animation:life-prop-light 1.3s ease-in-out both}
+.life-scene-object.is-interacting[data-interaction=food] .life-prop{animation:life-prop-food 1.2s ease-in-out both}
+@keyframes life-prop-wind{0%,100%{transform:rotate(0)}20%{transform:rotate(15deg)}45%{transform:rotate(-11deg)}68%{transform:rotate(7deg)}85%{transform:rotate(-3deg)}}
+@keyframes life-prop-sit{0%,100%{transform:scale(1)}25%,65%{transform:scale(1.09,.86)}80%{transform:scale(.98,1.02)}}
+@keyframes life-prop-observe{0%,100%{transform:translateY(0) scale(1)}35%,65%{transform:translateY(-3px) scale(1.08)}}
+@keyframes life-prop-light{0%,100%{filter:drop-shadow(0 0 3px #ffe6a07a)}25%,75%{filter:drop-shadow(0 0 10px #ffde99e8) brightness(1.18)}}
+@keyframes life-prop-food{0%,100%{transform:translateY(0) rotate(0)}30%,65%{transform:translateY(-2px) rotate(-3deg)}}
+@media(prefers-reduced-motion:reduce){.life-scene-object.is-interacting .life-prop{animation:none!important;transform:none!important;filter:drop-shadow(0 0 6px #ffe5a2c4)}}
+
+/* 1.8.1: badges sit beside objects; furniture responds in place. */
+#hotspot-leaders{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}#hotspot-leaders line{stroke:#f9ecc69c;stroke-width:.18;stroke-dasharray:.5 .6}
+.prop-sheet,.dev-sheet{padding:14px 18px;background:#faf3e3;border-top:1px solid #d5c5a3;color:#657052}.prop-sheet p,.dev-sheet p{font-size:12px;line-height:1.8;margin:8px 0}.prop-sheet strong,.dev-sheet strong{font-size:14px;font-weight:500;letter-spacing:1px}.prop-sheet button,.dev-sheet button{font:inherit;font-size:11px;min-height:44px;padding:7px 12px;margin:3px 7px 0 0;border:1px solid #ccbea0;border-radius:8px;background:#eee8d6;color:#657052}.dev-sheet input,.dev-sheet select{font:inherit;width:100%;max-width:320px;margin:9px 8px 0 0;padding:10px;border:1px solid #c7b995;border-radius:7px;background:#fffaf0;min-height:44px}.shrine-game[data-testing=true] .game-hud{box-shadow:inset 0 3px #b19a6a}.shrine-game[data-testing=true] .game-hud small:after{content:" · TEST";color:#92703e}.prop-sheet[hidden]{display:none!important}
