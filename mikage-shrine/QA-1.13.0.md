@@ -20,6 +20,6 @@
 - `node tests/wardrobe-quests.test.cjs`：7项衣装任务通过。
 - `node tests/wardrobe-browser.test.cjs`：375px与1280px视口均无横向溢出，衣装图片加载完整。
 - `python tools/build_minigames.py` 与 `node --check runtime/minigames.mjs`：通过；游戏引擎构建产物约112 KB，留在仓库并按需下载。
-- `python tools/build_card.py`：从1.10.0原始卡生成1.13.0角色卡，卡片295,464字节；四个远程加载器分别为5,333、5,369、5,365、5,381字节，未嵌入Base64。小游戏引擎固定指向代码提交`41015e0211df15c2664abcc8055c56ca1a273560`。
+- `python tools/build_card.py`：从1.10.0原始卡生成1.13.0角色卡，卡片295,464字节；四个远程加载器分别为5,333、5,369、5,365、5,381字节，未嵌入Base64。小游戏引擎固定指向代码提交`05f83324ba9af0060ccbf3d23b803d8291e3e727`；六张新图固定指向素材提交`973b2148fa78fd053a667fd58c74f3e141e085b9`。
 - 手机截图复核团子、旅票、叶拓、萤火、太鼓和灯阵场景；交互画面使用预绘背景图、HTML/CSS与Canvas，SVG只留作少量图标。
 - 未在真实 SillyTavern 实例内导入测试；脚本加载顺序和实际聊天消息时序仍需玩家导入角色卡后实机验收。
