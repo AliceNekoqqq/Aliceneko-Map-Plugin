@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "test": "Status scene rendered",
+      "pass": true
+    },
+    {
+      "test": "Decoration does not open panel",
+      "pass": true
+    },
+    {
+      "test": "Wrong password remains off",
+      "pass": true
+    },
+    {
+      "test": "Correct password unlocks clone",
+      "pass": true,
+      "unlocked": {
+        "stage": 5,
+        "regions": 10,
+        "outfits": 10
+      }
+    },
+    {
+      "test": "Sandbox state mutations isolated",
+      "pass": true,
+      "writes": {
+        "mvu": 0,
+        "messages": 0,
+        "trigger": 0
+      }
+    },
+    {
+      "test": "Exit restores real state",
+      "pass": true
+    },
+    {
+      "test": "Opening watermark visible",
+      "pass": true,
+      "text": "唯一来源：Discord ·类脑社区·♡红豆粉♡"
+    }
+  ],
+  "errors": []
+}

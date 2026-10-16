@@ -1,0 +1,58 @@
+/* 1.8 · 小城慢慢走. All interactive art uses a shared, code-native icon set. */
+.shrine-game{border:1px solid #c4b48c;background:#f6efdf;border-radius:14px;box-shadow:0 6px 20px #253f3020;color:#4a5342}
+.game-hud{background:#f7f0e0;color:#48533f;border-bottom:1px solid #d6c7a6;padding:13px 17px}
+.game-hud small{color:#8e987f;font-size:8px;letter-spacing:2.5px}.game-hud strong{font-size:13px;letter-spacing:1px}.game-hud>span{color:#80745c;font-size:10px}
+.scene{aspect-ratio:3/2;background:#bcc7a6}.scene-background{image-rendering:auto}
+.scene-plaque{top:4%;left:4%;transform:none;background:#faf1dce8;color:#536043;border:1px solid #e8d4ac;border-radius:4px;padding:5px 12px;box-shadow:0 2px 9px #132c1926;font-size:12px;letter-spacing:2px}
+.walk-zone{z-index:5}.scene .pond,.scene>.world-object{display:none!important}.scene .work-site,.scene .road-work,.scene .garden-work{display:none!important}
+.region-hotspots{z-index:1080}.region-hotspot{width:44px;height:44px;min-width:44px;min-height:44px;border:0;background:transparent;box-shadow:none;padding:6px;color:#f5e5ba;text-shadow:none;display:grid;place-items:center;border-radius:50%;isolation:isolate}
+.region-hotspot .spot-icon{display:grid;place-items:center;width:29px;height:29px;background:#334b3fd9;border:1px solid #fff1cebd;border-radius:50%;box-shadow:0 1px 7px #102d2840;transition:background .25s,box-shadow .25s,transform .25s}
+.region-hotspot svg{width:18px;height:18px}.region-hotspot:before{content:"";position:absolute;width:34px;height:34px;border:1px solid #ffe5a181;border-radius:50%;animation:spot-breathe 3.6s ease-in-out infinite;z-index:-1}
+.region-hotspot:hover,.region-hotspot:focus-visible{background:transparent;transform:translate(-50%,-50%)}
+.region-hotspot:hover .spot-icon,.region-hotspot:focus-visible .spot-icon,.region-hotspot.is-selected .spot-icon{background:#8d6552;box-shadow:0 0 0 5px #f3dda12e,0 0 19px #ffe0a0a8;transform:translateY(-2px)}
+.region-hotspot.is-complete .spot-icon{background:#58745e;border-color:#e5f0ce}.region-hotspot.is-complete:before{animation:none;border-color:#bce2b991}
+.spot-label{position:absolute;left:50%;bottom:43px;transform:translateX(-50%);background:#fbf3dff2;color:#536047;border:1px solid #dac69e;border-radius:5px;padding:4px 8px;font-size:10px;line-height:1.6;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;max-width:140px}
+.region-hotspot:hover .spot-label,.region-hotspot:focus-visible .spot-label,.region-hotspot.is-near .spot-label,.region-hotspot.is-selected .spot-label{opacity:1}
+.region-hotspot.spot-edge-left .spot-label{left:0;transform:none}.region-hotspot.spot-edge-right .spot-label{left:auto;right:0;transform:none}
+.actor{width:clamp(32px,10%,76px);filter:drop-shadow(0 2px 1px #1a291d25)}.actor-name{font-size:9px;border-radius:5px;background:#263d36bd}.actor-tomoe:focus-visible{outline-offset:-10px;border-radius:50%}
+.speech{bottom:4%;left:12%;right:12%;padding:8px 12px;font-size:11px;border:1px solid #cbbb98;border-radius:9px;background:#fff5e6f5;box-shadow:0 3px 9px #273b3420;color:#665742}
+.path-ink{position:absolute;inset:0;z-index:4;width:100%;height:100%;pointer-events:none}.path-ink .walk-mask{fill:#f6dcac35;stroke:#fbefc79c;stroke-width:.25}.path-ink .walk-line{fill:none;stroke:#fff0b9;stroke-width:.35;stroke-dasharray:1 1;filter:drop-shadow(0 1px 1px #263e29)}
+.path-ink .walk-areas{display:none}.scene.show-paths .walk-areas{display:block}.scene.show-paths .walk-mask{fill:#eef3ce55;stroke:#f9ffdfa6}
+.scene-dock{display:flex;justify-content:center;gap:7px;padding:9px 12px;background:#f6efdf;border-top:1px solid #d2c29c}
+.dock-button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:44px;min-height:48px;border:0;border-radius:10px;background:transparent;color:#65735c;padding:5px 8px;font-size:9px}
+.dock-button svg{width:20px;height:20px}.dock-button:hover,.dock-button:focus-visible,.dock-button[aria-expanded=true]{background:#e5e9d7;color:#3c6046}.dock-button:active{background:#eddcca}.dock-button .notice{right:7px;top:3px;bottom:auto;border:0;width:5px;height:5px;background:#b36c61;border-radius:50%;box-shadow:none;animation:none}
+.game-ledger{padding:12px 17px;border-top:1px solid #d4c6a6;background:#ede9d9}.growth{color:#74795f;font-size:10px}.growth b{font-size:13px;color:#566549}.story-track{color:#8a8167;font-size:10px}.progress-track{height:3px;background:#d6d6bf;border-radius:2px}.progress-track i{background:#95a483}.scene-tools{gap:5px;margin-top:10px}.scene-tools button{border:0;background:transparent;color:#718065;border-radius:8px;min-width:44px;min-height:44px;padding:6px;display:flex;align-items:center;justify-content:center;gap:5px;font-size:10px}.scene-tools button svg{width:18px;height:18px;flex:none}.scene-tools button:hover,.scene-tools button[aria-pressed=true]{background:#dce3cf;color:#4d674d}.scene-tools>span{color:#8c8b73;font-size:10px}#note{color:#8c8c76;font-size:10px;margin:3px 0 0}
+.roam-journal[hidden]{display:none!important}
+.roam-journal{padding:18px;background:#fcf5e7;color:#5e624d;border-top:1px solid #dac7a0}.roam-journal header{display:flex;align-items:center;justify-content:space-between}.roam-journal h3{margin:0;font-size:15px;letter-spacing:2px;font-weight:500}.roam-journal header button{border:0;background:transparent;min-height:44px;min-width:44px;color:#8b8068}.roam-journal header svg{width:20px;height:20px}.roam-journal p{font-size:11px;line-height:1.8;color:#929078}.memory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.memory-card{border:1px solid #ded5bb;padding:12px;border-radius:9px;background:#fffbf0;min-width:0}.memory-card>svg{width:23px;height:23px;color:#9b7862}.memory-card strong{display:block;font-size:12px;margin:7px 0;color:#647056;font-weight:500}.memory-card p{font-size:11px;margin:4px 0}.memory-card button{border:1px solid #d4c5a1;background:#f0ead6;color:#6b7055;padding:6px 10px;font:inherit;font-size:10px;min-height:40px;border-radius:6px}.memory-empty{padding:14px;text-align:center;color:#9c987f;font-size:12px}
+.scene[data-region=R10].moment-complete .scene-shade{background:#68365314}.scene[data-region=R08].moment-complete .region-hotspot{filter:drop-shadow(0 0 5px #f6d789)}.scene[data-region=R01].moment-complete .leaves{opacity:0;transition:opacity .7s}
+.roam-toast{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;background:#e7ecda;color:#647453;font-size:11px;line-height:1.6}.roam-toast svg{width:16px;height:16px;flex:none}.roam-toast span{flex:1}
+.buildings-sheet{border-top:1px solid #cbbb96;background:#faf2df}.buildings-sheet header button{min-width:44px;min-height:44px;border:0;border-radius:8px}.life-scene-object{min-width:44px;min-height:44px}.life-scene-object .life-prop{filter:drop-shadow(0 0 3px #ffe6a07a)}
+@keyframes spot-breathe{0%,100%{opacity:.3;transform:scale(.95)}50%{opacity:.8;transform:scale(1.17)}}
+@media(max-width:460px){.scene-dock{gap:1px;padding:7px 6px}.dock-button{padding:5px 7px;font-size:9px}.scene-plaque{font-size:10px;padding:4px 8px;letter-spacing:1px}.game-hud{padding:11px 13px;gap:5px}.game-hud strong{font-size:11px}.game-hud>span{font-size:9px}.game-ledger{padding:10px 13px}.scene-tools>span{width:auto;margin-left:auto;font-size:9px}.scene-tools button{font-size:9px;gap:3px}.spot-label{font-size:9px;padding:3px 6px}.speech{font-size:10px;left:7%;right:7%}.memory-grid{grid-template-columns:1fr}.scene-tools{flex-wrap:wrap}.actor-name{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.region-hotspot:before{animation:none}.region-hotspot .spot-icon{transition:none}}
+
+.life-scene-objects{z-index:1060}.life-scene-object .life-prop{width:30px;height:30px}.life-scene-object small{font-size:9px}
+/* In-place decoration gestures affect the original sprite only, never saved state. */
+.life-scene-object .life-prop{transform-origin:50% 85%}
+.life-scene-object.is-interacting .life-prop{filter:drop-shadow(0 0 5px #ffe5a2c4);animation:life-prop-observe 1.2s ease-in-out both}
+.life-scene-object.is-interacting[data-interaction=wind] .life-prop{transform-origin:50% 8%;animation:life-prop-wind 1.2s ease-in-out both}
+.life-scene-object.is-interacting[data-interaction=sit] .life-prop{animation:life-prop-sit 1.2s ease-in-out both}
+.life-scene-object.is-interacting[data-interaction=light] .life-prop{animation:life-prop-light 1.3s ease-in-out both}
+.life-scene-object.is-interacting[data-interaction=food] .life-prop{animation:life-prop-food 1.2s ease-in-out both}
+@keyframes life-prop-wind{0%,100%{transform:rotate(0)}20%{transform:rotate(15deg)}45%{transform:rotate(-11deg)}68%{transform:rotate(7deg)}85%{transform:rotate(-3deg)}}
+@keyframes life-prop-sit{0%,100%{transform:scale(1)}25%,65%{transform:scale(1.09,.86)}80%{transform:scale(.98,1.02)}}
+@keyframes life-prop-observe{0%,100%{transform:translateY(0) scale(1)}35%,65%{transform:translateY(-3px) scale(1.08)}}
+@keyframes life-prop-light{0%,100%{filter:drop-shadow(0 0 3px #ffe6a07a)}25%,75%{filter:drop-shadow(0 0 10px #ffde99e8) brightness(1.18)}}
+@keyframes life-prop-food{0%,100%{transform:translateY(0) rotate(0)}30%,65%{transform:translateY(-2px) rotate(-3deg)}}
+@media(prefers-reduced-motion:reduce){.life-scene-object.is-interacting .life-prop{animation:none!important;transform:none!important;filter:drop-shadow(0 0 6px #ffe5a2c4)}}
+
+/* 1.8.1: badges sit beside objects; furniture responds in place. */
+#hotspot-leaders{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}#hotspot-leaders line{stroke:#f9ecc69c;stroke-width:.18;stroke-dasharray:.5 .6}
+.prop-sheet,.dev-sheet{padding:14px 18px;background:#faf3e3;border-top:1px solid #d5c5a3;color:#657052}.prop-sheet p,.dev-sheet p{font-size:12px;line-height:1.8;margin:8px 0}.prop-sheet strong,.dev-sheet strong{font-size:14px;font-weight:500;letter-spacing:1px}.prop-sheet button,.dev-sheet button{font:inherit;font-size:11px;min-height:44px;padding:7px 12px;margin:3px 7px 0 0;border:1px solid #ccbea0;border-radius:8px;background:#eee8d6;color:#657052}.dev-sheet input,.dev-sheet select{font:inherit;width:100%;max-width:320px;margin:9px 8px 0 0;padding:10px;border:1px solid #c7b995;border-radius:7px;background:#fffaf0;min-height:44px}.shrine-game[data-testing=true] .game-hud{box-shadow:inset 0 3px #b19a6a}.shrine-game[data-testing=true] .game-hud small:after{content:" · TEST";color:#92703e}.prop-sheet[hidden]{display:none!important}
+
+/* Variant artwork already contains its lighting; preserve its ground contrast. */
+.scene[data-period] .scene-shade{background:transparent!important}
+.scene[data-period] .lantern-glow{opacity:0!important}
+.scene[data-period=night] .sprite{filter:brightness(.88) saturate(.85)}
+.scene[data-period=dusk] .sprite{filter:sepia(.12) saturate(.9)}
+.scene[data-period] .scene-background{background-size:100% 100%!important}

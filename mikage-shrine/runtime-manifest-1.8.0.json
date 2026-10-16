@@ -1,0 +1,21 @@
+{
+  "version": "1.8.0",
+  "internalContract": "0.6.0",
+  "scripts": [
+    {
+      "file": "runtime/mvu.mjs",
+      "bytes": 174122,
+      "sha256": "559db48e9f3666489339677ca178dddecd3b6951dae52dbbcb0ed2b1f53d7bd7"
+    },
+    {
+      "file": "runtime/panels.mjs",
+      "bytes": 227262,
+      "sha256": "e06b40b2b6e498c88390bf07411aef8a3e007d8b24b0010cf1236e1227035e53"
+    },
+    {
+      "file": "runtime/scene.mjs",
+      "bytes": 199165,
+      "sha256": "4ba0a456551625e7669fd0702aa05b74de49a83880f89a7c4cf6b472aa75783c"
+    }
+  ]
+}

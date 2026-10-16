@@ -1,0 +1,32 @@
+{
+  "file": "assets/opening/roam-glyphs.ttf",
+  "family": "Mikage Serif",
+  "weight": 500,
+  "style": "normal",
+  "unicodeRange": "U+4E30,U+4E32,U+4E34,U+4E50,U+4E60,U+4E70,U+4E91-4E92,U+4EAB,U+4EC0,U+4ED8,U+4F20,U+4F38,U+4F4E,U+4FC3,U+508D,U+50AC,U+516D,U+517D,U+51A0,U+51CC,U+51F3,U+51F8,U+521A,U+52BF,U+52D9,U+5357,U+538B,U+53C9,U+53CD,U+53E0,U+53E5,U+53EB,U+5438-5439,U+543B,U+5473,U+5494,U+549A,U+54CD,U+5510,U+5524,U+5584,U+559C,U+55C5,U+56E2,U+5742,U+5782,U+57A3,U+5802,U+5806,U+5854,U+5899,U+58C1,U+591F,U+5927,U+592A,U+5934,U+5947,U+594F,U+5BBD,U+5BC4,U+5BCC,U+5BF8,U+5BFC,U+5C16,U+5C3A,U+5C42,U+5CE6,U+5DEE,U+5E10,U+5E1A,U+5E26,U+5E95,U+5ED3,U+5F27,U+5F88,U+5FAE,U+5FD8,U+60F3,U+6211,U+6233,U+6276,U+6298,U+62B9,U+62C6,U+62CD,U+62D3,U+62DB,U+62F1,U+62FC,U+62FE,U+6302,U+632A,U+6389,U+63A0,U+63A8,U+6447,U+6478,U+6572,U+6591,U+6597,U+65C1,U+6625,U+6643,U+6652,U+665A,U+6668,U+667E,U+6696,U+6735,U+6746,U+674F,U+677E,U+679D,U+67D4,U+67F1,U+6805,U+6841,U+6846,U+6881,U+6905,U+690D,U+693F,U+6B22,U+6B3E,U+6C47,U+6C99,U+6CDB,U+6CE2,U+6CE8,U+6D4B,U+6DA6,U+6DE1,U+6DF1,U+6EAA,U+6EE9,U+6F02,U+706B,U+70C1,U+70E4,U+7184,U+722A,U+723D,U+724C,U+732B,U+73ED,U+74E3,U+753B,U+7566,U+75D5,U+76AE,U+76C6,U+76CF,U+76D6,U+76EF,U+771F,U+773C,U+775B,U+77AC,U+7816,U+7834,U+7968,U+79CB,U+7A33,U+7A84,U+7AF9,U+7B14,U+7B3A,U+7B51-7B52,U+7B7E,U+7BEE,U+7C07,U+7C73,U+7C89,U+7CD6,U+7EC3-7EC4,U+7ED5,U+7EF3,U+7EFF,U+7F1D,U+7FD8,U+80F6,U+8106,U+8109-810A,U+8207,U+821E-821F,U+822A,U+8239,U+82A6,U+82C7,U+82D4,U+82D7,U+8349,U+8424,U+8568,U+8584,U+85D3,U+8638,U+871C,U+8896,U+88AB,U+88F9,U+8A18,U+8D2F,U+8D6D,U+8D8A,U+8DDD,U+8E72,U+8EB2,U+8F68,U+8F6E,U+903C,U+904D,U+907F,U+90A3,U+90AE,U+9192,U+91C7,U+9262,U+9332,U+949F,U+955C,U+95EA,U+9633-9635,U+9650,U+966A,U+9699,U+971C,U+9760,U+987A,U+9897,U+989C,U+98D8,U+9999,U+9A73,U+9CE5,U+9E25,U+9F13",
+  "bytes": 100048,
+  "sha256": "8d5d1a419eb539231df7c514038176599f5c902af26d308b8e73d5e4418cdb06",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+  "sourceSha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+  "license": "SIL Open Font License 1.1",
+  "licenseFile": "assets/opening/roam-glyphs-OFL.txt",
+  "sourceFile": "assets/opening/roam-glyphs-SOURCE.txt",
+  "scannedFiles": [
+    "src/roam-controller.js",
+    "src/activities.js",
+    "src/panels.html",
+    "src/roam.css"
+  ],
+  "existingCmapCounts": {
+    "wardrobe-v110-glyphs.ttf": 61,
+    "title-font-0.ttf": 721,
+    "wardrobe-glyphs.ttf": 110,
+    "ema-api-glyphs.ttf": 55,
+    "patch-glyphs-v181.ttf": 81
+  },
+  "requiredChineseCount": 908,
+  "addedGlyphCodepoints": 245,
+  "characters": "丰串临乐习买云互享什付传伸低促傍催六兽冠凌凳凸刚势務南压叉反叠句叫吸吹吻味咔咚响唐唤善喜嗅团坂垂垣堂堆塔墙壁够大太头奇奏宽寄富寸导尖尺层峦差帐帚带底廓弧很微忘想我戳扶折抹拆拍拓招拱拼拾挂挪掉掠推摇摸敲斑斗旁春晃晒晚晨晾暖朵杆杏松枝柔柱栅桁框梁椅植椿欢款汇沙泛波注测润淡深溪滩漂火烁烤熄爪爽牌猫班瓣画畦痕皮盆盏盖盯真眼睛瞬砖破票秋稳窄竹笔笺筑筒签篮簇米粉糖练组绕绳绿缝翘胶脆脉脊與舞舟航船芦苇苔苗草萤蕨薄藓蘸蜜袖被裹記贯赭越距蹲躲轨轮逼遍避那邮醒采鉢録钟镜闪阳阴阵限陪隙霜靠顺颗颜飘香驳鳥鸥鼓",
+  "coverageVerified": true,
+  "remainingMissing": []
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "tomoe-yako",
+    "prompt": "Use case: identity-preserve. Asset type: full-body transparent pixel-art anime wardrobe portrait for existing game. Reference image is identity/style/proportions guide. Draw a NEW sibling outfit, Tomoe from Kamisama Kiss, silver-white hair now LONG to waist, fox ears, purple eyes. White flowing wide sleeve kimono with deep purple inner collar and obi, very sparse dark crimson maple motifs near lower hem, white tabi and dark sandals. Poised dangerous ancient fox beauty, no weapons. Hand resting naturally at waist. Match reference refined Japanese anime pixel illustration, visible fine pixel outlines and flat clustered shadows; full normal adult-like body proportions, NOT chibi. Canvas portrait 560x1080; entire character centered, top of head including ears at y24, soles at y1055, same scale and ground baseline as reference, leave margins, both shoes visible. Simple standing three-quarter front pose facing slightly right. Transparent background, no scenery, no text, no panels, no checkerboard, no glow, no border. Preserve facial identity and rendering style from reference. No extra accessories beyond described.",
+    "metrics": {
+      "width": 916,
+      "height": 1717,
+      "bounds": [
+        43,
+        24,
+        873,
+        1699
+      ]
+    },
+    "asset": "assets/wardrobe/unlocks/tomoe-yako-portrait.png"
+  },
+  {
+    "id": "tomoe-city",
+    "prompt": "Use case: identity-preserve. Asset type: full-body transparent pixel-art anime wardrobe portrait for existing game. Reference image is identity/style/proportions guide. Draw a NEW sibling outfit, Tomoe from Kamisama Kiss, short silver-white hair, fox ears, purple eyes. Ink navy knee-length tailored wool coat, ivory turtleneck, charcoal slim straight trousers, black ankle boots, muted gray violet scarf. Cool refined modern winter streetwear. Relaxed standing hands naturally. Match reference refined Japanese anime pixel illustration, visible fine pixel outlines and flat clustered shadows; full normal adult-like body proportions, NOT chibi. Canvas portrait 560x1080; entire character centered, top of head including ears at y24, soles at y1055, same scale and ground baseline as reference, leave margins, both shoes visible. Simple standing three-quarter front pose facing slightly right. Transparent background, no scenery, no text, no panels, no checkerboard, no glow, no border. Preserve facial identity and rendering style from reference. No extra accessories beyond described.",
+    "metrics": {
+      "width": 903,
+      "height": 1742,
+      "bounds": [
+        107,
+        32,
+        858,
+        1723
+      ]
+    },
+    "asset": "assets/wardrobe/unlocks/tomoe-city-portrait.png"
+  },
+  {
+    "id": "tomoe-winter",
+    "prompt": "Use case: identity-preserve. Asset type: full-body transparent pixel-art anime wardrobe portrait for existing game. Reference image is identity/style/proportions guide. Draw a NEW sibling outfit, Tomoe from Kamisama Kiss, short silver-white hair, fox ears, purple eyes. Smoky gray blue fine striped kimono, thick ivory hanten jacket with soft quilted collar, dark obi, white tabi and simple sandals. Neat cozy winter homewear. Relaxed standing. Match reference refined Japanese anime pixel illustration, visible fine pixel outlines and flat clustered shadows; full normal adult-like body proportions, NOT chibi. Canvas portrait 560x1080; entire character centered, top of head including ears at y24, soles at y1055, same scale and ground baseline as reference, leave margins, both shoes visible. Simple standing three-quarter front pose facing slightly right. Transparent background, no scenery, no text, no panels, no checkerboard, no glow, no border. Preserve facial identity and rendering style from reference. No extra accessories beyond described.",
+    "metrics": {
+      "width": 916,
+      "height": 1717,
+      "bounds": [
+        88,
+        31,
+        838,
+        1696
+      ]
+    },
+    "asset": "assets/wardrobe/unlocks/tomoe-winter-portrait.png"
+  },
+  {
+    "id": "tomoe-school",
+    "prompt": "Use case: identity-preserve. Asset type: full-body transparent pixel-art anime wardrobe portrait for existing game. Reference image is identity/style/proportions guide. Draw a NEW sibling outfit, Tomoe from Kamisama Kiss, short silver-white hair, fox ears, purple eyes. Japanese boys DK school uniform: tailored navy blazer with small gold sakura crest and warm gold buttons, white shirt, charcoal sweater vest, wine red gray blue diagonal striped tie slightly loosened, straight charcoal trousers, black loafers. Slim elegant silhouette. Navy school shoulder bag with a small wine red omamori cord. Match reference refined Japanese anime pixel illustration, visible fine pixel outlines and flat clustered shadows; full normal adult-like body proportions, NOT chibi. Canvas portrait 560x1080; entire character centered, top of head including ears at y24, soles at y1055, same scale and ground baseline as reference, leave margins, both shoes visible. Simple standing three-quarter front pose facing slightly right. Transparent background, no scenery, no text, no panels, no checkerboard, no glow, no border. Preserve facial identity and rendering style from reference. No extra accessories beyond described.",
+    "metrics": {
+      "width": 916,
+      "height": 1717,
+      "bounds": [
+        107,
+        21,
+        841,
+        1694
+      ]
+    },
+    "asset": "assets/wardrobe/unlocks/tomoe-school-portrait.png"
+  },
+  {
+    "id": "player-school",
+    "prompt": "Use case: identity-preserve. Asset type: full-body transparent pixel-art anime wardrobe portrait for existing game. Reference image is identity/style/proportions guide. Draw a NEW sibling outfit, Same brown long-haired young heroine as reference, brown eyes, same face and body proportions and hairstyle. Japanese girls JK uniform: cropped navy blazer with small gold sakura crest and warm gold buttons, white shirt, ivory sweater vest, wine red bow, gray blue pleated plaid skirt with thin wine red stripe, dark gray knee socks, brown loafers. Navy school bag with small sakura omamori charm. Pleasant natural expression. Match reference refined Japanese anime pixel illustration, visible fine pixel outlines and flat clustered shadows; full normal adult-like body proportions, NOT chibi. Canvas portrait 560x1080; entire character centered, top of head including ears at y24, soles at y1055, same scale and ground baseline as reference, leave margins, both shoes visible. Simple standing three-quarter front pose facing slightly right. Transparent background, no scenery, no text, no panels, no checkerboard, no glow, no border. Preserve facial identity and rendering style from reference. No extra accessories beyond described.",
+    "metrics": {
+      "width": 903,
+      "height": 1741,
+      "bounds": [
+        96,
+        34,
+        886,
+        1712
+      ]
+    },
+    "asset": "assets/wardrobe/unlocks/player-school-portrait.png"
+  },
+  {
+    "id": "tomoe-school-human",
+    "prompt": "Remove only fox ears and tail from DK uniform, preserve character identity, outfit and transparent background.",
+    "metrics": {
+      "width": 916,
+      "height": 1717,
+      "bounds": [
+        107,
+        76,
+        707,
+        1695
+      ]
+    },
+    "asset": "assets/wardrobe/unlocks/tomoe-school-human-portrait.png"
+  }
+]
