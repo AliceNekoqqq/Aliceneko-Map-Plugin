@@ -710,6 +710,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
   try{const next=await bridge?.getLifeView?.();if(disposed||own!==revision)return;if(!next){$('#life-context').textContent='此聊天尚无新版生活记录，请使用新版角色卡的测试聊天。';return;}view=next;
    const nav=$('#life-tabs');nav.replaceChildren();for(const [key,label]of tabs){const b=button(label,'lifeTab',key);b.setAttribute('aria-pressed',String(key===tab));nav.append(b);}
    $('#life-content').replaceChildren();({decor:renderDecor,craft:renderCraft,garden:renderGarden,shop:renderShop,album:renderAlbum,festival:renderFestival}[tab])();
+   window.ShrinePanel?.applyDaylight?.();
    $('#life-context').textContent=view.sceneContext||'当前地点不在神社，庭院布置仍保存在神社。';
   }catch(error){$('#life-feedback').textContent=error.message;}
  }
@@ -968,6 +969,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
     return value.stat_data && typeof value.stat_data === 'object' ? value.stat_data : value;
   }
   function currentState() { return snapshot || {}; }
+  function applyDaylight() { return window.MikageDaylight?.apply(document, currentState().环境?.时段); }
   function setText(key, value) {
     const target = $('[data-bind="' + key + '"]');
     if (target) target.textContent = value == null || value === '' ? '—' : String(value);
@@ -1264,6 +1266,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
     paintCharacter(foxMini, 'tomoe', outfitFor('tomoe'), false);
     roster.append(foxMini, make('span', '', '巴卫 · 位置：' + (foxLocation || '未记录')));
     card.append(roster);
+    applyDaylight();
   }
   function render() {
     const state = currentState();
@@ -1298,6 +1301,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
     window.MikageLifeScene?.render(document, currentState());
     if (activeDialog === 'map') renderMap();
     if (activeDialog === 'wardrobe') renderWardrobe();
+    applyDaylight();
   }
   function showToast(message) {
     const toast = $('#toast');
@@ -1448,7 +1452,7 @@ body.dialog-open .experience-nav{display:flex}.nav-brand{display:flex;gap:10px;a
     if (unsubscribe) { unsubscribe(); unsubscribe = null; }
     window.clearTimeout(toastTimer);
   }
-  window.ShrinePanel = { ready:false, init, dispose, openBoard: onOpenBoard, openMap: onOpenMap, openWardrobe: onOpenWardrobe, openLife: onOpenLife, regions: REGIONS };
+  window.ShrinePanel = { ready:false, init, dispose, openBoard: onOpenBoard, openMap: onOpenMap, openWardrobe: onOpenWardrobe, openLife: onOpenLife, regions: REGIONS, applyDaylight };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 }());

@@ -35,13 +35,14 @@ def build():
     html = re.sub(r' <button class="pond".*?</button>', '', html)
     # The notice now belongs to the reachable dock entry; no duplicate IDs.
     html = html.replace('<section class="game-ledger"', dock + '\n<section class="game-ledger"', 1)
-    tools = '''<div class="scene-tools"><button id="moment" aria-label="此地散策"></button><button id="paths" aria-pressed="false" aria-label="显示可走的小路">@route@<span>小路</span></button><button id="wander" aria-pressed="true" aria-label="巴卫自主漫步：开">@wander@<span>漫步</span></button><button id="lantern" aria-pressed="false" aria-label="预览夜景">@moon@<span>夜景</span></button><button id="retry" aria-label="重读本楼记录" hidden>@retry@<span>重读</span></button><span id="mood">巴卫 · —</span></div>'''
+    tools = '''<div class="scene-tools"><button id="moment" aria-label="此地散策"></button><button id="paths" aria-pressed="false" aria-label="显示可走的小路">@route@<span>小路</span></button><button id="wander" aria-pressed="true" aria-label="巴卫自主漫步：开">@wander@<span>漫步</span></button><button id="lantern" aria-pressed="false" aria-label="景色随剧情时段变化，点击预览白天">@moon@<span>自动</span></button><button id="retry" aria-label="重读本楼记录" hidden>@retry@<span>重读</span></button><span id="mood">巴卫 · —</span></div>'''
     html = re.sub(r'<div class="scene-tools">.*?</div>', lambda _: tools, html, count=1)
     html = html.replace('<div class="weather"', '<svg class="path-ink" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g id="walk-areas" class="walk-areas"></g><path id="walk-line" class="walk-line"/></svg><div class="weather"', 1)
     # Stored decoration slots are display coordinates, not movement coordinates.
     html = html.replace("b.style.left=slot.x+'%';b.style.top=slot.y+'%';", "const anchors={north_eave:[84,22],south_eave:[91,34],floor_left:[84,81],floor_right:[93,67],garden_edge:[22,70],stone_path:[48,78],gate_eave:[29,39],gate_stand:[20,65],seat_left:[78,88],seat_right:[86,88]};const at=anchors[d.slot]||[slot.x,slot.y];b.style.left=at[0]+'%';b.style.top=at[1]+'%';")
     css = '\n'.join((SRC / name).read_text() for name in ['roam.css', 'activities.css'])
-    js = '\n'.join((SRC / name).read_text() for name in ['icons.js','navigation.js','activities.js','roam-controller.js','dev-ui.js'])
+    daylight = 'window.MikageTimeSceneCatalog='+literal(json.loads((SRC / 'time-scenes.json').read_text()))+';\n'+(SRC / 'time-of-day.js').read_text()
+    js = daylight+'\n'+'\n'.join((SRC / name).read_text() for name in ['icons.js','navigation.js','activities.js','roam-controller.js','dev-ui.js'])
     html = html.replace('</head>', '<style>\n'+css+'\n</style></head>')
     html = html.replace('</body>', '<script>\n'+js.replace('</script', '<\\/script')+'\n</script></body>')
     # Resolve the exact same shared SVGs into the static dock, without a runtime
@@ -82,7 +83,7 @@ def build():
     panel = panel.replace('    card.append(travel);', '    card.append(travel);\n'+snippet, 1)
     panel_css = '''.life-region-art{aspect-ratio:3/2!important}.place-experience{display:flex;gap:13px;border-top:1px solid #c9bea0;border-bottom:1px solid #d8ccb0;padding:14px 2px;margin:17px 0 5px}.experience-mark{width:42px;height:42px;border-radius:50%%;display:grid;place-items:center;background:#e2e8d5;color:#718567;flex:none}.experience-mark svg{width:23px;height:23px}.experience-copy{min-width:0}.experience-copy small{display:block;font-size:9px;letter-spacing:2px;color:#9a8c6d}.experience-copy strong{display:block;font-size:15px;letter-spacing:2px;color:#5c6b4e;margin-top:5px;font-weight:500}.experience-copy p{margin:5px 0 0;font-size:11px;line-height:1.8}.place-card .experience-guide{font-size:10px;color:#978b72}'''.replace('50%%','50%')
     panel = panel.replace('</head>', '<style>'+panel_css+'</style></head>')
-    panel = panel.replace('<script>', '<script>'+icon_source+'</script><script>', 1)
+    panel = panel.replace('<script>', '<script>'+daylight+'\n'+icon_source+'</script><script>', 1)
     (SRC / 'panels.html').write_text(panel)
     panel_module = replace_literal((SRC / 'panels-host.mjs').read_text(), 'MikagePanelHTML', panel)
     (ROOT / 'runtime/panels.mjs').write_text(panel_module)
@@ -90,4 +91,4 @@ def build():
 
 if __name__ == '__main__':
     result = build()
-    print(json.dumps({'version':'1.8.1','statusbarBytes':len(result.encode()),'source':'src/statusbar.html'}))
+    print(json.dumps({'version':'1.9.0','statusbarBytes':len(result.encode()),'source':'src/statusbar.html'}))
