@@ -4,6 +4,7 @@ const path=require('node:path');
 const assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),scratch=path.resolve(root,'..');
 const fixed=fs.readFileSync(path.join(root,'runtime/minigames.mjs'),'utf8');
+const version=fixed.match(/export const version = '([^']+)';/)[1];
 const scene=fs.readFileSync(path.join(root,'runtime/scene-1.16.4.mjs'),'utf8');
 const mvu=fs.readFileSync(path.join(root,'runtime/mvu-1.16.3.mjs'),'utf8');
 const domain=mvu.slice(mvu.indexOf('/* The dictionary'),mvu.indexOf('// Install before importing'));
@@ -11,7 +12,7 @@ const url=source=>'data:text/javascript;base64,'+Buffer.from(source).toString('b
 const oldPath=process.env.MIKAGE_LEGACY_MODULE||path.join(scratch,'minigames-original.mjs');
 const old=fs.existsSync(oldPath)?fs.readFileSync(oldPath,'utf8'):null;
 let loader=fs.readFileSync(path.join(root,'tools/loader-template.js'),'utf8');
-for(const [marker,value]of Object.entries({__COMMIT__:'a917cec0052ae81d326cfe5f9d65cc05264c8ea1',__MODULE_PATH__:'mikage-shrine/runtime/minigames.mjs',__SCRIPT_ID__:'minigames',__VERSION__:'1.16.4',__LABEL__:'御影神社·独立小游戏'}))loader=loader.replaceAll(marker,value);
+for(const [marker,value]of Object.entries({__COMMIT__:'a917cec0052ae81d326cfe5f9d65cc05264c8ea1',__MODULE_PATH__:'mikage-shrine/runtime/minigames.mjs',__SCRIPT_ID__:'minigames',__VERSION__:version,__LABEL__:'御影神社·独立小游戏'}))loader=loader.replaceAll(marker,value);
 const log=message=>console.log('PASS',message);
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/tmp/mikage-chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--disable-gpu']});

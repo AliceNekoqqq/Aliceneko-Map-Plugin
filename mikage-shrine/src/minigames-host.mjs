@@ -1,5 +1,5 @@
 // Built as a self-contained remote module. The character card only stores its loader.
-export const version = '1.16.4';
+export const version = '1.16.5';
 export const scriptId = 'minigames';
 export const VERSION = version;
 export const SCRIPT_ID = scriptId;
@@ -103,6 +103,7 @@ export function start() {
         cat.alt = '石墙边的一只猫';
         cat.decoding = 'async';
         cat.src = catUrl;
+        cat.addEventListener('error', () => cat.remove(), { once:true });
         visual.append(cat);
       }
     }
@@ -159,17 +160,18 @@ export function start() {
     let closed = false;
     let game = null;
     const opener = doc.activeElement;
-    function focusables() {
-      return [...shadow.querySelectorAll('button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex="0"]')].filter(node=>!node.hidden && node.getClientRects().length);
+    function focusables(scope=dialog) {
+      return [...scope.querySelectorAll('button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex="0"]')].filter(node=>!node.hidden && node.getClientRects().length);
     }
     function onKeydown(event) {
-      if (event.key === 'Escape') { event.preventDefault(); close(); return; }
+      const scope=[...shadow.querySelectorAll('[role="dialog"][aria-modal="true"]')].filter(node=>node.getClientRects().length).at(-1)||dialog;
+      if (event.key === 'Escape') { event.preventDefault();event.stopPropagation();if(scope!==dialog)scope.querySelector('[data-dialog-close]')?.click();else close();return; }
       if (event.key !== 'Tab') return;
-      const items = focusables();
-      if (!items.length) { event.preventDefault();dialog.focus();return; }
+      const items = focusables(scope);
+      if (!items.length) { event.preventDefault();scope.focus();return; }
       const first = items[0], last = items[items.length - 1];
-      if (event.shiftKey && (shadow.activeElement === first || shadow.activeElement === dialog)) { event.preventDefault();last.focus(); }
-      else if (!event.shiftKey && (shadow.activeElement === last || !dialog.contains(shadow.activeElement))) { event.preventDefault();first.focus(); }
+      if (event.shiftKey && (shadow.activeElement === first || shadow.activeElement === scope)) { event.preventDefault();last.focus(); }
+      else if (!event.shiftKey && (shadow.activeElement === last || !scope.contains(shadow.activeElement))) { event.preventDefault();first.focus(); }
     }
     function close({ notify=true } = {}) {
       if (closed) return;
@@ -185,6 +187,7 @@ export function start() {
       }
     }
     function beginGame() {
+      if (closed || game) return;
       intro.hidden = true;
       foot.hidden = true;
       gameArea.hidden = false;

@@ -104,11 +104,22 @@
     function button(text, action, cls, parent=controls) {const b=el('button',`mka-button ${cls||''}`,text);b.type='button';b.setAttribute('aria-label',text);b.addEventListener('click',()=>{if(!disposed)action(b);});parent.append(b);return b;}
     let bookButton;
     function showMemoryBook(){
+      if(root.querySelector('.mka-memory-overlay'))return;
       const book=readMemoryBook(),known=new Set(Object.keys(book.entries).filter(id=>MEMORY_ITEMS.some(item=>item.id===id))),count=known.size;
       const overlay=el('div','mka-memory-overlay');overlay.setAttribute('role','presentation');
       const panel=el('section','mka-memory-book');panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','旧物回忆册');
       const header=el('header','mka-memory-header'),heading=el('div','');heading.append(el('span','mka-kicker','MIKAGE · AFTER SCHOOL'),el('h3','mka-memory-title','旧物回忆册'));
-      const close=el('button','mka-button mka-quiet','合上回忆册');close.type='button';close.addEventListener('click',()=>{overlay.remove();bookButton?.focus({preventScroll:true});});header.append(heading,close);panel.append(header);
+      const closeBook=()=>{overlay.remove();if(bookButton?.isConnected)bookButton.focus({preventScroll:true});};
+      const close=el('button','mka-button mka-quiet','合上回忆册');close.type='button';close.dataset.dialogClose='';close.addEventListener('click',closeBook);header.append(heading,close);panel.append(header);
+      panel.addEventListener('keydown',event=>{
+        if(event.defaultPrevented)return;
+        if(event.key==='Escape'){event.preventDefault();event.stopPropagation();closeBook();return;}
+        if(event.key!=='Tab')return;
+        const items=[...panel.querySelectorAll('button:not(:disabled),textarea:not(:disabled),input:not(:disabled),[tabindex="0"]')].filter(node=>!node.hidden&&node.getClientRects().length);
+        const active=root.getRootNode()?.activeElement||document.activeElement,first=items[0],last=items.at(-1);
+        if(event.shiftKey&&active===first){event.preventDefault();last?.focus();}
+        else if(!event.shiftKey&&active===last){event.preventDefault();first?.focus();}
+      });
       panel.append(el('p','mka-memory-intro',`在街角旧物摊和十处散策里，一点点收好小镇的旧日回声。已收录 ${count}/${MEMORY_ITEMS.length} 件；重复游玩会更新记录，不会重复计数。`));
       const grid=el('div','mka-memory-grid');
       MEMORY_ITEMS.forEach((item,index)=>{
@@ -251,6 +262,7 @@
         const sauces=[['honey','黑蜜黄豆粉'],['berry','樱花糖霜'],['tea','抹茶碎']];
         const toppings=[['petal','盐渍樱花'],['kinako','黄豆粉'],['tea','茶叶细末']];
         state.roastIndex ??= 0;state.heat ??= 1;state.roasted ||= [];
+        const detail=`按${state.selected.map(i=>palette[i][0]).join('、')}的顺序串成三颗团子，逐颗观察火候烤出金边，再配上${sauces.find(x=>x[0]===state.sauce)?.[1]||'喜欢的蘸料'}与${toppings.find(x=>x[0]===state.garnish)?.[1]||'点缀'}。`;
         const phase=Math.min(state.step,2);
         const steps=el('div','mka-dango-steps');
         [['捏制',0],['烘烤',1],['点睛',2]].forEach(([label,index])=>{const item=el('span',`mka-dango-step${phase===index?' is-current':''}${phase>index?' is-done':''}`);item.append(el('i','',phase>index?'✓':String(index+1)),el('b','',label));steps.append(item);});stage.append(steps);
@@ -302,7 +314,6 @@
           say('三颗都烤好了。选一道蘸料，再添一笔点缀，做成自己的配方。');
           sauces.forEach(([key,label])=>choice(label,()=>{state.sauce=key;render();},state.sauce===key));
           toppings.forEach(([key,label])=>choice(`点缀：${label}`,()=>{state.garnish=key;render();},state.garnish===key));
-          const detail=`按${state.selected.map(i=>palette[i][0]).join('、')}的顺序串成三颗团子，逐颗观察火候烤出金边，再配上${sauceLabel||'喜欢的蘸料'}与${toppingLabel||'点缀'}。`;
           const done=button('盖印收好这一签',()=>{state.step=4;render();finish(detail,{memoryIds:['R03-DANGO']});});
           done.disabled=!state.sauce||!state.garnish;
           const marbles=button('加玩三局玻璃弹珠',()=>{state.step=3;state.marbleRound=0;state.marbleLane='';state.marblePower='';state.marbleRoute=[];state.marbleFeedback='';state.marbleHint=false;render();},'mka-quiet');

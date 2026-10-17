@@ -40,4 +40,5 @@ def build():
 
 if __name__ == '__main__':
     target = build()
-    print(json.dumps({'file': str(target), 'bytes': target.stat().st_size, 'version': '1.16.4'}))
+    version = re.search(r"export const version = '([^']+)';", target.read_text()).group(1)
+    print(json.dumps({'file': str(target), 'bytes': target.stat().st_size, 'version': version}))
