@@ -26,7 +26,7 @@ const moduleUrl='data:text/javascript;base64,'+Buffer.from(moduleSource).toStrin
   await page.setContent('<!doctype html><html><body style="margin:0;overflow:auto"><main id="statusbar" style="height:120px">map only</main></body></html>');
   await page.evaluate(async(files)=>{await Promise.all(files.map(async({file,unicodeRange})=>{const face=new FontFace('Mikage Serif',`url("https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@test/mikage-shrine/${file}")`,unicodeRange?{unicodeRange}:{});document.fonts.add(face);await face.load();}));},[{file:catalog.font},...catalog.fontFallbacks]);
   await page.evaluate(async url=>{const module=await import(url);module.start();},moduleUrl);
-  assert.equal(await page.evaluate(()=>window.MikageMinigames.version),'1.16.5','minigame modal is versioned independently');
+  assert.equal(await page.evaluate(()=>window.MikageMinigames.version),'1.16.6','minigame modal is versioned independently');
   assert.equal(await page.evaluate(()=>typeof window.MikageMinigames.getMemoryBook),'function','the plugin exposes its local keepsake archive for inspection');
   assert.equal(await page.evaluate(()=>typeof window.MikageMinigames.open),'function','fourth script registers its open API');
   await page.evaluate(()=>{window.completions=[];window.closes=0;window.MikageMinigames.open({region:'R01',period:'day',reducedMotion:true,onComplete:r=>completions.push(r),onClose:()=>closes++});});

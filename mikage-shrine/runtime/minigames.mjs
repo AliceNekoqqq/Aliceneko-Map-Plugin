@@ -1,5 +1,5 @@
 // Built as a self-contained remote module. The character card only stores its loader.
-export const version = '1.16.5';
+export const version = '1.16.6';
 export const scriptId = 'minigames';
 export const VERSION = version;
 export const SCRIPT_ID = scriptId;
@@ -644,9 +644,17 @@ export function start() {
     const doc = host.document;
     if (!doc?.body) return null;
     current?.close({ notify:false });
+    // A body-level fixed node can inherit the chat page's transformed containing
+    // block (some mobile layouts animate/translate the document while scrolling).
+    // A manual popover enters the browser top layer and stays viewport-centered.
     const mount = doc.createElement('div');
     mount.dataset.mikageMinigameHost = '';
-    mount.style.cssText = 'position:fixed;inset:0;z-index:2147483600;';
+    mount.setAttribute('popover','manual');
+    mount.setAttribute('role','dialog');
+    mount.setAttribute('aria-modal','true');
+    mount.setAttribute('aria-label', scene.place + ' · 此地散策');
+    mount.tabIndex = -1;
+    mount.style.cssText = 'display:block;position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;margin:0;padding:0;border:0;overflow:visible;background:transparent;color:inherit;';
     const shadow = mount.attachShadow({ mode:'open' });
     const style = doc.createElement('style');
     style.textContent = GAME_CSS;
@@ -655,9 +663,6 @@ export function start() {
     overlay.className = 'mkg-overlay';
     const dialog = doc.createElement('section');
     dialog.className = 'mkg-dialog';
-    dialog.setAttribute('role','dialog');
-    dialog.setAttribute('aria-modal','true');
-    dialog.setAttribute('aria-labelledby','mkg-dialog-title');
     dialog.tabIndex = -1;
     const bar = doc.createElement('header');
     bar.className = 'mkg-topbar';
@@ -750,13 +755,26 @@ export function start() {
     dialog.append(bar,intro,foot,gameArea);
     overlay.append(dialog);
     shadow.append(overlay);
-    doc.body.append(mount);
-
+    const opener = doc.activeElement;
     const previousOverflow = doc.body.style.overflow;
     doc.body.style.overflow = 'hidden';
+    if (typeof mount.showPopover === 'function') {
+      try {
+        doc.body.append(mount);
+        mount.showPopover();
+      } catch {
+        mount.remove();
+        mount.removeAttribute('popover');
+        doc.documentElement.append(mount);
+      }
+    } else {
+      // Older embedded browsers may not implement popovers. Keep the fallback
+      // outside body so transforms/overflow on the chat body cannot clip it.
+      mount.removeAttribute('popover');
+      doc.documentElement.append(mount);
+    }
     let closed = false;
     let game = null;
-    const opener = doc.activeElement;
     function focusables(scope=dialog) {
       return [...scope.querySelectorAll('button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex="0"]')].filter(node=>!node.hidden && node.getClientRects().length);
     }
@@ -775,6 +793,9 @@ export function start() {
       closed = true;
       game?.dispose?.();
       doc.removeEventListener('keydown',onKeydown,true);
+      if (typeof mount.hidePopover === 'function') {
+        try { mount.hidePopover(); } catch {}
+      }
       mount.remove();
       if (doc.body.style.overflow === 'hidden') doc.body.style.overflow = previousOverflow;
       if (current === handle) current = null;

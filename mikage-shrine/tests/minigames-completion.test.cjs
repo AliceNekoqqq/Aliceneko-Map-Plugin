@@ -16,6 +16,7 @@ const shell='<!doctype html><button id="outside">外部按钮</button><iframe id
  async function open(region){
   await page.evaluate(region=>{window.results=[];window.closes=0;MikageMinigames.open({region,reducedMotion:true,onComplete:r=>results.push(r),onClose:()=>closes++});},region);
   await page.waitForLoadState('networkidle');
+  await page.waitForFunction(()=>[...(document.querySelector('[data-mikage-minigame-host]')?.shadowRoot.querySelectorAll('img')||[])].every(image=>image.complete||!image.isConnected));
   const broken=await page.locator('[data-mikage-minigame-host] img').evaluateAll(xs=>xs.filter(x=>x.complete&&!x.naturalWidth).map(x=>x.className));
   if(broken.length)issues.push({region,broken});
   await click('开始这段散策');
