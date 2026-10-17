@@ -1,6 +1,7 @@
 /* Mikage Shrine · ten replayable, choice-led moments. Small DOM/SVG scenes, with project art loaded on demand. */
 (function (global) {
   'use strict';
+  const document = global.document;
   const NS = 'http://www.w3.org/2000/svg';
   const ICONS = {
     retry:'M4 9a8 8 0 1 1 0 7M4 3v6h6',
@@ -24,7 +25,7 @@
   const META = {
     R01:['leaf','一篮庭院秋色','先听风，再把散落的叶子拢起来，决定庭院要留下怎样的秋色。','庭前拾叶','把庭院收拾成自己喜欢的样子。'],
     R02:['cat','与猫慢慢熟悉','蹲下来观察它的耳朵和尾巴，再选择一种它觉得舒服的相处方式。','猫的信任','猫记住了你的动作，也按自己的节奏回应了你。'],
-    R03:['dango','串起一签春色','搭配三颗团子、逐颗调好火候，再选蘸料与点缀，做成只属于今天的一签点心。','春日手作','按喜欢的顺序搭配团子，观察火候烤出金边，再配上蘸料与最后点缀。'],
+    R03:['dango','串起一签春色','搭配三颗团子、逐颗调好火候，再选蘸料与点缀；也可以和巴卫加玩三局玻璃弹珠。','春日手作','按喜欢的顺序搭配团子，观察火候烤出金边，再配上蘸料与最后点缀。'],
     R04:['boat','让纸舟顺水走','先决定船形与纸色，再观察水流，给小舟选一条合适的路线。没有时间限制。','纸舟顺流','为纸舟选好船形，在不同水势间调整航线，让它沿溪漂远。'],
     R05:['ticket','等车时的一枚票根','挑定目的方向，串起两处停靠站，再逐站盖印，排成一段完整的小旅行。','站前旅票','从站前出发，按顺序安排两处停靠与终点，再为每一站盖上不同纪念印。'],
     R06:['tram','海风寄来的明信片','与巴卫在候车区共同取景，亲手排版装饰，再选一句你想对他说的话。','海风邮戳','从临海电车站台拍下一张构图与装饰都由自己选择的明信片。'],
@@ -33,6 +34,49 @@
     R09:['drum','神乐前的三拍练习','选择稳拍或轻快合拍，跟着三段逐渐变化的四拍节奏敲鼓；也能自由合奏。','太鼓三拍','选好节奏后跟上三段四拍节奏，敲出属于今晚的合奏。'],
     R10:['lantern','把归途慢慢点亮','先挑灯路和灯色，再逐盏点亮，可以随时改动摆放前的配色。','灯下归途','选好灯路与灯色，点亮六盏纸灯，为归途留下一片温柔的光。'],
   };
+  const MEMORY_STORAGE_KEY = 'mikage.showa-memory-book.v1';
+  const MEMORY_ITEMS = [
+    {id:'R01',region:'R01',place:'御影神社',item:'银杏叶压签',line:'扫帚声停下来后，叶脉像旧日历上的细线一样清楚。'},
+    {id:'R02',region:'R02',place:'坂道住宅区',item:'猫牌铜铃',line:'铜铃轻轻响了一声，小猫选在离你们不远的地方坐下。'},
+    {id:'R03-DANGO',region:'R03',place:'团子小店',item:'团子纸签',line:'纸签沾着一点黄豆粉，背面记下了今天的配方。'},
+    {id:'R03-MARBLES',region:'R03',place:'团子小店',item:'玻璃弹珠',line:'弹珠里映出窗格、灯光，还有你们并排的影子。'},
+    {id:'R04',region:'R04',place:'清溪石桥',item:'折纸船',line:'溪水把小船送到石桥下，折角仍然完好。'},
+    {id:'R05',region:'R05',place:'临海车站',item:'打孔车票',line:'三枚小孔串起了你们慢慢走过的三站。'},
+    {id:'R06',region:'R06',place:'海边电车站',item:'海风明信片',line:'卡片背面留着一段没有寄出的对话。'},
+    {id:'R07',region:'R07',place:'林间木道',item:'叶脉书签',line:'压进纸里的叶脉，隔天仍留着清晰的纹路。'},
+    {id:'R08',region:'R08',place:'芦苇栈道',item:'夜光玻璃珠',line:'芦苇间的小光停在水面，只有安静下来才看得清。'},
+    {id:'R09',region:'R09',place:'神乐会所',item:'太鼓节拍签',line:'同一段节拍，被两个人敲成了一支合奏。'},
+    {id:'R10',region:'R10',place:'灯火参道',item:'纸灯小票',line:'六盏灯排出一条可以慢慢走回家的路。'},
+  ];
+  const MEMORY_EPISODES = [
+    {at:3,title:'傍晚的糖纸',text:'老店主把一叠旧糖纸摊在桌上。几种折痕看似随意，却总朝着同一条放学路。巴卫替你把纸角压平，嘴上嫌弃纸太薄，手却没有松开。'},
+    {at:7,title:'末班电车前',text:'旧票根的孔洞和明信片上的海岸线拼出一段约定：几个孩子总在末班车前，把没说完的话写在背面。巴卫没有把自己说成其中一员，只将靠窗的位置留给你。'},
+    {at:11,title:'灯火收摊后',text:'摊主记得的不是最热闹的一年，而是散场时有人把最后一盏纸灯送回店里。巴卫轻声说，记住一件小事，比记住一整段年月容易。你们合上旧物册，也留下一页新的空白。'},
+  ];
+  let volatileMemoryBook = {schema:1,entries:{}};
+  let memoryStoragePersistent = true;
+  function readMemoryBook(){
+    const entries={...(volatileMemoryBook.entries||{})};
+    try{const storage=global.localStorage;if(!storage)memoryStoragePersistent=false;const raw=storage?.getItem(MEMORY_STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(parsed?.schema===1&&parsed.entries&&typeof parsed.entries==='object')Object.assign(entries,parsed.entries);}}
+    catch{memoryStoragePersistent=false;}
+    return {schema:1,entries};
+  }
+  function writeMemoryBook(book){
+    volatileMemoryBook={schema:1,entries:{...(book.entries||{})}};
+    try{const storage=global.localStorage;if(!storage)throw new Error('local storage unavailable');storage.setItem(MEMORY_STORAGE_KEY,JSON.stringify(volatileMemoryBook));memoryStoragePersistent=true;return true;}
+    catch{memoryStoragePersistent=false;return false;}
+  }
+  function saveMemories(region,detail,ids){
+    const book=readMemoryBook(),now=new Date().toISOString(),saved=[];
+    for(const id of ids){
+      const meta=MEMORY_ITEMS.find(item=>item.id===id);if(!meta)continue;
+      const previous=book.entries[id];
+      const entry={id,region:meta.region,place:meta.place,item:meta.item,line:meta.line,detail:String(detail||'').slice(0,320),firstSeen:previous?.firstSeen||now,lastSeen:now,plays:(Number(previous?.plays)||0)+1};
+      book.entries[id]=entry;saved.push({...entry,newlyAdded:!previous});
+    }
+    const persistent=writeMemoryBook(book);
+    return saved.map(entry=>({...entry,persistent}));
+  }
   function el(tag, cls, text) { const n=document.createElement(tag); if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n; }
   function icon(name, cls) {
     const s=document.createElementNS(NS,'svg'); s.setAttribute('viewBox','0 0 24 24');s.setAttribute('aria-hidden','true');s.setAttribute('class',`mka-icon ${cls||''}`);
@@ -58,7 +102,35 @@
     const result=el('div','mka-result');result.hidden=true;result.setAttribute('role','status');
     const footer=el('footer','mka-footer');
     function button(text, action, cls, parent=controls) {const b=el('button',`mka-button ${cls||''}`,text);b.type='button';b.setAttribute('aria-label',text);b.addEventListener('click',()=>{if(!disposed)action(b);});parent.append(b);return b;}
+    let bookButton;
+    function showMemoryBook(){
+      const book=readMemoryBook(),known=new Set(Object.keys(book.entries).filter(id=>MEMORY_ITEMS.some(item=>item.id===id))),count=known.size;
+      const overlay=el('div','mka-memory-overlay');overlay.setAttribute('role','presentation');
+      const panel=el('section','mka-memory-book');panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','旧物回忆册');
+      const header=el('header','mka-memory-header'),heading=el('div','');heading.append(el('span','mka-kicker','MIKAGE · AFTER SCHOOL'),el('h3','mka-memory-title','旧物回忆册'));
+      const close=el('button','mka-button mka-quiet','合上回忆册');close.type='button';close.addEventListener('click',()=>{overlay.remove();bookButton?.focus({preventScroll:true});});header.append(heading,close);panel.append(header);
+      panel.append(el('p','mka-memory-intro',`在街角旧物摊和十处散策里，一点点收好小镇的旧日回声。已收录 ${count}/${MEMORY_ITEMS.length} 件；重复游玩会更新记录，不会重复计数。`));
+      const grid=el('div','mka-memory-grid');
+      MEMORY_ITEMS.forEach((item,index)=>{
+        const record=book.entries[item.id],card=el('article',`mka-memory-card${record?' is-collected':''}`);card.dataset.memoryId=item.id;
+        card.append(el('span','mka-memory-number',String(index+1).padStart(2,'0')),el('h4','',record?item.item:'尚未拾到'),el('span','mka-memory-place',record?item.place:'散策后会在这里留下印记'));
+        if(record){card.append(el('p','',item.line));if(record.detail)card.append(el('p','mka-memory-detail',`那天：${record.detail}`));}
+        else card.append(el('p','mka-memory-placeholder','···'));
+        grid.append(card);
+      });
+      panel.append(grid,el('h4','mka-memory-section-title','回忆短篇'));
+      const episodes=el('div','mka-memory-episodes');
+      MEMORY_EPISODES.forEach(episode=>{const unlocked=count>=episode.at,row=el('article',`mka-memory-episode${unlocked?' is-unlocked':''}`);row.append(el('span','mka-memory-number',unlocked?'已解锁':`再收 ${episode.at-count} 件`),el('h4','',episode.title),el('p','',unlocked?episode.text:'散策手帖里的小物件会慢慢拼出这段故事。'));episodes.append(row);});
+      panel.append(episodes);
+      const actions=el('div','mka-memory-actions'),status=el('p','mka-memory-status',memoryStoragePersistent?'仅保存在本设备当前浏览器，不调用模型；可以导出备份后换设备继续。':'当前浏览器没有允许本地保存；回忆暂留在打开的页面里，建议马上导出备份。');
+      button('导出备份',()=>{try{const payload={schema:1,exportedAt:new Date().toISOString(),entries:readMemoryBook().entries},blob=new global.Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),url=global.URL.createObjectURL(blob),link=el('a');link.href=url;link.download='御影神社_旧物回忆册.json';global.document.body.append(link);link.click();link.remove();global.setTimeout(()=>global.URL.revokeObjectURL(url),1000);status.textContent='回忆册备份已开始下载。';}catch{status.textContent='当前浏览器暂不支持下载备份。';}},'mka-quiet',actions);
+      button('复制已收录摘要',async()=>{const lines=MEMORY_ITEMS.filter(item=>known.has(item.id)).map(item=>{const record=book.entries[item.id];return `- ${item.item}（${item.place}）：${item.line}${record?.detail?`\n  ${record.detail}`:''}`;});const summary=`【御影神社·旧物回忆册 ${count}/${MEMORY_ITEMS.length}】\n${lines.join('\n')||'还没有收录旧物。'}`;try{const clipboard=global.navigator?.clipboard;if(!clipboard?.writeText)throw new Error('clipboard unavailable');await clipboard.writeText(summary);status.textContent='摘要已复制；粘贴到对话里，巴卫就能接着回忆。';}catch{const area=el('textarea','mka-memory-copy-area');area.value=summary;panel.append(area);area.focus();area.select();let copied=false;try{copied=!!document.execCommand('copy');}catch{}area.remove();status.textContent=copied?'摘要已复制；粘贴到对话里，巴卫就能接着回忆。':'复制受限，可以用导出备份保存。';}},'mka-quiet',actions);
+      const input=el('input','mka-memory-import');input.type='file';input.accept='application/json,.json';input.hidden=true;input.addEventListener('change',async()=>{const file=input.files?.[0];if(!file)return;if(file.size>500000){status.textContent='备份文件过大，未导入。';return;}try{const parsed=JSON.parse(await file.text()),incoming=parsed?.entries;if(!incoming||typeof incoming!=='object')throw new Error('invalid');const merged=readMemoryBook();for(const item of MEMORY_ITEMS){const record=incoming[item.id];if(record&&record.id===item.id)merged.entries[item.id]={...merged.entries[item.id],...record,region:item.region,item:item.item,line:item.line,detail:String(record.detail||'').slice(0,320)};}writeMemoryBook(merged);overlay.remove();showMemoryBook();}catch{status.textContent='没有识别到有效的御影神社回忆册备份。';}});
+      button('导入备份',()=>input.click(),'mka-quiet',actions);actions.append(input);panel.append(actions,status);overlay.append(panel);
+      overlay.addEventListener('click',event=>{if(event.target===overlay){overlay.remove();bookButton?.focus({preventScroll:true});}});root.append(overlay);close.focus({preventScroll:true});
+    }
     const replay=button('再玩一次',reset,'mka-quiet',footer);replay.prepend(icon('retry'));
+    bookButton=button('旧物回忆册',showMemoryBook,'mka-quiet',footer);bookButton.prepend(icon('seal'));
     const close=button('收起小舞台',()=>{if(typeof opts.onClose==='function')opts.onClose();},'mka-quiet',footer);close.prepend(icon('close'));
     root.append(heading,help,stage,progress,controls,result,footer);container.append(root);
     function say(text){progress.textContent=text;}
@@ -68,9 +140,14 @@
     function assetUrl(assetKey){const source=assetKey&&opts.art?.[assetKey];const url=typeof source==='string'?source:(source?.[opts.period]||source?.default);return typeof url==='string'&&/^https:\/\/(cdn\.jsdelivr\.net|raw\.githubusercontent\.com)\//.test(url)?url:null;}
     function finish(detail, extra){
       if(completed||disposed)return;completed=true;
+      const memoryIds=Array.isArray(extra?.memoryIds)?extra.memoryIds:[region==='R03'?'R03-DANGO':region];
+      const memories=saveMemories(region,detail||meta[4],memoryIds);
       result.hidden=false;result.replaceChildren(icon('seal'),el('div','',`小事完成 · ${meta[3]}`),el('p','',detail||meta[4]));
+      const newlyAdded=memories.filter(item=>item.newlyAdded);
+      result.append(el('p','mka-memory-found',newlyAdded.length?`回忆册新添：${newlyAdded.map(item=>item.item).join('、')}`:'回忆册已收好这件小物，今天的记录也更新了。'));
+      if(memories.some(item=>item.persistent===false))result.append(el('p','mka-memory-storage-warning','浏览器暂不允许本地保存；关闭页面前可以打开回忆册导出备份。'));
       say('这一刻已经收好。也可以再玩一次，换一种搭配。');
-      if(typeof opts.onComplete==='function')opts.onComplete({region,title:meta[1],detail:detail||meta[4],stamp:meta[3],...(extra||{})});
+      if(typeof opts.onComplete==='function')opts.onComplete({region,title:meta[1],detail:detail||meta[4],stamp:meta[3],...(extra||{}),memories});
     }
     function sceneCaption(text){stage.append(el('div','mka-scene-caption',text));}
     function scenery(kind,assetKey){
@@ -169,7 +246,7 @@
       },
       R03(){
         scenery('dango','R03');
-        sceneCaption(['捏制三颗团子','看香气调火候 · 不限时','选蘸料与最后点缀','春日小签已完成'][state.step]||'串起一签春色');
+        sceneCaption(['捏制三颗团子','看香气调火候 · 不限时','选蘸料与最后点缀','弹珠加赛 · 不限时','春日小签已完成'][state.step]||'串起一签春色');
         const palette=[['樱粉','#e5a0ae'],['米白','#f5e7c9'],['抹茶','#8fae78']];
         const sauces=[['honey','黑蜜黄豆粉'],['berry','樱花糖霜'],['tea','抹茶碎']];
         const toppings=[['petal','盐渍樱花'],['kinako','黄豆粉'],['tea','茶叶细末']];
@@ -225,8 +302,49 @@
           say('三颗都烤好了。选一道蘸料，再添一笔点缀，做成自己的配方。');
           sauces.forEach(([key,label])=>choice(label,()=>{state.sauce=key;render();},state.sauce===key));
           toppings.forEach(([key,label])=>choice(`点缀：${label}`,()=>{state.garnish=key;render();},state.garnish===key));
-          const done=button('盖印收好这一签',()=>{state.step=3;const detail=`按${state.selected.map(i=>palette[i][0]).join('、')}的顺序串成三颗团子，逐颗观察火候烤出金边，再配上${sauceLabel}与${toppingLabel}。`;render();finish(detail);});
+          const detail=`按${state.selected.map(i=>palette[i][0]).join('、')}的顺序串成三颗团子，逐颗观察火候烤出金边，再配上${sauceLabel||'喜欢的蘸料'}与${toppingLabel||'点缀'}。`;
+          const done=button('盖印收好这一签',()=>{state.step=4;render();finish(detail,{memoryIds:['R03-DANGO']});});
           done.disabled=!state.sauce||!state.garnish;
+          const marbles=button('加玩三局玻璃弹珠',()=>{state.step=3;state.marbleRound=0;state.marbleLane='';state.marblePower='';state.marbleRoute=[];state.marbleFeedback='';state.marbleHint=false;render();},'mka-quiet');
+          marbles.disabled=!state.sauce||!state.garnish;
+          return;
+        }
+
+        if(state.step===3){
+          const rounds=[
+            {lane:'left',power:'soft',cue:'第一局：木沿留着一道浅浅的擦痕，弹珠可以贴着左边慢慢回弹。',hint:'贴左侧木沿，轻轻推。',line:'巴卫把玻璃珠放回起点：“先别急着用力，听它滚到哪儿。”'},
+            {lane:'right',power:'steady',cue:'第二局：右侧挡片的弧度更圆，弹珠要绕过去再稳稳回来。',hint:'绕右侧挡片，稳稳推。',line:'他用指节敲了敲木框：“这次走外圈，手腕放松。”'},
+            {lane:'center',power:'firm',cue:'最后一局：奖品碟在正中，前面两块挡片之间留着一条窄道。',hint:'从中间穿过，稍微用力。',line:'巴卫看了眼正中的玻璃碟：“最后一颗，给它一点劲就够了。”'},
+          ];
+          const round=rounds[state.marbleRound];
+          if(!round){state.step=4;render();return;}
+          const lanes=[['left','贴左木沿'],['center','穿过中间'],['right','绕过右挡片']],powers=[['soft','轻推'],['steady','稳推'],['firm','稍用力']];
+          workflow(['看木沿','选路线','调力道','弹进玻璃碟']);
+          const board=el('div',`mka-marble-course${state.marbleFeedback?' has-feedback':''}`);board.dataset.turn=String(state.marbleRound+1);
+          board.append(el('div','mka-marble-sign',`旧货摊 · 第 ${state.marbleRound+1}/3 局`));
+          const track=el('div','mka-marble-track');
+          lanes.forEach(([key,label],index)=>{const lane=el('div',`mka-marble-lane lane-${key}${state.marbleHint&&key===round.lane?' is-hinted':''}`);lane.append(el('span','mka-marble-rail'),el('span','mka-marble-cup',state.marbleHint&&key===round.lane?'目标':'○'),el('small','',label));track.append(lane);if(index===1){const marble=el('span',`mka-glass-marble${state.marbleFeedback?' is-rolling':''}`);marble.setAttribute('aria-hidden','true');track.append(marble);}});
+          board.append(track,el('div','mka-marble-cue',round.cue));stage.append(board);
+          story(round.line,state.marbleFeedback||'我来选路线和力道。弹偏了也能再来。');
+          say(state.marbleFeedback||'按木沿线索选一条路线和力道。不限时；可以请巴卫提示，也能反复尝试。');
+          lanes.forEach(([key,label])=>choice(label,()=>{state.marbleLane=key;render();},state.marbleLane===key));
+          powers.forEach(([key,label])=>choice(label,()=>{state.marblePower=key;render();},state.marblePower===key));
+          const hint=button(state.marbleHint?'巴卫已经提示过':'请巴卫看一眼木沿',()=>{state.marbleHint=true;state.marbleFeedback=`巴卫低声说：「${round.hint}」`;render();},'mka-quiet');hint.disabled=state.marbleHint;
+          const launch=button('弹出玻璃珠',()=>{
+            if(!state.marbleLane||!state.marblePower){say('先选路线和力道，再弹出玻璃珠。');return;}
+            if(state.marbleLane===round.lane&&state.marblePower===round.power){
+              state.marbleRoute.push(`${lanes.find(x=>x[0]===state.marbleLane)[1]} · ${powers.find(x=>x[0]===state.marblePower)[1]}`);
+              state.marbleRound++;state.marbleLane='';state.marblePower='';state.marbleHint=false;
+              state.marbleFeedback=state.marbleRound===3?'玻璃珠叮地落进碟里，老板把它递给你们：“这一颗，留着当纪念吧。”':'弹珠沿木沿转了一圈，正好落进玻璃碟。巴卫把下一颗推到你手边。';
+              if(state.marbleRound===3){const finalDetail=`${detail}之后，你和巴卫在旧货摊玩了三局弹珠，依次选择${state.marbleRoute.join('、')}，最后把一颗映着店灯的玻璃珠收进小册。`;state.step=4;render();finish(finalDetail,{memoryIds:['R03-DANGO','R03-MARBLES'],marbleRoute:state.marbleRoute.slice()});return;}
+              render();return;
+            }
+            state.marbleAttempts=(state.marbleAttempts||0)+1;
+            state.marbleFeedback=state.marbleLane!==round.lane?'弹珠碰到挡片，绕回起点。巴卫替你捡起来：“路线再看一眼，不赶时间。”':'弹珠沿对了木沿，却停在碟子边。巴卫把它滚回起点：“力道换一档试试。”';
+            state.marbleLane='';state.marblePower='';render();
+          });
+          launch.disabled=!state.marbleLane||!state.marblePower;
+          button('跳过加赛，收好团子',()=>{state.step=4;render();finish(detail,{memoryIds:['R03-DANGO']});},'mka-quiet');
           return;
         }
 
@@ -465,5 +583,5 @@
     reset();
     return {dispose(){if(disposed)return;disposed=true;generation++;cancelTimers();if(audio){try{const closing=audio.close();closing?.catch?.(()=>{});}catch(_){}audio=null;}root.remove();}};
   }
-  global.MikageActivities={mount};
+  global.MikageActivities={mount,getMemoryBook:readMemoryBook};
 })(window);

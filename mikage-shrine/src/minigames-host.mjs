@@ -1,5 +1,5 @@
 // Built as a self-contained remote module. The character card only stores its loader.
-export const version = '1.14.0';
+export const version = '1.16.4';
 export const scriptId = 'minigames';
 export const VERSION = version;
 export const SCRIPT_ID = scriptId;
@@ -14,7 +14,7 @@ __ACTIVITY_FACTORY__
 const SCENES = {
   R01: { place:'御影神社', title:'庭前拾叶', note:'和巴卫商量分工，看清风向，再沿着庭院把叶子扫进篮里。最后共同安排留下的秋色，并选择你想说的话。', tags:['拖扫与按钮均可操作','一起分工与布置','女主回应由你选择'] },
   R02: { place:'坂道住宅区', title:'与猫慢慢熟悉', note:'和巴卫一起观察猫的耳朵、尾巴与距离，选好分工，再按它的反应调整动作。猫会自己决定是否走近，最后留下一段你选择的对话。', tags:['观察姿态与距离','配合巴卫慢慢接近','不强求触摸'] },
-  R03: { place:'团子小店', title:'串起一签春色', note:'按顺序挑三颗团子，逐颗观察火候并调节火力，最后选择蘸料和点缀。没有倒计时，火候不合适可以重来。', tags:['三阶段手作流程','观察与调火','预绘团子小店场景'] },
+  R03: { place:'团子小店', title:'串起一签春色', note:'按顺序挑三颗团子，逐颗观察火候并调节火力，最后选择蘸料和点缀。之后可以直接收好，也能和巴卫在街角旧货摊玩三局玻璃弹珠。', tags:['团子手作与火候选择','可选弹珠路线挑战','收录进可备份的旧物回忆册'] },
   R04: { place:'清溪石桥', title:'让纸舟顺水走', note:'折好纸舟后拖动它穿过三道水门，船形决定可通行的水道。走错能重新尝试，也可以用按钮选路。', tags:['三道河道闯关','拖动或按钮操作','无需赶时间'] },
   R05: { place:'临海车站', title:'等车时的一枚票根', note:'从站前出发，按顺序安排两处停靠与终点，再逐站盖上纪念印。可以回退重排路线。', tags:['三站路线规划','停靠顺序会改变票根','预绘车站场景'] },
   R06: { place:'海边电车站', title:'海风寄来的明信片', note:'和巴卫在安全站台上商量取景，调整画面，再给明信片安排邮戳、装饰与寄语。你可以选择如何回应他，把共同完成的画面收好。', tags:['调整取景与装饰位置','双人制作明信片','预览后再收好'] },
@@ -31,11 +31,13 @@ function artUrl(key, period) {
 }
 
 export function start() {
-  const host = window;
+  const owner = window;
+  const host = owner.parent || owner;
   const existing = host.MikageMinigames;
   if (existing?.version === version && typeof existing.open === 'function') return existing;
   existing?.dispose?.();
-  const mountActivity = createMikageActivities(host).mount;
+  const activities = createMikageActivities(host);
+  const mountActivity = activities.mount;
   let current = null;
 
   function open(options = {}) {
@@ -131,7 +133,7 @@ export function start() {
     foot.className = 'mkg-actions';
     const note = doc.createElement('p');
     note.className = 'mkg-footnote';
-    note.textContent = '这段散策不会消耗道具。完成后会写进当前对话的散策手帖。';
+    note.textContent = '这段散策不会消耗道具。完成后会写进当前对话的散策手帖，并把一件小物收进本设备的旧物回忆册。';
     const actions = doc.createElement('div');
     actions.className = 'mkg-action-buttons';
     const begin = doc.createElement('button');
@@ -212,7 +214,7 @@ export function start() {
         },
       });
       dialog.scrollTop = 0;
-      requestAnimationFrame(()=>gameArea.querySelector('button:not(:disabled)')?.focus({ preventScroll:true }));
+      host.requestAnimationFrame(()=>gameArea.querySelector('button:not(:disabled)')?.focus({ preventScroll:true }));
     }
     const handle = { close };
     current = handle;
@@ -226,17 +228,19 @@ export function start() {
       if(!/^https:\/\/(cdn\.jsdelivr\.net|raw\.githubusercontent\.com)\//.test(GAME_FONT_URL))return;
       try{const face=new doc.defaultView.FontFace('Mikage Serif',`url("${GAME_FONT_URL}")`,{unicodeRange:GAME_FONT_RANGE});doc.fonts.add(face);await face.load();}catch{}
     });
-    requestAnimationFrame(()=>{if(!closed)begin.focus({ preventScroll:true });});
+    host.requestAnimationFrame(()=>{if(!closed)begin.focus({ preventScroll:true });});
     return handle;
   }
 
   const api = {
     version,
     open,
+    getMemoryBook: activities.getMemoryBook,
     close(){ current?.close(); },
     dispose(){ current?.close({ notify:false });if(host.MikageMinigames===api)delete host.MikageMinigames; },
   };
   host.MikageMinigames = api;
-  host.addEventListener?.('pagehide',api.dispose,{once:true});
+  owner.addEventListener?.('pagehide',api.dispose,{once:true});
+  host.dispatchEvent?.(new host.CustomEvent('mikage:minigames-ready',{detail:{version}}));
   return api;
 }

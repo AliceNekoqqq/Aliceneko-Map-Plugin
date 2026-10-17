@@ -11,7 +11,7 @@ SRC = ROOT / 'src'
 def build():
     activity = (SRC / 'activities.js').read_text()
     activity, head_count = re.subn(r'\(function \(global\) \{', 'function createMikageActivities(global) {', activity, count=1)
-    activity, tail_count = re.subn(r'\s*global\.MikageActivities=\{mount\};\s*\}\)\(window\);\s*$', '\n  return {mount};\n}', activity, count=1)
+    activity, tail_count = re.subn(r'\s*global\.MikageActivities=\{mount(?:,getMemoryBook:readMemoryBook)?\};\s*\}\)\(window\);\s*$', '\n  return {mount,getMemoryBook:readMemoryBook};\n}', activity, count=1)
     if head_count != 1 or tail_count != 1:
         raise ValueError('Could not adapt the activity engine into a side-effect-free factory')
     art_path = SRC / 'activity-art.json'
@@ -40,4 +40,4 @@ def build():
 
 if __name__ == '__main__':
     target = build()
-    print(json.dumps({'file': str(target), 'bytes': target.stat().st_size, 'version': '1.14.0'}))
+    print(json.dumps({'file': str(target), 'bytes': target.stat().st_size, 'version': '1.16.4'}))

@@ -26,6 +26,8 @@ const moduleUrl='data:text/javascript;base64,'+Buffer.from(moduleSource).toStrin
   await page.setContent('<!doctype html><html><body style="margin:0;overflow:auto"><main id="statusbar" style="height:120px">map only</main></body></html>');
   await page.evaluate(async(files)=>{await Promise.all(files.map(async({file,unicodeRange})=>{const face=new FontFace('Mikage Serif',`url("https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@test/mikage-shrine/${file}")`,unicodeRange?{unicodeRange}:{});document.fonts.add(face);await face.load();}));},[{file:catalog.font},...catalog.fontFallbacks]);
   await page.evaluate(async url=>{const module=await import(url);module.start();},moduleUrl);
+  assert.equal(await page.evaluate(()=>window.MikageMinigames.version),'1.16.4','minigame modal is versioned independently');
+  assert.equal(await page.evaluate(()=>typeof window.MikageMinigames.getMemoryBook),'function','the plugin exposes its local keepsake archive for inspection');
   assert.equal(await page.evaluate(()=>typeof window.MikageMinigames.open),'function','fourth script registers its open API');
   await page.evaluate(()=>{window.completions=[];window.closes=0;window.MikageMinigames.open({region:'R01',period:'day',reducedMotion:true,onComplete:r=>completions.push(r),onClose:()=>closes++});});
   assert.equal(await page.locator('[data-mikage-minigame-host]').count(),1,'launch creates one isolated popup host');
@@ -45,6 +47,8 @@ const moduleUrl='data:text/javascript;base64,'+Buffer.from(moduleSource).toStrin
   assert.equal(await activeLabel(),'一起安排庭院秋色','Shadow DOM advances keyboard focus when sweep action disappears');
   await page.keyboard.press('Enter');await page.getByRole('button',{name:'树下心形',exact:true}).click();await page.getByRole('button',{name:'就这样，和巴卫一起摆好',exact:true}).click();
   assert.match(await page.evaluate(()=>completions[0].detail),/树下心形/,'popup bridge preserves chosen companionship detail');
+  assert.equal(await page.evaluate(()=>completions[0].memories[0].id),'R01','completion returns the archived keepsake');
+  assert.equal(await page.evaluate(()=>window.MikageMinigames.getMemoryBook().entries.R01.item),'银杏叶压签','the keepsake remains readable after the popup flow');
   assert.equal(await page.evaluate(()=>completions.length),1,'game result reaches the map callback');
   assert.equal(await page.evaluate(()=>completions[0].region),'R01');
   assert.equal(await page.locator('.mka-duet-portrait').count(),2,'confirmed result shows both player and Tomoe portraits');await page.locator('.mka-duet-portrait').last().evaluate(img=>img.decode());

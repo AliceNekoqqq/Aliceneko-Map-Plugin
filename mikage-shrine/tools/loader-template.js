@@ -111,6 +111,29 @@
     return state.promise;
   }
   state.retry = load;
+  if (config.scriptId === 'minigames') {
+  // Tavern Helper runs each script in a separate iframe. Publish the loader
+  // on the same parent window as the modal API and the statusbar host.
+  const sharedHost = window.parent || window;
+  const sharedLoader = {
+    version: config.version,
+    getStatus: () => ({status:state.status,error:state.error}),
+    async ensureReady() {
+      await load();
+      const api = sharedHost.MikageMinigames;
+      if (typeof api?.open !== 'function' || api.version !== config.version) {
+        throw new Error(state.status === 'blocked'
+          ? '独立小游戏启动失败，请停用后重新启用该脚本。'
+          : '独立小游戏资源加载失败，请检查网络后点“重新加载资源”。');
+      }
+      return api;
+    },
+  };
+  sharedHost.MikageMinigamesLoader = sharedLoader;
+  window.addEventListener('pagehide', () => {
+    if (sharedHost.MikageMinigamesLoader === sharedLoader) delete sharedHost.MikageMinigamesLoader;
+  }, {once:true});
+  }
   retries[config.scriptId] = load;
   // Optional Tavern Helper button: match this name in the script's button config.
   if (typeof globalThis.eventOn === 'function' && typeof globalThis.getButtonEvent === 'function') {
@@ -127,3 +150,4 @@
   retryButton: '重新加载资源',
   timeoutMs: 15000,
 });
+
