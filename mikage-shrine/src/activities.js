@@ -6,15 +6,16 @@
   const ICONS = {
     retry:'M4 9a8 8 0 1 1 0 7M4 3v6h6',
     close:'M6 6l12 12M18 6 6 18',
-    leaf:'M12 21C1 17 4 4 22 3c0 16-6 20-10 18ZM7 18 19 7m-9 8-1-5m5 1 4 1',
-    ginkgo:'M12 22v-9M12 16C5 17 0 11 2 7l6-4 4 3 4-3 6 4c2 4-3 10-10 9ZM12 16 7 6m5 10 5-10M12 16V7',
-    camellia:'M12 22V9M12 19C1 14 4 3 12 2c8 1 11 12 0 17ZM12 9 8 6m4 7 5-6m-5 9-5-5',
+    leaf:'M12 22C6 19 3 14 3 9c0-4 2-6 6-6 1.5 0 2.4 1 3 2.1C14 2 17 2 19 4c3 3 1 9-1 12-1.5 2.7-3.5 4.7-6 6Zm0-1V5M12 15 5 9m7 1 7-5m-7 10 6-4',
+    maple:'M12 22 9.8 16.2 5.1 18.4 6.5 13.2 1.7 12.1 5.8 9.2 4.7 4.9 9.1 7 12 2l2.9 5 4.4-2.1-1.1 4.3 4.1 2.9-4.8 1.1 1.4 5.2-4.7-2.2L12 22Zm0-1L12 7m0 6-5.3-3.4m5.3 5 5.3-3.5m-5.3 4 2.8 2.6',
+    ginkgo:'M12 22c0-3-.1-5.5-.4-7.6-3.4-.8-6.2-2.1-8-4.1C.9 7.4 1.2 4.8 3.4 4.3c1.4-.3 2.5.5 3.3 1.5C6.7 2.5 9.3 1 12 4.4c2.3-3 5.2-2.3 5.3 1.2 1.5-1.4 4.2-1.2 4.3 1.5.1 3.8-4.8 6.4-9.2 7.4-.1 2.6-.2 5.1-.3 7.5ZM12 21V7m0 7L4 6m8 5 7-5m-7 5 8 1m-8-3-5 1',
+    camellia:'M12 22c-1.3-2.4-2.6-4.8-3.8-7.5l-1.7 1 .1-3.2-2 .4.7-3.1-1.1-1.5 2-2.5 2.5-1.3 2.9 1.2 2.9-1.2L17 5.8l2 2.5-1.1 1.5.7 3.1-2-.4.1 3.2-1.7-1C13.8 17.2 13.3 19.6 12 22Zm0-1V5m0 8L7 9m5 7 5-7m-5 3-2 3m2-1 2 3',
     cat:'M5 10 4 3l6 4h4l6-4-1 8c4 9-18 13-14-1ZM9 12h.1m6-.1h.1M11 16h2M2 14l5 1m10 0 5-1',
     dango:'M12 2v21M17 6a5 4 0 1 1-10 0 5 4 0 1 1 10 0Zm0 7a5 4 0 1 1-10 0 5 4 0 1 1 10 0Zm0 7a5 4 0 1 1-10 0 5 4 0 1 1 10 0Z',
     boat:'m2 14 6 7h10l4-7H2Zm5 0 5-11 5 11M12 3v11M1 23q5-3 10 0t12 0',
     ticket:'M3 5h18v5a3 3 0 0 0 0 6v4H3v-4a3 3 0 0 0 0-6V5Zm12 0v15M7 10h4m-4 5h4',
     tram:'M5 3h14v15H5V3Zm0 10h14M8 18l-2 4m10-4 2 4M8 16h.1m8 0h.1M9 3V1h6v2M5 9h14',
-    fern:'M12 23V3m0 5C6 8 4 4 5 2c5 0 7 3 7 6Zm0 5C4 13 2 9 3 7c6 0 9 3 9 6Zm0 5C5 18 2 15 2 13c7-1 10 1 10 5ZM12 9c7-1 9-4 9-6-6 0-9 2-9 6Zm0 7c8 0 11-4 10-7-7 0-10 3-10 7Z',
+    fern:'M12 23C12 16 11.8 9 12 2m-.1 18c-3.7-1.5-6.6-4-8.5-7.7 4.3.1 7.4 1.3 8.7 4m-.1-4.8c-3.4-1.4-5.6-3.7-6.7-6.9 3.8.2 6.1 1.4 6.7 3.5m0 4.7c3.3-1.4 5.8-3.7 7.1-7-4 .2-6.3 1.4-7.1 3.7m.1 7.2c3.3-1.4 5.8-3.7 7.1-7-4 .2-6.3 1.4-7.1 3.7M12 9c2.5-1.2 4.1-3 4.9-5.6-3 .2-4.7 1.1-4.9 2.7',
     firefly:'M12 8v14m0-11c-8-9-12 4-1 4m2-4c8-9 12 4 1 4M9 4l3 4 3-4M9 19h6',
     drum:'M4 7c0-6 16-6 16 0v11c0 6-16 6-16 0V7Zm0 0c0 6 16 6 16 0M6 11l12 10M18 11 6 21M2 1l5 4m15-4-5 4',
     lantern:'M7 4h10l4 6v6l-4 5H7l-4-5v-6l4-6Zm0 0h10M8 2h8M8 23h8M8 5l-2 8 2 7m8-15 2 8-2 7M3 12h18',
@@ -101,7 +102,8 @@
     const controls=el('div','mka-controls');
     const result=el('div','mka-result');result.hidden=true;result.setAttribute('role','status');
     const footer=el('footer','mka-footer');
-    function button(text, action, cls, parent=controls) {const b=el('button',`mka-button ${cls||''}`,text);b.type='button';b.setAttribute('aria-label',text);b.addEventListener('click',()=>{if(!disposed)action(b);});parent.append(b);return b;}
+    function button(text, action, cls, parent=controls) {const b=el('button',`mka-button mka-action ${cls||''}`,text);b.type='button';b.setAttribute('aria-label',text);b.addEventListener('click',()=>{if(!disposed)action(b);});parent.append(b);return b;}
+    function primary(text,action,cls,parent=controls){return button(text,action,`mka-primary ${cls||''}`,parent);}
     let bookButton;
     function showMemoryBook(){
       if(root.querySelector('.mka-memory-overlay'))return;
@@ -169,7 +171,7 @@
       }
       stage.append(n);return n;
     }
-    function choice(text,action,selected=false){const b=button(text,action,selected?'mka-selected':'');b.setAttribute('aria-pressed',String(selected));return b;}
+    function choice(text,action,selected=false){const b=button(text,action,`mka-choice${selected?' mka-selected':''}`);b.setAttribute('aria-pressed',String(selected));return b;}
     function reset(){
       cancelTimers();generation++;completed=false;result.hidden=true;
       state={step:0,selected:[],count:0,stage:0};clear();render();
@@ -201,7 +203,7 @@
         scenery('courtyard','R01');workflow(['听风','合力扫叶','安排秋色','收好这一刻']);
         const wind={east:{name:'东风',arrow:'←',hint:'叶尖都指向左边，左侧背风处能拢住落叶。',side:'left'},west:{name:'西风',arrow:'→',hint:'叶片正向右边滑动，右侧石灯后是背风处。',side:'right'}};
         state.wind ||= generation%2===1?'east':'west';const breeze=wind[state.wind];
-        const positions=[[14,23,-24],[39,18,28],[70,28,-8],[27,57,49],[58,62,-30],[83,56,15]];
+        const positions=[[14,23,-24],[39,18,28],[70,28,-8],[27,57,49],[58,62,-30],[83,56,15]],leafTypes=['maple','ginkgo','maple','ginkgo','camellia','ginkgo'];
         state.swept ||= [];state.layout ||= 'clear';
         if(state.step===0){
           sceneCaption('先看叶尖的方向，再请巴卫把竹篮放到背风处。');
@@ -217,7 +219,7 @@
           const basket=el('div','mka-yard-basket',`竹篮 ${state.swept.length}/6`);basket.style.left=breeze.side==='left'?'3%':'77%';basket.style.right='auto';basket.style.width='20%';board.append(basket);
           const gather=i=>{if(state.swept.includes(i)||completed)return;state.swept.push(i);state.feedback=state.swept.length===3?'巴卫把最后几片叶子拢到你面前：「慢慢来，石阶已经露出来了。」':'';render();};
           positions.forEach(([x,y,r],i)=>{if(state.swept.includes(i))return;
-            const leaf=button(`收拢第${i+1}片落叶`,()=>gather(i),'mka-yard-leaf',board);leaf.replaceChildren(icon(i%2?'ginkgo':'leaf'));leaf.style.cssText=`--x:${x}%;--y:${y}%;--turn:${r}deg;left:${x}%;top:${y}%;touch-action:none`;
+            const leaf=button(`收拢第${i+1}片落叶`,()=>gather(i),'mka-yard-leaf',board);leaf.dataset.leafType=leafTypes[i];leaf.replaceChildren(icon(leafTypes[i]));leaf.style.cssText=`--x:${x}%;--y:${y}%;--turn:${r}deg;left:${x}%;top:${y}%;touch-action:none`;
             let dragging=false,moved=false,suppress=false;let startX=0,startY=0;
             leaf.addEventListener('pointerdown',event=>{dragging=true;moved=false;startX=event.clientX;startY=event.clientY;leaf.setPointerCapture(event.pointerId);});
             leaf.addEventListener('pointermove',event=>{if(!dragging)return;const rect=board.getBoundingClientRect();if(Math.hypot(event.clientX-startX,event.clientY-startY)>5)moved=true;if(!moved)return;leaf.style.left=`${Math.max(0,Math.min(95,(event.clientX-rect.left)/rect.width*100))}%`;leaf.style.top=`${Math.max(0,Math.min(85,(event.clientY-rect.top)/rect.height*100))}%`;});
@@ -227,12 +229,12 @@
           });stage.append(board);
           story(state.feedback||'你扫过来，我接着。别把参道边的小草也扫进去了。');
           say(`已经合力收好 ${state.swept.length}/6 片。拖进篮子或点击叶片，下方也有等效按钮。`);
-          const next=positions.findIndex((_,i)=>!state.swept.includes(i));if(next>=0)button('顺风收拢下一片',()=>gather(next));else button('一起安排庭院秋色',()=>{state.step=2;render();});return;
+          const next=positions.findIndex((_,i)=>!state.swept.includes(i));if(next>=0)primary('顺风收拢下一片',()=>gather(next));else primary('一起安排庭院秋色',()=>{state.step=2;render();});return;
         }
         const layouts={clear:{label:'石阶留白',line:'把石阶扫干净，树下留一小堆吧。',tomoe:'参拜的人走得稳，树根也有落叶护着。你想得倒周全。'},heart:{label:'树下心形',line:'树下拼个小小的心形，你帮我扶住这一边。',tomoe:'这么讲究……好，左边我来。风吹散之前，先陪你看一会儿。'},ring:{label:'围树秋环',line:'围着树根铺一圈，把参道留出来。',tomoe:'好。叶子围着树，人走石阶，谁也不挡谁的路。'}};
         const layout=layouts[state.layout];const art=el('div','mka-yard-arrangement');art.dataset.layout=state.layout;
-        positions.forEach(([x,y,r],i)=>{const n=el('span','mka-yard-token');n.append(icon(i%2?'ginkgo':'leaf'));let px=x,py=y;if(state.layout==='heart'){px=[32,43,55,66,42,56][i];py=[35,29,29,35,50,50][i];}else if(state.layout==='ring'){px=50+25*Math.cos(i*Math.PI/3);py=45+22*Math.sin(i*Math.PI/3);}else{px=20+i*11;py=65+(i%2)*8;}n.style.cssText=`--x:${px}%;--y:${py}%;--turn:${r}deg;left:${px}%;top:${py}%`;art.append(n);});stage.append(art);
-        if(state.step===2){sceneCaption('参道保持通畅，树下的秋色由你安排。');story('石阶已经干净了。剩下这些叶子，想怎么摆？');say('三种安排都能完成；预览后可随时换一种。');Object.entries(layouts).forEach(([key,item])=>choice(item.label,()=>{state.layout=key;render();},key===state.layout));button('就这样，和巴卫一起摆好',()=>{state.step=3;render();finishMoment(`与巴卫听${breeze.name}、合力收好六片落叶，在不挡参道的树下布置「${layout.label}」。你说：「${layout.line}」巴卫回应：「${layout.tomoe}」`,{wind:state.wind,layout:state.layout});});return;}
+        positions.forEach(([x,y,r],i)=>{const n=el('span','mka-yard-token');n.append(icon(leafTypes[i]));n.dataset.leafType=leafTypes[i];let px=x,py=y;if(state.layout==='heart'){px=[32,43,55,66,42,56][i];py=[35,29,29,35,50,50][i];}else if(state.layout==='ring'){px=50+25*Math.cos(i*Math.PI/3);py=45+22*Math.sin(i*Math.PI/3);}else{px=20+i*11;py=65+(i%2)*8;}n.style.cssText=`--x:${px}%;--y:${py}%;--turn:${r}deg;left:${px}%;top:${py}%`;art.append(n);});stage.append(art);
+        if(state.step===2){sceneCaption('参道保持通畅，树下的秋色由你安排。');story('石阶已经干净了。剩下这些叶子，想怎么摆？');say('三种安排都能完成；预览后可随时换一种。');Object.entries(layouts).forEach(([key,item])=>choice(item.label,()=>{state.layout=key;render();},key===state.layout));primary('就这样，和巴卫一起摆好',()=>{state.step=3;render();finishMoment(`与巴卫听${breeze.name}、合力收好六片落叶，在不挡参道的树下布置「${layout.label}」。你说：「${layout.line}」巴卫回应：「${layout.tomoe}」`,{wind:state.wind,layout:state.layout});});return;}
         sceneCaption(`庭院已布置 · ${layout.label}`);story(layout.tomoe,layout.line);say('石阶清爽，树下留着你们一起摆好的秋色。');
       },
       R02(){
@@ -283,7 +285,7 @@
           say(`捏制面团 · ${state.selected.length}/3。按顺序挑颜色，重复搭配也可以。`);
           palette.forEach(([name,color],i)=>{const b=button(name,()=>{if(state.selected.length<3){state.selected.push(i);state.justAdded=state.selected.length-1;}render();});b.style.setProperty('--swatch',color);b.classList.add('mka-swatch');b.disabled=state.selected.length>=3;});
           const undo=button('撤回最后一颗',()=>{state.selected.pop();render();},'mka-quiet');undo.disabled=!state.selected.length;
-          if(state.selected.length===3)button('开始慢火烘烤',()=>{state.step=1;state.roastIndex=0;state.heat=1;render();});
+          if(state.selected.length===3)primary('开始慢火烘烤',()=>{state.step=1;state.roastIndex=0;state.heat=1;render();});
           return;
         }
 
@@ -314,7 +316,7 @@
           say('三颗都烤好了。选一道蘸料，再添一笔点缀，做成自己的配方。');
           sauces.forEach(([key,label])=>choice(label,()=>{state.sauce=key;render();},state.sauce===key));
           toppings.forEach(([key,label])=>choice(`点缀：${label}`,()=>{state.garnish=key;render();},state.garnish===key));
-          const done=button('盖印收好这一签',()=>{state.step=4;render();finish(detail,{memoryIds:['R03-DANGO']});});
+          const done=primary('盖印收好这一签',()=>{state.step=4;render();finish(detail,{memoryIds:['R03-DANGO']});});
           done.disabled=!state.sauce||!state.garnish;
           const marbles=button('加玩三局玻璃弹珠',()=>{state.step=3;state.marbleRound=0;state.marbleLane='';state.marblePower='';state.marbleRoute=[];state.marbleFeedback='';state.marbleHint=false;render();},'mka-quiet');
           marbles.disabled=!state.sauce||!state.garnish;
@@ -367,7 +369,7 @@
       R04(){
         const papers=[['樱色','#edb6bf'],['竹青','#9bb8aa'],['月白','#eee5cd']];
         const boats=[['flat','宽底稳航'],['swift','尖首快行'],['charm','双纸饰船']];
-        if(state.step===0){scenery('stream','R04');sceneCaption('纸色与船形会留下不同的旅程。');const paper=el('div',`mka-paper ${state.boat?'mka-fold-'+state.boat:''}`);paper.style.background=papers[state.paper??0][1];paper.append(icon('boat'));stage.append(paper);papers.forEach(([name],i)=>choice(name,()=>{state.paper=i;render();},(state.paper??0)===i));boats.forEach(([key,label])=>choice(label,()=>{state.boat=key;render();},state.boat===key));button('选好纸与船形',()=>{state.step=1;render();});say('先挑纸色和船形；之后每次都能根据水面的提示慢慢选路。');}
+        if(state.step===0){scenery('stream','R04');sceneCaption('纸色与船形会留下不同的旅程。');const paper=el('div',`mka-paper ${state.boat?'mka-fold-'+state.boat:''}`);paper.style.background=papers[state.paper??0][1];paper.append(icon('boat'));stage.append(paper);papers.forEach(([name],i)=>choice(name,()=>{state.paper=i;render();},(state.paper??0)===i));boats.forEach(([key,label])=>choice(label,()=>{state.boat=key;render();},state.boat===key));primary('选好纸与船形',()=>{state.step=1;render();});say('先挑纸色和船形；之后每次都能根据水面的提示慢慢选路。');}
         else if(state.step<4){scenery('stream','R04');sceneCaption(['','对齐纸角，留下一条折痕。','收好两边，让船身站起来。','轻轻展开，让纸舟鼓起。'][state.step]);const paper=el('div',`mka-paper mka-fold-${state.step}`);paper.style.background=papers[state.paper||0][1];paper.append(icon(state.step===3?'boat':'ticket'));stage.append(paper);say(`折纸 · ${state.step-1}/3`);button(['','对折纸角','折起两边','展开船身'][state.step],()=>{state.step++;render();});}
         else{
           scenery('stream','R04');sceneCaption('按住纸舟，拖过下一道水门；也可以用下方按钮选路。');
@@ -435,7 +437,7 @@
             const choices=stops.filter(x=>x[0]!==destination[0]&&!state.route.includes(x[0]));
             choices.forEach(([key,label])=>button(`加入第${state.route.length+1}站：${label}`,()=>{if(state.route.length<2)state.route.push(key);render();},'mka-route-choice'));
             const undo=button('撤回上一站',()=>{state.route.pop();render();},'mka-quiet');undo.disabled=!state.route.length;
-            if(state.route.length===2)button('检票出发',()=>{state.step=1;render();});
+            if(state.route.length===2)primary('检票出发',()=>{state.step=1;render();});
           }
           return;
         }
@@ -447,7 +449,7 @@
         }
         const stampNames=state.stamps.map(i=>patterns[i]?.[1]||'旅途印');
         say('三站路线排好了。看一眼每站的印记，喜欢的话就收进手帖。');
-        button('收好这张旅票',()=>finish(`以「${state.theme||'慢慢散步'}」为心情，从站前往${destination?.[1]||'远方'}；按${route.map(key=>stops.find(x=>x[0]===key)?.[1]).join(' → ')}的顺序停靠，依次盖下${stampNames.join('、')}。`));
+        primary('收好这张旅票',()=>finish(`以「${state.theme||'慢慢散步'}」为心情，从站前往${destination?.[1]||'远方'}；按${route.map(key=>stops.find(x=>x[0]===key)?.[1]).join(' → ')}的顺序停靠，依次盖下${stampNames.join('、')}。`));
       },
       R06(){
         const periodLabel={day:'白昼',dusk:'黄昏',night:'夜色'}[opts.period]||'白昼';
@@ -471,19 +473,19 @@
           story('站在候车线里面就好。我替你扶住相机带，画面由你来定。');say('在安全的候车区调整取景。主题决定这张卡片的题名，拖动画面或用方向与远近按钮调整构图。');
           Object.entries(themes).forEach(([key,label])=>choice(label,()=>{state.view=key;render();},state.view===key));
           [['向左取景',-15,0],['向右取景',15,0],['镜头抬高',0,-15],['镜头放低',0,15]].forEach(([label,x,y])=>button(label,()=>{state.panX=Math.max(0,Math.min(100,state.panX+x));state.panY=Math.max(0,Math.min(100,state.panY+y));render();},'mka-quiet'));
-          button(state.zoom===1?'拉近画面':'还原远景',()=>{state.zoom=state.zoom===1?1.35:1;render();});button('请巴卫帮我稳住，按下快门',()=>{state.step=1;render();});return;
+          button(state.zoom===1?'拉近画面':'还原远景',()=>{state.zoom=state.zoom===1?1.35:1;render();});primary('请巴卫帮我稳住，按下快门',()=>{state.step=1;render();});return;
         }
         if(state.step===1){
           story('拍得不错。纸边和邮戳你来挑，我把卡片按稳。');say(`装饰 ${state.stickers.length}/3。最多三枚，可拖动排版，也可选中后用按钮微调。`);
           Object.entries(frames).forEach(([key,label])=>choice(label,()=>{state.frame=key;render();},state.frame===key));
           Object.entries(marks).forEach(([key,mark])=>{const b=button(`添加${mark[1]}`,()=>{state.stickers.push({key,x:22+state.stickers.length*28,y:50,turn:0});state.activeSticker=state.stickers.length-1;render();});b.disabled=state.stickers.length>=3;});
           const active=state.stickers[state.activeSticker??-1];if(active){[['装饰左移',-8,0],['装饰右移',8,0],['装饰上移',0,-12],['装饰下移',0,12]].forEach(([label,x,y])=>button(label,()=>{active.x=Math.max(8,Math.min(92,active.x+x));active.y=Math.max(12,Math.min(88,active.y+y));render();},'mka-quiet'));button('转动选中装饰',()=>{active.turn=(active.turn+15)%360;render();},'mka-quiet');button('移除选中装饰',()=>{state.stickers.splice(state.activeSticker,1);state.activeSticker=state.stickers.length-1;render();},'mka-quiet');}
-          button('重新取景',()=>{state.step=0;render();},'mka-quiet');button('排版完成，写下寄语',()=>{state.step=2;render();});return;
+          button('重新取景',()=>{state.step=0;render();},'mka-quiet');primary('排版完成，写下寄语',()=>{state.step=2;render();});return;
         }
         const notes={'把今天的海风寄给你。':'那我收好了。下次想来，也叫上我。','下次还一起等这班电车吧。':'好。只是下次出门前，记得把外套带上。','今天有你陪着，很开心。':'……我也是。卡片收好，别让海风吹走了。'};
-        if(state.step===2){story('还差一句话。想写什么，就照你的意思写。',state.note);say('选择你想表达的寄语，再查看完整成品。');Object.keys(notes).forEach(note=>choice(note,()=>{state.note=note;render();},state.note===note));button('返回调整排版',()=>{state.step=1;render();},'mka-quiet');const done=button('给巴卫看成品',()=>{state.step=3;render();});done.disabled=!state.note;return;}
+        if(state.step===2){story('还差一句话。想写什么，就照你的意思写。',state.note);say('选择你想表达的寄语，再查看完整成品。');Object.keys(notes).forEach(note=>choice(note,()=>{state.note=note;render();},state.note===note));button('返回调整排版',()=>{state.step=1;render();},'mka-quiet');const done=primary('给巴卫看成品',()=>{state.step=3;render();});done.disabled=!state.note;return;}
         story(notes[state.note],state.note);sceneCaption('由你取景、排版、写下寄语的海风明信片。');say('成品已展开，可以返回修改，或者收好这次共同留影。');
-        if(!completed){button('返回修改',()=>{state.step=2;render();},'mka-quiet');button('收好这张共同明信片',()=>{finishMoment(`${periodLabel}与巴卫在候车区共同留影，以「${themes[state.view]}」为题，用${frames[state.frame]}排版${state.stickers.length}枚装饰。你写下：「${state.note}」巴卫回应：「${notes[state.note]}」`,{view:state.view,frame:state.frame,crop:{x:state.panX,y:state.panY,zoom:state.zoom},stickers:state.stickers.map(item=>({...item})),note:state.note});controls.querySelectorAll('button').forEach(b=>{b.disabled=true;});});}
+        if(!completed){button('返回修改',()=>{state.step=2;render();},'mka-quiet');primary('收好这张共同明信片',()=>{finishMoment(`${periodLabel}与巴卫在候车区共同留影，以「${themes[state.view]}」为题，用${frames[state.frame]}排版${state.stickers.length}枚装饰。你写下：「${state.note}」巴卫回应：「${notes[state.note]}」`,{view:state.view,frame:state.frame,crop:{x:state.panX,y:state.panY,zoom:state.zoom},stickers:state.stickers.map(item=>({...item})),note:state.note});controls.querySelectorAll('button').forEach(b=>{b.disabled=true;});});}
       },
       R07(){
         const species=[['ginkgo','银杏','mka-ginkgo'],['fern','蕨叶','mka-fern'],['camellia','椿叶','mka-camellia']];
@@ -491,16 +493,16 @@
         if(state.step===0){
           if(!state.clue){say('先选一个观察方向，再沿着线索找叶子。');[['foot','循着细小脚印'],['bark','看树皮的纹路'],['leaf','观察叶片落点']].forEach(([key,label])=>choice(label,()=>{state.clue=key;render();},state.clue===key));return;}
           const grove=el('div','mka-grove');species.forEach(([name,label,cls],i)=>{const b=button(`寻找${label}`,()=>{if(!state.selected.includes(i))state.selected.push(i);render();},`mka-found-leaf ${cls} ${state.selected.includes(i)?'mka-found':''}`,grove);b.replaceChildren(icon(name),el('span','',state.selected.includes(i)?`${label} · 已找到`:label));b.disabled=state.selected.includes(i);});stage.append(grove);
-          say(`${{foot:'脚印指向湿润的溪边，',bark:'树皮的纹路绕过低枝，',leaf:'落叶在背风处聚成小堆，'}[state.clue]}找到 ${state.selected.length}/3 种叶片。`);if(state.selected.length===3)button('铺开拓纸',()=>{state.step=1;state.rubPaths=[];render();});
+          say(`${{foot:'脚印指向湿润的溪边，',bark:'树皮的纹路绕过低枝，',leaf:'落叶在背风处聚成小堆，'}[state.clue]}找到 ${state.selected.length}/3 种叶片。`);if(state.selected.length===3)primary('铺开拓纸',()=>{state.step=1;state.rubPaths=[];render();});
           return;
         }
         if(state.step===1){
           state.rubPaths ||= [];
           const paper=el('div',`mka-rubbing ${state.ink||''}`),canvas=el('canvas','mka-rubbing-canvas');canvas.width=640;canvas.height=320;canvas.setAttribute('role','application');canvas.setAttribute('aria-label','草木拓纸。选好拓色后，用手指或鼠标在纸面上来回涂抹；也可以按压印一笔。');canvas.tabIndex=0;paper.append(canvas);stage.append(paper);
           const inkColors={moss:'#657f56',rose:'#b87183',ochre:'#9c8245'};
-          const draw=paths=>{const ctx=canvas.getContext('2d');if(!ctx)return;ctx.clearRect(0,0,640,320);ctx.fillStyle='#f8f0dc';ctx.fillRect(0,0,640,320);ctx.strokeStyle='#d3c4a4';ctx.lineWidth=2;ctx.strokeRect(9,9,622,302);
-            const progress=Math.min(paths.length,6)/6,ink=inkColors[state.ink]||'#8b9c7c',imprintAlpha=.24+progress*.55;
-            const leaf=(x,y,type,angle)=>{ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.globalAlpha=imprintAlpha;ctx.fillStyle=ink;ctx.strokeStyle=ink;ctx.lineWidth=2.2;ctx.lineCap='round';ctx.lineJoin='round';
+          const draw=paths=>{const ctx=canvas.getContext('2d');if(!ctx)return;ctx.clearRect(0,0,640,320);const paper=ctx.createLinearGradient(0,0,640,320);paper.addColorStop(0,'#fbf5e8');paper.addColorStop(.52,'#f2e6cd');paper.addColorStop(1,'#faf2df');ctx.fillStyle=paper;ctx.fillRect(0,0,640,320);ctx.save();ctx.strokeStyle='#a58b6225';ctx.lineWidth=1;for(let i=0;i<48;i++){const x=12+(i*47)%610,y=15+(i*83)%290;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+3+i%6,y+(i%3-1));ctx.stroke();}ctx.restore();ctx.strokeStyle='#b9a77f';ctx.lineWidth=2;ctx.strokeRect(9,9,622,302);ctx.strokeStyle='#ffffffa8';ctx.lineWidth=1;ctx.strokeRect(15,15,610,290);
+            const progress=Math.min(paths.length,6)/6,ink=inkColors[state.ink]||'#8b9c7c',imprintAlpha=.28+progress*.66;
+            const leaf=(x,y,type,angle)=>{ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.globalAlpha=imprintAlpha;const wash=ctx.createLinearGradient(-42,-62,44,67);wash.addColorStop(0,ink+'e8');wash.addColorStop(1,ink+'96');ctx.fillStyle=wash;ctx.strokeStyle=ink;ctx.lineWidth=2.2;ctx.lineCap='round';ctx.lineJoin='round';
               if(type==='ginkgo'){
                 ctx.beginPath();ctx.moveTo(0,72);ctx.quadraticCurveTo(-7,48,-5,27);ctx.quadraticCurveTo(-28,21,-48,13);ctx.quadraticCurveTo(-58,6,-48,-2);ctx.quadraticCurveTo(-54,-13,-39,-18);ctx.quadraticCurveTo(-39,-33,-24,-37);ctx.quadraticCurveTo(-18,-54,-5,-48);ctx.quadraticCurveTo(0,-62,7,-48);ctx.quadraticCurveTo(21,-54,26,-37);ctx.quadraticCurveTo(42,-32,40,-17);ctx.quadraticCurveTo(55,-12,48,-1);ctx.quadraticCurveTo(59,8,47,15);ctx.quadraticCurveTo(25,23,5,28);ctx.quadraticCurveTo(7,51,0,72);ctx.closePath();ctx.fill();ctx.stroke();
                 ctx.beginPath();ctx.moveTo(0,69);ctx.lineTo(0,20);for(let j=0;j<7;j++){const a=-2.65+j*.44;ctx.moveTo(0,23);ctx.lineTo(Math.cos(a)*48,Math.sin(a)*43-3);}ctx.stroke();
@@ -512,7 +514,7 @@
               }
               ctx.restore();};
             leaf(135,166,'ginkgo',-.36);leaf(320,164,'fern',.04);leaf(505,166,'camellia',.42);ctx.globalAlpha=1;
-            ctx.save();ctx.globalCompositeOperation='multiply';ctx.strokeStyle=ink;ctx.lineCap='round';ctx.lineJoin='round';paths.forEach((path,index)=>{if(!path?.length)return;ctx.beginPath();ctx.moveTo(path[0].x*640,path[0].y*320);for(let i=1;i<path.length;i++)ctx.lineTo(path[i].x*640,path[i].y*320);ctx.globalAlpha=.045+index*.006;ctx.lineWidth=5;ctx.stroke();ctx.globalAlpha=.1+index*.01;ctx.lineWidth=1.2;ctx.stroke();});ctx.restore();};
+            ctx.save();ctx.beginPath();ctx.ellipse(135,166,52,68,-.36,0,Math.PI*2);ctx.ellipse(320,164,31,68,.04,0,Math.PI*2);ctx.ellipse(505,166,41,68,.42,0,Math.PI*2);ctx.clip();ctx.globalCompositeOperation='multiply';ctx.strokeStyle=ink;ctx.lineCap='round';ctx.lineJoin='round';paths.forEach((path,index)=>{if(!path?.length)return;ctx.beginPath();ctx.moveTo(path[0].x*640,path[0].y*320);for(let i=1;i<path.length;i++)ctx.lineTo(path[i].x*640,path[i].y*320);ctx.globalAlpha=.14+index*.025;ctx.lineWidth=8;ctx.stroke();ctx.globalAlpha=.3+index*.035;ctx.lineWidth=2;ctx.stroke();});ctx.restore();};
           draw(state.rubPaths);
           const point=event=>{const rect=canvas.getBoundingClientRect();return{x:Math.max(0,Math.min(1,(event.clientX-rect.left)/rect.width)),y:Math.max(0,Math.min(1,(event.clientY-rect.top)/rect.height))};};
           let drawing=null;
@@ -521,9 +523,9 @@
           canvas.addEventListener('pointerup',()=>{if(!drawing)return;if(drawing.length>1){state.rubPaths.push(drawing);render();}drawing=null;});
           canvas.addEventListener('pointercancel',()=>{drawing=null;draw(state.rubPaths);});
           say(`选择拓色，再在纸上来回压印 · ${state.rubPaths.length}/6 笔。来回几次，叶脉会逐渐显出来。`);
-          [['moss','苔绿'],['rose','樱粉'],['ochre','赭金']].forEach(([value,label])=>{const b=choice(label,()=>{state.ink=value;render();},state.ink===value);b.disabled=completed;});
-          const tap=button('压印一笔',()=>{if(!state.ink)return;const n=state.rubPaths.length,y=.18+(n%6)*.12;state.rubPaths.push(Array.from({length:8},(_,i)=>({x:.12+i*.11,y:y+Math.sin(i*.7+n)*.025})));render();},'mka-quiet');tap.disabled=!state.ink||state.rubPaths.length>=6||completed;
-          if(state.rubPaths.length>=6)button('收好这一页叶拓',()=>{state.step=2;const detail=`循着${{foot:'脚印',bark:'树皮纹路',leaf:'落叶方向'}[state.clue]}找到银杏、蕨叶和椿叶，在拓纸上来回压印${state.rubPaths.length}笔，显出一页${{moss:'苔绿',rose:'樱粉',ochre:'赭金'}[state.ink]}草木纹样。`;render();finish(detail);});
+          [['moss','苔绿'],['rose','樱粉'],['ochre','赭金']].forEach(([value,label])=>{const b=choice(label,()=>{state.ink=value;render();},state.ink===value);b.classList.add('mka-ink-choice',`mka-ink-${value}`);b.disabled=completed;});
+          const tap=button('压印一笔',()=>{if(!state.ink)return;const n=state.rubPaths.length,centers=[{x:.21,y:.52},{x:.5,y:.51},{x:.79,y:.52}],leaf=centers[n%3],direction=n%2?-1:1;state.rubPaths.push(Array.from({length:14},(_,i)=>{const t=(i/13-.5)*direction;return{x:leaf.x+Math.sin(i*.55+n)*.008,y:leaf.y+t*.3};}));render();},'mka-quiet mka-rub-shortcut');tap.disabled=!state.ink||state.rubPaths.length>=6||completed;
+          if(state.rubPaths.length>=6)primary('收好这一页叶拓',()=>{state.step=2;const detail=`循着${{foot:'脚印',bark:'树皮纹路',leaf:'落叶方向'}[state.clue]}找到银杏、蕨叶和椿叶，在拓纸上来回压印${state.rubPaths.length}笔，显出一页${{moss:'苔绿',rose:'樱粉',ochre:'赭金'}[state.ink]}草木纹样。`;render();finish(detail);});
           return;
         }
         const done=el('div','mka-rubbing-done');done.append(icon('seal'),el('b','','草木纹样已拓好'));stage.append(done);say('这一页叶拓已经收进散策手帖。');
@@ -576,19 +578,19 @@
           if(beat!==pattern[state.input||0]){state.input=0;say('差一点点。照着图样，从第一拍重新试试。');beats.querySelectorAll('.mka-beat').forEach((n,i)=>{n.classList.remove('mka-beat-done');n.classList.toggle('mka-beat-next',i===0);});return;}
           state.input=(state.input||0)+1;if(state.input===4){state.count++;state.input=0;if(state.count===3){state.step=1;render();finish(`你选了${state.tempo==='lively'?'轻快合拍':'稳稳跟拍'}，跟着三句各四拍的节奏完成了今晚的太鼓练习。`);return;}}render();
         },'mka-drum-button');b.disabled=(completed&&!state.free)||(!state.tempo&&!state.free);});
-        button(state.free?'回到三拍练习':'自由敲一会儿',()=>{state.free=!state.free;render();},'mka-quiet');
+        const freeButton=button(state.free?'回到三拍练习':'自由敲一会儿',()=>{state.free=!state.free;render();},'mka-quiet');freeButton.setAttribute('aria-pressed',String(!!state.free));
         const soundButton=button(sound?'声音已开启 · 点击静音':'声音关闭 · 点击开启',async()=>{if(sound){sound=false;render();return;}try{const Audio=global.AudioContext||global.webkitAudioContext;if(!Audio){say('当前环境不支持声音，仍然可以看图样练习。');return;}audio ||= new Audio();await audio.resume();if(disposed)return;sound=true;render();}catch(_){say('声音暂时无法开启，仍然可以看图样练习。');}},'mka-quiet');soundButton.setAttribute('aria-pressed',String(sound));
         function tone(beat){if(!sound||!audio)return;try{const osc=audio.createOscillator(),gain=audio.createGain(),t=audio.currentTime;osc.type='sine';osc.frequency.setValueAtTime(beat==='咚'?160:420,t);osc.frequency.exponentialRampToValueAtTime(beat==='咚'?65:210,t+.15);gain.gain.setValueAtTime(.13,t);gain.gain.exponentialRampToValueAtTime(.001,t+.2);osc.connect(gain);gain.connect(audio.destination);osc.start(t);osc.stop(t+.22);}catch(_){sound=false;}}
       },
       R10(){
         const colors=[['warm','暖金'],['sakura','樱粉'],['jade','青灯']];state.color ||= 'warm';
         scenery('night-path','R10');sceneCaption('先排一条灯路，再逐盏点亮。保存前还能反复改色。');
-        const layouts=[['path','参道弧线'],['row','并肩灯列'],['arc','回游灯环']];const row=el('div',`mka-lanterns mka-layout-${state.layout||'path'}`);for(let i=0;i<6;i++){const lit=state.selected[i];const b=button(`第${i+1}盏灯${lit?'，已点亮，可换色':'，尚未点亮'}`,()=>{if(completed)return;state.selected[i]=state.color;render();},`mka-lantern ${lit?'mka-lantern-lit mka-'+lit:''}`,row);b.replaceChildren(el('i','mka-lantern-sprite'),el('span','',String(i+1)));b.disabled=completed;}stage.append(row);
+        const layouts=[['path','参道弧线'],['row','并肩灯列'],['arc','回游灯环']];const row=el('div',`mka-lanterns mka-layout-${state.layout||'path'}`);for(let i=0;i<6;i++){const lit=state.selected[i];const b=button(`第${i+1}盏灯${lit?'，已点亮，可换色':'，尚未点亮'}`,()=>{if(completed)return;state.selected[i]=state.color;render();},`mka-lantern ${lit?'mka-lantern-lit mka-'+lit:''}`,row);b.replaceChildren(el('i','mka-lantern-sprite'),el('span','',String(i+1)));b.setAttribute('aria-pressed',String(!!lit));b.disabled=completed;}stage.append(row);
         layouts.forEach(([key,label])=>{const b=choice(label,()=>{if(completed)return;state.layout=key;render();},(state.layout||'path')===key);b.disabled=completed;});
         colors.forEach(([key,label])=>{const b=choice(label,()=>{if(completed)return;state.color=key;render();},state.color===key);b.disabled=completed;});
         const litCount=state.selected.filter(Boolean).length;
         say(completed?'灯路与灯色已经收进这一幕。再玩一次，可以重新安排夜路。':`先排成${layouts.find(x=>x[0]===(state.layout||'path'))[1]}，再选颜色点灯 · ${litCount}/6。点亮后也可以换色。`);
-        if(litCount===6){const save=button('收好这一幕',()=>{finish(`按${layouts.find(x=>x[0]===(state.layout||'path'))[1]}排好六盏纸灯：${colors.map(([key,label])=>`${label}${state.selected.filter(c=>c===key).length}盏`).join('、')}。`);render();});save.disabled=completed;}
+        if(litCount===6){const save=primary('收好这一幕',()=>{finish(`按${layouts.find(x=>x[0]===(state.layout||'path'))[1]}排好六盏纸灯：${colors.map(([key,label])=>`${label}${state.selected.filter(c=>c===key).length}盏`).join('、')}。`);render();});save.disabled=completed;}
       },
     };
     reset();

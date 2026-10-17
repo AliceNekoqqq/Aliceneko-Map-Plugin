@@ -1,5 +1,5 @@
 // Built as a self-contained remote module. The character card only stores its loader.
-export const version = '1.16.6';
+export const version = '1.16.7';
 export const scriptId = 'minigames';
 export const VERSION = version;
 export const SCRIPT_ID = scriptId;
