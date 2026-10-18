@@ -75,7 +75,7 @@ export function start() {
   function preloadWalk(){
     if(walkReady)return walkReady;
     const paths=[...new Set(Object.values(catalog.actors).flatMap(a=>[...(a.walkAtlases||[]),...a.outfits.filter(o=>o.spriteSheet).map(o=>o.spriteSheet.atlas)]))].filter(path=>own(catalog.assets,path));
-    walkReady=Promise.all(paths.map(path=>new Promise((resolve,reject)=>{const img=new host.Image();img.onload=()=>{let decoded;try{decoded=typeof img.decode==='function'?img.decode():Promise.resolve();}catch{decoded=Promise.resolve();}Promise.resolve(decoded).catch(()=>{}).then(()=>{loadedWalkAtlases.add(path);resolve(true);});};img.onerror=()=>reject(Error('走路帧载入失败'));img.src=asset(path);})));return walkReady;
+    walkReady=Promise.all(paths.map(path=>new Promise((resolve,reject)=>{const img=new host.Image();img.onload=()=>{Promise.resolve().then(()=>typeof img.decode==='function'?img.decode():undefined).then(()=>{loadedWalkAtlases.add(path);resolve(true);},()=>reject(Error('走路帧解码失败')));};img.onerror=()=>reject(Error('走路帧载入失败'));img.src=asset(path);})));return walkReady;
   }
   const painted=new WeakMap();
   function paint(element,actor,outfit,direction='front',frame=0){
