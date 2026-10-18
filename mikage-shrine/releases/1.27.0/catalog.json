@@ -1,0 +1,52 @@
+{
+  "R01": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@8bd6001ee4595c0a4ccadbcab8736308c0c39633/mikage-shrine/assets/regions/time-of-day/r01-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@8bd6001ee4595c0a4ccadbcab8736308c0c39633/mikage-shrine/assets/regions/time-of-day/r01-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@8bd6001ee4595c0a4ccadbcab8736308c0c39633/mikage-shrine/assets/regions/time-of-day/r01-night.webp"
+  },
+  "R02": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r02-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r02-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r02-night.webp"
+  },
+  "R03": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r03-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r03-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r03-night.webp"
+  },
+  "R04": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r04-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r04-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r04-night.webp"
+  },
+  "R05": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r05-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r05-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r05-night.webp"
+  },
+  "R06": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r06-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r06-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r06-night.webp"
+  },
+  "R07": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r07-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r07-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r07-night.webp"
+  },
+  "R08": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r08-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r08-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r08-night.webp"
+  },
+  "R09": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r09-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r09-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r09-night.webp"
+  },
+  "R10": {
+    "day": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r10-day.webp",
+    "dusk": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r10-dusk.webp",
+    "night": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e49d338014db5a6c5c019e4b48b25a36bfc34f13/mikage-shrine/assets/regions/canon-v127/r10-night.webp"
+  }
+}
