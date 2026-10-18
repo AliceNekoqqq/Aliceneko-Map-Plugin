@@ -58,22 +58,24 @@ export function start() {
     record.update();element.classList.remove('art-missing');
   }
   function releasePortrait(element){const r=portraitPaints.get(element);r?.observer?.disconnect();portraitPaints.delete(element);}
+  const loadedWalkAtlases=new Set();
   function sprite(actor,outfit,direction='front',frame=0){
     const {a,item}=outfitRecord(actor,outfit);if(!own(catalog.directions,direction))throw Error('未知小人朝向');
     const requested=Number.isInteger(frame)&&frame>=0&&frame<=3?frame:0;
     if(item.spriteSheet){
-      const sheet=item.spriteSheet;const row=requested===1?sheet.walkRows[0]:requested===3?sheet.walkRows[1]:sheet.standingRow;
-      return {atlas:sheet.atlas,url:asset(sheet.atlas),column:catalog.directions[direction],row,columns:sheet.columns,rows:sheet.rows,frame:requested,fit:sheet.fit};
+      const sheet=item.spriteSheet,ready=loadedWalkAtlases.has(sheet.atlas);
+      const row=ready&&requested===1?sheet.walkRows[0]:ready&&requested===3?sheet.walkRows[1]:sheet.standingRow;
+      return {atlas:sheet.atlas,url:asset(sheet.atlas),column:catalog.directions[direction],row,columns:sheet.columns,rows:sheet.rows,frame:ready?requested:0,fit:sheet.fit};
     }
     const walkAtlas=(requested===1||requested===3)?a.walkAtlases?.[requested===1?0:1]:null;
-    const ready=walkAtlas&&own(catalog.assets,walkAtlas),actual=ready?requested:requested===2?2:0;
+    const ready=walkAtlas&&loadedWalkAtlases.has(walkAtlas),actual=ready?requested:requested===2?2:0;
     return {atlas:actual===0||actual===2?a.atlas:walkAtlas,url:actual===0||actual===2?asset(a.atlas):asset(walkAtlas),column:catalog.directions[direction],row:item.row,columns:a.columns,rows:a.rows,frame:actual};
   }
   let walkReady=null;
   function preloadWalk(){
     if(walkReady)return walkReady;
     const paths=[...new Set(Object.values(catalog.actors).flatMap(a=>[...(a.walkAtlases||[]),...a.outfits.filter(o=>o.spriteSheet).map(o=>o.spriteSheet.atlas)]))].filter(path=>own(catalog.assets,path));
-    walkReady=Promise.all(paths.map(path=>new Promise((resolve,reject)=>{const img=new host.Image();img.onload=()=>resolve(true);img.onerror=()=>reject(Error('走路帧载入失败'));img.src=asset(path);})));return walkReady;
+    walkReady=Promise.all(paths.map(path=>new Promise((resolve,reject)=>{const img=new host.Image();img.onload=()=>{let decoded;try{decoded=typeof img.decode==='function'?img.decode():Promise.resolve();}catch{decoded=Promise.resolve();}Promise.resolve(decoded).catch(()=>{}).then(()=>{loadedWalkAtlases.add(path);resolve(true);});};img.onerror=()=>reject(Error('走路帧载入失败'));img.src=asset(path);})));return walkReady;
   }
   const painted=new WeakMap();
   function paint(element,actor,outfit,direction='front',frame=0){
