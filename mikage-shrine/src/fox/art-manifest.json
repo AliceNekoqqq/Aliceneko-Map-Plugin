@@ -1,0 +1,62 @@
+{
+  "path": "mikage-shrine/assets/activities/fox-v137-poses.webp",
+  "sha256": "011465fd70cec57db04be87fcebdeeebe326862bd65b1691c70d372fccf3c2bc",
+  "bytes": 174434,
+  "width": 1254,
+  "height": 1254,
+  "layout": "2x2: alert, approach, rest, leave",
+  "origin": "built-in imagegen original silver-white Tomoe fox atlas; packing edited with built-in imagegen, then PNG only encoded as WebP",
+  "cell_alpha_bounds": [
+    [
+      140,
+      82,
+      532,
+      627
+    ],
+    [
+      80,
+      168,
+      563,
+      613
+    ],
+    [
+      111,
+      0,
+      543,
+      506
+    ],
+    [
+      85,
+      60,
+      529,
+      553
+    ]
+  ],
+  "display_frames": [
+    {
+      "x": 20,
+      "y": 50,
+      "size": 620,
+      "baseline": 95
+    },
+    {
+      "x": 630,
+      "y": 45,
+      "size": 620,
+      "baseline": 92
+    },
+    {
+      "x": 10,
+      "y": 660,
+      "size": 620,
+      "baseline": 76
+    },
+    {
+      "x": 630,
+      "y": 650,
+      "size": 620,
+      "baseline": 86
+    }
+  ],
+  "layout_note": "The generated top-left tail slightly crosses the equal-row boundary; custom CSS source windows avoid pose bleed and align each visible baseline without editing the raster."
+}

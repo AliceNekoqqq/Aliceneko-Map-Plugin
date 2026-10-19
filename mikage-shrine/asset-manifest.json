@@ -603,5 +603,20 @@
     "path": "assets/activities/stealth-v136-font-OFL.txt",
     "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
     "bytes": 4350
+  },
+  {
+    "path": "assets/activities/fox-v137-poses.webp",
+    "sha256": "011465fd70cec57db04be87fcebdeeebe326862bd65b1691c70d372fccf3c2bc",
+    "bytes": 174434
+  },
+  {
+    "path": "assets/activities/fox-v137-font.ttf",
+    "sha256": "a0585863cfe149adc9afc9beee8e0bb67d03feb1bb9e0e1876ae32eb9ee822b1",
+    "bytes": 247660
+  },
+  {
+    "path": "assets/activities/fox-v137-font-OFL.txt",
+    "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+    "bytes": 4350
   }
 ]
