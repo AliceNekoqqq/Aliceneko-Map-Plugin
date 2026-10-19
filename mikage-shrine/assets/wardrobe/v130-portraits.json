@@ -1,0 +1,109 @@
+{
+  "version": "1.30.0",
+  "portraits": [
+    {
+      "id": "tomoe-chibi",
+      "portrait": {
+        "alphaBounds": [
+          321,
+          623,
+          852,
+          1497
+        ],
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "id": "tomoe-kariginu",
+      "portrait": {
+        "alphaBounds": [
+          84,
+          9,
+          995,
+          1527
+        ],
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "id": "tomoe-butler",
+      "portrait": {
+        "alphaBounds": [
+          149,
+          13,
+          984,
+          1528
+        ],
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "id": "tomoe-wedding",
+      "portrait": {
+        "alphaBounds": [
+          186,
+          37,
+          860,
+          1519
+        ],
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "id": "player-kagura",
+      "portrait": {
+        "alphaBounds": [
+          122,
+          7,
+          941,
+          1519
+        ],
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "id": "player-shiromuku",
+      "portrait": {
+        "alphaBounds": [
+          209,
+          4,
+          882,
+          1519
+        ],
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "id": "player-gym",
+      "portrait": {
+        "alphaBounds": [
+          227,
+          26,
+          710,
+          1510
+        ],
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "id": "player-heian-travel",
+      "portrait": {
+        "alphaBounds": [
+          120,
+          14,
+          919,
+          1523
+        ],
+        "width": 1024,
+        "height": 1536
+      }
+    }
+  ]
+}

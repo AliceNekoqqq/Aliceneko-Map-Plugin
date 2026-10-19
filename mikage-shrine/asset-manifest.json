@@ -438,5 +438,85 @@
     "path": "assets/wardrobe/unlocks/tomoe-yako-sprites.png",
     "sha256": "63286d50be2efa8b08d08d435d8588de06e769c708f86f3f2d68ea3c0a5a5df6",
     "bytes": 1699667
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/tomoe-chibi-portrait.png",
+    "sha256": "a21ad8035c9ab93983843519a1c7eec3f4060f32996aad22b6c76d33cf744937",
+    "bytes": 1196919
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/tomoe-chibi-sprites.png",
+    "sha256": "8b20779b1532990ded0b24b98b2a6f71d215f795211aeb95bad7a919f5ef56f5",
+    "bytes": 1530596
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/tomoe-kariginu-portrait.png",
+    "sha256": "139ec6e592d197dd58e0745f87f23f6b674fd90b688f19d8838fafa5a7dcd57c",
+    "bytes": 2292210
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/tomoe-kariginu-sprites.png",
+    "sha256": "019435ce79570cdf289628092fa2e0a0c94810537dca57b4c4bd57868ee10bb9",
+    "bytes": 1332830
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/tomoe-butler-portrait.png",
+    "sha256": "cdc50f267f4b578b08472eee01062c34400018214bcc0d571bc6dd42289ef6ad",
+    "bytes": 1764872
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/tomoe-butler-sprites.png",
+    "sha256": "0f3f65a9ad607893f367358c45b171dc71b879dcaf48519efbfa0d04bc2d9900",
+    "bytes": 1260060
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/tomoe-wedding-portrait.png",
+    "sha256": "92de4f052b833b8f77bede3b56b430282f46ca95208bd8fd64fc3e496fd86595",
+    "bytes": 1515353
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/tomoe-wedding-sprites.png",
+    "sha256": "c2be766da115c0f9acf14afa50770085f2c0b3abc25f92b0bc7d24767752359a",
+    "bytes": 1598022
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/player-kagura-portrait.png",
+    "sha256": "dad1d790fe2cc06bb5d2d4e11e6cddf6ed5077478fe21f60e2b4d3852bfb64c1",
+    "bytes": 2020645
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/player-kagura-sprites.png",
+    "sha256": "8c52f68d7e28a55d173564b52ef18acb31323061618c2cd3431ce1fe96515ade",
+    "bytes": 1213087
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/player-shiromuku-portrait.png",
+    "sha256": "588693471832a724b667aa4587c2048ba3ea1dfc5e924de88dca397652fc227e",
+    "bytes": 1762658
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/player-shiromuku-sprites.png",
+    "sha256": "7901bf508584ff9f2689825b41bdcd55d48afe06dc34b8a0a4996dc39f1bfdc4",
+    "bytes": 1145704
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/player-gym-portrait.png",
+    "sha256": "7523356add8b80b02511bbe71f86a1fd7f3e06ae6a806323e3649a48ee190f88",
+    "bytes": 1361360
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/player-gym-sprites.png",
+    "sha256": "53442cfcdc5730881d6520111f6b066ea189a96122bab1b213febc60d790ede1",
+    "bytes": 1079824
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/player-heian-travel-portrait.png",
+    "sha256": "07bf529f746ab89d671d8dd6f62e00cd55ac710bf9cb23e3ba4d4ce927c47e1c",
+    "bytes": 2263258
+  },
+  {
+    "path": "assets/wardrobe/restyle-v130/player-heian-travel-sprites.png",
+    "sha256": "9d41c1b180836fca540e74dfa4d24363bd0b865ee0734683e4688fa02917f218",
+    "bytes": 2082723
   }
 ]
