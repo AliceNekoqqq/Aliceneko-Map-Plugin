@@ -5,7 +5,7 @@ const {pathToFileURL} = require('node:url');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '../..');
-const release = path.join(root, 'mikage-shrine/releases/1.29.1');
+const release = path.join(root, 'mikage-shrine/releases', process.argv[4] || '1.29.1');
 const manifest = JSON.parse(fs.readFileSync(path.join(release, 'manifest.json')));
 const card = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 const original = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
@@ -25,7 +25,7 @@ const sha = data => crypto.createHash('sha256').update(data).digest('hex');
 
   const scripts = card.data.extensions.tavern_helper.scripts;
   assert.equal(scripts.length, originalScripts.length);
-  assert.equal(card.data.character_version, '1.29.1');
+  assert.equal(card.data.character_version, manifest.release);
   for (const key of Object.keys(original.data)) {
     if (!['character_version', 'extensions'].includes(key)) assert.deepEqual(card.data[key], original.data[key], key);
   }
@@ -65,10 +65,10 @@ const sha = data => crypto.createHash('sha256').update(data).digest('hex');
     vm.runInContext(source, context);
     assert.equal(starts, 1);
   }
-  const scene = fs.readFileSync(path.join(release, 'scene.mjs'), 'utf8');
+  const scene = fs.readFileSync(path.join(root, manifest.modules.find(x=>x.module_id==='scene').path), 'utf8');
   const catalog = JSON.parse(scene.match(/const catalog=(.*);/)[1]);
   assert.equal(catalog.actors.player.outfits.length + catalog.actors.tomoe.outfits.length, 31);
-  const mvu = fs.readFileSync(path.join(release, 'mvu.mjs'), 'utf8');
+  const mvu = fs.readFileSync(path.join(root, manifest.modules.find(x=>x.module_id==='mvu').path), 'utf8');
   const fields = JSON.parse(mvu.match(/const ShrineFieldSpec = (.*);/)[1]);
   for (const [actor, field] of [['player','玩家.衣装'], ['tomoe','巴卫.服装']]) {
     const values = fields.find(x=>x.path === field).enum;
