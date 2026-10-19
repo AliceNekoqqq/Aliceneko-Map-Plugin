@@ -1,0 +1,13 @@
+{
+  "path": "mikage-shrine/assets/activities/stealth-v136-props.webp",
+  "sha256": "68ad5995b564629b71468116c40fcc0d92bcc7642b87852d9bb86e86a601fe39",
+  "bytes": 367706,
+  "width": 2172,
+  "height": 724,
+  "cells": [
+    "coral",
+    "patrol-lantern",
+    "closed-casket"
+  ],
+  "origin": "original built-in imagegen transparent 3-cell atlas; original PNG only encoded as WebP"
+}

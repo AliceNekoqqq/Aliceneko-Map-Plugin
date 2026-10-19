@@ -588,5 +588,20 @@
     "path": "assets/activities/wind-v135-font-OFL.txt",
     "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
     "bytes": 4350
+  },
+  {
+    "path": "assets/activities/stealth-v136-props.webp",
+    "sha256": "68ad5995b564629b71468116c40fcc0d92bcc7642b87852d9bb86e86a601fe39",
+    "bytes": 367706
+  },
+  {
+    "path": "assets/activities/stealth-v136-font.ttf",
+    "sha256": "95c226f5b0cdc9e284619851411606b3bb20b6d0334561e56efeea74e2291584",
+    "bytes": 239392
+  },
+  {
+    "path": "assets/activities/stealth-v136-font-OFL.txt",
+    "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+    "bytes": 4350
   }
 ]
