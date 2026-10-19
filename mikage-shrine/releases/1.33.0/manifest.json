@@ -1,0 +1,155 @@
+{
+  "release": "1.33.0",
+  "source_sha256": "d74efd5558f550598bc0117e241076f69e9bdb0c30ee05620497a1d49170bfe1",
+  "source_name": "1.32.0/card-source.json",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "loader_template": "mikage-shrine/tools/loader-template.js",
+  "modules": [
+    {
+      "script_id": "272c672c-6eed-5524-9d0b-1823b056fff4",
+      "module_id": "mvu",
+      "version": "1.30.1",
+      "path": "mikage-shrine/releases/1.30.1/mvu.mjs",
+      "sha256": "5660735a10ffa06c89559f75ba9b0c05f00b13c3d13476402e51cde4fa09b03a"
+    },
+    {
+      "script_id": "86a49572-142e-5d86-af3f-2e96d2f8a244",
+      "module_id": "panels",
+      "version": "1.27.0",
+      "path": "mikage-shrine/releases/1.29.1/panels.mjs",
+      "sha256": "38d38f7880ed2e29c6f6acdbafecf2f2329db6c182d1913de340f63dcae7d91b"
+    },
+    {
+      "script_id": "f763b9d7-c17c-5f0f-b0bd-36d9f37a3383",
+      "module_id": "scene",
+      "version": "1.33.0",
+      "path": "mikage-shrine/releases/1.33.0/scene.mjs",
+      "sha256": "0183dcb0a035c0cfa8f2e5dac968560933e6ef90424069e03d5e8c6c565f6f78"
+    },
+    {
+      "script_id": "d3560ad0-892c-4b31-b783-11f80a23b90f",
+      "module_id": "minigames",
+      "version": "1.33.0",
+      "path": "mikage-shrine/releases/1.33.0/minigames.mjs",
+      "sha256": "d224f740f19c17ee517b05663c9063aa7c203ceadb8a48dd84044a5e3c8bfc0e"
+    },
+    {
+      "script_id": "2c2d44bb-488b-5a17-b756-1920d1ba38a6",
+      "module_id": "tomoe",
+      "version": "0.1.0",
+      "path": "mikage-shrine/releases/1.29.1/tomoe.mjs",
+      "sha256": "49e55d881fddb5c6ec28d5365214c985a6c1ad4b18434e4b61337b5cd6d268e1"
+    }
+  ],
+  "host_acceptance": "pending",
+  "worldbook_policy": "All 37 entries, regexes, initial data and formal variables unchanged from 1.32.0",
+  "tomoe_asset_refs": {
+    "commit": "0ad2835516f1ab024fdc1a9690af80366218980c",
+    "images": [
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-grove-portrait.webp",
+        "sha256": "8eac95f03a512599d8ef71f2625655caa7970308dc4deeba31673134164533ca"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-swim-portrait.webp",
+        "sha256": "e39492472b751c2da20c95f0a81a6cd4962d43b409940b4adb2ab78b5c19cb0b"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/tomoe-festival.webp",
+        "sha256": "fe0a4c6b40323554eea790c9e5a99c66cbe14fa6c5927f28aac3cc9339c18c7c"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-yako-portrait.png",
+        "sha256": "6ea6daff911e679e4de90dcba68a4a42e196219d3f9a43cc1dc748e502f928af"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-aoba-portrait.webp",
+        "sha256": "e521c31203907db8d592434b1359d0bb58b69b873fb804fd86503e89856af288"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/tomoe-work.webp",
+        "sha256": "5d55ad7096e259d30fff2b1c7fda3f904b351b61dbfbab3b3756d0b017d15900"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-moon-portrait.webp",
+        "sha256": "b45f55bbc26a9953b2cc38ca452e0f9f15615e0e7ae90367367108f4917e461b"
+      },
+      {
+        "path": "mikage-shrine/assets/opening/tomoe-v1.webp",
+        "sha256": "a5b5e379f5fe498a2cec891ffb8a3416a004b4fac963b2472baa3bdab6d98e36"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-city-portrait.png",
+        "sha256": "95d57359002c466c3729c4314c6aa00674ed96e9f12c761c8d178f5ed963f46f"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-school-portrait.png",
+        "sha256": "ec85ca44b251eadda03d23f221e874a833b1e7479531f8c92b90c7259a6f36b3"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-winter-portrait.png",
+        "sha256": "4c54314f1183eb7799e666103aa200bffbfeb1a865192e442926c2dc0f48e768"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-school-human-portrait.png",
+        "sha256": "83e720ca0a8c1d64541f1da0dffd5296611dcf4db29e829a0f0dbd5806b5899b"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-journey-portrait.webp",
+        "sha256": "0b3f65ebddefa35e60bfe35f3fa664aa72199fa7ad7df70f296a1df088733d7f"
+      }
+    ]
+  },
+  "restyle_asset_commit": "35ae06bdc5375befe92c25503f165a3579941217",
+  "deferred": "R05–R10 replacements pending; R01–R03 logic and R05–R10 handlers preserved; R03 actor CSS dimensions fixed",
+  "school_assets": "Reuse canon-v127/R02 day/dusk/night and current shared wardrobe API, pinned URLs unchanged",
+  "school_font": {
+    "asset_commit": "4626ac26924052d19aa07a3d212d4aa84a486987",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/school-v131-font.ttf",
+    "sha256": "b7231cc33c9f55c73040266d7098a50a1a61a17a9744a8769b41f2569ba5d40e",
+    "bytes": 124932,
+    "weight": 500,
+    "glyphs": 390,
+    "license": "assets/activities/school-v131-font-OFL.txt"
+  },
+  "market_asset": {
+    "commit": "fabf27a2e6e8540c510db9899fa39802fe95e019",
+    "path": "mikage-shrine/assets/activities/market-v132-props.webp",
+    "sha256": "7e230aab21940486a0f682e2f492b30d9740d13c1d05fd7688f3402a70eb277c",
+    "bytes": 137906,
+    "origin": "original imagegen atlas, encoded WebP; no external image or new dependency"
+  },
+  "market_font": {
+    "commit": "a184df0d32f6fb4329d1c843cb48cc7e8287516d",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/market-v132-font.ttf",
+    "sha256": "6e6ec0e9af15316a9bc9731c8b2c7fbec1d55c20dce8d9c902745ae79096e341",
+    "bytes": 280944,
+    "weight": 500,
+    "glyphs": 802,
+    "license": "assets/activities/market-v132-font-OFL.txt"
+  },
+  "plum_assets": {
+    "commit": "fa5a591f5085508ffade78ae30bc69a0acb5c78b",
+    "image": "mikage-shrine/assets/activities/plum-v133-table.webp",
+    "sha256": "288d3effadc9103803d299dc06d0c2bd76d7d37b499681f1f2cc0dfd6662851e",
+    "bytes": 295358,
+    "periods": "new day table; existing canon-v127/R04 dusk and night retained; no daylight tint substituted for night",
+    "cup": "existing tea-v128/cup.webp; unchanged"
+  },
+  "regression_fix": "R03 sprite containers explicitly 72x72; model/activity unchanged; verified old artifact fails visibility assertion",
+  "plum_font": {
+    "commit": "fa5a591f5085508ffade78ae30bc69a0acb5c78b",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/plum-v133-font.ttf",
+    "sha256": "cf81cc49734ae05e476926f093f6709a17c1e538e94164849913ee6922c7fd19",
+    "bytes": 267820,
+    "weight": 500,
+    "glyphs": 769,
+    "license": "assets/activities/plum-v133-font-OFL.txt"
+  }
+}

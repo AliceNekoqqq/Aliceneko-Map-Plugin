@@ -1,8 +1,9 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium}=require(process.env.MIKAGE_PLAYWRIGHT||'/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const root=path.resolve(__dirname,'..'),qa=process.env.MIKAGE_MARKET_QA||'/workspace/scratch/b637e759bbc4/qa-market';
-const scene=fs.readFileSync(path.join(root,'releases/1.32.0/scene.mjs'),'utf8'),start=scene.indexOf('((host)=>{',scene.indexOf('/* One immutable asset catalog')),end=scene.indexOf('/* Tavern Helper adapter',start);
-const game=fs.readFileSync(path.join(root,'releases/1.32.0/minigames.mjs'),'utf8').replace(/export \{VERSION,SCRIPT_ID,start\};?/,'');
+const release=process.env.MIKAGE_RELEASE||'1.33.0';
+const scene=fs.readFileSync(path.join(root,'releases/'+release+'/scene.mjs'),'utf8'),start=scene.indexOf('((host)=>{',scene.indexOf('/* One immutable asset catalog')),end=scene.indexOf('/* Tavern Helper adapter',start);
+const game=fs.readFileSync(path.join(root,'releases/'+release+'/minigames.mjs'),'utf8').replace(/export \{VERSION,SCRIPT_ID,start\};?/,'');
 fs.mkdirSync(qa,{recursive:true});
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/tmp/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--disable-gpu']});
@@ -28,6 +29,7 @@ fs.mkdirSync(qa,{recursive:true});
   const shadow=page.locator('[data-mikage-minigame-host]');await shadow.getByRole('button',{name:/开始/}).click();const market=shadow.locator('.mkmarket');await market.waitFor();
   await market.getByRole('button',{name:'借面具遮住气息',exact:true}).click();
   await page.evaluate(async()=>{await MikageCharacterArt.preloadWalk();await document.fonts.ready;});assert(await page.evaluate(()=>document.fonts.check('14px "Mikage Market"')));
+  await market.locator('.mkm-banner').screenshot({path:path.join(qa,width+'-wardrobe.png')});
   await market.locator('[data-inspect="front"]').focus();await page.keyboard.press('Enter');assert.equal(await market.locator('[data-evidence="front"]').count(),1);
   for(const [i,id,verdict]of [[0,'bell','fake'],[1,'mirror','genuine'],[2,'fan','uncertain']]){
    assert.equal(await market.getAttribute('data-lot'),id);
@@ -46,7 +48,7 @@ fs.mkdirSync(qa,{recursive:true});
   await market.getByRole('combobox',{name:'纸上纹样'}).selectOption('mirror');await market.getByRole('button',{name:'留张酒签，收好手记',exact:true}).click();assert.equal(await market.getAttribute('data-phase'),'done');
   const result=await page.evaluate(()=>({completed,book:MikageMinigames.getMemoryBook()}));assert.equal(result.completed.length,1);assert.equal(result.completed[0].confirmed,3);assert.equal(result.book.entries['R03-APPRAISAL'].plays,1);assert(result.book.entries['R03-APPRAISAL'].detail.includes('没有带走摊货'));if(!blockedStorage)assert.equal(result.book.entries['R03-DANGO'].plays,2);
   assert.equal((await market.textContent()).includes('浏览器未允许本地保存'),blockedStorage);
-  const wardrobe=await market.locator('.mkm-figures>span').evaluateAll(nodes=>nodes.map(el=>el.style.backgroundImage));assert(wardrobe[0].includes('school-human'));assert(wardrobe[1].includes('player-school'));
+  const wardrobe=await market.locator('.mkm-figures>span').evaluateAll(nodes=>nodes.map(el=>el.style.backgroundImage));assert(wardrobe[0].includes('school-human'));assert(wardrobe[1].includes('player-school'));assert(await market.locator('.mkm-figures>span').evaluateAll(nodes=>nodes.every(el=>el.clientWidth===72&&el.clientHeight===72)),'Both wardrobe figures must have visible 72px frames');
   const overflow=await market.evaluate(el=>({width:el.getBoundingClientRect().width,scroll:el.scrollWidth,body:document.documentElement.scrollWidth,viewport:innerWidth}));assert(overflow.scroll<=overflow.width+2);assert(overflow.body<=overflow.viewport+2);
   await market.screenshot({path:path.join(qa,width+'-done.png')});
   await market.getByRole('button',{name:'再逛一圈',exact:true}).click();await market.getByRole('button',{name:'沿摊外侧进去',exact:true}).click();assert.equal(await market.getAttribute('data-lot'),'mirror');
