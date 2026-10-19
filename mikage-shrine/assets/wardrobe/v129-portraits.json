@@ -5,7 +5,6 @@
       "id": "tomoe-chibi",
       "actor": "巴卫",
       "outfit": "chibi",
-      "name": "幼狐巴卫 / 万宝槌缩小装",
       "asset": "assets/wardrobe/unlocks/tomoe-chibi-portrait.webp",
       "spriteSheet": {
         "path": "assets/wardrobe/unlocks/tomoe-chibi-sprites.webp",
@@ -112,13 +111,14 @@
           1056
         ]
       },
-      "source": "generated_images/exec-30ad418f-1e20-4189-b259-f899306860ae.png"
+      "source": "generated_images/exec-30ad418f-1e20-4189-b259-f899306860ae.png",
+      "title": "幼狐巴卫 / 万宝槌缩小装",
+      "name": "幼狐巴卫·万宝槌缩小装"
     },
     {
       "id": "tomoe-kariginu",
       "actor": "巴卫",
       "outfit": "kariginu",
-      "name": "神乐狩衣 / 诸神殿神使礼装",
       "asset": "assets/wardrobe/unlocks/tomoe-kariginu-portrait.webp",
       "spriteSheet": {
         "path": "assets/wardrobe/unlocks/tomoe-kariginu-sprites.webp",
@@ -225,13 +225,14 @@
           1055
         ]
       },
-      "source": "generated_images/exec-68c25874-2a17-486a-8e8c-f45de8cf42df.png"
+      "source": "generated_images/exec-68c25874-2a17-486a-8e8c-f45de8cf42df.png",
+      "title": "神乐狩衣 / 诸神殿神使礼装",
+      "name": "神乐狩衣"
     },
     {
       "id": "tomoe-butler",
       "actor": "巴卫",
       "outfit": "butler",
-      "name": "学园祭燕尾执事服",
       "asset": "assets/wardrobe/unlocks/tomoe-butler-portrait.webp",
       "spriteSheet": {
         "path": "assets/wardrobe/unlocks/tomoe-butler-sprites.webp",
@@ -338,13 +339,14 @@
           1054
         ]
       },
-      "source": "generated_images/exec-9d59e903-4426-468d-9ce9-53152df441fa.png"
+      "source": "generated_images/exec-9d59e903-4426-468d-9ce9-53152df441fa.png",
+      "title": "学园祭燕尾执事服",
+      "name": "学园祭执事服"
     },
     {
       "id": "tomoe-wedding",
       "actor": "巴卫",
       "outfit": "wedding",
-      "name": "黑纹付羽织袴 / 完婚礼装",
       "asset": "assets/wardrobe/unlocks/tomoe-wedding-portrait.webp",
       "spriteSheet": {
         "path": "assets/wardrobe/unlocks/tomoe-wedding-sprites.webp",
@@ -451,13 +453,14 @@
           1048
         ]
       },
-      "source": "generated_images/exec-f9a3933f-3de1-4bca-b5e3-d2535f109824.png"
+      "source": "generated_images/exec-f9a3933f-3de1-4bca-b5e3-d2535f109824.png",
+      "title": "黑纹付羽织袴 / 完婚礼装",
+      "name": "黑纹付羽织袴"
     },
     {
       "id": "player-kagura",
       "actor": "玩家",
       "outfit": "kagura",
-      "name": "神乐千早神装",
       "asset": "assets/wardrobe/unlocks/player-kagura-portrait.webp",
       "spriteSheet": {
         "path": "assets/wardrobe/unlocks/player-kagura-sprites.webp",
@@ -564,13 +567,14 @@
           1056
         ]
       },
-      "source": "generated_images/exec-cf5d99ba-f2c5-40e8-bcfd-cff758cc17cb.png"
+      "source": "generated_images/exec-cf5d99ba-f2c5-40e8-bcfd-cff758cc17cb.png",
+      "title": "神乐千早神装",
+      "name": "神乐千早"
     },
     {
       "id": "player-shiromuku",
       "actor": "玩家",
       "outfit": "shiromuku",
-      "name": "新娘白无垢",
       "asset": "assets/wardrobe/unlocks/player-shiromuku-portrait.webp",
       "spriteSheet": {
         "path": "assets/wardrobe/unlocks/player-shiromuku-sprites.webp",
@@ -677,13 +681,14 @@
           1056
         ]
       },
-      "source": "generated_images/exec-c60d0f6e-21aa-43a3-862c-758e0053478f.png"
+      "source": "generated_images/exec-c60d0f6e-21aa-43a3-862c-758e0053478f.png",
+      "title": "新娘白无垢",
+      "name": "新娘白无垢"
     },
     {
       "id": "player-gym",
       "actor": "玩家",
       "outfit": "gym",
-      "name": "学园体操短服 / 运动服",
       "asset": "assets/wardrobe/unlocks/player-gym-portrait.webp",
       "spriteSheet": {
         "path": "assets/wardrobe/unlocks/player-gym-sprites.webp",
@@ -790,13 +795,14 @@
           1056
         ]
       },
-      "source": "generated_images/exec-287332c1-a281-4d87-ad6e-206e537afd4e.png"
+      "source": "generated_images/exec-287332c1-a281-4d87-ad6e-206e537afd4e.png",
+      "title": "学园体操短服 / 运动服",
+      "name": "学园体操服"
     },
     {
       "id": "player-heian-travel",
       "actor": "玩家",
       "outfit": "heian-travel",
-      "name": "市女笠壶装束 / 平安旅装",
       "asset": "assets/wardrobe/unlocks/player-heian-travel-portrait.webp",
       "spriteSheet": {
         "path": "assets/wardrobe/unlocks/player-heian-travel-sprites.webp",
@@ -903,7 +909,9 @@
           1054
         ]
       },
-      "source": "generated_images/exec-4b702bab-d732-4239-8d6c-5baff56931bd.png"
+      "source": "generated_images/exec-4b702bab-d732-4239-8d6c-5baff56931bd.png",
+      "title": "市女笠壶装束 / 平安旅装",
+      "name": "市女笠旅装"
     }
   ]
 }
