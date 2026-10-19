@@ -1,0 +1,63 @@
+/* 1.42 painted substrate: material, objects, trim and shadows share one illustration. */
+.shrine-game{max-width:760px;container-type:inline-size;margin:auto;background:transparent;border:0;border-radius:0;box-shadow:none;color:#63452f;overflow:hidden}
+.skin-segment{position:relative;isolation:isolate}
+.skin-art{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:hidden}
+.skin-art image{pointer-events:none}
+.torii-portal{padding:0;margin:0;background:none}
+.game-hud{position:relative;display:block;aspect-ratio:1024/208;padding:0;margin:0 0 -10px;z-index:3;border:0;background:none;isolation:isolate}
+.game-hud .torii-title{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.game-hud .torii-meta{position:absolute;left:74%;top:54%;width:20%;height:24%;display:flex;justify-content:center;align-items:center;color:#5d402d;font-size:clamp(7px,2.15cqw,15px);line-height:1.3;white-space:nowrap}
+.game-hud .torii-phase{position:absolute;left:34.5%;top:79%;width:31%;height:18%;margin:0;display:flex;align-items:center;justify-content:center;color:#68492f;font-size:clamp(8px,2.35cqw,17px);line-height:1.3;white-space:nowrap;letter-spacing:0;overflow:hidden}
+.skin-map{padding:0 4.4% 5px;background:none}
+.skin-map>.skin-art{z-index:2}
+.skin-map .scene{width:100%;aspect-ratio:3/2;border:0;border-radius:0;box-shadow:none;background:#8e9377;position:relative}
+.scene-plaque{top:12px;left:8px;transform:none;padding:4px 8px;max-width:63%;font-size:clamp(10px,2.6cqw,17px);line-height:1.4;letter-spacing:1px;color:#694a32;border:1px solid #b28a56;border-radius:2px;background:#fff1d9ec;box-shadow:0 1px 3px #49311f22;white-space:normal}
+.scene #mood{position:absolute;left:7px;bottom:7px;z-index:1100;max-width:35%;padding:3px 6px;border:1px solid #d7b8a1;border-radius:3px;background:#785c75dd;color:#fff5e4;font-size:clamp(9px,2.4cqw,15px);line-height:1.3;pointer-events:none;overflow-wrap:anywhere}
+.scene .region-hotspot{width:44px;height:44px;min-width:44px;min-height:44px;padding:0;border:0;background:none;isolation:isolate}
+.scene .region-hotspot:before{width:12px;height:12px;border:1px solid #fff1cc;background:#f9d893aa;box-shadow:0 0 9px #ffdda9;animation:painted-glow 3s ease-in-out infinite}
+.scene .region-hotspot .spot-icon{width:20px;height:20px;background:#785a3bc7;border:1px solid #ffe8b8;box-shadow:0 1px 4px #48341d66}
+.scene .region-hotspot .spot-icon svg{width:12px;height:12px}
+.scene .spot-label{width:max-content;max-width:min(128px,42cqw);z-index:2;bottom:40px;padding:5px 7px;border:1px solid #bd9969;border-radius:2px;background:#fff1d8ed;color:#63482f;font-size:clamp(10px,2.6cqw,15px);line-height:1.4;white-space:normal;overflow-wrap:anywhere;box-shadow:0 2px 4px #50341f22}
+.scene .region-hotspot[data-label-side=below] .spot-label{top:40px;bottom:auto}
+.scene .region-hotspot.spot-edge-right .spot-label{right:0;left:auto;transform:none}
+.scene .region-hotspot.spot-edge-left .spot-label{left:0;right:auto;transform:none}
+.veranda-dialogue{position:relative;isolation:isolate;min-height:clamp(34px,9.2cqw,70px);padding:8px 9% 9px 6%;border:0;background:none;margin:0;box-shadow:none;border-radius:0}
+.veranda-dialogue:has(#speech[hidden]){display:none}
+.veranda-dialogue #speech{position:static;margin:0;padding:0;border:0;background:none;box-shadow:none;color:#60442e;font-size:clamp(11px,2.8cqw,18px);line-height:1.7;overflow-wrap:anywhere;border-radius:0;max-height:12em;overflow-y:auto}
+.shrine-game .scene-dock{position:relative;isolation:isolate;display:block;aspect-ratio:1024/396;padding:0;margin:0;border:0;background:none;box-shadow:none;overflow:visible}
+.scene-dock:before,.scene-dock:after{display:none}
+.shrine-game .dock-button{position:absolute;display:block;width:29%;height:50%;min-width:44px;min-height:44px;padding:0;margin:0;border:0;border-radius:2px;background:none;box-shadow:none;color:#62442d;transition:filter .2s}
+.dock-button .dock-art,.dock-button>svg{display:none!important}
+#map{left:6%;top:0}#ema{left:36%;top:0}#wardrobe{left:68%;top:0}
+#life{left:3%;top:50%}#journal-button{left:37%;top:50%}#buildings{left:71%;top:50%}
+.shrine-game .dock-button>span:last-of-type{position:absolute;left:9%;width:82%;top:72%;height:24%;padding:0;display:flex;align-items:center;justify-content:center;background:none;border:0;border-radius:0;font-size:clamp(11px,3.1cqw,22px);line-height:1.2;font-weight:500;letter-spacing:2px;text-shadow:0 1px #fff4df}
+.shrine-game #life>span:last-of-type,.shrine-game #journal-button>span:last-of-type,.shrine-game #buildings>span:last-of-type{top:62%}
+.shrine-game .dock-button:hover,.shrine-game .dock-button:active,.shrine-game .dock-button:focus-visible{background:#fff3d619;color:#8c4537;filter:drop-shadow(0 0 3px #fff1c1);transform:none}
+.shrine-game .dock-button:focus-visible{outline:2px solid #a84c42;outline-offset:-3px}
+.shrine-game #ema-notice{position:absolute;left:62%;top:9%;width:8px;height:8px;border:1px solid #fff6d3;border-radius:50%;background:#ffdf99;box-shadow:0 0 9px 4px #ffd27a99;pointer-events:none;animation:painted-glow 2.4s ease-in-out infinite}
+.shrine-game .game-ledger{padding:0;margin:0;border:0;background:none;box-shadow:none;color:#64472f}
+.skin-status{position:relative;isolation:isolate;aspect-ratio:1024/124}
+.skin-status .growth{position:absolute;inset:0;display:block;font-size:clamp(9px,2.7cqw,18px);color:#6d4b33}
+.skin-status .growth>span{position:absolute;top:22%;width:24%;height:36%;display:flex;align-items:center;justify-content:center;gap:4px;white-space:nowrap}
+.skin-status .growth>span:nth-child(1){left:10%}.skin-status .growth>span:nth-child(2){left:41%}.skin-status .growth>span:nth-child(3){left:73%;width:22%}
+.skin-status .growth b{color:#914f40;font-weight:500;font-size:clamp(12px,3.5cqw,24px)}
+.skin-status .story-track{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden}
+.skin-status .progress-track{position:absolute;left:6.6%;right:6.6%;top:76%;height:clamp(2px,.7cqw,5px);border-radius:20px;background:#7c523a66}
+.skin-status .progress-track i{background:linear-gradient(90deg,#bd6e59,#d89573);border-radius:20px}
+.game-ledger .scene-tools{position:relative;isolation:isolate;aspect-ratio:1024/120;display:block;margin:0;padding:0;gap:0;background:none}
+.game-ledger .scene-tools>button{position:absolute;top:10%;height:72%;min-width:44px;min-height:38px;padding:0;margin:0;border:0;background:none;border-radius:0;box-shadow:none;display:flex;align-items:center;justify-content:center;color:#68462e;font-size:clamp(9px,2.5cqw,17px);line-height:1.4;gap:0}
+.scene-tools #moment{left:3%;width:22%}.scene-tools #paths{left:27%;width:20%}.scene-tools #wander{left:49%;width:20%}.scene-tools #lantern{left:71%;width:25%}
+.game-ledger .scene-tools>button svg{display:none}.game-ledger .scene-tools>button>span{padding-left:25%;white-space:nowrap}
+.scene-tools #lantern span:before{content:"时间 · "}
+.game-ledger .scene-tools>button:hover,.game-ledger .scene-tools>button[aria-pressed=true]{background:#b8753a16;color:#8e4535}
+.game-ledger .scene-tools #retry{position:relative;left:auto;top:auto;width:100%;background:#ffedca;border:1px solid #af8054;min-height:44px}
+.game-ledger #note{margin:0;padding:9px 6%;background:#f8e8ce;color:#78523a;font-size:11px;line-height:1.6}
+.shrine-game[data-ready=true] #note{display:none}
+.torii-watermark{position:relative;isolation:isolate;margin:0;min-height:clamp(20px,6.6cqw,50px);padding:7px 8px 4px;background:none;border:0;text-align:center;color:#eed0a0;font-size:clamp(8px,1.9cqw,12px);line-height:1.5;overflow-wrap:anywhere}
+.shrine-game:has(.scene[data-period=night]) .skin-art{filter:brightness(.86) saturate(.88)}
+@keyframes painted-glow{50%{opacity:.65}}
+@media(max-width:360px){.scene-plaque{font-size:9px;padding:3px 6px}.skin-status .growth{font-size:9px}.game-ledger .scene-tools>button{font-size:9px}.game-hud .torii-meta{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.shrine-game *, .shrine-game *:before,.shrine-game *:after{animation:none!important;transition:none!important}}
+
+.scene-tools:has(#retry:not([hidden])){margin-bottom:44px}
+.game-ledger .scene-tools #retry:not([hidden]){position:absolute;top:100%;left:0;width:100%;height:44px}
