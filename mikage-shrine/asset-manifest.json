@@ -573,5 +573,20 @@
     "path": "assets/activities/dress-v134-font-OFL.txt",
     "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
     "bytes": 4350
+  },
+  {
+    "path": "assets/activities/wind-v135-crane.webp",
+    "sha256": "ef88d7524de96f40cc716c3ea520a7d568d0abe6baf4c8c69d505bfab357dbdc",
+    "bytes": 103378
+  },
+  {
+    "path": "assets/activities/wind-v135-font.ttf",
+    "sha256": "ecda177e09462927a01b5bb0d1cdf2595856f9886c0be9aff9e6baca6441ab43",
+    "bytes": 237672
+  },
+  {
+    "path": "assets/activities/wind-v135-font-OFL.txt",
+    "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+    "bytes": 4350
   }
 ]
