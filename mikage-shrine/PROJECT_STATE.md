@@ -1,9 +1,7 @@
 # 御影神社项目状态
 
-当前候选：1.29.2标题页启动修复。唯一续接：releases/1.29.2/README.md、manifest.json、card-source.json。1.29.1修复了远程加载器，但漏检标题页ready()引用未定义publish；真实执行start的JSDOM联合测试已复现并验证最小修正。维护源src/scene-host.mjs同步修复，旧版本不覆盖。
+当前候选：1.29.3开场巴卫立绘修复。唯一续接：releases/1.29.3/README.md、manifest.json、card-source.json。
 
-tests/startup-integration.test.cjs覆盖三开场、内联子JS、状态栏、四面板、重播/聊天切换及测试存档保留。真实酒馆无法连接，验收pending。
+用户截图已定位：paintPortrait非零尺寸分支item未定义；女主src赋值后抛错，阻断巴卫src赋值。src/scene-host.mjs与冻结scene.mjs修复，rendererRevision使旧同目录API不再被复用。新增31套带尺寸绘制测试，联合模拟补上非零尺寸与双人图片断言。旧版错误可复现，新版通过。
 
-运行模块已发布到df322df08b6f5ab88f1345d2b913edb6a12b707b；角色卡：cards/巴卫_御影神社_v1.29.2_标题页启动修复版.json；字节数392299；SHA256 aef58dcf52faab934e94e3258f3a26b068449f364726c06f76d112138cb63b01。最终卡片加载回归通过。下一步：目标酒馆导入与手机界面验收。
-
-追加调试：releases/1.29.2/DEBUG.md。嵌套iframe模拟测试扩展到按钮点击、防连点、面板实际尺寸/关闭、重绘、swipe桥接过期、脚本重载去重、多楼层精确读取；六个CDN依赖地址HTTP200。没有修改卡片或运行模块，继续使用1.29.2；真实酒馆验收仍pending。
+待发布源码到Git、用不可变提交构建1.29.3卡并核对最终文件。真实手机酒馆图片解码/布局及用户存档验收pending。旧版卡保留。

@@ -4,7 +4,7 @@ const deps=process.env.MIKAGE_DEBUG_DEPS||'/tmp/mikage-debug/node_modules';
 const {JSDOM,VirtualConsole}=require(path.join(deps,'jsdom'));
 const z=require(path.join(deps,'zod'));
 const project=path.resolve(__dirname,'..');
-const release=process.argv[2]||'1.29.2';
+const release=process.argv[2]||'1.29.3';
 const manifest=JSON.parse(fs.readFileSync(path.join(project,'releases',release,'manifest.json')));
 const expectFailure=process.argv.includes('--expect-opening-failure');
 const clone=v=>JSON.parse(JSON.stringify(v));
@@ -26,6 +26,7 @@ function run(id){const d=new JSDOM('',{url:'https://fixture.invalid/'+id,runScri
 function mountChild(frame, globals={}) {
  const child=frame.contentWindow;
  if(frame.srcdoc){const doc=frame.contentDocument;doc.open();doc.write(frame.srcdoc);doc.close();}
+ Object.defineProperties(child.HTMLElement.prototype,{clientWidth:{configurable:true,get(){return this.classList?.contains('portrait-frame')?180:0;}},clientHeight:{configurable:true,get(){return this.classList?.contains('portrait-frame')?340:0;}}});
  Object.defineProperty(child.document,'fonts',{value:{add(){}},configurable:true});child.FontFace=class{load(){return Promise.resolve(this);}};
  Object.assign(child,{matchMedia:()=>({matches:true,addEventListener(){},removeEventListener(){}}),...globals});
  for(const script of child.document.querySelectorAll('script'))if(!script.src&&script.textContent.trim())child.eval(script.textContent);
@@ -44,6 +45,7 @@ const tick=()=>new Promise(r=>setTimeout(r,25));
   frame.dispatchEvent(new host.Event('load'));
   const opening=mountChild(frame,{OpeningBridge:frame.contentWindow.OpeningBridge,OpeningArt:host.MikageCharacterArt});
   assert(opening.OpeningScreen,'Opening child JS should initialize');await tick();
+  for(const id of ['tomoe','heroine']){const img=opening.document.querySelector('#'+id+' img');assert(img.getAttribute('src'),'Both opening portraits need an assigned URL');assert(parseFloat(img.style.height)>0,'Both portraits need nonzero layout');}
   opening.document.querySelector('[data-page="stories"]').click();const firstChoice=opening.document.querySelector('[data-story-id="opening-1"]');assert(firstChoice,'First story choice');firstChoice.click();firstChoice.click();await tick();assert.equal(messageWrites,1,'Double click must commit the opening once');
   assert(rows[0].message.includes('MikageOpeningStarted:opening-1'));assert(!rows[0].message.includes('{{user}}'));
   assert.equal(host.document.querySelectorAll('iframe[title="游戏标题页"]').length,0);
