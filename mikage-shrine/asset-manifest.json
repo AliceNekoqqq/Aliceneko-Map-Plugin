@@ -528,5 +528,20 @@
     "path": "assets/activities/school-v131-font-OFL.txt",
     "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
     "bytes": 4350
+  },
+  {
+    "path": "assets/activities/market-v132-props.webp",
+    "sha256": "7e230aab21940486a0f682e2f492b30d9740d13c1d05fd7688f3402a70eb277c",
+    "bytes": 137906
+  },
+  {
+    "path": "assets/activities/market-v132-font.ttf",
+    "sha256": "6e6ec0e9af15316a9bc9731c8b2c7fbec1d55c20dce8d9c902745ae79096e341",
+    "bytes": 280944
+  },
+  {
+    "path": "assets/activities/market-v132-font-OFL.txt",
+    "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+    "bytes": 4350
   }
 ]
