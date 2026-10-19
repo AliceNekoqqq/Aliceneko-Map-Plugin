@@ -6,7 +6,7 @@
  const nav=window.MikageNavigation,icon=window.MikageIcon,REGIONS=nav.regions;
  const MOMENTS={
   R01:['sweep','扫一庭秋叶','sweep','把落叶轻轻拢到一处。'],
-  R02:['cat','坂道遇见猫','cat','先蹲下来，等它愿意靠近。'],
+  R02:['mail','樱坂拾页记','mail','沿三条小径拾回风中的纸页，避开黑羽与人群，再把便签按时刻排好。'],
   R03:['dango','三色团子签','dango','给一串团子搭配喜欢的颜色。'],
   R04:['boat','一只小纸舟','boat','折好纸舟，送它顺流过桥。'],
   R05:['ticket','等车的票根','ticket','给旅程盖上自己的小印章。'],

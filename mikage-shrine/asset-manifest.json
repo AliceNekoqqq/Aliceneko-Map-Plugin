@@ -518,5 +518,15 @@
     "path": "assets/wardrobe/restyle-v130/player-heian-travel-sprites.png",
     "sha256": "9d41c1b180836fca540e74dfa4d24363bd0b865ee0734683e4688fa02917f218",
     "bytes": 2082723
+  },
+  {
+    "path": "assets/activities/school-v131-font.ttf",
+    "sha256": "b7231cc33c9f55c73040266d7098a50a1a61a17a9744a8769b41f2569ba5d40e",
+    "bytes": 124932
+  },
+  {
+    "path": "assets/activities/school-v131-font-OFL.txt",
+    "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6",
+    "bytes": 4350
   }
 ]
