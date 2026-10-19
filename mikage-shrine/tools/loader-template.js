@@ -13,7 +13,7 @@
     return;
   }
   const state = states[config.scriptId] = {
-    status: 'idle', promise: null, retry: null, node: null, error: null, attempt: 0,
+    status: 'idle', promise: null, retry: null, node: null, error: null, attempt: 0, module: null,
   };
   const resource = `${config.repository}@${config.commit}/${config.modulePath}`;
   const urls = [
@@ -70,8 +70,10 @@
     removeNotice();
     state.promise = (async () => {
       const errors = [];
-      let module;
-      for (const url of urls) {
+      // A retryable start reuses the same module/closure. Importing a new URL
+      // here would register the module's already-installed listeners again.
+      let module = state.module;
+      if (!module) for (const url of urls) {
         try {
           // Failed ESM fetches can remain cached in a WebView. Retry with a fresh
           // request URL while keeping the immutable repository commit unchanged.
@@ -102,9 +104,13 @@
         removeNotice();
         return true;
       } catch (error) {
-        state.status = 'blocked';
+        // Only a module that explicitly guarantees no committed bootstrap
+        // effects may retry. Unknown/partial starts still require re-enabling.
+        const retryable = error?.mikageRetryableStart === true;
+        state.module = retryable ? module : null;
+        state.status = retryable ? 'failed' : 'blocked';
         state.error = String(error?.stack || error?.message || error);
-        showNotice(true);
+        showNotice(!retryable);
         return false;
       }
     })().finally(() => { state.promise = null; });
