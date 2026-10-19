@@ -1,0 +1,86 @@
+{
+  "version": "1.29.0",
+  "method": "ImageGen generated transparent 4x3 sprite atlases; three adjacent-cell portrait artifacts were replaced with independently regenerated transparent portraits.",
+  "assets": [
+    {
+      "id": "tomoe-chibi",
+      "spriteSource": "exec-30ad418f-1e20-4189-b259-f899306860ae.png",
+      "spriteSourceSha256": "cc79b035684c0cc99163285b02a307e5c237777b900aac84f1897a298b47ad31",
+      "portraitSource": "exec-30ad418f-1e20-4189-b259-f899306860ae.png",
+      "spriteAsset": "assets/wardrobe/unlocks/tomoe-chibi-sprites.webp",
+      "spriteSha256": "5128d8599219bf7fe49dcff685ef586b4658af7b4f55e61f5ea3c212262c102f",
+      "portraitAsset": "assets/wardrobe/unlocks/tomoe-chibi-portrait.webp",
+      "portraitSha256": "c5c0ab6a3d3af4e47edfdc56861641d3d8257fe97048a472c65fc8d449f4222a"
+    },
+    {
+      "id": "tomoe-kariginu",
+      "spriteSource": "exec-68c25874-2a17-486a-8e8c-f45de8cf42df.png",
+      "spriteSourceSha256": "c89a72316526745dfcd29b96690c9f4b7e186bd1620c59711481137e4608f1a8",
+      "portraitSource": "exec-d74f463a-52b3-42b0-87e5-649b749ecbb7.png",
+      "spriteAsset": "assets/wardrobe/unlocks/tomoe-kariginu-sprites.webp",
+      "spriteSha256": "f097a1258763ecd271bc1568ff765be0e8b7487793d39fce20e2d5ef07486591",
+      "portraitAsset": "assets/wardrobe/unlocks/tomoe-kariginu-portrait.webp",
+      "portraitSha256": "b42435ede0da7681f47a8a5ca46081bbc2c795f034382d73c27b7b40b51cf9be"
+    },
+    {
+      "id": "tomoe-butler",
+      "spriteSource": "exec-9d59e903-4426-468d-9ce9-53152df441fa.png",
+      "spriteSourceSha256": "aae9592d590556011a2a1a47c2243ea7e977f2305d17c6e1175db23288207af5",
+      "portraitSource": "exec-1e0a2313-7724-434a-a897-b421fbfd208b.png",
+      "spriteAsset": "assets/wardrobe/unlocks/tomoe-butler-sprites.webp",
+      "spriteSha256": "66c1600f8d7f0dfefc59551474e3913f9dba6fa83fcbdbbc35e08ddaf45a129d",
+      "portraitAsset": "assets/wardrobe/unlocks/tomoe-butler-portrait.webp",
+      "portraitSha256": "7f32c8782d9bf319013f2c93f14a3c4f02596967801b061c9e64f259d8e188ab"
+    },
+    {
+      "id": "tomoe-wedding",
+      "spriteSource": "exec-f9a3933f-3de1-4bca-b5e3-d2535f109824.png",
+      "spriteSourceSha256": "501cef04bd0f58f5f18efc313237c8b2b7c3033ccf636eef162349ebab71a06f",
+      "portraitSource": "exec-f9a3933f-3de1-4bca-b5e3-d2535f109824.png",
+      "spriteAsset": "assets/wardrobe/unlocks/tomoe-wedding-sprites.webp",
+      "spriteSha256": "6b21ac22ca00b739701b9ce85be7f9734de95d3c5e8984bf3dcfd9bed2c908a6",
+      "portraitAsset": "assets/wardrobe/unlocks/tomoe-wedding-portrait.webp",
+      "portraitSha256": "0efd98f68e93c9c191a0d4f62e4976824c961f62d9ff75a823f19173899bf36b"
+    },
+    {
+      "id": "player-kagura",
+      "spriteSource": "exec-cf5d99ba-f2c5-40e8-bcfd-cff758cc17cb.png",
+      "spriteSourceSha256": "0b7c1a8d6cd14792863ea40be26a9bc7738c3adc17f9dcb814df44769deb0624",
+      "portraitSource": "exec-cf5d99ba-f2c5-40e8-bcfd-cff758cc17cb.png",
+      "spriteAsset": "assets/wardrobe/unlocks/player-kagura-sprites.webp",
+      "spriteSha256": "9de8dfbcd57399ac4a51af8b3743679388d45b2f584d9efb778f79250c53c3dc",
+      "portraitAsset": "assets/wardrobe/unlocks/player-kagura-portrait.webp",
+      "portraitSha256": "f4c961edced88f22965789200d8fb98c94602cd8d9633ef2ff62386b14147aa5"
+    },
+    {
+      "id": "player-shiromuku",
+      "spriteSource": "exec-c60d0f6e-21aa-43a3-862c-758e0053478f.png",
+      "spriteSourceSha256": "e8abd8082c4428476d7f6d48c1d869d0876a399750734c46b2f2139fd20ffabe",
+      "portraitSource": "exec-c60d0f6e-21aa-43a3-862c-758e0053478f.png",
+      "spriteAsset": "assets/wardrobe/unlocks/player-shiromuku-sprites.webp",
+      "spriteSha256": "9562cc96ba70cedf4794f80eb72ac61c6156b5f37f16ff61b7be1035c2cf92e1",
+      "portraitAsset": "assets/wardrobe/unlocks/player-shiromuku-portrait.webp",
+      "portraitSha256": "e194e0062dc18e3b8572ebb1c2125a3d95c605ca863041d066f2536be6225c1f"
+    },
+    {
+      "id": "player-gym",
+      "spriteSource": "exec-287332c1-a281-4d87-ad6e-206e537afd4e.png",
+      "spriteSourceSha256": "e37d85ab78a3083a77f58ffc4d34ffac6e3cd748b62203f59ae4feac7c351c33",
+      "portraitSource": "exec-287332c1-a281-4d87-ad6e-206e537afd4e.png",
+      "spriteAsset": "assets/wardrobe/unlocks/player-gym-sprites.webp",
+      "spriteSha256": "5dfac294d90e4733329bdd9eb6bf3c945a9eb0d0a2b5f1a7e93753728e2e7ca5",
+      "portraitAsset": "assets/wardrobe/unlocks/player-gym-portrait.webp",
+      "portraitSha256": "d043c073d4e9e2dde524469c323f36e7c5ce89edd1a40913d1a61e971735b882"
+    },
+    {
+      "id": "player-heian-travel",
+      "spriteSource": "exec-4b702bab-d732-4239-8d6c-5baff56931bd.png",
+      "spriteSourceSha256": "bf8633d23a86469f89b2075844ba651a6df608acfd5d3f2e544bd39d0f1a14b2",
+      "portraitSource": "exec-8bd14e77-78ae-428e-9fad-2e64de1192e4.png",
+      "spriteAsset": "assets/wardrobe/unlocks/player-heian-travel-sprites.webp",
+      "spriteSha256": "6d5a90ea8abad34b9d0e176e7caa49a6dcbf52788d39e78f246551733e60574c",
+      "portraitAsset": "assets/wardrobe/unlocks/player-heian-travel-portrait.webp",
+      "portraitSha256": "f398daaf8a5f48ec95af646737f300eaf35bf6cd6bf1da48b8161f507166e027"
+    }
+  ]
+}

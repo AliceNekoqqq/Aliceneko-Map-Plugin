@@ -40,6 +40,16 @@
     "bytes": 149056
   },
   {
+    "path": "assets/opening/minigames-v112-glyphs.ttf",
+    "sha256": "06f377f7788d2d1a1df0dcce0fa47c141d023c23bf449c2b1c4ef604ed5508ed",
+    "bytes": 102064
+  },
+  {
+    "path": "assets/opening/minigames-v114-glyphs.ttf",
+    "sha256": "6a1a38dce21875ef52930a0fffc8ea66285a427ad0b8bd8ad4432f5c97501ce9",
+    "bytes": 114928
+  },
+  {
     "path": "assets/opening/patch-glyphs-v181.ttf",
     "sha256": "252f61f3502dc7d2c4bc9d0dca7a3093fda0687620482351ed766192770fbd0e",
     "bytes": 36156
@@ -210,6 +220,36 @@
     "bytes": 498896
   },
   {
+    "path": "assets/wardrobe/unlocks/player-gym-portrait.webp",
+    "sha256": "d043c073d4e9e2dde524469c323f36e7c5ce89edd1a40913d1a61e971735b882",
+    "bytes": 90998
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-gym-sprites.webp",
+    "sha256": "5dfac294d90e4733329bdd9eb6bf3c945a9eb0d0a2b5f1a7e93753728e2e7ca5",
+    "bytes": 389352
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-heian-travel-portrait.webp",
+    "sha256": "f398daaf8a5f48ec95af646737f300eaf35bf6cd6bf1da48b8161f507166e027",
+    "bytes": 159838
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-heian-travel-sprites.webp",
+    "sha256": "6d5a90ea8abad34b9d0e176e7caa49a6dcbf52788d39e78f246551733e60574c",
+    "bytes": 545196
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-kagura-portrait.webp",
+    "sha256": "f4c961edced88f22965789200d8fb98c94602cd8d9633ef2ff62386b14147aa5",
+    "bytes": 133236
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-kagura-sprites.webp",
+    "sha256": "9de8dfbcd57399ac4a51af8b3743679388d45b2f584d9efb778f79250c53c3dc",
+    "bytes": 542530
+  },
+  {
     "path": "assets/wardrobe/unlocks/player-sakura-portrait.webp",
     "sha256": "ab2b9a339abab632156903b5af9521895bbe15ccc3b960b18be1b26a7bd8f149",
     "bytes": 126596
@@ -240,6 +280,16 @@
     "bytes": 497316
   },
   {
+    "path": "assets/wardrobe/unlocks/player-shiromuku-portrait.webp",
+    "sha256": "e194e0062dc18e3b8572ebb1c2125a3d95c605ca863041d066f2536be6225c1f",
+    "bytes": 112878
+  },
+  {
+    "path": "assets/wardrobe/unlocks/player-shiromuku-sprites.webp",
+    "sha256": "9562cc96ba70cedf4794f80eb72ac61c6156b5f37f16ff61b7be1035c2cf92e1",
+    "bytes": 433462
+  },
+  {
     "path": "assets/wardrobe/unlocks/player-swim-portrait.webp",
     "sha256": "1ebf722b17c65dc4d45170b84bf78110764df0ef74417c74e7b7dc8f589aabe8",
     "bytes": 201092
@@ -258,6 +308,26 @@
     "path": "assets/wardrobe/unlocks/tomoe-aoba-sprites.webp",
     "sha256": "e2950c9e59adb0f540791a4b47058fb4e25dec8eef515163320e1e35f539f197",
     "bytes": 484896
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-butler-portrait.webp",
+    "sha256": "7f32c8782d9bf319013f2c93f14a3c4f02596967801b061c9e64f259d8e188ab",
+    "bytes": 133536
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-butler-sprites.webp",
+    "sha256": "66c1600f8d7f0dfefc59551474e3913f9dba6fa83fcbdbbc35e08ddaf45a129d",
+    "bytes": 436106
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-chibi-portrait.webp",
+    "sha256": "c5c0ab6a3d3af4e47edfdc56861641d3d8257fe97048a472c65fc8d449f4222a",
+    "bytes": 53400
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-chibi-sprites.webp",
+    "sha256": "5128d8599219bf7fe49dcff685ef586b4658af7b4f55e61f5ea3c212262c102f",
+    "bytes": 457184
   },
   {
     "path": "assets/wardrobe/unlocks/tomoe-city-portrait.png",
@@ -288,6 +358,16 @@
     "path": "assets/wardrobe/unlocks/tomoe-journey-sprites.webp",
     "sha256": "23abfb865eda3272b0b3fc20ccb4ede3f6599193610449032eeead818bb23f41",
     "bytes": 542254
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-kariginu-portrait.webp",
+    "sha256": "b42435ede0da7681f47a8a5ca46081bbc2c795f034382d73c27b7b40b51cf9be",
+    "bytes": 154428
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-kariginu-sprites.webp",
+    "sha256": "f097a1258763ecd271bc1568ff765be0e8b7487793d39fce20e2d5ef07486591",
+    "bytes": 566014
   },
   {
     "path": "assets/wardrobe/unlocks/tomoe-moon-portrait.webp",
@@ -330,6 +410,16 @@
     "bytes": 514344
   },
   {
+    "path": "assets/wardrobe/unlocks/tomoe-wedding-portrait.webp",
+    "sha256": "0efd98f68e93c9c191a0d4f62e4976824c961f62d9ff75a823f19173899bf36b",
+    "bytes": 92968
+  },
+  {
+    "path": "assets/wardrobe/unlocks/tomoe-wedding-sprites.webp",
+    "sha256": "6b21ac22ca00b739701b9ce85be7f9734de95d3c5e8984bf3dcfd9bed2c908a6",
+    "bytes": 371858
+  },
+  {
     "path": "assets/wardrobe/unlocks/tomoe-winter-portrait.png",
     "sha256": "4c54314f1183eb7799e666103aa200bffbfeb1a865192e442926c2dc0f48e768",
     "bytes": 1177243
@@ -348,15 +438,5 @@
     "path": "assets/wardrobe/unlocks/tomoe-yako-sprites.png",
     "sha256": "63286d50be2efa8b08d08d435d8588de06e769c708f86f3f2d68ea3c0a5a5df6",
     "bytes": 1699667
-  },
-  {
-    "path": "assets/opening/minigames-v112-glyphs.ttf",
-    "sha256": "06f377f7788d2d1a1df0dcce0fa47c141d023c23bf449c2b1c4ef604ed5508ed",
-    "bytes": 102064
-  },
-  {
-    "path": "assets/opening/minigames-v114-glyphs.ttf",
-    "sha256": "6a1a38dce21875ef52930a0fffc8ea66285a427ad0b8bd8ad4432f5c97501ce9",
-    "bytes": 114928
   }
 ]
