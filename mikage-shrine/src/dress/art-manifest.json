@@ -1,0 +1,35 @@
+{
+  "path": "mikage-shrine/assets/activities/dress-v134-himemiko.webp",
+  "bytes": 197212,
+  "sha256": "40d0e37178b18f25f549bccb894b938b41834b922368253eb2041e287eeb943f",
+  "width": 1774,
+  "height": 887,
+  "columns": 3,
+  "source": "original built-in imagegen fan illustration; reference used for character features only; original clothes",
+  "alpha_bounds_in_original_cells": [
+    [
+      251,
+      10,
+      528,
+      879
+    ],
+    [
+      165,
+      10,
+      442,
+      879
+    ],
+    [
+      80,
+      11,
+      357,
+      879
+    ]
+  ],
+  "background_positions_percent": [
+    7.934,
+    50.634,
+    93.418
+  ],
+  "note": "Centers aligned by CSS display offsets; image encoded only, no painted edits"
+}
