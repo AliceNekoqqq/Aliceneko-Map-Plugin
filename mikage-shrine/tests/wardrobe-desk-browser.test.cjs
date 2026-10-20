@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const {fixture:base}=require('./map-desk-browser.test.cjs');
-const html=fs.readFileSync(path.resolve(__dirname,'../releases/1.46.0/wardrobe-panel.html'),'utf8');
+const html=fs.readFileSync(path.resolve(__dirname,'..',process.env.MIKAGE_PANEL_HTML||'releases/1.46.0/wardrobe-panel.html'),'utf8');
 async function fixture(b,width,options={}){const result=await base(b,width,{...options,html});const {p}=result;
  await p.evaluate(()=>{
  uiState.玩家.衣装='daily';uiState.巴卫.服装='usual';
