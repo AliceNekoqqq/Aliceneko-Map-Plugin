@@ -1,0 +1,25 @@
+{
+  "release": "1.48.4",
+  "status": "candidate",
+  "runtime_commit": "0d00176b6a226f504cb51c7837568fdb017de96d",
+  "branch": "codex/rule-consistency-1.48.4",
+  "card": "mikage-shrine/cards/巴卫_御影神社_v1.48.4_规则一致性修订版.json",
+  "bytes": 392040,
+  "sha256": "fe0e1d996fbec16c4bd35cd7eeaa06ebdc2ffc44e6597c979715e7f954d81c7b",
+  "validation": "mikage-shrine/releases/1.48.4/VALIDATION.json",
+  "loader_audit": "passed: all 5 exports/fallback/start-once, source/card parity, 31 outfits, 13 unchanged portraits",
+  "runtime_modules": "byte-identical to 1.48.3",
+  "git_authorization": "explicit user approval after first push was blocked by auto-review",
+  "pending": [
+    "real SillyTavern",
+    "Android device",
+    "actual model output",
+    "author acceptance"
+  ],
+  "remaining_audit_items": [
+    "optional construction expansion",
+    "actual assembled prompt budget"
+  ],
+  "local_source_commit": "e3cebef5c5921ae0f490dc23b8d25a345691b210",
+  "git_upload_method": "authorized GitHub connection; remote branch tree compared with local final snapshot"
+}

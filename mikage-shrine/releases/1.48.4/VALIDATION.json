@@ -1,0 +1,55 @@
+{
+  "release": "1.48.4",
+  "status": "candidate",
+  "scope": {
+    "operations": 17,
+    "worldbook_entries": [
+      5,
+      16,
+      17,
+      26,
+      41,
+      52,
+      59,
+      72
+    ],
+    "semantic_line_churn": 45,
+    "runtime_changes": 0
+  },
+  "checks": {
+    "base_card_matches_library": true,
+    "baseline_integration_repair": "passed",
+    "baseline_startup": "passed",
+    "reverse_source_semantic_equality": "passed",
+    "five_runtime_hashes": "passed",
+    "new_positive_instruction_lint": "passed",
+    "ejs_version": "3.1.10",
+    "ejs_relationship_cases": 200,
+    "enabled_dynamic_templates": 10,
+    "missing_state_and_display_mode": "passed",
+    "new_startup": "passed",
+    "packer_dry_run": "passed",
+    "packed_source_semantic_parity": "passed",
+    "loader_exports_fallback_start_once": "passed",
+    "outfits_accepted": 31,
+    "unchanged_external_portraits": 13
+  },
+  "scope_gate": {
+    "default_local_fix": "warning: complete new release snapshots exceed 2 files/80 lines; untracked UTF-8 sampling also flagged changes.json",
+    "semantic_scope": "45 changed lines in one worldbook boundary",
+    "release_artifact_budget": {
+      "max_files": 8,
+      "max_lines": 5000
+    },
+    "full_final_check": "passed: full default view includes all staged/unstaged/untracked paths; combined baseline-to-final snapshot has 8 files/3563 lines, zero unknowns and no forbidden source/runtime/assets writes"
+  },
+  "pending": [
+    "real SillyTavern import and model behavior",
+    "Android device",
+    "author acceptance"
+  ],
+  "deferred": [
+    "optional construction expansion",
+    "actual assembled prompt budget"
+  ]
+}
