@@ -1,0 +1,86 @@
+/* Ema pavilion, painted objects with readable natural-height backs. Map styles remain scoped. */
+@font-face{font-family:'Mikage Shrine Serif';src:url('__EMA_ASSETS__shrine-serif-v145.woff2') format('woff2');font-display:swap;font-weight:100 900}
+body[data-view=board]{background:#42291e url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e89b016d7b36f73b918054617397112b2910fcc1/mikage-shrine/assets/ui/map-wood-v144.webp') center top/100% auto}
+body[data-view=board] .experience-nav{background:#43271ef5;border-bottom:2px solid #bc955d;box-shadow:0 3px 12px #170b0766}
+body[data-view=board] .nav-pages button,body[data-view=board] .nav-brand{color:#f0d7b2}
+body[data-view=board] .nav-pages button[aria-current=page]{background:#883f30;border-color:#d5aa69;color:#ffe7ba}
+#board-dialog,#board-dialog button{font-family:'Mikage Shrine Serif','Mikage Serif','Noto Serif SC',serif}
+#board-dialog{padding:0 16px 28px!important;max-width:1120px;margin:auto;min-height:0;background:transparent;border:0;box-shadow:none;position:relative;color:#f4dfb9;isolation:isolate}
+#board-dialog:after{display:none}
+#board-dialog .ema-desk-header{position:relative;width:calc(100% + 32px);aspect-ratio:3/1;min-height:150px;margin:0 -16px 12px;background:#5f3022 url('__EMA_ASSETS__ema-v145-header.webp') center/100% 100%;isolation:isolate;overflow:hidden}
+#board-dialog .ema-desk-header h2{position:absolute;left:30%;top:26%;width:41%;height:37%;display:grid;place-items:center;margin:0;color:#ffe1a2;text-shadow:0 2px 2px #27140e;font-size:clamp(19px,4.8vw,33px);font-weight:500;letter-spacing:.12em;white-space:nowrap;line-height:1.4}
+#board-dialog .close-button{position:absolute;right:9px;top:8px;width:44px;height:44px;min-height:44px;border-radius:50%;background:#4b2a1ecf;color:#ffebbf;border:1px solid #c29a60;font-size:25px;line-height:1;box-shadow:0 2px 5px #180d0a66;z-index:4}
+#board-dialog .board-toolbar{margin:0 auto 12px;padding:10px 0 15px;max-width:none;border-bottom:1px solid #c89b635e;display:flex;align-items:center;justify-content:space-between;gap:10px}
+#board-dialog .live-note{font-size:13px;letter-spacing:1px;color:#f6ddae}
+#board-dialog .live-note i{width:6px;height:6px;background:#e0ac5d;box-shadow:0 0 6px #ffdda36e;border-radius:50%}
+#board-dialog .ema-request-actions{gap:9px;justify-content:flex-start}
+#board-dialog .secondary-button,#board-dialog .ema-filter-button{font-family:inherit;background:#f3e0bc url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e89b016d7b36f73b918054617397112b2910fcc1/mikage-shrine/assets/ui/map-ticket-v144.webp') center/100% 100%;color:#704b32;min-height:44px;padding:10px 13px;border:0;border-radius:2px;box-shadow:0 3px 4px #180b075e;letter-spacing:0;font-size:12px;transition:transform .15s}
+#board-dialog .secondary-button svg{width:17px;height:17px}
+#board-dialog .ema-api-status{margin:8px 0 13px;padding:0;font-size:12px;line-height:1.8;color:#e4c7a1;overflow-wrap:anywhere}
+#board-dialog .main-gate-note{margin:12px 0;padding:11px 13px;border:1px solid #c8a46655;border-left:3px solid #d9b171;background:#281a15b3;color:#f4dfb9;font-size:12px;line-height:1.9;letter-spacing:0}
+#board-dialog .main-gate-note:empty{display:none}
+#ema-desk-status{margin:10px 0;padding:9px 12px;font-size:13px;line-height:1.7;color:#ffe2ae;border-left:2px solid #d8aa65;background:#6a3e254d;overflow-wrap:anywhere}
+#ema-desk-status:empty{display:none}
+#ema-desk-status[data-state=error]{color:#ffd4bf;border-color:#df916f}
+#board-dialog .ema-filter{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px 0 0;padding:0}
+#board-dialog .ema-filter-button{font-size:12px;padding:9px 14px;color:#695039;min-height:44px;filter:none;border:0}
+#board-dialog .ema-filter-button[aria-pressed=true]{box-shadow:0 0 0 2px #d1a269,0 4px 6px #170c0770;color:#943f2b;transform:translateY(-2px)}
+#board-dialog .ema-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;justify-items:center;gap:22px 25px;max-width:920px;margin:0 auto;padding:24px 0 16px;overflow:visible}
+#board-dialog .ema-grid:before,#board-dialog .ema-grid:after{display:none}
+#board-dialog .ema-card{position:relative;width:100%;max-width:365px;min-width:0;filter:drop-shadow(0 10px 8px #160b0666);transform:none;transition:filter .2s,opacity .2s;perspective:1000px;transform-origin:50% 1%}
+#board-dialog .ema-card:before,#board-dialog .ema-card:after{display:none}
+#board-dialog .ema-card:not(.is-flipped):before{content:'';display:block;position:absolute;z-index:1;left:calc(50% - 5px);top:19px;width:10px;height:15px;border-radius:50%;border:1px solid #b48c49;background:linear-gradient(100deg,#6d4522,#d9b66a 45%,#7f5426);box-shadow:0 2px 3px #1d100b99;pointer-events:none}
+#board-dialog .ema-card:hover,#board-dialog .ema-card:nth-child(even):hover{transform:none;filter:drop-shadow(0 10px 8px #160b0666)}
+#board-dialog .ema-card[data-filter-match=false]{opacity:.58;filter:saturate(.55) drop-shadow(0 5px 6px #180d0966)}
+#board-dialog .ema-inner,#board-dialog .ema-card.is-special .ema-inner{display:block;min-height:0;contain:none;perspective:1000px;transform-origin:center top}
+#board-dialog .ema-face{position:relative;display:flex;min-width:0;opacity:1;visibility:visible;transform:none;transition:none;clip-path:none;border:0;border-radius:0;box-shadow:none;backface-visibility:visible;overflow:visible}
+#board-dialog .ema-front,#board-dialog .ema-card.is-special .ema-front{min-height:415px;padding:48% 13% 15%;gap:10px;background:transparent url('__EMA_ASSETS__ema-v145-ordinary.webp') center/100% 100% no-repeat;align-items:center;justify-content:center;text-align:center;color:#63402b}
+#board-dialog .ema-card.is-special .ema-front{background-image:url('__EMA_ASSETS__ema-v145-main.webp')}
+#board-dialog .ema-front:after,#board-dialog .ema-stamp,#board-dialog .ema-main-ribbon{display:none}
+#board-dialog .ema-number{position:absolute;right:15%;top:43%;font-family:inherit;font-size:10px;letter-spacing:1px;color:#9a7952;line-height:1.3}
+#board-dialog .ema-front .ema-kind{order:0;background:none;border:0;color:#805839;letter-spacing:.1em;font-size:12px;padding:0;margin:0;align-self:center}
+#board-dialog .is-special .ema-front .ema-kind{color:#79566f}
+#board-dialog .ema-title{font:500 22px/1.6 'Mikage Shrine Serif','Mikage Serif',serif;letter-spacing:.06em;color:#63402a;overflow-wrap:anywhere;max-width:100%}
+#board-dialog .ema-teaser{font-size:12px;line-height:1.7;color:#805a37;letter-spacing:0;overflow-wrap:anywhere}
+#board-dialog .ema-tags{order:4;display:flex;justify-content:center;flex-wrap:wrap;gap:5px;font-size:11px;line-height:1.5;color:#725131;margin:0}
+#board-dialog .ema-tags>span{padding:2px 5px;border:1px solid #ae86554d;border-radius:2px;background:#f9e3bb80}
+#board-dialog .ema-front .flip-button{order:5;margin:8px 0 0;padding:9px 15px;min-height:44px;border:1px solid #ac7d46;border-radius:3px;background:#fff0cb8a;color:#794b2e;box-shadow:0 2px 3px #80533020;font-size:13px;letter-spacing:0}
+#board-dialog .ema-back{display:none;min-height:0;padding:19px 15px 18px;background:#f7e8c9;border:12px solid transparent;border-image:url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e89b016d7b36f73b918054617397112b2910fcc1/mikage-shrine/assets/ui/map-ticket-v144.webp') 22 fill stretch;color:#654b33;gap:12px;pointer-events:auto}
+#board-dialog .ema-card.is-flipped .ema-front{display:none;opacity:1;visibility:visible;transform:none}
+#board-dialog .ema-card.is-flipped .ema-back{display:flex;opacity:1;visibility:visible;transform:none;pointer-events:auto}
+#board-dialog .ema-card.is-special .ema-face{box-shadow:none;border-color:transparent}
+#board-dialog .ema-back>.flip-button{min-height:44px;margin:0;padding:8px 10px;align-self:flex-end;background:#ead1a080;border:1px solid #b99661;border-radius:3px;font-size:12px;color:#755331}
+#board-dialog .ema-paper{background:transparent;border:0;box-shadow:none;align-self:stretch;flex:1;padding:0;gap:13px}
+#board-dialog .ema-paper .ema-kind{padding:4px 8px;background:#8e4432;color:#ffebc6;border:0;font-size:11px;letter-spacing:0;align-self:flex-start}
+#board-dialog .is-special .ema-paper .ema-kind{background:#73536b}
+#board-dialog .ema-paper .ema-title{font-size:22px;letter-spacing:1px;line-height:1.6}
+#board-dialog .ema-meta{font-size:12px;line-height:1.9;color:#8b7050;letter-spacing:0;overflow-wrap:anywhere}
+#board-dialog .ema-detail{font-size:14px;line-height:1.95;color:#634d36;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+#board-dialog .ema-special-note{font-size:12px;line-height:1.8;color:#7b6547;background:#ddc79840;border-left:2px solid #b99050;padding:9px 10px;margin:0}
+#board-dialog .reward-box{border:1px solid #c5a36c66;background:#f3ddb566;padding:11px;margin:0}
+#board-dialog .reward-title{font-family:inherit;font-size:11px;letter-spacing:1px;color:#8a6942}
+#board-dialog .reward-chip{font-family:inherit;font-size:12px;color:#6f5134;background:#fff0cd;border-color:#c8a97488;padding:4px 7px}
+#board-dialog .ema-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:3px;padding-top:10px}
+#board-dialog .ema-actions .primary-button,#board-dialog .ema-actions .quiet-button{min-height:46px;font:500 13px/1.6 'Mikage Shrine Serif','Mikage Serif',serif;padding:10px 15px;letter-spacing:0;background:#98472f;color:#ffe7bb;border:1px solid #b98347;box-shadow:0 3px 0 #693721;border-radius:3px}
+#board-dialog .ema-actions .primary-button:after{display:none}
+#board-dialog .ema-actions .quiet-button{background:#eed8af;color:#7b5838;border-color:#b89561;box-shadow:0 2px 0 #b39a6d}
+#board-dialog .ema-actions button:disabled{background:#d9c49d;color:#7d6849;border-color:#b49b74;box-shadow:none;opacity:1;cursor:default}
+#board-dialog .ema-actions button[aria-busy=true]{background:#8c6240;color:#ffedc8;cursor:wait}
+#board-dialog .empty-board{grid-column:1/-1;min-height:160px;display:grid;place-items:center;padding:35px 24px;border:1px solid #c6a26677;background:#2d1e17bb;color:#f0d4ac;font-size:14px;line-height:1.9;text-align:center;max-width:550px}
+#board-dialog .dialog-hint{max-width:920px;margin:16px auto 0;padding:13px 14px;border:1px solid #be975a66;background:#2e1c13b3;color:#ebcda3;line-height:1.8;font-size:12px;letter-spacing:0}
+#board-dialog button{-webkit-tap-highlight-color:transparent;outline:none;scroll-margin-top:85px}
+#board-dialog button:focus-visible{outline:2px dashed #f7ce8c;outline-offset:4px;z-index:4}
+#board-dialog .ema-back button:focus-visible,#board-dialog .ema-front button:focus-visible{outline-color:#935d2f}
+#board-dialog .ema-toy{position:absolute;min-width:44px;min-height:44px;background:transparent;border:0;padding:0;z-index:3;touch-action:manipulation}
+#board-dialog .ema-toy-bell{right:7%;top:21%;width:11%;height:66%;transform-origin:50% 0}
+#board-dialog .ema-toy-bell svg{display:block;width:100%;height:100%;pointer-events:none;overflow:hidden;filter:drop-shadow(0 3px 3px #28170d77)}
+#board-dialog .ema-toy-cherry{left:0;top:0;width:24%;height:80%}
+#board-dialog .ema-fx-layer{position:absolute;inset:0;z-index:5;overflow:hidden;pointer-events:none}
+#board-dialog .ema-petal{position:absolute;width:8px;height:11px;background:#ffc2be;border-radius:90% 10% 80% 20%;box-shadow:0 0 4px #f6aa9455;pointer-events:none}
+#board-dialog.ema-refresh-busy [data-action=refresh] svg{animation:ema-refresh-spin 1.3s linear infinite}
+@keyframes ema-refresh-spin{to{transform:rotate(360deg)}}
+@media(min-width:1000px){#board-dialog .ema-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}#board-dialog .ema-front,#board-dialog .ema-card.is-special .ema-front{min-height:390px}#board-dialog .ema-title{font-size:21px}#board-dialog .ema-desk-header{max-height:300px;aspect-ratio:auto;height:270px}}
+@media(max-width:600px){#board-dialog{padding-left:12px!important;padding-right:12px!important}#board-dialog .ema-desk-header{margin-left:-12px;margin-right:-12px;min-height:150px}#board-dialog .board-toolbar{display:block}#board-dialog .live-note{display:block;margin-bottom:10px}#board-dialog .ema-request-actions{display:flex;flex-wrap:wrap;gap:8px}#board-dialog .ema-grid{grid-template-columns:minmax(0,1fr);max-width:345px;gap:24px;padding-top:14px}#board-dialog .ema-card{max-width:345px}#board-dialog .ema-front,#board-dialog .ema-card.is-special .ema-front{min-height:445px}#board-dialog .ema-filter{gap:8px}#board-dialog .ema-filter-button{padding:9px 11px}#board-dialog .ema-back{padding:15px 12px;border-width:10px}}
+@media(max-width:600px){#board-dialog .ema-desk-header{width:calc(100% + 24px)}}
+@media(max-width:350px){#board-dialog .ema-front,#board-dialog .ema-card.is-special .ema-front{min-height:420px;padding-top:47%;padding-bottom:15%}#board-dialog .ema-title{font-size:20px}#board-dialog .secondary-button{padding:9px 10px}#board-dialog .ema-back{padding:13px 9px}}
+@media(prefers-reduced-motion:reduce){#board-dialog *,#board-dialog *:before,#board-dialog *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
