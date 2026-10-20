@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const{chromium}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const{fixture:panelFixture}=require('./map-desk-browser.test.cjs');
-const html=fs.readFileSync(path.resolve(__dirname,'../releases/1.45.0/ema-panel.html'),'utf8');
+const html=fs.readFileSync(path.resolve(__dirname,'..',process.env.MIKAGE_PANEL_HTML||'releases/1.45.0/ema-panel.html'),'utf8');
 const entries=[{编号:'E-MAIN',标题:'让山门重新迎风',心愿:'鸟居的红漆斑驳了。请和巴卫一起修好山门，迎接前来参拜的人。',祈愿人:'御影',性质:'主线',状态:'未接',地区:'R01',类型:'修缮',奖励:{木材:3,灵力:2}},{编号:'E-TEA',标题:'檐下的一杯热茶',心愿:'明天想在檐下招待老朋友。能帮忙把茶具和点心备好吗？',祈愿人:'山脚的婆婆',性质:'普通',状态:'未接',地区:'R01',类型:'日常',奖励:{铜钱:8}},{编号:'E-PAUSE',标题:'落在学园的便笺',心愿:'一张没有署名的便笺夹在旧书里。',祈愿人:'学生',性质:'普通',状态:'暂停',地区:'R02',类型:'寻物'},{编号:'E-DONE',标题:'替猫找个避雨的地方',心愿:'雨停了，猫也找到家了。',祈愿人:'邻居',性质:'普通',状态:'已完成',地区:'R02',类型:'日常'}];
 async function fixture(b,width,options={}){const result=await panelFixture(b,width,{...options,html});const{p}=result;await p.evaluate(entries=>{
  uiState.绘马板.绘马=structuredClone(entries);ShrineUIBridge.getEmaSettings=async()=>({version:1,mode:'main',activeProfileId:'',profiles:[]});
