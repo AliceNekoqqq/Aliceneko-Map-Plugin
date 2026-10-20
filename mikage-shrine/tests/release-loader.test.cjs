@@ -15,9 +15,11 @@ const sha = data => crypto.createHash('sha256').update(data).digest('hex');
 (async () => {
   assert.equal(sha(fs.readFileSync(process.argv[3])), manifest.source_sha256);
   const originalScripts = original.data.extensions.tavern_helper.scripts;
-  // Reproduce the actual 1.29.0 bootstrap refusal, without calling its MVU start.
-  const broken = vm.createContext({URL, console: {error(){}}, setTimeout, clearTimeout});
-  vm.runInContext(originalScripts[0].content, broken);
+  // Reject mismatched exports using the packed executable loader; card-source
+  // intentionally contains source placeholders rather than executable loaders.
+  const broken = vm.createContext({URL, console: {error(){}}, setTimeout, clearTimeout,
+    mockImport: async()=>({VERSION:'invalid-version',SCRIPT_ID:'mvu',start(){throw Error('must not start');}})});
+  vm.runInContext(card.data.extensions.tavern_helper.scripts[0].content.replace('import(url)', 'mockImport(url)'), broken);
   await tick();
   await broken.__MIKAGE_REMOTE_LOADERS__.mvu.promise;
   assert.equal(broken.__MIKAGE_REMOTE_LOADERS__.mvu.status, 'failed');
@@ -77,5 +79,5 @@ const sha = data => crypto.createHash('sha256').update(data).digest('hex');
   for (const image of manifest.tomoe_asset_refs.images) {
     assert.equal(sha(fs.readFileSync(path.join(root, image.path))), image.sha256);
   }
-  console.log('PASS: original MVU failure reproduced; all 5 remote loaders match actual exports, fall back and start once; worldbook/text/state preserved; 31 outfits accepted; 13 external images byte-identical. Real SillyTavern execution remains pending.');
+  console.log('PASS: mismatched MVU exports rejected; all 5 remote loaders match actual exports, fall back and start once; worldbook/text/state preserved; 31 outfits accepted; 13 external images byte-identical. Real SillyTavern execution remains pending.');
 })().catch(error => {console.error(error);process.exitCode=1;});
