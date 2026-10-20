@@ -7,7 +7,7 @@ export const changes = {
   拜殿: '拜殿换上完整屋顶、朱栏与奉纳箱。',
   庭院: '庭院新增水池、花丛与第二株樱树。'
 };
-const sprites = {
+export const sprites = {
   gate: [0,0,375,380], gateDone: [375,0,373,380],
   hall: [749,0,344,380], hallDone: [1095,0,441,380],
   office: [0,385,325,310], officeDone: [328,385,469,310],
@@ -16,7 +16,7 @@ const sprites = {
   basin: [716,700,412,324], bush: [1128,700,408,324]
 };
 // Stable world anchors replace only the visual coordinates, never the saved zone/slot IDs.
-const slots = {
+export const slots = {
   veranda: {north_eave:[591,282],south_eave:[652,282],floor_left:[588,327],floor_right:[663,327]},
   courtyard: {garden_edge:[172,339],stone_path:[333,390]},
   gate: {gate_eave:[260,358],gate_stand:[190,435]},
@@ -57,10 +57,10 @@ export function project(value) {
   });
   return {stages,modules,decorations,period:state.环境?.时段 || '白昼'};
 }
-export async function mount(canvas, {getState, subscribe, atlasURL, decorURL, onRender=()=>{}}) {
+export async function mount(canvas, {getState, subscribe, atlasURL, decorURL, drawModules=true, drawDecorations=true, onRender=()=>{}}) {
   const ctx=canvas.getContext('2d'); canvas.width=768;canvas.height=512;
   const load=url=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(Error('场景部件未加载，请重新打开。'));im.src=url;});
-  const [atlas,decor]=await Promise.all([load(atlasURL),load(decorURL)]);
+  const [atlas,decor]=await Promise.all([load(atlasURL),drawDecorations?load(decorURL):Promise.resolve(null)]);
   let stopped=false, last=null;
   function render(value) {
     if(stopped)return;
@@ -83,7 +83,7 @@ export async function mount(canvas, {getState, subscribe, atlasURL, decorURL, on
     // Quiet wooden tea platform remains available for old life decorations.
     ctx.fillStyle='#675547';ctx.fillRect(523,357,90,30);ctx.fillStyle='#a88a67';ctx.fillRect(523,353,90,28);
     for(let x=525;x<613;x+=12){ctx.fillStyle='#8e7256';ctx.fillRect(x,353,1,28);}
-    const layers=view.modules.map(m=>({...m,kind:'module'})).sort((a,b)=>a.y-b.y).concat(view.decorations.map(d=>({...d,kind:'decor'})));
+    const layers=(drawModules?view.modules:[]).map(m=>({...m,kind:'module'})).sort((a,b)=>a.y-b.y).concat((drawDecorations?view.decorations:[]).map(d=>({...d,kind:'decor'})));
     for(const item of layers){
       if(item.kind==='module')draw(item.sprite,item.x,item.y,item.w,item.h);
       else if(decorAtlas[item.item]) {

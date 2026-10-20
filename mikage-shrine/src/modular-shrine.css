@@ -1,0 +1,21 @@
+/* Children participate in the scene's existing foot-position z order. Do not create a stacking context here. */
+#modular-shrine{position:absolute;inset:0;pointer-events:none}
+#modular-ground{position:absolute;inset:0;width:100%;height:100%;z-index:0;image-rendering:pixelated}
+.modular-part{position:absolute;transform:translate(-50%,-100%);pointer-events:none;image-rendering:pixelated}
+.modular-part svg{display:block;width:100%;height:100%;overflow:hidden}
+#modular-status{position:absolute;left:25%;right:25%;bottom:8%;z-index:1102;padding:7px;background:#f7eedbd9;color:#5b4c38;border:1px solid #bea57e;border-radius:3px;font-size:11px;pointer-events:auto}
+#modular-shrine[data-period=dusk] .modular-part{filter:sepia(.17) brightness(.87)}
+#modular-shrine[data-period=night] .modular-part{filter:brightness(.58) saturate(.75)}
+#modular-shrine[data-period=night] [data-module^=path-lantern]{filter:brightness(.9) drop-shadow(0 0 6px #ffd783)}
+.scene[data-region=R01][data-visual-mode=pixel] #region-art{background-image:none!important;background:#819370}
+.scene[data-region=R01][data-visual-mode=pixel] .scene-shade{display:none}
+.scene[data-region=R01][data-visual-mode=pixel] .scene-plaque{pointer-events:none}
+.scene[data-region=R01][data-visual-mode=pixel] .life-scene-objects{display:block!important}
+.scene[data-region=R01][data-visual-mode=pixel] .life-prop.modular-decor{background-image:url('__DECOR_URL__')!important;background-size:300% 200%!important;background-repeat:no-repeat!important;background-color:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important;image-rendering:pixelated}
+.scene[data-region=R01][data-visual-mode=pixel] .life-prop.modular-decor:before,.scene[data-region=R01][data-visual-mode=pixel] .life-prop.modular-decor:after{display:none!important}
+.modular-new{animation:modular-arrive 1.1s ease-out}
+@keyframes modular-arrive{from{filter:brightness(1.5) drop-shadow(0 0 8px #ffdf85)}to{filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){.modular-new{animation:none}}
+/* Dense miniature props need separate hit areas; the full-size Life panel remains available. */
+.scene[data-region=R01][data-visual-mode=pixel] .life-scene-object{min-width:24px;min-height:24px;width:24px;height:24px}
+.scene[data-region=R01][data-visual-mode=pixel] .life-scene-object .life-prop{width:24px;height:24px}

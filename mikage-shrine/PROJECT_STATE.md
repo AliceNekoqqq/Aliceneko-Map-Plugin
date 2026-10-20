@@ -1,3 +1,21 @@
+## 1.48.0 双画风建设候选（2026-10-20）
+
+作者最终选择：默认保留当前原画底图，同时把像素场景作为另一套可切换模式。已在地图下方新增独立“原画 ⇄ 像素”按钮，不遮挡原场景。两模式读取同一份原五设施修缮进度，1～3维持基础外观，4显示完工回报；没有新增升级等级、材料消耗或正式写入。模式仅当前状态栏视图；换地区隐藏按钮，回神社保留本帧选择；切换画风回对应场地入口，不推进剧情。
+
+原画：完整保留1.43的R01三时段底图、原导航及角色/热点；五项完工分别增加注连绳、两座石灯、御守陈列架、奉纳幡、花坛。素材assets/ui/shrine-additions-v148.webp（内置生图、透明图集、WebP压缩保留alpha），固定素材提交34ed25c473141cccd06284de4ffdf1829509f414。像素：复用shrine-modular-v1.webp，地面canvas、独立建筑DOM、按脚点排序，专属安全导航和热点；原生活物件id/zone/slot不变，仅显示坐标随模式切换。R02～R10继续原图。
+
+维护src/shrine-additions.js/css、src/modular-shrine.js/css、experiments/modular-shrine/scene.mjs、tools/build_shrine_additions.py；从1.47 manifest指向scene 1.43派生releases/1.48.0，继续复用1.47 panels与原其他模块。tools/build_modular_shrine.py和旧tests/modular-shrine-browser.test.cjs是暂停的单模式接入草稿，不是发布入口；新浏览器检查用tests/dual-shrine-browser.test.cjs和shrine-scene-fixture.cjs。
+
+已通过：320/375/760原画默认/底图与原导航保留、五项独立增件、无写入画风切换、像素安全寻路、原生活陈设点击、三时段、R02往返、空状态/跨楼层/清理、键盘焦点/减少动画；纯投影3125组合和15625独立变化。整卡三开场、状态栏和四面板模拟启动通过，保存木材13不丢失。真实SillyTavern、Android设备与作者审美尚待验收，不标driver-accepted。37世界书、正则、初始变量和原建设领域不变。
+
+下一步：真实宿主验收双模式，再设计独立的可选扩建记录；原五项修缮完工后到顶的玩法限制尚未改变。
+
+## 作者补充：保留当前底图（2026-10-20）
+
+本轮接入方向已修正：作者不希望替换现有神社底图。原三时段神社画面、既有走路区域与外围UI继续保留。模块化改为在原画位置/透视上叠加独立附属部件，新增部件画风必须匹配原画；不发布整张像素场地替换方案。
+
+本地 releases/1.48.0、tools/build_modular_shrine.py、src/modular-shrine.js/css、tests/modular-shrine-browser.test.cjs 是已停止的换底图接入实验，未提交Git、未打包或交付，不作为下一版基线。下一步应从1.47 manifest指定的scene 1.43重新派生，保留region-art与updateLight，用独立饰件/附属设施表达五项完工。不复用换底图实验的新导航坐标。已提交5e6e0fdb的独立像素小样仅保留为技术验证。
+
 ## 模块建设接轨小样（2026-10-20，非正式卡发布）
 
 当前优先项改为建设可见化。作者已明确不需要施工过程，要求在同一场地增加/升级独立像素部件。废墟/脚手架方向已停止，相关生成图不进入本项目。1.47.0 仍为最新候选角色卡。
