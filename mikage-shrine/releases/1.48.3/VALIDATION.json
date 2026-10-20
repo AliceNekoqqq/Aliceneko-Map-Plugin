@@ -1,0 +1,24 @@
+{
+  "source_hashes": {
+    "mvu": "dc228a2f3e29845e2d7ab9f5f96c28e9662c49fe4821b60ea77325a76c9f3e25",
+    "panels": "9f8bf6ae14e229faadf908ca7e4cdf4a3af762416a6a77b8beb67114378683ca",
+    "scene": "6b12db16306cf39283a245fd0c39f024d43d649291ab491ac3d40f395566ac43",
+    "minigames": "8f61aafa009676283838d8e789c5333f2bf5fc3be5ae4f791795fd1f0c378b29",
+    "tomoe": "49e55d881fddb5c6ec28d5365214c985a6c1ad4b18434e4b61337b5cd6d268e1"
+  },
+  "passed": [
+    "8 wardrobe quest destination/gate/closure checks",
+    "old paused quests resume without snapshot rewrite or teleport",
+    "77 approved edits retained",
+    "all other card content exact except version/quest metadata",
+    "10 game models and renderers byte-identical",
+    "Chromium153: 320x568,375x812,1280x900; all ten book entries, import/export, clipboard refusal, legacy collection, milestones, focus, scroll, pause, cleanup, actual FontFace load",
+    "3 greetings, statusbar and 4 panels simulated startup, floor/swipe/chat/reload cleanup; wood13 retained"
+  ],
+  "pending": [
+    "real SillyTavern import and output",
+    "Android device",
+    "human aesthetic acceptance"
+  ],
+  "scope_check": "full local worktree check warned on preexisting stale checkout and unrelated files; Git publication uses explicit allowlist, not add-all"
+}
