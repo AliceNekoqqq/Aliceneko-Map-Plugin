@@ -12,7 +12,7 @@ suite=suite.replace(anchor,`  rows.at(-1).data.stat_data=${JSON.stringify(state(
   await host.MikageShrinePanels.bridge.act('life',{kind:'buy',item:'tea_leaf',quantity:1});await tick();
   assert.equal(rows.length,count+1);assert.deepEqual(rows.at(-2),prior);const saved=rows.at(-1).data.stat_data;assert.equal(saved.神社.奉纳,8);assert.equal(saved.生活.库存.tea_leaf,4);assert.equal(saved.记录.资源流水.length,1);assert.equal(saved.记录.资源流水[0].变动,-2);assert.equal(rows.at(-1).is_hidden,false);await host.MikageShrinePanels.bridge.getState();assert.equal(rows.at(-1).data.stat_data.记录.资源流水.length,1);
   console.log('PASS actual life bridge creates one visible snapshot with debit, package units and one ledger; prior floor unchanged and reread stable');
-${release==='1.49.3'?`  rows.at(-1).data.stat_data.生活.库存.herb=2;
+${['1.49.3','1.49.4'].includes(release)?`  rows.at(-1).data.stat_data.生活.库存.herb=2;
   const salePrior=clone(rows.at(-1)),saleCount=rows.length;
   await host.MikageShrinePanels.bridge.getState();await host.MikageShrinePanels.bridge.act('life',{kind:'sell',item:'herb',quantity:1});await tick();
   assert.equal(rows.length,saleCount+1);assert.deepEqual(rows.at(-2),salePrior);const sold=rows.at(-1).data.stat_data;assert.equal(sold.神社.奉纳,9);assert.equal(sold.生活.库存.herb,0);assert.equal(sold.记录.资源流水.length,2);assert.equal(sold.记录.资源流水[1].变动,1);assert.equal(sold.记录.资源流水[1].来源,'妖怪横丁收购');assert.equal(rows.at(-1).is_hidden,false);await host.MikageShrinePanels.bridge.getState();assert.equal(rows.at(-1).data.stat_data.记录.资源流水.length,2);

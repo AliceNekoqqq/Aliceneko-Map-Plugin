@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const {C,state,clone,tomorrow}=require('./economy-income.test.cjs');
-const root=path.resolve(__dirname,'..'),html=fs.readFileSync(root+'/releases/1.49.3/wardrobe-panel.html','utf8');
+const root=path.resolve(__dirname,'..'),html=fs.readFileSync(root+'/releases/'+process.env.MIKAGE_ECONOMY_RELEASE+'/wardrobe-panel.html','utf8');
 const scene=fs.readFileSync(root+'/releases/1.49.0/scene.mjs','utf8'),a=scene.indexOf('((host)=>{'),tail="})(typeof window==='undefined'?globalThis:window.parent);",b=scene.indexOf(tail,a)+tail.length;
 async function run(){const browser=await chromium.launch({executablePath:'/tmp/chromium-full',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});try{for(const width of [320,375,1000]){
  let current=state(2,0),calls=0,fail=false,delay=null;current.生活.库存.wood_charm=3;current.生活.库存.herb=4;const p=await browser.newPage({viewport:{width,height:812}}),errors=[];

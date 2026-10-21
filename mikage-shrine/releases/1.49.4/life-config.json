@@ -1,0 +1,566 @@
+{
+  "version": "1.0.0",
+  "runtimeVersion": "0.6.0",
+  "startingInventory": {
+    "wood_scrap": 2,
+    "cloth": 1,
+    "rice": 2,
+    "tea_leaf": 1,
+    "herb_seed": 2,
+    "tomato_seed": 1,
+    "flower_seed": 1
+  },
+  "items": [
+    {
+      "id": "wind_chime",
+      "name": "风铃",
+      "kind": "decoration",
+      "stage": 1,
+      "slots": [
+        "eave"
+      ],
+      "description": "风吹时会发出清亮声响。"
+    },
+    {
+      "id": "zabuton",
+      "name": "坐垫",
+      "kind": "decoration",
+      "stage": 1,
+      "slots": [
+        "floor",
+        "table"
+      ],
+      "description": "可放在回廊或茶桌旁。"
+    },
+    {
+      "id": "lantern",
+      "name": "纸灯笼",
+      "kind": "decoration",
+      "stage": 1,
+      "slots": [
+        "eave",
+        "stand"
+      ],
+      "description": "初始灯笼未点亮；点灯后须记录实际状态。"
+    },
+    {
+      "id": "herb_planter",
+      "name": "香草盆栽",
+      "kind": "decoration",
+      "stage": 2,
+      "slots": [
+        "floor"
+      ],
+      "description": "有香草气息的小陶盆。"
+    },
+    {
+      "id": "flower_vase",
+      "name": "花瓶",
+      "kind": "decoration",
+      "stage": 2,
+      "slots": [
+        "table"
+      ],
+      "description": "可摆放鲜花。"
+    },
+    {
+      "id": "morning_glory",
+      "name": "牵牛花盆栽",
+      "kind": "decoration",
+      "stage": 2,
+      "slots": [
+        "floor"
+      ],
+      "description": "庭院里有牵牛花的陶盆。"
+    },
+    {
+      "id": "wood_scrap",
+      "name": "木料",
+      "kind": "material",
+      "stage": 1
+    },
+    {
+      "id": "cloth",
+      "name": "布片",
+      "kind": "material",
+      "stage": 1
+    },
+    {
+      "id": "rice",
+      "name": "米",
+      "kind": "ingredient",
+      "stage": 2
+    },
+    {
+      "id": "tea_leaf",
+      "name": "茶叶",
+      "kind": "ingredient",
+      "stage": 2
+    },
+    {
+      "id": "herb_seed",
+      "name": "香草种子",
+      "kind": "seed",
+      "stage": 2
+    },
+    {
+      "id": "tomato_seed",
+      "name": "番茄种子",
+      "kind": "seed",
+      "stage": 2
+    },
+    {
+      "id": "flower_seed",
+      "name": "花种",
+      "kind": "seed",
+      "stage": 2
+    },
+    {
+      "id": "herb",
+      "name": "香草",
+      "kind": "ingredient",
+      "stage": 2
+    },
+    {
+      "id": "tomato",
+      "name": "番茄",
+      "kind": "ingredient",
+      "stage": 2
+    },
+    {
+      "id": "flowers",
+      "name": "鲜花",
+      "kind": "ingredient",
+      "stage": 2
+    },
+    {
+      "id": "wood_charm",
+      "name": "木制御守",
+      "kind": "decoration",
+      "stage": 2,
+      "slots": [
+        "table"
+      ],
+      "description": "在神社手作的祈愿物，不代表任何人的同意。"
+    },
+    {
+      "id": "bento",
+      "name": "便当",
+      "kind": "food",
+      "stage": 2
+    },
+    {
+      "id": "tea_set",
+      "name": "茶点",
+      "kind": "food",
+      "stage": 2
+    },
+    {
+      "id": "flower_tea",
+      "name": "花草茶",
+      "kind": "food",
+      "stage": 4
+    }
+  ],
+  "zones": [
+    {
+      "id": "veranda",
+      "name": "回廊",
+      "stage": 1,
+      "slots": [
+        {
+          "id": "north_eave",
+          "type": "eave",
+          "x": 45,
+          "y": 15
+        },
+        {
+          "id": "south_eave",
+          "type": "eave",
+          "x": 65,
+          "y": 15
+        },
+        {
+          "id": "floor_left",
+          "type": "floor",
+          "x": 28,
+          "y": 78
+        },
+        {
+          "id": "floor_right",
+          "type": "floor",
+          "x": 68,
+          "y": 78
+        }
+      ]
+    },
+    {
+      "id": "courtyard",
+      "name": "庭院",
+      "stage": 1,
+      "slots": [
+        {
+          "id": "garden_edge",
+          "type": "floor",
+          "x": 18,
+          "y": 70
+        },
+        {
+          "id": "stone_path",
+          "type": "floor",
+          "x": 50,
+          "y": 82
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "name": "门前",
+      "stage": 1,
+      "slots": [
+        {
+          "id": "gate_eave",
+          "type": "eave",
+          "x": 50,
+          "y": 20
+        },
+        {
+          "id": "gate_stand",
+          "type": "stand",
+          "x": 30,
+          "y": 72
+        }
+      ]
+    },
+    {
+      "id": "tea_table",
+      "name": "茶桌",
+      "stage": 1,
+      "slots": [
+        {
+          "id": "seat_left",
+          "type": "table",
+          "x": 25,
+          "y": 35
+        },
+        {
+          "id": "seat_right",
+          "type": "table",
+          "x": 75,
+          "y": 35
+        }
+      ]
+    }
+  ],
+  "initialDecorations": [
+    {
+      "id": "D-START-CHIME",
+      "item": "wind_chime",
+      "zone": "veranda",
+      "slot": "north_eave",
+      "state": {
+        "lit": false
+      },
+      "source": "开局已有风铃"
+    },
+    {
+      "id": "D-START-CUSHION",
+      "item": "zabuton",
+      "zone": "veranda",
+      "slot": "floor_left",
+      "state": {
+        "lit": false
+      },
+      "source": "开局已有坐垫"
+    },
+    {
+      "id": "D-START-LANTERN",
+      "item": "lantern",
+      "zone": "veranda",
+      "slot": "south_eave",
+      "state": {
+        "lit": false
+      },
+      "source": "开局已有纸灯笼"
+    }
+  ],
+  "plots": [
+    {
+      "id": "plot_1",
+      "name": "小菜圃左畦",
+      "stage": 2
+    },
+    {
+      "id": "plot_2",
+      "name": "小菜圃右畦",
+      "stage": 2
+    }
+  ],
+  "crops": [
+    {
+      "id": "herb",
+      "seed": "herb_seed",
+      "days": 2,
+      "yield": {
+        "herb": 2
+      }
+    },
+    {
+      "id": "tomato",
+      "seed": "tomato_seed",
+      "days": 3,
+      "yield": {
+        "tomato": 2
+      }
+    },
+    {
+      "id": "flowers",
+      "seed": "flower_seed",
+      "days": 2,
+      "yield": {
+        "flowers": 1
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "id": "wood_charm",
+      "name": "木制御守",
+      "stage": 2,
+      "inputs": {
+        "wood_scrap": 1,
+        "cloth": 1
+      },
+      "output": {
+        "wood_charm": 1
+      }
+    },
+    {
+      "id": "bento",
+      "name": "便当",
+      "stage": 2,
+      "inputs": {
+        "rice": 1
+      },
+      "output": {
+        "bento": 1
+      }
+    },
+    {
+      "id": "tea_set",
+      "name": "茶点",
+      "stage": 2,
+      "inputs": {
+        "tea_leaf": 1,
+        "herb": 1
+      },
+      "output": {
+        "tea_set": 1
+      }
+    },
+    {
+      "id": "flower_tea",
+      "name": "花草茶",
+      "stage": 4,
+      "inputs": {
+        "tea_leaf": 1,
+        "flowers": 1
+      },
+      "output": {
+        "flower_tea": 1
+      }
+    },
+    {
+      "id": "tomato_bento",
+      "name": "番茄饭团便当",
+      "stage": 2,
+      "inputs": {
+        "rice": 1,
+        "tomato": 1
+      },
+      "output": {
+        "bento": 2
+      }
+    }
+  ],
+  "shop": [
+    {
+      "item": "wood_scrap",
+      "price": 1,
+      "stage": 2,
+      "available": 10,
+      "units": 3
+    },
+    {
+      "item": "cloth",
+      "price": 2,
+      "stage": 2,
+      "available": 8,
+      "units": 3
+    },
+    {
+      "item": "rice",
+      "price": 1,
+      "stage": 2,
+      "available": 12,
+      "units": 3
+    },
+    {
+      "item": "tea_leaf",
+      "price": 2,
+      "stage": 2,
+      "available": 8,
+      "units": 3
+    },
+    {
+      "item": "herb_seed",
+      "price": 1,
+      "stage": 2,
+      "available": 5,
+      "units": 2
+    },
+    {
+      "item": "tomato_seed",
+      "price": 1,
+      "stage": 2,
+      "available": 5,
+      "units": 2
+    },
+    {
+      "item": "flower_seed",
+      "price": 1,
+      "stage": 2,
+      "available": 5,
+      "units": 2
+    },
+    {
+      "item": "herb_planter",
+      "price": 3,
+      "stage": 2,
+      "available": 3,
+      "units": 1
+    },
+    {
+      "item": "flower_vase",
+      "price": 3,
+      "stage": 2,
+      "available": 3,
+      "units": 1
+    },
+    {
+      "item": "morning_glory",
+      "price": 4,
+      "stage": 2,
+      "available": 2,
+      "units": 1
+    }
+  ],
+  "regions": [
+    {
+      "id": "R01",
+      "name": "御影神社",
+      "stage": 1,
+      "thumbnail": "shrine"
+    },
+    {
+      "id": "R02",
+      "name": "宇庭高校区",
+      "stage": 1,
+      "thumbnail": "residential"
+    },
+    {
+      "id": "R03",
+      "name": "妖怪横丁",
+      "stage": 2,
+      "thumbnail": "shopping"
+    },
+    {
+      "id": "R04",
+      "name": "夜森神社",
+      "stage": 2,
+      "thumbnail": "river"
+    },
+    {
+      "id": "R05",
+      "name": "多满沼",
+      "stage": 3,
+      "thumbnail": "station"
+    },
+    {
+      "id": "R06",
+      "name": "海滨电车沿线",
+      "stage": 3,
+      "thumbnail": "coast"
+    },
+    {
+      "id": "R07",
+      "name": "龙宫城",
+      "stage": 4,
+      "thumbnail": "forest"
+    },
+    {
+      "id": "R08",
+      "name": "鸣神殿地",
+      "stage": 4,
+      "thumbnail": "marsh"
+    },
+    {
+      "id": "R09",
+      "name": "出云大社",
+      "stage": 5,
+      "thumbnail": "festival_hall"
+    },
+    {
+      "id": "R10",
+      "name": "缘结参道",
+      "stage": 5,
+      "thumbnail": "festival_street"
+    }
+  ],
+  "festivalThemes": [
+    "夏夜灯会",
+    "秋日丰收",
+    "春日奉纳"
+  ],
+  "booths": [
+    "饮品摊",
+    "手作摊",
+    "小吃摊",
+    "射的摊",
+    "花摊"
+  ],
+  "maxSceneContextChars": 1400,
+  "donation": {
+    "perEvent": 3,
+    "perDay": 3
+  },
+  "buyback": {
+    "perDay": 4,
+    "products": [
+      {
+        "item": "herb",
+        "units": 2,
+        "price": 1,
+        "stage": 2
+      },
+      {
+        "item": "tomato",
+        "units": 2,
+        "price": 1,
+        "stage": 2
+      },
+      {
+        "item": "flowers",
+        "units": 2,
+        "price": 2,
+        "stage": 2
+      },
+      {
+        "item": "wood_charm",
+        "units": 3,
+        "price": 4,
+        "stage": 2
+      }
+    ]
+  }
+}

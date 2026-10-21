@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const {C,state}=require('./moonforest-shop.test.cjs');
-const root=path.resolve(__dirname,'..'),html=fs.readFileSync(root+'/releases/1.49.0/wardrobe-panel.html','utf8');
+const root=path.resolve(__dirname,'..'),html=fs.readFileSync(root+'/releases/'+(process.env.MIKAGE_SHOP_RELEASE||'1.49.0')+'/wardrobe-panel.html','utf8');
 const scene=fs.readFileSync(root+'/releases/1.49.0/scene.mjs','utf8');
 const a=scene.indexOf('((host)=>{'),b=scene.indexOf("})(typeof window==='undefined'?globalThis:window.parent);",a)+"})(typeof window==='undefined'?globalThis:window.parent);".length;
 const clone=x=>JSON.parse(JSON.stringify(x));

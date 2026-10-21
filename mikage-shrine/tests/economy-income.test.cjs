@@ -1,4 +1,4 @@
-process.env.MIKAGE_ECONOMY_RELEASE='1.49.3';
+process.env.MIKAGE_ECONOMY_RELEASE ||= '1.49.3';
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {C,initial,state,clone}=require('./economy.test.cjs');
 function step(s,type,patch=()=>{},extra={}){const n=clone(s);patch(n);n.记录.事件.push({编号:'E'+(s.记录.事件.length+1),类型:type,摘要:'实际经济回归事实',对象:'',来源:'实际参拜者',方式:'当面收到的零散香油钱',资源:'无',数量:0,耗力:0,天数:0,...extra});return C.validate(n,s);}
@@ -29,7 +29,7 @@ let farm=state(2,0);farm.地图.当前地区='R01';farm.环境.地点='御影神
 let craft=state(2,10);craft.生活.库存.wood_scrap=craft.生活.库存.cloth=0;for(const item of ['wood_scrap','cloth'])craft=C.action(craft,'life',{kind:'buy',item,quantity:1});craft=travel(craft,'R01');for(let i=0;i<3;i++)craft=C.action(craft,'life',{kind:'craft',recipe:'wood_charm'});craft=travel(craft,'R03');craft=C.action(craft,'life',{kind:'sell',item:'wood_charm',quantity:1});assert.equal(craft.神社.奉纳,11);assert.equal(craft.记录.资源流水.reduce((n,x)=>n+x.变动,0),1);assert.throws(()=>C.action(craft,'life',{kind:'sell',item:'wood_charm',quantity:1}));
 const cook=state();cook.地图.当前地区='R01';cook.生活.库存.tomato=1;const meal=C.action(cook,'life',{kind:'craft',recipe:'tomato_bento'});assert.equal(meal.生活.库存.rice,cook.生活.库存.rice-1);assert.equal(meal.生活.库存.tomato,0);assert.equal(meal.生活.库存.bento,cook.生活.库存.bento+2);assert.equal(meal.神社.奉纳,cook.神社.奉纳);
 const prior=JSON.parse(fs.readFileSync(path.join(__dirname,'../releases/1.49.2/life-config.json')));assert.deepEqual(clone(C.life.config.recipes.slice(0,-1)),prior.recipes);assert.deepEqual(clone(C.life.config.shop),prior.shop);
-const book=JSON.parse(fs.readFileSync(path.join(__dirname,'../releases/1.49.3/card-source.json'))),reader=book.data.character_book.entries.find(e=>e.id===54).content;
+const book=JSON.parse(fs.readFileSync(path.join(__dirname,'../releases',process.env.MIKAGE_ECONOMY_RELEASE,'card-source.json'))),reader=book.data.character_book.entries.find(e=>e.id===54).content;
 const output=require('/tmp/mikage-debug/node_modules/ejs').render(reader,{runType:'generate',getvar:()=>d,lastMessageId:0});assert(output.includes('已收3，可入账余量0，单次上限3'));
 console.log('PASS buyback catalogue, inventory/price/ledger persistence, shared day cap/reload/date reset, actual crop and craft cycles, direct-resale rejection, donation single/day caps and ordinary reward exclusion, tomato recipe');
 module.exports={C,state,clone,tomorrow};
