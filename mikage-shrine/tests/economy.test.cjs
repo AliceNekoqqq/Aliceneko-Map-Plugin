@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const {z}=require('/tmp/mikage-debug/node_modules/zod');
-const root=path.resolve(__dirname,'..'),dir=path.join(root,'releases/1.49.2'),source=fs.readFileSync(dir+'/mvu.mjs','utf8');
+const root=path.resolve(__dirname,'..'),dir=path.join(root,'releases',process.env.MIKAGE_ECONOMY_RELEASE||'1.49.2'),source=fs.readFileSync(dir+'/mvu.mjs','utf8');
 const clone=x=>JSON.parse(JSON.stringify(x)),extract=text=>text.slice(text.indexOf('  const Schema = ')+2,text.indexOf('\n  bootstrapCommitted=true;'));
 const code=source.slice(source.indexOf('const ShrineFieldSpec ='),source.indexOf('// Install before importing the core:'));
 const {C,initial,T}=vm.runInNewContext(code+'\n'+extract(source)+'\nShrineCard.installZodSchema(Schema);({C:ShrineCard,initial:ShrineInitial,T:ShrineTemplates})',{z,console});
@@ -27,7 +27,7 @@ function ordinary(s,grade){if(!s.绘马板.绘马.some(r=>r.性质==='普通'&&r
 for(const grade of ['完整','基础']){let s=clone(initial);for(const cfg of C.config.stages){for(let i=0;i<2;i++)s=ordinary(s,grade);s=step(s,'规划',n=>n.神社.建设计划={设施:cfg.facility,说明:'当事人确认的修缮方案',已确认:true},{对象:cfg.facility});for(const [value,type]of [[2,'开工'],[3,'施工'],[4,'施工']])s=step(s,type,n=>n.神社[cfg.facility]=value,{对象:cfg.facility});s=step(s,'主线显现',()=>{},{对象:cfg.mainId});s=C.action(s,'acceptEma',{id:cfg.mainId});if(cfg.level===5){s=C.action(s,'life',{kind:'festivalPlan',theme:'夏夜灯会',booths:[]});for(const kind of ['festivalStart','festivalEnd'])s=step(s,'生活互动',()=>{},{对象:'festival',方式:JSON.stringify({kind})});}s=clear(finish(s,'完整'));}assert(s.主线.通关);assert.equal(s.神社.奉纳,grade==='完整'?8:4);assert.equal(s.记录.资源流水.filter(x=>x.资源==='奉纳').reduce((sum,x)=>sum+x.变动,0),s.神社.奉纳);}
 const card=JSON.parse(fs.readFileSync(dir+'/card-source.json')),base=JSON.parse(fs.readFileSync(root+'/releases/1.49.1/card-source.json')),get=(c,id)=>c.data.character_book.entries.find(e=>e.id===id);
 for(const stage of C.config.stages)assert(get(card,1).content.includes(stage.facility+'='+Object.entries(stage.cost).map(([k,v])=>k+v).join('')));
-assert.deepEqual(card.data.character_book.entries.filter(e=>JSON.stringify(e)!==JSON.stringify(get(base,e.id))).map(e=>e.id),[11,1]);
+assert.deepEqual(card.data.character_book.entries.filter(e=>JSON.stringify(e)!==JSON.stringify(get(base,e.id))).map(e=>e.id),(process.env.MIKAGE_ECONOMY_RELEASE==='1.49.3'?[11,1,54]:[11,1]));
 assert.deepEqual(card.data.extensions,base.data.extensions);assert.equal(extract(source),extract(fs.readFileSync(root+'/releases/1.49.1/mvu.mjs','utf8')));
 console.log('PASS 10 shop products, fixed per-package prices/units, one debit/one ledger, quantity and stock limits, next-day restock, reserve, errors atomic, no-op money guard, five chapters complete/basic=8/4; cost authority and unchanged schema/extensions');
 module.exports={C,initial,state,clone};

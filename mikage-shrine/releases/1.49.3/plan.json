@@ -1,0 +1,88 @@
+{
+  "base": "1.49.2",
+  "version": "1.49.3",
+  "gate": "source_iteration",
+  "donation": {
+    "perEvent": 3,
+    "perDay": 3
+  },
+  "buyback": {
+    "perDay": 4,
+    "products": [
+      {
+        "item": "herb",
+        "units": 2,
+        "price": 1,
+        "stage": 2
+      },
+      {
+        "item": "tomato",
+        "units": 2,
+        "price": 1,
+        "stage": 2
+      },
+      {
+        "item": "flowers",
+        "units": 2,
+        "price": 2,
+        "stage": 2
+      },
+      {
+        "item": "wood_charm",
+        "units": 3,
+        "price": 4,
+        "stage": 2
+      }
+    ]
+  },
+  "recipe": {
+    "id": "tomato_bento",
+    "name": "番茄饭团便当",
+    "stage": 2,
+    "inputs": {
+      "rice": 1,
+      "tomato": 1
+    },
+    "output": {
+      "bento": 2
+    }
+  },
+  "stages": [
+    {
+      "scope": "extra donations",
+      "gate": "Local Fix Only",
+      "contract": "actual narrative donation events only, per-event and per-story-day caps; ordinary rewards unchanged"
+    },
+    {
+      "scope": "life buyback settlement",
+      "gate": "Local Fix Only",
+      "contract": "R03, explicit UI action, integer batches, fixed catalogue price, inventory debit plus money credit plus one ledger; daily cap derived from receipts"
+    },
+    {
+      "scope": "shop and recipe UI",
+      "gate": "Local Fix Only",
+      "contract": "display exact trade, stock and remaining cap before click; reuse existing life bridge, singleflight, rejection/retry"
+    }
+  ],
+  "protected": [
+    "state schema and initial inventory",
+    "all existing recipe definitions, shop prices and package units",
+    "all quests including WQ09, main rewards and costs",
+    "all outfit IDs/prices, art and 77 approved prose edits",
+    "no passive daily money or automatic time advance"
+  ],
+  "scope_budget": {
+    "files": 20,
+    "lines": 14000
+  },
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "sillytavern-embedded-ui",
+      "sillytavern-card-pipeline"
+    ],
+    "standing": "ST-A0; established runtime/state/UI guidance reused"
+  },
+  "packaging": "not requested in this source iteration"
+}

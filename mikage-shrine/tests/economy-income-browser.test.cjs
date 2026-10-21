@@ -1,0 +1,27 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {chromium}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {C,state,clone,tomorrow}=require('./economy-income.test.cjs');
+const root=path.resolve(__dirname,'..'),html=fs.readFileSync(root+'/releases/1.49.3/wardrobe-panel.html','utf8');
+const scene=fs.readFileSync(root+'/releases/1.49.0/scene.mjs','utf8'),a=scene.indexOf('((host)=>{'),tail="})(typeof window==='undefined'?globalThis:window.parent);",b=scene.indexOf(tail,a)+tail.length;
+async function run(){const browser=await chromium.launch({executablePath:'/tmp/chromium-full',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});try{for(const width of [320,375,1000]){
+ let current=state(2,0),calls=0,fail=false,delay=null;current.生活.库存.wood_charm=3;current.生活.库存.herb=4;const p=await browser.newPage({viewport:{width,height:812}}),errors=[];
+ p.on('pageerror',e=>errors.push(e.message));
+ await p.exposeFunction('readIncomeState',()=>clone({...current,衣装商店:C.shopView(current)}));
+ await p.exposeFunction('readIncomeView',()=>clone({...C.life.view(current),quietChoices:[],quietMemories:[],strangeJournal:{active:null,available:[],completed:[]},festivalJournal:{notes:[],contacts:[]}}));
+ await p.exposeFunction('settleIncome',async(type,payload)=>{if(type!=='life')return{ok:true};calls++;if(delay)await new Promise(resolve=>delay.resolve=resolve);if(fail)return{ok:false,error:'本次收购尚未成交'};current=C.action(current,type,payload);return{ok:true};});
+ await p.route('**/*',r=>{const u=new URL(r.request().url());if(u.hostname==='fixture.invalid')return r.fulfill({contentType:'text/html',body:html});const rel=u.pathname.split('/mikage-shrine/')[1],file=rel?path.resolve(root,rel):'';if(file.startsWith(root+'/')&&fs.existsSync(file))return r.fulfill({body:fs.readFileSync(file),headers:{'access-control-allow-origin':'*'},contentType:file.endsWith('.ttf')?'font/ttf':'image/webp'});return r.abort();});
+ await p.addInitScript({content:scene.slice(a,b)});
+ await p.addInitScript(config=>{window.ShrineGameConfig=config.main;window.ShrineLifeConfig=config.life;window.ShrineUIBridge={getState:()=>readIncomeState(),getLifeView:()=>readIncomeView(),act:(type,payload)=>settleIncome(type,payload),subscribe(fn){return()=>{}},getAppearance:()=>({}),subscribeAppearance:()=>()=>{},getEmaSettings:async()=>({version:1,mode:null,profiles:[],activeProfileId:''})};window.MikageShrinePanels={bridge:ShrineUIBridge,config:config.main};},{main:clone(C.config),life:clone(C.life.config)});
+ await p.goto('https://fixture.invalid/');await p.waitForFunction(()=>window.ShrinePanel?.ready);await p.evaluate(()=>ShrinePanel.openLife());await p.locator('[data-life-tab=shop]').click();
+ const sell=p.locator('[data-life-sell=wood_charm]');assert((await sell.textContent()).includes('交出 3 份 · 获得 4 奉纳'));assert.equal(calls,0);assert((await p.locator('#life-content').textContent()).includes('今日还可收 4 奉纳'));
+ delay={resolve:null};await sell.click();await p.waitForFunction(()=>document.querySelector('#life-feedback').dataset.state==='pending');await sell.evaluate(e=>e.click());assert.equal(calls,1);assert.equal(current.生活.库存.wood_charm,3);delay.resolve();delay=null;
+ await p.waitForFunction(()=>document.querySelector('#life-feedback').dataset.state==='success');assert.equal(current.神社.奉纳,4);assert.equal(current.生活.库存.wood_charm,0);assert.equal(current.记录.资源流水.length,1);assert.equal(await p.locator('[data-life-sell=herb]').isDisabled(),true);
+ current=tomorrow(current);await p.evaluate(()=>ShrineLifeUI.render());await p.waitForFunction(()=>!document.querySelector('[data-life-sell=herb]').disabled);assert.equal(current.神社.奉纳,4);
+ fail=true;await p.locator('[data-life-sell=herb]').click();await p.waitForFunction(()=>document.querySelector('#life-feedback').dataset.state==='error');assert.equal(current.生活.库存.herb,4);assert.equal(current.神社.奉纳,4);
+ fail=false;await p.locator('[data-life-sell=herb]').click();await p.waitForFunction(()=>document.querySelector('#life-feedback').dataset.state==='success');assert.equal(current.生活.库存.herb,2);assert.equal(current.神社.奉纳,5);assert.equal(current.记录.资源流水.length,2);
+ await p.screenshot({path:'/tmp/economy-income-'+width+'.png',fullPage:true});assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ current.地图.当前地区='R01';current.生活.库存.tomato=1;current.生活.库存.rice=1;await p.evaluate(()=>ShrineLifeUI.render());await p.waitForFunction(()=>document.querySelector('[data-life-sell=herb]').disabled);assert((await p.locator('[data-life-sell=herb]').locator('..').textContent()).includes('请先抵达'));
+ await p.locator('[data-life-tab=craft]').click();const cook=p.locator('[data-life-craft=tomato_bento]');assert((await cook.locator('..').textContent()).includes('制成：便当 ×2'));await cook.click();await p.waitForFunction(()=>document.querySelector('#life-feedback').dataset.state==='success');assert.equal(current.生活.库存.bento,2);assert.equal(current.生活.库存.tomato,0);assert.equal(current.神社.奉纳,5);assert.equal(current.记录.资源流水.length,2);
+ assert.deepEqual(errors,[]);await p.evaluate(()=>ShrinePanel.dispose());await p.close();console.log('PASS income browser '+width+': exact trade/stock/cap, singleflight, atomic sale ledger, refusal/retry, next-day quota without free income, offsite guard, tomato recipe output, no overflow');
+ }}finally{await browser.close();}}
+run().catch(e=>{console.error(e);process.exitCode=1});
