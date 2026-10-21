@@ -19,7 +19,7 @@
     "approved_prose_edits_retained": 77,
     "dynamic_EJS_templates": 11,
     "positive_prose_and_external_provenance": "passed",
-    "font_coverage": "Original custom font subsets miss 3 characters of prior WQ09 and 20 in revised prose; system fallback not browser-verified this iteration"
+    "font_coverage": "Original custom font subsets miss 3 characters of prior WQ09 and 19 in revised prose; system fallback not browser-verified this iteration"
   },
   "scope": {
     "default_staged_refactor": "exceeded by generated snapshots",
