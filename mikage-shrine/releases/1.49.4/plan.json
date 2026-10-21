@@ -1,0 +1,13 @@
+{
+  "base": "1.49.3",
+  "version": "1.49.4",
+  "gate": "checkpoint candidate",
+  "intent": "Continue the completed economic work through font completion, whole-card checks and an importable JSON checkpoint",
+  "scope": ["add WQ09 and economy supplement glyphs", "append font face in panels", "advance source/worldbook/module versions", "package current shop/quest/economy state using published immutable modules"],
+  "protected": ["all prose and worldbook entries", "all game rules/schema/initial state", "all outfit IDs and art", "all 77 approved copy edits", "all historical releases and original fonts"],
+  "outputs": ["assets/ui/economy-kozuchi-v1494.ttf", "assets/ui/economy-kozuchi-v1494-font.json", "releases/1.49.4", "cards/巴卫_御影神社_v1.49.4_衣装经济整合版.json"],
+  "packaging": "existing five pinned lightweight loaders; JSON checkpoint; PNG not selected",
+  "scope_budget": {"files": 26, "lines": 16000, "binary_assets": 1},
+  "guide_receipt": {"snapshot": "2026-08-18", "route": "sillytavern-card-pipeline", "documents": ["ST-A0", "ST-A2", "ST-D1", "ST-D4"]},
+  "real_host": "pending"
+}
