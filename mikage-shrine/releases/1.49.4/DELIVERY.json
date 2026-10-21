@@ -1,0 +1,26 @@
+{
+  "release": "1.49.4",
+  "status": "candidate",
+  "new_chat_only": true,
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/economy-complete-1.49.4",
+  "source_commit": "694d1eed2d902758a2ce44fa386dd311b8d47646",
+  "source_tree": "c19492346ec1b42434526512e795942ed4c6cd8c",
+  "local_source_commit": "5358aee31b9749be2adf9346d6134450668c26f1",
+  "font_commit": "4ea965fb11e8e67ec1e61757e8868e447695a046",
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.4_衣装经济整合版.json",
+  "bytes": 387666,
+  "sha256": "8c7702a5ad57307cb0234043d3bc7a2945987b85e84fcd0551838b4001522ffb",
+  "worldbook": {
+    "logical_id": "mikage-shrine:character_book",
+    "attachment": "/data/character_book",
+    "version": "1.49.4",
+    "source_parity": "passed"
+  },
+  "loader_verification": "five actual exports/version checks; invalid exports rejected; sequential fallback and one start; all loader commits equal published source_commit",
+  "provenance_policy": "research and adaptation declarations remain external to model entries",
+  "real_host": "pending",
+  "png": "not selected",
+  "old_save_migration": "not required",
+  "publication": "source tree verified against local; final candidate and receipts belong to the same isolated branch"
+}

@@ -1,0 +1,54 @@
+{
+  "release": "1.49.4",
+  "status": "candidate",
+  "baseline": "1.49.3",
+  "checks": {
+    "font_dry_run_actual_hash": "same, 15176 bytes, 30 codepoints",
+    "font_source_and_license": "same Noto Serif SC SHA256 and SIL OFL as approved fonts",
+    "source_rebuild_and_syntax": "six deterministic outputs; passed",
+    "source_delta": "only card/book/module versions and supplement CSS; all prose, schema, initial state and game code retained",
+    "font_faces": "Mikage Serif and actual wardrobe/life/board Mikage Shrine Serif aliases covered",
+    "dependency_ledger": "detected and declared MVU Zod hybrid, 3 regexes, 5 loaders, initial data, EJS and remote dependencies aligned",
+    "worldbook": "stable manifest identity, pointer, version, ordered entry IDs and content SHA256 passed",
+    "negative_fixtures": "old book version, altered entries, missing regex/helper, disabled required helper and invalid regional policy rejected",
+    "shop": "16 products, fixed prices, reserve, invalid/duplicate/offsite/tampered/model/UI purchase cases, no auto wear, persistence passed",
+    "wardrobe_story": "5 full quest lifecycles, WQ09 prose and 31 IDs passed",
+    "economy": "10 packaged goods, 4 buyback goods, single/day caps, independent fixed rewards, date/reset/reload, actual crop/craft cycles, tomato recipe and atomic ledger passed",
+    "main_routes": "complete/basic five chapters finish with 8/4 donation; ledger reconciles",
+    "actual_module_simulation": "3 openings, statusbar, 4 panels, exact floors, swipe/chat/reload, wood13, buy/sale new visible snapshot and prior-floor preservation passed",
+    "browser": "Chromium153 320/375/1000: wardrobe shop, life purchases, buyback and tomato, singleflight/refusal/retry/offsite/no overflow passed",
+    "font_browser": "same widths, actual computed font face loads all 30 supplement characters; locked chibi preview and fully settled WQ09 long quest back; no state mutation, overflow or page errors",
+    "approved_prose": 77,
+    "ejs_templates": "11 with generate/display and present/missing state passed",
+    "unchanged_images": 13,
+    "outfit_mappings": 31,
+    "packer_dry_run_actual_hash": "same, 387666 bytes",
+    "packed_source_parity": "all card content except generated loaders exactly matches source",
+    "remote_loaders": "all 5 actual module exports/version checks; mismatch rejects, primary URL failure falls back, one start and pinned source commit passed",
+    "json_reopen": "valid UTF-8 chara_card_v3; embedded book/initial/regex/loader identities passed",
+    "png_roundtrip": "not applicable, JSON-only checkpoint"
+  },
+  "artifact": {
+    "bytes": 387666,
+    "sha256": "8c7702a5ad57307cb0234043d3bc7a2945987b85e84fcd0551838b4001522ffb",
+    "delta_from_1_49_0_bytes": 2879,
+    "note": "file-size measurement only, not an assembled prompt-token estimate"
+  },
+  "scope": {
+    "budget": {"files": 26, "known_text_lines": 16000, "declared_binary_files": 1},
+    "binary": {"path": "mikage-shrine/assets/ui/economy-kozuchi-v1494.ttf", "bytes": 15176, "cmap": 30, "hash_and_character_set": "passed"},
+    "binary_gate": "full cross-commit numstat retains one unknown-line binary; expected path, count, bytes, hash and cmap independently verified, text budget checked separately",
+    "protected": "historical releases, all original assets, 77 approved copy, 31 mappings and paused experiments preserved"
+  },
+  "acceptance": {
+    "source": "passed",
+    "automated": "passed",
+    "offline_artifact": "passed",
+    "browser_fixture": "passed",
+    "real_SillyTavern": "pending",
+    "Android": "pending",
+    "actual_model_output": "pending",
+    "human_acceptance": "pending"
+  },
+  "deferred": ["optional construction expansion", "actual assembled prompt budget"]
+}
