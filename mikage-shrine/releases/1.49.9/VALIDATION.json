@@ -1,0 +1,43 @@
+{
+  "version": "1.49.9",
+  "gate": "source_iteration",
+  "changed_entries": [
+    1,
+    5,
+    41,
+    17
+  ],
+  "guarded_operations": 7,
+  "passed": [
+    "exact guarded replay of all changes",
+    "all unrelated fields, EJS blocks, XML tags and entry config unchanged",
+    "all five fixed module paths and sha256 unchanged",
+    "actual schema and validator: contract true at zero affection with no romance confirmation",
+    "missing relationship event rejected; completed ritual relationship event accepted",
+    "200 contract/affection dynamic EJS renders with unchanged input states",
+    "16 products; 5 outfit side quests; 31 actor-id mappings; 77 approved runtime copy spans; 11 EJS templates",
+    "two output files reproducible byte-for-byte"
+  ],
+  "runtime_audit": {
+    "additional_mutual_consent_switch": false,
+    "schema": "existing boolean",
+    "initial": false,
+    "existing_event_guard": "relationship or daily event required",
+    "narrative_truth": "not determined by validator"
+  },
+  "commands": [
+    "python tools/revise_contract_rules.py --dry-run",
+    "python tools/revise_contract_rules.py",
+    "node tests/contract-rules.test.cjs"
+  ],
+  "pending": [
+    "real SillyTavern",
+    "actual model behavior",
+    "author experience acceptance"
+  ],
+  "not_requested": [
+    "packaging",
+    "release"
+  ],
+  "source_sha256": "987b5c1478583c5f80a2d0bf136cd4f4412e663cc94ce0b73306f04b9a70df26"
+}

@@ -1,0 +1,51 @@
+{
+  "base": "1.49.8",
+  "version": "1.49.9",
+  "gate": "source_iteration",
+  "authorization": "作者对上一轮六项契约修订方案回复可以",
+  "scope": "词条1/5/41/17的契约语义与状态更新说明；运行时只读核查",
+  "preserve": [
+    "五模块固定路径/哈希、schema与初始数据",
+    "全部EJS代码块、XML标签与条目启用/加载配置",
+    "恋爱确认独立、玩家角色主动行动和答复归玩家",
+    "31衣装映射、77审定运行时文案、经济与委托节奏",
+    "历史源码与1.49.4现有导入包"
+  ],
+  "expected": [
+    "releases/1.49.9",
+    "tools/revise_contract_rules.py",
+    "tests/contract-rules.test.cjs",
+    "PROJECT_STATE.md"
+  ],
+  "budget": {
+    "files": 11,
+    "known_lines": 7000
+  },
+  "guide_receipt": "沿用既有ST-A0/A3/A4及C1/C2/C3/D7项目收据；consult companion未暴露；本轮已读worldbook writing-contracts和pipeline tool-adapter-contract",
+  "verification": [
+    "精确替换重放与所有无关字段/EJS/模块哈希保持",
+    "实际schema与validate接受契约成立且恋爱未确认、亲近/心动为0",
+    "动态关系EJS在契约前后及各心动/亲近分支可渲染且只读",
+    "既有衣装商店/5支线/31映射/77文案/11EJS回归"
+  ],
+  "adapter": {
+    "command": "python tools/revise_contract_rules.py [--dry-run]",
+    "cwd": "mikage-shrine",
+    "inputs": [
+      "releases/1.49.8/card-source.json",
+      "releases/1.49.8/manifest.json",
+      "releases/1.49.9/plan.json",
+      "releases/1.49.9/changes.json"
+    ],
+    "outputs": [
+      "releases/1.49.9/card-source.json",
+      "releases/1.49.9/manifest.json"
+    ],
+    "collisionPolicy": "拒绝覆盖现有输出",
+    "success": "退出0并打印哈希；完整校验后写新路径",
+    "partialWritePolicy": "输出内容均在内存生成后逐个写出；失败仅可能留下新版本文件，旧版保持"
+  },
+  "runtime_audit": "mvu内神使契约仅字段说明、false初始值、boolean schema；无额外同意开关",
+  "packaging": "not requested",
+  "real_host_and_model": "pending"
+}
