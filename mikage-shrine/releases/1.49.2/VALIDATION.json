@@ -1,0 +1,48 @@
+{
+  "version": "1.49.2",
+  "gate": "source_iteration",
+  "packaged": false,
+  "base": "1.49.1",
+  "changed_worldbook_entries": [
+    1,
+    11
+  ],
+  "checks": {
+    "build_dry_run_and_syntax": "passed",
+    "life_products": 10,
+    "purchase_debit_inventory_ledger": "atomic, fixed package price/units, one ledger per debit passed",
+    "non_spending_action_money_guard": "passed",
+    "reserve_daily_stock_next_day_invalid_inputs": "passed",
+    "complete_and_basic_five_chapter_routes": "passed; 8 and 4 donation balance, ledger reconciles",
+    "actual_module_bridge": "passed; one visible snapshot and previous floor retained, reread stable",
+    "startup": "3 openings, statusbar, 4 panels, reload/swipe/chat, wood13 passed",
+    "browser": "Chromium153 320/375/1000; labels/limits/clicks/singleflight/rejection/retry/reserve/offsite/no-overflow passed",
+    "outfit_products": 16,
+    "story_quest_lifecycles": 5,
+    "outfit_ids": 31,
+    "approved_prose_retained": 77,
+    "enabled_ejs": 11,
+    "main_config_schema_and_art": "unchanged"
+  },
+  "scope": {
+    "per_stage": "Local Fix Only, under 80 semantic lines each",
+    "default_staged_refactor": "exceeded by complete generated snapshots",
+    "budget": {
+      "files": 16,
+      "lines": 13000
+    }
+  },
+  "pending": [
+    "real SillyTavern",
+    "Android",
+    "actual model output",
+    "author acceptance",
+    "new package not requested",
+    "WQ09 font supplement before packaging"
+  ],
+  "deferred": [
+    "extra donation caps/source policy",
+    "farm and craft buyback",
+    "tomato recipe"
+  ]
+}

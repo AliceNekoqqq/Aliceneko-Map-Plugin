@@ -1,0 +1,71 @@
+{
+  "base": "1.49.1",
+  "version": "1.49.2",
+  "gate": "source_iteration",
+  "stages": [
+    {
+      "scope": "Worldbook cost authority",
+      "decision": "Local Fix Only",
+      "behavior": "Generate cost statements from current ShrineConfig.stages; actual prices and phase gates unchanged",
+      "entries": [
+        1
+      ]
+    },
+    {
+      "scope": "Life purchase settlement",
+      "decision": "Local Fix Only",
+      "behavior": "Validate exact resource debit and append one ledger entry atomically; non-purchase life operations keep money unchanged"
+    },
+    {
+      "scope": "Consumable packages",
+      "decision": "Local Fix Only",
+      "behavior": "Keep order price; explicitly display actual units received; preserve daily order limits and reserve"
+    }
+  ],
+  "units": {
+    "wood_scrap": 3,
+    "cloth": 3,
+    "rice": 3,
+    "tea_leaf": 3,
+    "herb_seed": 2,
+    "tomato_seed": 2,
+    "flower_seed": 2
+  },
+  "protected": [
+    "wardrobeShop prices and actor/outfit IDs",
+    "all quest fields and rewards including adopted WQ09",
+    "mainline stages, repair costs, quotas and reward amounts",
+    "all schema and stored state shapes",
+    "art, initial variables, regexes and 77 approved copy edits",
+    "remote loader and existing life bridge APIs"
+  ],
+  "regression": [
+    "complete and basic five-chapter routes",
+    "purchase debit plus inventory plus one ledger entry",
+    "insufficient money, reserve, daily limit and invalid inputs fail atomically",
+    "actual new HTML package labels and click handlers at 320/375/1000",
+    "baseline wardrobe and EJS checks"
+  ],
+  "deferred": [
+    "extra donation caps and source policy",
+    "farm and craft buyback, tomato recipes",
+    "new card packaging and WQ09 font supplement"
+  ],
+  "scope_budget": {
+    "files": 16,
+    "lines": 13000
+  },
+  "guidance": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "sillytavern-card-pipeline",
+      "sillytavern-embedded-ui"
+    ],
+    "references": [
+      "ST-A0",
+      "existing ST-A2/D1/D4 and UI references reused"
+    ],
+    "host": "Codex cloud, offline and browser evidence only"
+  }
+}
