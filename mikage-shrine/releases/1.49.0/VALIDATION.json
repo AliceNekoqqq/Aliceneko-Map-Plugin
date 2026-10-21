@@ -1,0 +1,46 @@
+{
+  "release": "1.49.0",
+  "status": "candidate",
+  "baseline": "1.48.4",
+  "new_chat_only": true,
+  "checks": {
+    "all_16_products_ui_and_narrative_settlement": "passed",
+    "durable_ledger_restore": "passed",
+    "fixed_price_duplicate_offsite_insufficient_reserve_tamper_guards": "passed",
+    "purchase_keeps_current_wear": "passed",
+    "five_story_quest_lifecycles": "passed",
+    "actual_zod": "4.1.12 passed",
+    "ejs": "3.1.10, 11 enabled templates, present/missing state and display mode passed",
+    "startup_simulation": "3 openings, 4 panels, statusbar, reload/swipe/chat and prior-floor persistence passed",
+    "browser": "Chromium153, actual HTML, 320/375/1000, confirmation/cancel/singleflight/error/retry/explicitwear/variant/draft/no-overflow passed",
+    "developer_sandbox_outfits": 31,
+    "approved_prose_retained": 77,
+    "art_renderer_and_catalog": "byte-identical",
+    "worldbook77_regexes_initial_shape": "preserved",
+    "shop_ui_glyphs": "covered by original font assets",
+    "minigames_tomoe": "original module paths and hashes preserved",
+    "syntax_and_rebuild": "passed"
+  },
+  "scope_gate": {
+    "default_staged_refactor": "exceeded: complete release snapshots exceed 5 files / 200 lines",
+    "release_artifact_budget": {
+      "max_files": 24,
+      "max_lines": 16000
+    },
+    "boundaries": [
+      "wardrobe domain and schema",
+      "wardrobe purchase UI",
+      "worldbook and configuration"
+    ],
+    "full_check": "source snapshot checked; final combined baseline diff recorded at delivery"
+  },
+  "pending": [
+    "real SillyTavern import and model behavior",
+    "Android device",
+    "author acceptance"
+  ],
+  "deferred": [
+    "optional construction expansion",
+    "actual assembled prompt budget"
+  ]
+}

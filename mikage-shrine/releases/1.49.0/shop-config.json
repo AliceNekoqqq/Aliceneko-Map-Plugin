@@ -1,0 +1,206 @@
+{
+  "name": "月之森和裁舍",
+  "npc": "长崎素世",
+  "region": "R02",
+  "location": "宇庭老街·月之森和裁舍",
+  "products": [
+    {
+      "sku": "player:festival",
+      "name": "祭典浴衣",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "player",
+          "id": "festival",
+          "name": "祭典浴衣"
+        }
+      ]
+    },
+    {
+      "sku": "player:sakura",
+      "name": "樱染散策",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "player",
+          "id": "sakura",
+          "name": "樱染散策"
+        }
+      ]
+    },
+    {
+      "sku": "player:seabreeze",
+      "name": "潮音夏服",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "player",
+          "id": "seabreeze",
+          "name": "潮音夏服"
+        }
+      ]
+    },
+    {
+      "sku": "player:forest",
+      "name": "山茶披肩",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "player",
+          "id": "forest",
+          "name": "山茶披肩"
+        }
+      ]
+    },
+    {
+      "sku": "player:swim",
+      "name": "海盐晴蓝",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "player",
+          "id": "swim",
+          "name": "海盐晴蓝"
+        }
+      ]
+    },
+    {
+      "sku": "player:school",
+      "name": "樱坂晴日",
+      "price": 3,
+      "outfits": [
+        {
+          "actor": "player",
+          "id": "school",
+          "name": "樱坂晴日"
+        }
+      ]
+    },
+    {
+      "sku": "player:gym",
+      "name": "学园体操服",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "player",
+          "id": "gym",
+          "name": "学园体操服"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:festival",
+      "name": "祭典羽织",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "festival",
+          "name": "祭典羽织"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:aoba",
+      "name": "青岚羽织",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "aoba",
+          "name": "青岚羽织"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:journey",
+      "name": "潮汐远行",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "journey",
+          "name": "潮汐远行"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:grove",
+      "name": "林间行装",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "grove",
+          "name": "林间行装"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:swim",
+      "name": "晴汐浪纹",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "swim",
+          "name": "晴汐浪纹"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:school",
+      "name": "樱坂薄暮",
+      "price": 3,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "school",
+          "name": "樱坂薄暮"
+        },
+        {
+          "actor": "tomoe",
+          "id": "school-human",
+          "name": "樱坂薄暮·人间伪装",
+          "variantOf": "school"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:city",
+      "name": "绀夜归途",
+      "price": 3,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "city",
+          "name": "绀夜归途"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:winter",
+      "name": "檐下薄雪",
+      "price": 2,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "winter",
+          "name": "檐下薄雪"
+        }
+      ]
+    },
+    {
+      "sku": "tomoe:butler",
+      "name": "学园祭执事服",
+      "price": 3,
+      "outfits": [
+        {
+          "actor": "tomoe",
+          "id": "butler",
+          "name": "学园祭执事服"
+        }
+      ]
+    }
+  ]
+}
