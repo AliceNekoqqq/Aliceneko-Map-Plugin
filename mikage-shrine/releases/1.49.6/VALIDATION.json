@@ -1,0 +1,71 @@
+{
+  "release": "1.49.6",
+  "base": "1.49.5",
+  "gate": "source_iteration",
+  "packaged": false,
+  "authorization": "可以做 after production and quest-pacing proposal",
+  "checks": {
+    "quest_contract": "PASS four factual advances; atomic archive/reward/release; same-round presentation; free closure and pause/resume; skipped/replayed/wrong-target closures guarded",
+    "economy": "PASS sustainable net herb2/tomato3/flowers2/charms2, actual supply costs and income ledgers; shared gross quota5",
+    "batch_domain": "PASS quantities1..20, recipe and input gates, all-or-nothing errors, mature mixed plots, known unique plot IDs, exact event counts and unchanged story day",
+    "preserved_economy": "PASS five chapters complete/basic wallets8/4, repair reserve, unchanged prices and recipes; tomato multi-batch meals; independent extra donation daily3",
+    "protected": "PASS exact schema/initial/field spec/templates/main config; only entries1/11 plus versions; 31 wardrobe IDs/art, 16 products, five side quests, 77 approved runtime edits and 11 EJS",
+    "objective_regression": "PASS 1.49.5 reward-authority, M05-only festival gates/facility predicate, exact shop location",
+    "actual_modules_simulated_host": "PASS three openings/status/four panels/chat/swipe/reload/floors; batch bridge one visible floor and prior floor retained; reread stable; failures no writes",
+    "maintained_html_clicks": "PASS labelled quantity/output controls, double-click singleflight, depleted input controls, mature-only bulk harvest and quota-constrained multi-batch trade in actual iframe HTML under JSDOM",
+    "font_cmap": "PASS new UI/error CJK glyphs covered by the four TTFs referenced by actual panel; no new font or art",
+    "syntax": "PASS node --check mvu.mjs and panels.mjs",
+    "build": "PASS six outputs reproduce byte-for-byte, all five module hashes; scene/minigames/tomoe pins unchanged",
+    "chromium_layout": "NOT RUN: no installed executable; Playwright headless-shell download returned invalid ZIP and failed",
+    "real_host": "PENDING SillyTavern/model/Android and human play acceptance"
+  },
+  "outputs": {
+    "card-source.json": {
+      "bytes": 352879,
+      "sha256": "bbef9d3fe8282690707a1aebc4ebd69478028605be9ed8af995b5f414efd4480"
+    },
+    "life-config.json": {
+      "bytes": 9960,
+      "sha256": "b592b80fd6694d8b1a71009b3414f2b4abfbd535744a4d4c2ec55c1e141322ff"
+    },
+    "mvu.mjs": {
+      "bytes": 207185,
+      "sha256": "98f74bba683dd50431c91b3aa3ae107f90deb02370066d8de319054eeafc6358"
+    },
+    "panels.mjs": {
+      "bytes": 377698,
+      "sha256": "05cd6084128d661ae1bfd88de7c78949caa067daf3f70ecb986aaedf2827c53e"
+    },
+    "wardrobe-panel.html": {
+      "bytes": 321576,
+      "sha256": "2764d365ba8edc2aa23569e17a5e414fc427221cf4ae9d75cf9ae9e572c9c8a8"
+    },
+    "manifest.json": {
+      "bytes": 30356,
+      "sha256": "1741681773e6ecb4a2e46683cc982b2a81b36a6e29b3ec04d78d8d4ecb6dde59"
+    }
+  },
+  "scope": {
+    "budget_files": 18,
+    "budget_known_lines": 14000,
+    "expected": "only declared new release/source/test/builder files and project state",
+    "preexisting_untracked_material": "retained and excluded from commit; included in final full-scope report",
+    "note": "initial untracked scan misclassified mvu due to a multibyte sample boundary; full UTF-8 decode and zero NUL verified; final staged Git numstat is authoritative",
+    "final_full_worktree_files": 17,
+    "committed_files": 16,
+    "unknown_churn": "one preexisting untracked binary only; no changed source churn unknown after staging",
+    "custom_budget": "within 18 files / 14000 known lines; default local-fix snapshot budget not claimed"
+  },
+  "deferred": [
+    "short ordinary-quest phase compression",
+    "character example/relationship copy plan",
+    "prompt-size restructuring"
+  ],
+  "pending": [
+    "real Chromium responsive layout",
+    "real SillyTavern model output and host interaction",
+    "Android",
+    "author play acceptance",
+    "next explicitly requested import packaging"
+  ]
+}

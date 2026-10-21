@@ -1,0 +1,30 @@
+{
+  "base": "1.49.5",
+  "version": "1.49.6",
+  "gate": "source_iteration",
+  "authorization": "作者在生产收益与委托节奏方案后明确回复：可以做",
+  "stages": [
+    {"id": "quest-close", "decision": "Local Fix Only", "contract": "合法结案完成原归档、奖励与呈现后，同轮释放活动槽；保留四次事实推进、玩家接取与原门槛", "semantic_lines_budget": 60},
+    {"id": "production", "decision": "Local Fix Only", "contract": "第二章神社批量制作1..20次，显式选定成熟菜圃批量收获；所有输入和额度先校验，一次操作一个持久事件", "semantic_lines_budget": 140},
+    {"id": "batch-ui", "decision": "Local Fix Only", "contract": "现有生活界面提供制作及出售批数、总量和成熟批收；保留原桥接与单次在途约束", "semantic_lines_budget": 100}
+  ],
+  "economy": {
+    "herb_yield_per_plot": 3,
+    "buyback": {"perDay": 5, "products": [
+      {"item": "herb", "units": 2, "price": 1, "stage": 2},
+      {"item": "tomato", "units": 2, "price": 2, "stage": 2},
+      {"item": "flowers", "units": 2, "price": 3, "stage": 2},
+      {"item": "wood_charm", "units": 3, "price": 5, "stage": 2}
+    ]},
+    "sustainable_net": {"herb_two_plots": 2, "tomato_two_plots": 3, "flowers_two_plots": 2, "wood_charm_three": 2}
+  },
+  "protected": ["all outfit IDs/art and 77 approved runtime prose edits", "schema/initial state", "main costs, quest rewards, four investigation phases and M05 festival gates", "seed/material prices, recipes, plot count and crop days", "extra donation limits", "scene/minigames/tomoe pinned modules", "historical releases and untracked preexisting material"],
+  "expected": ["releases/1.49.6", "tools/build_production_pacing.py", "src/production-batch-actions.js", "src/production-batch-ui.js", "tests/production-pacing.test.cjs", "tests/production-pacing-startup.test.cjs", "tests/economy.test.cjs", "PROJECT_STATE.md"],
+  "budget": {"files": 18, "known_lines": 14000, "note": "new derived release snapshots dominate line count; review behavior changes separately"},
+  "baseline": "1.49.5 objective-contracts and economy-income suites pass before edits",
+  "guide_receipt": {"snapshot": "2026-08-18", "reuse": "existing project ST-A0/A3/A4 and C1/C2/C3/D7 route receipts; companion consult package not exposed in this environment", "routes": ["code-quality-workflow", "worldbook-design-and-writing", "sillytavern-embedded-ui", "sillytavern-card-pipeline"]},
+  "verification": ["four closure phases, same-round presentation, archive and immediate next acceptance", "five chapters complete/basic wallets remain 8/4", "crop/craft sustainable net and cap from actual ledgers", "batch bounds, input atomicity, mixed maturity, offsite and stage guards", "actual maintained HTML click handlers and simulated module persistence; real Chromium/mobile layout pending if browser unavailable", "protected source/schema/art/prose and reproducible outputs"],
+  "rollback": "fresh outputs only; keep 1.49.5 immutable; stop on hash/anchor drift or failed regressions",
+  "packaging": "source iteration only; no new import card requested",
+  "real_host": "pending"
+}
