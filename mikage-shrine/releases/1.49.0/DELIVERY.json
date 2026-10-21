@@ -1,0 +1,55 @@
+{
+  "release": "1.49.0",
+  "status": "candidate",
+  "new_chat_only": true,
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/moonforest-shop-1.49.0",
+  "source_commit": "c37daed065917d6711feda3f835224e3ba4b5308",
+  "source_tree": "21f4c0bb61721dcc3554787fa6f1aad3a28d3d5a",
+  "local_source_commit": "8a09aa1a3f578bc22fbdb16252fe021b46ca40cc",
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.0_月之森衣装商店版.json",
+  "bytes": 384787,
+  "sha256": "631fecc545cbcc3cb3f5958cd5cf6a8a3d01d54779eb55eaaa1f5fc1036a3f96",
+  "modules": [
+    {
+      "script_id": "272c672c-6eed-5524-9d0b-1823b056fff4",
+      "module_id": "mvu",
+      "version": "1.49.0",
+      "path": "mikage-shrine/releases/1.49.0/mvu.mjs",
+      "sha256": "0eb5ebe3b79d092abddc43d167f1cc59b00e4f244469b8c0c4511432893bdbf2"
+    },
+    {
+      "script_id": "86a49572-142e-5d86-af3f-2e96d2f8a244",
+      "module_id": "panels",
+      "version": "1.49.0",
+      "path": "mikage-shrine/releases/1.49.0/panels.mjs",
+      "sha256": "d59bedebe8750bb4bda545e689b357dc43336c5d242c3c6ad62cba8252c1f167"
+    },
+    {
+      "script_id": "f763b9d7-c17c-5f0f-b0bd-36d9f37a3383",
+      "module_id": "scene",
+      "version": "1.49.0",
+      "path": "mikage-shrine/releases/1.49.0/scene.mjs",
+      "sha256": "16d07d3c58ca5afbfbe0c632e4649ed6ae20eb32c3cd0258c6940bb5e4cc5e73"
+    },
+    {
+      "script_id": "d3560ad0-892c-4b31-b783-11f80a23b90f",
+      "module_id": "minigames",
+      "version": "1.48.3",
+      "path": "mikage-shrine/releases/1.48.3/minigames.mjs",
+      "sha256": "8f61aafa009676283838d8e789c5333f2bf5fc3be5ae4f791795fd1f0c378b29"
+    },
+    {
+      "script_id": "2c2d44bb-488b-5a17-b756-1920d1ba38a6",
+      "module_id": "tomoe",
+      "version": "0.1.0",
+      "path": "mikage-shrine/releases/1.29.1/tomoe.mjs",
+      "sha256": "49e55d881fddb5c6ec28d5365214c985a6c1ad4b18434e4b61337b5cd6d268e1"
+    }
+  ],
+  "publication": "source commit published on an isolated authorized branch; final delivery tree verified remotely",
+  "provenance_policy": "background research and adaptation declaration are external to prompt entries",
+  "loader_verification": "five exports/version checks, sequential fallback and one start each; worldbook/state parity, 31 outfits and 13 unchanged external images passed",
+  "real_host": "pending",
+  "old_save_migration": "not requested; new chats only"
+}

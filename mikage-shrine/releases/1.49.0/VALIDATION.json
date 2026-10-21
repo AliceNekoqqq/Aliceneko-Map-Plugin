@@ -19,7 +19,13 @@
     "worldbook77_regexes_initial_shape": "preserved",
     "shop_ui_glyphs": "covered by original font assets",
     "minigames_tomoe": "original module paths and hashes preserved",
-    "syntax_and_rebuild": "passed"
+    "syntax_and_rebuild": "passed",
+    "packer_dry_run": "passed",
+    "packed_source_semantic_parity": "passed",
+    "five_loader_exports_fallback_start_once": "passed",
+    "outfits_accepted": 31,
+    "unchanged_external_portraits": 13,
+    "source_provenance_notes_in_added_model_entries": "absent; external SOURCES.md only"
   },
   "scope_gate": {
     "default_staged_refactor": "exceeded: complete release snapshots exceed 5 files / 200 lines",
@@ -32,7 +38,7 @@
       "wardrobe purchase UI",
       "worldbook and configuration"
     ],
-    "full_check": "source snapshot checked; final combined baseline diff recorded at delivery"
+    "full_check": "passed: source snapshot 19 files / 11086 lines; full default final working-tree view includes staged/unstaged/untracked paths; combined 92453c9-to-final snapshot has 21 files / 12564 lines, zero unknowns and no forbidden asset/old-config/paused-experiment changes"
   },
   "pending": [
     "real SillyTavern import and model behavior",
