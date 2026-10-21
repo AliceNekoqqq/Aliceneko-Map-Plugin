@@ -42,7 +42,7 @@ const sourceModule=(spec,id)=>fs.readFileSync(path.join(root,'..',spec.modules.f
 const artBlock=t=>t.slice(t.indexOf('((host)=>{'),t.indexOf('const StatusbarHTML='));
 assert.equal(artBlock(sourceModule(actual,'scene')),artBlock(sourceModule(original,'scene')),'full art renderer/catalog preserved');
 const card=JSON.parse(fs.readFileSync(dir+'/card-source.json')),prior=JSON.parse(fs.readFileSync(root+'/releases/1.48.4/card-source.json'));const get=(c,id)=>c.data.character_book.entries.find(e=>e.id===id);
-assert.deepEqual(card.data.extensions.regex_scripts,prior.data.extensions.regex_scripts);assert.deepEqual(get(card,77),get(prior,77));
+assert.deepEqual(card.data.extensions.regex_scripts,prior.data.extensions.regex_scripts);assert.deepEqual(get(card,77).content.match(/<%[\s\S]*?%>/g),get(prior,77).content.match(/<%[\s\S]*?%>/g),'appearance catalogue and EJS behavior preserved');
 assert.equal(get(card,83).enabled,true);assert.equal(get(card,58).enabled,false);assert.equal(C.config.wardrobeQuests.find(q=>q.id==='WQ09').region,'R08');
 assert.equal(C.config.wardrobeQuests.find(q=>q.id==='WQ07').outfits.some(o=>o.id==='chibi'),false);
 assert(C.config.wardrobeRewards.filter(r=>['U02','U03','U04'].includes(r.id)).every(r=>!r.outfits.length));

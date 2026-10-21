@@ -1,0 +1,15 @@
+{
+  "base": "1.49.7",
+  "version": "1.49.8",
+  "gate": "source_iteration",
+  "authorization": "承接逐个去看、修改并给结果的授权，本轮清理用户列举的负向约束与重复禁例",
+  "scope": "词条7/37/49/59/77的叙事边界文字；改为场景、信息来源和状态归属说明",
+  "preserve": ["幼狐的主动选择及chibi条件、儿童非恋爱非性化情境、接触意愿与拒绝停止", "幽灵第三阶段起可选，自愿送行，神使陪同职责及拒绝/暂缓无惩罚", "玩家个人信息和现实回忆只采用本人提供，虚构短篇分开", "衣装只管外观，身份/关系/旧忆各依对应记录", "所有EJS代码块/衣装目录/XML标签/条目加载配置", "变量协议、记忆格式、主线/经济/结算与全部五个模块", "77审定文案、素材、历史版本及工作区原有材料"],
+  "expected": ["releases/1.49.8", "tools/revise_scene_rules.py", "tests/scene-rules.test.cjs", "tests/moonforest-shop.test.cjs", "PROJECT_STATE.md"],
+  "budget": {"files": 12, "known_lines": 7000},
+  "guide_receipt": "reuse existing ST-A0/A3/A4 and prose/worldbook writing contracts; consult companion not exposed",
+  "verification": ["exact operation replay and unchanged technical fields", "all EJS blocks and runtime pins byte-identical", "chibi/adult-human/adult-fox actual rendered branches with consent/identity invariants", "39-entry identity and 11 dynamic templates; all wardrobe mappings and approved runtime prose"],
+  "rollback": "fresh output paths; reject source hash or anchor drift; keep 1.49.7 intact",
+  "packaging": "not requested",
+  "real_host_and_model": "pending"
+}

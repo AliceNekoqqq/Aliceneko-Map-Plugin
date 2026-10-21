@@ -1,0 +1,51 @@
+{
+  "release": "1.49.8",
+  "base": "1.49.7",
+  "gate": "source_iteration",
+  "packaged": false,
+  "scope": {
+    "entry_ids": [
+      7,
+      37,
+      49,
+      59,
+      77
+    ],
+    "operations": 10,
+    "source_chars_before": 13830,
+    "source_chars_after": 13140,
+    "source_chars_note": "includes preserved EJS; not token count",
+    "budget_files": 12,
+    "budget_known_lines": 7000,
+    "preexisting_material": "retained, excluded from commit and included in full worktree scope"
+  },
+  "checks": {
+    "explicit_prose_operation_replay": "PASS",
+    "entry_metadata_XML_tags_all_EJS_blocks": "byte-identical",
+    "five_runtime_modules_paths_hashes": "byte-identical",
+    "variable_protocol_initial_state_memory_and_purchase_settlement": "unchanged",
+    "child_form_and_consent_semantics": "PASS chibi + active choice, child non-romantic/non-sexual scope, willing contact/refusal stop, actual age/personality/memory preserved",
+    "ghost_semantics": "PASS stage3 optional/self-paced, voluntary farewell, companion role and no state penalty for refusal/defer",
+    "personal_facts": "PASS player-provided source, real memories distinct from fictional stories, 10 collectibles and thresholds3/7/10 preserved",
+    "actual_render": "PASS chibi/adult-human/adult-fox branches; no adult/child scope leak, no state writes",
+    "wardrobe_and_templates": "PASS 16 products/five quest lifecycles/31 mappings/77 approved runtime edits/11 EJS in generation-display-missing states",
+    "actual_modules_simulated_host": "PASS three openings/statusbar/four panels/floor-swipes/chat/reload/wood13 preserved",
+    "deterministic_outputs": "PASS both files reproduce byte-for-byte"
+  },
+  "outputs": {
+    "card-source.json": {
+      "bytes": 323557,
+      "sha256": "a9dd89a24d5f20c84801b0cbf2033d3f34813c3306a74dad40e709324a9f2d0b"
+    },
+    "manifest.json": {
+      "bytes": 31345,
+      "sha256": "31b0c104e31044f7182e30631546622d5df2c81a580e3589ad232433a842b033"
+    }
+  },
+  "pending": [
+    "real SillyTavern",
+    "actual model writing behavior",
+    "author acceptance",
+    "new import package not requested"
+  ]
+}
