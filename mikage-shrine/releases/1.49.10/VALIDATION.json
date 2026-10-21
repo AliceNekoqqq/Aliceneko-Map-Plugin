@@ -1,0 +1,58 @@
+{
+  "version": "1.49.10",
+  "gate": "source_iteration",
+  "base": "1.49.9",
+  "changed_entries": [
+    1,
+    5,
+    11,
+    17,
+    49,
+    52,
+    72,
+    73,
+    74
+  ],
+  "guarded_operations": 16,
+  "passed": [
+    "full guarded replay; both outputs reproducible byte-for-byte",
+    "83 preexisting business-condition lines retained; all typed field rows and complete actor-specific enums retained",
+    "all entry activation/order/keys/budget settings, EJS blocks and five executable module pins/hashes unchanged",
+    "eight original JSONPatch examples plus festival invitation array semantically identical; one shared XML format",
+    "actual runtime rejects relationship delta9 and allows8",
+    "actual runtime accepts event-linked memory; rejects duplicate shared-memory IDs",
+    "all five wardrobe sidequest closure plus presentation pairs accepted",
+    "M01 complete path accepts closure plus presentation and advances stage2",
+    "16 outfit products, 5 outfit quests, 31 actor-id mappings, 77 approved runtime prose spans, 11 EJS templates present/missing and generation/display",
+    "same initial and post-M01 state rendered through same EJS3.1.10 without mutating state; offline fragments shrink in Unicode characters, UTF8 and reference o200k_base token counts"
+  ],
+  "clarified_against_runtime": [
+    "one shared-memory summary per event ID; existing unique-ID validator unchanged",
+    "sidequest conclusions have the same existing closure/presentation exception as mainline",
+    "full actor outfit enum table replaces old short range copies"
+  ],
+  "commands": [
+    "python tools/deduplicate_prompt_rules.py --dry-run",
+    "python tools/deduplicate_prompt_rules.py",
+    "MIKAGE_PROMPT_METRICS_OUT=/tmp/mikage-prompt-dedup-metrics.json node tests/prompt-dedup.test.cjs"
+  ],
+  "metrics": "mikage-shrine/releases/1.49.10/METRICS.json",
+  "tokenizer": {
+    "package": "js-tiktoken@1.0.21",
+    "encoding": "o200k_base",
+    "scope": "offline constant fragments; host macros unresolved; no conversation/request framing",
+    "target_model_verified": false
+  },
+  "pending": [
+    "real SillyTavern final request capture",
+    "target model tokenizer and request budget",
+    "actual model behavior",
+    "author acceptance"
+  ],
+  "deferred": [
+    "scene-scoped memory loading",
+    "chapter loading scope",
+    "packaging"
+  ],
+  "source_sha256": "a8b00c95031f2ccda5d3e3d923e4800324fd2af045bffe035ee76987f6d6c0a7"
+}

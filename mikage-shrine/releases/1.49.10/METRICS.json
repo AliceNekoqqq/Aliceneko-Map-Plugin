@@ -1,0 +1,35 @@
+{
+  "scope": "Offline constant-entry fragments; EJS rendered; host macros unexpanded; excludes chat history and request framing. o200k_base is a reference encoding, not evidence of the user target model or final request token budget.",
+  "protocol_chars": {
+    "before": 21280,
+    "after": 12729
+  },
+  "cases": [
+    {
+      "case": "initial",
+      "before": {
+        "entry_chars": 45643,
+        "utf8_bytes": 96488,
+        "reference_o200k_base_tokens": 27093
+      },
+      "after": {
+        "entry_chars": 36469,
+        "utf8_bytes": 86004,
+        "reference_o200k_base_tokens": 24406
+      }
+    },
+    {
+      "case": "post-M01",
+      "before": {
+        "entry_chars": 45643,
+        "utf8_bytes": 96488,
+        "reference_o200k_base_tokens": 27093
+      },
+      "after": {
+        "entry_chars": 36469,
+        "utf8_bytes": 86004,
+        "reference_o200k_base_tokens": 24406
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "base": "1.49.9",
+  "version": "1.49.10",
+  "gate": "source_iteration",
+  "authorization": "作者明确要求执行上下文优化第一批",
+  "scope": "常驻协议与重复说明去重；更新说明旧服装枚举和主线限定漂移修正；示例改为共用包装、保留8种patch",
+  "preserve": [
+    "全部5个固定运行时模块、schema与初始数据、经济与委托节奏",
+    "全部EJS代码块、条目启用/位置/关键字/扫描/预算配置",
+    "上一版契约效力、恋爱独立与玩家主动回应",
+    "共同经历前缀、220字上限、同轮事件引用、各类别原有额度",
+    "31组衣装ID、77审定运行时文案和全部美术",
+    "历史维护版本与现有1.49.4导入包"
+  ],
+  "deferred": [
+    "按场景筛选祭典与其他记忆",
+    "章节加载范围调整",
+    "打包与真实宿主验收"
+  ],
+  "expected": [
+    "releases/1.49.10",
+    "tools/deduplicate_prompt_rules.py",
+    "tests/prompt-dedup.test.cjs",
+    "PROJECT_STATE.md"
+  ],
+  "budget": {
+    "files": 12,
+    "known_lines": 8500
+  },
+  "guide_receipt": "沿用ST-A0/A3/A4、C1/C2/C3/D7项目收据；consult companion未暴露；本轮沿用worldbook writing-contracts、performance static/output预算并已读pipeline tool-adapter-contract",
+  "adapter": {
+    "command": "python tools/deduplicate_prompt_rules.py [--dry-run]",
+    "cwd": "mikage-shrine",
+    "inputs": [
+      "releases/1.49.9/card-source.json",
+      "releases/1.49.9/manifest.json",
+      "releases/1.49.10/changes.json",
+      "releases/1.49.10/plan.json"
+    ],
+    "outputs": [
+      "releases/1.49.10/card-source.json",
+      "releases/1.49.10/manifest.json"
+    ],
+    "collisionPolicy": "拒绝覆盖",
+    "partialWritePolicy": "先在内存完整生成校验，仅写新版本路径",
+    "success": "退出0，输出内容哈希"
+  },
+  "verification": [
+    "精确锚点重放与无关字段/全部EJS/模块哈希保持",
+    "8组原有JSONPatch示例语义保持、全部模型可写字段约束保留",
+    "主线与衣装支线结案同轮双事件、关系±8及事件守卫",
+    "相同存档、同一EJS环境前后Unicode字符数；不冒充token或真实请求",
+    "16商品/5支线/31映射/77文案/11EJS回归"
+  ],
+  "packaging": "not requested",
+  "real_host_and_model": "pending"
+}
