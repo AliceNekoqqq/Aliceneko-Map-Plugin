@@ -1,0 +1,33 @@
+{
+  "release": "1.49.10",
+  "status": "candidate",
+  "new_chat_only": true,
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/package-1.49.10",
+  "source_commit": "95c022ea564af3f62a975cbc11f173bdc1b934ff",
+  "source_tree": "2d8df538091bc6aebd8415831bd863a72c7e26c3",
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.10_契约与上下文优化版.json",
+  "bytes": 349121,
+  "sha256": "b68355cc84731b94eb31298efc0de5a7d4107b043eac603be5a0e26c75de6855",
+  "library_file_id": "libfile_351b689242b88191a0a88f50b7b13da9",
+  "worldbook": {
+    "logical_id": "mikage-shrine:character_book",
+    "attachment": "/data/character_book",
+    "version": "1.49.10",
+    "source_parity": "passed"
+  },
+  "includes_since_last_package": [
+    "1.49.5客观规则修复",
+    "1.49.6生产收益与委托节奏",
+    "1.49.7文风修订",
+    "1.49.8场景规则合并",
+    "1.49.9契约条文恢复",
+    "1.49.10常驻协议去重第一批"
+  ],
+  "loader_verification": "five actual module exports, mismatch rejection, sequential fallback and single start; fixed source commit",
+  "real_host": "pending",
+  "old_save_migration": "not required",
+  "png": "not selected",
+  "runtime_dependencies": "releases/1.49.10/manifest.json:runtime_dependencies",
+  "validation": "releases/1.49.10/PACKAGING_VALIDATION.json"
+}
