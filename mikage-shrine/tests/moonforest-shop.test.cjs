@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const {z}=require('/tmp/mikage-debug/node_modules/zod');
 const root=path.resolve(__dirname,'..'),dir=path.join(root,'releases',process.env.MIKAGE_SHOP_RELEASE||'1.49.0');
-const source=fs.readFileSync(dir+'/mvu.mjs','utf8'),clone=x=>JSON.parse(JSON.stringify(x));
+const source=fs.readFileSync(path.resolve(root,'..',JSON.parse(fs.readFileSync(dir+'/manifest.json')).modules.find(m=>m.module_id==='mvu').path),'utf8'),clone=x=>JSON.parse(JSON.stringify(x));
 const code=source.slice(source.indexOf('const ShrineFieldSpec ='),source.indexOf('// Install before importing the core:'));
 const schema=source.slice(source.indexOf('  const Schema = ')+2,source.indexOf('\n  bootstrapCommitted=true;'));
 const {C,initial,Schema}=vm.runInNewContext(code+'\n'+schema+'\nShrineCard.installZodSchema(Schema);({C:ShrineCard,initial:ShrineInitial,Schema})',{z,console});

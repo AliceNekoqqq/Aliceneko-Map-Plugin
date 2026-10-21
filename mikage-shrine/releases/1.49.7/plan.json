@@ -1,0 +1,16 @@
+{
+  "base": "1.49.6",
+  "version": "1.49.7",
+  "gate": "source_iteration",
+  "authorization": "逐个去看吧，改。改完给个结果",
+  "scope": "逐条审阅39条世界书与人物示例；清理空泛对照、夸饰、重复总结和被写成必然结果的情境示例；同步实际绘马生成提示词",
+  "decision": "authorized prose revision in three bounded passes: static portrayal, narrative template prose, embedded generator prose; no engineering refactor",
+  "protected": ["all EJS blocks and template branch order", "entry IDs, keys, activation and loading configuration", "variable protocol, initial state and technical settlement/memory paragraphs", "five runtime executable control flows; only panels prompt literal and version may change", "all 77 approved UI/game/scene edits and entire current panel HTML", "all art/outfit mappings, economy, quest pacing, prices, rewards and gates", "historical releases and preexisting untracked material"],
+  "expected": ["releases/1.49.7", "tools/revise_natural_prose.py", "tests/natural-prose.test.cjs", "tests/moonforest-shop.test.cjs", "PROJECT_STATE.md"],
+  "budget": {"files": 14, "known_lines": 10000, "note": "new source snapshots and explicit before/after prose operations dominate churn"},
+  "guide_receipt": {"reuse": "existing ST-A0/A3/A4, project adapter and release gate; consult companion package is not exposed", "routes": ["rewrite-natural-prose", "worldbook-design-and-writing", "sillytavern-card-pipeline", "code-quality-workflow"], "references": ["editing-guide.md", "natural-chinese-review.md", "writing-contracts.md"]},
+  "verification": ["guarded before/after operations and exact reverse to base", "EJS blocks, XML tags, technical paragraphs and all unchanged card fields", "all 11 EJS templates and relation threshold/confirmation combinations", "actual generator prompt equals inactive maintenance entry; parsed output and generation pipeline unchanged", "all module hashes; panels prompt/version exact inverse; panel HTML exact preservation", "wardrobe/77 approved prose checks and simulated startup"],
+  "rollback": "fresh output paths; reject source hashes or anchor drift; keep 1.49.6 intact",
+  "packaging": "not requested; source iteration only",
+  "real_host_and_model": "pending; source/template checks do not prove prose quality across models"
+}

@@ -1,0 +1,65 @@
+{
+  "release": "1.49.7",
+  "base": "1.49.6",
+  "gate": "source_iteration",
+  "packaged": false,
+  "review": {
+    "entries": 39,
+    "changed_entries": 24,
+    "changed_enabled_entries": 23,
+    "changed_disabled_entries": 1,
+    "dialogue_examples": 6,
+    "guarded_operations": 123,
+    "active_worldbook_source_chars": {
+      "before": 98324,
+      "after": 89804,
+      "note": "EJS source included; not actual model request or token count"
+    }
+  },
+  "checks": {
+    "explicit_source_replay": "PASS",
+    "all_entry_metadata_and_EJS_code_blocks": "byte-identical",
+    "XML_tags_and_fixed_constraint_lines": "byte-identical",
+    "selected_technical_memory_and_settlement_paragraphs": "byte-identical",
+    "card_fields_outside_declared_prose_and_versions": "unchanged",
+    "panel_HTML_and_77_approved_runtime_edits": "unchanged",
+    "actual_generator_prompt": "equals revised maintenance entry56; output JSON shape, generation gates/resource table unchanged",
+    "panel_exact_inverse": "prompt literal and version inverse equals 1.49.6 byte-for-byte",
+    "other_four_module_pins": "unchanged; mvu economy/quest behavior 1.49.6 preserved",
+    "wardrobe": "PASS 16 products, five sidequests, 31 actor/outfit mappings, art and regex parity",
+    "EJS": "PASS 11 templates with generation/display/missing state; 200 relation boundary/confirmation combinations",
+    "simulated_host": "PASS actual modules and child inline scripts: three openings/statusbar/four panels/swipe/chat/reload/floor retention",
+    "syntax": "PASS panels.mjs node --check",
+    "build": "PASS all three outputs reproduce byte-for-byte"
+  },
+  "outputs": {
+    "card-source.json": {
+      "bytes": 325489,
+      "sha256": "800377a637b2b6741a9c2f795119fee4d6915f20d7b85d63bde58d8ddb56c6c4"
+    },
+    "panels.mjs": {
+      "bytes": 376981,
+      "sha256": "7e17d064866232e4169078dfb0d091c78305a5a48144f9f4e25a7d9bf66a063e"
+    },
+    "manifest.json": {
+      "bytes": 31052,
+      "sha256": "dd2b412ac7e0c645217f94d56a1d8ba9de88374f6da2a2d35731cea77e1ef286"
+    }
+  },
+  "scope": {
+    "budget_files": 14,
+    "budget_known_lines": 10000,
+    "baseline_residue": "preexisting untracked material retained and excluded from commit; full worktree scope includes it",
+    "runtime_scope": "one panel module prompt literal and version; no executable control flow change",
+    "final_full_worktree_files": 12,
+    "committed_files": 11,
+    "custom_budget": "within 14 files/10000 known changed lines; one preexisting untracked binary has unknown churn; no default snapshot local-fix budget claim"
+  },
+  "pending": [
+    "real SillyTavern",
+    "actual model writing quality",
+    "author prose acceptance",
+    "new import card not requested"
+  ],
+  "guide_receipt": "existing project receipt reused; companion consult package not exposed; prose editing and worldbook contracts read"
+}
