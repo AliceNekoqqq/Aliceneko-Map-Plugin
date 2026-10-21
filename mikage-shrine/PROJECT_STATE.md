@@ -1,3 +1,9 @@
+## 1.49.1 幼狐文案择用（2026-10-21，维护迭代）
+
+作者回传WQ09稿，要求结合完整上下文择用。采用司宝雷童、紫电、旧衣和巴卫别扭反应；去掉强制同行/结局与九重神印、雷云金殿的额外设定。实际白底紫缘花纹宽袖和装已目视核对，保持原衣装名和chibi映射，旧衣去处自选、外观收录与显式换装分开。维护入口releases/1.49.1/changes.json与tools/revise_kozuchi_copy.py，生成config/card-source/mvu/manifest；领域配置、奖励delivery与世界书57同步。除这些文案与版本外可反向恢复1.49.0，其他四模块、素材、状态规则/结算、卡扩展不变。
+
+16商品与五支线生命周期、实际Zod、31外观、77文案、11EJS及语法通过。此轮仅维护文案，无新导入包；当前已交付仍为1.49.0。下一次作者明确打包时使用1.49.1维护源与实际Git源码提交，先补齐WQ09字形并验UI（旧稿也缺3字，新稿缺20字；详情见VALIDATION）。真实酒馆/Android/模型输出未验。范围与验证见本目录README和VALIDATION，来源声明继续留卡外。
+
 ## 1.49.0 月之森衣装商店（2026-10-21）
 
 当前维护入口releases/1.49.0/manifest.json、config.json、shop-config.json、card-source.json；构建tools/build_moonforest_shop.py与src/wardrobe-shop-{domain,ui}.js。作者明确只面向新聊天，不做旧档迁移。素世彩蛋词条83与关键词目录84；衣装规则49、支线57和变量协议同步。16商品17外观，以2/3奉纳购买；基础5套、纪念9套，共保留31套actor+id。school-human与巴卫school共购。主线UCLEAR仍发ceremony/moon；WQ02转R07野狐旧事，WQ09转R08万宝槌，WQ07保留古旅装，依据与改编边界仅保留在卡外SOURCES.md；依作者最新要求，新增模型词条移除出处与二创声明。

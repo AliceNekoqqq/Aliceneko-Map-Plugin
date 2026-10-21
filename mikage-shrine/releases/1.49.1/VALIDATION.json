@@ -1,0 +1,39 @@
+{
+  "version": "1.49.1",
+  "gate": "source_iteration",
+  "packaged": false,
+  "base": "1.49.0",
+  "changed_worldbook_entries": [
+    57
+  ],
+  "changed_quest": "WQ09",
+  "checks": {
+    "guarded_build_dry_run": "passed",
+    "reverse_runtime_excluding_config_and_version": "byte-identical",
+    "reverse_config_excluding_WQ09_and_delivery": "identical",
+    "four_other_runtime_modules": "original manifest paths and hashes",
+    "card_extensions_and_other_text": "identical",
+    "node_syntax": "passed",
+    "domain_and_Zod": "16 purchases and 5 story lifecycles passed",
+    "developer_outfit_ids": 31,
+    "approved_prose_edits_retained": 77,
+    "dynamic_EJS_templates": 11,
+    "positive_prose_and_external_provenance": "passed",
+    "font_coverage": "Original custom font subsets miss 3 characters of prior WQ09 and 20 in revised prose; system fallback not browser-verified this iteration"
+  },
+  "scope": {
+    "default_staged_refactor": "exceeded by generated snapshots",
+    "budget": {
+      "files": 12,
+      "changed_lines": 6500
+    }
+  },
+  "pending": [
+    "new package: not requested for this copy iteration",
+    "real SillyTavern",
+    "Android",
+    "actual model output",
+    "author acceptance",
+    "supplement WQ09 custom font coverage and verify in UI before next package"
+  ]
+}
