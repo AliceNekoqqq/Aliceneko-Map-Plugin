@@ -1,0 +1,29 @@
+{
+  "release": "1.49.5",
+  "base": "1.49.4",
+  "gate": "source_iteration",
+  "packaged": false,
+  "baseline": "all three new focused cases fail on 1.49.4 as expected",
+  "ordered_stages": ["reward authority and region-only pending branches", "facility predicate and M05-only festival closure", "canonical shop location and atomic purchase guard"],
+  "changed_worldbook_entries": [1, 49, 54],
+  "checks": {
+    "main_reward_literals": "equal actual runtime main catalogue",
+    "pending": "all five IDs before/after postgame; no shop clothes gifted; real M05 memorials retained",
+    "closure": "M01..M05 ready paths, facility1..3/early/missing negatives; M05 start/end conditions; no early chapter festival demand",
+    "actual_first_chapter": "InitVar -> two ordinary cases -> repair -> M01 action -> closure -> slot clearing passed",
+    "location": "canonical and whitespace positive; outside/departed/neighbouring/other-region UI and model rejection; unchanged input, ledger and wear passed",
+    "economy": "10 shop goods, 4 buyback goods, donation caps, crop/craft cycles and tomato recipe passed",
+    "five_chapter_routes": "complete/basic 8/4 donation; ledger reconciles",
+    "wardrobe": "16 products, 5 quest lifecycles, 31 mappings, 77 approved copy and 11 EJS passed",
+    "startup_simulation": "3 openings, statusbar, 4 panels, swipe/chat/reload, wood13, life buy/sale visible floors passed",
+    "actual_purchase_bridge_simulation": "outside rejects without write; canonical purchase adds one visible floor, preserves predecessor/current wear; repeat rejection and ownership reread passed",
+    "deterministic_three_outputs": "passed",
+    "mvu_exact_inverse": "only location guard and version; schema/initial/config/prices/rewards all byte-identical after reversal",
+    "other_four_module_pins_and_all_art": "unchanged",
+    "other_prose_and_card_fields": "unchanged outside entry1/49/54 and release version",
+    "syntax": "passed"
+  },
+  "scope": {"files_budget": 14, "known_lines_budget": 10000, "semantic_lines_per_stage": "under80", "preexisting_worktree_material": "retained; full scan includes baseline residue; no unrelated paths committed"},
+  "pending": ["new import package not requested", "real SillyTavern", "actual model output", "Android", "author acceptance"],
+  "deferred_to_plan": ["example dialogue factual/relationship copy alignment", "prompt content ownership and size", "production reward and batch interaction", "quest pacing and resting"]
+}

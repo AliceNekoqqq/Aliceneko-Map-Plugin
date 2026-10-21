@@ -1,0 +1,18 @@
+{
+  "base": "1.49.4",
+  "version": "1.49.5",
+  "gate": "source_iteration",
+  "authorization": "客观问题先一个个改；玩法、收益、文案表现与提示词重整留待方案",
+  "stages": [
+    {"id": "rewards", "decision": "Local Fix Only", "contract": "Entry54 main rewards use the runtime main-reward catalogue; region-only rewards describe regions and shop purchases; align Entry1 residual acquisition clause"},
+    {"id": "closure", "decision": "Local Fix Only", "contract": "M01..M04 closure uses their real chapter conditions; festival closure is M05-only; facility predicate reads the actual facility value"},
+    {"id": "location", "decision": "Local Fix Only", "contract": "shop purchase requires R02 and the canonical existing shop location; outside/departed strings reject atomically, valid purchases keep wear"}
+  ],
+  "protected": ["all outfit IDs/art and 77 approved prose edits", "prices, quotas, recipes, rewards and main costs", "schema/initial state", "quest pacing and two-step rest", "character samples and relationship style", "all historical releases and original assets"],
+  "expected": ["releases/1.49.5", "tools/fix_objective_rules.py", "tests/objective-contracts.test.cjs", "src/wardrobe-shop-domain.js", "tests/economy.test.cjs", "tests/economy-startup.test.cjs", "tests/moonforest-startup.test.cjs", "PROJECT_STATE.md"],
+  "budget": {"files": 14, "known_lines": 10000, "per_stage_semantic_lines": 80},
+  "rollback": "keep prior releases and consumers; derive fresh outputs; stop on input hash/anchor drift or failed regressions",
+  "guide_receipt": {"snapshot": "2026-08-18", "routes": ["code-quality-workflow", "worldbook-design-and-writing"], "documents": ["ST-A0", "ST-A3", "ST-A4"]},
+  "packaging": "not requested in this source repair iteration",
+  "deferred": ["example-dialogue and relationship copy plan", "prompt ownership/size plan", "production effort/reward plan", "quest pacing plan"]
+}

@@ -7,7 +7,7 @@
   function shopView(s){
     const stage=phase(s),reserve=s.神社[stage.facility]<2?(stage.cost.奉纳||0):0;
     const balance=s.神社.奉纳,spendable=Math.max(0,balance-reserve);
-    const atShop=s.地图.当前地区===shopConfig.region&&String(s.环境.地点).includes(shopConfig.name);
+    const atShop=s.地图.当前地区===shopConfig.region&&String(s.环境.地点).trim()===shopConfig.location;
     return {name:shopConfig.name,npc:shopConfig.npc,region:shopConfig.region,atShop,balance,reserve,spendable,
       products:shopConfig.products.map(p=>({...clone(p),owned:shopOwned(s,p),affordable:spendable>=p.price}))};
   }
