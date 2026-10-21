@@ -1,0 +1,22 @@
+{
+  "release": "1.48.3",
+  "status": "candidate",
+  "source_commit": "0d00176b6a226f504cb51c7837568fdb017de96d",
+  "font_commit": "a19084cedf3b555f3d88d2e95f391b4c48e86c27",
+  "card": "mikage-shrine/cards/巴卫_御影神社_v1.48.3_地点与回忆册接轨版.json",
+  "bytes": 392383,
+  "sha256": "11a06c56096a341369d32d9c7c57363844ec585fa69800d3fe42c7003f73f1fe",
+  "validation": "mikage-shrine/releases/1.48.3/VALIDATION.json",
+  "loader_audit": "passed: all5 exports/fallback/start-once, source/card parity,31outfits,13unchangedimages",
+  "pending": [
+    "real SillyTavern",
+    "Android device",
+    "actual model output"
+  ],
+  "remaining_audit_items": [
+    "character example conflicts",
+    "festival prompt conflicts",
+    "construction expansion choices",
+    "actual assembled prompt budget"
+  ]
+}

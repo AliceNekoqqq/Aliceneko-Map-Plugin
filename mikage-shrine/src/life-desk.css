@@ -1,0 +1,71 @@
+/* Life home and decoration workspace. Existing other pages retain their logic. */
+body[data-view=life]{background:#43291f url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e89b016d7b36f73b918054617397112b2910fcc1/mikage-shrine/assets/ui/map-wood-v144.webp') center top/100% auto}
+body[data-view=life] .experience-nav{background:#43271ef5;border-bottom:2px solid #bc955d}
+body[data-view=life] .nav-pages button,body[data-view=life] .nav-brand{color:#f0d7b2}
+body[data-view=life] .nav-pages button[aria-current=page]{background:#883f30;border-color:#d5aa69;color:#ffe7ba}
+#life-dialog{--life-paper:#f5e5c5;--life-ink:#694532;max-width:1120px;padding:0 18px 28px!important;background:none;border:0;box-shadow:none;color:#f2dab3;font-family:'Mikage Shrine Serif',serif}
+#life-dialog button,#life-dialog select{font-family:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+#life-dialog button:focus-visible,#life-dialog select:focus-visible{outline:3px solid #ffd08a;outline-offset:3px}
+#life-dialog .life-desk-header{position:relative;min-height:138px;margin:0 -18px 16px;padding:27px 60px 25px 24px;border-bottom:3px solid #b58a51;background:#3d261b url('__LIFE_ASSETS__life-v147-scenes.webp') 0 12%/200% auto;box-shadow:inset 0 0 0 1000px #1c0d0c65}
+#life-dialog .life-desk-header h2{margin:0;font-size:clamp(27px,4.5vw,41px);font-weight:500;letter-spacing:5px;color:#fff0cf;text-shadow:0 2px 4px #32160e}
+#life-dialog .life-desk-header p{margin:10px 0 0;font-size:12px;letter-spacing:2px;color:#f4dfbc}
+#life-dialog .life-desk-header .close-button{position:absolute;right:14px;top:18px;width:44px;height:44px;border:1px solid #cda86b;background:#44251fd9;color:#ffe3b8}
+#life-dialog .life-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;padding:0 0 15px;overflow:visible}
+#life-dialog .life-tabs .life-button{white-space:normal;min-width:0;min-height:48px;border:0;border-radius:0;padding:9px 5px;background:transparent url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@e89b016d7b36f73b918054617397112b2910fcc1/mikage-shrine/assets/ui/map-ticket-v144.webp') center/100% 100%;color:#74503b;font-size:12px;letter-spacing:1px;box-shadow:0 3px 4px #200e0955}
+#life-dialog .life-tabs .life-button[aria-pressed=true]{color:#973e2d;box-shadow:0 3px 4px #200e0955,inset 0 -4px #a45136}
+#life-dialog #life-feedback{color:#ffe2ad;font-size:13px;line-height:1.7;min-height:24px;margin-bottom:8px;overflow-wrap:anywhere}
+#life-dialog #life-feedback[data-state=error]{color:#ffc5b5}
+#life-dialog .life-desk-scene{position:relative;width:100%;aspect-ratio:3/2;min-height:0;background-color:#c6b48d;background-image:url('__LIFE_ASSETS__life-v147-scenes.webp');background-size:200% 200%;overflow:hidden;border:1px solid #b58a51;box-shadow:0 8px 16px #1f0e0b55;isolation:isolate}
+#life-dialog .life-desk-scene[data-zone=veranda]{background-position:0 0}
+#life-dialog .life-desk-scene[data-zone=courtyard]{background-position:100% 0}
+#life-dialog .life-desk-scene[data-zone=gate]{background-position:0 100%}
+#life-dialog .life-desk-scene[data-zone=tea_table]{background-position:100% 100%}
+#life-dialog .life-home-badge{position:absolute;bottom:12px;left:12px;right:12px;padding:10px 13px;background:#4e2d23e8;border:1px solid #d0a667;color:#ffe5b9;font-size:13px;line-height:1.6;z-index:4}
+#life-dialog .life-home-caption{margin:10px 0 0;font-size:12px;line-height:1.8;color:#eed2a8}
+#life-dialog .life-desk-object{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:44px;min-height:44px;padding:3px;border:1px solid transparent;border-radius:2px;background:transparent;color:#fff1ce;transform:translate(-50%,-50%);z-index:3;cursor:pointer}
+#life-dialog .life-desk-object .life-prop{width:clamp(38px,6vw,72px);height:clamp(38px,6vw,72px);filter:drop-shadow(0 3px 3px #27170b77)}
+#life-dialog .life-desk-object small{font-size:10px;line-height:1.4;white-space:nowrap;background:#44271fe6;padding:3px 5px;color:#fff0cc;border:1px solid #d0a56380}
+#life-dialog .life-desk-object[data-lit=true]{filter:drop-shadow(0 0 13px #ffc563)}
+#life-dialog .life-desk-object[aria-pressed=true]{border-color:#fff3ba;background:#ffebbd30;box-shadow:0 0 0 2px #8f623955}
+#life-dialog .life-desk-slot{position:absolute;display:grid;place-items:center;min-width:44px;min-height:44px;width:clamp(44px,6vw,64px);height:clamp(44px,6vw,64px);border:1px dashed #ffe8b7;border-radius:50%;background:#53351cc2;color:#ffe7b4;transform:translate(-50%,-50%);z-index:2;cursor:pointer;padding:5px;font-size:11px;line-height:1.4}
+#life-dialog .life-desk-slot[aria-pressed=true]{border:2px solid #fff0bb;background:#a56330ed;box-shadow:0 0 0 5px #ffe9b32b}
+#life-dialog .life-desk-slot:disabled{border-color:#785c47;color:#dbc8a5;background:#4e3c2b9e;cursor:default;opacity:.65}
+#life-dialog .life-desk-ghost{position:absolute;width:64px;min-height:64px;transform:translate(-50%,-50%);display:flex;align-items:center;flex-direction:column;pointer-events:none;z-index:4;opacity:.75;filter:drop-shadow(0 0 8px #fff4cb)}
+#life-dialog .life-desk-ghost .life-prop{width:52px;height:52px}
+#life-dialog .life-desk-ghost small{background:#fff1c9;color:#7f482c;padding:3px 6px;white-space:nowrap;font-size:11px}
+#life-dialog .life-home-entries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
+#life-dialog .life-home-entry{position:relative;display:flex;flex-direction:column;min-width:0;padding:7px 7px 12px;background:#f1dfb5;border:1px solid #bf935e;color:#704833;text-align:left;box-shadow:0 5px 10px #26100d66;cursor:pointer;transform-origin:50% 0}
+#life-dialog .life-home-entry strong{font-weight:500;font-size:15px;margin:10px 4px 4px;letter-spacing:1px}
+#life-dialog .life-home-entry small{font-size:11px;line-height:1.6;margin:0 4px;color:#826148}
+#life-dialog .life-home-thumb{display:block;aspect-ratio:3/2;width:100%;background-image:url('__LIFE_ASSETS__life-v147-scenes.webp');background-size:200% 200%;box-shadow:inset 0 0 0 1px #81593655}
+#life-dialog .life-home-entry[data-life-entry=quiet] .life-home-thumb,#life-dialog .life-home-entry[data-life-entry=decor] .life-home-thumb{background-position:0 0}
+#life-dialog .life-home-entry[data-life-entry=garden] .life-home-thumb,#life-dialog .life-home-entry[data-life-entry=strange] .life-home-thumb{background-position:100% 0}
+#life-dialog .life-home-entry[data-life-entry=shop] .life-home-thumb,#life-dialog .life-home-entry[data-life-entry=festival] .life-home-thumb{background-position:0 100%}
+#life-dialog .life-home-entry[data-life-entry=craft] .life-home-thumb,#life-dialog .life-home-entry[data-life-entry=album] .life-home-thumb{background-position:100% 100%}
+#life-dialog .life-decor-zones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
+#life-dialog .life-decor-zones button{min-height:44px;border:1px solid #bd945d;background:#4a2e24;color:#e7cc9e;font-size:12px;padding:8px}
+#life-dialog .life-decor-zones button[aria-pressed=true]{background:#e9cea0;color:#743c2d;box-shadow:inset 0 -3px #a04f34}
+#life-dialog .life-decor-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:18px;align-items:start}
+#life-dialog .life-decor-palette,#life-dialog .life-decor-inspector{padding:16px;background:#f4e6c8;border:1px solid #c09a60;color:#694731;box-shadow:0 5px 10px #24110c55;min-width:0}
+#life-dialog .life-decor-palette h3,#life-dialog .life-decor-inspector h3{font-size:16px;font-weight:500;margin:0 0 12px;letter-spacing:2px;color:#73402e}
+#life-dialog .life-decor-inventory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#life-dialog .life-decor-item{display:flex;flex-direction:column;align-items:center;gap:5px;min-height:94px;padding:10px 4px;border:1px solid #c7aa76;background:#fffae9;color:#6d4a33;cursor:pointer;min-width:0;font-size:12px}
+#life-dialog .life-decor-item[aria-pressed=true]{border-color:#a64e34;background:#efd3a0;box-shadow:inset 0 -3px #ac5b3e}
+#life-dialog .life-decor-item .life-prop{width:48px;height:48px}
+#life-dialog .life-decor-item small{font-size:11px;color:#866043}
+#life-dialog .life-decor-inspector{margin-top:14px;line-height:1.8;font-size:13px}
+#life-dialog .life-decor-inspector p{margin:7px 0;color:#74523c;overflow-wrap:anywhere}
+#life-dialog .life-decor-confirm,#life-dialog .life-decor-inspector button{min-height:44px;border:1px solid #a8754b;background:#80482f;color:#fff0cf;padding:10px 14px;font-size:13px;cursor:pointer}
+#life-dialog .life-decor-confirm{width:100%;margin-top:12px}
+#life-dialog .life-decor-confirm:disabled,#life-dialog .life-decor-inspector button:disabled{opacity:.5;cursor:default}
+#life-dialog .life-decor-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+#life-dialog .life-decor-hint{font-size:12px;line-height:1.8;color:#efd5ac;margin:12px 0}
+#life-dialog .life-context-wrap{background:#432a22;border:1px solid #a87f4d;border-left:3px solid #d0a56a;border-radius:0;color:#eed2a9}
+#life-dialog .life-context-wrap h3,#life-dialog #life-context{color:#eed2a9}
+#life-dialog .life-desk-fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:5}
+#life-dialog .life-desk-petal{position:absolute;width:6px;height:10px;background:#ffbfd0;border-radius:80% 0 80% 0;pointer-events:none}
+#life-dialog .prop-wind_chime,#life-dialog .prop-zabuton,#life-dialog .prop-lantern,#life-dialog .prop-herb_planter,#life-dialog .prop-flower_vase,#life-dialog .prop-morning_glory{background-image:url('__LIFE_ASSETS__life-v147-objects.webp');background-size:300% 200%;background-repeat:no-repeat;image-rendering:auto}
+#life-dialog .prop-wind_chime{background-position:0 0}#life-dialog .prop-zabuton{background-position:50% 0}#life-dialog .prop-lantern{background-position:100% 0}#life-dialog .prop-herb_planter{background-position:0 100%}#life-dialog .prop-flower_vase{background-position:50% 100%}#life-dialog .prop-morning_glory{background-position:100% 100%}
+#life-dialog .life-home-blossom{position:absolute;right:3%;top:24%;width:48px;height:48px;border:1px solid #dfb475;background:#43291fdd;color:#ffe3b8;z-index:4;font-size:13px;cursor:pointer}
+@media(max-width:700px){#life-dialog{padding:0 12px 24px!important}#life-dialog .life-desk-header{margin:0 -12px 15px;min-height:112px;padding:24px 60px 20px 20px}#life-dialog .life-tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}#life-dialog .life-tabs .life-button{min-height:46px}#life-dialog .life-home-entries{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}#life-dialog .life-home-entry strong{font-size:14px}#life-dialog .life-decor-layout{grid-template-columns:1fr;gap:14px}#life-dialog .life-decor-palette{padding:13px}#life-dialog .life-decor-inventory{grid-template-columns:repeat(3,minmax(0,1fr))}#life-dialog .life-decor-item{min-height:92px;font-size:11px}#life-dialog .life-home-badge{bottom:8px;left:8px;right:8px;padding:7px 9px;font-size:11px}#life-dialog .life-desk-object .life-prop{width:38px;height:38px}#life-dialog .life-decor-zones{gap:6px}#life-dialog .life-decor-zones button{padding:7px 3px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){#life-dialog button{transition:none}}

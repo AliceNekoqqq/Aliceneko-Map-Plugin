@@ -1,0 +1,24 @@
+{
+  "version": "1.48.2",
+  "status": "candidate",
+  "source_commit": "adc563a95a187fc9b37cec64995faf489eca484b",
+  "font_commit": "b1d93e2a16cf24be9fbdef272d41ee609af328ba",
+  "card": "mikage-shrine/cards/巴卫_御影神社_v1.48.2_审定文案回填版.json",
+  "bytes": 392281,
+  "sha256": "17f5da19c17d5f70f8d47a75e8565cf59f114fe03e16200071fbdfa8fa767c3a",
+  "approved_copy_edits": 77,
+  "checks_passed": [
+    "77 exact replacements and reverse-byte parity",
+    "9 actual-release model scenarios",
+    "startup host simulation",
+    "9 games x 3 Chromium viewports",
+    "5 fixed-commit loaders exports, fallback and start-once",
+    "source/card semantic parity",
+    "31 outfits and 13 unchanged images"
+  ],
+  "pending": [
+    "real SillyTavern import",
+    "Android device",
+    "actual model generation"
+  ]
+}

@@ -1,0 +1,48 @@
+/* Approved 暮樱·结缘之庭. Presentation only; existing IDs own behavior. */
+.shrine-game{--torii-ink:#40291f;--torii-paper:#f3e2bf;max-width:760px;border:0;border-radius:4px;background:#291d1c;color:var(--torii-paper);box-shadow:0 12px 35px #140b1640;container-type:inline-size}
+.torii-portal{position:relative;isolation:isolate;padding:36% 11.5% 19%;background:radial-gradient(ellipse at 50% 40%,#9b6774,#3a2836 70%);overflow:hidden}
+.torii-frame{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;object-fit:fill;image-rendering:auto}
+.torii-portal .game-hud{position:absolute;inset:0;display:block;border:0;background:none;padding:0;z-index:4;pointer-events:none;color:var(--torii-ink)}
+.torii-title{position:absolute;top:9%;left:44%;width:12%;height:12%;display:grid;place-content:center;color:#efc980;font-size:clamp(10px,2.8cqw,21px);line-height:1.05;letter-spacing:1px;text-shadow:0 2px 3px #170e08;writing-mode:vertical-rl;font-weight:500}
+.game-hud .torii-meta{position:absolute;top:4.2%;left:35%;width:30%;height:4%;display:flex;align-items:center;justify-content:center;font-size:clamp(9px,2.5cqw,17px);letter-spacing:1px;white-space:nowrap;color:#523326}
+.game-hud .torii-phase{position:absolute;top:27.5%;left:18%;width:64%;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:clamp(10px,2.8cqw,19px);line-height:1.6;letter-spacing:1px;color:#f9e6c5;text-shadow:0 1px 3px #1c1013}
+.torii-portal .scene{aspect-ratio:3/2;width:100%;border:1px solid #ba8b50;box-shadow:0 0 0 3px #39241d,0 0 18px #150b1b88;z-index:2;border-radius:2px;background:#453b37}
+.torii-portal .scene-plaque{top:3%;font-size:clamp(10px,2.7cqw,15px);letter-spacing:1px;border-color:#c7a168;background:#34251de8;color:#fbe7bf}
+.torii-portal .scene .actor-name{font-size:9px}
+.torii-bell{position:absolute;right:5%;top:10%;width:10%;height:14%;z-index:5;border:0!important;background:transparent!important;min-width:30px;min-height:44px;padding:0!important;pointer-events:auto;color:transparent!important;border-radius:40%;transform-origin:50% 0}
+.torii-bell:hover,.torii-bell:focus-visible{animation:torii-ring .7s ease-in-out}
+.torii-bell svg,.torii-bell span{display:none}
+.torii-bell:focus-visible{outline:2px solid #ffdc99;outline-offset:1px}
+.torii-mood{position:absolute;bottom:10%;left:23%;width:54%;text-align:center;font-size:clamp(10px,2.7cqw,18px);line-height:1.5;color:#ffe3ad;text-shadow:0 2px 3px #180c08;z-index:4;pointer-events:none}
+.shrine-game .scene-dock{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0 8% 5%;border:0;background:repeating-linear-gradient(0deg,#261a16 0,#4c3024 2px,#4c3024 32px,#312019 34px);position:relative}
+.scene-dock:before{content:"";position:absolute;left:12%;right:12%;top:48%;height:2px;background:#a03232;box-shadow:0 1px #d28b61;transform:rotate(-4deg);pointer-events:none}
+.shrine-game .dock-button{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;min-width:0;min-height:64px;border:1px solid #9a693d;border-radius:3px;background:linear-gradient(#f1dcb8,#d4b184);color:#452a1b;box-shadow:0 3px 0 #1e120d,0 0 0 2px #2d1a11;overflow:visible;transition:transform .2s,filter .2s}
+.dock-button>svg{display:none}
+.dock-art{display:block;aspect-ratio:2.3;background-image:var(--torii-reference);background-size:330% auto;background-repeat:no-repeat;border-radius:2px 2px 0 0;pointer-events:none}
+#map .dock-art{background-position:3% 78%}#ema .dock-art{background-position:50% 78%}#wardrobe .dock-art{background-position:97% 78%}
+#life .dock-art{background-position:3% 91.5%}#journal-button .dock-art{background-position:50% 91.5%}#buildings .dock-art{background-position:97% 91.5%}
+.shrine-game .dock-button>span:last-of-type{display:block;min-height:27px;padding:3px 0 5px;font-size:clamp(12px,3.2cqw,21px);line-height:1.2;letter-spacing:3px;font-weight:600;border-top:1px solid #bc9364;background:linear-gradient(90deg,#e4c69c,#fff0ce 50%,#e4c69c);border-radius:0 0 2px 2px;text-shadow:0 1px #fff6dc}
+.shrine-game .dock-button:hover,.shrine-game .dock-button:focus-visible{transform:translateY(-3px);filter:brightness(1.08);background:#f3d6ac;color:#40271c}
+.shrine-game .dock-button:active{transform:translateY(1px)}
+.shrine-game #ema-notice{position:absolute;top:25%;left:48%;right:auto;width:14px;height:14px;background:#ffe6a4;border:1px solid #fff6c9;border-radius:50%;box-shadow:0 0 18px 8px #ffc55daa;animation:torii-wish 2.4s ease-in-out infinite;pointer-events:none}
+.shrine-game .game-ledger{background:linear-gradient(120deg,#f3e5ca,#e6cda7);color:#634536;border-top:2px solid #92603c;padding:13px 7%;box-shadow:inset 0 2px #fff4d2}
+.game-ledger .growth,.game-ledger .story-track,.game-ledger #note,.game-ledger .scene-tools>span{color:#785c49}.game-ledger .growth b{color:#7e3630}.game-ledger .progress-track{background:#ccb38f}.game-ledger .progress-track i{background:linear-gradient(90deg,#9c4544,#c48a58)}
+.game-ledger .scene-tools{gap:3px;flex-wrap:wrap}.game-ledger .scene-tools button{min-height:44px;color:#6d4636;border:1px solid #c3a17a;border-radius:3px;background:#fff4d443;padding:6px 8px;font-size:11px}.game-ledger .scene-tools button:hover,.game-ledger .scene-tools button[aria-pressed=true]{color:#733f31;background:#dabc93}
+.torii-watermark{margin:0;padding:9px 12px 11px;text-align:center;background:#291d1c;color:#cbb18f;font-size:9px;line-height:1.5;overflow-wrap:anywhere}
+@keyframes torii-wish{50%{opacity:.65;box-shadow:0 0 10px 3px #ffc55d77}}@keyframes torii-ring{25%{transform:rotate(8deg)}75%{transform:rotate(-6deg)}}
+@media(max-width:360px){.shrine-game .scene-dock{gap:6px;padding-left:6%;padding-right:6%}.game-hud .torii-meta{font-size:8px}.torii-portal .scene .actor-name{font-size:8px}.shrine-game .game-ledger{padding:11px 5%}.game-ledger .scene-tools button{font-size:10px;padding:5px}.torii-portal .scene-plaque{font-size:9px;padding:3px 5px}}
+@media(prefers-reduced-motion:reduce){.shrine-game *, .shrine-game *:before,.shrine-game *:after{animation:none!important;transition:none!important}}
+
+/* 1.40.1: actual transparent negative space, isolated object controls, visible time tool. */
+.shrine-game,.torii-portal{background:transparent;box-shadow:none}
+.game-hud .torii-phase{left:25%;width:50%;top:28%;font-size:clamp(10px,2.5cqw,17px);color:#614333;background:#f5e5c9;border:1px solid #b48b58;border-radius:2px;text-shadow:none;line-height:1.5}
+.shrine-game .scene-dock{background:transparent;border:0;padding:4px 7% 12px;gap:8px 12px}
+.scene-dock:before{display:none}
+.shrine-game .dock-button,.shrine-game .dock-button:hover,.shrine-game .dock-button:focus-visible{background:transparent;border:0;box-shadow:none;color:#5b3828;min-height:70px}
+.dock-art{aspect-ratio:1.5;background:none!important;filter:drop-shadow(0 3px 2px #22120c28)}
+.dock-art svg{width:100%;height:100%;display:block;overflow:hidden}
+.shrine-game .dock-button>span:last-of-type{margin:0 12%;min-height:25px;padding:4px 2px;border:1px solid #ba9566;border-radius:2px;font-size:clamp(11px,3cqw,19px);letter-spacing:2px;background:linear-gradient(90deg,#e5c99c,#fff0ce 50%,#e5c99c)}
+.game-ledger #lantern{display:flex;min-width:64px;min-height:44px}
+.torii-watermark{background:transparent;color:#917456;text-shadow:0 1px #fff5d7}
+
+.game-ledger #lantern span:before{content:"时间 · "}

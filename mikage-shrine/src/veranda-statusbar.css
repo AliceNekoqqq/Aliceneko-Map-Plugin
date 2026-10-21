@@ -1,0 +1,42 @@
+/* 1.41: approved shrine eave / bound journal composition. */
+.shrine-game{--paper:#f2e5cd;--ink:#5d402e;max-width:760px;margin:auto;container-type:inline-size;background:linear-gradient(95deg,#eedcc0,#fbf1de 48%,#ead3af);border:2px solid #8d5c38;border-radius:3px;box-shadow:inset 0 0 0 2px #d1ae73,0 8px 22px #311c202b;color:var(--ink);overflow:hidden}
+.torii-portal{padding:0 7px;background:transparent;position:relative}
+.game-hud{position:relative;display:block;aspect-ratio:4.55;margin:0 -7px;border:0;padding:0;background:transparent;isolation:isolate}
+.eave-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.torii-title{position:absolute;left:37%;width:26%;top:40%;height:30%;display:flex;align-items:center;justify-content:center;writing-mode:horizontal-tb;font-size:clamp(13px,4cqw,29px);font-weight:500;letter-spacing:1px;line-height:1;color:#f8dc99;text-shadow:0 1px 2px #2c180e;white-space:nowrap}
+.game-hud .torii-meta{position:absolute;left:74%;top:57%;width:21%;height:15%;color:#674531;font-size:clamp(7px,2cqw,15px);line-height:1.3;white-space:nowrap;display:flex;align-items:center;justify-content:center}
+.game-hud .torii-phase{position:absolute;left:34%;top:75%;width:32%;height:15%;margin:0;display:flex;align-items:center;justify-content:center;font-size:clamp(8px,2.25cqw,16px);color:#5d402e;letter-spacing:0;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scene{width:100%;aspect-ratio:3/2;border:1px solid #9f754d;border-radius:1px;background:#9fa483;box-shadow:0 0 0 2px #d4ad70}
+.scene-plaque{top:8px;left:8px;transform:none;max-width:64%;padding:5px 9px;font-size:clamp(10px,2.7cqw,17px);letter-spacing:1px;color:#654a34;background:#fff1d5f0;border:1px solid #b99060;border-radius:2px;white-space:normal;line-height:1.3}
+.scene .region-hotspot{width:44px;height:44px;min-width:44px;min-height:44px;padding:0;border:0;isolation:isolate;background:none}
+.scene .region-hotspot:before{width:14px;height:14px;background:#fbe2a6a8;border-color:#ffedc1;box-shadow:0 0 10px #ffe6ab;animation:veranda-glow 3s ease-in-out infinite}
+.scene .region-hotspot .spot-icon{width:20px;height:20px;background:#785a3ccc;border:1px solid #ffedc5;box-shadow:0 1px 4px #48341d66}
+.scene .region-hotspot .spot-icon svg{width:12px;height:12px}
+.scene .spot-label{z-index:2;bottom:40px;width:max-content;max-width:min(128px,42cqw);font-size:clamp(10px,2.6cqw,15px);line-height:1.4;white-space:normal;overflow-wrap:anywhere;padding:5px 7px;border-radius:2px;border-color:#b89565;color:#664a34;background:#fff2d8f5;box-shadow:0 2px 4px #45301c22}
+.scene .region-hotspot[data-label-side=below] .spot-label{top:40px;bottom:auto}
+.scene .region-hotspot.spot-edge-right .spot-label{right:0;left:auto;transform:none}
+.scene .region-hotspot.spot-edge-left .spot-label{left:0;right:auto;transform:none}
+.veranda-dialogue{position:relative;margin:3px -2px 0;padding:9px 12px;min-height:45px;display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#f8ecd6,#fff8e9 60%,#f4e3c8);border:1px solid #bb9466;border-radius:2px;box-shadow:0 2px 0 #9c70464d;color:#6c5039}
+.veranda-dialogue #mood{position:static;flex:none;max-width:40%;font-size:clamp(10px,2.6cqw,17px);line-height:1.5;background:#9e879e;color:#fff5e7;padding:3px 7px;border-radius:3px;overflow-wrap:anywhere}
+.veranda-dialogue #speech{position:static;flex:1;min-width:0;padding:0;margin:0;border:0;background:transparent;box-shadow:none;border-radius:0;color:#624532;font-size:clamp(11px,2.8cqw,17px);line-height:1.7;overflow-wrap:anywhere;pointer-events:auto}
+.shrine-game .scene-dock{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 8px;margin:0;padding:13px 5% 15px;border-top:3px solid #865638;border-bottom:3px solid #865638;background:repeating-linear-gradient(0deg,#704a32 0,#875b3a 2px,#875b3a 96px,#573924 98px,#b78a56 100px);box-shadow:inset 0 1px #dcba81,inset 0 -1px #e1c190}
+.scene-dock:before{content:"";position:absolute;inset:8px 4%;background:linear-gradient(90deg,#e8d8c3,#f6e9d3 50%,#e4cfb1);border:1px solid #c2a37a;box-shadow:0 2px 4px #38201244;pointer-events:none}
+.shrine-game .dock-button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:0;min-width:0;min-height:70px;padding:0 2px 3px;border:0;border-radius:2px;background:transparent;color:#62412a;box-shadow:none;transition:filter .2s,transform .2s}
+.dock-button>svg{display:none}.dock-art{display:block;width:100%;height:clamp(52px,16cqw,116px);aspect-ratio:auto;background:none;filter:drop-shadow(0 3px 2px #4b2a1528);pointer-events:none}
+.dock-art svg{display:block;width:100%;height:100%;overflow:hidden}
+.shrine-game .dock-button>span:last-of-type{display:block;min-width:65%;max-width:100%;padding:3px 5px;font-size:clamp(11px,3cqw,20px);line-height:1.3;letter-spacing:2px;border:1px solid #b5966d;border-radius:2px;background:linear-gradient(90deg,#e5c9a0,#fff0d3 50%,#e5c9a0);text-shadow:0 1px #fff4df}
+.shrine-game .dock-button:hover,.shrine-game .dock-button:focus-visible{background:#f8ecd64d;filter:brightness(1.05);transform:translateY(-2px)}
+.shrine-game .dock-button:active{transform:translateY(1px)}
+.shrine-game #ema-notice{position:absolute;left:50%;top:25%;width:9px;height:9px;border:1px solid #fff7d3;border-radius:50%;background:#ffe3a1;box-shadow:0 0 10px 4px #ffcc70a8;animation:veranda-glow 2.4s ease-in-out infinite}
+.shrine-game .game-ledger{padding:12px 5%;border-top:0;background:linear-gradient(95deg,#edd9b7,#fcf0d8 50%,#ecd7b4);color:#694b34}
+.game-ledger .growth{display:flex;justify-content:space-between;gap:5px;font-size:clamp(10px,2.8cqw,17px);color:#795d43}.game-ledger .growth b{color:#8c4940;font-size:clamp(14px,3.6cqw,23px);font-weight:500}
+.game-ledger .story-track{font-size:clamp(10px,2.5cqw,15px);margin-top:9px;color:#8c6e50}.game-ledger .progress-track{height:4px;background:#d6bb92}.game-ledger .progress-track i{background:linear-gradient(90deg,#ae5148,#c88869)}
+.game-ledger .scene-tools{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.game-ledger .scene-tools button{display:flex;align-items:center;justify-content:center;gap:4px;flex:1 1 18%;min-width:44px;min-height:44px;padding:6px 4px;border:1px solid #b59263;border-radius:3px;background:linear-gradient(#fff4df,#edd5af);box-shadow:0 2px 0 #9f744a;color:#74513a;font-size:clamp(10px,2.5cqw,16px)}
+.game-ledger .scene-tools button svg{width:16px;height:16px}.game-ledger .scene-tools button:hover,.game-ledger .scene-tools button[aria-pressed=true]{background:#dfc298;color:#72482e}
+#lantern span:before{content:"时间 · "}.game-ledger #lantern{flex-grow:1.45}
+.game-ledger #note{margin:9px 0 0;font-size:10px;line-height:1.6;color:#8c7253}
+.torii-watermark{margin:0;padding:9px 10px 10px;font-size:9px;line-height:1.5;text-align:center;background:#765036;color:#f0d6a7;border-top:2px solid #b68a57;overflow-wrap:anywhere}
+@keyframes veranda-glow{50%{opacity:.65}}
+@media(max-width:360px){.torii-portal{padding-left:5px;padding-right:5px}.game-hud{margin-left:-5px;margin-right:-5px}.veranda-dialogue{padding:7px 8px;gap:7px}.game-ledger .scene-tools button{font-size:9px;gap:2px}.game-ledger .scene-tools button svg{width:13px;height:13px}.scene-plaque{font-size:9px;padding:4px 6px}.shrine-game .scene-dock{gap:10px 6px}}
+@media(prefers-reduced-motion:reduce){.shrine-game *, .shrine-game *:before,.shrine-game *:after{animation:none!important;transition:none!important}}

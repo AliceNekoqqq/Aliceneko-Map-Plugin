@@ -1,0 +1,32 @@
+{
+  "release": "1.48.1",
+  "status": "candidate",
+  "source_commit": "81b71813c1fe5c7b003f5b6254ee0bb01fbe78cd",
+  "parent_release": "1.48.0",
+  "card": {
+    "path": "mikage-shrine/cards/巴卫_御影神社_v1.48.1_绘马神韵合入版.json",
+    "bytes": 392281,
+    "sha256": "e5f9857be303d3cb2e0be7a27dacb03a109cc7f629d7de3f1ec17a33fd7e855f"
+  },
+  "tests": {
+    "ema_full_lifecycle": {
+      "result": "pass",
+      "chapter_type_combinations": 23,
+      "actual_schema": "zod@4.1.12",
+      "legacy_saves": "pass",
+      "negative_fixtures": "pass"
+    },
+    "startup_integration": "pass: 3 greetings, statusbar, 4 panels, floor/chat/swipe/reload, saved wood=13",
+    "release_loader": "pass: 5 export/version/fallback/start-once loaders, source parity, 31 outfits, 13 portraits",
+    "incoming_copy": "exact",
+    "worldbook_routing": "stable ID34 updated; ID5 original preserved",
+    "UI": "panel HTML byte-identical to 1.47.0",
+    "construction": "scene module byte-identical to 1.48.0"
+  },
+  "pending": [
+    "real SillyTavern",
+    "Android device",
+    "actual model generation",
+    "author acceptance"
+  ]
+}

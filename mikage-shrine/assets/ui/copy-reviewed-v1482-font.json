@@ -1,0 +1,11 @@
+{
+  "file": "mikage-shrine/assets/ui/copy-reviewed-v1482.ttf",
+  "sha256": "a6fc5a889255ee47a653f39007fa76570e200b1e05ae1997fc80569baf7ada80",
+  "bytes": 560748,
+  "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+  "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+  "weight": 500,
+  "glyphs": 1513,
+  "coverage": "all prior affected game font glyphs plus all 77 approved edits; no old asset overwritten",
+  "license": "mikage-shrine/assets/ui/shrine-serif-v145-OFL.txt"
+}
