@@ -1,0 +1,53 @@
+{
+  "base": "1.49.10",
+  "version": "1.49.11",
+  "gate": "source_iteration",
+  "authorization": "作者在整体审查提出下一步并继续，执行已明确的第一项记忆规则局部修复",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "scope": "仅修正Entry 49同事件多类别记忆说明，引用Entry 1统一协议",
+  "behavior_contract": {
+    "change": "模型说明统一选择最相关的一个记忆类别及其摘要格式",
+    "preserve": "共同经历编号唯一性、事件关联与220字上限；全部schema、EJS、加载器、运行时、衣装和审定文案",
+    "state_owner": "现有MVU校验器；不新增字段或迁移",
+    "verification": "精确重放；合法一条摘要与关系变化共同保存；同事件重复摘要拒绝且原状态保持；商店既有回归"
+  },
+  "budget": {
+    "files": 8,
+    "maintained_logic_lines": 80,
+    "generated_snapshot_lines": 10000,
+    "reason": "沿项目新版本快照惯例保存card-source与manifest；实际模型正文仅替换一句"
+  },
+  "forbidden": [
+    "历史版本",
+    "五个运行时模块",
+    "EJS代码和条目加载配置",
+    "契约、经济、玩法和美术",
+    "现有导入包"
+  ],
+  "rollback": "删除本轮新增1.49.11维护产物并恢复PROJECT_STATE新增段；旧版完整保留",
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "worldbook-design-and-writing"
+    ],
+    "loaded": [
+      "ST-A0",
+      "ST-A3 §§0–2.1",
+      "ST-A4 §§1–2",
+      "writing-contracts",
+      "gate-change-verify",
+      "plugin-runtime"
+    ],
+    "catalog_candidates": [],
+    "runtime": "Codex云端；实际MVU源码离线验证，真实酒馆/模型表现待验"
+  },
+  "deferred": [
+    "契约冲突",
+    "时间线和地区编号",
+    "开场版本漂移",
+    "祭典场景筛选",
+    "打包与真实宿主验收"
+  ]
+}
