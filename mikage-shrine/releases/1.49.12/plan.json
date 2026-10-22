@@ -1,0 +1,94 @@
+{
+  "base": "1.49.11",
+  "version": "1.49.12",
+  "gate": "source_iteration",
+  "authorization": "用户在已明确下一项契约强制力范围冲突后要求继续改",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "Entry 7无条件自行决定与Entry 41有效言灵强制执行冲突",
+  "behavior_contract": {
+    "change": "普通请求依判断答应；已缔约主人凭神印发出的有效言灵命令依契约强制执行；情绪与战术判断依处境表现",
+    "preserve": "Entry 41既有缔约前提、口づけ、强制力与人格尊严；恋爱独立；1.49.11记忆修复；其余人物事实、协议、EJS、加载器、运行时、经济和素材",
+    "state_owner": "现有MVU；只修叙述范围",
+    "verification": "精确重放及非目标字段比较；五模块哈希；当前源码既有商店与EJS回归；实际契约布尔值与恋爱独立检查；人工比对普通请求/有效言灵/未缔约场景"
+  },
+  "expected_files": [
+    "releases/1.49.12/plan.json",
+    "releases/1.49.12/changes.json",
+    "releases/1.49.12/card-source.json",
+    "releases/1.49.12/manifest.json",
+    "releases/1.49.12/REVIEW.md",
+    "releases/1.49.12/VALIDATION.json",
+    "PROJECT_STATE.md"
+  ],
+  "forbidden": [
+    "历史版本",
+    "运行时模块",
+    "schema与初始数据",
+    "EJS及加载配置",
+    "美术",
+    "现有可导入卡包"
+  ],
+  "budget": {
+    "files": 7,
+    "maintained_logic_lines": 80,
+    "generated_snapshot_lines": 10000,
+    "reason": "沿用版本快照；实际叙述只替换一个段落中的两句"
+  },
+  "baseline": {
+    "command": "node tests/memory-link-rules.test.cjs",
+    "result": "pass after restoring the existing retained zod/ejs fixture symlink; no dependency version change"
+  },
+  "rollback": "回到9d17e96；1.49.11源码和1.49.10导入包保留",
+  "stop_conditions": [
+    "锚点或输入摘要漂移",
+    "需要改状态结构或运行时",
+    "非目标字段差异"
+  ],
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "worldbook-design-and-writing",
+      "sillytavern-card-pipeline"
+    ],
+    "loaded": [
+      "ST-A0",
+      "ST-A3 entry-field/activation guidance",
+      "ST-A4 rolecard prompt boundaries",
+      "ST-A2 character_book guidance",
+      "ST-D1 immutable loading guidance",
+      "ST-D4 data and release boundaries",
+      "writing-contracts",
+      "gate-change-verify",
+      "tool-adapter-contract",
+      "plugin-runtime"
+    ],
+    "catalog_candidates": [],
+    "runtime": "Codex云端；源码迭代，真实酒馆与模型待验"
+  },
+  "adapter": {
+    "source_edit": "exact guarded operation recorded in changes.json; fresh version output only",
+    "validate_source": {
+      "command": "MIKAGE_SHOP_RELEASE=1.49.12 node tests/moonforest-shop.test.cjs",
+      "cwd": "/workspace/scratch/bcad20ea600d/project/mikage-shrine",
+      "inputs": [
+        "releases/1.49.12/card-source.json",
+        "releases/1.49.12/manifest.json"
+      ],
+      "outputs": [],
+      "readOnly": true,
+      "success": "exit 0 and existing assertions pass",
+      "provenance": "tests/moonforest-shop.test.cjs inspected"
+    },
+    "package_json": "available tools/build_release_card.py; not invoked in this iteration"
+  },
+  "deferred": [
+    "御影时间线",
+    "委托地区编号",
+    "开场版本分叉",
+    "祭典记忆场景筛选",
+    "进一步上下文精简与委托内容",
+    "打包与真实宿主验收"
+  ]
+}

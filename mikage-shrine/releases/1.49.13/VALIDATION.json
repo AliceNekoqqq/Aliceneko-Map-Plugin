@@ -1,0 +1,48 @@
+{
+  "version": "1.49.13",
+  "base": "1.49.12",
+  "gate": "source_iteration",
+  "scope": {
+    "changed_entry_ids": [
+      80
+    ],
+    "text_operations": 1,
+    "runtime_modules_changed": false,
+    "packaged_card_changed": false
+  },
+  "verification": {
+    "baseline_command": "MIKAGE_SHOP_RELEASE=1.49.12 node tests/moonforest-shop.test.cjs",
+    "baseline_exit_code": 0,
+    "post_command": "MIKAGE_SHOP_RELEASE=1.49.13 node tests/moonforest-shop.test.cjs",
+    "post_exit_code": 0,
+    "exact_replay": "pass",
+    "all_other_card_fields": "preserved except declared version metadata",
+    "five_module_hashes": "pass; unchanged",
+    "bound_worldbook_hash_and_versions": "pass",
+    "EJS_XML_loading_schema_initial_scripts_regex": "unchanged",
+    "memory_and_contract_fixes": "preserved",
+    "products": 16,
+    "wardrobe_quests": 5,
+    "outfit_mappings": 31,
+    "approved_runtime_prose": 77,
+    "EJS_templates": 11,
+    "chronology_and_knowledge_boundaries": "manual source comparison only; not model behavior evidence"
+  },
+  "test_environment": "temporary dependency path restored to existing retained zod/ejs fixture; no package installation or version change",
+  "packaging": "not requested; importable card remains 1.49.10",
+  "real_host_and_model": "pending",
+  "human_acceptance": "pending",
+  "scope_check": {
+    "preset": "custom",
+    "max_files": 9,
+    "max_known_lines": 10000,
+    "delivery_files": 7,
+    "preexisting_untracked_binaries": 2,
+    "unknown_line_warning": "retained; those files are excluded from this commit only"
+  },
+  "git": {
+    "branch": "codex/mikage-timeline-1.49.13",
+    "local_commit": "included with this validation record; exact commit in Git history",
+    "remote_sync": "deferred; user requested continuing edits first; no upload attempted"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "version": "1.49.12",
+  "base": "1.49.11",
+  "verification": {
+    "baseline_memory_rules": "pass after restoring retained test-dependency symlink",
+    "exact_replay": "pass",
+    "changed_entry_ids": [
+      7
+    ],
+    "EJS_XML_loading_schema_initial_scripts_regex": "unchanged",
+    "five_module_hashes": "pass",
+    "bound_worldbook_hash_versions": "pass",
+    "shop_command": "MIKAGE_SHOP_RELEASE=1.49.12 node tests/moonforest-shop.test.cjs",
+    "shop_exit_code": 0,
+    "products": 16,
+    "wardrobe_quests": 5,
+    "outfit_mappings": 31,
+    "approved_runtime_prose": 77,
+    "EJS_templates": 11,
+    "contract_boolean_event_validator": "pass; zero affinity/heart and romance-independent contract with actual event; missing-event rejected",
+    "dynamic_contract_reader": "pass; linked/unlinked with input state unchanged",
+    "semantic_scenarios": "manual prose review only; see REVIEW.md"
+  },
+  "test_environment": {
+    "dependencies": "retained zod/ejs fixture; no version changes",
+    "validation_script_path_failure": "corrected relative module-root path to resolved absolute root; subsequent pass"
+  },
+  "source_iteration": true,
+  "packaging": "not requested; existing importable card remains 1.49.10",
+  "real_host_and_model": "pending",
+  "human_acceptance": "pending",
+  "scope_check": {
+    "preset": "custom",
+    "max_files": 8,
+    "max_known_lines": 10000,
+    "expected_delivery_files": 7,
+    "preexisting_untracked_binary_warning": true,
+    "interpretation": "full workspace scan includes the original unrelated binary; this file is excluded from this commit only"
+  },
+  "git": {
+    "branch": "codex/contract-scope-1.49.12",
+    "local_commit": "saved",
+    "remote_sync": "blocked by automatic approval review; local edits authorized, remote disclosure authorization not confirmed",
+    "fallback_upload_attempted": false
+  }
+}

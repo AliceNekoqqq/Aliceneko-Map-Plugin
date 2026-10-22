@@ -1,0 +1,40 @@
+{
+  "version": "1.49.11",
+  "baseline": {
+    "release": "1.49.10",
+    "command": "MIKAGE_SHOP_RELEASE=1.49.10 node tests/moonforest-shop.test.cjs",
+    "result": "pass after restoring temporary test dependencies; missing zod was an environment prerequisite, not a card defect"
+  },
+  "verification": {
+    "command": "node tests/memory-link-rules.test.cjs",
+    "exit_code": 0,
+    "checks": [
+      "exact one-sentence replay and all other card fields preserved",
+      "five unchanged module paths and SHA256 hashes",
+      "actual update-ended handler rejects duplicate memory IDs and restores complete previous snapshot",
+      "selected one-summary update persists affinity change and event together",
+      "16 products and five wardrobe quests",
+      "31 outfit mappings and 77 approved runtime prose edits",
+      "11 EJS templates with present/missing state in generation/display mode"
+    ]
+  },
+  "scope": {
+    "changed_entry_ids": [
+      49
+    ],
+    "runtime_modules_changed": false,
+    "EJS_and_loading_changed": false,
+    "packaged_card_changed": false
+  },
+  "packaging": "not requested; existing importable card remains 1.49.10",
+  "real_host_and_model": "pending",
+  "scope_check": {
+    "preset": "custom",
+    "max_files": 9,
+    "max_known_lines": 10000,
+    "actual_delivery_files": 8,
+    "known_lines": 2543,
+    "preexisting_untracked_binary_warning": true,
+    "interpretation": "full workspace scan retains its pre-existing unknown-line warning; the untouched pre-existing binary is excluded from the commit, not omitted from the scan; one model-facing sentence changed"
+  }
+}

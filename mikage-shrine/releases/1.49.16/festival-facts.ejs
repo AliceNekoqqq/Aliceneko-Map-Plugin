@@ -1,0 +1,66 @@
+<% if(typeof runType==='string' && runType==='generate'){ %>
+<%
+var festState=getvar('stat_data',{scope:'message',withMsg:{role:'any'},defaults:{},clone:true});
+if(typeof lastMessageId==='number'){
+ for(var festFloor=lastMessageId;festFloor>=Math.max(0,lastMessageId-63);festFloor--){
+  var festCandidate=getvar('stat_data',{scope:'message',withMsg:{id:festFloor},defaults:{},clone:true});
+  if(festCandidate && festCandidate.生活 && festCandidate.生活.祭典 && festCandidate.记录 && Array.isArray(festCandidate.记录.共同经历) && festCandidate.进度){festState=festCandidate;break;}
+ }
+}
+function festivalJournal(state) {
+  const record=state && state.记录 || {};
+  const events=Object.create(null), latest=Object.create(null);
+  (Array.isArray(record.事件)?record.事件:[]).forEach(function(e){if(e && typeof e.编号==='string')events[e.编号]=true;});
+  (Array.isArray(record.共同经历)?record.共同经历:[]).forEach(function(m,index){
+    if(!m || typeof m.摘要!=='string' || !events[m.编号])return;
+    const match=/^【祭典·(构想|邀请|分工|到场|片刻|收场)·([^·】]{1,40})】/.exec(m.摘要);
+    if(!match)return;
+    const item={kind:match[1],subject:match[2],text:m.摘要.slice(match[0].length,match[0].length+260),event:m.编号,index:index};
+    latest[match[1]+'|'+match[2]]=item;
+  });
+  const notes=Object.values(latest).sort(function(a,b){return a.index-b.index;});
+  const known=Object.create(null),guests=[];
+  (Array.isArray(record.完成委托)?record.完成委托:[]).slice().reverse().forEach(function(row){
+    const q=row && row.快照;
+    if(!q || q.性质!=='普通' || !q.祈愿人 || !q.结果 || known[q.祈愿人])return;
+    known[q.祈愿人]=true;
+    guests.push({name:String(q.祈愿人).slice(0,80),id:row.编号,result:String(q.结果).slice(0,160)});
+  });
+  return {notes:notes,contacts:guests.slice(0,6)};
+}
+function festEscape(v){return String(v==null?'':v).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+var festReady=festState && festState.生活 && festState.生活.祭典 && festState.记录 && festState.进度;
+var festCurrent=festReady?festState.生活.祭典:{};
+var festUser='';
+// Optional ST-Prompt-Template reader; no Tavern Helper message API is assumed here.
+if(festReady && typeof getChatMessage==='function'){
+  try{var festLastUser=getChatMessage(-1,'user');if(typeof festLastUser==='string')festUser=festLastUser.slice(-4096);}catch(festReadError){}
+}
+var festTopic=/(祭典|祭礼|祭场|屋台|灯会|万灯)/;
+var festAsked=festTopic.test(festUser);
+var festScene=festTopic.test(String(festState && festState.环境 && festState.环境.地点||''));
+var festDeferred=/(不聊|不提|不谈|别提|别聊|不要(?:聊|谈|提)|先不说|暂时不聊|不想(?:聊|谈|提)).{0,12}(祭典|祭礼|屋台|灯会|万灯)|(祭典|祭礼|屋台|灯会|万灯).{0,12}(先放一边|先搁下|以后再聊|改天再聊|暂时不聊)/.test(festUser);
+var festQuiet=/(想|要|先).{0,6}(歇|休息|安静)|歇一会|先喝茶|只喝茶/.test(festUser);
+var festRelevant=festReady && !festDeferred && (festAsked || (festScene && !festQuiet));
+var festBook=festRelevant?festivalJournal(festState):{notes:[],contacts:[]};
+var festKinds=[];
+if(/构想|主题|方案|筹备/.test(festUser))festKinds.push('构想');
+if(/邀请|邀约|答应|请谁/.test(festUser))festKinds.push('邀请');
+if(/分工|帮忙|负责/.test(festUser))festKinds.push('分工');
+if(/到场|到了|来了|来过/.test(festUser))festKinds.push('到场');
+if(/片刻|回忆|那晚|记得/.test(festUser))festKinds.push('片刻');
+if(/收场|散场|结束/.test(festUser))festKinds.push('收场');
+if(!festKinds.length)festKinds=festCurrent.已结束===true?['片刻','收场']:festCurrent.已举办===true?['到场','分工','片刻']:['构想','邀请','分工'];
+var festNamed=festBook.notes.filter(function(n){return n.subject.length>=2 && festUser.indexOf(n.subject)>=0;}).map(function(n){return n.subject;});
+festNamed=festNamed.filter(function(name){return !festNamed.some(function(other){return other!==name && other.length>name.length && other.indexOf(name)>=0;});});
+var festSelected=festBook.notes.filter(function(n){return festKinds.indexOf(n.kind)>=0 && (!festNamed.length || festNamed.indexOf(n.subject)>=0);}).slice(-3);
+%>
+<% if(festRelevant){ %>
+[祭典相关事实｜按当前交流承接已记录内容]
+阶段：<%- festEscape(festState.进度.阶段) %>；主题：<%- festEscape(festCurrent.主题||'尚未保存') %>；状态：<%- festEscape(festCurrent.状态) %>；实际举办：<%- festCurrent.已举办===true?'是':'否' %>；实际收场：<%- festCurrent.已结束===true?'是':'否' %>。
+<% festSelected.forEach(function(n){ %>
+<%- festEscape(n.kind) %>／<%- festEscape(n.subject) %>：<%- festEscape(n.text) %>（<%- festEscape(n.event) %>）
+<% }); %>
+只在当前交流自然相关时延续已记录的一件事，不每轮拉回祭典。早期构想不开放S5功能；邀约不等于答应，答应不等于到场，到场不等于祭典已开场；状态由原有生活互动结算决定。未记录的邀请与帮助保持未知，不从过去帮过的人推导出席。规模、来客、灯火、衣装与料理只按实际选择和已有状态呈现。开场、收场与主线结案分别占主要事件；不要一轮跳过。已收场后仅回看真实片刻，不重置或重复发终章奖励。
+<% } %>
+<% } %>

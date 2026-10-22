@@ -1,0 +1,91 @@
+{
+  "version": "1.49.16",
+  "base": "1.49.15",
+  "gate": "source_iteration",
+  "scope": {
+    "changed_entry_ids": [
+      69
+    ],
+    "state_message_writes": false,
+    "record_deletion_or_migration": false,
+    "runtime_module_changes": false,
+    "other_card_fields": "unchanged except declared version metadata",
+    "generated_ejs_equals_entry": true
+  },
+  "verification": {
+    "old_release_regression": {
+      "command": "MIKAGE_FESTIVAL_RELEASE=1.49.15 node tests/festival-context.test.cjs",
+      "exit_code": 1,
+      "expected_failure": "ordinary corridor replays festival memories",
+      "sample_rows": 18,
+      "sample_characters": 614
+    },
+    "new_release_regression": {
+      "command": "node tests/festival-context.test.cjs",
+      "exit_code": 0,
+      "ordinary_corridor_rows": 0,
+      "ordinary_corridor_characters": 0,
+      "max_related_rows": 3,
+      "coverage": [
+        "phase/category/subject",
+        "named older record beyond former 18-row cap",
+        "longer overlapping subject names",
+        "same subject latest result",
+        "orphan event rejection",
+        "HTML escaping",
+        "latest valid message snapshot",
+        "deferred festival topic and quiet context",
+        "optional helper absent/throw/wrong type",
+        "generate/display/missing state",
+        "all state and snapshot inputs immutable"
+      ]
+    },
+    "shop": {
+      "command": "MIKAGE_SHOP_RELEASE=1.49.16 node tests/moonforest-shop.test.cjs",
+      "exit_code": 0,
+      "products": 16,
+      "wardrobe_quests": 5,
+      "outfit_mappings": 31,
+      "approved_runtime_prose": 77,
+      "EJS_templates": 11
+    },
+    "opening": {
+      "command": "MIKAGE_OPENING_RELEASE=1.49.16 MIKAGE_DEBUG_DEPS=<temporary jsdom fixture> node tests/opening-consistency.test.cjs",
+      "exit_code": 0,
+      "environment": "actual module code in simulated DOM/bridge"
+    },
+    "exact_replay_and_all_protected_fields": "pass",
+    "five_module_hashes_and_opening_preservation": "pass",
+    "source_EJS_worldbook_hash_versions": "pass",
+    "original_festival_footer": "byte-identical"
+  },
+  "api": {
+    "provider": "optional ST-Prompt-Template EJS getChatMessage",
+    "pinned_revision": "ada54bb22e3dab0a07e473d383b4c2fe40bc6573",
+    "source_files": [
+      "src/function/chat.ts",
+      "src/function/ejs.ts"
+    ],
+    "source_verified": true,
+    "target_version": "unknown",
+    "target_runtime_check": "not run",
+    "fallback": "explicit festival location; ordinary-location direct recollection requires helper availability",
+    "trigger_semantics": "bounded lexical matching, not a general natural-language intent classifier"
+  },
+  "scope_check": {
+    "preset": "custom",
+    "max_files": 11,
+    "max_known_lines": 10000,
+    "delivery_files": 9,
+    "maintained_code_budget": 200,
+    "preexisting_untracked_binary_warnings": 2
+  },
+  "packaging": "not requested; existing importable card remains 1.49.10",
+  "real_host_final_prompt_and_model": "pending",
+  "human_acceptance": "pending",
+  "git": {
+    "branch": "codex/festival-context-1.49.16",
+    "local_commit": "included with this validation record; exact revision in Git history",
+    "remote_sync": "deferred; no upload attempted"
+  }
+}

@@ -39,7 +39,7 @@ for(const q of C.config.wardrobeQuests){
 const original=JSON.parse(fs.readFileSync(root+'/releases/1.48.4/manifest.json'));const actual=JSON.parse(fs.readFileSync(dir+'/manifest.json'));
 for(const id of ['minigames','tomoe'])assert.deepEqual(actual.modules.find(m=>m.module_id===id),original.modules.find(m=>m.module_id===id));
 const sourceModule=(spec,id)=>fs.readFileSync(path.join(root,'..',spec.modules.find(m=>m.module_id===id).path),'utf8');
-const artBlock=t=>t.slice(t.indexOf('((host)=>{'),t.indexOf('const StatusbarHTML='));
+const artBlock=t=>{const start=t.indexOf('((host)=>{'),close="})(typeof window==='undefined'?globalThis:window.parent);",end=t.indexOf(close,start);assert(start>=0&&end>start,'complete art renderer boundaries');return t.slice(start,end+close.length);};
 assert.equal(artBlock(sourceModule(actual,'scene')),artBlock(sourceModule(original,'scene')),'full art renderer/catalog preserved');
 const card=JSON.parse(fs.readFileSync(dir+'/card-source.json')),prior=JSON.parse(fs.readFileSync(root+'/releases/1.48.4/card-source.json'));const get=(c,id)=>c.data.character_book.entries.find(e=>e.id===id);
 assert.deepEqual(card.data.extensions.regex_scripts,prior.data.extensions.regex_scripts);assert.deepEqual(get(card,77).content.match(/<%[\s\S]*?%>/g),get(prior,77).content.match(/<%[\s\S]*?%>/g),'appearance catalogue and EJS behavior preserved');

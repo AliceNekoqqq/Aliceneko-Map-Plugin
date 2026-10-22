@@ -1,0 +1,54 @@
+{
+  "version": "1.49.14",
+  "base": "1.49.13",
+  "gate": "source_iteration",
+  "scope": {
+    "changed_entry_ids": [
+      14
+    ],
+    "prose_difference": "one digit: R07 -> R06",
+    "runtime_modules_changed": false,
+    "existing_save_migration": false,
+    "packaged_card_changed": false
+  },
+  "verification": {
+    "baseline": "MIKAGE_SHOP_RELEASE=1.49.13 node tests/moonforest-shop.test.cjs; exit 0",
+    "post": "MIKAGE_SHOP_RELEASE=1.49.14 with existing shop regression and actual region/stage checks; exit 0",
+    "exact_replay": "pass",
+    "region_source": "current manifest mvu module -> C.config.regions",
+    "R06": {
+      "name": "鞍马山",
+      "stage": 3
+    },
+    "R07": {
+      "name": "龙宫城",
+      "stage": 4
+    },
+    "actual_stage_derivation": "pass: S2 locks R06; S3 opens R06 and locks R07; S4 opens R07",
+    "five_module_seed_title_search": "no copies found",
+    "source_and_bound_worldbook_hash_versions": "pass",
+    "other_fields_EJS_XML_loading_schema_initial_scripts_regex": "preserved",
+    "prior_memory_contract_timeline_fixes": "preserved",
+    "products": 16,
+    "wardrobe_quests": 5,
+    "outfit_mappings": 31,
+    "approved_runtime_prose": 77,
+    "EJS_templates": 11
+  },
+  "real_host_and_model": "pending",
+  "human_acceptance": "pending",
+  "packaging": "not requested; existing importable card remains 1.49.10",
+  "scope_check": {
+    "preset": "custom",
+    "max_files": 9,
+    "max_known_lines": 10000,
+    "delivery_files": 7,
+    "preexisting_untracked_binary_warnings": 2,
+    "interpretation": "full worktree scan includes both original binaries; they are excluded only from this commit"
+  },
+  "git": {
+    "branch": "codex/quest-region-1.49.14",
+    "local_commit": "included with this validation record; exact commit in Git history",
+    "remote_sync": "deferred; no upload attempted"
+  }
+}

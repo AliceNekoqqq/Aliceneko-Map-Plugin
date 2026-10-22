@@ -1,0 +1,19 @@
+{
+  "base": "1.49.14",
+  "input_sha256": {
+    "src/opening.html": "00ecd16c1dca1bd5dc64ee5fdbef0015bc903a938c07b09d015f281c78ed53fd",
+    "src/scene-host.mjs": "f13c61bc9e8a3cc3975ce1916ade2011e07642135b9b0d3144a251def73974da",
+    "releases/1.49.14/card-source.json": "ab2e2c5a923cc11467cbe3ad2bb01d214df876ed615cef7ca6759e9c1cbf04d6",
+    "releases/1.49.14/manifest.json": "5ff35a5955480b883b55fadbb3153e46b2f0962290e6080c9347e12a9cbd8e64",
+    "releases/1.49.0/scene.mjs": "16d07d3c58ca5afbfbe0c632e4649ed6ae20eb32c3cd0258c6940bb5e4cc5e73"
+  },
+  "story_source": "releases/1.49.15/opening-stories.json",
+  "surfaces": [
+    "src/opening.html:inline story data",
+    "src/scene-host.mjs:OpeningHTML and OpeningStories",
+    "scene.mjs:OpeningHTML and OpeningStories",
+    "card-source.json:data.alternate_greetings[0..1]"
+  ],
+  "non_story_runtime_logic": "preserved; only scene version literal changes",
+  "first_mes": "unchanged title-page marker"
+}

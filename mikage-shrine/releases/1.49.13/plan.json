@@ -1,0 +1,97 @@
+{
+  "base": "1.49.12",
+  "version": "1.49.13",
+  "gate": "source_iteration",
+  "authorization": "用户要求先继续改，承接已明确的下一项御影时间线",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "Entry 80把封印相关记忆与二十年前离去连写，和Entry 7早年获救/封印/成为神使的顺序冲突",
+  "behavior_contract": {
+    "change": "早年救助、封印与收为神使；二十年前离去；此后巴卫独守",
+    "preserve": "原封印目的、神使身份、离开二十年、现有知情与揭露边界；1.49.11记忆修复和1.49.12契约修复；全部EJS/协议/运行时与玩法",
+    "state_owner": "现有存档；此轮仅改历史描述",
+    "verification": "精确重放；其他字段逐项比较；EJS/XML/加载配置与模块哈希；当前源码既有商店、衣装、审定文案和EJS检查；人工核对相关历史条目"
+  },
+  "scope": {
+    "entry_ids": [
+      80
+    ],
+    "operation_count": 1,
+    "files": [
+      "releases/1.49.13/plan.json",
+      "releases/1.49.13/changes.json",
+      "releases/1.49.13/card-source.json",
+      "releases/1.49.13/manifest.json",
+      "releases/1.49.13/REVIEW.md",
+      "releases/1.49.13/VALIDATION.json",
+      "PROJECT_STATE.md"
+    ]
+  },
+  "budget": {
+    "delivery_files": 7,
+    "workspace_max_files": 9,
+    "max_known_lines": 10000,
+    "maintained_prose_operations": 1,
+    "reason": "保留每版本源码与manifest快照；两份原有未跟踪素材继续保留"
+  },
+  "baseline": {
+    "command": "MIKAGE_SHOP_RELEASE=1.49.12 node tests/moonforest-shop.test.cjs",
+    "exit_code": 0,
+    "environment": "恢复已有测试依赖软链接后通过，版本保持"
+  },
+  "forbidden": [
+    "历史版本",
+    "全部其他世界书条目",
+    "EJS与加载配置",
+    "schema与初始数据",
+    "运行时模块",
+    "美术",
+    "可导入卡包",
+    "远程上传"
+  ],
+  "rollback": "保留1.49.12源码与1.49.10导入包，可返回1d52f2e",
+  "stop_conditions": [
+    "锚点或输入哈希漂移",
+    "需要补充未确认原作史实",
+    "出现非目标字段差异"
+  ],
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "worldbook-design-and-writing",
+      "sillytavern-card-pipeline"
+    ],
+    "loaded": [
+      "ST-A0",
+      "ST-A3",
+      "ST-A4",
+      "writing-contracts",
+      "plugin-runtime",
+      "configuration-contracts",
+      "tool-adapter-contract",
+      "gate-change-verify"
+    ],
+    "candidates": [],
+    "basis": "以当前角色卡已经写明的历史顺序为修订依据；不声称新增原作考据"
+  },
+  "adapter": {
+    "edit": "exact guarded replacement in changes.json; fresh version only",
+    "validate_source": {
+      "command": "MIKAGE_SHOP_RELEASE=1.49.13 node tests/moonforest-shop.test.cjs",
+      "cwd": "/workspace/scratch/bcad20ea600d/project/mikage-shrine",
+      "readOnly": true,
+      "outputs": [],
+      "success": "exit 0 and existing assertions pass"
+    }
+  },
+  "deferred": [
+    "委托地区编号",
+    "开场分叉",
+    "祭典记忆场景筛选",
+    "进一步上下文精简与委托内容",
+    "打包",
+    "远程同步",
+    "真实酒馆与模型验收"
+  ]
+}

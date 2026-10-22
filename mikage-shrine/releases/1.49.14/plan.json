@@ -1,0 +1,95 @@
+{
+  "base": "1.49.13",
+  "version": "1.49.14",
+  "gate": "source_iteration",
+  "authorization": "用户对已明确的下一项委托地区编号修复回复“改”",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "Entry 14山径上的顽石错标R07；Entry 26与实际运行时config.regions中R06为鞍马山/S3、R07为龙宫城/S4；五模块均未发现该素材标题副本",
+  "behavior_contract": {
+    "change": "该可选故事种子的地区标记由R07校正为R06",
+    "preserve": "故事正文与处理路线；当前允许地区/类型与玩家接取的原限制；全部地区映射及开放阶段；既有委托与存档；记忆、契约和御影历史修复",
+    "state_owner": "现有运行时config.regions与存档；本轮仅改世界书素材标记",
+    "verification": "精确重放和全卡差异；版本/绑定书哈希；五模块哈希；实际config与第三章开放地区；有/缺状态及显示/生成EJS回归"
+  },
+  "scope": {
+    "entry_ids": [
+      14
+    ],
+    "operations": 1,
+    "files": [
+      "releases/1.49.14/plan.json",
+      "releases/1.49.14/changes.json",
+      "releases/1.49.14/card-source.json",
+      "releases/1.49.14/manifest.json",
+      "releases/1.49.14/REVIEW.md",
+      "releases/1.49.14/VALIDATION.json",
+      "PROJECT_STATE.md"
+    ]
+  },
+  "budget": {
+    "delivery_files": 7,
+    "workspace_max_files": 9,
+    "max_known_lines": 10000,
+    "maintained_changes": "one region digit in Entry 14; versioned source snapshots follow repository convention"
+  },
+  "baseline": {
+    "command": "MIKAGE_SHOP_RELEASE=1.49.13 node tests/moonforest-shop.test.cjs",
+    "exit_code": 0
+  },
+  "forbidden": [
+    "历史版本",
+    "其余条目正文",
+    "EJS与加载配置",
+    "schema与初始数据",
+    "运行时与地图配置",
+    "既有存档迁移",
+    "美术",
+    "导入卡包",
+    "远程上传"
+  ],
+  "rollback": "保留1.49.13源码和1.49.10导入包；返回2e57647",
+  "stop_conditions": [
+    "原文或输入哈希漂移",
+    "实际运行时地区映射与世界书不一致",
+    "需要修改非目标字段"
+  ],
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "worldbook-design-and-writing",
+      "sillytavern-card-pipeline"
+    ],
+    "loaded": [
+      "ST-A0",
+      "ST-A3",
+      "ST-A4",
+      "writing-contracts",
+      "configuration-contracts",
+      "plugin-runtime",
+      "tool-adapter-contract",
+      "gate-change-verify"
+    ],
+    "candidates": [],
+    "runtime": "Codex云端；采用现有源码实证，真实酒馆待验"
+  },
+  "adapter": {
+    "edit": "guarded replacement from changes.json; fresh output directory; dry-run before write",
+    "validate_source": {
+      "command": "MIKAGE_SHOP_RELEASE=1.49.14 node tests/moonforest-shop.test.cjs",
+      "cwd": "/workspace/scratch/bcad20ea600d/project/mikage-shrine",
+      "readOnly": true,
+      "outputs": [],
+      "success": "exit 0 and existing assertions pass"
+    }
+  },
+  "deferred": [
+    "开场分叉",
+    "祭典记忆场景筛选",
+    "进一步上下文精简与委托内容",
+    "打包",
+    "远程同步",
+    "真实酒馆和模型验收"
+  ]
+}

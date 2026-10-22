@@ -1,0 +1,100 @@
+{
+  "base": "1.49.15",
+  "version": "1.49.16",
+  "gate": "source_iteration",
+  "authorization": "作者要求继续，承接已明确的下一项祭典记忆场景筛选",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "Entry 69只要有旧记录或stage>=5即输出最多18条，普通回廊亦触发；原始记录无需删除",
+  "behavior_contract": {
+    "change": "最新玩家祭典话题或明确祭典地点才投影；话题暂缓优先；按所问类别/主体或当前筹备/进行/回顾阶段选最多3条合法已记录事实",
+    "preserve": "原事件引用、分类主体最新值、转义、状态64楼回溯、历史存档和全部记录；邀请/答应/到场分别沿事实；原结算/主线/奖励和前五轮修复",
+    "state_owner": "现有MVU；该EJS只读",
+    "fallback": "可选消息读取符号缺失、异常或非字符串时按明确祭典地点；静默日常无旧记录输出",
+    "verification": "旧版18条普通回廊反例；actual EJS状态/话题/类别/指定主体/缺接口/转义/无写入/楼层/生成显示矩阵；既有商店、11EJS及开场回归"
+  },
+  "scope": {
+    "entry_ids": [
+      69
+    ],
+    "runtime_modules_changed": false,
+    "generated_source": "festival-facts.ejs equals Entry 69.content"
+  },
+  "budget": {
+    "delivery_files": 9,
+    "workspace_max_files": 11,
+    "max_known_lines": 10000,
+    "maintained_code_lines": 200,
+    "reason": "单条EJS及精确操作记录、既有版本快照、专项渲染回归"
+  },
+  "baseline": {
+    "command": "MIKAGE_SHOP_RELEASE=1.49.15 node tests/moonforest-shop.test.cjs",
+    "exit_code": 0
+  },
+  "forbidden": [
+    "历史版本",
+    "运行时模块",
+    "schema与初始数据",
+    "界面与美术",
+    "其他条目",
+    "存档或记录迁移/删除",
+    "导入包",
+    "远程上传"
+  ],
+  "rollback": "保留1.49.15与1.49.10导入包，返回55a3ddb",
+  "stop_conditions": [
+    "输入或条目锚点漂移",
+    "需要写入状态或引入新字段",
+    "依赖未核实的跨表面接口",
+    "非目标字段差异"
+  ],
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "worldbook-design-and-writing",
+      "sillytavern-api-reference",
+      "sillytavern-card-pipeline"
+    ],
+    "loaded": [
+      "ST-A0",
+      "ST-A3",
+      "ST-A4",
+      "ST-A5",
+      "ST-B1",
+      "ST-B2",
+      "ST-C1",
+      "ST-D3",
+      "writing-contracts",
+      "worldbook-version-verification",
+      "configuration-contracts"
+    ],
+    "candidates": []
+  },
+  "api_evidence": {
+    "surface": "ST-Prompt-Template EJS shared context; optional",
+    "target_version": "unknown; real-host verification pending",
+    "pinned_source": "zonde306/ST-Prompt-Template@ada54bb22e3dab0a07e473d383b4c2fe40bc6573",
+    "declared_baseline_version": "1.17.4.3 in existing E03 navigation record",
+    "sources": [
+      "src/function/chat.ts lines 1-34",
+      "src/function/ejs.ts lines 1-58"
+    ],
+    "source_retrieval": "GitHub connector read at immutable ref; generic web fetch unavailable",
+    "symbol": "getChatMessage(-1, user) -> string; filters by role before selecting last message; normal regex/macro processing",
+    "provider_evidence": "ejs.ts imports helper and adds it to SHARE_CONTEXT",
+    "confidence": "pinned source verified; target host not observed",
+    "runtime_check": "offline optional-helper fixture only; real host pending"
+  },
+  "adapter": {
+    "apply": "exact Entry 69 operation from changes.json against hash-verified base; fresh version snapshot",
+    "validate_source": "node tests/festival-context.test.cjs; MIKAGE_SHOP_RELEASE=1.49.16 node tests/moonforest-shop.test.cjs",
+    "read_only_validation": true
+  },
+  "deferred": [
+    "进一步上下文精简与委托内容",
+    "打包",
+    "远程同步",
+    "真实酒馆/模型/作者验收"
+  ]
+}

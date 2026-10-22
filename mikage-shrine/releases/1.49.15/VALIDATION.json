@@ -1,0 +1,80 @@
+{
+  "version": "1.49.15",
+  "base": "1.49.14",
+  "gate": "source_iteration",
+  "source": "releases/1.49.15/opening-stories.json",
+  "scope": {
+    "worldbook_entries_changed": [],
+    "alternate_greetings_changed": [
+      0,
+      1
+    ],
+    "scene_module_changed": "opening literals and version only",
+    "four_other_modules": "unchanged",
+    "non_story_runtime_and_maintenance_bytes": "unchanged",
+    "state_schema_initial_regex_helper_art": "unchanged"
+  },
+  "verification": {
+    "baseline_startup": {
+      "release": "1.49.14",
+      "exit_code": 0
+    },
+    "regression_on_old_release": {
+      "command": "MIKAGE_OPENING_RELEASE=1.49.14 node tests/opening-consistency.test.cjs",
+      "exit_code": 1,
+      "expected": "Runtime start stories drifted from canonical catalog"
+    },
+    "current_opening_regression": {
+      "command": "MIKAGE_DEBUG_DEPS=<temporary fixture> node tests/opening-consistency.test.cjs",
+      "exit_code": 0,
+      "evidence": [
+        "all static text projections equal",
+        "three saved branch messages exactly equal catalog with macro expansion/completion marker",
+        "first branch DOM double-click guard",
+        "opening selection preserves complete state",
+        "native alternate text unchanged with statusbar",
+        "four panel shells, exact-floor data, swipe expiry, reload cleanup, replay and chat switching"
+      ]
+    },
+    "shop_regression": {
+      "command": "MIKAGE_SHOP_RELEASE=1.49.15 node tests/moonforest-shop.test.cjs",
+      "exit_code": 0,
+      "products": 16,
+      "wardrobe_quests": 5,
+      "outfit_mappings": 31,
+      "approved_runtime_prose": 77,
+      "EJS_templates": 11
+    },
+    "test_boundary_fix": "artBlock stops at full art IIFE boundary, preserving entire art equality; old check incorrectly included greeting HTML",
+    "card_and_module_preservation": "pass except declared opening/version metadata",
+    "version_hash_alignment": "pass",
+    "rebuild_check": {
+      "command": "python tools/sync_opening_stories.py --release 1.49.15 --check",
+      "exit_code": 0,
+      "identical_outputs": 5
+    },
+    "syntax": {
+      "command": "node --check releases/1.49.15/scene.mjs",
+      "exit_code": 0
+    }
+  },
+  "environment": "jsdom 26.1.0 isolated temporary fixture; retained zod/ejs; no repo/player dependency changes",
+  "scope_check": {
+    "preset": "custom",
+    "max_files": 16,
+    "max_known_lines": 10000,
+    "delivery_files": 14,
+    "maintained_code_budget": 200,
+    "preexisting_unknown_binary_warnings": 2
+  },
+  "packaging": "not requested; importable card remains 1.49.10",
+  "real_browser": "pending",
+  "real_host_and_model": "pending",
+  "android_fonts_and_author_voice_acceptance": "pending",
+  "human_acceptance": "pending",
+  "git": {
+    "branch": "codex/opening-sync-1.49.15",
+    "local_commit": "included with this validation record; exact revision in Git history",
+    "remote_sync": "deferred; no upload attempted"
+  }
+}

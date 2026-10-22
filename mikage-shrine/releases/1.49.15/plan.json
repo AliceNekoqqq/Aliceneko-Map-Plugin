@@ -1,0 +1,104 @@
+{
+  "base": "1.49.14",
+  "version": "1.49.15",
+  "gate": "source_iteration",
+  "authorization": "用户对已明确下一项开场文案版本分叉回复“改”",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "src维护稿、manifest所指scene实际开场、卡内备用开场各有不同文案；页面结构除故事数据外相同",
+  "behavior_contract": {
+    "change": "三个场景均由本版本opening-stories.json派生：维护HTML/模板、运行时预览数据与开始正文、两条原生备用开场一致",
+    "preserve": "opening-1/2/3 ID顺序、first_mes标题页标记、状态栏标记、双击防重/宏替换/存档/重播/聊天切换；全部非文案JS与页面布局；世界书、schema、状态、经济、美术与77审定文案",
+    "prose": "保留初期冷淡/挑剔；由当前物件与事务承接；玩家身份、回应与是否接单留给实际交流；御影缺席沿二十年；契约和恋爱保持初始状态",
+    "state_owner": "原MVU与开场桥接；仅同步静态内容",
+    "verification": "非故事字节骨架相等；所有文案副本深相等；卡/模块哈希；actual startup fixture逐入口选择与双击/重播/楼层/聊天清理；既有衣装/EJS回归"
+  },
+  "story_source": "releases/1.49.15/opening-stories.json",
+  "stories_sha256": "d40838ed547f96316ec7c6a0e9bdccfd82c4c150d07730388cdce3d5d6f74994",
+  "input_sha256": {
+    "src/opening.html": "00ecd16c1dca1bd5dc64ee5fdbef0015bc903a938c07b09d015f281c78ed53fd",
+    "src/scene-host.mjs": "f13c61bc9e8a3cc3975ce1916ade2011e07642135b9b0d3144a251def73974da",
+    "releases/1.49.14/card-source.json": "ab2e2c5a923cc11467cbe3ad2bb01d214df876ed615cef7ca6759e9c1cbf04d6",
+    "releases/1.49.14/manifest.json": "5ff35a5955480b883b55fadbb3153e46b2f0962290e6080c9347e12a9cbd8e64",
+    "releases/1.49.0/scene.mjs": "16d07d3c58ca5afbfbe0c632e4649ed6ae20eb32c3cd0258c6940bb5e4cc5e73"
+  },
+  "budget": {
+    "delivery_files": 14,
+    "workspace_max_files": 16,
+    "max_known_lines": 10000,
+    "maintained_code_lines": 200,
+    "reason": "一份文案数据、现有页面投影、单个scene派生版本、同步工具与实际启动回归；无运行时新抽象"
+  },
+  "baseline": {
+    "command": "MIKAGE_DEBUG_DEPS=<temporary jsdom/zod fixture> node tests/startup-integration.test.cjs 1.49.14",
+    "exit_code": 0
+  },
+  "forbidden": [
+    "历史版本",
+    "schema与初始数据",
+    "全部世界书正文",
+    "其余四模块",
+    "页面布局与交互逻辑",
+    "素材字体",
+    "导入包",
+    "远程上传"
+  ],
+  "rollback": "保留1.49.14及1.49.10导入包；本分支新增产物可回退，src两份投影由Git恢复",
+  "stop_conditions": [
+    "输入/非故事代码骨架漂移",
+    "77审定文案丢失",
+    "三个开场存在额外状态变化",
+    "需要改初始化协议"
+  ],
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "tavern-card-builder",
+      "sillytavern-card-pipeline"
+    ],
+    "loaded": [
+      "ST-A0",
+      "ST-A2",
+      "ST-A3",
+      "ST-A4",
+      "ST-A6",
+      "ST-B1",
+      "ST-C10",
+      "opening-strategies",
+      "player-profile-and-agency",
+      "configuration-contracts",
+      "plugin-runtime"
+    ],
+    "candidates": []
+  },
+  "adapter": {
+    "sync_source": {
+      "command": "python tools/sync_opening_stories.py --release 1.49.15 --dry-run|--apply|--check",
+      "cwd": "/workspace/scratch/bcad20ea600d/project/mikage-shrine",
+      "inputs": "plan.json input hashes, base source/manifest/scene, opening-stories.json, current src projections",
+      "outputs": [
+        "releases/1.49.15/card-source.json",
+        "releases/1.49.15/manifest.json",
+        "releases/1.49.15/scene.mjs",
+        "src/opening.html",
+        "src/scene-host.mjs"
+      ],
+      "collisionPolicy": "fresh version outputs; current src must match recorded input or canonical projection",
+      "partialWritePolicy": "all transformations/guards checked before any write; Git preserves both previous source projections",
+      "success": "exit 0; printed output hashes; --check byte equality"
+    }
+  },
+  "deferred": [
+    "祭典记忆场景筛选",
+    "进一步上下文精简与委托内容",
+    "打包",
+    "远程同步",
+    "真实酒馆/模型/Android/作者语气验收"
+  ],
+  "projection_skeleton_sha256": {
+    "src/opening.html": "52371a111dfcaff7e80d2e163a6b3e24dbd834b9fa3b70fd70a717a9044d0dbd",
+    "src/scene-host.mjs": "96b340aaf04324b42bf6631e69451c25cdf2d9c869b352a72c8a21a092931fec"
+  },
+  "verification_adjustment": "既有商店测试artBlock误将OpeningHTML包含进美术代码；截取改为实际美术IIFE完整边界，保留全渲染器逐字相等断言"
+}
