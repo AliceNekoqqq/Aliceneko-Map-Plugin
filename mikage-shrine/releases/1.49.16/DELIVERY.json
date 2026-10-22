@@ -1,0 +1,17 @@
+{
+  "release": "1.49.16",
+  "status": "candidate",
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.16_规则与场景记忆修订版.json",
+  "bytes": 350694,
+  "sha256": "6a32ff868c1155eff564e69089922e870c32ab2a5df7c566281d6ebae467f6b5",
+  "source_commit": "d6b5731f691348c4075f7ee65e7399804ba4245d",
+  "source_branch": "codex/package-1.49.16",
+  "intended_remote": "https://github.com/AliceNekoqqq/Aliceneko-Map-Plugin.git",
+  "intended_remote_branch": "codex/package-1.49.16",
+  "remote_sync": "published via connected GitHub account after explicit user confirmation; terminal git unavailable without credentials",
+  "import_readiness": "JSON candidate ready for new-chat import; all five fixed module objects verified",
+  "last_published_import_card": "1.49.16",
+  "real_host": "actual import, online extension/CDN execution, Android, model and author acceptance pending",
+  "png": "not selected",
+  "source_tree": "8831039749ec12a3c423ee48cd4eb579f9d3a4bb"
+}
