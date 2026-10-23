@@ -1,0 +1,1064 @@
+{
+  "release": "1.49.18",
+  "source_sha256": "ae448d68daf2f74893d60e796cf59e91ade63eaf4bae151ead6c1e907d7463bf",
+  "source_name": "1.49.18/card-source.json",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "loader_template": "mikage-shrine/tools/loader-template.js",
+  "modules": [
+    {
+      "script_id": "272c672c-6eed-5524-9d0b-1823b056fff4",
+      "module_id": "mvu",
+      "version": "1.49.18",
+      "path": "mikage-shrine/releases/1.49.18/mvu.mjs",
+      "sha256": "d6a455d8aac32cc0b6145875e9bf315152ce12c3f8349a054be840a076267824"
+    },
+    {
+      "script_id": "86a49572-142e-5d86-af3f-2e96d2f8a244",
+      "module_id": "panels",
+      "version": "1.49.7",
+      "path": "mikage-shrine/releases/1.49.7/panels.mjs",
+      "sha256": "7e17d064866232e4169078dfb0d091c78305a5a48144f9f4e25a7d9bf66a063e"
+    },
+    {
+      "script_id": "f763b9d7-c17c-5f0f-b0bd-36d9f37a3383",
+      "module_id": "scene",
+      "version": "1.49.15",
+      "path": "mikage-shrine/releases/1.49.15/scene.mjs",
+      "sha256": "0ea5179671821ad3ec2035ea87d47ec3282c6bac8ad5a7d374b0e6903ed70610"
+    },
+    {
+      "script_id": "d3560ad0-892c-4b31-b783-11f80a23b90f",
+      "module_id": "minigames",
+      "version": "1.48.3",
+      "path": "mikage-shrine/releases/1.48.3/minigames.mjs",
+      "sha256": "8f61aafa009676283838d8e789c5333f2bf5fc3be5ae4f791795fd1f0c378b29"
+    },
+    {
+      "script_id": "2c2d44bb-488b-5a17-b756-1920d1ba38a6",
+      "module_id": "tomoe",
+      "version": "0.1.0",
+      "path": "mikage-shrine/releases/1.29.1/tomoe.mjs",
+      "sha256": "49e55d881fddb5c6ec28d5365214c985a6c1ad4b18434e4b61337b5cd6d268e1"
+    }
+  ],
+  "host_acceptance": "pending",
+  "worldbook_policy": "New-chat shop acquisition split; actor/outfit IDs and art retained; no old-save migration",
+  "tomoe_asset_refs": {
+    "commit": "0ad2835516f1ab024fdc1a9690af80366218980c",
+    "images": [
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-grove-portrait.webp",
+        "sha256": "8eac95f03a512599d8ef71f2625655caa7970308dc4deeba31673134164533ca"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-swim-portrait.webp",
+        "sha256": "e39492472b751c2da20c95f0a81a6cd4962d43b409940b4adb2ab78b5c19cb0b"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/tomoe-festival.webp",
+        "sha256": "fe0a4c6b40323554eea790c9e5a99c66cbe14fa6c5927f28aac3cc9339c18c7c"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-yako-portrait.png",
+        "sha256": "6ea6daff911e679e4de90dcba68a4a42e196219d3f9a43cc1dc748e502f928af"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-aoba-portrait.webp",
+        "sha256": "e521c31203907db8d592434b1359d0bb58b69b873fb804fd86503e89856af288"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/tomoe-work.webp",
+        "sha256": "5d55ad7096e259d30fff2b1c7fda3f904b351b61dbfbab3b3756d0b017d15900"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-moon-portrait.webp",
+        "sha256": "b45f55bbc26a9953b2cc38ca452e0f9f15615e0e7ae90367367108f4917e461b"
+      },
+      {
+        "path": "mikage-shrine/assets/opening/tomoe-v1.webp",
+        "sha256": "a5b5e379f5fe498a2cec891ffb8a3416a004b4fac963b2472baa3bdab6d98e36"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-city-portrait.png",
+        "sha256": "95d57359002c466c3729c4314c6aa00674ed96e9f12c761c8d178f5ed963f46f"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-school-portrait.png",
+        "sha256": "ec85ca44b251eadda03d23f221e874a833b1e7479531f8c92b90c7259a6f36b3"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-winter-portrait.png",
+        "sha256": "4c54314f1183eb7799e666103aa200bffbfeb1a865192e442926c2dc0f48e768"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-school-human-portrait.png",
+        "sha256": "83e720ca0a8c1d64541f1da0dffd5296611dcf4db29e829a0f0dbd5806b5899b"
+      },
+      {
+        "path": "mikage-shrine/assets/wardrobe/unlocks/tomoe-journey-portrait.webp",
+        "sha256": "0b3f65ebddefa35e60bfe35f3fa664aa72199fa7ad7df70f296a1df088733d7f"
+      }
+    ]
+  },
+  "restyle_asset_commit": "35ae06bdc5375befe92c25503f165a3579941217",
+  "deferred": "All ten replacements implemented; real SillyTavern/Android and author acceptance pending",
+  "school_assets": "Reuse canon-v127/R02 day/dusk/night and current shared wardrobe API, pinned URLs unchanged",
+  "school_font": {
+    "asset_commit": "4626ac26924052d19aa07a3d212d4aa84a486987",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/school-v131-font.ttf",
+    "sha256": "b7231cc33c9f55c73040266d7098a50a1a61a17a9744a8769b41f2569ba5d40e",
+    "bytes": 124932,
+    "weight": 500,
+    "glyphs": 390,
+    "license": "assets/activities/school-v131-font-OFL.txt"
+  },
+  "market_asset": {
+    "commit": "fabf27a2e6e8540c510db9899fa39802fe95e019",
+    "path": "mikage-shrine/assets/activities/market-v132-props.webp",
+    "sha256": "7e230aab21940486a0f682e2f492b30d9740d13c1d05fd7688f3402a70eb277c",
+    "bytes": 137906,
+    "origin": "original imagegen atlas, encoded WebP; no external image or new dependency"
+  },
+  "market_font": {
+    "commit": "a184df0d32f6fb4329d1c843cb48cc7e8287516d",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/market-v132-font.ttf",
+    "sha256": "6e6ec0e9af15316a9bc9731c8b2c7fbec1d55c20dce8d9c902745ae79096e341",
+    "bytes": 280944,
+    "weight": 500,
+    "glyphs": 802,
+    "license": "assets/activities/market-v132-font-OFL.txt"
+  },
+  "plum_assets": {
+    "commit": "fa5a591f5085508ffade78ae30bc69a0acb5c78b",
+    "image": "mikage-shrine/assets/activities/plum-v133-table.webp",
+    "sha256": "288d3effadc9103803d299dc06d0c2bd76d7d37b499681f1f2cc0dfd6662851e",
+    "bytes": 295358,
+    "periods": "new day table; existing canon-v127/R04 dusk and night retained; no daylight tint substituted for night",
+    "cup": "existing tea-v128/cup.webp; unchanged"
+  },
+  "regression_fix": "R03 sprite containers explicitly 72x72; model/activity unchanged; verified old artifact fails visibility assertion",
+  "plum_font": {
+    "commit": "fa5a591f5085508ffade78ae30bc69a0acb5c78b",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/plum-v133-font.ttf",
+    "sha256": "cf81cc49734ae05e476926f093f6709a17c1e538e94164849913ee6922c7fd19",
+    "bytes": 267820,
+    "weight": 500,
+    "glyphs": 769,
+    "license": "assets/activities/plum-v133-font-OFL.txt"
+  },
+  "dress_art": {
+    "commit": "d26a4eed333cc70e7a9dabc74e752e0b17feadab",
+    "path": "mikage-shrine/assets/activities/dress-v134-himemiko.webp",
+    "bytes": 197212,
+    "sha256": "40d0e37178b18f25f549bccb894b938b41834b922368253eb2041e287eeb943f",
+    "width": 1774,
+    "height": 887,
+    "columns": 3,
+    "source": "original built-in imagegen fan illustration; reference used for character features only; original clothes",
+    "alpha_bounds_in_original_cells": [
+      [
+        251,
+        10,
+        528,
+        879
+      ],
+      [
+        165,
+        10,
+        442,
+        879
+      ],
+      [
+        80,
+        11,
+        357,
+        879
+      ]
+    ],
+    "background_positions_percent": [
+      7.934,
+      50.634,
+      93.418
+    ],
+    "note": "Centers aligned by CSS display offsets; image encoded only, no painted edits"
+  },
+  "dress_font": {
+    "commit": "d26a4eed333cc70e7a9dabc74e752e0b17feadab",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/dress-v134-font.ttf",
+    "sha256": "1199ffa598e4e3e64e6ca6cf3c504ae4a20b88d4857a634aaa83733bef7f695b",
+    "bytes": 259284,
+    "weight": 500,
+    "glyphs": 753,
+    "license": "assets/activities/dress-v134-font-OFL.txt"
+  },
+  "wind_art": {
+    "commit": "d4fe79994e4d77680d556c03018a619ffd92a942",
+    "path": "mikage-shrine/assets/activities/wind-v135-crane.webp",
+    "sha256": "ef88d7524de96f40cc716c3ea520a7d568d0abe6baf4c8c69d505bfab357dbdc",
+    "bytes": 103378,
+    "origin": "original built-in imagegen transparent washi crane; PNG only encoded as WebP"
+  },
+  "wind_font": {
+    "commit": "d4fe79994e4d77680d556c03018a619ffd92a942",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/wind-v135-font.ttf",
+    "sha256": "ecda177e09462927a01b5bb0d1cdf2595856f9886c0be9aff9e6baca6441ab43",
+    "bytes": 237672,
+    "weight": 500,
+    "glyphs": 691,
+    "license": "assets/activities/wind-v135-font-OFL.txt"
+  },
+  "stealth_art": {
+    "commit": "635a36c959bd154d90af1bf3c262d63912d73e1c",
+    "path": "mikage-shrine/assets/activities/stealth-v136-props.webp",
+    "sha256": "68ad5995b564629b71468116c40fcc0d92bcc7642b87852d9bb86e86a601fe39",
+    "bytes": 367706,
+    "width": 2172,
+    "height": 724,
+    "cells": [
+      "coral",
+      "patrol-lantern",
+      "closed-casket"
+    ],
+    "origin": "original built-in imagegen transparent 3-cell atlas; original PNG only encoded as WebP"
+  },
+  "stealth_font": {
+    "commit": "635a36c959bd154d90af1bf3c262d63912d73e1c",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/stealth-v136-font.ttf",
+    "sha256": "95c226f5b0cdc9e284619851411606b3bb20b6d0334561e56efeea74e2291584",
+    "bytes": 239392,
+    "weight": 500,
+    "glyphs": 697,
+    "license": "assets/activities/stealth-v136-font-OFL.txt"
+  },
+  "fox_art": {
+    "commit": "a9ebc91e4011278783087f377a1e5feed52b010b",
+    "path": "mikage-shrine/assets/activities/fox-v137-poses.webp",
+    "sha256": "011465fd70cec57db04be87fcebdeeebe326862bd65b1691c70d372fccf3c2bc",
+    "bytes": 174434,
+    "width": 1254,
+    "height": 1254,
+    "layout": "2x2: alert, approach, rest, leave",
+    "origin": "built-in imagegen original silver-white Tomoe fox atlas; packing edited with built-in imagegen, then PNG only encoded as WebP",
+    "cell_alpha_bounds": [
+      [
+        140,
+        82,
+        532,
+        627
+      ],
+      [
+        80,
+        168,
+        563,
+        613
+      ],
+      [
+        111,
+        0,
+        543,
+        506
+      ],
+      [
+        85,
+        60,
+        529,
+        553
+      ]
+    ],
+    "display_frames": [
+      {
+        "x": 20,
+        "y": 50,
+        "size": 620,
+        "baseline": 95
+      },
+      {
+        "x": 630,
+        "y": 45,
+        "size": 620,
+        "baseline": 92
+      },
+      {
+        "x": 10,
+        "y": 660,
+        "size": 620,
+        "baseline": 76
+      },
+      {
+        "x": 630,
+        "y": 650,
+        "size": 620,
+        "baseline": 86
+      }
+    ],
+    "layout_note": "The generated top-left tail slightly crosses the equal-row boundary; custom CSS source windows avoid pose bleed and align each visible baseline without editing the raster."
+  },
+  "fox_font": {
+    "commit": "a9ebc91e4011278783087f377a1e5feed52b010b",
+    "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+    "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+    "font_path": "assets/activities/fox-v137-font.ttf",
+    "sha256": "a0585863cfe149adc9afc9beee8e0bb67d03feb1bb9e0e1876ae32eb9ee822b1",
+    "bytes": 247660,
+    "weight": 500,
+    "glyphs": 715,
+    "license": "assets/activities/fox-v137-font-OFL.txt"
+  },
+  "thread": {
+    "state_scope": "temporary session; only local R09-THREAD memory on confirmation",
+    "assets": "existing R09 period backgrounds and shared wardrobe; system serif fallback; no new external dependency",
+    "host_acceptance": "pending"
+  },
+  "festival": {
+    "state_scope": "temporary session; local R10-FESTIVAL memory on confirmation only",
+    "assets": "existing R10 day/dusk/night and shared wardrobe; deterministic local canvas sky; no new remote dependency",
+    "host_acceptance": "pending"
+  },
+  "torii": {
+    "asset_commit": "0a505dd5c29f719cd734e2115f62b647dc97c2f4",
+    "source": "src/torii-statusbar.css + tools/build_torii_statusbar.py",
+    "scope": "presentation only; paused 1.39.1 debugging is excluded",
+    "host_acceptance": "pending"
+  },
+  "veranda": {
+    "asset_commit": "ac26c87a66cae66f8e7bb16a0932658dc8627e76",
+    "source": "src/veranda-statusbar.css + tools/build_veranda_statusbar.py",
+    "host_acceptance": "pending",
+    "state": "existing MVU fields; presentation only; no new writes"
+  },
+  "painted": {
+    "asset_commit": "e748f48300630ba8eb4223f51bae2dd311fd539a",
+    "source": "src/painted-statusbar.css + tools/build_painted_statusbar.py",
+    "host_acceptance": "pending",
+    "state": "existing readers and handlers; no new formal writes",
+    "skin_windows": [
+      [
+        0,
+        208
+      ],
+      [
+        208,
+        530
+      ],
+      [
+        738,
+        94
+      ],
+      [
+        830,
+        396
+      ],
+      [
+        1226,
+        124
+      ],
+      [
+        1350,
+        120
+      ],
+      [
+        1470,
+        66
+      ]
+    ]
+  },
+  "interactive_board": {
+    "asset_commit": "da40f818eb375224e93fbc6ff07ea18ed11c61c6",
+    "source": [
+      "src/board-interaction.js",
+      "src/board-interaction.css",
+      "tools/build_interactive_board.py"
+    ],
+    "state": "cosmetic only, no formal writes",
+    "navigation_delay_ms": 180,
+    "reduced_motion": "130ms opacity feedback; no particles/delay",
+    "host_acceptance": "pending"
+  },
+  "map_desk": {
+    "asset_commit": "e89b016d7b36f73b918054617397112b2910fcc1",
+    "maintained_sources": [
+      "src/map-desk.css",
+      "src/map-desk.js",
+      "tools/build_map_desk.py"
+    ],
+    "base_panel": "releases/1.29.1/panels.mjs",
+    "scope": "map only; all ten canonical regions; existing travel bridge with single-flight guard",
+    "host_acceptance": "pending"
+  },
+  "ema_desk": {
+    "asset_commit": "4b2b31cb3efe94fa0853b903ee8dfa9e5458ddf5",
+    "source": [
+      "src/ema-desk.css",
+      "src/ema-desk.js",
+      "tools/build_ema_desk.py"
+    ],
+    "state": "existing ema bridge; local flipped ids; no toy writes",
+    "font": "Noto Serif SC @fontsource 5.3.1 SIL OFL 1.1, common simplified Chinese woff2",
+    "host_acceptance": "pending"
+  },
+  "wardrobe_desk": {
+    "asset_commit": "3efb8124a1d7fda3e622b34395bd141196301d4e",
+    "source": [
+      "src/wardrobe-desk.css",
+      "src/wardrobe-desk.js",
+      "tools/build_wardrobe_desk.py"
+    ],
+    "state": "existing outfit bridge; view-only toys/directions/walk; no new formal writes",
+    "host_acceptance": "pending"
+  },
+  "life_desk": {
+    "asset_commit": "600cd34997a01b0b2dd708be79705252c56ee119",
+    "source": [
+      "src/life-desk.css",
+      "src/life-desk.js",
+      "tools/build_life_desk.py"
+    ],
+    "scope": "life home and decoration page only; other life page logic preserved",
+    "state": "existing getLifeView and life action bridge; preview only until explicit commit",
+    "host_acceptance": "pending"
+  },
+  "shrine_additions": {
+    "asset_commit": "34ed25c473141cccd06284de4ffdf1829509f414",
+    "source": [
+      "src/shrine-additions.js",
+      "src/shrine-additions.css",
+      "tools/build_shrine_additions.py"
+    ],
+    "state": "existing five facility repair states; complete at 4; no writes/migration",
+    "backgrounds": "unchanged original 3 periods",
+    "navigation": "original unchanged; pixel R01 separate safe navigation; view only switch",
+    "host_acceptance": "pending"
+  },
+  "dual_scene": {
+    "default": "original",
+    "switch": "one per-frame view button beneath scene; no game writes",
+    "regions": [
+      "R01"
+    ],
+    "mode_change": "reset actors to selected map spawn",
+    "pixel_sources": [
+      "src/modular-shrine.js",
+      "src/modular-shrine.css",
+      "experiments/modular-shrine/scene.mjs"
+    ],
+    "original_sources": [
+      "src/shrine-additions.js",
+      "src/shrine-additions.css"
+    ],
+    "tests": [
+      "tests/dual-shrine-browser.test.cjs",
+      "tests/shrine-scene-fixture.cjs"
+    ],
+    "host_acceptance": "pending"
+  },
+  "ema_integration": {
+    "incoming_copy": "verbatim",
+    "base_release": "1.48.0",
+    "backward_compatible_types": true,
+    "bound_worldbook": {
+      "name": "巴卫·御影神社世界书",
+      "version": "1.49.18",
+      "entry_id": 34,
+      "entry_content_version": "1.48.1"
+    },
+    "inputs": {
+      "active-prompt.md": "3f036f2ba753e318e4814c3046c885f028a03d4c9697fcb86f5cec4032765416",
+      "chapter-rules.json": "b5456bb8377728c3fc8831e3e411beb7fd4a6600d0be5d23bd084dac5de1c51d",
+      "ema-rules.md": "33cf9030b98d0c06982e4aa79ee3b2ae3014fb64d9326ac58bc0704b85288ccf"
+    }
+  },
+  "reviewed_copy": {
+    "approved_edits": 77,
+    "unique_occurrences": 77,
+    "asset_commit": "b1d93e2a16cf24be9fbdef272d41ee609af328ba",
+    "font": {
+      "file": "mikage-shrine/assets/ui/copy-reviewed-v1482.ttf",
+      "sha256": "a6fc5a889255ee47a653f39007fa76570e200b1e05ae1997fc80569baf7ada80",
+      "bytes": 560748,
+      "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "weight": 500,
+      "glyphs": 1513,
+      "coverage": "all prior affected game font glyphs plus all 77 approved edits; no old asset overwritten",
+      "license": "mikage-shrine/assets/ui/shrine-serif-v145-OFL.txt"
+    },
+    "preserved_worldbook_version": "1.49.18",
+    "input_sha256": "9ab6b89a3e763f196ddcfb4fa1645b20bfb3a0ebe96fd361bb73a3d3ccd8a338"
+  },
+  "integration_repair": {
+    "base": "1.48.2",
+    "quest_destinations": {
+      "WQ01": "R03",
+      "WQ02": "R06",
+      "WQ03": "R03",
+      "WQ05": "R03",
+      "WQ07": "R06"
+    },
+    "active_memory_items": [
+      "R01",
+      "R02",
+      "R03-APPRAISAL",
+      "R04-PLUM",
+      "R05-DRESS",
+      "R06-WIND",
+      "R07-STEALTH",
+      "R08-FOX",
+      "R09-THREAD",
+      "R10-FESTIVAL"
+    ],
+    "milestones": [
+      3,
+      7,
+      10
+    ],
+    "preserve_existing_quest_snapshots": true,
+    "font_commit": "a19084cedf3b555f3d88d2e95f391b4c48e86c27",
+    "font": {
+      "file": "mikage-shrine/assets/ui/memory-book-v1483.ttf",
+      "sha256": "1455d4297edc76001406aca4844072383411a133ca6be827b3b50396e2a2ed07",
+      "bytes": 587756,
+      "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "weight": 500,
+      "glyphs": 1581,
+      "coverage": "restored memory book labels and all original narratives plus prior approved-copy glyphs",
+      "license": "mikage-shrine/assets/ui/shrine-serif-v145-OFL.txt"
+    },
+    "changes": [
+      {
+        "label": "runtime-location-metadata",
+        "old_sha256": "4b1f970cda59c2c1abf891beb4afe52a0ff0ce3494fb4e14d61d2689a1fd6525",
+        "new_sha256": "ae3484be73aff4f9796dd481a741edf7df3af2d03e1c0464697dedf8d02b93bb"
+      },
+      {
+        "label": "worldbook-quest-location-metadata",
+        "old_sha256": "37f9a18f9ec992384c67ba9b9deefe0c0bf2ce581319d09f71e10c248886a13d",
+        "new_sha256": "11014a0e29c14a42263bdae06e3b2b38af47cb7f7e4912948a63bbbc05de3af9"
+      },
+      {
+        "label": "restored-book-font",
+        "old_sha256": "252ac2badbf31e9fa16aca5e11bb193557ccc5903597c54ec5b09e0e51548b84",
+        "new_sha256": "239852ade0037fee87d538d0c4ae072da6c028a2bc6599a7b6c22baccc92aae1"
+      },
+      {
+        "label": "extract-shared-memory-book",
+        "old_sha256": "4ec0b857dfb3295851b12c03eb2dfa017c4ea1a03fcba99e1ab2fe0a39f43dd1",
+        "new_sha256": "fe82721b549c62a56e7e05040e4fa873d7718ef4606ca6f72f6ef69965a05086"
+      },
+      {
+        "label": "shared-memory-book",
+        "old_sha256": "5a22a686089da6c0bed428f2701570337c7b6ddee4c9383013726ecdd0530fec",
+        "new_sha256": "1ea860641380255b0f1ff79fc4d7f98b0f72825ccca30c5371b9b44682436f27"
+      },
+      {
+        "label": "attainable-memory-milestone",
+        "old_sha256": "8c64d7418b75d3979734243406dcea7f795686e9a95c42c811a3306f7ded09ba",
+        "new_sha256": "81ebada5909d2536ec730e7c0a8588888678cc5dbf838547917d63ffe34ad09b"
+      },
+      {
+        "label": "memory-book-interface",
+        "old_sha256": "68caa14c29e5e430ac6670c7565f737624f69d3282e5fe1dddc316ac9862ded8",
+        "new_sha256": "094c38670d91880a093a730cba29f057f3c64fe00078053e06c738a7874ca0cc"
+      },
+      {
+        "label": "all-game-memory-entry",
+        "old_sha256": "b1108f534463dce0f623b8288d9eb7655eaaea0fe34cb2bb0a89e0c824d79c8c",
+        "new_sha256": "38783b43f5abb21bc0515537ca1bf9d6242b27111ec227ac5d74bfebfabb9e0b"
+      },
+      {
+        "label": "respect-active-game-pause",
+        "old_sha256": "8bca4ad3ec760a4c4990dd6c1b20ebd9b798441a2aca7a427566a513fb385eb1",
+        "new_sha256": "9eea78c8a82fc0b14434e29541a5492fb817b99c616cbe07952a6be728af3de1"
+      },
+      {
+        "label": "memory-entry-cleanup",
+        "old_sha256": "51a63fa76cbbef409d95292074e50329f16285b79a97dc10c06bf48e21fca97c",
+        "new_sha256": "b1b475f78c0bb3df3ceed4a618d3afc9a7563ca6bef6c3540bd4898d73988b1f"
+      },
+      {
+        "label": "mvu-version",
+        "old_sha256": "8bcf750c68c202036717f3980d324cf27af281fd7661695de511f06f83687576",
+        "new_sha256": "86c69346275b5be33536fb594796dbc09967a2127a2f9c435e6f9d7801e2c739"
+      },
+      {
+        "label": "minigames-version",
+        "old_sha256": "13f5494e4e7b22d6907c01ecbbb7cf8e5d4c0be46015a44e79a2e2bd1bdfd7b6",
+        "new_sha256": "86c69346275b5be33536fb594796dbc09967a2127a2f9c435e6f9d7801e2c739"
+      }
+    ]
+  },
+  "rule_consistency": {
+    "base": "1.48.3",
+    "plan": "mikage-shrine/releases/1.48.4/changes.json",
+    "changed_entry_ids": [
+      5,
+      16,
+      17,
+      26,
+      41,
+      52,
+      59,
+      72
+    ],
+    "runtime_modules": "unchanged",
+    "runtime_acceptance": "pending",
+    "scope": "narrative instructions; no schema, economy, gameplay, media or API change",
+    "runtime_commit": "0d00176b6a226f504cb51c7837568fdb017de96d",
+    "source_git_upload": "explicitly authorized by user; publication receipt in DELIVERY.json"
+  },
+  "moonforest_shop": {
+    "base": "1.48.4",
+    "new_chat_only": true,
+    "config": "mikage-shrine/releases/1.49.0/shop-config.json",
+    "purchase_event": "衣装购买",
+    "ownership_source": "记录.事件",
+    "currency": "神社.奉纳",
+    "price_source": "wardrobeShop.products",
+    "outfit_mapping": "unchanged",
+    "host_acceptance": "pending"
+  },
+  "kozuchi_copy": {
+    "plan": "mikage-shrine/releases/1.49.1/changes.json",
+    "gate": "source_iteration",
+    "scope": "WQ09 narrative text; executable behavior preserved",
+    "packaging": "not requested in this iteration"
+  },
+  "economy_iteration": {
+    "base": "1.49.1",
+    "plan": "mikage-shrine/releases/1.49.2/plan.json",
+    "gate": "source_iteration",
+    "packaging": "not requested",
+    "life_config": "mikage-shrine/releases/1.49.2/life-config.json"
+  },
+  "economy_income": {
+    "base": "1.49.2",
+    "plan": "mikage-shrine/releases/1.49.3/plan.json",
+    "gate": "source_iteration",
+    "schema": "unchanged",
+    "quota_source": "existing event and resource ledgers",
+    "packaging": "not requested"
+  },
+  "checkpoint": {
+    "base": "1.49.17",
+    "plan": "mikage-shrine/releases/1.49.18/plan.json",
+    "gate": "source_iteration",
+    "font_asset_commit": "4ea965fb11e8e67ec1e61757e8868e447695a046",
+    "font": {
+      "file": "mikage-shrine/assets/ui/economy-kozuchi-v1494.ttf",
+      "sha256": "e24b36cd89d6b9d436bd974499b5653c50045aa34d842bb289026a797122d289",
+      "bytes": 15176,
+      "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf",
+      "source_sha256": "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9",
+      "weight": 500,
+      "license": "mikage-shrine/assets/ui/shrine-serif-v145-OFL.txt",
+      "codepoints": [
+        20598,
+        21496,
+        23244,
+        23305,
+        23556,
+        23572,
+        24322,
+        24369,
+        24597,
+        25151,
+        25292,
+        25601,
+        26685,
+        26816,
+        27498,
+        29275,
+        29384,
+        29436,
+        29942,
+        31096,
+        32943,
+        33073,
+        33080,
+        33540,
+        34028,
+        38180,
+        38393,
+        38663,
+        39069,
+        39277
+      ],
+      "characters": "偶司嫌嬉射尔异弱怕房拌搁栽检歪牛狈狼瓶祸肯脱脸茄蓬锤闹震额饭",
+      "WQ09_preexisting_gaps": 23,
+      "baseline_TTFs": [
+        "assets/regions/canon-v127/map-font.ttf",
+        "assets/ui/copy-reviewed-v1482.ttf",
+        "assets/ui/map-desk-v144-font.ttf"
+      ],
+      "coverage_inputs": [
+        "releases/1.49.3/mvu.mjs:WQ09 and UW-KOZUCHI",
+        "releases/1.49.3/life-config.json",
+        "src/economy-buyback-domain.js",
+        "src/economy-buyback-ui.js"
+      ],
+      "unicode_range": "U+5076,U+53F8,U+5ACC,U+5B09,U+5C04,U+5C14,U+5F02,U+5F31,U+6015,U+623F,U+62CC,U+6401,U+683D,U+68C0,U+6B6A,U+725B,U+72C8,U+72FC,U+74F6,U+7978,U+80AF,U+8131,U+8138,U+8304,U+84EC,U+9524,U+95F9,U+9707,U+989D,U+996D",
+      "policy": "append supplement to existing face; preserve every prior font and approved edit"
+    },
+    "gameplay": "bounded quest-affinity coexistence",
+    "real_host": "pending",
+    "packaging": "not requested"
+  },
+  "bound_worldbook": {
+    "logical_id": "mikage-shrine:character_book",
+    "attachment": "/data/character_book",
+    "source": "mikage-shrine/releases/1.49.18/card-source.json",
+    "version": "1.49.18",
+    "name": "巴卫·御影神社世界书",
+    "entry_ids": [
+      7,
+      5,
+      41,
+      26,
+      27,
+      34,
+      14,
+      37,
+      11,
+      52,
+      59,
+      49,
+      72,
+      74,
+      46,
+      16,
+      78,
+      79,
+      80,
+      81,
+      82,
+      1,
+      4,
+      54,
+      57,
+      64,
+      67,
+      69,
+      71,
+      73,
+      76,
+      17,
+      77,
+      0,
+      56,
+      55,
+      58,
+      83,
+      84
+    ],
+    "entry_sha256": "e7372339cdb3f65d360a8b9325e8967d0dfd571127a470adc86bd49861797d5b",
+    "standalone_companion": false
+  },
+  "runtime_dependencies": {
+    "primary_card_type": "MVU Zod hybrid",
+    "capabilities": [
+      "embedded-worldbook",
+      "EJS",
+      "JSONPatch-events",
+      "embedded-regex",
+      "five-remote-script-loaders",
+      "iframe-panels",
+      "external-media"
+    ],
+    "host_required": [
+      "SillyTavern",
+      "Tavern Helper script/browser APIs",
+      "Prompt Template EJS execution"
+    ],
+    "embedded_required": {
+      "regex_ids": [
+        "a039f73d-5684-58f8-89e4-4b3cebd1c4ec",
+        "c47eb49c-1703-52ba-9c22-d06c1dc0eca3",
+        "c70dc985-d89b-5920-86e2-16abd8411ef8"
+      ],
+      "helper_ids": [
+        "272c672c-6eed-5524-9d0b-1823b056fff4",
+        "86a49572-142e-5d86-af3f-2e96d2f8a244",
+        "f763b9d7-c17c-5f0f-b0bd-36d9f37a3383",
+        "d3560ad0-892c-4b31-b783-11f80a23b90f",
+        "2c2d44bb-488b-5a17-b756-1920d1ba38a6"
+      ],
+      "initial_data": "/data/extensions/tavern_helper/variables",
+      "worldbook": "/data/character_book"
+    },
+    "remote_runtime": [
+      "five manifest modules",
+      "schema and validator in mvu module",
+      "MagVarUpdate@54be11b09f21b1c4266e2d54b6f1ba9a3598db05/artifact/bundle.js",
+      "zod@4.1.12/+esm fallback if compatible host z is absent",
+      "pinned images and fonts"
+    ],
+    "regional_selection": {
+      "policy": "sequential URL fallback inside each loader, one successful start",
+      "module_hosts": [
+        "cdn.jsdelivr.net",
+        "testingcf.jsdelivr.net",
+        "raw.githubusercontent.com"
+      ],
+      "mvu_hosts": [
+        "testingcf.jsdelivr.net",
+        "fastly.jsdelivr.net"
+      ],
+      "zod_hosts": [
+        "testingcf.jsdelivr.net",
+        "cdn.jsdelivr.net"
+      ],
+      "separate_region_script_pair": false
+    },
+    "development_only": [
+      "local zod/ejs fixtures",
+      "simulated host",
+      "browser screenshots",
+      "independent full-unlock test copy"
+    ]
+  },
+  "objective_repairs": {
+    "plan": "mikage-shrine/releases/1.49.5/plan.json",
+    "applied_stages": [
+      "rewards",
+      "closure",
+      "location"
+    ],
+    "gate": "source_iteration",
+    "packaging": "not requested",
+    "real_host": "pending"
+  },
+  "production_pacing": {
+    "plan": "mikage-shrine/releases/1.49.6/plan.json",
+    "economy": {
+      "herb_yield_per_plot": 3,
+      "buyback": {
+        "perDay": 5,
+        "products": [
+          {
+            "item": "herb",
+            "units": 2,
+            "price": 1,
+            "stage": 2
+          },
+          {
+            "item": "tomato",
+            "units": 2,
+            "price": 2,
+            "stage": 2
+          },
+          {
+            "item": "flowers",
+            "units": 2,
+            "price": 3,
+            "stage": 2
+          },
+          {
+            "item": "wood_charm",
+            "units": 3,
+            "price": 5,
+            "stage": 2
+          }
+        ]
+      },
+      "sustainable_net": {
+        "herb_two_plots": 2,
+        "tomato_two_plots": 3,
+        "flowers_two_plots": 2,
+        "wood_charm_three": 2
+      }
+    },
+    "schema": "unchanged",
+    "closure": "archive and release in existing closure transaction",
+    "real_host": "pending",
+    "packaging": "not requested"
+  },
+  "prose_review": {
+    "changes": "mikage-shrine/releases/1.49.7/changes.json",
+    "reviewed_entries": 39,
+    "changed_entries": [
+      7,
+      5,
+      41,
+      26,
+      27,
+      34,
+      14,
+      37,
+      11,
+      52,
+      59,
+      49,
+      72,
+      74,
+      46,
+      16,
+      78,
+      79,
+      80,
+      81,
+      82,
+      54,
+      17,
+      56
+    ],
+    "mes_example": "six revised examples",
+    "generator": "actual MikageQuestPrompt equals maintenance entry56",
+    "panel_html": "byte-identical",
+    "runtime_logic": "prompt literal and version only; all executable logic unchanged",
+    "real_host_and_model": "pending",
+    "packaging": "not requested"
+  },
+  "scene_rules": {
+    "changes": "mikage-shrine/releases/1.49.8/changes.json",
+    "entries": [
+      7,
+      37,
+      49,
+      59,
+      77
+    ],
+    "runtime": "all five module paths/hashes unchanged",
+    "EJS": "byte-identical",
+    "packaging": "not requested",
+    "real_host_and_model": "pending"
+  },
+  "contract_rules": {
+    "changes": "mikage-shrine/releases/1.49.9/changes.json",
+    "entries": [
+      1,
+      5,
+      41,
+      17
+    ],
+    "runtime": "all five module paths/hashes unchanged; no separate consent gate found",
+    "EJS": "byte-identical",
+    "state": "existing boolean; actual completed ritual; romance independent",
+    "packaging": "not requested",
+    "real_host_and_model": "pending"
+  },
+  "prompt_dedup": {
+    "changes": "mikage-shrine/releases/1.49.10/changes.json",
+    "entries": [
+      1,
+      5,
+      11,
+      17,
+      49,
+      52,
+      72,
+      73,
+      74
+    ],
+    "runtime": "all five module paths/hashes unchanged",
+    "EJS_and_loading": "unchanged",
+    "examples": "eight original patch arrays plus festival invitation preserved; one shared envelope",
+    "memory": "shared record format; original per-category quotas preserved; no scene-loading change",
+    "real_host_and_model": "pending",
+    "packaging": "not requested"
+  },
+  "memory_link_rules": {
+    "changes": "mikage-shrine/releases/1.49.11/changes.json",
+    "entries": [
+      49
+    ],
+    "state_owner": "existing MVU validator",
+    "runtime": "all five module paths and hashes unchanged",
+    "packaging": "not requested",
+    "real_host_and_model": "pending"
+  },
+  "contract_scope": {
+    "changes": "mikage-shrine/releases/1.49.12/changes.json",
+    "entries": [
+      7
+    ],
+    "runtime": "all five module paths and hashes unchanged",
+    "EJS_and_loading": "byte-identical",
+    "packaging": "not requested",
+    "real_host_and_model": "pending"
+  },
+  "mikage_timeline": {
+    "changes": "mikage-shrine/releases/1.49.13/changes.json",
+    "entries": [
+      80
+    ],
+    "scope": "relative chronology aligned with existing entries 7/41/46/16; no new departure motive or exact seal date",
+    "runtime": "all five module paths and hashes unchanged",
+    "real_host_and_model": "pending",
+    "packaging": "not requested"
+  },
+  "quest_region_fix": {
+    "changes": "mikage-shrine/releases/1.49.14/changes.json",
+    "entries": [
+      14
+    ],
+    "seed": "山径上的顽石",
+    "from": "R07",
+    "to": "R06",
+    "runtime": "all five module paths and hashes unchanged",
+    "real_host_and_model": "pending",
+    "packaging": "not requested"
+  },
+  "opening_content": {
+    "source": "releases/1.49.15/opening-stories.json",
+    "sha256": "d40838ed547f96316ec7c6a0e9bdccfd82c4c150d07730388cdce3d5d6f74994",
+    "ids": [
+      "opening-1",
+      "opening-2",
+      "opening-3"
+    ],
+    "alternate_ids": [
+      "opening-2",
+      "opening-3"
+    ],
+    "scene_module": "mikage-shrine/releases/1.49.15/scene.mjs",
+    "first_mes": "existing title-page marker; unchanged",
+    "real_host_and_model": "pending"
+  },
+  "festival_context": {
+    "entry_id": 69,
+    "source": "mikage-shrine/releases/1.49.16/festival-facts.ejs",
+    "source_sha256": "d8cc7bf9c03c85884fe45d14a3998e2aab2651a2bc1247ad04afbb281dc2a18b",
+    "max_visible_memories": 3,
+    "state_writes": false,
+    "optional_context_reader": "ST-Prompt-Template getChatMessage(-1, user); capability/type/error guarded",
+    "missing_reader": "explicit festival location only",
+    "real_host_and_model": "pending",
+    "packaging": "not requested"
+  },
+  "life_interaction_events": {
+    "plan": "mikage-shrine/releases/1.49.17/plan.json",
+    "state_owner": "ShrineLifeRuntime",
+    "schema": "unchanged",
+    "exact_result_compatibility": true,
+    "day_reconciliation": true,
+    "real_host": "pending",
+    "packaging": "not requested"
+  },
+  "quest_affinity": {
+    "plan": "mikage-shrine/releases/1.49.18/plan.json",
+    "state_owner": "ShrineCard.validate",
+    "schema": "unchanged",
+    "quest_events": [
+      "查访",
+      "商议",
+      "行动",
+      "结案"
+    ],
+    "numeric_only": true,
+    "automatic_gain": false,
+    "real_host": "pending",
+    "packaging": "not requested"
+  }
+}

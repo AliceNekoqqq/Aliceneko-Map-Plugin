@@ -1,0 +1,75 @@
+{
+  "base": "1.49.17",
+  "version": "1.49.18",
+  "gate": "source_iteration",
+  "finding": "F02 only",
+  "authorization": "用户在下一项为委托推进与亲近冲突的交接后回复继续，承接F02最小修复",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "上一有效绘马受理状态，查访+亲近1被整体关系守卫拒绝；实际更新结束处理器恢复整轮旧快照",
+  "behavior_contract": {
+    "change": "亲近、心动允许附带于有非空摘要和来源的查访/商议/行动/结案；沿用一个主要事件，不自动加分",
+    "preserve": "数值0..100、单轮±8；约定/双方确认/神使契约仅关系或日常事件；委托阶段与来源、结案回礼、事件和记忆唯一性、非法回滚",
+    "state_owner": "ShrineCard.validate；Entry1同步模型可见事件配对",
+    "inputs": "现有候选状态、上一状态及事件；无新字段、事件、API或迁移",
+    "outputs": "合法委托推进与数值共同保存，非法写入仍原子回滚"
+  },
+  "scope": {
+    "runtime_module": "mvu",
+    "worldbook_entries": [
+      1
+    ],
+    "operations": "changes.json两处唯一锚点；旧发布快照不改"
+  },
+  "expected": [
+    "releases/1.49.18/{plan,changes,mvu,card-source,manifest,REVIEW,VALIDATION,SOURCE_DELIVERY}",
+    "tools/fix_quest_affinity.py",
+    "tests/quest-affinity.test.cjs",
+    "PROJECT_STATE.md"
+  ],
+  "forbidden": [
+    "历史版本修改",
+    "F03-F06",
+    "美术、77审定文案、31衣装ID",
+    "schema/初始/经济奖励/宿主API/其余四模块",
+    "打包导入角色卡"
+  ],
+  "budget": {
+    "semantic_runtime_changed_lines": 12,
+    "worldbook_paragraphs": 1,
+    "builder_lines": 95,
+    "test_lines": 150,
+    "workspace_files": 14,
+    "max_known_lines": 7000,
+    "reason": "单一关系守卫行为；新版本派生快照全部计入；包含3个已有未跟踪资源"
+  },
+  "baseline": "先以新专项对1.49.17复现查访/商议/行动/结案附带亲近变化在实际处理器整轮回滚",
+  "verification": [
+    "四阶段数值正负/边界与实际处理器保存；原快照不变",
+    "超±8/范围外、无事件/来源/摘要、额外关系事件、非法阶段、重复编号/记忆原子拒绝",
+    "关系/日常既有数值和确认路径仍可用；委托事件不能改约定/双方确认/神使契约",
+    "无数值提交的四阶段保持原值；结案资源与完成快照正常",
+    "新输出精确重建；逆向锚点对比全部保护字段和模块",
+    "F01、商店/衣装/EJS、开场模拟和五章经济行为回归"
+  ],
+  "rollback": "新版本输出，锚点/哈希漂移停止；旧1.49.17完整保留；无删除",
+  "deferred": [
+    "F03-F06",
+    "真实酒馆、模型与Android验收"
+  ],
+  "packaging": "not requested; import card remains1.49.16",
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "sillytavern-card-pipeline"
+    ],
+    "documents": [
+      "ST-A0",
+      "ST-A2",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "candidates": []
+  }
+}

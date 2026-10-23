@@ -1,0 +1,68 @@
+{
+  "release": "1.49.18",
+  "finding": "F02 only",
+  "gate": "source_iteration",
+  "status": "automated_source_checks_passed",
+  "passed": [
+    "legacy1.49.17 actual handler rolls back four quest phases plus affinity",
+    "four phases +/-8 numeric and single event-linked memory persist; zero automatic gain",
+    "nonnumeric relation guard; missing event/source/summary, +/-9, out of range, extra event, duplicate event/memory, phase skip atomically reject",
+    "existing relationship/daily confirmation and numeric paths unchanged",
+    "M01 closure+presentation+numeric+memory persists; chapter/wardrobe/resources match no-affinity settlement",
+    "F01 event-only life interactions, tamper/duplicate/cross-day/UI/festival regression",
+    "16 products, five outfit quests,31 wardrobe mappings,77 approved prose,11 EJS",
+    "festival topic filtering/read-only/helper fail-soft",
+    "three openings and four panels actual module simulation",
+    "affinity-bearing full five-chapter complete/basic economy paths wallets8/4",
+    "three outputs byte-identical rebuild; module syntax; inverse module+card equality; source/module/book hashes"
+  ],
+  "commands": [
+    "node tests/quest-affinity.test.cjs 1.49.17 --expect-legacy-failures",
+    "python3 tools/fix_quest_affinity.py --dry-run",
+    "python3 tools/fix_quest_affinity.py",
+    "node tests/quest-affinity.test.cjs",
+    "node --check releases/1.49.18/mvu.mjs",
+    "node tests/life-interaction-events.test.cjs 1.49.18",
+    "MIKAGE_SHOP_RELEASE=1.49.18 node tests/moonforest-shop.test.cjs",
+    "MIKAGE_FESTIVAL_RELEASE=1.49.18 node tests/festival-context.test.cjs",
+    "MIKAGE_OPENING_RELEASE=1.49.18 MIKAGE_DEBUG_DEPS=<retained deps> node tests/opening-consistency.test.cjs",
+    "economy-1.49.18.cjs executes existing economy.test.cjs behavior portion against1.49.18 with four quest-event numeric changes; historical card-diff assertions excluded, source parity checked separately"
+  ],
+  "outputs": {
+    "mvu.mjs": {
+      "bytes": 207593,
+      "sha256": "d6a455d8aac32cc0b6145875e9bf315152ce12c3f8349a054be840a076267824"
+    },
+    "card-source.json": {
+      "bytes": 315728,
+      "sha256": "ae448d68daf2f74893d60e796cf59e91ade63eaf4bae151ead6c1e907d7463bf"
+    },
+    "manifest.json": {
+      "bytes": 35256,
+      "sha256": "b1d8504357dfeb52c198019a35f95ca037396ad2d92f82976b9e6f93cd30c2c2"
+    }
+  },
+  "scope_check": {
+    "full_default_scan": true,
+    "files": 13,
+    "known_lines": 4207,
+    "max_files": 14,
+    "max_known_lines": 7000,
+    "budget_counts": "within declared limits",
+    "exit_code": 2,
+    "warnings": "three unchanged pre-existing untracked binary/cache files have unknown line churn; none staged",
+    "coverage_limit": "unknown original resource churn remains; semantic guard/protocol inverses checked separately"
+  },
+  "remaining_findings": [
+    "F03",
+    "F04",
+    "F05",
+    "F06"
+  ],
+  "real_host": [
+    "SillyTavern/CDN execution pending",
+    "target model and Android pending"
+  ],
+  "limitation": "Nonempty source/summary are structural evidence; actual narrative truth and consent cannot be established from these strings alone. Existing relation/daily gates remain unchanged.",
+  "packaging": "not requested; import card remains1.49.16 without F01/F02"
+}
