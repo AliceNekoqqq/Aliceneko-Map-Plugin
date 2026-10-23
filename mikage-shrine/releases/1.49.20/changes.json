@@ -1,0 +1,21 @@
+{
+  "base_source_sha256": "24e40719da2c52222da2aeaaff4df559c4f4bb9fc87a603f61eef5d200bf5ad4",
+  "base_panels_sha256": "7e17d064866232e4169078dfb0d091c78305a5a48144f9f4e25a7d9bf66a063e",
+  "operations": [
+    {
+      "target": "panels",
+      "old": " if(region==='R01' && Array.isArray(life.桌面) && life.桌面.length)choices.push({id:'table',title:'围炉对饮',detail:'茶汤正滚热，案上新蒸的白玉团子香甜扑鼻。巴卫，先趁热尝一口？',text:'走累了，想去茶桌边坐坐。今天神厨里煮了什么好喝的汤吗？'});\n",
+      "new": " const foodItems=engine().life.config.items.filter(x=>x.kind==='food');\n const dishes=[...new Set((Array.isArray(life.桌面)?life.桌面:[]).map(x=>foodItems.find(item=>item.id===x?.item)?.name).filter(Boolean))];\n if(region==='R01' && dishes.length)choices.push({id:'table',title:'茶桌小坐',detail:'茶桌上摆着'+dishes.join('、')+'。巴卫，一起坐一会儿？',text:'我想在茶桌边坐一会儿，和你一起看看桌上的'+dishes.join('、')+'。'});\n"
+    },
+    {
+      "target": "panels",
+      "old": "{\"id\":\"A03\",\"region\":\"R04\",\"title\":\"逆流而溯的古木叶\",\"teaser\":\"潺潺小溪的洄水湾处，一小片青绿的竹叶正缓缓逆流打着转儿，泛着微弱的荧光。\",\"draft\":\"巴卫，你看河面打着小旋儿逆流漂回来的竹叶，倒像是哪个贪玩小妖布下的微末障眼法呢。\"}",
+      "new": "{\"id\":\"A03\",\"region\":\"R04\",\"title\":\"逆流而溯的古木叶\",\"teaser\":\"白梅旧庭外，溪水绕过石根，岸边的小径通向近处的浅滩。\",\"draft\":\"巴卫，我想沿白梅旧庭外的溪边走走，看看近处有什么。\"}"
+    },
+    {
+      "target": "panels",
+      "old": " const available=active||quest?[]:StrangeCatalog.filter(x=>x.region===region && unlocked.some(y=>y.编号===x.region) && !books[x.id]);\n",
+      "new": " const available=active||quest?[]:StrangeCatalog.filter(x=>x.region===region && unlocked.some(y=>y.编号===x.region) && !books[x.id]).map(x=>x.id==='A03'?{...x,title:'白梅溪畔'}:x);\n"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "base": "1.49.19",
+  "version": "1.49.20",
+  "gate": "source_iteration",
+  "finding": "F04 only",
+  "authorization": "用户在整体审查逐项修复中追问到哪了、继续做；F03交接后承接已命名F04界面真实性问题",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "quietChoices对任何桌面餐点均显示热茶/新蒸白玉团子；A03未发现入口直接显示逆流/荧光并猜小妖障眼法",
+  "behavior_contract": {
+    "change": "同一生活视图只投影既有餐点名称；A03未发现时仅显示溪畔探索意向，发现后的标题/记录/继续与收束流程保持",
+    "source": "生活.桌面item映射实际food配置；记录.事件和共同经历仍为发现事实唯一依据",
+    "preserve": "布局/CSS/图/按钮/楼层与stale守卫/草稿不发送不写MVU；A01/A02、已发现A03标题与记忆、其余运行时、schema、初始和39世界书正文",
+    "inputs_outputs": "现有状态→只读生活视图及待发送草稿；无新字段/存储/宿主API"
+  },
+  "scope": {
+    "module": "panels",
+    "functions": [
+      "quietChoices",
+      "StrangeCatalog A03 teaser/draft",
+      "strangeJournal available projection"
+    ],
+    "operations": "changes.json三处唯一锚点",
+    "worldbook_bodies": "unchanged"
+  },
+  "expected": [
+    "releases/1.49.20/{plan,changes,panels,card-source,manifest,REVIEW,VALIDATION,SOURCE_DELIVERY}",
+    "tools/fix_display_truth.py",
+    "tests/display-truth.test.cjs",
+    "PROJECT_STATE.md"
+  ],
+  "forbidden": [
+    "历史发布修改",
+    "F05/F06",
+    "MVU/domain/经济/主线规则",
+    "77审定文案/31衣装ID/美术/布局/CSS",
+    "schema/初始/宿主API/迁移",
+    "打包"
+  ],
+  "budget": {
+    "semantic_panels_changed_lines": 15,
+    "builder_lines": 90,
+    "test_lines": 170,
+    "workspace_files": 14,
+    "max_known_lines": 7000,
+    "reason": "生活视图事实投影，同一面板的两个误报；版本快照与3个预存未跟踪文件全部计入"
+  },
+  "baseline": "专项先对1.49.19复现便当误报团子、A03入口提前陈述逆流和原因",
+  "verification": [
+    "三类餐点/混合/空/未知/重复条目；显示与草稿按实际配置且不猜温度",
+    "A03未发现中性入口、已发现/暂放/继续/收束、事件有效性和地区/委托限制",
+    "实际prepareQuiet/prepareStrange与DOM输入框保留、去重、stale拒绝，不发送且不写状态",
+    "逆向比较仅三锚点和版本；四其他模块/全部世界书正文和美术保持",
+    "F01/F02/F03及商店/衣装/EJS、开场四面板回归"
+  ],
+  "rollback": "新目录保留旧1.49.19；锚点/哈希漂移即停",
+  "deferred": [
+    "F05/F06",
+    "真实酒馆/目标模型/Android验收"
+  ],
+  "packaging": "not requested; import remains1.49.16",
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "sillytavern-embedded-ui",
+      "code-quality-workflow",
+      "sillytavern-card-pipeline"
+    ],
+    "documents": [
+      "ST-A0",
+      "ST-A2",
+      "ST-C2",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "candidates": [],
+    "design": "仅文案与状态绑定，沿已采用布局和美术；窄修复不重新启动视觉调研"
+  }
+}

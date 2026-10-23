@@ -1,0 +1,67 @@
+{
+  "release": "1.49.20",
+  "finding": "F04 only",
+  "gate": "source_iteration",
+  "status": "automated_source_checks_passed",
+  "passed": [
+    "legacy bento and undiscovered A03 false description reproduced",
+    "actual three food names, mixed/duplicate/empty/unknown/decoration/null/missing/remote views; no unsupported temperature or dishes",
+    "A03 neutral undiscovered preview and draft; discovered title/history and event-linked lifecycle preserved",
+    "actual prepare functions and DOM input retention/dedup/continue/rest/stale refusal; no send or MVU write path",
+    "F01 full life interaction regression",
+    "F02 four-phase numeric/memory and M01 closure/presentation regression",
+    "F03 five main stories and old snapshot compatibility",
+    "16 products, five outfit quests,31 wardrobe mappings,77 approved copy,11 EJS",
+    "festival filtering and three opening/four panel actual module simulation",
+    "exact three edits+version inverse; card version-only inverse; all book bodies/EJS/other modules/layout/art preserved",
+    "three output byte-identical rebuild and source/book/module hashes"
+  ],
+  "commands": [
+    "node tests/display-truth.test.cjs 1.49.19 --expect-legacy-errors",
+    "python3 tools/fix_display_truth.py --dry-run",
+    "python3 tools/fix_display_truth.py",
+    "node tests/display-truth.test.cjs",
+    "node --check releases/1.49.20/panels.mjs",
+    "node tests/main-stories.test.cjs 1.49.20",
+    "node tests/quest-affinity.test.cjs 1.49.20",
+    "node tests/life-interaction-events.test.cjs 1.49.20",
+    "MIKAGE_SHOP_RELEASE=1.49.20 node tests/moonforest-shop.test.cjs",
+    "MIKAGE_FESTIVAL_RELEASE=1.49.20 node tests/festival-context.test.cjs",
+    "MIKAGE_OPENING_RELEASE=1.49.20 MIKAGE_DEBUG_DEPS=<retained deps> node tests/opening-consistency.test.cjs"
+  ],
+  "outputs": {
+    "panels.mjs": {
+      "bytes": 377122,
+      "sha256": "258359fcf7487c1f43f4470efcbb9e758e8a222230ad3aa74f9216672f6475b6"
+    },
+    "card-source.json": {
+      "bytes": 315728,
+      "sha256": "1be16b5863b8d10a243a206fab77633e5adba79992934dc334556bb708a83d05"
+    },
+    "manifest.json": {
+      "bytes": 35819,
+      "sha256": "461e1b9be03be49d423d3741ea7b4294684edbc84e28a2e938d051e05cd5a961"
+    }
+  },
+  "scope_check": {
+    "full_default_scan": true,
+    "files": 13,
+    "known_lines": 3349,
+    "max_files": 14,
+    "max_known_lines": 7000,
+    "budget_counts": "within declared limits",
+    "exit_code": 2,
+    "warnings": "three unchanged pre-existing untracked binary/cache files have unknown line churn; not staged",
+    "coverage_limit": "original resource line churn unknown; exact inverse comparison of maintained source passed"
+  },
+  "economy": "MVU1.49.19 unchanged; retain validated five-chapter complete/basic wallets8/4 evidence; not rerun",
+  "remaining_findings": [
+    "F05",
+    "F06"
+  ],
+  "real_host": [
+    "SillyTavern/CDN execution pending",
+    "target model/Android/author acceptance pending"
+  ],
+  "packaging": "not requested; import remains1.49.16 without F01-F04"
+}
