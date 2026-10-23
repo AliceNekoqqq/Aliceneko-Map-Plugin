@@ -1,0 +1,94 @@
+{
+  "base": "1.49.18",
+  "version": "1.49.19",
+  "gate": "source_iteration",
+  "finding": "F03 only",
+  "authorization": "用户在下一项主线委托内容交接后回复继续呀，承接五章通用占位故事修复",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "当前五章mainItem统一心愿和来信人、M01-M04道路维护类型、幕后六项空白；原世界书已有五章主题",
+  "behavior_contract": {
+    "change": "仅新显现M01-M05绘马采用五组具体公开诉求与六项幕后种子，沿现有主题/ID/标题/地区",
+    "state_owner": "main-stories.json为原创故事唯一源，ShrineCard.mainItem只在主线显现时组装一份",
+    "preserve": "原主线/设施/资源/显现/接取/暂停/结案/解锁规则，初始/schema/其余四模块及所有旧存档故事",
+    "facts": "公开诉求与隐情分离，幕后供后续查访；现有存档与玩家选择优先，剧情真伪沿模型与真实宿主另验",
+    "migration": "none; old board/active/paused/completed snapshots untouched"
+  },
+  "scope": {
+    "runtime": "mvu/mainItem only",
+    "worldbook_bodies": "all unchanged",
+    "story_count": 5,
+    "data_owner": "releases/1.49.19/main-stories.json"
+  },
+  "expected": [
+    "releases/1.49.19/{plan,changes,main-stories,mvu,card-source,manifest,REVIEW,VALIDATION,SOURCE_DELIVERY}",
+    "tools/build_main_stories.py",
+    "tests/main-stories.test.cjs",
+    "PROJECT_STATE.md"
+  ],
+  "forbidden": [
+    "历史发布修改",
+    "世界书/EJS正文、加载与配置改写",
+    "F04-F06",
+    "schema/初始/结算/迁移/宿主API",
+    "美术、31衣装ID和77审定文案",
+    "打包"
+  ],
+  "budget": {
+    "semantic_runtime_changed_lines": 20,
+    "story_data_characters": 10000,
+    "builder_lines": 100,
+    "test_lines": 160,
+    "workspace_files": 15,
+    "max_known_lines": 7000,
+    "reason": "一处特殊绘马工厂；五章是同一数据路径，派生快照和3个预存资源全部计入"
+  },
+  "baseline": "专项先对1.49.18实际显现五章并断言通用心愿、统一来信人和幕后空白",
+  "verification": [
+    "五章实际显现及更新结束处理器，公开/幕后与类型/地区/长度/schema",
+    "查看不变/不自动接取/提前或重复显现拒绝/暂停恢复",
+    "旧板面、进行/暂停/归档故事跨版本不被改写",
+    "UI public projection strips all幕后; EJS current active chapter only; no state write",
+    "五章完整/基础经济与F01/F02/商店/开场回归",
+    "三快照精确重建与逆向代码/卡源全等，四其他模块及所有世界书正文保持"
+  ],
+  "rollback": "仅新版本，旧1.49.18保留；锚点/哈希或保护范围漂移即停",
+  "deferred": [
+    "F04-F06",
+    "真实酒馆/目标模型/Android与故事作者验收"
+  ],
+  "packaging": "not requested; import remains1.49.16",
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "tavern-card-builder",
+      "code-quality-workflow",
+      "sillytavern-card-pipeline"
+    ],
+    "documents": [
+      "ST-A0",
+      "ST-A2",
+      "ST-A3",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "candidates": [],
+    "returned_documents": [
+      "ST-A0",
+      "ST-A2",
+      "ST-A3",
+      "ST-A4",
+      "ST-A6",
+      "ST-B1",
+      "ST-C10",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "skipped": {
+      "ST-A4": "沿现有模型路由，未改预设或CoT",
+      "ST-A6": "无正则修改",
+      "ST-B1": "无字段或写入协议变更",
+      "ST-C10": "无开场变更"
+    }
+  }
+}

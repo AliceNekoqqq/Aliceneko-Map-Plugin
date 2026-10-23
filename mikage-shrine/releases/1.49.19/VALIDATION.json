@@ -1,0 +1,79 @@
+{
+  "release": "1.49.19",
+  "finding": "F03 only",
+  "gate": "source_iteration",
+  "status": "automated_source_checks_passed",
+  "passed": [
+    "legacy five main ema placeholders/empty backstage reproduced in actual update-ended handler",
+    "five distinct story seeds materialized through current main reveal handler; schema, length, identity, title, region and facility match",
+    "new stories only on new reveal; zero resource reward; initial/relationship/life/map unchanged; no automatic acceptance",
+    "public panel projection strips backstage from board and active quest; state remains unchanged",
+    "active EJS read-only routing and existing Entry4 state carriers preserved",
+    "accept/pause/resume and clone isolation; early/duplicate reveal rejection",
+    "old candidate/active/paused and resumed data equal old runtime; old actual M01 closure archive preserved",
+    "factory+version exact inverse; all card fields except version metadata preserved",
+    "three output rebuild; stable book identity/content and five module/source/data hashes",
+    "F01 event-only life interactions full regression",
+    "F02 numeric quest changes + memory and M01 closure/presentation regression",
+    "16 products, five outfit quests,31 wardrobe mappings,77 prose,11 EJS",
+    "festival filtering and three opening/four panel actual module simulations",
+    "affinity-bearing five chapters complete/basic economy wallets8/4"
+  ],
+  "commands": [
+    "node tests/main-stories.test.cjs 1.49.18 --expect-legacy-placeholders",
+    "python3 tools/build_main_stories.py --dry-run",
+    "python3 tools/build_main_stories.py",
+    "node tests/main-stories.test.cjs",
+    "node --check releases/1.49.19/mvu.mjs",
+    "node tests/life-interaction-events.test.cjs 1.49.19",
+    "node tests/quest-affinity.test.cjs 1.49.19",
+    "MIKAGE_SHOP_RELEASE=1.49.19 node tests/moonforest-shop.test.cjs",
+    "MIKAGE_FESTIVAL_RELEASE=1.49.19 node tests/festival-context.test.cjs",
+    "MIKAGE_OPENING_RELEASE=1.49.19 MIKAGE_DEBUG_DEPS=<retained deps> node tests/opening-consistency.test.cjs",
+    "economy-1.49.19.cjs reuses economy.test.cjs behavior portion against1.49.19 with affinity on four quest events; historical card-diff assertions excluded, source parity separately checked"
+  ],
+  "outputs": {
+    "main-stories.json": {
+      "bytes": 9559,
+      "sha256": "8ddf558fbd8ad08339fd969d788cb1b7b0a17e2fd96dddfff8f87ce8795caa1e"
+    },
+    "mvu.mjs": {
+      "bytes": 216158,
+      "sha256": "a5d6f0c31688a4283b4785ce49a36547723e12b035156878c61c6e838efd430b"
+    },
+    "card-source.json": {
+      "bytes": 315728,
+      "sha256": "24e40719da2c52222da2aeaaff4df559c4f4bb9fc87a603f61eef5d200bf5ad4"
+    },
+    "manifest.json": {
+      "bytes": 35576,
+      "sha256": "5649b1221ad71d7efc9326001e7f1a25278890673fb62b371528b5b2cdaf442b"
+    }
+  },
+  "scope_check": {
+    "full_default_scan": true,
+    "files": 14,
+    "known_lines": 4339,
+    "max_files": 15,
+    "max_known_lines": 7000,
+    "budget_counts": "within declared limits",
+    "exit_code": 2,
+    "warnings": "only three unchanged pre-existing untracked binary/cache files have unknown line churn; not staged",
+    "coverage_limit": "original resource line churn unknown; staged UTF-8 story JSON counted as90 text lines; inverse source comparison passed"
+  },
+  "limitations": [
+    "No installed SillyTavern or actual request/model execution evidence",
+    "Script structure validation cannot establish narrative truth, story quality or player consent",
+    "Old already-revealed stories keep their prior content by design"
+  ],
+  "real_host": [
+    "SillyTavern/CDN execution pending",
+    "target model, Android and author prose acceptance pending"
+  ],
+  "remaining_findings": [
+    "F04",
+    "F05",
+    "F06"
+  ],
+  "packaging": "not requested; import remains1.49.16 without F01-F03"
+}

@@ -1,0 +1,13 @@
+{
+  "base_source_sha256": "ae448d68daf2f74893d60e796cf59e91ade63eaf4bae151ead6c1e907d7463bf",
+  "base_mvu_sha256": "d6a455d8aac32cc0b6145875e9bf315152ce12c3f8349a054be840a076267824",
+  "operations": [
+    {
+      "target": "mvu",
+      "old": "  function mainItem(s){\n    const cfg=phase(s),item=clone(ShrineTemplates['绘马板.绘马']);\n    Object.assign(item,{编号:cfg.mainId,标题:ShrineConfig.mainTitles[cfg.level-1],祈愿人:'神社的特别来信',来客类型:'妖怪',类型:cfg.level===5?'祭典':'道路维护',地区:['R02','R04','R06','R08','R10'][cfg.level-1],心愿:'一枚带有岔路纹样的绘马，等待你与巴卫一起查看。',补充说明:'主线绘马。完成本章还需'+cfg.facility+'修缮至4；可以先调查或先建设。',材料档:cfg.level,性质:'主线',状态:'未接'});\n    return item;\n  }",
+      "new_template": "  const mainStories = __MAIN_STORIES__;\n  function mainItem(s){\n    const cfg=phase(s),item=clone(ShrineTemplates['绘马板.绘马']);\n    const story=mainStories.find(x=>x.编号===cfg.mainId);\n    assert(story,'本章主线故事配置缺失');\n    Object.assign(item,clone(story),{标题:ShrineConfig.mainTitles[cfg.level-1],补充说明:story.补充说明+' 主线绘马。完成本章还需'+cfg.facility+'修缮至4；可以先调查或先建设。',材料档:cfg.level,性质:'主线',状态:'未接'});\n    return item;\n  }\n",
+      "data": "main-stories.json/stories",
+      "marker": "__MAIN_STORIES__"
+    }
+  ]
+}
