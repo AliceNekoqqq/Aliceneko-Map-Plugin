@@ -1,0 +1,50 @@
+{
+  "release": "1.49.23",
+  "status": "source_checks_passed",
+  "fixed_findings": [
+    "R22-01",
+    "R22-02",
+    "R22-03"
+  ],
+  "passed": [
+    "原失败路径旧版复现，新版实际处理器日常/设定更衣保存",
+    "日常夹带身份等8类设置/调度模式、未解锁/未知衣装、缺事件/错事件/重复原子回退；设定路径保留",
+    "只换衣无资源/时间/关系收益，原快照不写",
+    "两示例与地图/解锁配置、五脚本名称与实际模块版本一致",
+    "完整模块逆向仅守卫及版本；整卡逆向仅Entry1三处/脚本名称和MVU说明/版本元数据",
+    "四派生输出逐字重建；五模块哈希及38其他条目/全部EJS/初始/schema/正则保持",
+    "F01—F05、商店/祭典、3开场4面板/31衣装/77文案/11EJS回归通过"
+  ],
+  "commands": [
+    "node tests/player-outfit-events.test.cjs 1.49.22 --expect-legacy-failure",
+    "node tests/player-outfit-events.test.cjs 1.49.23",
+    "node tests/life-interaction-events.test.cjs 1.49.23",
+    "node tests/quest-affinity.test.cjs 1.49.23",
+    "node tests/main-stories.test.cjs 1.49.23",
+    "node tests/memory-context.test.cjs 1.49.23",
+    "node tests/display-truth.test.cjs 1.49.23",
+    "MIKAGE_SHOP_RELEASE=1.49.23 node tests/moonforest-shop.test.cjs",
+    "MIKAGE_FESTIVAL_RELEASE=1.49.23 node tests/festival-context.test.cjs",
+    "MIKAGE_OPENING_RELEASE=1.49.23 MIKAGE_DEBUG_DEPS=<retained deps> node tests/opening-consistency.test.cjs"
+  ],
+  "outputs": {
+    "card-source.json": {
+      "bytes": 310556,
+      "sha256": "52db0d9d89078266a4b5ca717cf8800b9113bf116487c4a830b96c383867fc6a"
+    },
+    "mvu.mjs": {
+      "bytes": 216367,
+      "sha256": "97f8ea2899294242ca3070c1a19649df42bb9551708e41c5040774487d589e7c"
+    },
+    "creator-notes.md": {
+      "bytes": 3202,
+      "sha256": "603085f8b719b075a09c2084564b595754842dc374fc131804b5a9927cf416cc"
+    },
+    "manifest.json": {
+      "bytes": 36722,
+      "sha256": "db8393b4b105512cc32c31aac8856529d50309f7d74712887e279afd812a6fba"
+    }
+  },
+  "packaging": "next, after immutable source publication",
+  "real_host": "pending"
+}

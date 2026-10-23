@@ -1,0 +1,55 @@
+{
+  "base": "1.49.22",
+  "version": "1.49.23",
+  "gate": "checkpoint_package",
+  "authorization": "承接作者持续修改/打包/复审目标，作者对仅报进度停止追问，继续完成已列三项并重新交付",
+  "findings": [
+    "R22-01",
+    "R22-02",
+    "R22-03"
+  ],
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "behavior_contract": "玩家仅衣装变化允许设定或日常；其他玩家字段和调度模式继续只允许设定；原衣橱解锁/枚举/唯一事件/原子回退保持；两例地名与四脚本名称对齐实际配置",
+  "expected": [
+    "releases/1.49.23/*",
+    "tools/fix_review_followups.py",
+    "tests/player-outfit-events.test.cjs",
+    "PROJECT_STATE.md",
+    "cards/巴卫_御影神社_v1.49.23_换装与复审修复版.json"
+  ],
+  "forbidden": [
+    "历史发布",
+    "其余38条世界书正文/EJS和加载设置",
+    "schema/初始/衣橱ID/价格/经济/结算/美术/77文案",
+    "四其他模块"
+  ],
+  "budget": {
+    "workspace_files": 18,
+    "max_known_lines": 10000,
+    "runtime_changed_lines": 6,
+    "reason": "一条运行时守卫与已审两项文字/元数据，同版派生卡源与模块、测试、打包交付记录；包含3原有未跟踪资源"
+  },
+  "baseline": "1.49.22 review-probes三问题复现，换衣日常整轮回退/设定保存",
+  "verification": [
+    "新旧对照实际处理器更衣正例",
+    "身份/模式/外观夹带、未解锁、无事件反例及原子回退",
+    "完整模块/卡源逆向、4输出重建、五脚本版本/两示例",
+    "六项既有回归和加载器/打包语义/负例"
+  ],
+  "rollback": "新版本独立生成；锚点/输入哈希漂移即停，不覆盖旧版本",
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "documents": [
+      "ST-A0",
+      "ST-A2",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "routes": [
+      "code-quality-workflow",
+      "sillytavern-card-pipeline"
+    ]
+  },
+  "real_host": "pending"
+}
