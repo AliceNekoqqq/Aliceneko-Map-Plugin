@@ -1,0 +1,55 @@
+{
+  "release": "1.49.22",
+  "finding": "F06 only",
+  "gate": "source_iteration",
+  "status": "source_checks_passed",
+  "passed": [
+    "整卡逆向逐字段一致，仅data.creator_notes与两处角色版本、绑定世界书描述版本变化",
+    "39条世界书正文和设置、全部扩展（含正则/脚本/初始变量）完全保持",
+    "5模块清单与实际文件SHA256保持",
+    "卡源/世界书/作者说明SHA256与来源对齐",
+    "两输出通过维护工具逐字重建",
+    "作者红豆粉署名及全部其他元数据保持",
+    "人工核对说明与runtime_dependencies、旧存档及F01—F05修复范围一致"
+  ],
+  "notes_unicode_chars": {
+    "before": 5246,
+    "after": 1170
+  },
+  "outputs": {
+    "creator-notes.md": {
+      "bytes": 3202,
+      "sha256": "5a8e842db2808909c0be7bc9b813375bfb4c996bc0f842971c02508cd16a0a2a"
+    },
+    "card-source.json": {
+      "bytes": 310366,
+      "sha256": "55040e5fe30d43d1b610fdbafb8b83496d24c6f325b4ab0ab0d8259691d8899b"
+    },
+    "manifest.json": {
+      "bytes": 36467,
+      "sha256": "bc2f5269cef94b79ffd1b1efcb237aa7001d3554e1149f0f525c9458e46bdf26"
+    }
+  },
+  "inherited_evidence": "releases/1.49.21/VALIDATION.json；文档变更未重复运行行为测试",
+  "audit_findings_source_addressed": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06"
+  ],
+  "remaining_source_findings_in_this_audit": [],
+  "packaging": "not requested; import remains1.49.16 without F01—F06",
+  "real_host": "pending; no runtime/model/CDN/Android acceptance claimed",
+  "scope_check": {
+    "full_default_scan": true,
+    "files_before_receipt": 11,
+    "known_lines_before_evidence_append": 2695,
+    "max_files": 12,
+    "max_known_lines": 5000,
+    "exit_code": 2,
+    "warnings": "仅三项原有未跟踪二进制/缓存的行数未知，保持未暂存；本次维护输入和派生输出均已检查",
+    "coverage_limit": "原有资源行数未知；本次作者说明及全卡逆向核对覆盖完整"
+  }
+}

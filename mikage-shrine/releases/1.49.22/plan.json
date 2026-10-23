@@ -1,0 +1,57 @@
+{
+  "base": "1.49.21",
+  "version": "1.49.22",
+  "gate": "source_iteration",
+  "finding": "F06 only",
+  "authorization": "作者在F06交接后要求继续；延续已确认仓库源码同步",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "base_source_sha256": "95bbb0f6d60829322bb5ce3db310d50e80b19c608590831d178671df9ce556b8",
+  "old_notes_sha256": "1cbc8e5b44ae465e02f0d88ce9da2a44abaa180a515f4968e3267c2e27054980",
+  "new_notes_sha256": "5a8e842db2808909c0be7bc9b813375bfb4c996bc0f842971c02508cd16a0a2a",
+  "scope": "仅data.creator_notes及版本来源元数据；当前使用说明替代混排历史记录，历史完整保存在旧版本源码",
+  "preserve": "全部39条世界书正文及加载设置、五模块、schema/初始、正则、脚本、人物与作者署名、美术、既有77文案和F01—F05",
+  "verification": [
+    "JSON/UTF8及两输出逐字重建",
+    "整卡逆向只允许作者说明和版本元数据变化",
+    "39条世界书、3正则与5脚本逐字保持；五模块实际文件哈希保持",
+    "说明依赖与manifest对应，旧存档边界与前版修复说明一致"
+  ],
+  "budget": {
+    "workspace_files": 12,
+    "max_known_lines": 5000
+  },
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "sillytavern-card-pipeline"
+    ],
+    "documents": [
+      "ST-A0",
+      "ST-A2",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "candidates": []
+  },
+  "packaging": "not requested; import remains1.49.16",
+  "deferred": [
+    "真实酒馆/最终请求/目标模型/Android验收",
+    "整合成卡打包"
+  ],
+  "expected": [
+    "releases/1.49.22/{plan,creator-notes,card-source,manifest,REVIEW,VALIDATION,SOURCE_DELIVERY}",
+    "tools/update_creator_notes.py",
+    "PROJECT_STATE.md"
+  ],
+  "forbidden": [
+    "历史发布",
+    "模型提示与世界书条目正文/加载配置",
+    "五运行模块、初始/schema、正则/脚本",
+    "美术和已审定文案",
+    "整卡打包"
+  ],
+  "baseline": "1.49.21作者说明全文人工审阅，F06旧版依赖/初始化指引矛盾复核；旧卡源哈希锁定",
+  "rollback": "新版本另存，输入或保留字段漂移即停止；回退到1.49.21，无旧版覆盖"
+}
