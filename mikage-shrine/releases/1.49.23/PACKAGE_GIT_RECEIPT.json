@@ -1,0 +1,32 @@
+{
+  "release": "1.49.23",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "source_commit": "7638a574e0b9a889d4cfb5b1c48cfa2cf0f72d48",
+  "source_tree": "00b7941003fa54f41dc678e2135a234b728630be",
+  "package_commit": "a8ceaacf0fb75e11282e2688896e2954bec2ff1f",
+  "package_tree": "0605344fe64fee18e5be4fa5c7eba45ae7f3b4de",
+  "local_source_commit": "7e028d21e930c6e6dac2a4d5540ae4d12dde81c7",
+  "local_package_commit": "bf8c488c27c366687a9770ad437decd86d666b0d",
+  "branch": "codex/package-1.49.23",
+  "tree_parity": "exact at source and package stages",
+  "verified_remote_artifacts": {
+    "mikage-shrine/cards/巴卫_御影神社_v1.49.23_换装与复审修复版.json": "e8e29168913f9f602a24c13ba214ab8a5b82b218",
+    "mikage-shrine/releases/1.49.23/DELIVERY.md": "59452f9d381f58fa1e8d500d08e69baa2b0af18d"
+  },
+  "verified_remote_modules": {
+    "mikage-shrine/releases/1.49.23/mvu.mjs": "9c3d6fbcf6817026c48698be129c66ff188a4464",
+    "mikage-shrine/releases/1.49.20/panels.mjs": "5a271db84028ca9d8cccb6b5dea4272dcd80ab84",
+    "mikage-shrine/releases/1.49.15/scene.mjs": "8532ecde3175e6dc79f84b21b71f2e4fba5a09cc",
+    "mikage-shrine/releases/1.48.3/minigames.mjs": "9e19df1aaf3fb8d6870b662b37ee2ac74384c3c9",
+    "mikage-shrine/releases/1.29.1/tomoe.mjs": "8337107a04e08f07b62426e3ac0a6ce025d6d5c4"
+  },
+  "artifact_sha256": "29d6ef31a0bf3bf1a7a8f7dfe1b17fa7eb025ace6a89898124f9289b0ee7ce09",
+  "fixed_findings": [
+    "R22-01",
+    "R22-02",
+    "R22-03"
+  ],
+  "status": "candidate",
+  "real_host": "pending",
+  "scope": "18 files including receipt and 3 unchanged pre-existing resources; known churn below10000; original resource churn unknown"
+}
