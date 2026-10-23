@@ -1,0 +1,21 @@
+{
+  "release": "1.49.19",
+  "gate": "source_iteration",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/main-stories-1.49.19",
+  "source_commit": "a59fe9ffba5c0af01145ce79bb9f0d205b4c68ba",
+  "source_tree": "6905cf3bcb62711697ee43196104e328572f953e",
+  "local_source_commit": "ace30aeb13c991b00681c1a118de114f2fbc03f5",
+  "remote_source_tree_matches_local": true,
+  "verified_git_blobs": {
+    "mvu.mjs": "e723ff8c7c5f31bc5dad530f3de83f152db8da85",
+    "main-stories.json": "b70cdc9382b1696d7a6f3edb0f3526a53eb2f7d3"
+  },
+  "import_card": "still1.49.16; F01-F03 require future explicit packaging",
+  "real_host": "pending",
+  "remaining_findings": [
+    "F04",
+    "F05",
+    "F06"
+  ]
+}
