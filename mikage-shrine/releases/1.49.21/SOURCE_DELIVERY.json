@@ -1,0 +1,20 @@
+{
+  "release": "1.49.21",
+  "gate": "source_iteration",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/memory-context-1.49.21",
+  "source_commit": "f913fa146daafd0f936abadb0b7edbadb257ead9",
+  "source_tree": "ada82d20b035956d114d3cea549b535a813fa77f",
+  "local_source_commit": "45ef028a477b89c960edb30dc934bab5b01926cf",
+  "remote_source_tree_matches_local": true,
+  "verified_ejs_git_blobs": {
+    "relationship-facts.ejs": "6e0458927dc0b5994d838156d627443a55872b16",
+    "outfit-facts.ejs": "7aa1fceda78196e86314cb0cdd6df22c03691628",
+    "quiet-facts.ejs": "159765415ff0456da06c8153d1c9ef6560163641"
+  },
+  "import_card": "still1.49.16; F01-F05 require explicit packaging",
+  "real_host": "pending",
+  "remaining_findings": [
+    "F06"
+  ]
+}
