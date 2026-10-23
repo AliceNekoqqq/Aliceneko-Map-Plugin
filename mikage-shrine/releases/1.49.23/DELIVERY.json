@@ -1,0 +1,28 @@
+{
+  "release": "1.49.23",
+  "status": "candidate",
+  "fixed_findings": [
+    "R22-01",
+    "R22-02",
+    "R22-03"
+  ],
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.23_换装与复审修复版.json",
+  "bytes": 345926,
+  "sha256": "29d6ef31a0bf3bf1a7a8f7dfe1b17fa7eb025ace6a89898124f9289b0ee7ce09",
+  "source_commit": "7638a574e0b9a889d4cfb5b1c48cfa2cf0f72d48",
+  "source_tree": "00b7941003fa54f41dc678e2135a234b728630be",
+  "source_branch": "codex/review-followups-1.49.23",
+  "package_branch": "codex/package-1.49.23",
+  "verified_remote_module_blobs": {
+    "mikage-shrine/releases/1.49.23/mvu.mjs": "9c3d6fbcf6817026c48698be129c66ff188a4464",
+    "mikage-shrine/releases/1.49.20/panels.mjs": "5a271db84028ca9d8cccb6b5dea4272dcd80ab84",
+    "mikage-shrine/releases/1.49.15/scene.mjs": "8532ecde3175e6dc79f84b21b71f2e4fba5a09cc",
+    "mikage-shrine/releases/1.48.3/minigames.mjs": "9e19df1aaf3fb8d6870b662b37ee2ac74384c3c9",
+    "mikage-shrine/releases/1.29.1/tomoe.mjs": "8337107a04e08f07b62426e3ac0a6ce025d6d5c4"
+  },
+  "artifact_checks": "deterministic/source/worldbook/dependencies/5 negative fixtures and actual module loader simulation passed",
+  "package_receipt": "PACKAGE_GIT_RECEIPT.json",
+  "real_host": "pending",
+  "png": "not selected",
+  "previous_artifacts": "preserved"
+}

@@ -1,6 +1,6 @@
 {
   "release": "1.49.23",
-  "status": "source_checks_passed",
+  "status": "source_and_offline_artifact_checks_passed",
   "fixed_findings": [
     "R22-01",
     "R22-02",
@@ -25,7 +25,10 @@
     "node tests/display-truth.test.cjs 1.49.23",
     "MIKAGE_SHOP_RELEASE=1.49.23 node tests/moonforest-shop.test.cjs",
     "MIKAGE_FESTIVAL_RELEASE=1.49.23 node tests/festival-context.test.cjs",
-    "MIKAGE_OPENING_RELEASE=1.49.23 MIKAGE_DEBUG_DEPS=<retained deps> node tests/opening-consistency.test.cjs"
+    "MIKAGE_OPENING_RELEASE=1.49.23 MIKAGE_DEBUG_DEPS=<retained deps> node tests/opening-consistency.test.cjs",
+    "node --check releases/1.49.23/mvu.mjs",
+    "node tests/release-loader.test.cjs cards/巴卫_御影神社_v1.49.23_换装与复审修复版.json releases/1.49.23/card-source.json 1.49.23",
+    "python3 <scratch>/package23-audit/validate_packed.py"
   ],
   "outputs": {
     "card-source.json": {
@@ -45,6 +48,17 @@
       "sha256": "db8393b4b105512cc32c31aac8856529d50309f7d74712887e279afd812a6fba"
     }
   },
-  "packaging": "next, after immutable source publication",
-  "real_host": "pending"
+  "packaging": "passed; see DELIVERY.json",
+  "real_host": "pending",
+  "scope_check": {
+    "stage_source_default_scan": {
+      "files": 13,
+      "known_lines": 4215,
+      "unknown_original_resources": 3,
+      "exit_code": 2
+    },
+    "budget_files": 18,
+    "budget_known_lines": 10000,
+    "warning": "原有3项二进制/缓存行数未知，保持未暂存；运行时与整卡精确逆向已覆盖本轮修改"
+  }
 }

@@ -1,0 +1,20 @@
+{
+  "release": "1.49.23",
+  "gate": "checkpoint_package",
+  "source": "mikage-shrine/releases/1.49.23/card-source.json",
+  "manifest": "mikage-shrine/releases/1.49.23/manifest.json",
+  "source_commit": "7638a574e0b9a889d4cfb5b1c48cfa2cf0f72d48",
+  "source_tree": "00b7941003fa54f41dc678e2135a234b728630be",
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.23_换装与复审修复版.json",
+  "adapter": {
+    "command": "python3 tools/build_release_card.py --source releases/1.49.23/card-source.json --manifest releases/1.49.23/manifest.json --commit 7638a574e0b9a889d4cfb5b1c48cfa2cf0f72d48 --output cards/巴卫_御影神社_v1.49.23_换装与复审修复版.json",
+    "cwd": "mikage-shrine",
+    "dry_run": "append --dry-run",
+    "collision": "refuse overwrite",
+    "side_effects": "one new JSON only",
+    "success": "exit0 and deterministic/source/loader validation"
+  },
+  "png": "not selected",
+  "host_acceptance": "pending",
+  "preserve": "older versions, all source fields except expected loader projection"
+}
