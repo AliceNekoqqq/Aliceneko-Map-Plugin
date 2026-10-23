@@ -1,0 +1,22 @@
+{
+  "release": "1.49.18",
+  "gate": "source_iteration",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/quest-affinity-1.49.18",
+  "source_commit": "41b532482efa6c40918339b4ac6cbee596b5d6d7",
+  "source_tree": "1fb596df7f4896d57e7539fb76a254fef49213c7",
+  "local_source_commit": "601ca83cca333e1206e11ebf2fe7cd62ae8a4a54",
+  "remote_source_tree_matches_local": true,
+  "verified_git_blobs": {
+    "mvu.mjs": "4b6b648638b286d0f53d76f226572d29a427cc2b",
+    "card-source.json": "4d977a65427f80789950917ab549e7da8e04cd88"
+  },
+  "import_card": "still1.49.16; F01/F02 require future explicit packaging",
+  "real_host": "pending",
+  "remaining_findings": [
+    "F03",
+    "F04",
+    "F05",
+    "F06"
+  ]
+}
