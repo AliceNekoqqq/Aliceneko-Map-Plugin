@@ -1,0 +1,84 @@
+{
+  "target": "cards/巴卫_御影神社_v1.49.22_六项审查修复版.json",
+  "release": "1.49.22",
+  "artifact_sha256": "77dad81caef52c059ea36d39a9a78ce964fc20bb300193863267272fd4f08f1b",
+  "date": "2026-10-23 Asia/Shanghai",
+  "mode": "full-card inventory plus diff-regression and contract tracing",
+  "focus": "general",
+  "coverage_status": "partial",
+  "inventory": "REVIEW_INVENTORY.json",
+  "coverage_summary": "39条均盘点；24个启用静态条目正文人工核对；11个EJS关键读写/输出与专项渲染核对；4个停用条目按初始化/来源与原样保留核对。5个远程模块只对关键领域和生命周期链路追踪/执行，非1.4MB源码逐行全审。",
+  "findings": [
+    {
+      "id": "R22-01",
+      "severity": "P2",
+      "category": "Must Fix Next",
+      "file": "mikage-shrine/releases/1.49.19/mvu.mjs",
+      "title": "玩家按协议用日常事件换衣会整轮回退",
+      "behavior": "玩家更衣的模型更新",
+      "evidence": "Entry1允许更衣需设定或日常事件；validate任何玩家字段变化都要求设定。实际mag_variable_update_ended处理器将daily→shrine加日常事件回退，附带心情也回退；换为设定事件则保存。",
+      "risk": "正文写出换衣但记录仍是旧衣，同轮其他合法更新也未保存；衣柜/UI或设定事件可绕开",
+      "recommendation": "下次修复在现有玩家守卫区分仅衣装变化与身份/其他玩家字段；只为明确更衣放行日常，其他选择仍用设定，覆盖两类事件与非法夹带",
+      "verification": "node releases/1.49.22/review-probes.cjs",
+      "status": "confirmed_unfixed"
+    },
+    {
+      "id": "R22-02",
+      "severity": "P2",
+      "category": "Prompt Consistency",
+      "file": "mikage-shrine/releases/1.49.22/card-source.json",
+      "pointer": "/data/character_book/entries[id=1]/content/output_format",
+      "title": "协议示例沿用旧地名",
+      "behavior": "模型抵达与首章解锁呈现",
+      "evidence": "抵达R02示例写山脚村；U02示例写妖怪横丁与河岸路线。当前地图R02为宇庭高校，U02配置开放R03妖怪横丁/R04夜森神社，Entry26及54亦使用新名。",
+      "risk": "示例可能将正文带回旧版地理表述；本次未发模型请求，不能断言必定输出错误",
+      "recommendation": "仅将两处示例地名与现行地区和解锁配置对齐，保留事件ID/路径与结算协议",
+      "verification": "node releases/1.49.22/review-probes.cjs",
+      "status": "confirmed_unfixed"
+    },
+    {
+      "id": "R22-03",
+      "severity": "P3",
+      "category": "Metadata",
+      "file": "mikage-shrine/releases/1.49.22/card-source.json",
+      "pointer": "/data/extensions/tavern_helper/scripts/*/name",
+      "title": "四个脚本显示版本落后于实际模块",
+      "behavior": "导入后的脚本识别与排障",
+      "evidence": "显示mvu1.30.1/panels1.47.0/scene1.48.0/minigames1.39.0，实际固定模块分别1.49.19/1.49.20/1.49.15/1.48.3。第五巴卫互动0.1.0一致。",
+      "risk": "容易误认为更新没有生效；加载器实际校验和加载版本正确，不是四项修复丢失",
+      "recommendation": "后续在维护源或打包映射同步显示名称与说明，保留脚本ID；不改固定提交或模块实现",
+      "verification": "node releases/1.49.22/review-probes.cjs",
+      "status": "confirmed_unfixed"
+    }
+  ],
+  "must_fix_now": [],
+  "remaining_original_findings": [],
+  "original_findings": "F01—F06本次整合并回归；新发现独立编号R22-01—03",
+  "optimization_handoffs": [
+    {
+      "module": "玩家更衣校验",
+      "suggested_gate_mode": "Local Fix Only",
+      "priority": "R22-01",
+      "scope": "仅衣装事件与玩家其他字段保护",
+      "forbidden_scope": "身份/其他玩家字段变更许可、衣橱解锁、资源、世界书大改"
+    }
+  ],
+  "slimming_themes": [
+    {
+      "pattern": "Existing deferred context",
+      "suggested_handling": "Entry4回顾、Entry67及其他投影仍保留；F05只覆盖三类记忆，不声称全请求无旧事。本轮不继续扩展优化。"
+    }
+  ],
+  "do_not_touch_yet": [
+    "五模块其他稳定路径与美术/77审定文案",
+    "旧版兼容和存档记录",
+    "未验证安全的停用维护条目删除"
+  ],
+  "verification_gates": [
+    "真实SillyTavern导入与扩展执行",
+    "线上Git/CDN加载与手机Android",
+    "目标模型最终请求/输出与作者接受"
+  ],
+  "runtime_writes": "none; audit only",
+  "new_findings_fixed": false
+}

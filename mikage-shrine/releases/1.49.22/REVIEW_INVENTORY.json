@@ -1,0 +1,422 @@
+{
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.22_六项审查修复版.json",
+  "entries": [
+    {
+      "id": 7,
+      "name": "巴卫",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 3162,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 5,
+      "name": "扮演与玩家边界",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 3078,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 41,
+      "name": "世界观与神怪法则",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 1559,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 26,
+      "name": "神域与行程",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 1474,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 27,
+      "name": "主线与结案规则",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 1486,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 34,
+      "name": "绘马与委托规则",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 520,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 14,
+      "name": "委托人物与故事素材",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 775,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 37,
+      "name": "幽灵与送行",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 473,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 11,
+      "name": "修缮与生活互动规则",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 2797,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 52,
+      "name": "祭典规则",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 2445,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 59,
+      "name": "回忆册规则",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 809,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 49,
+      "name": "衣装与解锁规则",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 2154,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 72,
+      "name": "日常叙事与输出规则",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 1196,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 74,
+      "name": "街区异样规则与素材",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 2110,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 46,
+      "name": "巴卫旧事",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 340,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 16,
+      "name": "人物关系与群像",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 515,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 78,
+      "name": "瑞希",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 233,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 79,
+      "name": "鞍马",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 222,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 80,
+      "name": "御影",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 252,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 81,
+      "name": "沼皇女与小太郎",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 236,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 82,
+      "name": "恶罗王",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 221,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 1,
+      "name": "变量说明与更新协议",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 12861,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 4,
+      "name": "当前状态快照",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 711,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 54,
+      "name": "动态读取｜主线与事件候选",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 7698,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 57,
+      "name": "动态读取｜衣装支线候选",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 5390,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 64,
+      "name": "动态读取｜相处记忆",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 2831,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 67,
+      "name": "动态读取｜委托结果与余波",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 1891,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 69,
+      "name": "动态读取｜祭典事实",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 4375,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 71,
+      "name": "动态读取｜衣装记忆",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 5213,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 73,
+      "name": "动态读取｜日常片刻",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 2549,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 76,
+      "name": "动态读取｜街区异样",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 3254,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 17,
+      "name": "动态读取｜巴卫当前关系",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 4242,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 77,
+      "name": "动态读取｜当前穿着与形态",
+      "enabled": true,
+      "constant": true,
+      "unicode_chars": 6485,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    },
+    {
+      "id": 0,
+      "name": "90｜状态与变量｜[InitVar]御影神社初始变量",
+      "enabled": false,
+      "constant": false,
+      "unicode_chars": 5234,
+      "has_ejs": false,
+      "status": "excluded",
+      "reason": "停用维护或初始数据，以来源/结构和初始化测试核对，未逐行审阅冗余说明"
+    },
+    {
+      "id": 56,
+      "name": "91｜插件脚本｜绘马生成提示词（停用）",
+      "enabled": false,
+      "constant": false,
+      "unicode_chars": 3072,
+      "has_ejs": false,
+      "status": "excluded",
+      "reason": "停用维护或初始数据，以来源/结构和初始化测试核对，未逐行审阅冗余说明"
+    },
+    {
+      "id": 55,
+      "name": "99｜作者维护｜完整变量清单（停用）",
+      "enabled": false,
+      "constant": false,
+      "unicode_chars": 27717,
+      "has_ejs": false,
+      "status": "excluded",
+      "reason": "停用维护或初始数据，以来源/结构和初始化测试核对，未逐行审阅冗余说明"
+    },
+    {
+      "id": 58,
+      "name": "99｜作者维护｜衣装支线配置冗余副本（停用）",
+      "enabled": false,
+      "constant": true,
+      "unicode_chars": 40,
+      "has_ejs": false,
+      "status": "excluded",
+      "reason": "停用维护或初始数据，以来源/结构和初始化测试核对，未逐行审阅冗余说明"
+    },
+    {
+      "id": 83,
+      "name": "长崎素世",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 397,
+      "has_ejs": false,
+      "status": "reviewed",
+      "reason": "启用的静态规则/人物/示例正文人工核对"
+    },
+    {
+      "id": 84,
+      "name": "动态读取｜月之森衣装目录",
+      "enabled": true,
+      "constant": false,
+      "unicode_chars": 2355,
+      "has_ejs": true,
+      "status": "partial",
+      "reason": "EJS作用域/输出与专项测试核对，未逐行证明所有词语匹配"
+    }
+  ],
+  "modules": [
+    {
+      "path": "mikage-shrine/releases/1.49.19/mvu.mjs",
+      "status": "partial",
+      "reason": "运行时关键链路及加载/领域/开场模拟覆盖；未全文件逐行审阅"
+    },
+    {
+      "path": "mikage-shrine/releases/1.49.20/panels.mjs",
+      "status": "partial",
+      "reason": "运行时关键链路及加载/领域/开场模拟覆盖；未全文件逐行审阅"
+    },
+    {
+      "path": "mikage-shrine/releases/1.49.15/scene.mjs",
+      "status": "partial",
+      "reason": "运行时关键链路及加载/领域/开场模拟覆盖；未全文件逐行审阅"
+    },
+    {
+      "path": "mikage-shrine/releases/1.48.3/minigames.mjs",
+      "status": "partial",
+      "reason": "运行时关键链路及加载/领域/开场模拟覆盖；未全文件逐行审阅"
+    },
+    {
+      "path": "mikage-shrine/releases/1.29.1/tomoe.mjs",
+      "status": "partial",
+      "reason": "运行时关键链路及加载/领域/开场模拟覆盖；未全文件逐行审阅"
+    }
+  ]
+}

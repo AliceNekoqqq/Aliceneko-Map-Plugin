@@ -1,0 +1,122 @@
+{
+  "release": "1.49.22",
+  "status": "candidate_with_review_findings",
+  "gate": "checkpoint_package",
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.22_六项审查修复版.json",
+  "bytes": 345736,
+  "sha256": "77dad81caef52c059ea36d39a9a78ce964fc20bb300193863267272fd4f08f1b",
+  "source_commit": "0e326ec41917797a87a90ed3cb00b3cd278813d5",
+  "source_tree": "2c90174bca116f5ee28ef762b61e3c4bd60fdb59",
+  "passed": [
+    "打包前后整卡逐字段一致，只有预期五加载器投影",
+    "可重复构建字节一致；V3/UTF8/39条世界书与版本哈希对齐",
+    "三正则启用状态/初始/五启用脚本稳定ID保持；地区策略保持",
+    "五实际模块导出、版本不匹配拒绝、顺序回退与单次启动",
+    "六项原问题专项及集成回归、16商品/5衣装支线/31ID/77文案/11EJS",
+    "三开场、四面板和消息楼层/重载/切换模拟",
+    "13外部图像及5模块实际文件SHA256保持",
+    "固定Git提交上5远端模块Git blob与本地一致"
+  ],
+  "negative_fixtures_rejected": [
+    "previous-worldbook",
+    "missing-regex",
+    "missing-loader",
+    "wrong-commit",
+    "invalid-regional-policy"
+  ],
+  "commands": [
+    "node tests/release-loader.test.cjs cards/巴卫_御影神社_v1.49.22_六项审查修复版.json releases/1.49.22/card-source.json 1.49.22",
+    "node tests/life-interaction-events.test.cjs 1.49.22",
+    "node tests/quest-affinity.test.cjs 1.49.22",
+    "node tests/main-stories.test.cjs 1.49.22",
+    "node tests/memory-context.test.cjs 1.49.22",
+    "node tests/display-truth.test.cjs 1.49.22",
+    "MIKAGE_SHOP_RELEASE=1.49.22 node tests/moonforest-shop.test.cjs",
+    "MIKAGE_FESTIVAL_RELEASE=1.49.22 node tests/festival-context.test.cjs",
+    "MIKAGE_OPENING_RELEASE=1.49.22 MIKAGE_DEBUG_DEPS=<retained jsdom/zod/ejs> node tests/opening-consistency.test.cjs",
+    "python3 <scratch>/package22-audit/validate_packed.py",
+    "node --check <five pinned module paths>",
+    "node releases/1.49.22/review-probes.cjs"
+  ],
+  "review_findings": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 2,
+    "P3": 1,
+    "report": "POST_PACKAGE_REVIEW.json",
+    "fixed": false
+  },
+  "runtime_dependencies": {
+    "primary_card_type": "MVU Zod hybrid",
+    "capabilities": [
+      "embedded-worldbook",
+      "EJS",
+      "JSONPatch-events",
+      "embedded-regex",
+      "five-remote-script-loaders",
+      "iframe-panels",
+      "external-media"
+    ],
+    "host_required": [
+      "SillyTavern",
+      "Tavern Helper script/browser APIs",
+      "Prompt Template EJS execution"
+    ],
+    "embedded_required": {
+      "regex_ids": [
+        "a039f73d-5684-58f8-89e4-4b3cebd1c4ec",
+        "c47eb49c-1703-52ba-9c22-d06c1dc0eca3",
+        "c70dc985-d89b-5920-86e2-16abd8411ef8"
+      ],
+      "helper_ids": [
+        "272c672c-6eed-5524-9d0b-1823b056fff4",
+        "86a49572-142e-5d86-af3f-2e96d2f8a244",
+        "f763b9d7-c17c-5f0f-b0bd-36d9f37a3383",
+        "d3560ad0-892c-4b31-b783-11f80a23b90f",
+        "2c2d44bb-488b-5a17-b756-1920d1ba38a6"
+      ],
+      "initial_data": "/data/extensions/tavern_helper/variables",
+      "worldbook": "/data/character_book"
+    },
+    "remote_runtime": [
+      "five manifest modules",
+      "schema and validator in mvu module",
+      "MagVarUpdate@54be11b09f21b1c4266e2d54b6f1ba9a3598db05/artifact/bundle.js",
+      "zod@4.1.12/+esm fallback if compatible host z is absent",
+      "pinned images and fonts"
+    ],
+    "regional_selection": {
+      "policy": "sequential URL fallback inside each loader, one successful start",
+      "module_hosts": [
+        "cdn.jsdelivr.net",
+        "testingcf.jsdelivr.net",
+        "raw.githubusercontent.com"
+      ],
+      "mvu_hosts": [
+        "testingcf.jsdelivr.net",
+        "fastly.jsdelivr.net"
+      ],
+      "zod_hosts": [
+        "testingcf.jsdelivr.net",
+        "cdn.jsdelivr.net"
+      ],
+      "separate_region_script_pair": false
+    },
+    "development_only": [
+      "local zod/ejs fixtures",
+      "simulated host",
+      "browser screenshots",
+      "independent full-unlock test copy"
+    ]
+  },
+  "real_host": "actual import/CDN execution/model/Android/human acceptance pending",
+  "png": "not selected",
+  "old_artifacts": "preserved",
+  "verified_remote_module_blobs": {
+    "mikage-shrine/releases/1.49.19/mvu.mjs": "e723ff8c7c5f31bc5dad530f3de83f152db8da85",
+    "mikage-shrine/releases/1.49.20/panels.mjs": "5a271db84028ca9d8cccb6b5dea4272dcd80ab84",
+    "mikage-shrine/releases/1.49.15/scene.mjs": "8532ecde3175e6dc79f84b21b71f2e4fba5a09cc",
+    "mikage-shrine/releases/1.48.3/minigames.mjs": "9e19df1aaf3fb8d6870b662b37ee2ac74384c3c9",
+    "mikage-shrine/releases/1.29.1/tomoe.mjs": "8337107a04e08f07b62426e3ac0a6ce025d6d5c4"
+  }
+}

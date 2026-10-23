@@ -1,0 +1,19 @@
+{
+  "release": "1.49.22",
+  "status": "candidate_with_review_findings",
+  "artifact": "mikage-shrine/cards/巴卫_御影神社_v1.49.22_六项审查修复版.json",
+  "bytes": 345736,
+  "sha256": "77dad81caef52c059ea36d39a9a78ce964fc20bb300193863267272fd4f08f1b",
+  "source_commit": "0e326ec41917797a87a90ed3cb00b3cd278813d5",
+  "source_branch": "codex/creator-notes-1.49.22",
+  "package_branch": "codex/package-1.49.22",
+  "remote_sync": "固定运行源码与模块已核对；成卡分支同步凭证见PACKAGE_GIT_RECEIPT.json",
+  "import_readiness": "new-chat JSON candidate; R22-01日常更衣回退可用设定/衣柜绕开，见复审",
+  "new_review_findings": [
+    "R22-01 P2",
+    "R22-02 P2",
+    "R22-03 P3"
+  ],
+  "real_host": "pending",
+  "png": "not selected"
+}
