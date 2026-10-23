@@ -1,0 +1,11 @@
+{
+  "base_source_sha256": "be7b5d72729938ea8635481bfc9d0746ce8b1bcf05cbf7ea829daaf73c3fcadb",
+  "base_mvu_sha256": "98f74bba683dd50431c91b3aa3ae107f90deb02370066d8de319054eeafc6358",
+  "operations": [
+    {
+      "target": "mvu",
+      "old": "      const expected = runInteraction(previous, event.方式, event);\n      const isFestival = ['festivalStart','festivalEnd'].includes(JSON.parse(event.方式).kind);\n      if (isFestival && JSON.stringify(submitted) === JSON.stringify(before)) {\n        // The model appends facts; the domain, not the model, derives lifecycle flags.\n        candidate.生活 = expected;\n      } else if (JSON.stringify(expected) !== JSON.stringify(submitted)) fail('生活互动变化超出允许范围');\n",
+      "new": "      const current = { ...previous, 环境: { ...previous.环境, 天数: candidate.环境.天数 }, 生活: before };\n      const expected = runInteraction(current, event.方式, event);\n      if (JSON.stringify(submitted) === JSON.stringify(before)) {\n        // Facts identify the bounded interaction; the domain derives its state.\n        candidate.生活 = expected;\n      } else if (JSON.stringify(expected) !== JSON.stringify(submitted)) fail('生活互动变化超出允许范围');\n"
+    }
+  ]
+}

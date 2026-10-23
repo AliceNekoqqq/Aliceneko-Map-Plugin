@@ -1,0 +1,68 @@
+{
+  "release": "1.49.17",
+  "gate": "source_iteration",
+  "status": "automated_source_checks_passed",
+  "finding": "F01 only",
+  "passed": [
+    "legacy four event-only interaction negatives reproduced in actual update-ended handler",
+    "new event-only lantern on/off/store/table meal/carried meal persist in actual handler",
+    "bounded exact-result compatibility; incorrect ID/target/location/source/JSON/unknown kind/extra state/repeat consumption reject and roll back",
+    "cross-day restock and festival start date use current day; festival start/end and no-op",
+    "original UI light/store remain supported",
+    "exact inverse: only life-interaction validation branch and MVU module version differ",
+    "all worldbook entry bodies, card fields except version metadata, initial/schema/economy/config and other four modules preserved",
+    "all three generated outputs rebuild byte-identically; mvu syntax",
+    "16 shop products, five outfit quests, 31 wardrobe IDs, 77 approved prose and 11 EJS regressions",
+    "festival context/helper failure/read-only behavior",
+    "actual module startup simulation: 3 opening texts/native alternates, 4 panels, exact-floor data, replay/swipe/chat/reload",
+    "current runtime economy behavior: full five-chapter complete/basic paths and wallets8/4"
+  ],
+  "commands": [
+    "node tests/life-interaction-events.test.cjs 1.49.16 --expect-legacy-failures",
+    "python3 tools/fix_life_interactions.py --dry-run",
+    "python3 tools/fix_life_interactions.py",
+    "node tests/life-interaction-events.test.cjs",
+    "node --check releases/1.49.17/mvu.mjs",
+    "MIKAGE_SHOP_RELEASE=1.49.17 node tests/moonforest-shop.test.cjs",
+    "MIKAGE_FESTIVAL_RELEASE=1.49.17 node tests/festival-context.test.cjs",
+    "MIKAGE_OPENING_RELEASE=1.49.17 MIKAGE_DEBUG_DEPS=<retained deps> node tests/opening-consistency.test.cjs",
+    "economy-current.cjs executes existing economy.test.cjs behavior portion with MIKAGE_ECONOMY_RELEASE=1.49.17; historical card-diff portion excluded, current source parity checked separately"
+  ],
+  "outputs": {
+    "mvu.mjs": {
+      "bytes": 207186,
+      "sha256": "30656745d4d74f067b8026d039d40159887b6bedfb2b29f117e34be0c479997c"
+    },
+    "card-source.json": {
+      "bytes": 315332,
+      "sha256": "e996bb8bf868bf3c728d3f3b6db999f4776878809f3b91ba9e7b95911bee2fb9"
+    },
+    "manifest.json": {
+      "bytes": 34907,
+      "sha256": "59d7f35ffebe1912054963a827b44b599fb5991d46c42ccac68fea038219f1d4"
+    }
+  },
+  "real_host": [
+    "SillyTavern import and real extension/CDN execution pending",
+    "target model and Android pending"
+  ],
+  "packaging": "not requested; existing import card remains 1.49.16",
+  "remaining_findings": [
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06"
+  ],
+  "scope_check": {
+    "files": 13,
+    "known_lines": 4170,
+    "max_files": 14,
+    "max_known_lines": 7000,
+    "budget_counts": "within declared limits",
+    "full_default_scan": true,
+    "exit_code": 2,
+    "warnings": "three pre-existing untracked binary/cache files have unknown line churn; unchanged and not staged",
+    "coverage_limit": "their original line churn cannot be measured; tracked semantic inverse comparison passed"
+  }
+}

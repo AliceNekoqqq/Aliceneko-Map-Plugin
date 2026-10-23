@@ -1,0 +1,74 @@
+{
+  "base": "1.49.16",
+  "version": "1.49.17",
+  "gate": "source_iteration",
+  "authorization": "用户在整体审查及优先修生活互动建议后回复改，本轮限定F01",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "当前实际更新处理器确认：模型只追加合法点灯、收摆设和吃餐点事件时整轮回滚；仅祭典有派生入口",
+  "behavior_contract": {
+    "change": "所有既有受限生活互动在模型只追加事件时，由领域函数派生生活状态；跨日使用已对齐补货日与当前日期",
+    "state_owner": "ShrineLifeRuntime.runInteraction / validateState",
+    "preserve": "对象、地点、摘要与来源、重复消费、额外改写拒绝；原精确生活结果提交兼容；UI生活操作、祭典、schema、初始和其余四模块",
+    "inputs": "现有生活互动事件及上一状态；无新字段、事件或宿主API",
+    "outputs": "合法时派生生活状态；非法时保留原有拒绝与回滚"
+  },
+  "scope": {
+    "worldbook_entry_changes": [],
+    "runtime_module": "mvu",
+    "historical_modules": "immutable",
+    "source_operation": "changes.json guarded old/new anchor"
+  },
+  "expected": [
+    "releases/1.49.17/{plan,changes,mvu,card-source,manifest,REVIEW,VALIDATION}",
+    "tools/fix_life_interactions.py",
+    "tests/life-interaction-events.test.cjs",
+    "PROJECT_STATE.md"
+  ],
+  "forbidden": [
+    "历史版本修改",
+    "关系守卫F02",
+    "主线故事F03",
+    "界面文案F04",
+    "记忆筛选F05",
+    "作者说明F06",
+    "美术、衣装ID、经济、宿主API、状态迁移"
+  ],
+  "budget": {
+    "semantic_runtime_changed_lines": 20,
+    "builder_lines": 80,
+    "test_lines": 190,
+    "workspace_files": 14,
+    "max_known_lines": 7000,
+    "reason": "单生活互动路径；新版本模块/卡源/清单为派生快照，另含预存未跟踪资源；全部仍纳入最终范围检查"
+  },
+  "baseline": "audit-1.49.16/probe-results.json 的3个事件单独追加反例及实际回滚；1.49.16已有回归通过",
+  "verification": [
+    "旧版失败而新版通过的实际更新处理器",
+    "点灯/熄灯/收起/桌面和随行餐点/祭典全矩阵",
+    "未知ID、错误地点、重复消费、非法类型/JSON/来源和夹带字段拒绝",
+    "跨日补货、祭典日期；无状态变更的空更新",
+    "五章完整/基础经济、商店/衣装/EJS和开场模拟回归",
+    "唯一守护替换逆向对比；schema/初始/配置/其余四模块/世界书逐字不变"
+  ],
+  "rollback": "仅新版本输出；锚点或哈希漂移即停；旧1.49.16保留",
+  "deferred": [
+    "F02—F06",
+    "真实酒馆/模型/Android验收"
+  ],
+  "packaging": "本轮仅源码修复；未请求新成卡",
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "code-quality-workflow",
+      "sillytavern-card-pipeline"
+    ],
+    "documents": [
+      "ST-A0",
+      "ST-A2",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "candidates": []
+  }
+}
