@@ -1,0 +1,26 @@
+{
+  "release": "1.49.22",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/package-1.49.22",
+  "package_commit": "e6225b640e120d4c660410f11df1656098412584",
+  "package_tree": "34fddbaa907ee50a385f84dec8d08b2f944487fb",
+  "local_package_commit": "95f4bb635b453192f9a8db471d32736be9aba1d2",
+  "tree_parity": "exact",
+  "verified_artifact_blobs": {
+    "mikage-shrine/cards/巴卫_御影神社_v1.49.22_六项审查修复版.json": "d0cc5b5954d1a9b8c505ec0dbc45c010121b8d5c",
+    "mikage-shrine/releases/1.49.22/POST_PACKAGE_REVIEW.md": "b2f33cb8b092c1c7ea1ce8bf78900c1a22d8b7df"
+  },
+  "artifact_sha256": "77dad81caef52c059ea36d39a9a78ce964fc20bb300193863267272fd4f08f1b",
+  "source_commit": "0e326ec41917797a87a90ed3cb00b3cd278813d5",
+  "status": "candidate_with_review_findings",
+  "real_host": "pending",
+  "scope_check": {
+    "full_default_scan": true,
+    "files_before_receipt": 12,
+    "known_lines_before_receipt": 2302,
+    "budget_files": 14,
+    "budget_known_lines": 5000,
+    "exit_code": 2,
+    "warnings": "three unchanged pre-existing binary/cache files have unknown churn; not staged"
+  }
+}
