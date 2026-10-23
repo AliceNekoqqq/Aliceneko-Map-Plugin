@@ -1,0 +1,17 @@
+{
+  "release": "1.49.20",
+  "gate": "source_iteration",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/display-truth-1.49.20",
+  "source_commit": "828b490b7cdb8adfc878b1e54dac06dade616602",
+  "source_tree": "e67e85a5b289dcb7ea39cf0b718fec7deff7bdeb",
+  "local_source_commit": "30a18ac93f971dd9c54443e46237b7e8b8fe7fa1",
+  "remote_source_tree_matches_local": true,
+  "verified_panels_git_blob": "5a271db84028ca9d8cccb6b5dea4272dcd80ab84",
+  "import_card": "still1.49.16; F01-F04 require explicit packaging",
+  "real_host": "pending",
+  "remaining_findings": [
+    "F05",
+    "F06"
+  ]
+}
