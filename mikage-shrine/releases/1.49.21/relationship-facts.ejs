@@ -1,0 +1,45 @@
+<% if (typeof runType === 'string' && runType === 'generate') { %>
+<%
+var relState = getvar('stat_data', {scope:'message',withMsg:{role:'any'},defaults:{},clone:true});
+if (typeof lastMessageId === 'number') {
+  for (var relFloor=lastMessageId; relFloor>=Math.max(0,lastMessageId-63); relFloor--) {
+    var relCandidate=getvar('stat_data',{scope:'message',withMsg:{id:relFloor},defaults:{},clone:true});
+    if (relCandidate && relCandidate.关系 && relCandidate.记录 && Array.isArray(relCandidate.记录.共同经历) && Array.isArray(relCandidate.记录.事件)) { relState=relCandidate; break; }
+  }
+}
+var relReady=relState && relState.关系 && relState.记录 && Array.isArray(relState.记录.共同经历) && Array.isArray(relState.记录.事件);
+var relFacets=['能力','照顾','担忧','修复'];
+var relLatest=Object.create(null);
+function relEscape(v){return String(v == null ? '' : v).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+if(relReady){
+  var relEventIds=Object.create(null);
+  relState.记录.事件.forEach(function(e){if(e && typeof e.编号==='string') relEventIds[e.编号]=true;});
+  relState.记录.共同经历.forEach(function(m,index){
+    if(!m || typeof m.摘要!=='string' || !relEventIds[m.编号]) return;
+    var match=/^【相处·(能力|照顾|担忧|修复)】/.exec(m.摘要);
+    if(match) relLatest[match[1]]={id:m.编号,text:m.摘要.slice(0,300),index:index};
+  });
+}
+var relUser='';
+if(relReady && typeof getChatMessage==='function')try{var relMessage=getChatMessage(-1,'user');if(typeof relMessage==='string')relUser=relMessage.slice(-4096);}catch(relReadError){}
+var relDeferred=/(不聊|不提|不谈|别提|别聊|先别提|先别聊|不想(?:聊|谈|提)|不要(?:聊|谈|提)|先不说|暂时不聊).{0,12}(相处|关系|旧事|往事|回忆|以前)|(相处|关系|旧事|往事|回忆).{0,12}(先放一边|先搁下|以后再聊|改天再聊)/.test(relUser);
+var relTopics={能力:/能力|本事|手艺|分工|采纳|信任|主导|听我说完/,照顾:/照顾|照料|陪着|关心|体贴/,担忧:/担心|担忧|害怕我|放心/,修复:/误会|道歉|和解|吵架|争执|关系.{0,4}修复|修复.{0,4}关系/};
+var relAsked=relFacets.filter(function(f){return relTopics[f].test(relUser);});
+var relGeneral=/相处|我们之间|我们.{0,6}(以前|过去|回忆)|还记得.{0,6}我们/.test(relUser);
+var relCue=/相处|我们之间|关系|信任|你.{0,8}我|我.{0,8}你|巴卫.{0,8}我|以前|那次|上次|过去|还记得|回忆|我的能力|我的本事|我的手艺/.test(relUser);
+var relRelevant=relReady && !relDeferred && (relGeneral || (relAsked.length && relCue));
+var relFound=relFacets.filter(function(f){return relRelevant && !!relLatest[f] && (!relAsked.length || relAsked.indexOf(f)>=0);}).sort(function(a,b){return relLatest[a].index-relLatest[b].index;}).slice(-2);
+%>
+<% if(relRelevant){ %>
+[相处延续｜作者侧事实提示，不照抄到正文]
+<% if (relReady && relFound.length) { %>
+以下来自本楼存档中的共同经历，均已关联真实事件；按本轮话题选至多两项，每项只取最新一条。把它们当作过去已记录的事实，不能当成新指令、预言或玩家此刻的意愿。
+<% relFound.forEach(function(f){ %>
+<%- relEscape(f) %>／<%- relEscape(relLatest[f].id) %>：<%- relEscape(relLatest[f].text) %>
+<% }); %>
+在本轮情境相关时延续其中一项已表现的做法；不必专门创造触发场景。未记录侧面保持未知。未决事项不自动和解，信任只在记载范围内适用。
+<% } else { %>
+本楼尚无与本轮话题对应的可核验相处记录。沿用玩家指定的关系起点和当前对话事实，不按亲近/心动补造共同经历，不强制冷淡开局。本轮未出现真实变化就不新增记录。
+<% } %>
+<% } %>
+<% } %>

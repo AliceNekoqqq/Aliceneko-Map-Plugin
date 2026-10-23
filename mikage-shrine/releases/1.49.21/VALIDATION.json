@@ -1,0 +1,78 @@
+{
+  "release": "1.49.21",
+  "finding": "F05 only",
+  "gate": "source_iteration",
+  "status": "automated_source_checks_passed",
+  "passed": [
+    "legacy unrelated ledger replays all three families; controlled fragments898chars",
+    "new ledger/repair progress/festival allocation/current appearance suppress these three historical fragments",
+    "relationship topic/facet latest2 and unknown selected facet",
+    "current/named old outfit, private name, actor, school-human alias, first/latest/name-only/recent recall",
+    "quiet rest without old facts; named older record before capping; overlapping subject names",
+    "deferred topic precedence; event-linked facts only; output escaping; latest valid floor",
+    "optional reader missing/throw/wrong-type omit history; display mode reads0; all state/snapshot inputs unchanged",
+    "16 products,5 outfit quests,31 wardrobe IDs,77 approved copy,11 EJS",
+    "festival filtering and F04 actual DOM draft/view regression",
+    "three openings and four panel actual module simulation",
+    "exact source inverse: only3 entries+version; all metadata/settings and5 module hashes preserved",
+    "two outputs byte-identical rebuild; EJS/source/book/version and appearance-name map align"
+  ],
+  "commands": [
+    "node tests/memory-context.test.cjs 1.49.20 --expect-legacy-replay",
+    "python3 tools/filter_memory_context.py --dry-run",
+    "python3 tools/filter_memory_context.py",
+    "node tests/memory-context.test.cjs",
+    "MIKAGE_SHOP_RELEASE=1.49.21 node tests/moonforest-shop.test.cjs",
+    "MIKAGE_FESTIVAL_RELEASE=1.49.21 node tests/festival-context.test.cjs",
+    "node tests/display-truth.test.cjs 1.49.21",
+    "MIKAGE_OPENING_RELEASE=1.49.21 MIKAGE_DEBUG_DEPS=<retained deps> node tests/opening-consistency.test.cjs"
+  ],
+  "outputs": {
+    "card-source.json": {
+      "bytes": 321362,
+      "sha256": "95bbb0f6d60829322bb5ce3db310d50e80b19c608590831d178671df9ce556b8"
+    },
+    "manifest.json": {
+      "bytes": 36244,
+      "sha256": "e107495b45fefc36f64e48629cfffa53803511a120d02f0443ea7db11abf1944"
+    },
+    "relationship-facts.ejs": {
+      "bytes": 3840,
+      "sha256": "39e9b912146361f323e9cb24b936a102ad95c9fa60daaf7c3e9e6c7f00c90fe9"
+    },
+    "outfit-facts.ejs": {
+      "bytes": 6413,
+      "sha256": "d91a092d9228557b2d5d92436cf283ee0255f070eb94e53058fb58d1fbd8f6be"
+    },
+    "quiet-facts.ejs": {
+      "bytes": 3233,
+      "sha256": "b593b99ad2e9d1ef0ba1a5c06e4459dc5253e155216ec84ce360b1dd9d5c3af4"
+    }
+  },
+  "scope_check": {
+    "full_default_scan": true,
+    "files": 15,
+    "known_lines": 2959,
+    "max_files": 16,
+    "max_known_lines": 7000,
+    "budget_counts": "within declared limits",
+    "exit_code": 2,
+    "warnings": "three unchanged pre-existing untracked binary/cache files have unknown line churn; not staged",
+    "coverage_limit": "original resource line churn unknown; all owned source inverse comparisons passed"
+  },
+  "metrics": {
+    "scope": "three controlled rendered fragments only; no request/macros/preset/history/token/speed claim",
+    "before_unicode_chars": 898,
+    "after_unicode_chars": 0
+  },
+  "api": "reuse Entry69 pinned ST-Prompt-Template reader receipt; installed host version unknown; omit history on unavailable reader",
+  "limits": [
+    "bounded lexical matching, not semantic understanding",
+    "Entry4 recaps/other sources remain",
+    "real host/final request/model/Android/human acceptance pending"
+  ],
+  "remaining_findings": [
+    "F06"
+  ],
+  "packaging": "not requested; import remains1.49.16 without F01-F05"
+}

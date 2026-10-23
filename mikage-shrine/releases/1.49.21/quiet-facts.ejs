@@ -1,0 +1,30 @@
+<% if(typeof runType==='string' && runType==='generate'){ %>
+<%
+var quietState=getvar('stat_data',{scope:'message',withMsg:{role:'any'},defaults:{},clone:true});
+if(typeof lastMessageId==='number')for(var quietFloor=lastMessageId;quietFloor>=Math.max(0,lastMessageId-63);quietFloor--){var quietCandidate=getvar('stat_data',{scope:'message',withMsg:{id:quietFloor},defaults:{},clone:true});if(quietCandidate && quietCandidate.环境 && quietCandidate.地图 && quietCandidate.记录 && quietCandidate.玩家){quietState=quietCandidate;break;}}
+function quietMemories(state){
+ const record=state && state.记录||{},ids=Object.create(null);
+ (Array.isArray(record.事件)?record.事件:[]).forEach(function(e){if(e && typeof e.编号==='string')ids[e.编号]=true;});
+ return (Array.isArray(record.共同经历)?record.共同经历:[]).filter(function(m){return m && typeof m.摘要==='string' && /^【日常片刻·[^·】]{1,40}】/.test(m.摘要) && ids[m.编号];}).map(function(m){return {event:m.编号,text:m.摘要.slice(0,260),subject:/^【日常片刻·([^·】]{1,40})】/.exec(m.摘要)[1]};});
+}
+function quietEscape(v){return String(v==null?'':v).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+var quietUser='';
+if(quietState && typeof getChatMessage==='function')try{var quietMessage=getChatMessage(-1,'user');if(typeof quietMessage==='string')quietUser=quietMessage.slice(-4096);}catch(quietReadError){}
+var quietDeferred=/(不聊|不提|不谈|别提|别聊|先别提|先别聊|不想(?:聊|谈|提)|不要(?:聊|谈|提)|先不说).{0,12}(日常|片刻|旧事|往事|回忆|以前)|(旧事|往事|回忆).{0,12}(先放一边|先搁下|以后再聊|改天再聊)/.test(quietUser);
+var quietTopic=/歇|休息|安静|喝茶|闲聊|吹风|听雨|坐一会|日常|小片刻/.test(quietUser);
+var quietRecall=/记得|回忆|那次|上次|以前|旧事|往事|曾经/.test(quietUser);
+var quietAll=quietMemories(quietState);
+var quietNamed=quietAll.filter(function(m){return m.subject.length>=2&&quietUser.indexOf(m.subject)>=0;}).map(function(m){return m.subject;});
+quietNamed=quietNamed.filter(function(name){return !quietNamed.some(function(other){return other!==name&&other.length>name.length&&other.indexOf(name)>=0;});});
+var quietRelevant=!!quietState && !quietDeferred && (quietTopic||quietNamed.length);
+var quietKnown=quietRelevant && quietRecall?quietAll.filter(function(m){return !quietNamed.length||quietNamed.indexOf(m.subject)>=0;}).slice(-2):[];
+%>
+<% if(quietRelevant){ %>
+[平静日常的叙事空间｜作者侧规则]
+若玩家当前想歇一会儿、闲聊或安静相处，优先回应当下，不用新委托、来客、祭典或回忆抢走场景。只写眼前一两个细节，允许不追问、不选项、不发生持久状态变化。不替玩家行动，不让巴卫瞬移。以下旧记录不是本轮自动事件，不必回提。
+<% quietKnown.slice(-2).forEach(function(m){ %>
+已记录小片刻：<%- quietEscape(m.text) %>（<%- quietEscape(m.event) %>）。
+<% }); %>
+界面话头与未发送草稿保持为意向，持久状态更新沿变量协议处理。当前有玩家主动进行的委托或对话时，以其选择延续场景。
+<% } %>
+<% } %>

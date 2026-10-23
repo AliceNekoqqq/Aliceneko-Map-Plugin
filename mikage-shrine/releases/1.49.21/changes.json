@@ -1,0 +1,23 @@
+{
+  "base_source_sha256": "1be16b5863b8d10a243a206fab77633e5adba79992934dc334556bb708a83d05",
+  "operations": [
+    {
+      "entry_id": 64,
+      "old_sha256": "7d5e877439b319ffcccaab1901f2adea9387431cf2074559d0c5c7391689a7a4",
+      "source": "relationship-facts.ejs",
+      "new_sha256": "39e9b912146361f323e9cb24b936a102ad95c9fa60daaf7c3e9e6c7f00c90fe9"
+    },
+    {
+      "entry_id": 71,
+      "old_sha256": "f365d3142d7d988610819e9fe38df5bb4f22363f617f4576be54b6e29735bc8f",
+      "source": "outfit-facts.ejs",
+      "new_sha256": "d91a092d9228557b2d5d92436cf283ee0255f070eb94e53058fb58d1fbd8f6be"
+    },
+    {
+      "entry_id": 73,
+      "old_sha256": "59c58ad9a3778a682ca0309c4f1029b91e1cec559328488e928a964a2d88028d",
+      "source": "quiet-facts.ejs",
+      "new_sha256": "b593b99ad2e9d1ef0ba1a5c06e4459dc5253e155216ec84ce360b1dd9d5c3af4"
+    }
+  ]
+}

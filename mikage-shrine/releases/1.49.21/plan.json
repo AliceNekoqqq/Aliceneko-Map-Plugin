@@ -1,0 +1,82 @@
+{
+  "base": "1.49.20",
+  "version": "1.49.21",
+  "gate": "source_iteration",
+  "finding": "F05 only",
+  "authorization": "用户在第5项记忆筛选交接后回复继续吧，沿已审查F05进行最小投影修复",
+  "structural_decision": "Local Fix",
+  "execution_decision": "Local Fix Only",
+  "evidence": "Entry64/71/73在查账或任务话题仍投影相处四侧面、当前衣装多条旧事和日常片刻",
+  "behavior_contract": {
+    "change": "只读EJS按最近玩家话题选择相关记忆：相处至多2侧面，衣装至多2身份各首/末2条，日常至多2条；明确暂缓优先",
+    "preserve": "全量持久记录/初始/schema/五模块/写入与事件编号协议/加载设置/其他世界书正文；当前穿着仍由Entry77负责",
+    "reader": "复用Entry69已核对的可选ST-Prompt-Template getChatMessage(-1,user)，缺失/异常/错误类型时不投影旧记忆；不回显或执行玩家文本",
+    "selection": "衣装可按既有显示名称/私人纪念名查询已记旧衣装，名字映射由Entry77现有外观目录派生；日常按标签先匹配再限数，较长重叠标签优先；相处每侧面沿最新记录",
+    "ownership": "Entry64/71/73的三个ejs是本版唯一正文源；MVU及宿主仍维护存档；不新增状态或额外模型",
+    "limits": "有限词语筛选，不是语义分类器；Entry4回顾与其他条目保持，不宣称整个请求已无旧事"
+  },
+  "expected": [
+    "releases/1.49.21/{plan,changes,relationship-facts.ejs,outfit-facts.ejs,quiet-facts.ejs,card-source,manifest,REVIEW,VALIDATION,SOURCE_DELIVERY}",
+    "tools/filter_memory_context.py",
+    "tests/memory-context.test.cjs",
+    "PROJECT_STATE.md"
+  ],
+  "forbidden": [
+    "历史发布修改",
+    "Entry69/77及其他条目正文",
+    "五模块、schema/初始/记忆写入/编号或迁移",
+    "31衣装ID/77审定文案/美术",
+    "F06作者说明与打包"
+  ],
+  "budget": {
+    "maintained_ejs_changed_lines": 200,
+    "builder_lines": 95,
+    "test_lines": 180,
+    "workspace_files": 16,
+    "max_known_lines": 7000,
+    "reason": "同一只读记忆投影路径的三个现有入口；新版本派生快照与3个原有未跟踪资源计入"
+  },
+  "baseline": "专项先渲染1.49.20，在不相关查账话题复现三类旧记忆仍全部输出",
+  "verification": [
+    "最新有效楼/事件关联/转义/显示模式/所有输入不变",
+    "相处分类/近期2侧面/较早分类仍可问/暂缓/未记录保持未知",
+    "衣装当前与点名非当前/纪念名/双校服别名/首记和最新/名称问题不带旧事/最近回提",
+    "日常安静不带旧事、点名旧标签超原窗口与重叠标签/暂缓",
+    "可选消息接口缺失/异常/错误类型，UTF8/JSON/EJS语法",
+    "3正文来源与条目逐字、旧源精确重建所有其他字段、五模块哈希",
+    "祭典、商店/衣装/11EJS、开场与已有专项回归"
+  ],
+  "rollback": "仅新版本；输入或新正文哈希/绑定身份漂移即停；旧1.49.20完整保留",
+  "api_receipt": {
+    "reuse": "releases/1.49.16/REVIEW.md and VALIDATION.json",
+    "provider": "ST-Prompt-Template EJS, not Tavern Helper message API",
+    "pinned_revision": "ada54bb22e3dab0a07e473d383b4c2fe40bc6573",
+    "source_files": [
+      "src/function/chat.ts",
+      "src/function/ejs.ts"
+    ],
+    "target_version": "unknown; real host pending"
+  },
+  "guide_receipt": {
+    "snapshot": "2026-08-18",
+    "routes": [
+      "worldbook-design-and-writing",
+      "code-quality-workflow",
+      "sillytavern-card-pipeline"
+    ],
+    "documents": [
+      "ST-A0",
+      "ST-A2",
+      "ST-A3",
+      "ST-A4",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "candidates": []
+  },
+  "deferred": [
+    "F06",
+    "真实酒馆/最终请求/目标模型/Android验收"
+  ],
+  "packaging": "not requested; import remains1.49.16"
+}
