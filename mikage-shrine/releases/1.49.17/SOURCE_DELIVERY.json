@@ -1,0 +1,21 @@
+{
+  "release": "1.49.17",
+  "gate": "source_iteration",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/life-interaction-events-1.49.17",
+  "source_commit": "0bec1dcc1730b945081ff44ee615e566eb98cd70",
+  "source_tree": "5aa9b79960f3062b0e32091ccb9b84819bc87bd5",
+  "mvu_git_blob": "ffb6bc4bffec222b2ba29dddc202a16d4488b75b",
+  "local_source_commit": "6237e72",
+  "remote_source_tree_matches_local": true,
+  "mvu_remote_verified": true,
+  "import_card": "still 1.49.16; no packaging requested",
+  "real_host": "pending",
+  "remaining_findings": [
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06"
+  ]
+}
