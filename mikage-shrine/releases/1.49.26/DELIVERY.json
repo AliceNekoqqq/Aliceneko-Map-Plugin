@@ -1,0 +1,23 @@
+{
+  "source_commit": "a9b84793f6fa84bcbe4401b1dda5353b070efbd7",
+  "source_tree": "481f1c288ef9510c15a35dad337bf19af6be2e57",
+  "artifact": "巴卫_御影神社_v1.49.26_两项组件修复合入版.json",
+  "bytes": 345928,
+  "sha256": "0b76a111c3e8d1d6920a6acb57892eea650bd6c1a657f5e6727a39353ea334c7",
+  "included": [
+    "R23-01",
+    "R23-02"
+  ],
+  "pending": [
+    "R23-03",
+    "R23-04"
+  ],
+  "checks": [
+    "source inverse parity",
+    "13 portrait requests and cache/retry",
+    "18 panel async cases",
+    "3 opening/4 panel simulations",
+    "5 loader export/fallback/single start and 13 image hashes"
+  ],
+  "host": "pending"
+}
