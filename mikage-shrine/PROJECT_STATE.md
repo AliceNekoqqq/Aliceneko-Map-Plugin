@@ -1,3 +1,7 @@
+## 1.49.25 面板异步生成组件检查点（2026-10-24）
+
+修复R23-02：createChatMessages返回后及publish回调后核对disposed/epoch，过期操作停止后续自动生成，已提交选择保留。仅两条guard与版本变化，整模块逆向保持。旧版复现、新版18个实际act测试与语法通过；维护tools/fix_panel_generation_fence.py和tests/panel-generation-fence.test.cjs。panels SHA256 38631587aac1ea5f6b6875ee488d30d21132b9a2271111a860e4fe95af53f480。与1.49.24 tomoe修复均是待整合组件；卡源与导入卡仍1.49.23，未打包，实机待验。剩余R23-03事件跳号、R23-04发型冲突；V23-01仍待宿主证据。
+
 ## 1.49.24 互动立绘组件检查点（2026-10-24）
 
 承接审卡后“继续”，先修R23-01。releases/1.49.24/tomoe.mjs版本0.1.1，在图片src赋值前设置anonymous跨域请求；13套素材加载参数、缓存、失败重试、整模块逆向与语法检查通过。SHA256 49137f4c57aa38eba2f2d9c955b1d49e93a6c9ad5016a9fb7e8a6d72111ca34b。维护tools/fix_portrait_cors.py和tests/portrait-cors.test.cjs。旧模块保留，当前成卡/manifest仍1.49.23；新组件尚未合入卡源或打包，实际GPU与CDN CORS待验。后续R23-02聊天切换竞态、R23-03事件跳号、R23-04发型冲突待修。
