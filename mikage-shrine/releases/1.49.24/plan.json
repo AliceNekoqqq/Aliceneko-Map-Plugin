@@ -1,0 +1,15 @@
+{
+  "finding": "R23-01",
+  "base_card": "1.49.23",
+  "gate": "Local Fix Only",
+  "scope": "tomoe image CORS request before src assignment",
+  "base_module": "releases/1.29.1/tomoe.mjs",
+  "base_sha256": "49e55d881fddb5c6ec28d5365214c985a6c1ad4b18434e4b61337b5cd6d268e1",
+  "module_version": "0.1.1",
+  "budget": "one behavior statement, version metadata; new module/test/builder/plan plus checkpoint notes; no old release edits",
+  "preserve": "all asset URLs, outfit IDs, animation, state, old releases",
+  "baseline": "actual image loader crossOrigin=null",
+  "verification": "all configured image loads CORS-enabled before src, cache reuse, load failure retry, exact inverse module parity and syntax",
+  "stop": "any unrelated module difference or behavioral regression",
+  "delivery": "component source checkpoint only; card integration and real host pending"
+}
