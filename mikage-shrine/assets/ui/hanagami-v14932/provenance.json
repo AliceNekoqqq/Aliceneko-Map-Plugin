@@ -1,0 +1,41 @@
+{
+  "release": "1.49.32",
+  "license": "author commissioned original imagegen UI material for this project",
+  "assets": [
+    {
+      "id": "paper",
+      "path": "mikage-shrine/assets/ui/hanagami-v14932/paper.webp",
+      "bytes": 76932,
+      "sha256": "cbbd7207df77788a720986e7d007c1e55777ee443f54ca51d082e35f65a122c7",
+      "width": 1024,
+      "height": 1536,
+      "origin": "built-in imagegen; original2D watercolor UI asset; PNG encoded as WebP only",
+      "original_png_sha256": "85d57889e465670434d7b106dd825fd16b1d8fa3e860a2c817aab5e4eb4573c4"
+    },
+    {
+      "id": "icons",
+      "path": "mikage-shrine/assets/ui/hanagami-v14932/life-icons.webp",
+      "bytes": 288984,
+      "sha256": "79b456ec8221292c681a2def95499906b46307fb2217fbebcf2b46160a535e5f",
+      "width": 1774,
+      "height": 887,
+      "origin": "built-in imagegen; original2D watercolor UI asset; PNG encoded as WebP only",
+      "original_png_sha256": "d901edb23d074eabcb43050830ff6519bae28e2b2c3cf4712e937e8eda29ed53"
+    }
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 2,
+    "order": [
+      "decor",
+      "quiet",
+      "craft",
+      "garden",
+      "shop",
+      "album",
+      "strange",
+      "festival"
+    ]
+  },
+  "paper": "empty center; original readable text and semantic controls rendered on top"
+}
