@@ -1,5 +1,5 @@
 import { ARCHIVE_OWNER, DEFAULT_SETTINGS, fingerprint, normalizeSettings, stripControl, validateArchive, parseArchives, collectTasks, reconcileArchives, archiveText, makePrompt, summaryRequest, projectWorldbook } from './task-archive-core.mjs';
-export const VERSION='1.49.28';
+export const VERSION='1.49.31';
 export const SCRIPT_ID='archive';
 export function start(){
   const host=window.parent||window,doc=host.document;
@@ -15,6 +15,8 @@ export function start(){
   function live(s=scope,e=epoch){return !disposed&&s&&identity()===s&&scope===s&&epoch===e;}
   function loadSettings(){try{return normalizeSettings(JSON.parse(host.localStorage.getItem(SETTINGS_KEY)||'{}'));}catch{return {...DEFAULT_SETTINGS};}}
   settings=loadSettings();
+  // Font-face rules inside a shadow root are not registered by Chromium.
+  const archiveFontStyle=doc.createElement('style');archiveFontStyle.textContent=(ARCHIVE_STYLE.match(/@font-face\{[^}]+\}/g)||[]).join('\n');doc.head.append(archiveFontStyle);
   function readStore(){const raw=getVariables({type:'chat'})?.[NS];return raw&&raw.version===1?JSON.parse(JSON.stringify(raw)):{version:1,records:[],attempts:[]};}
   function saveStore(next,s=scope,e=epoch){if(!live(s,e))return false;updateVariablesWith(vars=>{if(!live(s,e))return vars;return {...vars,[NS]:next};},{type:'chat'});return live(s,e);}
   function tell(text){statusText=text;if(panel)draw();}
@@ -83,34 +85,50 @@ export function start(){
   function close(){if(!panel)return;panel.host.remove();panel=null;opener?.focus?.();}
   function element(tag,text,cls){const n=doc.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
   function button(text,fn){const b=element('button',text),s=scope,e=epoch;b.type='button';b.addEventListener('click',()=>Promise.resolve().then(()=>{if(s&&!live(s,e))throw Error('聊天已切换，请重新打开任务档案');return fn();}).catch(err=>tell(err.message||'操作未完成')));return b;}
-  function draw(){if(!panel)return;const root=panel.body;root.replaceChildren();
-    root.append(element('p','随正文归档 · 默认零次额外调用','intro'),element('p',statusText||'任务实际结案后保存；相关人物或地点出现时带回记忆。','status'));
+  function stateBadge(text,archived){const n=element('span',text,'badge');n.dataset.state=archived?'archived':'pending';return n;}
+  function rememberView(){
+    const nodes=[...panel.body.querySelectorAll('[data-view-key]')];
+    return {scroll:panel.dialog.scrollTop,focus:panel.host.shadowRoot.activeElement?.dataset.viewKey,
+      nodes:nodes.map(n=>({key:n.dataset.viewKey,revision:n.dataset.viewRevision||'',value:n.value,checked:n.checked,open:n.open}))};
+  }
+  function restoreView(saved){
+    const nodes=[...panel.body.querySelectorAll('[data-view-key]')];
+    for(const n of nodes){const old=saved.nodes.find(x=>x.key===n.dataset.viewKey&&x.revision===(n.dataset.viewRevision||''));if(!old)continue;
+      if(n.tagName==='DETAILS')n.open=old.open;else if(n.type==='checkbox')n.checked=old.checked;else if('value' in n)n.value=old.value;
+    }
+    nodes.find(n=>n.dataset.viewKey===saved.focus)?.focus({preventScroll:true});panel.dialog.scrollTop=saved.scroll;
+  }
+  function viewKey(node,key,revision=''){node.dataset.viewKey=key;node.dataset.viewRevision=revision;return node;}
+  function draw(){if(!panel)return;const saved=rememberView(),root=panel.body;root.replaceChildren();
+    root.append(element('p',settings.mode==='inline'?'随正文归档 · 零额外调用':'独立API归档 · 整理每批调用一次','intro'),element('p',statusText||'任务实际结案后保存；相关人物或地点出现时带回记忆。','status'));
     const tools=element('div',undefined,'tools');tools.append(button('刷新记录',()=>enqueue()),button('整理选中任务 · 调用1次',()=>{const ids=[...root.querySelectorAll('[data-task]:checked')].map(x=>x.dataset.task);return summarize(ids);}));root.append(tools);
-    const list=element('section');
+    root.append(element('p',status.active.length+' 项已归档 · '+status.pending.length+' 项待补档','archive-count'));
+    const list=element('section',undefined,'archive-list');
     for(const task of view.tasks){const record=status.active.find(r=>r.key===task.key),card=element('article');const heading=element('div',undefined,'row');
-      if(task.recordable){const check=element('input');check.type='checkbox';check.dataset.task=task.id;check.setAttribute('aria-label','选择'+task.id);heading.append(check);}
-      heading.append(element('strong',task.id+' · '+task.person),element('span',record?'已归档':task.closed?(task.recordable?'待补档':'缺少完整起止记录'):task.paused?'已暂停':'记录中','badge'));card.append(heading,element('p',task.wish));
-      if(record){const details=element('details'),sum=element('summary','查看与修改档案');details.append(sum);
+      if(task.recordable){const check=element('input');check.type='checkbox';check.dataset.task=task.id;viewKey(check,'select:'+task.key);check.setAttribute('aria-label','选择'+task.id);heading.append(check);}
+      heading.append(element('strong',task.id+' · '+task.person),stateBadge(record?'已归档':task.closed?(task.recordable?'待补档':'缺少完整起止记录'):task.paused?'已暂停':'记录中',!!record));card.append(heading,element('p',task.wish));
+      if(record){const details=viewKey(element('details'),'record:'+task.key),sum=element('summary','查看与修改档案');details.append(sum);
         const fields={choice:'最终选择',result:'实际结果',effects:'持续影响（每行一项）',unresolved:'未决事项（每行一项）',known_by:'知情人物（每行一项）'},inputs={};
-        for(const [key,label] of Object.entries(fields)){const lab=element('label',label),input=element('textarea');input.value=Array.isArray(record.data[key])?record.data[key].join('\n'):record.data[key];input.rows=2;lab.append(input);inputs[key]=input;details.append(lab);}
+        for(const [key,label] of Object.entries(fields)){const lab=element('label',label),input=element('textarea');input.value=Array.isArray(record.data[key])?record.data[key].join('\n'):record.data[key];input.rows=2;viewKey(input,'record:'+task.key+':'+key,fingerprint(JSON.stringify(record.data)));lab.append(input);inputs[key]=input;details.append(lab);}
         details.append(button('保存修改',async()=>{const data={...record.data};for(const [key,input]of Object.entries(inputs))data[key]=Array.isArray(data[key])?input.value.split('\n').map(x=>x.trim()).filter(Boolean):input.value;validateArchive(data,settings.summaryLimit);
           const fresh=collectTasks(readRows());if(!fresh.tasks.some(t=>t.key===task.key))throw Error('任务原文已变化，请刷新后修改');
-          const st=readStore(),index=st.records.findIndex(x=>x.key===task.key);if(index<0)throw Error('档案已变化，请刷新');st.records[index]={...record,data,source:'manual',marker:undefined};saveStore(st);tell('修改已保存');await scan({allowAuto:false});}));card.append(details);}
+          const st=readStore(),index=st.records.findIndex(x=>x.key===task.key);if(index<0)throw Error('档案已变化，请刷新');st.records[index]={...record,data,source:'manual',marker:undefined};saveStore(st);tell('修改已保存');await scan({allowAuto:false});}));details.lastElementChild.classList.add('save-record');card.append(details);}
       if(task.closed)card.append(element('small',task.evidence.length+'条相关对话 · '+(task.recordable?'原文可追溯':'早期记录不足，保留现有结案事实')));list.append(card);}
     if(!view.tasks.length)list.append(element('p','接取任务后，这里会显示记录进度。'));root.append(list);
-    const config=element('details');config.open=panel.configOpen;config.addEventListener('toggle',()=>{if(panel)panel.configOpen=config.open;});config.append(element('summary','归档方式与API设置'));
-    const form=element('div'),mode=element('select');for(const [value,name]of [['inline','随正文生成（零额外调用）'],['independent','使用独立API整理']]){const o=element('option',name);o.value=value;mode.append(o);}mode.value=settings.mode;
+    const config=viewKey(element('details',undefined,'archive-config'),'config');config.open=panel.configOpen;config.addEventListener('toggle',()=>{if(panel)panel.configOpen=config.open;});config.append(element('summary','归档方式与API设置'));
+    const form=element('div'),mode=element('select');for(const [value,name]of [['inline','随正文生成（零额外调用）'],['independent','使用独立API整理']]){const o=element('option',name);o.value=value;mode.append(o);}mode.value=settings.mode;viewKey(mode,'setting:mode',fingerprint(JSON.stringify(settings)));
     const modeLabel=element('label','归档方式');modeLabel.append(mode);form.append(modeLabel);
-    const auto=element('input');auto.type='checkbox';auto.checked=settings.auto;const autoLabel=element('label','独立模式下，结案后自动整理（每批调用一次）');autoLabel.prepend(auto);form.append(autoLabel);
-    const inputs={};for(const [key,label,type]of [['url','独立API地址','url'],['key','API Key（保存在本机设置）','password'],['model','模型名称','text'],['summaryLimit','每份摘要字数上限','number'],['inputLimit','每批原文字数上限','number'],['maxTokens','额外整理回复token上限','number']]){const l=element('label',label),i=element('input');i.type=type;i.value=String(settings[key]);i.autocomplete='off';l.append(i);form.append(l);inputs[key]=i;}
+    const auto=element('input');auto.type='checkbox';auto.checked=settings.auto;viewKey(auto,'setting:auto',fingerprint(JSON.stringify(settings)));const autoLabel=element('label','独立模式下，结案后自动整理（每批调用一次）');autoLabel.prepend(auto);form.append(autoLabel);
+    const inputs={};for(const [key,label,type]of [['url','独立API地址','url'],['key','API Key（保存在本机设置）','password'],['model','模型名称','text'],['summaryLimit','每份摘要字数上限','number'],['inputLimit','每批原文字数上限','number'],['maxTokens','额外整理回复token上限','number']]){const l=element('label',label),i=element('input');i.type=type;i.value=String(settings[key]);i.autocomplete='off';viewKey(i,'setting:'+key,fingerprint(JSON.stringify(settings)));l.append(i);form.append(l);inputs[key]=i;}
     form.append(element('p','保存设置、刷新、查看和修改均不调用模型。独立整理每批最多五项；失败保留原文，手动重试。专用世界书保存档案副本，当前分支由本模块筛选后带入正文。','intro'));
     form.append(button('保存设置',()=>{const next=normalizeSettings({...settings,mode:mode.value,auto:auto.checked,...Object.fromEntries(Object.entries(inputs).map(([key,i])=>[key,i.value]))});host.localStorage.setItem(SETTINGS_KEY,JSON.stringify(next));settings=next;installPrompt();tell('设置已保存；本次未调用API');}));
+    form.lastElementChild.classList.add('save-settings');
     form.append(button('测试独立API · 调用1次',async()=>{if(summarizing)throw Error('请等当前整理结束');const s=scope,e=epoch,c=normalizeSettings({...settings,...Object.fromEntries(Object.entries(inputs).map(([key,i])=>[key,i.value]))});if(!c.url||!c.model)throw Error('请填写API地址和模型');if(typeof generateRaw!=='function')throw Error('独立生成接口不可用');
       summarizing=true;try{await generateRaw({should_stream:false,should_silence:true,max_chat_history:0,ordered_prompts:[{role:'user',content:'Reply OK.'}],custom_api:{apiurl:c.url,key:c.key,model:c.model,source:'openai',max_tokens:16}});if(live(s,e))tell('API连接测试完成');}catch{if(live(s,e))tell('连接未成功，请核对地址、Key和模型');}finally{summarizing=false;}}));
-    config.append(form);root.append(config);
+    config.append(form);root.append(config);restoreView(saved);
   }
   function open(){if(disposed)return;if(!scope)scope=identity();if(!scope){statusText='请先打开巴卫聊天';return;}opener=doc.activeElement;close();const mount=element('div');mount.style.cssText='position:fixed;inset:0;z-index:2147483001';const shadow=mount.attachShadow({mode:'open'}),style=element('style');
-    style.textContent=':host{font:15px/1.6 system-ui;color:#44372e}*{box-sizing:border-box}.shade{position:absolute;inset:0;background:#15120db3;display:grid;place-items:center;padding:12px}.dialog{background:#fff9ee;border:1px solid #b79966;border-radius:14px;width:min(780px,100%);max-height:92dvh;overflow:auto;box-shadow:0 18px 70px #0005}header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:#eee1c9;position:sticky;top:0;z-index:1}h2{margin:0;font-size:20px}.body{padding:16px}button,select,input,textarea{font:inherit;color:inherit}button{background:#f4e5c7;border:1px solid #ac8d5d;border-radius:8px;padding:8px 12px;min-height:44px;cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #986b45;outline-offset:2px}button:hover{background:#ead2a8}.tools,.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.intro,small{font-size:13px;color:#756655}.status{background:#f0e7d5;padding:10px;border-radius:8px}article{border-bottom:1px solid #dacdb8;padding:16px 0}article p{white-space:pre-wrap;overflow-wrap:anywhere}.badge{font-size:12px;background:#e7dcc8;border-radius:12px;padding:2px 8px}details{margin-top:14px}summary{cursor:pointer;min-height:44px;padding-top:8px}label{display:block;margin:12px 0}input:not([type=checkbox]),textarea,select{display:block;width:100%;background:#fffef9;border:1px solid #bbae98;border-radius:6px;padding:9px}textarea{resize:vertical}input[type=checkbox]{width:20px;height:20px;vertical-align:middle;margin-right:8px}@media(max-width:400px){.body{padding:12px}.tools button{width:100%}}';
+    style.textContent=ARCHIVE_STYLE;
     const shade=element('div',undefined,'shade'),dialog=element('div',undefined,'dialog');dialog.setAttribute('role','dialog');dialog.setAttribute('aria-modal','true');dialog.setAttribute('aria-label','任务档案');dialog.tabIndex=-1;const header=element('header');header.append(element('h2','任务档案'),button('关闭',close));const body=element('div',undefined,'body');dialog.append(header,body);shade.append(dialog);shadow.append(style,shade);doc.body.append(mount);panel={host:mount,body,dialog,configOpen:false};
     shade.addEventListener('click',e=>{if(e.target===shade)close();});draw();dialog.focus();void enqueue();
   }
@@ -123,6 +141,6 @@ export function start(){
   if(events.GENERATION_AFTER_COMMANDS)stops.push(eventOn(events.GENERATION_AFTER_COMMANDS,()=>scan({allowAuto:false,mirrorBook:false}).catch(()=>{clearPrompt();tell('本轮档案读取暂缓，正文可继续');})));
   host.addEventListener('mikage:mvu-message-replaced',schedule);host.addEventListener('mikage:mvu-status',schedule);
   if(typeof getButtonEvent==='function')stops.push(eventOn(getButtonEvent('任务档案'),open));
-  const api={version:VERSION,open,refresh:enqueue,inspect:()=>({scope,view,status,settings:{...settings,key:settings.key?'已设置':''},statusText,summarizing}),dispose(){if(disposed)return;disposed=true;epoch++;clearTimeout(timer);clearPrompt();close();launcher.remove();doc.removeEventListener('keydown',onKey,true);host.removeEventListener('mikage:mvu-message-replaced',schedule);host.removeEventListener('mikage:mvu-status',schedule);for(const sub of stops)sub?.stop?.();if(runId&&typeof stopGenerationById==='function')try{stopGenerationById(runId);}catch{}if(host.MikageTaskArchives===api)delete host.MikageTaskArchives;}};
+  const api={version:VERSION,open,refresh:enqueue,inspect:()=>({scope,view,status,settings:{...settings,key:settings.key?'已设置':''},statusText,summarizing}),dispose(){if(disposed)return;disposed=true;epoch++;clearTimeout(timer);clearPrompt();close();launcher.remove();archiveFontStyle.remove();doc.removeEventListener('keydown',onKey,true);host.removeEventListener('mikage:mvu-message-replaced',schedule);host.removeEventListener('mikage:mvu-status',schedule);for(const sub of stops)sub?.stop?.();if(runId&&typeof stopGenerationById==='function')try{stopGenerationById(runId);}catch{}if(host.MikageTaskArchives===api)delete host.MikageTaskArchives;}};
   host.MikageTaskArchives=api;window.addEventListener('pagehide',api.dispose,{once:true});void enqueue();return api;
 }

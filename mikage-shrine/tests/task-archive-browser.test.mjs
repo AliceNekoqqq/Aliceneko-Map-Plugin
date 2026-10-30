@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import fs from 'node:fs';
 import http from 'node:http';
 import assert from 'node:assert/strict';
@@ -5,11 +6,12 @@ import {createRequire} from 'node:module';
 import {rows,data,base,marker} from './task-archive.test.mjs';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright');
-const moduleCode=fs.readFileSync(new URL('../releases/1.49.28/archive.mjs',import.meta.url),'utf8');
+const moduleCode=fs.readFileSync(new URL('../releases/'+(process.env.MIKAGE_ARCHIVE_RELEASE||'1.49.28')+'/archive.mjs',import.meta.url),'utf8');
 const server=http.createServer((req,res)=>{if(req.url==='/archive.mjs'){res.setHeader('Content-Type','text/javascript');res.end(moduleCode);}else{res.setHeader('Content-Type','text/html');res.end('<!doctype html><html><body><button id="before">原页面</button></body></html>');}});
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.MIKAGE_CHROMIUM_EXECUTABLE?{executablePath:process.env.MIKAGE_CHROMIUM_EXECUTABLE}:{})});
 const page=await browser.newPage({viewport:{width:375,height:812}});
+if(process.env.MIKAGE_ASSET_CACHE)await page.route('https://**/*',async route=>{const url=route.request().url(),key=createHash('sha256').update(url).digest('hex');try{await route.fulfill({body:fs.readFileSync(process.env.MIKAGE_ASSET_CACHE+'/'+key),contentType:url.endsWith('.woff2')?'font/woff2':url.endsWith('.ttf')?'font/ttf':'image/webp',headers:{'access-control-allow-origin':'*'}});}catch{await route.abort();}});
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 try{
  await page.goto('http://127.0.0.1:'+server.address().port);
@@ -41,6 +43,7 @@ try{
  await page.locator('summary').filter({hasText:'查看与修改档案'}).click();
  assert.equal(await page.getByRole('button',{name:'保存修改',exact:true}).count(),1);
  const resultField=page.locator('label').filter({hasText:'实际结果'}).locator('textarea');await resultField.fill('作者确认：新路牌已安装，小狸留在旧窝。');
+ if(process.env.MIKAGE_ARCHIVE_RELEASE==='1.49.31'){await page.evaluate(()=>MikageTaskArchives.refresh());assert.equal(await resultField.inputValue(),'作者确认：新路牌已安装，小狸留在旧窝。');assert(await resultField.isVisible());}
  await page.getByRole('button',{name:'保存修改',exact:true}).click();
  await page.waitForFunction(()=>MikageTaskArchives.inspect().status.active[0]?.source==='manual');assert.equal(await page.evaluate(()=>test.calls.length),0);
  for(const width of [320,375,1000]){await page.setViewportSize({width,height:812});assert(await page.locator('.dialog').evaluate(n=>n.scrollWidth<=n.clientWidth+1));}
@@ -49,6 +52,7 @@ try{
  await page.locator('label').filter({hasText:'独立API地址'}).locator('input').fill('https://example.test/v1/chat/completions');
  await page.locator('label').filter({hasText:'API Key'}).locator('input').fill('LOCAL-TEST-KEY');
  await page.locator('label').filter({hasText:'模型名称'}).locator('input').fill('test-small');
+ if(process.env.MIKAGE_ARCHIVE_RELEASE==='1.49.31'){await page.evaluate(()=>MikageTaskArchives.refresh());assert.equal(await page.locator('label').filter({hasText:'模型名称'}).locator('input').inputValue(),'test-small');assert.equal(await page.locator('label').filter({hasText:'归档方式'}).locator('select').inputValue(),'independent');}
  await page.getByRole('button',{name:'保存设置',exact:true}).click();
  assert.equal(await page.evaluate(()=>test.calls.length),0);
  assert(!JSON.stringify(await page.evaluate(()=>({vars:test.chats.A.vars,books:test.books,inspect:MikageTaskArchives.inspect()}))).includes('LOCAL-TEST-KEY'));

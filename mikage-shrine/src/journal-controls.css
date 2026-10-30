@@ -1,0 +1,70 @@
+/* Life and connection pages share the adopted washi/plum journal palette. */
+body:is([data-view=life],[data-view=settings]){--panel-paper:#faf1e2;--panel-ink:#493542;--panel-plum:#603f54;--panel-line:#b58a62;background-color:#6b4936;color:var(--panel-ink)}
+body:is([data-view=life],[data-view=settings]) .experience-nav{background:#faf0e0;border-bottom:3px solid #b58a62;box-shadow:0 3px 10px #30202a20;padding:5px 10px;min-height:54px}
+body:is([data-view=life],[data-view=settings]) .nav-brand{color:#654652}
+body:is([data-view=life],[data-view=settings]) .nav-pages{display:flex;gap:4px}
+body:is([data-view=life],[data-view=settings]) .nav-pages button{color:#64474c;min-height:44px;background:transparent;border:1px solid transparent;border-radius:3px;padding:7px 13px;font:14px/1.6 'Mikage Panel','Mikage Panel Extended','Mikage Panel Base','Mikage Serif',serif}
+body:is([data-view=life],[data-view=settings]) .nav-pages button[aria-current=page]{background:#603f54;color:#fff1da;border-color:#a78165}
+#life-dialog,#settings-dialog,#life-dialog :is(button,input,select,textarea),#settings-dialog :is(button,input,select,textarea){font-family:'Mikage Panel','Mikage Panel Extended','Mikage Panel Base','Mikage Panel Roam','Mikage Serif','Noto Serif SC',serif;box-sizing:border-box}
+#life-dialog{--life-paper:#faf1e2;--life-ink:#493542;max-width:1080px;color:#493542;padding:0 16px 28px!important}
+#life-dialog :is(button,input,select,textarea),#settings-dialog :is(button,input,select,textarea){touch-action:manipulation}
+#life-dialog :is(button,input,select,textarea,summary):focus-visible,#settings-dialog :is(button,input,select,textarea,summary):focus-visible{outline:3px solid #9f667f;outline-offset:2px}
+#life-dialog .life-desk-header{min-height:90px;margin:0 -16px 12px;padding:22px 64px 20px 22px;background-position:0 12%;border-bottom:3px solid #b58a62}
+#life-dialog .life-desk-header h2{font-size:clamp(22px,4vw,30px);letter-spacing:3px}
+#life-dialog .life-tabs{display:flex;flex-wrap:nowrap;gap:5px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;padding:5px 0 10px;margin-bottom:5px;scroll-padding-inline:10px}
+#life-dialog .life-tabs .life-button{flex:0 0 auto;min-height:44px;padding:8px 14px;background:#faf1e2;color:#674d50;border:1px solid #b58a62;border-radius:3px;box-shadow:none;font-size:13px;letter-spacing:0;white-space:nowrap}
+#life-dialog .life-tabs .life-button[aria-pressed=true]{color:#fff0dd;background:#603f54;border-color:#8e6579;box-shadow:none}
+#life-dialog #life-feedback:empty{display:none}
+#life-dialog #life-feedback{color:#493542;background:#faf1e2;border-left:3px solid #986275;padding:10px 12px;margin:0 0 10px;min-height:0}
+#life-dialog #life-feedback[data-state=error]{color:#8b302e}
+#life-dialog .life-desk-scene{border:5px double #b58a62;box-shadow:0 5px 16px #30202a30}
+#life-dialog .life-home-caption{margin:0;background:#faf1e2;color:#76594f;padding:10px 12px;border:1px solid #b58a62;border-top:0;font-size:12px;line-height:1.8}
+#life-dialog .life-home-entries{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+#life-dialog .life-home-entry{display:grid;grid-template-columns:86px minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;row-gap:4px;align-content:center;align-items:center;min-height:104px;padding:9px;background:#faf1e2;border:1px solid #b58a62;border-radius:3px;box-shadow:0 3px 8px #30202a20;text-align:left;color:#603f54;overflow:hidden}
+#life-dialog .life-home-entry .life-home-thumb{grid-row:1/3;width:86px;height:80px;aspect-ratio:auto;margin:0;border:1px solid #c4a27d}
+#life-dialog .life-home-entry strong{font-size:16px;letter-spacing:1px;margin:0;line-height:1.5}
+#life-dialog .life-home-entry small{font-size:12px;line-height:1.7;color:#806052}
+#life-dialog .life-home-entry:after{display:none}
+#life-dialog .life-context-wrap{margin-top:18px;background:#faf1e2;color:#73584e;border:1px solid #b58a62;border-left:3px solid #986275;padding:12px 14px;box-shadow:none}
+#life-dialog .life-context-wrap h3{color:#603f54;font-size:14px;margin:0 0 7px}
+#life-dialog #life-context{color:#73584e;font-size:13px;line-height:1.9}
+#life-dialog :is(.life-card,.life-decor-palette,.life-decor-inspector,.quiet-corner,.strange-notebook,.festival-journal,.life-festival-form){background:#faf1e2;border:1px solid #b58a62;border-radius:3px;color:#493542;padding:16px;box-shadow:0 3px 8px #30202a20;min-width:0}
+#life-dialog :is(.life-card,.life-decor-palette,.life-decor-inspector,.quiet-corner,.strange-notebook,.festival-journal) :is(h3,h4){color:#603f54}
+#life-dialog :is(.life-card,.life-decor-palette,.life-decor-inspector,.quiet-corner,.strange-notebook,.festival-journal) :is(p,small){color:#73584e;line-height:1.9;overflow-wrap:anywhere}
+#life-dialog :is(.life-note,.life-decor-hint){color:#f4e5cf;line-height:1.9}
+#life-dialog :is(.quiet-option,.strange-note,.festival-note){background:transparent;border:0;border-bottom:1px solid #d7bda1;border-radius:0;box-shadow:none;padding:12px 0;color:#493542;min-width:0}
+#life-dialog .life-decor-zones{gap:6px}
+#life-dialog .life-decor-zones button,#life-dialog .life-decor-item{background:#faf1e2;border:1px solid #b58a62;color:#694b50;border-radius:3px;min-height:44px}
+#life-dialog .life-decor-zones button[aria-pressed=true],#life-dialog .life-decor-item[aria-pressed=true]{border-color:#603f54;background:#ecdfdf;box-shadow:inset 0 -3px #986275;color:#603f54}
+#life-dialog .life-button,#life-dialog .life-decor-confirm,#life-dialog .life-decor-actions button{background:#603f54;border:1px solid #986275;border-radius:3px;color:#fff0dd;box-shadow:none;min-height:44px;padding:9px 12px;font-size:13px;line-height:1.7}
+#life-dialog :is(input,select,textarea){max-width:100%;min-width:0;background:#fffaf1;color:#493542;border:1px solid #bca084;border-radius:3px;min-height:44px;font-size:16px;padding:8px}
+#life-dialog .life-decor-layout{grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr)}
+#life-dialog .life-decor-inspector{margin-top:12px}
+#settings-dialog{max-width:820px;background:#faf1e2;color:#493542;border:5px double #b58a62;border-radius:4px;padding:0 22px 22px!important;box-shadow:0 12px 40px #25152155}
+#settings-dialog .dialog-header{position:relative;margin:0 -22px 16px;padding:22px 65px 20px 22px;background:#603f54;border-bottom:2px solid #b58a62;min-height:90px;color:#fff0dd;border-radius:0}
+#settings-dialog .header-copy{display:block;width:100%;max-width:none;min-width:0}
+#settings-dialog .dialog-header h2{font-size:26px;letter-spacing:3px;margin:0;color:#fff0dd}
+#settings-dialog .close-button{position:absolute;left:auto;bottom:auto;transform:none;margin:0;width:44px;height:44px;right:12px;top:16px;background:#fff0dd17;border:1px solid #c7a88c;color:#fff0dd}
+#settings-dialog .ema-settings-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px;font-size:13px;color:#76594f}
+#settings-dialog .ema-mode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;border:0;border-top:1px solid #cbb094;padding:12px 0 0;margin:0;min-width:0}
+#settings-dialog .ema-mode-grid legend{font-size:13px;padding-right:8px;color:#76594f}
+#settings-dialog .ema-mode-card{background:#fff9ef;border:1px solid #bea084;border-radius:3px;padding:13px;min-width:0;color:#493542;box-shadow:none;cursor:pointer}
+#settings-dialog .ema-mode-card:has(input:checked){border-color:#603f54;background:#ede0e2;box-shadow:inset 0 3px #603f54}
+#settings-dialog .ema-mode-card strong{color:#603f54;font-size:15px}
+#settings-dialog .ema-mode-card small{color:#76594f;font-size:12px;line-height:1.8;margin-top:7px}
+#settings-dialog input[type=radio]{accent-color:#603f54;min-width:20px;min-height:20px}
+#settings-dialog .ema-profile-editor{border:0;border-top:1px solid #cbb094;background:transparent;padding:16px 0 0;margin-top:16px;box-shadow:none;border-radius:0}
+#settings-dialog .ema-field{margin:0 0 16px;min-width:0}
+#settings-dialog .ema-field label{display:block;color:#603f54;font-size:14px;margin-bottom:7px}
+#settings-dialog :is(input:not([type=radio]),select){background:#fffaf1;color:#493542;border:1px solid #baa084;border-radius:3px;padding:10px;min-height:44px;width:100%;max-width:100%;min-width:0;font-size:16px}
+#settings-dialog .ema-input-action{display:flex;gap:7px;min-width:0}
+#settings-dialog .ema-input-action input{flex:1;width:0}
+#settings-dialog .ema-input-action button{flex-shrink:0}
+#settings-dialog :is(.ema-local-note,.ema-mode-description,.ema-field small){font-size:12px;color:#806454;line-height:1.9;overflow-wrap:anywhere}
+#settings-dialog .primary-button,#settings-dialog .secondary-button{min-height:44px;border:1px solid #b58a62;border-radius:3px;padding:9px 12px;font-size:13px;box-shadow:none;background:#fff5e5;color:#694b50}
+#settings-dialog .primary-button{background:#603f54;color:#fff0dd;border-color:#986275}
+#settings-dialog .ema-settings-footer{display:flex;gap:8px;flex-wrap:wrap;padding-top:16px;margin-top:16px;border-top:1px solid #cbb094;background:#faf1e2;position:static}
+#settings-dialog #ema-settings-feedback:not(:empty){border-left:3px solid #986275;background:#ede0e2;padding:10px;font-size:13px;line-height:1.8;color:#603f54}
+@media(max-width:700px){#life-dialog{padding:0 12px 22px!important}#life-dialog .life-desk-header{margin-left:-12px;margin-right:-12px}#life-dialog .life-home-entry{grid-template-columns:58px minmax(0,1fr);column-gap:8px;min-height:92px;padding:8px}#life-dialog .life-home-entry .life-home-thumb{width:58px;height:70px}#life-dialog .life-home-entry strong{font-size:14px;letter-spacing:0}#life-dialog .life-home-entry small{font-size:11px}#life-dialog .life-decor-layout{grid-template-columns:minmax(0,1fr)}#settings-dialog{padding:0 14px 18px!important}#settings-dialog .dialog-header{margin-left:-14px;margin-right:-14px}#settings-dialog .ema-mode-grid{grid-template-columns:1fr}body:is([data-view=life],[data-view=settings]) .nav-pages button{padding:7px 9px;font-size:12px}body:is([data-view=life],[data-view=settings]) .experience-nav{padding:5px}body:is([data-view=life],[data-view=settings]) .nav-pages{gap:2px}}
+@media(max-width:360px){#life-dialog .life-home-entries{grid-template-columns:1fr}#life-dialog .life-home-entry{grid-template-columns:72px minmax(0,1fr)}#life-dialog .life-home-entry .life-home-thumb{width:72px}#settings-dialog .ema-settings-footer{display:grid;grid-template-columns:1fr}#life-dialog .life-decor-inventory{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){#life-dialog *,#settings-dialog *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}

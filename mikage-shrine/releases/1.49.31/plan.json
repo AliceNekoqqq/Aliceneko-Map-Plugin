@@ -1,0 +1,29 @@
+{
+  "base": "1.49.30",
+  "target": "1.49.31",
+  "delivery": "full-card checkpoint; six immutable Git loaders",
+  "scope": [
+    "life and request-settings visual alignment",
+    "archive manager visual alignment",
+    "return from locked preview to worn outfit without writes"
+  ],
+  "preserve": [
+    "all39 worldbook entries",
+    "five regexes",
+    "four non-panel/archive modules",
+    "archive domain and API contracts",
+    "economy and gameplay",
+    "all art"
+  ],
+  "checks": [
+    "deterministic build",
+    "source preservation",
+    "actual modules browser at320/375/1100",
+    "worn-preview reset for both actors",
+    "life draft and explicit decor action",
+    "archive edit/settings save and chat scope",
+    "four actual-source GIFs",
+    "packed parity and Git objects"
+  ],
+  "real_host": "pending"
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-30",
+  "authorization": "author asked to continue outstanding repairs and visual pages, with individual actual-source GIFs; prior full-card checkpoint and Git-only loading scope retained",
+  "base_commit": "44ee7d0b053682d70e123138753bb878b12aa974",
+  "host": "Codex cloud workspace; no connected real SillyTavern",
+  "delivery": "full-card checkpoint candidate; six immutable Git loaders",
+  "routes": ["sillytavern-embedded-ui", "sillytavern-card-pipeline"],
+  "routing": "manual from public TW route-map; router not materialized or executed",
+  "route_snapshot": "2026-09-13",
+  "references": ["A0", "A2 format overview", "C2 UI ownership overview", "D1 Git-loader overview", "D4 deployment boundary overview", "D7 mobile overview", "plugin execution contract", "frontend design quality", "project tool adapter contract", "embedded UI sandbox workflow"],
+  "design": "adopted1.49.30 journal palette and existing painted assets; new3panel imagegen concept before implementation; no external art or dependency added",
+  "adapter": {
+    "build": "python mikage-shrine/tools/build_journal_controls.py",
+    "dry_run": "python mikage-shrine/tools/build_journal_controls.py --dry-run",
+    "validate_build": "python mikage-shrine/tools/build_journal_controls.py --check",
+    "build_outputs": "releases/1.49.31/{panels.mjs,panels.html,archive.mjs,card-source.json,manifest.json,creator-notes.md,plan.json}",
+    "package": "existing build_release_card.py with exact source, manifest, synced immutable commit and new output",
+    "existing_releases": "preserved; only new1.49.31 outputs regenerated from maintained sources",
+    "failure_policy": "stop on hash/anchor mismatch; rerun validated deterministic builder before any delivery"
+  },
+  "dependencies": {
+    "embedded": "six existing helper loader IDs and five regex IDs; exact manifest ledger retained",
+    "host_required": "SillyTavern, enabled Tavern Helper APIs and existing MVU/runtime prerequisites retained from baseline",
+    "remote": "six pinned Git runtime modules, original media/font URLs and original MVU dependency path",
+    "development_only": "Playwright/esbuild/Zod test fixture and screenshot/GIF encoders; no new shipped npm dependency"
+  },
+  "real_host": "pending",
+  "driver_accepted": false
+}
