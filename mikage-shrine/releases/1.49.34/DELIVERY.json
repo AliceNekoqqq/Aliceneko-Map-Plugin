@@ -1,0 +1,38 @@
+{
+  "release": "1.49.34",
+  "date": "2026-10-31",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/mikage-scene-layout-14934",
+  "source_commit": "8e9100fb07ee67163c562a0072f1a93184db18ea",
+  "source_tree": "8856912bc0766450bb28cb9e100906f0cc3765d8",
+  "artifact": {
+    "filename": "巴卫_御影神社_v1.49.34_正文与场景分置版.json",
+    "bytes": 360655,
+    "sha256": "298fbb6043ad16f0d25bc22742dd2627f77259efc4396e87b92096830cd89874",
+    "source_commit": "8e9100fb07ee67163c562a0072f1a93184db18ea",
+    "source_parity": true,
+    "six_git_objects_match": true,
+    "loaders": 6,
+    "regexes": 5,
+    "worldbook_entries": 39
+  },
+  "gif": {
+    "name": "scene-layout",
+    "bytes": 366605,
+    "frames": 59,
+    "duration_seconds": 11.8,
+    "sha256": "560138f1aae41d50b3909e7aa08ed04119955741360b84db7eff2efb8ba2ed85",
+    "filename": "mikage-scene-layout-v14934.gif",
+    "all_frames_decoded": true,
+    "module_sha256": "49f6a57c55d405d88a9b2c8026724c171b09b23e24a04d34eccb76f9e8469b62",
+    "paid_model_calls": 0,
+    "game_writes": 0
+  },
+  "preserved": "normal prose DOM; original1.8 scene controller;39worldbook entries/5regexes/6script IDs/5other modules/art",
+  "real_host": "pending",
+  "online_cdn_execution": "pending",
+  "real_device": "pending",
+  "actual_model": "pending",
+  "driver_accepted": false,
+  "author_accepted": false
+}
