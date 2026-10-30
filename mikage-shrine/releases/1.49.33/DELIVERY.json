@@ -1,0 +1,39 @@
+{
+  "release": "1.49.33",
+  "date": "2026-10-31",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/mikage-archive-focus-14933",
+  "source_commit": "80614304c662829ac47f9c6ef5dfe61dff04e90b",
+  "source_tree": "e0500c399a466711879aa4f31da959df080963f3",
+  "artifact": {
+    "source_commit": "80614304c662829ac47f9c6ef5dfe61dff04e90b",
+    "filename": "巴卫_御影神社_v1.49.33_档案键盘修复版.json",
+    "bytes": 360128,
+    "sha256": "d6b613ca38ec6f5e05a226816e36323609f0c786ba5456389baa41d1f819e3d9",
+    "loaders": 6,
+    "regexes": 5,
+    "worldbook_entries": 39,
+    "source_parity": true,
+    "six_immutable_git_modules_match": true,
+    "inline_runtime": false
+  },
+  "gif": {
+    "name": "archive-keyboard",
+    "bytes": 571534,
+    "frames": 60,
+    "duration_seconds": 12.0,
+    "sha256": "5c867f33b291a93b5063845d139e722c25482e2a47119f4b6b3840e4bd584c0d",
+    "filename": "mikage-archive-keyboard-v14933.gif",
+    "module_sha256": "063c59788c7674350f39b431fba21b979d0759cd6cf6f550a8160caf11327494",
+    "all_frames_decoded": true,
+    "paid_model_calls": 0,
+    "navigation_data_writes": 0
+  },
+  "runtime_change": "archive keyboard handler only; five other modules and art/styles preserved",
+  "real_host": "pending",
+  "online_cdn_execution": "pending",
+  "real_device": "pending",
+  "actual_model": "pending",
+  "driver_accepted": false,
+  "author_accepted": false
+}

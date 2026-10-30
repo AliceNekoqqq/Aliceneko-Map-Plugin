@@ -48,13 +48,51 @@
     "source": "actual built archive and synthetic host/example task fixtures",
     "paid_model_calls": 0
   },
-  "package": "pending source commit",
-  "gif": "pending final recording",
+  "package": {
+    "source_commit": "80614304c662829ac47f9c6ef5dfe61dff04e90b",
+    "filename": "巴卫_御影神社_v1.49.33_档案键盘修复版.json",
+    "bytes": 360128,
+    "sha256": "d6b613ca38ec6f5e05a226816e36323609f0c786ba5456389baa41d1f819e3d9",
+    "loaders": 6,
+    "regexes": 5,
+    "worldbook_entries": 39,
+    "source_parity": true,
+    "six_immutable_git_modules_match": true,
+    "inline_runtime": false
+  },
+  "gif": {
+    "name": "archive-keyboard",
+    "bytes": 571534,
+    "frames": 60,
+    "duration_seconds": 12.0,
+    "sha256": "5c867f33b291a93b5063845d139e722c25482e2a47119f4b6b3840e4bd584c0d",
+    "filename": "mikage-archive-keyboard-v14933.gif",
+    "module_sha256": "063c59788c7674350f39b431fba21b979d0759cd6cf6f550a8160caf11327494",
+    "all_frames_decoded": true,
+    "paid_model_calls": 0,
+    "navigation_data_writes": 0
+  },
   "real_sillytavern": "pending",
   "online_cdn_execution": "pending",
   "real_device": "pending",
   "actual_model": "pending",
   "global_gameplay_review": "not resumed",
   "driver_accepted": false,
-  "author_accepted": false
+  "author_accepted": false,
+  "source_commit": "80614304c662829ac47f9c6ef5dfe61dff04e90b",
+  "packed_loader_browser": {
+    "cases": 48,
+    "all_passed": true,
+    "real_exports": true,
+    "start": "diagnostic adapter; not real module startup",
+    "network": "controlled URL responses; not online CDN",
+    "paid_model_calls": 0
+  },
+  "scope_review": {
+    "method": "manual full staged/source diff and whole-module/card inverse checks",
+    "runtime_changed": "one keyboard handler under25 lines and version",
+    "generated_paths": "declared archive, card-source, manifest, notes, plan; README and validation",
+    "unexpected_runtime_changes": false,
+    "skill_patch_scope_checker": "cloud resource unavailable; not run"
+  }
 }
