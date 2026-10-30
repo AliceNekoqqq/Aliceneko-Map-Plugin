@@ -1,0 +1,13 @@
+{
+  "source_commit": "ede5efca8cf5b191bd0198aacf8643fe3aedec22",
+  "branch": "codex/mikage-task-archive-14928",
+  "artifact": "巴卫_御影神社_v1.49.28_任务档案版.json",
+  "bytes": 356436,
+  "sha256": "a6b09e14924625b576b09eb8f577e70e21956fa4d4ffb977222bfa4d32748049",
+  "offline": "passed",
+  "browser": "Chromium 153; simulated host; 320/375/1000 widths",
+  "paid_model_calls": 0,
+  "real_sillytavern": "pending",
+  "android_hardware": "pending",
+  "actual_model_summary_quality": "pending"
+}

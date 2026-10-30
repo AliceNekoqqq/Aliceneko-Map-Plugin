@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "version": "1.49.28",
+  "worldbook_entries_preserved": 39,
+  "loaders": 6,
+  "regexes": 5,
+  "source_parity": true,
+  "bytes": 356436,
+  "sha256": "a6b09e14924625b576b09eb8f577e70e21956fa4d4ffb977222bfa4d32748049",
+  "source_commit": "ede5efca8cf5b191bd0198aacf8643fe3aedec22",
+  "real_host": "pending",
+  "paid_api_calls": 0
+}
