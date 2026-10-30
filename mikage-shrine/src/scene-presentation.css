@@ -1,4 +1,4 @@
-/* Visual contract: shrine stage, paper dialogue, single-row existing navigation. */
+/* Visual contract: shrine stage with foreground portrait and single-row existing navigation. */
 @font-face{font-family:"Mikage Presentation";src:url("https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@b1d93e2a16cf24be9fbdef272d41ee609af328ba/mikage-shrine/assets/ui/copy-reviewed-v1482.ttf") format("truetype");font-display:swap}
 #shrine-game{font-family:"Mikage Presentation","Noto Serif SC","Songti SC","Microsoft YaHei","Mikage Serif",serif}
 #shrine-game{--vn-ink:#42303e;--vn-plum:#603f54;--vn-paper:#faf1e2;--vn-line:#b58a62;max-width:760px;border:3px solid #79543d;border-radius:5px;background:var(--vn-paper);color:var(--vn-ink);box-shadow:inset 0 0 0 1px #e4c59b,0 5px 18px #39251820}
@@ -19,19 +19,10 @@
 #shrine-game .scene-mode-bar{min-height:30px;padding:3px 10px;background:#79543d;color:#fcead2;font-size:10px;justify-content:flex-end;gap:8px}
 #shrine-game .scene-mode-bar button{color:#fff3dc;background:#62404f;border-color:#d3ad80;min-height:27px}
 #shrine-game .veranda-dialogue{background:#f3e6d2;margin:0;border:0}
-#shrine-game .vn-dialogue{position:relative;min-height:170px;margin:0;padding:16px 18px 12px;display:grid;grid-template-columns:0 minmax(0,1fr);gap:0;isolation:isolate;color:var(--vn-ink);background:radial-gradient(ellipse at 95% 90%,#dbc2c332,transparent 40%),var(--vn-paper);border:5px double #b58a62;overflow:visible}
-#shrine-game .vn-dialogue[data-portrait=true]{grid-template-columns:132px minmax(0,1fr);gap:12px}
-#shrine-game .vn-portrait{position:relative;align-self:stretch;min-height:160px;overflow:hidden;grid-column:1;grid-row:1/4;margin:-36px 0 -12px -15px;pointer-events:none;filter:drop-shadow(2px 2px 1px #3a294b20)}
-#shrine-game .vn-portrait img{position:absolute;max-width:none!important;width:285%!important;height:auto!important;left:-85%;top:0;image-rendering:pixelated;opacity:0}
-#shrine-game .vn-portrait[data-loaded=true] img{opacity:1}
-#shrine-game .vn-portrait[hidden]{display:none!important}
-#shrine-game .vn-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;grid-column:2}
-#shrine-game .vn-speaker{display:inline-block;padding:4px 18px 5px 12px;margin:0 0 6px;background:var(--vn-plum);clip-path:polygon(0 0,94% 0,100% 50%,94% 100%,0 100%);color:#fff3df;font-size:14px;letter-spacing:2px;font-weight:500}
-#shrine-game .vn-context{color:#8c7061;font-size:10px;text-align:right;overflow-wrap:anywhere}
-#shrine-game .vn-preview{grid-column:2;margin:4px 0 12px;font-size:16px;line-height:1.9;white-space:pre-wrap;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-#shrine-game .vn-actions{grid-column:2;display:flex;justify-content:flex-end;align-self:end}
-#shrine-game .vn-toggle{min-height:44px;background:#fff8ec;border:1px solid #b89371;border-radius:3px;color:#64434f;padding:7px 13px;font-size:12px;box-shadow:0 2px 0 #d9bda0}
-#shrine-game .vn-full{grid-column:1/-1;max-height:400px;overflow:auto;overscroll-behavior:contain;margin:15px 0 2px;padding:14px 2px 4px;border-top:1px solid #c7aa8b;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:2;color:var(--vn-ink);user-select:text}
+#shrine-game .scene-portrait{position:absolute;right:2px;bottom:0;width:26%;height:76%;z-index:1040;overflow:hidden;pointer-events:none;filter:drop-shadow(-2px 2px 2px #35293733)}
+#shrine-game .scene-portrait img{position:absolute;width:285%!important;max-width:none!important;height:auto!important;left:-85%;top:0;opacity:0;image-rendering:auto;pointer-events:none}
+#shrine-game .scene-portrait[data-loaded=true] img{opacity:1}
+#shrine-game .scene-portrait[hidden]{display:none!important}
 #shrine-game .vn-transition{position:absolute;inset:0;z-index:1350;display:grid;align-content:center;justify-items:center;gap:12px;pointer-events:none;background:#201a29a6;color:#fff0d8;text-shadow:0 2px 6px #211a29;text-align:center;padding:24px}
 #shrine-game .vn-transition strong{font-size:clamp(24px,5vw,38px);font-weight:500;letter-spacing:5px;max-width:100%;overflow-wrap:anywhere}
 #shrine-game .vn-transition span{font-size:12px;letter-spacing:3px;border-top:1px solid #e1c39c;padding-top:12px}
@@ -49,5 +40,5 @@
 #shrine-game .vn-records>summary{cursor:pointer;min-height:44px;padding:12px 15px;font-size:12px;line-height:1.6}
 #shrine-game .vn-records[open]>summary{border-bottom:1px solid #d3b995}
 #shrine-game .torii-watermark{background:#79543d;color:#f4d9b2}
-#shrine-game .vn-toggle:focus-visible,#shrine-game .vn-records>summary:focus-visible{outline:2px solid #603f54;outline-offset:-3px}
-@media(max-width:420px){#shrine-game .game-hud{min-height:76px;padding-left:12px;padding-right:42px;gap:2px 8px}#shrine-game .torii-title{font-size:19px;letter-spacing:1px}#shrine-game .torii-title:after{font-size:9px;letter-spacing:1px}#shrine-game .torii-meta{font-size:10px;max-width:142px}#shrine-game .torii-phase{font-size:9px}#shrine-game #board-bell{width:33px;min-width:33px;right:3px}#shrine-game .vn-dialogue{min-height:162px;padding:12px 11px 10px}#shrine-game .vn-dialogue[data-portrait=true]{grid-template-columns:84px minmax(0,1fr);gap:7px}#shrine-game .vn-portrait{margin-left:-10px;margin-top:-24px;min-height:150px}#shrine-game .vn-preview{font-size:14px;line-height:1.85;-webkit-line-clamp:4}#shrine-game .vn-speaker{font-size:12px;padding-left:9px}#shrine-game .vn-context{font-size:9px}#shrine-game .scene-dock{padding:4px 3px}#shrine-game .scene-dock .dock-button{height:67px}#shrine-game .scene-dock .dock-button>.board-sprite{height:39px}#shrine-game .scene-dock .dock-button>span:last-of-type{font-size:12px;letter-spacing:0}#shrine-game .scene-plaque{font-size:11px;top:10px;left:10px}#shrine-game .vn-task{padding:9px 11px;gap:8px}}
+#shrine-game .vn-records>summary:focus-visible{outline:2px solid #603f54;outline-offset:-3px}
+@media(max-width:420px){#shrine-game .game-hud{min-height:76px;padding-left:12px;padding-right:42px;gap:2px 8px}#shrine-game .torii-title{font-size:19px;letter-spacing:1px}#shrine-game .torii-title:after{font-size:9px;letter-spacing:1px}#shrine-game .torii-meta{font-size:10px;max-width:142px}#shrine-game .torii-phase{font-size:9px}#shrine-game #board-bell{width:33px;min-width:33px;right:3px}#shrine-game .scene-dock{padding:4px 3px}#shrine-game .scene-dock .dock-button{height:67px}#shrine-game .scene-dock .dock-button>.board-sprite{height:39px}#shrine-game .scene-dock .dock-button>span:last-of-type{font-size:12px;letter-spacing:0}#shrine-game .scene-plaque{font-size:11px;top:10px;left:10px}#shrine-game .vn-task{padding:9px 11px;gap:8px}}

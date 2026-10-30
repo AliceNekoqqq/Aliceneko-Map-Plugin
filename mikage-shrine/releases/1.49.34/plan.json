@@ -1,0 +1,46 @@
+{
+  "base": "1.49.33",
+  "target": "1.49.34",
+  "delivery": "full-card checkpoint continuation; immutable Git loaders",
+  "user_choice": "立绘并入场景（推荐）; normal prose stays in original chat position",
+  "design": "drawn before implementation; foreground portrait and direct menu/task succession",
+  "scope": [
+    "scene presentation HTML/CSS/core/runtime",
+    "remove unused outer narrative getter",
+    "scene version and card metadata"
+  ],
+  "preserve": [
+    "all original prose DOM and message data",
+    "scene original 1.8 controller and hotspots",
+    "five other modules including archive1.49.33",
+    "39worldbook entries/5regexes/6script IDs",
+    "all gameplay/API/persistence/art URLs"
+  ],
+  "checks": [
+    "deterministic build and inverse scope checks",
+    "state-only projection",
+    "whole-message browser preview",
+    "320/375/760 widths and short screen",
+    "portrait/outfit/co-location/failure",
+    "hotspot hit testing/navigation/scope/lifecycle",
+    "actual-source GIF",
+    "package and Git object parity"
+  ],
+  "routing": {
+    "mode": "manual",
+    "standing": "ST-A0 reused",
+    "guides": [
+      "ST-C2",
+      "ST-D7"
+    ],
+    "prior_reused": [
+      "ST-A2",
+      "ST-D1",
+      "ST-D4"
+    ],
+    "deterministic_router_run": false
+  },
+  "real_host": "pending",
+  "driver_accepted": false,
+  "author_accepted": false
+}

@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-31",
+  "release": "1.49.34",
+  "mode": "full-card checkpoint continuation",
+  "user_choice": "portrait into scene; original prose stays above",
+  "source": "pass: guarded dry-run/check, syntax, inverse HTML/outer-host scope and whole-card parity",
+  "preserved": {
+    "worldbook_entries": 39,
+    "regexes": 5,
+    "script_ids": 6,
+    "other_modules": 5,
+    "original_scene_controller": true,
+    "gameplay_and_art_urls": true
+  },
+  "browser": {
+    "viewports": [
+      {
+        "width": 320,
+        "height": 520,
+        "cardHeight": 613.171875
+      },
+      {
+        "width": 320,
+        "height": 1100,
+        "cardHeight": 613.171875
+      },
+      {
+        "width": 375,
+        "height": 520,
+        "cardHeight": 649.828125
+      },
+      {
+        "width": 375,
+        "height": 1100,
+        "cardHeight": 649.828125
+      },
+      {
+        "width": 760,
+        "height": 520,
+        "cardHeight": 922.015625
+      },
+      {
+        "width": 760,
+        "height": 1100,
+        "cardHeight": 922.015625
+      }
+    ],
+    "regions": [
+      {
+        "id": "R01",
+        "targets": 4
+      },
+      {
+        "id": "R02",
+        "targets": 3
+      },
+      {
+        "id": "R03",
+        "targets": 3
+      },
+      {
+        "id": "R04",
+        "targets": 2
+      },
+      {
+        "id": "R05",
+        "targets": 2
+      },
+      {
+        "id": "R06",
+        "targets": 2
+      },
+      {
+        "id": "R07",
+        "targets": 2
+      },
+      {
+        "id": "R08",
+        "targets": 2
+      },
+      {
+        "id": "R09",
+        "targets": 2
+      },
+      {
+        "id": "R10",
+        "targets": 3
+      }
+    ],
+    "paidModelCalls": 0,
+    "realHost": false,
+    "source": "actual scene host/srcdoc, helper iframe and synthetic message/MVU data",
+    "errors": [],
+    "missing": []
+  },
+  "gif": "pending final recording",
+  "package": "pending source commit",
+  "real_host": "pending",
+  "online_cdn_execution": "pending",
+  "real_device": "pending",
+  "actual_model": "pending",
+  "global_gameplay_review": "not resumed",
+  "driver_accepted": false,
+  "author_accepted": false
+}
