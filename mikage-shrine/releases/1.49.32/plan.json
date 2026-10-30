@@ -1,0 +1,27 @@
+{
+  "base": "1.49.31",
+  "target": "1.49.32",
+  "delivery": "full-card visual checkpoint; six immutable Git loaders",
+  "design": "original shrine art and portraits; generated washi texture and8object thumbnails; plum/gold slips, paper readers, finite motion",
+  "scope": [
+    "CSS inside panels/scene/archive only",
+    "three module versions and notes metadata",
+    "two pinned decorative assets"
+  ],
+  "preserve": [
+    "all runtime JavaScript after stylesheet/version normalization",
+    "39worldbook entries",
+    "5regexes",
+    "3other modules",
+    "all gameplay, API settings, persistence and text"
+  ],
+  "checks": [
+    "guarded deterministic build",
+    "full-module inverse preservation",
+    "actual-source narrow/desktop/short-screen and missing-art browser checks",
+    "existing panel/archive/scene actions and lifecycle regressions",
+    "7actual-source GIFs",
+    "six-loader card parity and Git objects"
+  ],
+  "real_host": "pending"
+}

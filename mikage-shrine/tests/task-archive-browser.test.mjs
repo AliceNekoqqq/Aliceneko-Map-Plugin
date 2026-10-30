@@ -43,7 +43,7 @@ try{
  await page.locator('summary').filter({hasText:'查看与修改档案'}).click();
  assert.equal(await page.getByRole('button',{name:'保存修改',exact:true}).count(),1);
  const resultField=page.locator('label').filter({hasText:'实际结果'}).locator('textarea');await resultField.fill('作者确认：新路牌已安装，小狸留在旧窝。');
- if(process.env.MIKAGE_ARCHIVE_RELEASE==='1.49.31'){await page.evaluate(()=>MikageTaskArchives.refresh());assert.equal(await resultField.inputValue(),'作者确认：新路牌已安装，小狸留在旧窝。');assert(await resultField.isVisible());}
+ if(['1.49.31','1.49.32'].includes(process.env.MIKAGE_ARCHIVE_RELEASE)){await page.evaluate(()=>MikageTaskArchives.refresh());assert.equal(await resultField.inputValue(),'作者确认：新路牌已安装，小狸留在旧窝。');assert(await resultField.isVisible());}
  await page.getByRole('button',{name:'保存修改',exact:true}).click();
  await page.waitForFunction(()=>MikageTaskArchives.inspect().status.active[0]?.source==='manual');assert.equal(await page.evaluate(()=>test.calls.length),0);
  for(const width of [320,375,1000]){await page.setViewportSize({width,height:812});assert(await page.locator('.dialog').evaluate(n=>n.scrollWidth<=n.clientWidth+1));}
@@ -52,7 +52,7 @@ try{
  await page.locator('label').filter({hasText:'独立API地址'}).locator('input').fill('https://example.test/v1/chat/completions');
  await page.locator('label').filter({hasText:'API Key'}).locator('input').fill('LOCAL-TEST-KEY');
  await page.locator('label').filter({hasText:'模型名称'}).locator('input').fill('test-small');
- if(process.env.MIKAGE_ARCHIVE_RELEASE==='1.49.31'){await page.evaluate(()=>MikageTaskArchives.refresh());assert.equal(await page.locator('label').filter({hasText:'模型名称'}).locator('input').inputValue(),'test-small');assert.equal(await page.locator('label').filter({hasText:'归档方式'}).locator('select').inputValue(),'independent');}
+ if(['1.49.31','1.49.32'].includes(process.env.MIKAGE_ARCHIVE_RELEASE)){await page.evaluate(()=>MikageTaskArchives.refresh());assert.equal(await page.locator('label').filter({hasText:'模型名称'}).locator('input').inputValue(),'test-small');assert.equal(await page.locator('label').filter({hasText:'归档方式'}).locator('select').inputValue(),'independent');}
  await page.getByRole('button',{name:'保存设置',exact:true}).click();
  assert.equal(await page.evaluate(()=>test.calls.length),0);
  assert(!JSON.stringify(await page.evaluate(()=>({vars:test.chats.A.vars,books:test.books,inspect:MikageTaskArchives.inspect()}))).includes('LOCAL-TEST-KEY'));

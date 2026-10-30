@@ -1,0 +1,31 @@
+/* Same stationery system inside the archive's isolated shadow root. */
+:host{--hg-paper-art:url('__HANAGAMI_PAPER__');color:#493c40}
+.shade{background:#33252db3}
+.dialog{background:#f8efe1 var(--hg-paper-art) center/cover;border:1px solid #b49765;outline:1px solid #e6d3b5;outline-offset:-5px;border-radius:5px 15px 5px 5px;box-shadow:0 18px 70px #281c3b5c;scrollbar-color:#b89b7c #eee4d5}
+header{background:#fbf4e8 var(--hg-paper-art) center 20%/cover;color:#694654;border-bottom:1px solid #b49765;padding:18px 20px;box-shadow:0 2px 6px #6a4c4212}
+h2{color:#694654;font-size:25px;letter-spacing:3px}
+header button{background:#fffaf1d9;border:1px solid #b69a77;color:#754958;border-radius:4px;min-height:44px}
+.body{padding:22px}
+.intro{color:#70594c;font-size:13px;letter-spacing:.02em}
+.status{background:#ece4d9c9;border-left:3px solid #b49765;border-radius:3px;padding:12px 14px;color:#69504e}
+.tools{gap:10px;border-color:#ccb38e;padding:12px 0 18px}
+button{background:#fff9efc4;color:#754958;border:1px solid #c4a680;border-radius:4px;box-shadow:0 2px 4px #70554910;transition:background-color .18s,box-shadow .18s}
+button:active:not(:disabled){filter:brightness(.95)}button:hover:not(:disabled){background:#f2e7df}
+.tools button:last-child,.save-record,.save-settings{background:linear-gradient(110deg,#8b5a68,#6e4658);color:#fff7e9;border-color:#9f7a79;box-shadow:inset 0 1px #ffe4c233,0 2px 4px #603f5420}
+.archive-count{margin:18px 0 12px;color:#70594c;font-size:13px}
+.archive-list article{background:#fbf4e8 var(--hg-paper-art) center/cover;border:1px solid #c8ad86;outline:1px solid #fff8ea;outline-offset:-5px;border-radius:3px 12px 3px 3px;box-shadow:0 5px 12px #6e4a3c1f;padding:20px;margin:0 0 16px}
+.archive-list article:before{color:#9b7d59;border-bottom:1px solid #d4bfa0;padding-bottom:7px;margin-bottom:12px}
+.row{gap:9px}.row strong{color:#694654;font-size:16px;line-height:1.8}
+.badge{background:#f1e6d2;color:#785f48;border:1px solid #bda27c;border-radius:2px;padding:3px 8px;font-size:12px}
+.badge[data-state=archived]{border:2px double #9da98c;background:#eef0e5;color:#4e604a;transform:rotate(-4deg)}
+article p{color:#665449;font-size:14px;line-height:2}
+summary{color:#754958;line-height:1.8;font-size:14px;padding:12px 0;min-height:44px}details[open]>summary{border-bottom-color:#d4bfa0}
+label{color:#694654;font-size:14px;margin:16px 0}
+input:not([type=checkbox]),textarea,select{background:#fffcf6c9;color:#493c40;border:1px solid #c4aa87;border-radius:4px;box-shadow:inset 0 1px 3px #6d55400a;padding:11px;font-size:16px;line-height:1.9}
+textarea{min-height:100px}input[type=checkbox]{accent-color:#754958}
+.archive-config{background:#fbf4e8c9;border:1px solid #c8ad86;border-radius:4px 10px 4px 4px;padding:0 16px 16px;margin-top:22px}
+.archive-config>summary{font-size:16px;color:#694654}.archive-config .intro{color:#70594c}
+button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #a16b7e;outline-offset:3px}
+@media(max-width:450px){.shade{padding:6px}.body{padding:13px}.archive-list article{padding:16px}.archive-config{padding:0 12px 14px}header{padding:16px}h2{font-size:23px}.tools{gap:8px}.row strong{font-size:15px}}
+@media(prefers-reduced-motion:no-preference){.archive-list article,details[open]>:not(summary){animation:mikage-archive-unfold .26s ease-out both}@keyframes mikage-archive-unfold{from{opacity:.5;translate:0 5px}to{opacity:1;translate:0 0}}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

@@ -1,0 +1,108 @@
+/* Hanagami stationery layer. Art URLs are resolved by the release builder. */
+body[data-view]{--hg-paper:#fbf4e8;--hg-ink:#493c40;--hg-plum:#754958;--hg-gold:#b49765;--hg-line:#d4bfa0;--hg-paper-art:url('__HANAGAMI_PAPER__');background:#e9dfd0 var(--hg-paper-art) center top/cover;color:var(--hg-ink)}
+body[data-view] .experience-nav{background:#faf4e9f5;border-bottom:1px solid #b49765;box-shadow:0 3px 14px #654b4520;padding:7px 10px;min-height:58px}
+body[data-view] .nav-brand{color:#754958}
+body[data-view] .nav-pages{gap:5px}
+body[data-view] .nav-pages button{color:#6d5555;border:1px solid transparent;border-radius:6px 2px 6px 2px;min-height:44px;padding:8px 12px;box-shadow:none;transition:background-color .18s,border-color .18s,color .18s}
+body[data-view] .nav-pages button[aria-current=page]{background:linear-gradient(110deg,#885d6a,#684655);color:#fff7ea;border-color:#a8887e;box-shadow:inset 0 1px #f7dac033,0 2px 4px #603f5420}
+body[data-view] .nav-pages button[aria-current=page]:after{color:#b79b68}
+body[data-view] :is(#map-dialog,#board-dialog,#wardrobe-dialog,#life-dialog,#settings-dialog) :is(button,input,textarea,select,summary):focus-visible{outline:3px solid #a16b7e;outline-offset:3px}
+body[data-view] :is(#map-dialog,#board-dialog,#wardrobe-dialog,#life-dialog,#settings-dialog) button{touch-action:manipulation;transition:background-color .18s,border-color .18s,box-shadow .18s;letter-spacing:.02em}
+body[data-view] :is(#map-dialog,#board-dialog,#wardrobe-dialog,#life-dialog,#settings-dialog) button:active:not(:disabled){filter:brightness(.95)}
+body[data-view] :is(#map-dialog,#board-dialog,#wardrobe-dialog,#life-dialog,#settings-dialog) button:disabled{cursor:default}
+#map-dialog .place-card,#board-dialog .panel-ema-sheet .ema-back,#board-dialog #panel-archive-view,#wardrobe-dialog .wardrobe-look-note,#wardrobe-dialog .wardrobe-collection,#wardrobe-dialog .panel-robe-extras,#life-dialog :is(.life-card,.life-decor-palette,.life-decor-inspector,.quiet-corner,.strange-notebook,.festival-journal,.life-festival-form,.life-context-wrap),#settings-dialog{background-color:#fbf4e8;background-image:linear-gradient(#fffaf07a,#fffaf07a),var(--hg-paper-art);background-position:center;background-size:cover;border:1px solid #c8ad86;border-radius:3px 11px 3px 3px;box-shadow:0 4px 12px #624d4220;outline:1px solid #fff8ea;outline-offset:-5px;color:#493c40}
+#map-dialog .place-card{padding:18px}
+#map-dialog .place-card>.life-region-art{border:6px solid #fff9ec;outline:1px solid #cdb894;box-shadow:0 3px 8px #59453625;margin-bottom:20px}
+#map-dialog .place-card h3{color:#694654;font-size:25px;letter-spacing:.09em}
+#map-dialog .place-code{color:#796454;letter-spacing:.06em}
+#map-dialog .place-card p{color:#665449;font-size:14px;line-height:1.95}
+#map-dialog .place-stage{background:#ede6d8;border:1px solid #c9b18c;border-radius:2px;color:#69564a;padding:4px 9px}
+#map-dialog .map-travel,#board-dialog .panel-ema-sheet .primary-button,#life-dialog .life-decor-confirm,#settings-dialog .primary-button{background:linear-gradient(105deg,#8b5a68,#6e4658);color:#fff7e9;border:1px solid #9f7a79;border-radius:4px 2px 4px 2px;box-shadow:inset 0 1px #ffe4c233,0 2px 4px #603f5420;min-height:46px}
+#map-dialog .map-travel:disabled{background:#e8decc;color:#796c5c;border-color:#bfa98b;box-shadow:none}
+#map-dialog .panel-map-index,#board-dialog .panel-board-tools,#board-dialog #panel-ema-status,#life-dialog .life-tabs{background:#f7eee1e8;border:1px solid #d4bea0;border-radius:5px;color:#6d5555;box-shadow:0 2px 6px #644c3e12}
+#map-dialog .panel-map-index{padding:0 12px}
+#board-dialog{color:#493c40}
+#board-dialog #panel-ema-status{padding:5px;gap:5px}
+#board-dialog #panel-ema-status button{border:0;background:transparent;min-height:44px;color:#705b52;border-radius:4px}
+#board-dialog #panel-ema-status button[aria-pressed=true]{background:linear-gradient(110deg,#8b5a68,#6e4658);color:#fff7e9;box-shadow:0 2px 4px #603f5420}
+#board-dialog .panel-board-caption{color:#6f5a50;padding:10px 2px;font-size:13px}
+#board-dialog .panel-paper-button{background:#fbf4e8;border:1px solid #bda17e;color:#754958;border-radius:4px;min-height:44px}
+#board-dialog .ema-grid{padding:10px 0 18px;gap:16px}
+#board-dialog .ema-card.is-flipped .ema-front{filter:drop-shadow(0 3px 6px #75495855)}
+#board-dialog .panel-ema-sheet .ema-back{padding:22px;border-width:1px;box-shadow:0 6px 15px #6e4a3c24}
+#board-dialog .panel-ema-sheet .ema-paper{background:transparent;border:0;padding:0;box-shadow:none}
+#board-dialog .panel-ema-sheet .ema-title{font-size:23px;line-height:1.6;letter-spacing:.06em;color:#603e4c;margin:10px 0 12px}
+#board-dialog .panel-ema-sheet .ema-detail{font-size:15px;line-height:2.05;color:#665449}
+#board-dialog .panel-ema-sheet .ema-meta{font-size:12px;color:#75614f;line-height:1.8}
+#board-dialog .panel-ema-sheet .reward-box{background:#f4e9d5b8;border:0;border-top:1px solid #cdb38c;border-bottom:1px solid #cdb38c;padding:12px 0;margin:16px 0;color:#705746}
+#board-dialog .panel-ema-sheet .ema-kind{display:inline-block;border:2px double #9da98c;background:#eef0e5;color:#4e604a;border-radius:2px;padding:4px 9px;transform:rotate(-3deg);font-size:12px}
+#board-dialog .panel-ema-sheet .ema-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+#board-dialog #panel-archive-view{padding:20px;margin-top:20px}
+#board-dialog #panel-archive-view>header{padding-bottom:12px;border-bottom:1px solid #cdb38c}
+#board-dialog #panel-archive-view article{background:transparent;border:0;border-bottom:1px solid #d9c4a8;box-shadow:none;padding:16px 0}
+#board-dialog #panel-archive-view :is(h3,h4){color:#694654;letter-spacing:.04em}
+#board-dialog #panel-archive-view p{font-size:14px;color:#665449;line-height:2}
+#wardrobe-dialog .robe-header,#life-dialog .life-desk-header{background:#faf2e5 var(--hg-paper-art) center 20%/cover;border:1px solid #c8ad86;border-bottom:2px solid #b49765;box-shadow:none;min-height:98px;padding:24px 64px 20px 22px;border-radius:3px 11px 0 0}
+#wardrobe-dialog .robe-header h2,#life-dialog .life-desk-header h2{color:#694654;text-shadow:none;font-size:27px;letter-spacing:3px}
+#wardrobe-dialog .robe-header p,#life-dialog .life-desk-header p{color:#77614f;text-shadow:none;font-size:12px;letter-spacing:1px}
+#wardrobe-dialog .robe-header .close-button,#life-dialog .life-desk-header .close-button{color:#754958;background:#fffaf1cc;border:1px solid #b69a77;width:44px;height:44px;box-shadow:none}
+#wardrobe-dialog .wardrobe-tabs{padding:5px;background:#f7eee1;border:1px solid #cbb18e;border-radius:4px;gap:6px}
+#wardrobe-dialog .wardrobe-tabs button{background:transparent;border:0;color:#70574d;min-height:44px;border-radius:3px}
+#wardrobe-dialog .wardrobe-tabs button[aria-pressed=true]{background:linear-gradient(110deg,#8b5a68,#6e4658);color:#fff7e9}
+#wardrobe-dialog .wardrobe-portrait-wrap{border:5px double #c6a879;border-radius:5px;box-shadow:0 6px 18px #66504030}
+#wardrobe-dialog .wardrobe-look-note{padding:16px 18px;margin:16px 0 12px;outline-offset:-5px}
+#wardrobe-dialog #wardrobe-look-name{color:#694654;font-size:21px;letter-spacing:1px}
+#wardrobe-dialog #wardrobe-look-state{background:#754958;border:1px solid #a47a80;color:#fff5e7;padding:3px 7px;border-radius:2px}
+#wardrobe-dialog #wardrobe-look-source{font-size:13px;line-height:1.9;color:#75614f}
+#wardrobe-dialog .wardrobe-collection{padding:14px}
+#wardrobe-dialog #robe-desk-status:not(:empty),#wardrobe-dialog .dialog-hint,#map-dialog .dialog-hint{color:#70594c;background:#fbf4e8d9;border-left:2px solid #b49765;padding:10px 12px;font-size:13px;line-height:1.8;border-radius:3px;margin:10px 0}
+
+#wardrobe-dialog .outfit-choice,#wardrobe-dialog .outfit-choice.is-locked{background:#fbf7ef;border:1px solid #d1b997;border-radius:4px 9px 4px 4px;box-shadow:0 2px 5px #70554912;padding:6px}
+#wardrobe-dialog .outfit-choice.is-worn,#wardrobe-dialog .outfit-choice[aria-pressed=true]{border:2px solid #956879;background:#f1e3e4;padding:5px;box-shadow:0 3px 7px #75495820}
+#wardrobe-dialog .outfit-choice .panel-outfit-thumb{background-color:#ece0d2;border-radius:2px}
+#wardrobe-dialog .panel-outfit-image{image-rendering:auto}
+#wardrobe-dialog .panel-robe-extras{padding:0 14px}
+#life-dialog .life-tabs{padding:5px;gap:4px;scrollbar-width:thin;flex-wrap:nowrap}
+#life-dialog .life-tabs .life-button{background:transparent;border:0;color:#70574d;padding:8px 13px;font-size:13px;border-radius:3px}
+#life-dialog .life-tabs .life-button[aria-pressed=true]{background:linear-gradient(110deg,#8b5a68,#6e4658);color:#fff7e9}
+#life-dialog .life-desk-scene{border:6px solid #fff8eb;outline:1px solid #bda17a;border-radius:4px;box-shadow:0 5px 14px #70554922}
+#life-dialog .life-home-caption{background:#faf3e7;border:1px solid #c8ad86;border-top:0;border-radius:0 0 4px 4px;color:#70594c;padding:12px;font-size:13px}
+#life-dialog .life-home-entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+#life-dialog .life-home-entry{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:7px;padding:12px;min-height:215px;background:#fbf4e8 var(--hg-paper-art) center/cover;border:1px solid #c8ad86;border-radius:4px 12px 4px 4px;box-shadow:0 4px 9px #70554922;text-align:left;color:#694654;overflow:hidden}
+#life-dialog .life-home-entry[data-life-entry] .life-home-thumb{display:block;grid-row:auto;flex:none;width:min(148px,100%);height:auto;aspect-ratio:1;margin:0 auto 2px;border:0;background-image:url('__HANAGAMI_ICONS__')!important;background-size:400% 200%!important;background-repeat:no-repeat;border-radius:5px;box-shadow:none}
+#life-dialog .life-home-entry[data-life-entry=decor] .life-home-thumb{background-position:0 0}
+#life-dialog .life-home-entry[data-life-entry=quiet] .life-home-thumb{background-position:33.333333% 0}
+#life-dialog .life-home-entry[data-life-entry=craft] .life-home-thumb{background-position:66.666667% 0}
+#life-dialog .life-home-entry[data-life-entry=garden] .life-home-thumb{background-position:100% 0}
+#life-dialog .life-home-entry[data-life-entry=shop] .life-home-thumb{background-position:0 100%}
+#life-dialog .life-home-entry[data-life-entry=album] .life-home-thumb{background-position:33.333333% 100%}
+#life-dialog .life-home-entry[data-life-entry=strange] .life-home-thumb{background-position:66.666667% 100%}
+#life-dialog .life-home-entry[data-life-entry=festival] .life-home-thumb{background-position:100% 100%}
+#life-dialog .life-home-entry strong{font-size:16px;color:#694654;letter-spacing:1px;line-height:1.6;margin:0}
+#life-dialog .life-home-entry small{font-size:12px;color:#70594c;line-height:1.8;margin:0;padding-right:20px}
+#life-dialog .life-home-entry:after{content:'';position:absolute;right:14px;bottom:19px;display:block;width:7px;height:7px;border-top:1px solid #9b765a;border-right:1px solid #9b765a;transform:rotate(45deg);background:none;box-shadow:none}
+#life-dialog :is(.life-note,.life-decor-hint){color:#69574b;background:#fbf4e8dd;padding:9px 12px;border-left:2px solid #b49765;border-radius:2px}
+#life-dialog :is(.quiet-option,.strange-note,.festival-note){background:transparent;border-bottom-color:#d4bfa0}
+#life-dialog .quiet-option h4{font-size:17px;line-height:1.6;letter-spacing:.04em}
+#life-dialog .quiet-corner{padding:22px}
+#life-dialog .life-context-wrap{padding:16px 18px;border-left:3px solid #b49765}
+#life-dialog .life-button,#life-dialog .life-decor-actions button{background:linear-gradient(110deg,#8b5a68,#6e4658);color:#fff7e9;border-color:#9f7a79;border-radius:4px;min-height:44px}
+#life-dialog .life-decor-zones button,#life-dialog .life-decor-item{background:#fbf7ef;border-color:#c9ad88;color:#70574d}
+#life-dialog .life-decor-zones button[aria-pressed=true],#life-dialog .life-decor-item[aria-pressed=true]{background:#f1e3e4;border-color:#956879;color:#694654;box-shadow:inset 0 -2px #956879}
+#life-dialog :is(input,select,textarea),#settings-dialog :is(input:not([type=radio]),select){background:#fffcf6d9;border:1px solid #c4aa87;border-radius:4px;color:#493c40;box-shadow:inset 0 1px 3px #6d55400a}
+#settings-dialog{padding-bottom:22px!important}
+#settings-dialog .dialog-header{background:#fbf4e8 var(--hg-paper-art) center 20%/cover;color:#694654;border:0;border-bottom:1px solid #c8ad86;padding-top:24px;padding-bottom:22px}
+#settings-dialog .dialog-header h2{color:#694654;letter-spacing:2px;font-size:25px}
+#settings-dialog .close-button{background:#fffaf1c9;border:1px solid #b69a77;color:#754958}
+#settings-dialog .ema-mode-card{background:#fffaf0a8;border:1px solid #c9ad88;border-radius:4px 10px 4px 4px;box-shadow:0 2px 4px #70554910;padding:15px}
+#settings-dialog .ema-mode-card:has(input:checked){background:#f1e3e4;border-color:#956879;box-shadow:inset 3px 0 #956879}
+#settings-dialog .ema-mode-card :is(strong,label){color:#694654}
+#settings-dialog :is(.ema-mode-card small,.ema-field small,.ema-local-note,.ema-mode-description){color:#70594c}
+#settings-dialog .secondary-button{background:#fff9efb8;border-color:#c4a680;color:#754958;border-radius:4px}
+#settings-dialog .ema-settings-footer{background:transparent;border-color:#c8ad86}
+#settings-dialog #ema-settings-feedback:not(:empty),#life-dialog #life-feedback:not(:empty){background:#ede4ddb8;border-left:3px solid #956879;color:#694654;border-radius:3px;padding:12px 14px}
+@media(min-width:850px){#life-dialog .life-home-entries{grid-template-columns:repeat(4,minmax(0,1fr))}#life-dialog .life-home-entry{min-height:235px}}
+@media(max-width:700px){#life-dialog .life-home-entries{gap:9px}#life-dialog .life-home-entry{padding:10px;min-height:200px}#life-dialog .life-home-entry strong{font-size:14px;letter-spacing:0}#life-dialog .life-home-entry small{font-size:12px}#board-dialog .panel-ema-sheet .ema-back{padding:18px}#board-dialog .panel-ema-sheet .ema-title{font-size:21px}#wardrobe-dialog .wardrobe-collection{padding:12px}body[data-view] .experience-nav{padding:5px}body[data-view] .nav-pages{gap:2px}body[data-view] .nav-pages button{padding:7px 9px;font-size:12px}}
+@media(max-width:360px){#life-dialog .life-home-entries{grid-template-columns:repeat(2,minmax(0,1fr))}#life-dialog .life-home-entry{padding:8px;min-height:185px}#life-dialog .life-home-entry small{padding-right:0}#life-dialog .life-home-entry:after{display:none}#life-dialog .quiet-corner{padding:16px}#board-dialog .panel-ema-sheet .ema-back{padding:14px}#settings-dialog .dialog-header h2{font-size:22px;letter-spacing:1px}}
+@media(prefers-reduced-motion:no-preference){#board-dialog .panel-ema-sheet .ema-back,#board-dialog #panel-archive-view:not([hidden]),#life-dialog .life-home-entry,body[data-view] details[open]>:not(summary){animation:mikage-hg-unfold .26s ease-out both}#life-dialog .life-home-entry:nth-child(even){animation-delay:.035s}@keyframes mikage-hg-unfold{from{opacity:.45;translate:0 5px}to{opacity:1;translate:0 0}}}
+@media(prefers-reduced-motion:reduce){body[data-view] *,body[data-view] *:before,body[data-view] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

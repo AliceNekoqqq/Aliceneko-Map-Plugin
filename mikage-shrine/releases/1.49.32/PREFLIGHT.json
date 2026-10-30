@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-30",
+  "authorization": "author requested visual upgrades for all newly added features, considered available capabilities and asked to continue; design-first, individual GIFs, text gameplay and Git loaders retained",
+  "base_commit": "bab144a0bbdc52e67c5dc35da955d3a6f41e06a8",
+  "asset_commit": "44e42e34e44012eb8a2cc880a496a51cc1afa5db",
+  "branch": "codex/mikage-hanagami-14932",
+  "delivery": "full-card visual checkpoint candidate; six immutable Git loaders",
+  "routes": ["sillytavern-embedded-ui", "sillytavern-card-pipeline", "imagegen"],
+  "routing": "reuse manually resolved TW A0/A2/C2/D1/D4/D7, plugin runtime, frontend quality, project adapter and sandbox references from prior batch; no deterministic router execution claimed",
+  "route_snapshot": "2026-09-13",
+  "host": "Codex cloud workspace; no connected real SillyTavern",
+  "design": "new3panel concept plus original project art;2new imagegen assets encoded as WebP without repainting; finite CSS motion and original state/read/write ownership",
+  "source_scope": ["three new CSS files", "pinned art manifest", "guarded deterministic builder", "three style-only runtime module derivatives", "release metadata and test parameterization"],
+  "adapter": {
+    "dry_run": "python mikage-shrine/tools/build_hanagami.py --dry-run",
+    "build": "python mikage-shrine/tools/build_hanagami.py",
+    "validate_build": "python mikage-shrine/tools/build_hanagami.py --check",
+    "outputs": "releases/1.49.32/{panels.mjs,panels.html,scene.mjs,statusbar.html,archive.mjs,card-source.json,manifest.json,creator-notes.md,plan.json}",
+    "package": "existing build_release_card.py with exact source/manifest, synced immutable commit and new output",
+    "collision": "only new1.49.32 outputs regenerated before delivery; prior releases preserved",
+    "failure": "stop on source/module/art hash or exact anchor mismatch"
+  },
+  "dependencies": {
+    "embedded": "six existing helper loader IDs and five regex IDs retained",
+    "host": "original SillyTavern/Tavern Helper/MVU prerequisites retained",
+    "remote": "six immutable Git modules; original fonts/media; two new immutable decorative WebP assets",
+    "optional_art": "solid background and text controls remain usable if new images fail",
+    "development_only": "Playwright, original esbuild/Zod fixture, image transcoding and GIF encoding; no new shipped library"
+  },
+  "paid_model_calls_for_testing": 0,
+  "real_host": "pending",
+  "device": "pending",
+  "driver_accepted": false
+}

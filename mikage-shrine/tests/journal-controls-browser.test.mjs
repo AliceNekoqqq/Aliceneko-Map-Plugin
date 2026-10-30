@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 const require=createRequire(import.meta.url),deps=process.env.MIKAGE_DEBUG_DEPS;
 const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright');
 const {build}=require(deps+'/esbuild');
-const root=new URL('../',import.meta.url),release=new URL('releases/1.49.31/',root);
+const root=new URL('../',import.meta.url),release=new URL('releases/'+(process.env.MIKAGE_JOURNAL_RELEASE||'1.49.31')+'/',root);
 const panel=await readFile(new URL('panels.mjs',release),'utf8');
 const mvu=await readFile(new URL('releases/1.49.27/mvu.mjs',root),'utf8');
 const domain=mvu.slice(mvu.indexOf('const ShrineFieldSpec ='),mvu.indexOf('// Install before importing the core:'));

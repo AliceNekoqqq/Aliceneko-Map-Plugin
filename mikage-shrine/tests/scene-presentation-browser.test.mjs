@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright');
-const r=new URL('../releases/1.49.29/',import.meta.url);
+const r=new URL('../releases/'+(process.env.MIKAGE_SCENE_RELEASE||'1.49.29')+'/',import.meta.url);
 const code=await readFile(new URL('scene.mjs',r),'utf8');
 const html=await readFile(new URL('statusbar.html',r),'utf8');
 const card=JSON.parse(await readFile(new URL('card-source.json',r),'utf8'));

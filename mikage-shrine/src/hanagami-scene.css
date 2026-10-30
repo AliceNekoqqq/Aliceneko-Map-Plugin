@@ -1,0 +1,30 @@
+/* Visual-only stationery around the original scene and exact-floor prose. */
+#shrine-game{--hg-paper-art:url('__HANAGAMI_PAPER__');--vn-paper:#fbf4e8;--vn-ink:#493c40;--vn-plum:#754958;--vn-line:#b49765;background:#fbf4e8 var(--hg-paper-art) center/cover;border:1px solid #a88c66;outline:1px solid #e8d7b8;outline-offset:-5px;border-radius:5px 14px 5px 5px;box-shadow:0 7px 22px #5e424028}
+#shrine-game .game-hud{background:#fbf4e8 var(--hg-paper-art) center 20%/cover;border-bottom:1px solid #b49765;padding-top:17px;padding-bottom:17px}
+#shrine-game .torii-title{color:#694654;letter-spacing:4px;font-size:25px}
+#shrine-game .torii-title:after{color:#806855;font-size:10px;letter-spacing:2px}
+#shrine-game .torii-meta,#shrine-game .torii-phase{color:#70594c}
+#shrine-game .scene{border:6px solid #fff8eb;border-bottom-width:5px;box-shadow:inset 0 0 0 1px #b49765}
+#shrine-game .scene-plaque{background:#fcf2dfed;color:#694654;border:1px solid #b49765;box-shadow:0 3px 9px #4b303024;border-radius:3px;font-size:13px}
+#shrine-game .scene-mode-bar{background:#f3e6d2;color:#70594c;border-top:1px solid #bfa37b;padding:5px 10px;font-size:11px}
+#shrine-game .scene-mode-bar button{background:#fff8ec;color:#754958;border:1px solid #bda17d;border-radius:3px;min-height:30px}
+#shrine-game .vn-dialogue{background:#fbf4e8 var(--hg-paper-art) center/cover;border:1px solid #c8ad86;outline:1px solid #fff8ea;outline-offset:-5px;border-radius:3px 12px 3px 3px;box-shadow:0 4px 12px #624d421c;padding-top:20px;padding-bottom:16px;margin:10px 10px 0}
+#shrine-game .vn-speaker{background:linear-gradient(110deg,#8b5a68,#6e4658);color:#fff7e9;clip-path:polygon(0 0,94% 0,100% 50%,94% 100%,0 100%);font-size:14px}
+#shrine-game .vn-context{color:#70594c}
+#shrine-game .vn-preview{color:#493c40;line-height:1.95;font-size:15px}
+#shrine-game .vn-full{background:transparent;border-top-color:#d4bfa0;color:#493c40;font-size:15px;line-height:2.05}
+#shrine-game .vn-portrait img{image-rendering:auto}
+#shrine-game .vn-toggle{background:#fff9efb8;border:1px solid #c4a680;color:#754958;border-radius:4px;box-shadow:0 2px 4px #70554910;min-height:44px}
+#shrine-game .scene-dock{background:#faf3e7;border:0;border-top:1px solid #ddc6a5;border-bottom:1px solid #ddc6a5;margin:10px 0 0;padding:7px 5px;gap:4px}
+#shrine-game .scene-dock button{background:#fff9ef;border:1px solid #d4bfa0;border-radius:5px 2px 5px 2px;color:#754958;min-height:44px;box-shadow:none;transition:background-color .18s,border-color .18s}
+#shrine-game .scene-dock button:active{background:#eee0e0}
+#shrine-game .vn-task{background:#f2e7d7;border:1px solid #ccb38e;border-left:3px solid #b49765;border-radius:3px;margin:10px;padding:11px 12px;color:#70594c;font-size:13px;line-height:1.8}
+#shrine-game .vn-task strong{color:#694654}
+#shrine-game .vn-records{margin:10px;border:1px solid #c8ad86;border-radius:4px;background:#fbf4e8cc;color:#70594c}
+#shrine-game .vn-records>summary{min-height:44px;padding:12px;color:#754958;font-size:13px}
+#shrine-game .vn-transition{background:#fbf4e8f5 var(--hg-paper-art) center/cover;color:#694654;border:1px solid #b49765;border-radius:4px;box-shadow:0 6px 20px #3c263025}
+#shrine-game .vn-transition strong,#shrine-game .vn-transition span{color:#694654}
+#shrine-game :is(button,summary):focus-visible{outline:3px solid #a16b7e;outline-offset:3px}
+@media(max-width:380px){#shrine-game .torii-title{font-size:22px;letter-spacing:2px}#shrine-game .vn-dialogue{margin-left:7px;margin-right:7px;padding-left:12px;padding-right:12px}#shrine-game .vn-dialogue[data-portrait=true]{grid-template-columns:105px minmax(0,1fr);gap:8px}#shrine-game .vn-preview{font-size:14px}#shrine-game .scene-dock{gap:3px}}
+@media(prefers-reduced-motion:no-preference){#shrine-game .vn-full:not([hidden]),#shrine-game .vn-records[open]>:not(summary){animation:mikage-scene-paper .26s ease-out both}@keyframes mikage-scene-paper{from{opacity:.5;translate:0 4px}to{opacity:1;translate:0 0}}}
+@media(prefers-reduced-motion:reduce){#shrine-game *,#shrine-game *:before,#shrine-game *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
