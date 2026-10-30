@@ -1,0 +1,59 @@
+{
+  "release": "1.49.31",
+  "date": "2026-10-30",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/mikage-panel-presentation-14930",
+  "delivery": "visual checkpoint candidate",
+  "artifact": {
+    "status": "pass",
+    "source_commit": "3da5dae214b8f86c18e2355cee10c81ce56ad23b",
+    "source_tree": "33ec3eabaee1a5c982baf3d019d64b945038d6db",
+    "filename": "巴卫_御影神社_v1.49.31_生活与档案手帖版.json",
+    "bytes": 358882,
+    "sha256": "ad7795c6bca7732bb81b7270ee0a0dfa03cc87b2a064df1b724d89913a6b57e2",
+    "loaders": 6,
+    "regexes": 5,
+    "worldbook_entries": 39,
+    "source_parity": true,
+    "all_remote_blob_hashes_match": true
+  },
+  "gifs": [
+    {
+      "name": "wardrobe",
+      "filename": "mikage-wardrobe-v14931.gif",
+      "bytes": 1898344,
+      "frames": 71,
+      "duration_seconds": 11.84,
+      "sha256": "43d1fdb95b1f7e118ddb2ea8722e336ffbccb20c3f226419403207466d873ec7"
+    },
+    {
+      "name": "life",
+      "filename": "mikage-life-v14931.gif",
+      "bytes": 3169880,
+      "frames": 151,
+      "duration_seconds": 25.17,
+      "sha256": "3697ef20f856472b2c18a742e1bf89b65c11d7db90d55249086356dc3a95d791"
+    },
+    {
+      "name": "settings",
+      "filename": "mikage-settings-v14931.gif",
+      "bytes": 466667,
+      "frames": 93,
+      "duration_seconds": 15.5,
+      "sha256": "aac839f7bcfb36f9c64def28b4b611afa5056961bc719c3fda7564884e59b098"
+    },
+    {
+      "name": "archive",
+      "filename": "mikage-archive-v14931.gif",
+      "bytes": 665066,
+      "frames": 166,
+      "duration_seconds": 27.67,
+      "sha256": "d2d12bf182cf01ee114c00458b76212e2b60d7325442bef6b5181624042016ce"
+    }
+  ],
+  "real_host": "pending",
+  "online_cdn_execution": "pending",
+  "device": "pending",
+  "actual_model": "pending",
+  "author_acceptance": "pending"
+}

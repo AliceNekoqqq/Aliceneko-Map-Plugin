@@ -89,5 +89,17 @@
   "actual_model": "pending",
   "driver_accepted": false,
   "author_accepted": false,
-  "package": "pending immutable Git source commit"
+  "package": {
+    "status": "pass",
+    "source_commit": "3da5dae214b8f86c18e2355cee10c81ce56ad23b",
+    "source_tree": "33ec3eabaee1a5c982baf3d019d64b945038d6db",
+    "filename": "巴卫_御影神社_v1.49.31_生活与档案手帖版.json",
+    "bytes": 358882,
+    "sha256": "ad7795c6bca7732bb81b7270ee0a0dfa03cc87b2a064df1b724d89913a6b57e2",
+    "loaders": 6,
+    "regexes": 5,
+    "worldbook_entries": 39,
+    "source_parity": true,
+    "all_remote_blob_hashes_match": true
+  }
 }
