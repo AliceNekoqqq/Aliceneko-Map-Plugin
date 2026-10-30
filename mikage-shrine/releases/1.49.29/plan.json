@@ -1,0 +1,27 @@
+{
+  "base": "1.49.28",
+  "target": "1.49.29",
+  "delivery": "full-card checkpoint with Git loaders only",
+  "adopted_design": [
+    "existing shrine stage dominant",
+    "paper dialogue plus existing portrait when co-located",
+    "six existing navigation entries in one row",
+    "existing ledger/tools collapsed",
+    "read-only location transition; reduced-motion opt-out"
+  ],
+  "preserve": [
+    "all 39 worldbook entry bodies and settings",
+    "MVU and initialization",
+    "task archive default and optional API",
+    "five other runtime modules",
+    "all five regexes",
+    "existing gameplay and assets"
+  ],
+  "checks": [
+    "prose and same-floor/swipe projection",
+    "actual maintained HTML browser integration at 320/375/760px",
+    "lifecycle, resource failure and reduced motion",
+    "packed source parity and all module hashes"
+  ],
+  "real_host": "pending"
+}

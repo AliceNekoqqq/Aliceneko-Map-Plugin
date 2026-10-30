@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-30",
+  "source": "pass: deterministic guarded build --check, module syntax, same srcdoc as generated preview",
+  "projection": "pass: control filtering, incomplete blocks, conservative attribution, exact location segments, empty and long text, read-only data",
+  "preservation": "pass: all39 worldbook entries and all5 regexes deep equal; five non-scene module identities and hashes deep equal; source script content empty",
+  "browser": {
+    "engine": "Chromium153 headless via Playwright",
+    "source_fidelity": "actual built scene host and StatusbarHTML, same-origin helper iframe plus host-created message iframe",
+    "synthetic_host": true,
+    "viewports": [320,375,760],
+    "passed": ["no horizontal overflow", "single navigation row with six targets at least44px", "expand/collapse reading", "exact selected swipe1 without raw.message field", "same-floor edits", "6000-character prose", "control blocks excluded", "co-located portrait and absent portrait", "image error keeps readable text", "original map event path", "location transition", "reduced-motion state", "late async source isolation", "disposal and event cleanup", "expanded iframe height"],
+    "missing_assets": 0,
+    "page_errors": 0,
+    "asset_delivery": "local route serves downloaded bytes from existing immutable URLs; online CDN execution unverified",
+    "human_visual": "agent viewed320/375/760 screenshots and transition; compared stage, portrait dialogue, six-entry navigation and fold against generated concept; author acceptance pending"
+  },
+  "existing_regression": "pass: task archive core, actual domain-engine/task archive integration, event ID and hair/EJS regressions",
+  "model_calls_during_tests": 0,
+  "real_sillytavern": "pending",
+  "device": "pending",
+  "driver_accepted": false,
+  "author_accepted": false,
+  "package": "receipt in DELIVERY.json after immutable source synchronization"
+}

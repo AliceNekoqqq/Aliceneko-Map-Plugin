@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-30",
+  "authorization": "author requested visual-only game presentation, Git loaders, design image first then implementation and verification",
+  "base": "69627763f9e5444be4150a54604c811dd66484da",
+  "host": "Codex cloud workspace; real SillyTavern not connected",
+  "routes": ["sillytavern-embedded-ui", "sillytavern-card-pipeline", "sillytavern-api-reference"],
+  "routing": "manual; no deterministic router execution claimed",
+  "route_snapshot": "2026-09-13",
+  "library_manifest_snapshot": "2026-08-18",
+  "guidance": ["existing A0/A2/B2/D1/D4 route evidence inherited from 1.49.28", "embedded UI, MVU statusbar, message content page and frontend-design-quality references", "ST-C2 sections 2.1/5.1/5.6/7.6/7.10", "ST-D7 sections 3.1/3.5/P3/P4/P6/P9"],
+  "design_evidence": "existing shrine/portrait art visually inspected; imagegen layout proposed before editing; official Spike Chunsoft ANONYMOUS;CODE page text inspected, screenshot gallery not visually inspected or copied",
+  "adopted": "single generated shrine-stage and paper-dialogue composition; author request authorizes implementation",
+  "api_evidence": "Tavern Helper 4.8.19 @36d8889a99f1cf09d3d1f8aabd0eba33975dc64d: ChatMessage/ChatMessageSwiped and getChatMessages include_swipes overloads; installed version not observed",
+  "scope": ["new scene module derived from 1.49.15", "new read-only presentation sources", "card metadata and manifest", "targeted tests and records"],
+  "game_data_writers_added": 0,
+  "model_calls_added": 0,
+  "card_script_delivery": "six immutable Git loaders; no embedded UI/runtime",
+  "host_acceptance": "pending"
+}
