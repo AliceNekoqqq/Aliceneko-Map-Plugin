@@ -7,8 +7,28 @@
     "engine": "Chromium153 headless via Playwright",
     "source_fidelity": "actual built scene host and StatusbarHTML, same-origin helper iframe plus host-created message iframe",
     "synthetic_host": true,
-    "viewports": [320,375,760],
-    "passed": ["no horizontal overflow", "single navigation row with six targets at least44px", "expand/collapse reading", "exact selected swipe1 without raw.message field", "same-floor edits", "6000-character prose", "control blocks excluded", "co-located portrait and absent portrait", "image error keeps readable text", "original map event path", "location transition", "reduced-motion state", "late async source isolation", "disposal and event cleanup", "expanded iframe height"],
+    "viewports": [
+      320,
+      375,
+      760
+    ],
+    "passed": [
+      "no horizontal overflow",
+      "single navigation row with six targets at least44px",
+      "expand/collapse reading",
+      "exact selected swipe1 without raw.message field",
+      "same-floor edits",
+      "6000-character prose",
+      "control blocks excluded",
+      "co-located portrait and absent portrait",
+      "image error keeps readable text",
+      "original map event path",
+      "location transition",
+      "reduced-motion state",
+      "late async source isolation",
+      "disposal and event cleanup",
+      "expanded iframe height"
+    ],
     "missing_assets": 0,
     "page_errors": 0,
     "asset_delivery": "local route serves downloaded bytes from existing immutable URLs; online CDN execution unverified",
@@ -20,5 +40,16 @@
   "device": "pending",
   "driver_accepted": false,
   "author_accepted": false,
-  "package": "receipt in DELIVERY.json after immutable source synchronization"
+  "package": {
+    "status": "pass",
+    "source_commit": "67bd173038d62487372341aa7bbf5e5f306cf06a",
+    "tree": "1e15b3b8f01474f2ce34016ed429e733131dc05f",
+    "bytes": 357325,
+    "sha256": "fb79514241ee8d531cdb21268924e9ca66e20ef4b9707012ab9346a59e343441",
+    "six_loaders": true,
+    "five_regexes": true,
+    "worldbook_entries": 39,
+    "source_parity": true,
+    "all_remote_git_modules_hash_match": true
+  }
 }

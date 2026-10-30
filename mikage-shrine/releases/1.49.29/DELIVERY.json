@@ -1,0 +1,20 @@
+{
+  "release": "1.49.29",
+  "date": "2026-10-30",
+  "delivery": "full-card visual presentation candidate",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/mikage-scene-presentation-14929",
+  "source_commit": "67bd173038d62487372341aa7bbf5e5f306cf06a",
+  "source_tree": "1e15b3b8f01474f2ce34016ed429e733131dc05f",
+  "git_tree_matches_local_index": true,
+  "artifact": {
+    "filename": "巴卫_御影神社_v1.49.29_视觉演出版.json",
+    "bytes": 357325,
+    "sha256": "fb79514241ee8d531cdb21268924e9ca66e20ef4b9707012ab9346a59e343441"
+  },
+  "loaders": "six fixed40hex Git loaders only; no local inline runtime",
+  "package_check": "all module SHA256 verified against Git commit; only declared loader/button transformation",
+  "real_host": "pending",
+  "device": "pending",
+  "author_acceptance": "pending"
+}

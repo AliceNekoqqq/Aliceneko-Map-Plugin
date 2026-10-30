@@ -1,3 +1,11 @@
+## 1.49.29 视觉演出候选（2026-10-30）
+
+作者要求视觉更游戏化、文字继续承载玩法、沿用Git加载，并明确先画设想再对照实现。已先以原神社/巴卫素材生成布局草图，再实现主场景、纸面正文阅读框与同地点巴卫立绘、一排六入口、当前委托、折叠原数值工具及地点轻转场。无新玩法、变量写入或模型调用。修正场景include_swipes读取，扫描/状态/正文绑定同楼同页；异步读取跨聊天/消息页丢弃。复用现有字体独立字体族解决贴图文字转文本后的缺字。
+
+维护src/scene-presentation-{core,runtime}.mjs、scene-presentation.css及tools/build_scene_presentation.py；只scene模块升1.49.29，其余五模块、五正则、39世界书条目/schema/初始/规则保持。确定性构建、纯投影与保持性检查、实际宿主代码+srcdoc的Chromium模拟320/375/760、原档案/实际引擎/编号发型回归通过；已看截图和转场对照草图。真实酒馆、线上CDN执行、手机、模型与作者最终验收pending。
+
+源码固定提交67bd173038d62487372341aa7bbf5e5f306cf06a，分支codex/mikage-scene-presentation-14929；已打包357325字节JSON，SHA256 fb79514241ee8d531cdb21268924e9ca66e20ef4b9707012ab9346a59e343441，六加载器/五正则/39世界书与源一致性及Git模块字节通过。细节见releases/1.49.29/{README.md,PREFLIGHT.json,VALIDATION.json,DELIVERY.json}。旧版本保留，暂停的全局游玩检查未恢复。
+
 ## 1.49.28 任务档案候选（2026-10-30）
 
 用户要求实现正文合并归档、可选额外API并检验。承接1.49.27，新模块源src/task-archive-{core,runtime}.mjs；tools/build_task_archive.py组合release模块，六个固定Git加载器。原39世界书内容、schema/初值/经济/任务规则、前五脚本与美术保持；新增两条档案显示/历史过滤正则。默认零额外模型调用；独立API可选，批量手动与开启自动后每任务版本一次尝试，失败待手动重试；Key仅本机设置。
