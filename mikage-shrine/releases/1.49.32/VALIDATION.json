@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-30",
+  "source": "pass: dry run, deterministic --check,3module syntax, full inverse module/HTML parity",
+  "preservation": "39worldbook entries/5regexes/6script IDs and all undeclared card fields deep equal;3other modules preserved; original JavaScript and HTML content equal after stylesheet/version normalization",
+  "browser": {
+    "panels": [
+      320,
+      375,
+      1100
+    ],
+    "scene": [
+      320,
+      375,
+      760
+    ],
+    "archive": [
+      320,
+      375,
+      1000
+    ],
+    "short_screen": [
+      [
+        320,
+        520
+      ],
+      [
+        375,
+        520
+      ]
+    ],
+    "source": "actual built modules with original domain/schema/art and synthetic host/task fixtures",
+    "checks": [
+      "original map selection and locks",
+      "EMA filters, single paper and original actions",
+      "read-only archive scope and inert HTML-shaped text",
+      "both actors worn-preview restoration",
+      "original outfit save and life lantern action",
+      "quiet chat draft",
+      "settings save without generation",
+      "archive manual edit and same-revision drafts/selections across refresh",
+      "original explicit provider config with mocked generation only",
+      "selected-swipe/edit/rollback/chat isolation and late responses",
+      "event cleanup",
+      "reduced motion",
+      "2new decorative images blocked:8entries/settings remain usable"
+    ],
+    "page_errors": [],
+    "missing_assets_normal": [],
+    "paid_model_calls": 0
+  },
+  "visual": "agent inspected narrow/desktop captures and selected frames from all7actual-source recordings; wardrobe/map helper text contrast corrected and5panel GIFs rerecorded against final source; author acceptance pending",
+  "art": {
+    "commit": "44e42e34e44012eb8a2cc880a496a51cc1afa5db",
+    "new_files": 2,
+    "bytes": 365916,
+    "generation": "built-in imagegen concept plus actual paper and8tile atlas; PNG encoded as WebP only",
+    "runtime_image_generation_calls": 0
+  },
+  "gifs": [
+    {
+      "name": "scene",
+      "filename": "mikage-scene-v14932.gif",
+      "bytes": 1521429,
+      "frames": 40,
+      "duration_seconds": 8.0,
+      "sha256": "7ffffa03726d013818e8b4ab778c20bae51808b2a915d5e3b45b00471dddab02",
+      "runtime_module_sha256": "1ec52c0ed652ed80237db85244fcecdf72c167c98153b01b80a72b8c38ff5b62"
+    },
+    {
+      "name": "map",
+      "filename": "mikage-map-v14932.gif",
+      "bytes": 2980066,
+      "frames": 73,
+      "duration_seconds": 14.6,
+      "sha256": "1bc5f6b4599d7cab64b7602e8c649c0d9101c46f4078d07c73e3cd45462dbf97",
+      "runtime_module_sha256": "661bcdc12bd0eed153040345bf66be1b2aa2b8c2a92419bae4fd916e3ecf9d6f"
+    },
+    {
+      "name": "ema",
+      "filename": "mikage-ema-v14932.gif",
+      "bytes": 2821121,
+      "frames": 91,
+      "duration_seconds": 18.2,
+      "sha256": "c04fa5afd89dca895d5e2b61e6b0c448930e8d67ff4ca2991857149d716e093e",
+      "runtime_module_sha256": "661bcdc12bd0eed153040345bf66be1b2aa2b8c2a92419bae4fd916e3ecf9d6f"
+    },
+    {
+      "name": "wardrobe",
+      "filename": "mikage-wardrobe-v14932.gif",
+      "bytes": 1965291,
+      "frames": 60,
+      "duration_seconds": 12.0,
+      "sha256": "6d30a43f7ec195730a7b9a95166e70640d8b9685218aab3b4e86d38f2e166724",
+      "runtime_module_sha256": "661bcdc12bd0eed153040345bf66be1b2aa2b8c2a92419bae4fd916e3ecf9d6f"
+    },
+    {
+      "name": "life",
+      "filename": "mikage-life-v14932.gif",
+      "bytes": 3865432,
+      "frames": 113,
+      "duration_seconds": 22.6,
+      "sha256": "bdfbf2b775aee9be589a529f56ff8d2d5426a0d64308cfd52cbe8eeaf9f8f297",
+      "runtime_module_sha256": "661bcdc12bd0eed153040345bf66be1b2aa2b8c2a92419bae4fd916e3ecf9d6f"
+    },
+    {
+      "name": "settings",
+      "filename": "mikage-settings-v14932.gif",
+      "bytes": 1750467,
+      "frames": 61,
+      "duration_seconds": 12.2,
+      "sha256": "fe11aef6362803e6db9e5d6b5d331227b17099c091549be5051be74684053e53",
+      "runtime_module_sha256": "661bcdc12bd0eed153040345bf66be1b2aa2b8c2a92419bae4fd916e3ecf9d6f"
+    },
+    {
+      "name": "archive",
+      "filename": "mikage-archive-v14932.gif",
+      "bytes": 1736916,
+      "frames": 89,
+      "duration_seconds": 17.8,
+      "sha256": "b36ab32f434f5e5bf36f44bfd5e8841999de89141e097fd0d8ac47f4f76a1b05",
+      "runtime_module_sha256": "f44ac0c2e5c6c1485512906a80a01fa653cbb74b8caf26a4f4b9ff9b611c2962"
+    }
+  ],
+  "recording": {
+    "source": "actual1.49.32 modules, isolated synthetic host/example save",
+    "paid_model_calls": 0,
+    "panel_game_writes": 0,
+    "archive_edits": "synthetic fixture only",
+    "encoding_fps": 5,
+    "all_frames_decoded": true,
+    "loop": 0,
+    "source_commit": "5a5202a04d52009f6712d121c7fd5fb30c960a17"
+  },
+  "real_host": "pending",
+  "online_cdn_execution": "pending",
+  "device": "pending",
+  "actual_model": "pending",
+  "global_gameplay_review": "not resumed",
+  "driver_accepted": false,
+  "author_accepted": false,
+  "package": {
+    "status": "pass",
+    "source_commit": "5a5202a04d52009f6712d121c7fd5fb30c960a17",
+    "source_tree": "688ae3ab106b0d83edbac82fd1a391f8d2bd9662",
+    "filename": "巴卫_御影神社_v1.49.32_花笺手帖美化版.json",
+    "bytes": 359685,
+    "sha256": "0405a99739a1d39310e2dca26e847aac80e9ca84ad2d8b3d11cb201234de6581",
+    "loaders": 6,
+    "regexes": 5,
+    "worldbook_entries": 39,
+    "source_parity": true,
+    "six_remote_module_hashes_match": true,
+    "two_remote_asset_hashes_match": true
+  },
+  "cdn_http": {
+    "status": "unverified",
+    "reason": "workspace direct HTTPS probe returned URLError for both decorative assets; no CDN status or failure inferred",
+    "git_object_bytes": "both assets verified against immutable fetched Git objects"
+  }
+}
