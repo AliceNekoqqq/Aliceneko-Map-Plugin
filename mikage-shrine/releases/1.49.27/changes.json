@@ -1,0 +1,77 @@
+[
+  {
+    "target": "mvu",
+    "old": "  function validate(candidate,previous,intent={}){",
+    "new": "  function nextEventId(state,offset=0){\n    let max=0n;\n    for(const row of state.记录.事件){const match=/^E(\\d+)$/.exec(row.编号);if(match){const n=BigInt(match[1]);if(n>max)max=n;}}\n    return 'E'+(max+1n+BigInt(offset));\n  }\n  function validate(candidate,previous,intent={}){"
+  },
+  {
+    "target": "mvu",
+    "old": "assert(event.编号==='E'+(p.记录.事件.length+1),'衣装购买事件编号须连续');",
+    "new": "assert(event.编号===nextEventId(p),'衣装购买事件编号须连续');"
+  },
+  {
+    "target": "mvu",
+    "old": "if(newEvents.length===2)for(let i=0;i<2;i++)assert(newEvents[i].编号==='E'+(p.记录.事件.length+i+1),'结案与解锁呈现事件编号必须连续');",
+    "new": "for(let i=0;i<newEvents.length;i++)assert(newEvents[i].编号===nextEventId(p,i),'新事件编号须接续已有最大序号');"
+  },
+  {
+    "target": "mvu",
+    "old": "const s=clone(previous),n=s.记录.事件.length+1;\n    const e={编号:'E'+n,",
+    "new": "const s=clone(previous),eventId=nextEventId(s);\n    const e={编号:eventId,"
+  },
+  {
+    "target": "mvu",
+    "old": "ShrineLifeRuntime.runAction(s,payload,'E'+n)",
+    "new": "ShrineLifeRuntime.runAction(s,payload,eventId)"
+  },
+  {
+    "target": "mvu",
+    "old": "return {validate,checkFields,schema,",
+    "new": "return {nextEventId,validate,checkFields,schema,"
+  },
+  {
+    "target": "mvu",
+    "old": "const version = '1.49.23';",
+    "new": "const version = '1.49.27';"
+  },
+  {
+    "target": "panels",
+    "old": "event='E'+(next.记录.事件.length+1)",
+    "new": "event=api.nextEventId(previous)"
+  },
+  {
+    "target": "panels",
+    "old": "const version = '1.49.25';",
+    "new": "const version = '1.49.27';"
+  },
+  {
+    "target": "entry1",
+    "old": "编号按记录.事件长度连续生成E1、E2……。",
+    "new": "编号取记录.事件中已有E数字编号的最大序号加一；空记录从E1开始，双事件顺序加一。当前编号采用动态提示；历史编号及其关联引用保持原样。"
+  },
+  {
+    "target": "entry54",
+    "old": "事件编号用当前事件数量+1",
+    "new": "事件编号采用下方本轮事件编号提示的首号"
+  },
+  {
+    "target": "entry54",
+    "old": "编号依当前回顾.事件数量连续使用E数量+1和E数量+2",
+    "new": "编号采用下方本轮事件编号提示的首号与次号"
+  },
+  {
+    "target": "entry54",
+    "old": "var donationDay=emaState.环境?.天数;",
+    "new": "var emaMaxEvent=0n;(emaState.记录?.事件||[]).forEach(function(row){var match=/^E(\\d+)$/.exec(row.编号);if(match&&BigInt(match[1])>emaMaxEvent)emaMaxEvent=BigInt(match[1]);}); var donationDay=emaState.环境?.天数;"
+  },
+  {
+    "target": "entry54",
+    "old": "【当日额外奉纳】",
+    "new": "【本轮事件编号】首号E<%-String(emaMaxEvent+1n)%>；仅结案附带解锁呈现时使用次号E<%-String(emaMaxEvent+2n)%>。\n【当日额外奉纳】"
+  },
+  {
+    "target": "entry77",
+    "old": "银白长发采用本套衣装描述",
+    "new": "发型采用当前衣装的外观描述"
+  }
+]

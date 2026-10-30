@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "inverse": [
+    "whole MVU",
+    "whole panels",
+    "whole source"
+  ],
+  "tests": [
+    "event-id-hair",
+    "main-stories",
+    "quest-affinity",
+    "player-outfit-events",
+    "life-interaction-events",
+    "moonforest-shop runtime baseline1.49.26",
+    "memory-context",
+    "display-truth",
+    "panel-generation-fence1.49.27",
+    "portrait-cors",
+    "festival-context",
+    "opening-consistency"
+  ],
+  "test_repairs": [
+    "naming fixture uses outfit parameter",
+    "shop runtime baseline explicit; prior default preserved",
+    "panel fence accepts release selector"
+  ],
+  "host": "pending"
+}

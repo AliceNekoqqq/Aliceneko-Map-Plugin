@@ -1,6 +1,6 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),legacy=process.argv.includes('--legacy');
-const text=fs.readFileSync(path.join(root,legacy?'releases/1.49.20/panels.mjs':'releases/1.49.25/panels.mjs'),'utf8');
+const text=fs.readFileSync(path.join(root,legacy?'releases/1.49.20/panels.mjs':'releases/'+(process.env.MIKAGE_PANEL_RELEASE||'1.49.25')+'/panels.mjs'),'utf8');
 const code=text.slice(text.indexOf('  async function act(name,payload={}){'),text.indexOf('  async function prepareShopDraft'));
 async function run(name,mode){
  let resolve,reject;const saved=[],triggers=[];let publishes=0,closes=0;

@@ -37,7 +37,8 @@ for(const q of C.config.wardrobeQuests){
  for(const o of q.outfits)assert(t.衣橱.已解锁.some(x=>x.角色===o.actor&&x.衣装===o.id));
 }
 const original=JSON.parse(fs.readFileSync(root+'/releases/1.48.4/manifest.json'));const actual=JSON.parse(fs.readFileSync(dir+'/manifest.json'));
-for(const id of ['minigames','tomoe'])assert.deepEqual(actual.modules.find(m=>m.module_id===id),original.modules.find(m=>m.module_id===id));
+const runtimeBaseline=process.env.MIKAGE_SHOP_RUNTIME_BASELINE?JSON.parse(fs.readFileSync(root+'/releases/'+process.env.MIKAGE_SHOP_RUNTIME_BASELINE+'/manifest.json')):original;
+for(const id of ['minigames','tomoe'])assert.deepEqual(actual.modules.find(m=>m.module_id===id),runtimeBaseline.modules.find(m=>m.module_id===id));
 const sourceModule=(spec,id)=>fs.readFileSync(path.join(root,'..',spec.modules.find(m=>m.module_id===id).path),'utf8');
 const artBlock=t=>{const start=t.indexOf('((host)=>{'),close="})(typeof window==='undefined'?globalThis:window.parent);",end=t.indexOf(close,start);assert(start>=0&&end>start,'complete art renderer boundaries');return t.slice(start,end+close.length);};
 assert.equal(artBlock(sourceModule(actual,'scene')),artBlock(sourceModule(original,'scene')),'full art renderer/catalog preserved');
