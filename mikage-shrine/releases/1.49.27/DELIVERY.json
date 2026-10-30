@@ -1,0 +1,16 @@
+{
+  "source_commit": "6588ddb392d78a9dbb541f5a7c0f4c9c91961f60",
+  "source_tree": "f5b1d07a49c882a643811aa5142781b464e56f6f",
+  "artifact": "巴卫_御影神社_v1.49.27_事件编号与发型修复版.json",
+  "bytes": 346437,
+  "sha256": "79ee6c3cc004923373fd2b621f0458b387ceeb2dbce5fc6ea968a31da271fbfa",
+  "offline": "passed",
+  "known_findings_resolved": [
+    "R23-01",
+    "R23-02",
+    "R23-03",
+    "R23-04"
+  ],
+  "remaining": "V23-01 missing snapshot shop ownership conditional; real host pending",
+  "checks": "VALIDATION.json plus loader exports/fallback/single-start, exact source and deterministic pack, remote blob equality"
+}
