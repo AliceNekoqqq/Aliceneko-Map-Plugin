@@ -1,0 +1,43 @@
+{
+  "base": "1.49.32",
+  "target": "1.49.33",
+  "delivery": "full-card checkpoint continuation; immutable Git loaders",
+  "visible_problem": "Shift+Tab from the first Close button leaves the archive modal",
+  "gate": "Local Fix Only; one keyboard handler under25 runtime lines; no refactor",
+  "exit": "actual built archive passes bidirectional keyboard boundaries and Esc/opener return with no new data/model effects",
+  "preserve": [
+    "five other modules",
+    "complete archive outside handler/version",
+    "39worldbook entries",
+    "5regexes",
+    "6script IDs/buttons",
+    "art and styles",
+    "prose/gameplay/archive/API/persistence"
+  ],
+  "checks": [
+    "old-source Chromium reproduction",
+    "full-module inverse equality",
+    "deterministic build",
+    "keyboard browser fixture",
+    "archive browser regression",
+    "actual-source GIF",
+    "packed parity"
+  ],
+  "routing": {
+    "mode": "manual",
+    "snapshot": "2026-09-13",
+    "guides": [
+      "ST-A0"
+    ],
+    "prior_reused": [
+      "ST-A2",
+      "ST-C2",
+      "ST-D1",
+      "ST-D4",
+      "ST-D7"
+    ],
+    "deterministic_router_run": false
+  },
+  "real_host": "pending",
+  "author_accepted": false
+}

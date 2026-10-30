@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-31",
+  "release": "1.49.33",
+  "delivery_mode": "full-card checkpoint continuation",
+  "gate": "Local Fix Only / No Refactor",
+  "runtime_scope": "one archive onKey handler plus version; under25 handler lines",
+  "baseline": "1.49.32 actual module: Shift+Tab from Close escapes to outer launcher; new check fails against old module",
+  "source_checks": {
+    "dry_run": true,
+    "deterministic_check": true,
+    "syntax": true,
+    "whole_archive_inverse": true,
+    "whole_card_inverse": true,
+    "worldbook_entries_unchanged": 39,
+    "regexes_unchanged": 5,
+    "stable_helper_ids": 6,
+    "other_modules_unchanged": 5,
+    "art_and_styles_unchanged": true
+  },
+  "browser": {
+    "engine": "Chromium153.0.8010.0",
+    "widths": [
+      320,
+      375,
+      1000
+    ],
+    "heights": [
+      520,
+      812
+    ],
+    "pairs": 6,
+    "traversal_steps": 456,
+    "checks": [
+      "first/last bidirectional boundaries",
+      "initial dialog focus",
+      "collapsed versus expanded details",
+      "hidden/disabled/negative tabindex",
+      "outside focus recovery",
+      "Escape and opener return",
+      "archive editing and same-revision drafts",
+      "provider configs with mocked generation only",
+      "credential isolation",
+      "history edits/swipes/rollback/chat scope/late responses",
+      "cleanup and automatic one-attempt failure policy"
+    ],
+    "navigation_data_or_model_effects": 0,
+    "unhandled_page_errors": [],
+    "source": "actual built archive and synthetic host/example task fixtures",
+    "paid_model_calls": 0
+  },
+  "package": "pending source commit",
+  "gif": "pending final recording",
+  "real_sillytavern": "pending",
+  "online_cdn_execution": "pending",
+  "real_device": "pending",
+  "actual_model": "pending",
+  "global_gameplay_review": "not resumed",
+  "driver_accepted": false,
+  "author_accepted": false
+}

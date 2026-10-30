@@ -1,5 +1,5 @@
 import { ARCHIVE_OWNER, DEFAULT_SETTINGS, fingerprint, normalizeSettings, stripControl, validateArchive, parseArchives, collectTasks, reconcileArchives, archiveText, makePrompt, summaryRequest, projectWorldbook } from './task-archive-core.mjs';
-export const VERSION='1.49.31';
+export const VERSION='1.49.33';
 export const SCRIPT_ID='archive';
 export function start(){
   const host=window.parent||window,doc=host.document;
@@ -132,7 +132,24 @@ export function start(){
     const shade=element('div',undefined,'shade'),dialog=element('div',undefined,'dialog');dialog.setAttribute('role','dialog');dialog.setAttribute('aria-modal','true');dialog.setAttribute('aria-label','任务档案');dialog.tabIndex=-1;const header=element('header');header.append(element('h2','任务档案'),button('关闭',close));const body=element('div',undefined,'body');dialog.append(header,body);shade.append(dialog);shadow.append(style,shade);doc.body.append(mount);panel={host:mount,body,dialog,configOpen:false};
     shade.addEventListener('click',e=>{if(e.target===shade)close();});draw();dialog.focus();void enqueue();
   }
-  function onKey(e){if(!panel)return;if(e.key==='Escape'){e.preventDefault();close();return;}if(e.key==='Tab'){const ns=[...panel.host.shadowRoot.querySelectorAll('button,input,textarea,select,summary,[tabindex="-1"]')].filter(n=>n.getClientRects().length&&!n.disabled);if(!ns.length)return;const current=panel.host.shadowRoot.activeElement,first=ns[0],last=ns.at(-1);if(e.shiftKey&&current===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&current===last){e.preventDefault();first.focus();}}}
+  function onKey(e){
+    if(!panel)return;
+    if(e.key==='Escape'){e.preventDefault();close();return;}
+    if(e.key!=='Tab')return;
+    const ns=[...panel.dialog.querySelectorAll('button,input,textarea,select,summary,[tabindex]')].filter(n=>{
+      if(n.tabIndex<0||!n.getClientRects().length||n.disabled||host.getComputedStyle(n).visibility!=='visible')return false;
+      // Collapsed details descendants can still report layout rectangles.
+      for(let p=n.parentElement;p&&p!==panel.dialog;p=p.parentElement){
+        if(p.tagName==='DETAILS'&&!p.open&&!p.querySelector('summary')?.contains(n))return false;
+      }
+      return true;
+    });
+    if(!ns.length){e.preventDefault();panel.dialog.focus();return;}
+    const current=panel.host.shadowRoot.activeElement,first=ns[0],last=ns.at(-1);
+    if(!ns.includes(current)){e.preventDefault();(e.shiftKey?last:first).focus();}
+    else if(e.shiftKey&&current===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&current===last){e.preventDefault();first.focus();}
+  }
   const launcher=button('任务档案',open);launcher.style.cssText='position:fixed;right:12px;bottom:86px;z-index:2147482000;border:1px solid #a68b61;border-radius:20px;background:#f9ecd3;color:#493e30;padding:8px 13px;font:14px system-ui;min-height:40px';doc.body.append(launcher);doc.addEventListener('keydown',onKey,true);
   function chatChanged(){epoch++;scope='';clearPrompt();close();if(runId&&typeof stopGenerationById==='function')try{stopGenerationById(runId);}catch{}schedule();}
   const events=typeof tavern_events!=='undefined'?tavern_events:{};
