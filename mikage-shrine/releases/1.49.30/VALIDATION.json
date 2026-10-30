@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "source": "pass: guarded dry run, deterministic --check, module syntax and exact generated srcdoc",
+  "projection": "pass: status filters, exact archive scope, only selected task facts, no settings leak or mutations",
+  "preservation": "pass:39 entries,5 regexes and5 non-panel modules deep equal; original act handler byte equal; source script content empty",
+  "browser": {
+    "viewports": [
+      320,
+      375,
+      1100
+    ],
+    "source": "full actual panel module + actual domain/schema + actual shared art in helper/host-created iframe topology",
+    "missingAssets": [],
+    "pageErrors": [],
+    "paidModelCalls": 0,
+    "realHost": false
+  },
+  "browser_checks": [
+    "three pages320/375/1100 with no horizontal overflow",
+    "ten map regions; local selection and locked destination",
+    "one selected original wish DOM after refresh",
+    "status filters and scoped archive text/XSS inert",
+    "300-character supplement at legal schema maximum",
+    "locked outfit preview without state write",
+    "actual domain outfit save without generation",
+    "selected swipe1 when MVU index absent",
+    "original accept/pause/resume and original trigger intentions",
+    "chat switch and full event cleanup"
+  ],
+  "regressions": [
+    "task archive core",
+    "actual domain archive integration",
+    "event ID/hair/EJS suite"
+  ],
+  "visual": "agent inspected narrow and desktop actual-source screenshots against concept; author acceptance pending",
+  "font_gap": "rare Japanese kanji袴 uses device system fallback; native device verification pending",
+  "paid_model_calls": 0,
+  "real_host": "pending",
+  "online_cdn_execution": "pending",
+  "device": "pending",
+  "driver_accepted": false,
+  "author_accepted": false,
+  "package": "receipt in DELIVERY.json after immutable source synchronization"
+}

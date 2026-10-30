@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-30",
+  "authorization": "author approved second-batch map/ema/wardrobe visual plan and asked to continue; Git loading and design-first requirements persist",
+  "base_commit": "7e037d7b8c457e3f53055d6556d58d7594feb4dd",
+  "host": "Codex cloud workspace; real SillyTavern not connected",
+  "routes": ["sillytavern-embedded-ui", "sillytavern-card-pipeline", "sillytavern-api-reference"],
+  "routing": "manual, reusing previous batch A0/A2/B2/D1/D4/C2/D7 and runtime/font source evidence; no deterministic router execution claimed",
+  "route_snapshot": "2026-09-13",
+  "library_manifest_snapshot": "2026-08-18",
+  "references": ["embedded UI skill and its state/DOM/lifecycle requirements", "project tool adapter contract and inspected deterministic builders", "existing painted map/ema/wardrobe assets visually inspected", "current scene design and new three-panel imagegen concept before implementation"],
+  "api_evidence": "Tavern Helper4.8.19 selected-swipe declaration snapshot; actual installed host version not observed",
+  "scope": ["new panels module", "read-only display sources and archive projection", "new guarded builder and targeted tests", "version/notes/manifest and validation records"],
+  "assets_added": 0,
+  "model_calls_added": 0,
+  "game_data_writers_added": 0,
+  "preserve": ["all39 worldbook entries", "five regexes", "five non-panel modules", "original act handler and domain rules"],
+  "delivery": "checkpoint candidate; six immutable Git loaders only",
+  "real_host": "pending"
+}

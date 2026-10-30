@@ -1,0 +1,27 @@
+{
+  "base": "1.49.29",
+  "target": "1.49.30",
+  "delivery": "full-card visual checkpoint; six immutable Git loaders",
+  "design": [
+    "existing map geometry and destination postcard",
+    "one selected wish paper using original DOM action handlers",
+    "read-only status filters and archived summary reader",
+    "large original portraits with clothing shelf and original ownership rules"
+  ],
+  "preserve": [
+    "39 worldbook entries and settings",
+    "all five regexes",
+    "five non-panel modules including1.49.29 scene",
+    "all economy and task rules",
+    "existing panel action handlers, API settings and generation fences",
+    "all assets"
+  ],
+  "checks": [
+    "deterministic builder",
+    "archive scope and text projection",
+    "actual panel host and domain engine in browser at320/375/1100",
+    "read-only navigation, locked preview, actual owned outfit save and original task actions",
+    "packaged parity and Git module hashes"
+  ],
+  "real_host": "pending"
+}

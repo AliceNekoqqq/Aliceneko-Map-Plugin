@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {panelEmaMatches,panelArchiveView} from '../src/panel-presentation-core.mjs';
+for(const [filter,status,expected]of [['all','未知',true],['active','进行',true],['paused','暂停',true],['completed','已完成',true],['completed','未接',false]])assert.equal(panelEmaMatches(status,filter),expected);
+const state={scope:'A',settings:{key:'PRIVATE'},view:{tasks:[{id:'M01',wish:'真实诉求'}]},status:{active:[{taskId:'M01',eventId:'E9',data:{choice:'实际选择',result:'<img src=x onerror=bad()>仅作文字',effects:['持续影响'],unresolved:[],secret:'NO'}}]}};
+const before=JSON.stringify(state),view=panelArchiveView(state,'A','M01');assert.equal(view.records[0].wish,'真实诉求');assert.equal(view.records[0].choice,'实际选择');assert(!JSON.stringify(view).includes('PRIVATE'));assert(!JSON.stringify(view).includes('secret'));assert.equal(JSON.stringify(state),before);
+assert.equal(panelArchiveView(state,'B').status,'unavailable');assert.equal(panelArchiveView(state,'').status,'unavailable');assert.equal(panelArchiveView(state,'A','M02').records.length,0);
+const a=JSON.parse(await readFile(new URL('../releases/1.49.29/card-source.json',import.meta.url))),b=JSON.parse(await readFile(new URL('../releases/1.49.30/card-source.json',import.meta.url)));
+assert.deepEqual(a.data.character_book.entries,b.data.character_book.entries);assert.deepEqual(a.data.extensions.regex_scripts,b.data.extensions.regex_scripts);assert(b.data.extensions.tavern_helper.scripts.every(s=>s.content===''));
+const old=JSON.parse(await readFile(new URL('../releases/1.49.29/manifest.json',import.meta.url))),next=JSON.parse(await readFile(new URL('../releases/1.49.30/manifest.json',import.meta.url)));
+for(const m of old.modules.filter(m=>m.module_id!=='panels'))assert.deepEqual(next.modules.find(x=>x.module_id===m.module_id),m);
+const legacy=await readFile(new URL('../releases/1.49.27/panels.mjs',import.meta.url),'utf8'),current=await readFile(new URL('../releases/1.49.30/panels.mjs',import.meta.url),'utf8');
+const action=s=>s.slice(s.indexOf('  async function act(name,'),s.indexOf('  async function prepareShopDraft('));assert.equal(action(current),action(legacy));
+console.log('PASS panel read-only filters, exact archive chat scope, task projection, no settings leak, preserved39 worldbook entries, five regexes and five non-panel modules');

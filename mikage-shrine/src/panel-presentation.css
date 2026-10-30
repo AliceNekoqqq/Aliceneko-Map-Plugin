@@ -1,0 +1,137 @@
+@font-face{font-family:'Mikage Panel Extended';src:url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@4b2b31cb3efe94fa0853b903ee8dfa9e5458ddf5/mikage-shrine/assets/ui/shrine-serif-v145.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'Mikage Panel Base';src:url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/opening/title-font-0.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Mikage Panel Roam';src:url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@61aca8a99e834190e107431ad212207147e5a012/mikage-shrine/assets/opening/roam-glyphs.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Mikage Panel Wardrobe';src:url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/opening/wardrobe-glyphs.ttf') format('truetype');font-display:swap}
+/* Shared journal presentation; existing art, geometry and action handlers remain owners. */
+@font-face{font-family:'Mikage Panel';src:url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@b1d93e2a16cf24be9fbdef272d41ee609af328ba/mikage-shrine/assets/ui/copy-reviewed-v1482.ttf') format('truetype');font-display:swap}
+body:is([data-view=map],[data-view=board],[data-view=wardrobe]){--panel-paper:#faf1e2;--panel-ink:#493542;--panel-plum:#603f54;--panel-line:#b58a62;background-color:#6b4936;color:var(--panel-ink)}
+body[data-view] :is(#map-dialog,#board-dialog,#wardrobe-dialog),body[data-view] :is(#map-dialog,#board-dialog,#wardrobe-dialog) button,body[data-view] :is(#map-dialog,#board-dialog,#wardrobe-dialog) input,body[data-view] #board-dialog .ema-title{font-family:'Mikage Panel','Mikage Panel Extended','Mikage Panel Base','Mikage Panel Roam','Mikage Panel Wardrobe','Mikage Serif','Noto Serif SC',serif}
+body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .experience-nav{background:#faf0e0;border-bottom:3px solid #b58a62;box-shadow:0 3px 10px #30202a20;padding:5px 10px;min-height:54px}
+body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .nav-brand{color:#654652;font-family:'Mikage Panel','Mikage Panel Extended','Mikage Panel Base','Mikage Panel Roam','Mikage Panel Wardrobe','Mikage Serif',serif}
+body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .nav-pages{display:flex;gap:4px}
+body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .nav-pages button{color:#64474c;min-height:44px;background:transparent;border:1px solid transparent;border-radius:3px;padding:7px 13px;font:14px/1.6 'Mikage Panel','Mikage Panel Extended','Mikage Panel Base','Mikage Panel Roam','Mikage Panel Wardrobe','Mikage Serif',serif}
+body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .nav-pages button[aria-current=page]{background:#603f54;color:#fff1da;border-color:#a78165;box-shadow:inset 0 0 0 2px #ffffff13}
+body[data-view] :is(#map-dialog,#board-dialog,#wardrobe-dialog) button:focus-visible{outline:3px solid #9f667f;outline-offset:2px}
+#map-dialog .map-desk-header{height:0;position:relative;z-index:12}
+#map-dialog .map-desk-header .close-button{top:7px;right:4px}
+#map-dialog .map-layout{grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr)!important;gap:20px;max-width:1080px}
+#map-dialog .map-quick-nav{grid-template-columns:repeat(3,minmax(0,1fr));padding:8px 0 0;gap:6px}
+#map-dialog .map-quick-nav button{min-height:44px;color:#644552;background:#fff3df;border:1px solid #c5a98a;box-shadow:none;border-radius:3px;font-size:12px}
+#map-dialog .map-quick-nav button[aria-pressed=true]{background:#603f54;color:#fff0dc;box-shadow:none;transform:none;border-color:#603f54}
+#map-dialog .map-quick-nav button[aria-pressed=true]:after{display:none}
+#map-dialog .panel-map-index{margin:10px 0 0;background:#f7ebd7;color:#654b43;border:1px solid #b58a62;padding:0 10px;font-size:12px}
+#map-dialog .panel-map-index>summary{padding:10px 0;min-height:44px;cursor:pointer}
+#map-dialog .map-select-note{color:#785b4d;font-size:11px}
+#map-dialog .place-card{align-self:start;margin:0;background:#faf1e2;border:5px double #b58a62;border-image:none;padding:14px;box-shadow:0 5px 14px #30202a25;color:#493542}
+#map-dialog .place-card>.life-region-art{aspect-ratio:16/10!important;background-size:cover!important;transform:none;margin-bottom:14px;box-shadow:none;border:1px solid #bd9a74}
+#map-dialog .place-card h3{font-size:23px;letter-spacing:2px;color:#603f54;margin-bottom:8px;padding-right:0}
+#map-dialog .place-code{color:#8a6554;font-size:11px;letter-spacing:1px;margin:0 0 6px}
+#map-dialog .place-card p{color:#6b544d;font-size:13px;line-height:1.9}
+#map-dialog .place-stage{color:#765363;background:#eddfd6;border-color:#cfb4a5;font-size:11px;margin-bottom:12px}
+#map-dialog .map-travel{background:#603f54;color:#fff1dd;border-color:#916a74;min-height:46px;font-size:13px;box-shadow:0 2px 0 #4b2d40}
+#map-dialog .map-travel:disabled{background:#e0d1bf;color:#79675d;box-shadow:none;border-color:#c2ab94}
+#map-dialog .place-experience{margin-top:14px;padding-top:12px;border-color:#cfb89e}
+#map-dialog .dialog-hint{color:#f3debe;font-size:12px;line-height:1.8}
+#board-dialog{padding:0 14px 24px!important;max-width:1000px;color:#493542}
+#board-dialog .ema-desk-header{aspect-ratio:auto;min-height:90px;max-height:150px;height:clamp(90px,18vw,150px);width:calc(100% + 28px);margin:0 -14px 10px}
+#board-dialog .ema-desk-header h2{font-size:clamp(17px,4.5vw,29px);letter-spacing:2px}
+#board-dialog .panel-board-tools{background:#f8ecd9;border:1px solid #bc9b79;color:#6c5148;margin:8px 0 12px;padding:0 11px;font-size:12px}
+#board-dialog .panel-board-tools>summary{min-height:44px;padding:11px 0;cursor:pointer}
+#board-dialog .board-toolbar{padding:4px 0 10px;margin:0;border-bottom:1px solid #cfb79b;display:block}
+#board-dialog .live-note{color:#795b4a;margin-bottom:9px;font-size:12px}
+#board-dialog .ema-api-status{color:#72584b;font-size:11px;margin:8px 0}
+#board-dialog .ema-filter{margin:10px 0;gap:6px;justify-content:flex-start}
+#board-dialog .ema-filter-button{background:#fff4e1;border:1px solid #c2a084;color:#6c514c;font-size:11px;box-shadow:none;min-height:44px;padding:7px 9px}
+#board-dialog .ema-filter-button[aria-pressed=true]{background:#603f54;color:#fff0dd;box-shadow:none;transform:none}
+#board-dialog .main-gate-note{background:#f6e9d7;color:#715346;border:1px solid #b79471;border-left:3px solid #946270;font-size:12px;padding:9px 11px}
+#board-dialog #panel-ema-status{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin:8px 0 0;background:#f7e9d6;padding:5px;border:1px solid #bc9b79}
+#board-dialog #panel-ema-status button,#board-dialog .panel-paper-button{min-height:44px;padding:6px 8px;border:1px solid #c8a88a;background:#fff3e2;color:#694b50;border-radius:3px;font:12px/1.6 'Mikage Panel','Mikage Panel Extended','Mikage Panel Base','Mikage Panel Roam','Mikage Panel Wardrobe','Mikage Serif',serif}
+#board-dialog #panel-ema-status button[aria-pressed=true]{background:#603f54;color:#fff2de;border-color:#603f54}
+#board-dialog .panel-board-caption{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#f6dfbd;font-size:11px;margin:7px 0 0}
+#board-dialog .panel-board-caption .panel-paper-button{min-height:44px;padding:7px 12px}
+#board-dialog .ema-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:900px;gap:14px;padding:7px 0 12px;margin:0 auto;align-items:start}
+#board-dialog .ema-card{max-width:260px;filter:drop-shadow(0 4px 3px #28151a40);min-width:0;perspective:none}
+#board-dialog .ema-card:before{display:none!important}
+#board-dialog .ema-card.is-flipped{filter:drop-shadow(0 0 4px #f6c2d0)}
+#board-dialog .ema-card .ema-inner,#board-dialog .ema-card.is-flipped .ema-inner{transform:none!important;pointer-events:auto;transform-style:flat}
+#board-dialog .ema-front,#board-dialog .ema-card.is-special .ema-front,#board-dialog .ema-card.is-flipped .ema-front{display:block;position:relative;aspect-ratio:3/4;min-height:0;padding:0;transform:none;opacity:1;visibility:visible;pointer-events:auto}
+#board-dialog .ema-front .ema-kind,#board-dialog .ema-front .ema-number,#board-dialog .ema-front .ema-teaser{display:none}
+#board-dialog .ema-front .ema-title{position:absolute;left:13%;right:13%;top:46%;font-size:clamp(13px,2.8vw,17px);line-height:1.55;letter-spacing:0;max-height:4.65em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+#board-dialog .ema-front .ema-tags{position:absolute;top:74%;left:12%;right:12%;margin:0;font-size:10px}
+#board-dialog .ema-front .ema-tags>span:not(.ema-status){display:none}
+#board-dialog .ema-front .ema-status{padding:2px 7px;background:#fff0caad;border-color:#b98e5b;color:#72462f}
+#board-dialog .ema-card[data-status=进行] .ema-status{background:#603f54;color:#fff0da;border-color:#603f54}
+#board-dialog .ema-card[data-status=暂停] .ema-status{background:#e5d1b5;color:#715745}
+#board-dialog .ema-card[data-status=已完成] .ema-status{background:#536857;color:#fff4dc;border-color:#536857}
+#board-dialog .ema-front .flip-button{position:absolute;inset:0;margin:0;width:100%;height:100%;min-height:44px;border:0;background:transparent;box-shadow:none;font-size:0;color:transparent;border-radius:0;z-index:2;padding:0}
+#board-dialog .ema-front .flip-button:after{content:'展开心愿';position:absolute;top:86%;left:15%;right:15%;font-size:10px;line-height:1.5;color:#795335;background:#fff0cc90}
+#board-dialog .ema-front .flip-button[aria-expanded=true]:after{content:'正在阅读';color:#603f54}
+#board-dialog .panel-ema-sheet{margin:0 auto 14px;max-width:900px;scroll-margin-top:75px}
+#board-dialog .panel-ema-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;align-items:start}
+#board-dialog .panel-ema-plaques{min-width:0}
+@media(min-width:900px){#board-dialog .panel-ema-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:18px}#board-dialog .ema-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#board-dialog .panel-ema-sheet{margin:0;width:100%}}
+#board-dialog .panel-ema-sheet .ema-back{display:flex;position:static;opacity:1;visibility:visible;transform:none;padding:15px;border:5px double #b58a62;border-image:none;background:#faf1e2;color:#493542;min-height:0;gap:13px;pointer-events:auto;box-shadow:0 5px 15px #2b182024}
+#board-dialog .panel-ema-sheet .ema-paper{gap:13px}
+#board-dialog .panel-ema-sheet .ema-title{font-size:21px;color:#603f54;line-height:1.6;letter-spacing:1px}
+#board-dialog .panel-ema-sheet .ema-kind{background:#603f54;color:#fff0db}
+#board-dialog .panel-ema-sheet .ema-meta{color:#866c5c;font-size:12px}
+#board-dialog .panel-ema-sheet .ema-detail{color:#59434a;font-size:14px;line-height:2}
+#board-dialog .ema-actions .primary-button{background:#603f54;color:#fff1db;border-color:#896779;box-shadow:0 2px 0 #432c3e}
+#board-dialog .panel-empty{background:#f8ecd9;color:#72584c;border:1px solid #bf9e7c;padding:22px 14px;text-align:center;font-size:13px;line-height:1.8}
+#board-dialog #panel-archive-view{background:#faf1e2;border:5px double #b58a62;padding:14px;max-width:900px;margin:12px auto 0;scroll-margin-top:75px;overflow-wrap:anywhere;color:#493542}
+#board-dialog #panel-archive-view header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#board-dialog #panel-archive-view h3{margin:0;font-size:18px;color:#603f54}
+#board-dialog #panel-archive-view h4{margin:0 0 12px;font-size:15px;line-height:1.8}
+#board-dialog #panel-archive-view article{border-top:1px solid #cfb79d;padding:15px 0}
+#board-dialog #panel-archive-view strong{font-size:11px;color:#886657;font-weight:500}
+#board-dialog #panel-archive-view p{font-size:13px;line-height:1.95;white-space:pre-wrap;margin:5px 0 13px}
+#wardrobe-dialog{padding:0 14px 24px!important;max-width:1080px;color:#493542}
+#wardrobe-dialog .robe-header{min-height:90px;margin:0 -14px 10px;padding:17px 58px 17px 19px;background-position:center 7%;box-shadow:inset 0 0 0 1000px #28171e60}
+#wardrobe-dialog .robe-header h2{font-size:clamp(22px,4.4vw,31px);letter-spacing:3px}
+#wardrobe-dialog .robe-header p{display:none}
+#wardrobe-dialog .wardrobe-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 10px}
+#wardrobe-dialog .wardrobe-tabs button,#wardrobe-dialog .wardrobe-tabs button[aria-pressed=true]{background:#f9ecd7;border:1px solid #c6a582;box-shadow:none;color:#735146;min-height:44px;font-size:12px;letter-spacing:1px;padding:8px 5px}
+#wardrobe-dialog .wardrobe-tabs button[aria-pressed=true]{background:#603f54;color:#fff2dc;border-color:#b28a78}
+#wardrobe-dialog .wardrobe-tabs .actor-tab-mark{display:none}
+#wardrobe-dialog .wardrobe-workbench{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:18px;align-items:start}
+#wardrobe-dialog .wardrobe-preview{display:grid;grid-template-columns:minmax(0,1fr);gap:9px;min-width:0;max-width:510px;width:100%;margin:auto}
+#wardrobe-dialog .wardrobe-portrait-wrap{grid-column:1;grid-row:1;aspect-ratio:4/5;max-height:600px;background-size:cover;background-position:center;overflow:hidden}
+#wardrobe-dialog .wardrobe-portrait{inset:9% 10% 10%}
+#wardrobe-dialog .wardrobe-portrait-wrap>small{display:none}
+#wardrobe-dialog .wardrobe-look-note{grid-column:1;grid-row:2;margin:0;padding:12px 14px;background:#faf1e2;border:3px double #b58a62;box-shadow:none;overflow-wrap:anywhere}
+#wardrobe-dialog #wardrobe-look-name{font-size:18px;color:#603f54}
+#wardrobe-dialog #wardrobe-look-state{background:#603f54;color:#fff0dc;border-color:#603f54;font-size:10px}
+#wardrobe-dialog .wardrobe-mini-wrap{grid-column:1;grid-row:3;position:relative;min-height:100px;padding:10px 12px;display:flex;align-items:center;gap:12px;background:#f2e3ce;border:1px solid #bda080;color:#765746;flex-wrap:wrap}
+#wardrobe-dialog .wardrobe-mini-wrap>.character-sprite{width:53px;height:72px;flex:none}
+#wardrobe-dialog .wardrobe-mini-wrap small,#wardrobe-dialog .wardrobe-mini-label{font-size:11px;color:#765746}
+#wardrobe-dialog .panel-robe-extras{grid-column:1;grid-row:3;min-width:0;background:#f8ecd9;color:#74564b;border:1px solid #bda080;padding:0 10px;font-size:12px}
+#wardrobe-dialog .panel-robe-extras>summary{min-height:44px;padding:11px 0;cursor:pointer}
+#wardrobe-dialog .panel-robe-extra-content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0 0 10px}
+#wardrobe-dialog .panel-robe-extras .wardrobe-mini-wrap{grid-column:1;grid-row:1;min-width:0;padding:8px 4px;box-shadow:none;min-height:125px}
+#wardrobe-dialog .panel-robe-extras .wardrobe-directions{grid-column:2;grid-row:1;min-width:0;min-height:125px;background:#ead9c1;border:1px solid #bda080;padding:6px;gap:4px}
+#wardrobe-dialog .panel-robe-extras .wardrobe-memories{grid-column:1/-1;grid-row:2;margin:0;background:#f6e9d4;padding:10px;border:1px solid #cfb395}
+#wardrobe-dialog .panel-robe-extras .wardrobe-memories h4{margin:0 0 8px}
+#wardrobe-dialog .wardrobe-collection{min-width:0;background:#f8ecd9;border:3px double #b58a62;padding:10px}
+#wardrobe-dialog .wardrobe-collection-head{margin:0 0 10px;padding:3px 0 10px;color:#6b4b52;border-bottom:1px solid #ccb197;font-size:13px;display:flex;gap:8px;justify-content:space-between;align-items:center}
+#wardrobe-dialog .wardrobe-collection-count{font-size:10px;color:#89715f}
+#wardrobe-dialog .wardrobe-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-height:620px;overflow:auto;padding:3px 2px 10px;align-content:start}
+#wardrobe-dialog .outfit-choice,#wardrobe-dialog .outfit-choice.is-locked{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:6px;min-height:145px;padding:5px;border:1px solid #c8ac8c;border-radius:2px;background:#fff5e5;box-shadow:none;color:#684b4c;min-width:0;overflow:hidden}
+#wardrobe-dialog .outfit-choice.is-worn,#wardrobe-dialog .outfit-choice[aria-pressed=true]{border:2px solid #795267;background:#f4e6e5;box-shadow:none;padding:4px}
+#wardrobe-dialog .outfit-choice.is-locked{opacity:1;filter:none}
+#wardrobe-dialog .outfit-choice.is-locked .panel-outfit-thumb{filter:saturate(.5)}
+#wardrobe-dialog .outfit-choice .panel-outfit-thumb{position:relative;display:block;width:100%;height:95px;flex:none;background-color:#e4d4c6;overflow:hidden;border:0;border-radius:0}
+#wardrobe-dialog .panel-outfit-thumb.panel-thumb-ready{background-image:none!important}
+#wardrobe-dialog .panel-outfit-image{display:block;position:absolute;max-width:none!important;width:230%!important;height:auto!important;left:-65%;top:-2%;image-rendering:pixelated}
+#wardrobe-dialog .outfit-copy{display:flex;flex-direction:column;gap:4px;min-width:0;padding:0;text-align:center}
+#wardrobe-dialog .outfit-name{font-size:12px;line-height:1.6;color:#684650;white-space:normal;overflow-wrap:anywhere}
+#wardrobe-dialog .outfit-worn,#wardrobe-dialog .is-worn .outfit-worn{font-size:10px;color:#8b6a5a}
+#wardrobe-dialog .outfit-lock-source{display:none}
+#wardrobe-dialog .is-worn .outfit-worn{background:#603f54;color:#fff1de;padding:2px 4px;border-radius:2px}
+#wardrobe-dialog .outfit-choice:before{display:none}
+#wardrobe-dialog .panel-art-note{position:absolute;left:8%;right:8%;bottom:20%;z-index:3;background:#fbf0deed;border:1px solid #b58a62;color:#715445;padding:12px;font-size:12px;line-height:1.8;text-align:center}
+#wardrobe-dialog #robe-desk-status:empty{display:none}
+#wardrobe-dialog .wardrobe-actions{background:#f5e7d1;border:1px solid #b58a62;margin:10px 0 0}
+#wardrobe-dialog .wardrobe-current{color:#795544;font-size:12px}
+@media(max-width:700px){#map-dialog{padding:8px 10px 22px!important}#map-dialog .map-layout{grid-template-columns:minmax(0,1fr)!important;gap:12px}#map-dialog .place-card{padding:11px;border-width:4px}#map-dialog .place-card h3{font-size:21px}#board-dialog .ema-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:540px;gap:10px}#board-dialog .ema-front .ema-title{font-size:14px}#wardrobe-dialog .wardrobe-workbench{grid-template-columns:minmax(0,1fr);gap:12px}#wardrobe-dialog .wardrobe-preview{max-width:440px}#wardrobe-dialog .wardrobe-options{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(110px,36%);max-height:none;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;padding-bottom:12px}#wardrobe-dialog .outfit-choice{scroll-snap-align:start}#wardrobe-dialog .wardrobe-collection{padding:9px}#wardrobe-dialog .wardrobe-portrait-wrap{max-height:510px}body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .nav-pages button{padding:7px 11px;font-size:13px}}
+@media(max-width:380px){#board-dialog,#wardrobe-dialog{padding-left:10px!important;padding-right:10px!important}#board-dialog .ema-desk-header,#wardrobe-dialog .robe-header{margin-left:-10px;margin-right:-10px;width:calc(100% + 20px)}#board-dialog #panel-ema-status{gap:3px;padding:4px}#board-dialog #panel-ema-status button{padding:6px 3px;font-size:11px}#board-dialog .ema-front .ema-title{font-size:12px;line-height:1.5}#board-dialog .ema-front .ema-tags{font-size:9px}#board-dialog .panel-ema-sheet .ema-back{padding:11px;border-width:4px}#wardrobe-dialog .wardrobe-options{grid-auto-columns:minmax(104px,40%)}body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .experience-nav{padding-left:5px;padding-right:5px}body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .nav-pages{gap:2px}body:is([data-view=map],[data-view=board],[data-view=wardrobe]) .nav-pages button{padding:7px 9px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){#map-dialog *,#board-dialog *,#wardrobe-dialog *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
