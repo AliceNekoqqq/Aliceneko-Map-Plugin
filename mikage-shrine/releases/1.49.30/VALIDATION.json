@@ -40,5 +40,16 @@
   "device": "pending",
   "driver_accepted": false,
   "author_accepted": false,
-  "package": "receipt in DELIVERY.json after immutable source synchronization"
+  "package": {
+    "status": "pass",
+    "source_commit": "db4ca728ec9102d55930240d2a84e4ae01d795e0",
+    "source_tree": "fe91011882b10f92bb18beb3ed3a8195dbea49cd",
+    "bytes": 358070,
+    "sha256": "6a6a56ce6e7940b0a8add150b709c52c7d54d2b25120db9553cbe057018a9067",
+    "loaders": 6,
+    "regexes": 5,
+    "worldbook_entries": 39,
+    "source_parity": true,
+    "all_module_tree_hashes_match": true
+  }
 }

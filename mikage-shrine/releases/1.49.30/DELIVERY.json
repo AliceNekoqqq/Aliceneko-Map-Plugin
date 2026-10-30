@@ -1,0 +1,20 @@
+{
+  "release": "1.49.30",
+  "date": "2026-10-30",
+  "delivery": "second-batch visual checkpoint candidate",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/mikage-panel-presentation-14930",
+  "source_commit": "db4ca728ec9102d55930240d2a84e4ae01d795e0",
+  "source_tree": "fe91011882b10f92bb18beb3ed3a8195dbea49cd",
+  "local_tree_matches_remote_tree": true,
+  "artifact": {
+    "filename": "巴卫_御影神社_v1.49.30_随身手帖视觉版.json",
+    "bytes": 358070,
+    "sha256": "6a6a56ce6e7940b0a8add150b709c52c7d54d2b25120db9553cbe057018a9067"
+  },
+  "loaders": "six immutable Git loaders only",
+  "package_checks": "source parity,39 entries,5 regexes and6 module hashes pass",
+  "real_host": "pending",
+  "device": "pending",
+  "author_acceptance": "pending"
+}
