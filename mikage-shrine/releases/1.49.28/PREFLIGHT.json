@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-30",
+  "host": "Codex cloud workspace, Bash/Node/Python; real SillyTavern not connected",
+  "delivery_mode": "full-card checkpoint",
+  "authorization": "user approved task archive implementation with inline default and optional API, then requested verification",
+  "routes": [
+    "sillytavern-component-update",
+    "sillytavern-card-pipeline",
+    "sillytavern-api-reference"
+  ],
+  "routing": "manual; deterministic router not run",
+  "route_snapshot": "2026-09-13",
+  "library_manifest_snapshot": "2026-08-18",
+  "read_guides": [
+    "ST-A0",
+    "ST-A2",
+    "ST-B2",
+    "ST-D1",
+    "ST-D4"
+  ],
+  "scope": [
+    "new archive component and two filtering regexes",
+    "metadata/notes/manifest",
+    "tests and maintainable source"
+  ],
+  "source_base": "6588ddb392d78a9dbb541f5a7c0f4c9c91961f60",
+  "baseline_check": "existing event-id-hair regression passed before changes",
+  "api_evidence": "N0VI028/JS-Slash-Runner@36d8889a99f1cf09d3d1f8aabd0eba33975dc64d; types for worldbook, chat messages, variables, inject, generation and events",
+  "actual_user_host_version": "not observed; runtime capability preflight provided",
+  "required_host": [
+    "SillyTavern",
+    "Tavern Helper browser/script APIs",
+    "existing ST-Prompt-Template and card MVU dependencies"
+  ],
+  "no_new_paid_service": true,
+  "default_extra_model_calls": 0,
+  "real_host": "pending"
+}

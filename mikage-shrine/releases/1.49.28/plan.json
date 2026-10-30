@@ -1,0 +1,24 @@
+{
+  "base": "1.49.27",
+  "target": "1.49.28",
+  "delivery": "full-card checkpoint",
+  "scope": [
+    "new task archive module",
+    "two archive-only filtering regexes",
+    "script and version metadata"
+  ],
+  "preserve": [
+    "39 worldbook entries",
+    "MVU schema and initialization",
+    "five existing modules",
+    "economy and chapter rules",
+    "images and wardrobe"
+  ],
+  "checks": [
+    "core fixtures",
+    "actual existing engine regression",
+    "browser simulated-host integration",
+    "packed source parity"
+  ],
+  "real_host": "pending"
+}
