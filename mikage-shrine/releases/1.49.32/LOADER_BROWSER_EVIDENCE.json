@@ -1,0 +1,1125 @@
+{
+  "date": "2026-10-31",
+  "release": "1.49.32",
+  "card_sha256": "0405a99739a1d39310e2dca26e847aac80e9ca84ad2d8b3d11cb201234de6581",
+  "browser": "153.0.8010.0",
+  "cases": 48,
+  "rows": [
+    {
+      "module": "mvu",
+      "scenario": "primary",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "mvu",
+      "scenario": "second",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "mvu",
+      "scenario": "third",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "raw.githubusercontent.com"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "mvu",
+      "scenario": "mismatch",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "mvu",
+      "scenario": "retry",
+      "status": "running",
+      "attempt": 2,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        },
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": "2"
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "mvu",
+      "scenario": "blocked",
+      "status": "blocked",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "mvu",
+      "scenario": "retryable",
+      "status": "running",
+      "attempt": 2,
+      "starts": 2,
+      "hosts": [
+        "cdn.jsdelivr.net",
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "mvu",
+      "scenario": "timeout",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "panels",
+      "scenario": "primary",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "panels",
+      "scenario": "second",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "panels",
+      "scenario": "third",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "raw.githubusercontent.com"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "panels",
+      "scenario": "mismatch",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "panels",
+      "scenario": "retry",
+      "status": "running",
+      "attempt": 2,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        },
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": "2"
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "panels",
+      "scenario": "blocked",
+      "status": "blocked",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "panels",
+      "scenario": "retryable",
+      "status": "running",
+      "attempt": 2,
+      "starts": 2,
+      "hosts": [
+        "cdn.jsdelivr.net",
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "panels",
+      "scenario": "timeout",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "scene",
+      "scenario": "primary",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "scene",
+      "scenario": "second",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "scene",
+      "scenario": "third",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "raw.githubusercontent.com"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "scene",
+      "scenario": "mismatch",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "scene",
+      "scenario": "retry",
+      "status": "running",
+      "attempt": 2,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        },
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": "2"
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "scene",
+      "scenario": "blocked",
+      "status": "blocked",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "scene",
+      "scenario": "retryable",
+      "status": "running",
+      "attempt": 2,
+      "starts": 2,
+      "hosts": [
+        "cdn.jsdelivr.net",
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "scene",
+      "scenario": "timeout",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "minigames",
+      "scenario": "primary",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "minigames",
+      "scenario": "second",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "minigames",
+      "scenario": "third",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "raw.githubusercontent.com"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "minigames",
+      "scenario": "mismatch",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "minigames",
+      "scenario": "retry",
+      "status": "running",
+      "attempt": 2,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        },
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": "2"
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "minigames",
+      "scenario": "blocked",
+      "status": "blocked",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "minigames",
+      "scenario": "retryable",
+      "status": "running",
+      "attempt": 2,
+      "starts": 2,
+      "hosts": [
+        "cdn.jsdelivr.net",
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "minigames",
+      "scenario": "timeout",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "tomoe",
+      "scenario": "primary",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "tomoe",
+      "scenario": "second",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "tomoe",
+      "scenario": "third",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "raw.githubusercontent.com"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "tomoe",
+      "scenario": "mismatch",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "tomoe",
+      "scenario": "retry",
+      "status": "running",
+      "attempt": 2,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        },
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": "2"
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "tomoe",
+      "scenario": "blocked",
+      "status": "blocked",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "tomoe",
+      "scenario": "retryable",
+      "status": "running",
+      "attempt": 2,
+      "starts": 2,
+      "hosts": [
+        "cdn.jsdelivr.net",
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "tomoe",
+      "scenario": "timeout",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "archive",
+      "scenario": "primary",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "archive",
+      "scenario": "second",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "archive",
+      "scenario": "third",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "raw.githubusercontent.com"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "archive",
+      "scenario": "mismatch",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    },
+    {
+      "module": "archive",
+      "scenario": "retry",
+      "status": "running",
+      "attempt": 2,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "raw.githubusercontent.com",
+          "retry": null
+        },
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": "2"
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "archive",
+      "scenario": "blocked",
+      "status": "blocked",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "archive",
+      "scenario": "retryable",
+      "status": "running",
+      "attempt": 2,
+      "starts": 2,
+      "hosts": [
+        "cdn.jsdelivr.net",
+        "cdn.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 1,
+      "errors": []
+    },
+    {
+      "module": "archive",
+      "scenario": "timeout",
+      "status": "running",
+      "attempt": 1,
+      "starts": 1,
+      "hosts": [
+        "testingcf.jsdelivr.net"
+      ],
+      "subscriptions": 1,
+      "requests": [
+        {
+          "host": "cdn.jsdelivr.net",
+          "retry": null
+        },
+        {
+          "host": "testingcf.jsdelivr.net",
+          "retry": null
+        }
+      ],
+      "realExportProbes": 2,
+      "errors": []
+    }
+  ],
+  "source": "Exact final-card loaders, separate Chromium helper iframes; real immutable module bytes and exports; diagnostic start adapter; network fault injection",
+  "timeout": "Only the diagnostic realm maps production 15000ms timer to 80ms; late response waits260ms",
+  "real_module_start": false,
+  "real_sillytavern": false,
+  "online_cdn": false,
+  "paid_model_calls": 0
+}
