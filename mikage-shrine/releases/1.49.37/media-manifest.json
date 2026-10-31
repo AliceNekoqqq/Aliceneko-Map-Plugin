@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "cardId": "mikage-shrine",
+  "assets": [
+    {
+      "id": "tomoe-usual",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/opening/tomoe-v1.webp"
+      },
+      "bytes": 114164,
+      "sha256": "a5b5e379f5fe498a2cec891ffb8a3416a004b4fac963b2472baa3bdab6d98e36",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-work",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/tomoe-work.webp"
+      },
+      "bytes": 528988,
+      "sha256": "5d55ad7096e259d30fff2b1c7fda3f904b351b61dbfbab3b3756d0b017d15900",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-festival",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/tomoe-festival.webp"
+      },
+      "bytes": 552058,
+      "sha256": "fe0a4c6b40323554eea790c9e5a99c66cbe14fa6c5927f28aac3cc9339c18c7c",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-aoba",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-aoba-portrait.webp"
+      },
+      "bytes": 103044,
+      "sha256": "e521c31203907db8d592434b1359d0bb58b69b873fb804fd86503e89856af288",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-journey",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-journey-portrait.webp"
+      },
+      "bytes": 148644,
+      "sha256": "0b3f65ebddefa35e60bfe35f3fa664aa72199fa7ad7df70f296a1df088733d7f",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-grove",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-grove-portrait.webp"
+      },
+      "bytes": 105240,
+      "sha256": "8eac95f03a512599d8ef71f2625655caa7970308dc4deeba31673134164533ca",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-moon",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-moon-portrait.webp"
+      },
+      "bytes": 114540,
+      "sha256": "b45f55bbc26a9953b2cc38ca452e0f9f15615e0e7ae90367367108f4917e461b",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-swim",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-swim-portrait.webp"
+      },
+      "bytes": 201770,
+      "sha256": "e39492472b751c2da20c95f0a81a6cd4962d43b409940b4adb2ab78b5c19cb0b",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-yako",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-yako-portrait.png"
+      },
+      "bytes": 1497482,
+      "sha256": "6ea6daff911e679e4de90dcba68a4a42e196219d3f9a43cc1dc748e502f928af",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-city",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-city-portrait.png"
+      },
+      "bytes": 1278450,
+      "sha256": "95d57359002c466c3729c4314c6aa00674ed96e9f12c761c8d178f5ed963f46f",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-winter",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-winter-portrait.png"
+      },
+      "bytes": 1177243,
+      "sha256": "4c54314f1183eb7799e666103aa200bffbfeb1a865192e442926c2dc0f48e768",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-school",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-school-portrait.png"
+      },
+      "bytes": 979078,
+      "sha256": "ec85ca44b251eadda03d23f221e874a833b1e7479531f8c92b90c7259a6f36b3",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-school-human",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-school-human-portrait.png"
+      },
+      "bytes": 850510,
+      "sha256": "83e720ca0a8c1d64541f1da0dffd5296611dcf4db29e829a0f0dbd5806b5899b",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-chibi",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@35ae06bdc5375befe92c25503f165a3579941217/mikage-shrine/assets/wardrobe/restyle-v130/tomoe-chibi-portrait.png"
+      },
+      "bytes": 1196919,
+      "sha256": "a21ad8035c9ab93983843519a1c7eec3f4060f32996aad22b6c76d33cf744937",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-kariginu",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@35ae06bdc5375befe92c25503f165a3579941217/mikage-shrine/assets/wardrobe/restyle-v130/tomoe-kariginu-portrait.png"
+      },
+      "bytes": 2292210,
+      "sha256": "139ec6e592d197dd58e0745f87f23f6b674fd90b688f19d8838fafa5a7dcd57c",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-butler",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@35ae06bdc5375befe92c25503f165a3579941217/mikage-shrine/assets/wardrobe/restyle-v130/tomoe-butler-portrait.png"
+      },
+      "bytes": 1764872,
+      "sha256": "cdc50f267f4b578b08472eee01062c34400018214bcc0d571bc6dd42289ef6ad",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    },
+    {
+      "id": "tomoe-wedding",
+      "kind": "image",
+      "source": {
+        "type": "remote",
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@35ae06bdc5375befe92c25503f165a3579941217/mikage-shrine/assets/wardrobe/restyle-v130/tomoe-wedding-portrait.png"
+      },
+      "bytes": 1515353,
+      "sha256": "92de4f052b833b8f77bede3b56b430282f46ca95208bd8fd64fc3e496fd86595",
+      "preload": "on-demand",
+      "lifetime": "message",
+      "fallbackAssetId": null
+    }
+  ]
+}

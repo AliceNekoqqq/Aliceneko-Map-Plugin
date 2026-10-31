@@ -1,10 +1,10 @@
 {
-  "version": "1.49.36",
+  "version": "1.49.37",
   "target": {
     "adult": {
       "eyeX": 0.53,
-      "eyeY": 0.34,
-      "chinSpan": 0.115
+      "eyeY": 0.3,
+      "chinSpan": 0.105
     },
     "small": {
       "height": 0.72,
@@ -12,7 +12,7 @@
       "widthLimit": 0.94
     }
   },
-  "policy": "Wide scene portrait region; fixed adult face scale and eye line, full lateral silhouette and head retained; lower body may cross scene bottom; original images/URLs unchanged",
+  "policy": "Dedicated portrait showcase separate from navigable map; fixed adult face scale/eye line; full head/lateral silhouette, lower body may crop; original images and URLs unchanged",
   "outfits": {
     "usual": {
       "name": "常服",

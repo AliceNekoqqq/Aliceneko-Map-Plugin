@@ -1,0 +1,270 @@
+{
+  "release": "1.49.37",
+  "viewports": [
+    {
+      "width": 320,
+      "height": 520
+    },
+    {
+      "width": 320,
+      "height": 1100
+    },
+    {
+      "width": 375,
+      "height": 520
+    },
+    {
+      "width": 375,
+      "height": 1100
+    },
+    {
+      "width": 760,
+      "height": 520
+    },
+    {
+      "width": 760,
+      "height": 1100
+    }
+  ],
+  "outfits": [
+    {
+      "width": 320,
+      "id": "usual"
+    },
+    {
+      "width": 320,
+      "id": "work"
+    },
+    {
+      "width": 320,
+      "id": "festival"
+    },
+    {
+      "width": 320,
+      "id": "aoba"
+    },
+    {
+      "width": 320,
+      "id": "journey"
+    },
+    {
+      "width": 320,
+      "id": "grove"
+    },
+    {
+      "width": 320,
+      "id": "moon"
+    },
+    {
+      "width": 320,
+      "id": "swim"
+    },
+    {
+      "width": 320,
+      "id": "yako"
+    },
+    {
+      "width": 320,
+      "id": "city"
+    },
+    {
+      "width": 320,
+      "id": "winter"
+    },
+    {
+      "width": 320,
+      "id": "school"
+    },
+    {
+      "width": 320,
+      "id": "school-human"
+    },
+    {
+      "width": 320,
+      "id": "chibi"
+    },
+    {
+      "width": 320,
+      "id": "kariginu"
+    },
+    {
+      "width": 320,
+      "id": "butler"
+    },
+    {
+      "width": 320,
+      "id": "wedding"
+    },
+    {
+      "width": 375,
+      "id": "usual"
+    },
+    {
+      "width": 375,
+      "id": "work"
+    },
+    {
+      "width": 375,
+      "id": "festival"
+    },
+    {
+      "width": 375,
+      "id": "aoba"
+    },
+    {
+      "width": 375,
+      "id": "journey"
+    },
+    {
+      "width": 375,
+      "id": "grove"
+    },
+    {
+      "width": 375,
+      "id": "moon"
+    },
+    {
+      "width": 375,
+      "id": "swim"
+    },
+    {
+      "width": 375,
+      "id": "yako"
+    },
+    {
+      "width": 375,
+      "id": "city"
+    },
+    {
+      "width": 375,
+      "id": "winter"
+    },
+    {
+      "width": 375,
+      "id": "school"
+    },
+    {
+      "width": 375,
+      "id": "school-human"
+    },
+    {
+      "width": 375,
+      "id": "chibi"
+    },
+    {
+      "width": 375,
+      "id": "kariginu"
+    },
+    {
+      "width": 375,
+      "id": "butler"
+    },
+    {
+      "width": 375,
+      "id": "wedding"
+    },
+    {
+      "width": 760,
+      "id": "usual"
+    },
+    {
+      "width": 760,
+      "id": "work"
+    },
+    {
+      "width": 760,
+      "id": "festival"
+    },
+    {
+      "width": 760,
+      "id": "aoba"
+    },
+    {
+      "width": 760,
+      "id": "journey"
+    },
+    {
+      "width": 760,
+      "id": "grove"
+    },
+    {
+      "width": 760,
+      "id": "moon"
+    },
+    {
+      "width": 760,
+      "id": "swim"
+    },
+    {
+      "width": 760,
+      "id": "yako"
+    },
+    {
+      "width": 760,
+      "id": "city"
+    },
+    {
+      "width": 760,
+      "id": "winter"
+    },
+    {
+      "width": 760,
+      "id": "school"
+    },
+    {
+      "width": 760,
+      "id": "school-human"
+    },
+    {
+      "width": 760,
+      "id": "chibi"
+    },
+    {
+      "width": 760,
+      "id": "kariginu"
+    },
+    {
+      "width": 760,
+      "id": "butler"
+    },
+    {
+      "width": 760,
+      "id": "wedding"
+    }
+  ],
+  "regions": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10"
+  ],
+  "paidModelCalls": 0,
+  "realHost": false,
+  "driver_accepted": false,
+  "author_accepted": false,
+  "checks": {
+    "guarded_build_and_inverse": true,
+    "original_walk_controller_identical_to36": true,
+    "full_card_inverse": true,
+    "other_modules_preserved": 5,
+    "original_image_hashes": 17,
+    "default_no_large_portrait_request": true,
+    "exclusive_views": true,
+    "nav_y_stable": true,
+    "real_walk_position_retained": true,
+    "keyboard_walk": true,
+    "refresh_offsite_error_swipe_cleanup": true,
+    "normal_prose_preserved": true
+  },
+  "limits": [
+    "synthetic helper/host/srcdoc and floor state; real original walk engine",
+    "real ST/online CDN/Android/author pending",
+    "no paid model calls or real-save writes"
+  ]
+}

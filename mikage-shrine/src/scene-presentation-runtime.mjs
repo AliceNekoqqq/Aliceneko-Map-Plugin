@@ -7,12 +7,27 @@ import { presentationView, portraitPlacement } from './scene-presentation-core.m
   let bridge = null, state = null, scope = '', disposed = false;
   let region = '', location = '', imageKey = '', transition = null, transitionTimer = 0;
   let portraitFrame = null;
+  let portraitRequested = false;
   const stops = [];
   function on(el, name, fn) { el.addEventListener(name, fn); stops.push(() => el.removeEventListener(name, fn)); }
   function resize() { bridge?.resize?.(Math.ceil(root.getBoundingClientRect().height) + 2); }
   function clearTransition() { clearTimeout(transitionTimer); transitionTimer = 0; transition?.cancel(); transition = null; $('vn-transition').hidden = true; }
+  function switchView(showPortrait, available) {
+    const show = !!showPortrait && !!available;
+    $('scene').hidden = show;
+    $('portrait-view').hidden = !show;
+    $('scene-portrait').hidden = !show;
+    $('scene-return-controls').hidden = !show;
+    $('scene-walk-hint').hidden = show || !state || presentationView(state).region === 'R01';
+    $('scene-walk-view').setAttribute('aria-pressed', String(!show));
+    $('scene-portrait-view').setAttribute('aria-pressed', String(show));
+    $('scene-portrait-view').disabled = !available;
+    $('scene-portrait-view').title = available ? '' : '巴卫不在当前地点，或立绘暂不可用';
+    root.dataset.sceneView = show ? 'portrait' : 'walk';
+  }
   function reset() {
-    state = null; region = ''; location = ''; imageKey = ''; portraitFrame = null; clearTransition();
+    state = null; region = ''; location = ''; imageKey = ''; portraitFrame = null; portraitRequested = false; clearTransition();
+    switchView(false, false);
     $('scene-portrait').hidden = true; $('scene-portrait').dataset.loaded = 'false'; $('scene-portrait-image').removeAttribute('src');
     $('vn-task-text').textContent = '记录待就绪';
   }
@@ -30,17 +45,20 @@ import { presentationView, portraitPlacement } from './scene-presentation-core.m
   }
   function portrait(view) {
     const holder = $('scene-portrait'), img = $('scene-portrait-image');
-    if (!view.portrait) { holder.hidden = true; return; }
+    if (!view.portrait) { portraitRequested = false; switchView(false, false); return; }
     let api; try { api = window.MikageCharacterArt || window.parent.MikageCharacterArt; } catch {}
-    if (!api?.portrait) { holder.hidden = true; return; }
+    if (!api?.portrait) { switchView(false, false); return; }
     const outfit=Object.prototype.hasOwnProperty.call(SCENE_PORTRAIT_FRAMING.outfits,view.outfit)?view.outfit:'usual';
     let url;
-    try { url = api.portrait('tomoe', outfit); } catch { holder.hidden=true;return; }
+    try { url = api.portrait('tomoe', outfit); } catch { switchView(false,false);return; }
     // URLs are supplied by the existing pinned asset catalog, never message text.
-    if (typeof url !== 'string' || !url.startsWith('https://')) return;
-    portraitFrame=SCENE_PORTRAIT_FRAMING.outfits[outfit];holder.dataset.outfit=outfit;holder.hidden = false;
+    if (typeof url !== 'string' || !url.startsWith('https://')) { switchView(false,false);return; }
+    portraitFrame=SCENE_PORTRAIT_FRAMING.outfits[outfit];holder.dataset.outfit=outfit;
+    $('portrait-outfit-name').textContent = portraitFrame.name;
+    switchView(portraitRequested, true);
+    if (!portraitRequested) return;
     placePortrait();
-    if (imageKey !== url) { imageKey = url; holder.dataset.loaded = 'false'; img.src = url; }
+    if (imageKey !== url) { imageKey = url; holder.dataset.loaded = 'false'; $('portrait-view').setAttribute('aria-busy','true'); img.src = url; }
   }
   function travel(view) {
     if (!view.region || !view.location) return;
@@ -61,12 +79,24 @@ import { presentationView, portraitPlacement } from './scene-presentation-core.m
     $('vn-task-text').textContent = state?.进度 ? view.taskText : '记录待就绪';
     portrait(view); resize();
   }
+  function showWalkView() {
+    portraitRequested = false;
+    if (state) portrait(presentationView(state));
+    resize();
+  }
+  on($('scene-walk-view'), 'click', showWalkView);
+  on($('scene-return'), 'click', showWalkView);
+  on($('scene-portrait-view'), 'click', () => {
+    portraitRequested = true;
+    if (state) portrait(presentationView(state));
+    resize();
+  });
   on($('scene-portrait-image'), 'load', () => {
     const img=$('scene-portrait-image');
-    if(!portraitFrame||img.naturalWidth!==portraitFrame.width||img.naturalHeight!==portraitFrame.height){$('scene-portrait').hidden=true;return;}
-    placePortrait();$('scene-portrait').dataset.loaded='true';resize();
+    if(!portraitFrame||img.naturalWidth!==portraitFrame.width||img.naturalHeight!==portraitFrame.height){imageKey='';portraitRequested=false;switchView(false,false);return;}
+    placePortrait();$('scene-portrait').dataset.loaded='true';$('portrait-view').setAttribute('aria-busy','false');resize();
   });
-  on($('scene-portrait-image'), 'error', () => { $('scene-portrait').hidden=true; resize(); });
+  on($('scene-portrait-image'), 'error', () => { imageKey='';$('scene-portrait').dataset.loaded='false';portraitRequested=false;switchView(false,false);resize(); });
   on(document, 'visibilitychange', () => { if (document.hidden) clearTransition(); });
   on(reduced, 'change', clearTransition);
   on(window, 'mikage:art-ready', () => { if (bridge) render(state); });

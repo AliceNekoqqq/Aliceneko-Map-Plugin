@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {portraitPlacement} from '../src/scene-presentation-core.mjs';
-const spec=JSON.parse(await readFile(new URL('../src/scene-portrait-framing.json',import.meta.url)));
+const spec=JSON.parse((await readFile(new URL('../releases/1.49.36/statusbar.html',import.meta.url),'utf8')).match(/const SCENE_PORTRAIT_FRAMING=(.*);\n/)[1]);
 assert.equal(Object.keys(spec.outfits).length,17);
 const near=(a,b)=>assert(Math.abs(a-b)<1e-9);
 for(const [id,r] of Object.entries(spec.outfits)){

@@ -41,8 +41,11 @@ export async function sceneFixture(viewport={width:375,height:1100},release=proc
  await page.waitForFunction(()=>document.querySelector('[data-mikage-status-host] iframe')?.contentWindow?.MikagePresentation);
  const getFrame=async()=>await(await page.$('[data-mikage-status-host] iframe')).contentFrame();
  const frame=await getFrame();
- await frame.waitForFunction(()=>document.getElementById('scene-portrait').dataset.loaded==='true');
- await frame.locator('#scene-portrait-image').evaluate(n=>n.decode());
+ await frame.waitForFunction(()=>{
+  const view=document.getElementById('scene-portrait-view');
+  return view ? !view.disabled : document.getElementById('scene-portrait').dataset.loaded==='true';
+ });
+ if(!await frame.locator('#scene-portrait-view').count())await frame.locator('#scene-portrait-image').evaluate(n=>n.decode());
  await page.evaluate(async()=>{await MikageCharacterArt.installFont(document);document.getElementById('normal-prose').style.fontFamily='"Mikage Serif",serif';await document.fonts.ready;});
  return {page,frame,getFrame,browser,context,errors,missing,initial,prose,code,html,close:()=>browser.close()};
 }

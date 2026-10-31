@@ -19,8 +19,7 @@
 #shrine-game .scene-mode-bar{min-height:30px;padding:3px 10px;background:#79543d;color:#fcead2;font-size:10px;justify-content:flex-end;gap:8px}
 #shrine-game .scene-mode-bar button{color:#fff3dc;background:#62404f;border-color:#d3ad80;min-height:27px}
 #shrine-game .veranda-dialogue{background:#f3e6d2;margin:0;border:0}
-#shrine-game .scene-portrait:not([hidden])~#region-hotspots .region-hotspot:not(:hover):not(:focus-visible) .spot-label{opacity:0;visibility:hidden}
-#shrine-game .scene-portrait{position:absolute;right:2px;bottom:0;width:78%;height:76%;z-index:1040;overflow:hidden;pointer-events:none;filter:drop-shadow(-2px 2px 2px #35293733)}
+#shrine-game .scene-portrait{position:absolute;right:3%;bottom:0;width:94%;height:100%;z-index:1040;overflow:hidden;pointer-events:none;filter:drop-shadow(-2px 2px 2px #35293733)}
 #shrine-game .scene-portrait img{position:absolute;max-width:none!important;height:auto!important;left:0;top:0;opacity:0;image-rendering:auto;pointer-events:none}
 #shrine-game .scene-portrait[data-loaded=true] img{opacity:1}
 #shrine-game .scene-portrait[hidden]{display:none!important}
@@ -43,3 +42,21 @@
 #shrine-game .torii-watermark{background:#79543d;color:#f4d9b2}
 #shrine-game .vn-records>summary:focus-visible{outline:2px solid #603f54;outline-offset:-3px}
 @media(max-width:420px){#shrine-game .game-hud{min-height:76px;padding-left:12px;padding-right:42px;gap:2px 8px}#shrine-game .torii-title{font-size:19px;letter-spacing:1px}#shrine-game .torii-title:after{font-size:9px;letter-spacing:1px}#shrine-game .torii-meta{font-size:10px;max-width:142px}#shrine-game .torii-phase{font-size:9px}#shrine-game #board-bell{width:33px;min-width:33px;right:3px}#shrine-game .scene-dock{padding:4px 3px}#shrine-game .scene-dock .dock-button{height:67px}#shrine-game .scene-dock .dock-button>.board-sprite{height:39px}#shrine-game .scene-dock .dock-button>span:last-of-type{font-size:12px;letter-spacing:0}#shrine-game .scene-plaque{font-size:11px;top:10px;left:10px}#shrine-game .vn-task{padding:9px 11px;gap:8px}}
+
+/* Separate views: the navigable map never contains a foreground portrait. */
+#shrine-game .scene-view-switch{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:8px 10px;background:#f6ecdd;border-bottom:1px solid #c8ad88}
+#shrine-game .scene-view-switch button{min-height:44px;border:1px solid #c8ad88;border-radius:4px;background:#fff8ec;color:#754958;font:inherit;font-size:13px;letter-spacing:1px;padding:8px}
+#shrine-game .scene-view-switch button[aria-pressed=true]{background:#754958;color:#fff5e3;border-color:#754958;box-shadow:inset 0 0 0 2px #f8ead940}
+#shrine-game .scene-view-switch button:disabled{opacity:.55;cursor:default}
+#shrine-game .portrait-view{position:relative;aspect-ratio:3/2;border:6px solid #fff8eb;border-bottom-width:5px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 60%,#c9a3ad65,transparent 64%),#fbf4e8 var(--hg-paper-art) center/cover}
+#shrine-game .portrait-caption{position:absolute;top:14px;left:14px;z-index:1041;max-width:27%;pointer-events:none;color:#694654;border-left:2px solid #b49765;padding-left:8px;overflow-wrap:anywhere}
+#shrine-game .portrait-caption strong{display:block;font-size:22px;font-weight:500;letter-spacing:3px}
+#shrine-game .portrait-caption span{display:block;margin-top:6px;font-size:11px;line-height:1.6;color:#806855}
+
+#shrine-game .scene-mode-bar{min-height:56px}
+#shrine-game #scene-mode,#shrine-game #scene-return{min-height:44px;min-width:88px}
+
+#shrine-game .scene-art-controls,#shrine-game #scene-return-controls{display:flex;align-items:center;justify-content:flex-end;gap:8px;width:100%}
+#shrine-game[data-scene-view=portrait] .scene-art-controls{display:none!important}
+
+#shrine-game .portrait-view[aria-busy=true]:after{content:"立绘载入中";position:absolute;left:50%;top:50%;translate:-50% -50%;color:#806855;font-size:12px}

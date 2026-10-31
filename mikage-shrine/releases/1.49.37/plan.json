@@ -1,0 +1,32 @@
+{
+  "base": "1.49.36",
+  "target": "1.49.37",
+  "delivery": "full-card checkpoint; fixed Git loaders",
+  "cause": "foreground character obscures map/player visibility even with pointer pass-through",
+  "design": "default unobscured walk map; exclusive same-area paper portrait showcase; shared nav/task below",
+  "scope": [
+    "two44px view buttons",
+    "portrait moved outside walking scene",
+    "dedicated paper view with17original outfits",
+    "lazy portrait load and ephemeral view state"
+  ],
+  "preserve": [
+    "complete original scene controller and walk engine",
+    "17outfit assets",
+    "normal prose",
+    "five other modules",
+    "39worldbook entries/5regexes/6script IDs/gameplay"
+  ],
+  "checks": [
+    "guarded build/inverse scope",
+    "default map and real movement in ten regions",
+    "view exclusivity and walk position retained",
+    "17outfits at3widths",
+    "refresh/outfit/offsite/failure/swipe/cleanup",
+    "actual-source GIFs and final Git package"
+  ],
+  "paid_model_calls_added": 0,
+  "real_host": "pending",
+  "driver_accepted": false,
+  "author_accepted": false
+}
