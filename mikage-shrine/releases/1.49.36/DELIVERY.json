@@ -1,0 +1,46 @@
+{
+  "release": "1.49.36",
+  "source_commit": "f5a48f9cebb9517209f28d02c1fbc827b820f60a",
+  "branch": "codex/mikage-portrait-upper-14936",
+  "card": {
+    "filename": "巴卫_御影神社_v1.49.36_上半身完整显示版.json",
+    "bytes": 361850,
+    "sha256": "fd9b2a6b90e884024d210b9d8786337639858941ebaf679e428065f8aaec7425",
+    "library_file_id": "libfile_0eed2cdb5c3c81919a09b93c4bc23b7b"
+  },
+  "gifs": [
+    {
+      "filename": "mikage-upper-common-v14936.gif",
+      "frames": 42,
+      "seconds": 8.4,
+      "bytes": 238222,
+      "sha256": "d69126985ce425aaf7a998fe9136f84218bfa1bef773565fe5d7246447ee4b72",
+      "library_file_id": "libfile_a826aca68ad0819199865264239846e0"
+    },
+    {
+      "filename": "mikage-upper-all-v14936.gif",
+      "frames": 85,
+      "seconds": 17,
+      "bytes": 706605,
+      "sha256": "e3f1304c74bd0dfd4a06655b94d44183ae906dcda7de5df682a5f2d0c994d03c",
+      "library_file_id": "libfile_9231bc86a96c81919ba1fe0dff97cd60"
+    }
+  ],
+  "checks": [
+    "17 original asset bytes/hash",
+    "51 actual-source browser cases: fixed face scale, eye line and lateral/head bounds",
+    "passive label hidden; hover and keyboard focus reveal",
+    "6 viewport pairs and10regions original hotspot hit equivalence",
+    "normal prose DOM preserved, default/missing image/swipe/reduced motion/dispose",
+    "6 final fixed Git loaders and pinned module Git object hashes",
+    "39 worldbook entries/5regexes/5other modules preservation",
+    "both final GIFs completely decoded;17 sampled final outfit frames and whole-message preview inspected"
+  ],
+  "paid_model_calls": 0,
+  "real_save_writes": 0,
+  "real_ST": "pending",
+  "online_execution": "pending",
+  "Android": "pending",
+  "author_accepted": false
+}
+
