@@ -1,0 +1,45 @@
+{
+  "release": "1.49.37",
+  "source_commit": "d5bb12679b12991fabfd696acd6c1b32316ac1ea",
+  "branch": "codex/mikage-portrait-walk-14937",
+  "design": "default unobscured walking map; mutually exclusive same-area paper portrait showcase",
+  "card": {
+    "filename": "巴卫_御影神社_v1.49.37_庭院与立绘分视图版.json",
+    "bytes": 362565,
+    "sha256": "49a3bd100c4a754824bc889d52b7a759e4d127799c63da93dcea8540bc091852",
+    "library_file_id": "libfile_e65e227e786c819194e65c850c451fd8"
+  },
+  "gifs": [
+    {
+      "filename": "mikage-scene-views-v14937.gif",
+      "frames": 68,
+      "seconds": 13.6,
+      "bytes": 466549,
+      "sha256": "32b33f6dafae71172bd53c2a8b550feb00ce81949684f29e61c16c8beeea04e2",
+      "library_file_id": "libfile_dc67cf1526008191a27ef028521329b6"
+    },
+    {
+      "filename": "mikage-portrait-showcase-v14937.gif",
+      "frames": 85,
+      "seconds": 17,
+      "bytes": 989376,
+      "sha256": "347393a0a67fc424aea5770e39e9dcdad0ab3d4368cb6aa7ba50d8778c391f60",
+      "library_file_id": "libfile_c21263b42b948191b725206f42c4671d"
+    }
+  ],
+  "checks": [
+    "guarded build/dry-run/check and original walk controller equality",
+    "6viewport pairs,51outfit head/side cases",
+    "10regions actual ground clicks,movement and coordinates retained across view switches",
+    "keyboard walking,exclusive views,refresh/offsite/error/swipe/cleanup",
+    "normal prose DOM preserved;39worldbook entries,5regexes,5other modules unchanged",
+    "6final fixed Git loaders and6Git object module hashes",
+    "2final GIFs fully decoded,all17outfits sampled and main flow visually reviewed;recordings match final scene module hash"
+  ],
+  "paid_model_calls": 0,
+  "real_save_writes": 0,
+  "real_host": "pending",
+  "online_execution": "pending",
+  "Android": "pending",
+  "author_accepted": false
+}
