@@ -1,0 +1,605 @@
+{
+  "release": "1.49.35",
+  "date": "2026-10-31",
+  "base": "1.49.34",
+  "scope": "scene portrait registration only",
+  "source": "pass: guarded deterministic dry-run/check,syntax,inverse HTML/outer module,whole-card inverse",
+  "media": {
+    "source_images": 17,
+    "cached_bytes_and_hashes_verified": 17,
+    "remote_https_contract": "pass",
+    "remote_transport": "not contacted by static validator",
+    "new_image_bytes": 0,
+    "new_eager_assets": 0
+  },
+  "framing_browser": {
+    "release": "1.49.35",
+    "widths": [
+      320,
+      375,
+      760
+    ],
+    "adultCount": 16,
+    "smallCount": 1,
+    "cases": [
+      {
+        "width": 320,
+        "id": "usual",
+        "mode": "adult",
+        "eyeX": 0.5000805649675899,
+        "eyeY": 0.3399240646736907,
+        "chinSpan": 0.11499662758285598,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "work",
+        "mode": "adult",
+        "eyeX": 0.5000805649675899,
+        "eyeY": 0.3399240646736907,
+        "chinSpan": 0.11499662758285598,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "festival",
+        "mode": "adult",
+        "eyeX": 0.5000805649675899,
+        "eyeY": 0.3399240646736907,
+        "chinSpan": 0.11499662758285598,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "aoba",
+        "mode": "adult",
+        "eyeX": 0.5000982125319191,
+        "eyeY": 0.33992792723677046,
+        "chinSpan": 0.11499853666575742,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "journey",
+        "mode": "adult",
+        "eyeX": 0.5000890051070517,
+        "eyeY": 0.3399348532119476,
+        "chinSpan": 0.114991433101473,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "grove",
+        "mode": "adult",
+        "eyeX": 0.5000982125319191,
+        "eyeY": 0.33992792723677046,
+        "chinSpan": 0.11499853666575742,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "moon",
+        "mode": "adult",
+        "eyeX": 0.5000982125319191,
+        "eyeY": 0.33992792723677046,
+        "chinSpan": 0.11499853666575742,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "swim",
+        "mode": "adult",
+        "eyeX": 0.5001325225867381,
+        "eyeY": 0.3399507036213809,
+        "chinSpan": 0.11499465762333921,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "yako",
+        "mode": "adult",
+        "eyeX": 0.500036668871088,
+        "eyeY": 0.33993585127823955,
+        "chinSpan": 0.11499744941716278,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "city",
+        "mode": "adult",
+        "eyeX": 0.500086031132611,
+        "eyeY": 0.3399775117674672,
+        "chinSpan": 0.11499765285020108,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "winter",
+        "mode": "adult",
+        "eyeX": 0.5000840596343066,
+        "eyeY": 0.33992836927079245,
+        "chinSpan": 0.11499555099736276,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "school",
+        "mode": "adult",
+        "eyeX": 0.5000776264990276,
+        "eyeY": 0.3399145219734275,
+        "chinSpan": 0.114995104310351,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "school-human",
+        "mode": "adult",
+        "eyeX": 0.5000776264990276,
+        "eyeY": 0.3399145219734275,
+        "chinSpan": 0.114995104310351,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "chibi",
+        "mode": "small",
+        "eyeX": null,
+        "eyeY": null,
+        "chinSpan": null,
+        "smallBounds": {
+          "left": 6.373870849609375,
+          "top": 39.716461181640625,
+          "right": 73.1864013671875,
+          "bottom": 149.68661499023438
+        }
+      },
+      {
+        "width": 320,
+        "id": "kariginu",
+        "mode": "adult",
+        "eyeX": 0.500062150117855,
+        "eyeY": 0.33992226658398117,
+        "chinSpan": 0.11499882524805646,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "butler",
+        "mode": "adult",
+        "eyeX": 0.5001404132292281,
+        "eyeY": 0.33989989035648527,
+        "chinSpan": 0.11499782630932896,
+        "smallBounds": null
+      },
+      {
+        "width": 320,
+        "id": "wedding",
+        "mode": "adult",
+        "eyeX": 0.5000955270329994,
+        "eyeY": 0.33988750351626434,
+        "chinSpan": 0.11499283161569149,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "usual",
+        "mode": "adult",
+        "eyeX": 0.5000042268395205,
+        "eyeY": 0.33995104599230036,
+        "chinSpan": 0.1149984927870058,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "work",
+        "mode": "adult",
+        "eyeX": 0.5000042268395205,
+        "eyeY": 0.33995104599230036,
+        "chinSpan": 0.1149984927870058,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "festival",
+        "mode": "adult",
+        "eyeX": 0.5000042268395205,
+        "eyeY": 0.33995104599230036,
+        "chinSpan": 0.1149984927870058,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "aoba",
+        "mode": "adult",
+        "eyeX": 0.5000832362244049,
+        "eyeY": 0.33997227989733836,
+        "chinSpan": 0.11499547010025858,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "journey",
+        "mode": "adult",
+        "eyeX": 0.5001413281726872,
+        "eyeY": 0.33996011405254195,
+        "chinSpan": 0.1149996755774721,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "grove",
+        "mode": "adult",
+        "eyeX": 0.5000832362244049,
+        "eyeY": 0.33997227989733836,
+        "chinSpan": 0.11499547010025858,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "moon",
+        "mode": "adult",
+        "eyeX": 0.5000832362244049,
+        "eyeY": 0.33997227989733836,
+        "chinSpan": 0.11499547010025858,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "swim",
+        "mode": "adult",
+        "eyeX": 0.5000694240998311,
+        "eyeY": 0.33994116382591544,
+        "chinSpan": 0.11499574425644625,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "yako",
+        "mode": "adult",
+        "eyeX": 0.5000654258532442,
+        "eyeY": 0.3399356859491705,
+        "chinSpan": 0.11499857764096937,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "city",
+        "mode": "adult",
+        "eyeX": 0.5000437842819407,
+        "eyeY": 0.3399526546696677,
+        "chinSpan": 0.11499766664875097,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "winter",
+        "mode": "adult",
+        "eyeX": 0.5000072695392493,
+        "eyeY": 0.3399271857956012,
+        "chinSpan": 0.11499649982565241,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "school",
+        "mode": "adult",
+        "eyeX": 0.5000447076663839,
+        "eyeY": 0.3399343637030599,
+        "chinSpan": 0.11499763317946167,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "school-human",
+        "mode": "adult",
+        "eyeX": 0.5000447076663839,
+        "eyeY": 0.3399343637030599,
+        "chinSpan": 0.11499763317946167,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "chibi",
+        "mode": "small",
+        "eyeX": null,
+        "eyeY": null,
+        "chinSpan": null,
+        "smallBounds": {
+          "left": 7.428070068359375,
+          "top": 46.951324462890625,
+          "right": 86.4266357421875,
+          "bottom": 176.97909545898438
+        }
+      },
+      {
+        "width": 375,
+        "id": "kariginu",
+        "mode": "adult",
+        "eyeX": 0.5000461700932246,
+        "eyeY": 0.3399811226641578,
+        "chinSpan": 0.1149974789666061,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "butler",
+        "mode": "adult",
+        "eyeX": 0.5000565746212752,
+        "eyeY": 0.3399125208171122,
+        "chinSpan": 0.11499426853534042,
+        "smallBounds": null
+      },
+      {
+        "width": 375,
+        "id": "wedding",
+        "mode": "adult",
+        "eyeX": 0.5000323515794074,
+        "eyeY": 0.3399249401170084,
+        "chinSpan": 0.1149950289006402,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "usual",
+        "mode": "adult",
+        "eyeX": 0.5000402803512447,
+        "eyeY": 0.3399600731991349,
+        "chinSpan": 0.11499750457494594,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "work",
+        "mode": "adult",
+        "eyeX": 0.5000402803512447,
+        "eyeY": 0.3399600731991349,
+        "chinSpan": 0.11499750457494594,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "festival",
+        "mode": "adult",
+        "eyeX": 0.5000402803512447,
+        "eyeY": 0.3399600731991349,
+        "chinSpan": 0.11499750457494594,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "aoba",
+        "mode": "adult",
+        "eyeX": 0.5000402803512447,
+        "eyeY": 0.33996050643265113,
+        "chinSpan": 0.11499822663080647,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "journey",
+        "mode": "adult",
+        "eyeX": 0.49996853097559013,
+        "eyeY": 0.33995422454666446,
+        "chinSpan": 0.11499620487439693,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "grove",
+        "mode": "adult",
+        "eyeX": 0.5000402803512447,
+        "eyeY": 0.33996050643265113,
+        "chinSpan": 0.11499822663080647,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "moon",
+        "mode": "adult",
+        "eyeX": 0.5000402803512447,
+        "eyeY": 0.33996050643265113,
+        "chinSpan": 0.11499822663080647,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "swim",
+        "mode": "adult",
+        "eyeX": 0.500008267146325,
+        "eyeY": 0.3399864985517817,
+        "chinSpan": 0.11499741376617395,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "yako",
+        "mode": "adult",
+        "eyeX": 0.49998443313936647,
+        "eyeY": 0.33995966455966103,
+        "chinSpan": 0.11499773159687589,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "city",
+        "mode": "adult",
+        "eyeX": 0.5000444734332125,
+        "eyeY": 0.33996219186935434,
+        "chinSpan": 0.11499884025834513,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "winter",
+        "mode": "adult",
+        "eyeX": 0.5000683358797315,
+        "eyeY": 0.339959709964047,
+        "chinSpan": 0.11499959317670151,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "school",
+        "mode": "adult",
+        "eyeX": 0.4999899738863715,
+        "eyeY": 0.33996288827106647,
+        "chinSpan": 0.11499659648722611,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "school-human",
+        "mode": "adult",
+        "eyeX": 0.4999899738863715,
+        "eyeY": 0.33996288827106647,
+        "chinSpan": 0.11499659648722611,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "chibi",
+        "mode": "small",
+        "eyeX": null,
+        "eyeY": null,
+        "chinSpan": null,
+        "smallBounds": {
+          "left": 14.811431884765625,
+          "top": 97.68026733398438,
+          "right": 179.1446533203125,
+          "bottom": 368.1647033691406
+        }
+      },
+      {
+        "width": 760,
+        "id": "kariginu",
+        "mode": "adult",
+        "eyeX": 0.5000267486707484,
+        "eyeY": 0.3399923220190068,
+        "chinSpan": 0.11499823565650474,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "butler",
+        "mode": "adult",
+        "eyeX": 0.5000100700878112,
+        "eyeY": 0.3399678714024289,
+        "chinSpan": 0.11499750457494594,
+        "smallBounds": null
+      },
+      {
+        "width": 760,
+        "id": "wedding",
+        "mode": "adult",
+        "eyeX": 0.4999856029213325,
+        "eyeY": 0.33996441907284564,
+        "chinSpan": 0.11499778888444102,
+        "smallBounds": null
+      }
+    ],
+    "source": "actual scene host/srcdoc with synthetic floor data",
+    "realHost": false,
+    "paidModelCalls": 0,
+    "errors": [],
+    "missing": []
+  },
+  "layout_browser": {
+    "viewports": [
+      {
+        "width": 320,
+        "height": 520,
+        "cardHeight": 613.171875
+      },
+      {
+        "width": 320,
+        "height": 1100,
+        "cardHeight": 613.171875
+      },
+      {
+        "width": 375,
+        "height": 520,
+        "cardHeight": 649.828125
+      },
+      {
+        "width": 375,
+        "height": 1100,
+        "cardHeight": 649.828125
+      },
+      {
+        "width": 760,
+        "height": 520,
+        "cardHeight": 922.015625
+      },
+      {
+        "width": 760,
+        "height": 1100,
+        "cardHeight": 922.015625
+      }
+    ],
+    "regions": [
+      {
+        "id": "R01",
+        "targets": 4
+      },
+      {
+        "id": "R02",
+        "targets": 3
+      },
+      {
+        "id": "R03",
+        "targets": 3
+      },
+      {
+        "id": "R04",
+        "targets": 2
+      },
+      {
+        "id": "R05",
+        "targets": 2
+      },
+      {
+        "id": "R06",
+        "targets": 2
+      },
+      {
+        "id": "R07",
+        "targets": 2
+      },
+      {
+        "id": "R08",
+        "targets": 2
+      },
+      {
+        "id": "R09",
+        "targets": 2
+      },
+      {
+        "id": "R10",
+        "targets": 3
+      }
+    ],
+    "paidModelCalls": 0,
+    "realHost": false,
+    "source": "actual scene host/srcdoc, helper iframe and synthetic message/MVU data",
+    "errors": [],
+    "missing": []
+  },
+  "visual": "agent inspected all17 source heads and rendered registration contact sheet; author acceptance pending",
+  "preserved": {
+    "worldbook_entries": 39,
+    "regexes": 5,
+    "script_ids": 6,
+    "other_modules": 5,
+    "image_bytes_and_urls": true,
+    "scene_controls_and_prose": true
+  },
+  "gif": "pending final recording",
+  "package": "pending source commit",
+  "real_host": "pending",
+  "online_cdn_execution": "pending",
+  "real_device": "pending",
+  "actual_model": "pending",
+  "global_gameplay_review": "not resumed",
+  "driver_accepted": false,
+  "author_accepted": false
+}

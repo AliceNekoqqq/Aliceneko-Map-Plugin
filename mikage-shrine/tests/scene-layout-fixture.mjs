@@ -3,9 +3,9 @@ import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
-export async function sceneFixture(viewport={width:375,height:1100}){
+export async function sceneFixture(viewport={width:375,height:1100},release=process.env.MIKAGE_SCENE_LAYOUT_RELEASE||'1.49.34'){
  const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright');
- const r=new URL('../releases/1.49.34/',import.meta.url);
+ const r=new URL('../releases/'+release+'/',import.meta.url);
  const code=await readFile(new URL('scene.mjs',r),'utf8'),html=await readFile(new URL('statusbar.html',r),'utf8');
  const card=JSON.parse(await readFile(new URL('card-source.json',r),'utf8'));
  const initial=JSON.parse(card.data.character_book.entries.find(e=>e.comment.includes('[InitVar]')).content);

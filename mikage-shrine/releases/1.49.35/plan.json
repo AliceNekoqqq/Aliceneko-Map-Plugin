@@ -1,0 +1,40 @@
+{
+  "base": "1.49.34",
+  "target": "1.49.35",
+  "delivery": "full-card checkpoint; fixed Git loaders",
+  "cause": "fixed285%raw canvas width/offset ignored varying art padding and face scale",
+  "scope": [
+    "one scene image style",
+    "source-verified framing metadata",
+    "pure placement plus resize/load lifecycle",
+    "scene version/card metadata"
+  ],
+  "preserve": [
+    "17original image bytes/URLs",
+    "scene DOM and location/outfit truth",
+    "normal prose and original1.8controls",
+    "five other modules",
+    "39worldbook entries/5regexes/6script IDs/gameplay"
+  ],
+  "checks": [
+    "asset bytes/dimensions",
+    "guarded build and inverse scope",
+    "adult face registration and child exception",
+    "17outfits at3widths",
+    "same-scene outfit GIFs",
+    "layout/lifecycle and package"
+  ],
+  "routing": {
+    "mode": "manual",
+    "standing": "ST-A0 reused",
+    "guides": [
+      "ST-C2",
+      "ST-D7"
+    ],
+    "media_contract": "17static images; no new audio/Live2D/provider",
+    "deterministic_router_run": false
+  },
+  "real_host": "pending",
+  "driver_accepted": false,
+  "author_accepted": false
+}

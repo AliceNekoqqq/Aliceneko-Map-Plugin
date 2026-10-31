@@ -1,0 +1,291 @@
+{
+  "version": "1.49.35",
+  "target": {
+    "adult": {
+      "eyeX": 0.5,
+      "eyeY": 0.34,
+      "chinSpan": 0.115
+    },
+    "small": {
+      "height": 0.72,
+      "baseline": 0.98,
+      "widthLimit": 0.94
+    }
+  },
+  "policy": "16 adult outfits use audited face center/eye line/chin span; chibi keeps a smaller full-body pose; original pixels and URLs unchanged",
+  "outfits": {
+    "usual": {
+      "name": "常服",
+      "mode": "adult",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/opening/tomoe-v1.webp",
+        "sha256": "a5b5e379f5fe498a2cec891ffb8a3416a004b4fac963b2472baa3bdab6d98e36",
+        "bytes": 114164
+      },
+      "eye": [
+        555,
+        187
+      ],
+      "chin": 266
+    },
+    "work": {
+      "name": "修缮装",
+      "mode": "adult",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/tomoe-work.webp",
+        "sha256": "5d55ad7096e259d30fff2b1c7fda3f904b351b61dbfbab3b3756d0b017d15900",
+        "bytes": 528988
+      },
+      "eye": [
+        555,
+        187
+      ],
+      "chin": 266
+    },
+    "festival": {
+      "name": "祭典羽织",
+      "mode": "adult",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/tomoe-festival.webp",
+        "sha256": "fe0a4c6b40323554eea790c9e5a99c66cbe14fa6c5927f28aac3cc9339c18c7c",
+        "bytes": 552058
+      },
+      "eye": [
+        555,
+        187
+      ],
+      "chin": 266
+    },
+    "aoba": {
+      "name": "青岚羽织",
+      "mode": "adult",
+      "width": 576,
+      "height": 1080,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-aoba-portrait.webp",
+        "sha256": "e521c31203907db8d592434b1359d0bb58b69b873fb804fd86503e89856af288",
+        "bytes": 103044
+      },
+      "eye": [
+        288,
+        147
+      ],
+      "chin": 200
+    },
+    "journey": {
+      "name": "潮汐远行",
+      "mode": "adult",
+      "width": 576,
+      "height": 1080,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-journey-portrait.webp",
+        "sha256": "0b3f65ebddefa35e60bfe35f3fa664aa72199fa7ad7df70f296a1df088733d7f",
+        "bytes": 148644
+      },
+      "eye": [
+        291,
+        147
+      ],
+      "chin": 201
+    },
+    "grove": {
+      "name": "林间行装",
+      "mode": "adult",
+      "width": 576,
+      "height": 1080,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-grove-portrait.webp",
+        "sha256": "8eac95f03a512599d8ef71f2625655caa7970308dc4deeba31673134164533ca",
+        "bytes": 105240
+      },
+      "eye": [
+        288,
+        147
+      ],
+      "chin": 200
+    },
+    "moon": {
+      "name": "月下礼装",
+      "mode": "adult",
+      "width": 576,
+      "height": 1080,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-moon-portrait.webp",
+        "sha256": "b45f55bbc26a9953b2cc38ca452e0f9f15615e0e7ae90367367108f4917e461b",
+        "bytes": 114540
+      },
+      "eye": [
+        288,
+        147
+      ],
+      "chin": 200
+    },
+    "swim": {
+      "name": "晴汐浪纹",
+      "mode": "adult",
+      "width": 916,
+      "height": 1717,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@1d45da7c4c4c44837fca70ac7301c06ab762d71a/mikage-shrine/assets/wardrobe/unlocks/tomoe-swim-portrait.webp",
+        "sha256": "e39492472b751c2da20c95f0a81a6cd4962d43b409940b4adb2ab78b5c19cb0b",
+        "bytes": 201770
+      },
+      "eye": [
+        456,
+        202
+      ],
+      "chin": 280
+    },
+    "yako": {
+      "name": "野狐旧影",
+      "mode": "adult",
+      "width": 916,
+      "height": 1717,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-yako-portrait.png",
+        "sha256": "6ea6daff911e679e4de90dcba68a4a42e196219d3f9a43cc1dc748e502f928af",
+        "bytes": 1497482
+      },
+      "eye": [
+        451,
+        217
+      ],
+      "chin": 300
+    },
+    "city": {
+      "name": "绀夜归途",
+      "mode": "adult",
+      "width": 903,
+      "height": 1742,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-city-portrait.png",
+        "sha256": "95d57359002c466c3729c4314c6aa00674ed96e9f12c761c8d178f5ed963f46f",
+        "bytes": 1278450
+      },
+      "eye": [
+        454,
+        233
+      ],
+      "chin": 321
+    },
+    "winter": {
+      "name": "檐下薄雪",
+      "mode": "adult",
+      "width": 916,
+      "height": 1717,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-winter-portrait.png",
+        "sha256": "4c54314f1183eb7799e666103aa200bffbfeb1a865192e442926c2dc0f48e768",
+        "bytes": 1177243
+      },
+      "eye": [
+        457,
+        224
+      ],
+      "chin": 310
+    },
+    "school": {
+      "name": "樱坂薄暮",
+      "mode": "adult",
+      "width": 916,
+      "height": 1717,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-school-portrait.png",
+        "sha256": "ec85ca44b251eadda03d23f221e874a833b1e7479531f8c92b90c7259a6f36b3",
+        "bytes": 979078
+      },
+      "eye": [
+        456,
+        210
+      ],
+      "chin": 290
+    },
+    "school-human": {
+      "name": "樱坂薄暮·人间伪装",
+      "mode": "adult",
+      "width": 916,
+      "height": 1717,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@948d6c45abf43f8df982f29235457e99130e2b8c/mikage-shrine/assets/wardrobe/unlocks/tomoe-school-human-portrait.png",
+        "sha256": "83e720ca0a8c1d64541f1da0dffd5296611dcf4db29e829a0f0dbd5806b5899b",
+        "bytes": 850510
+      },
+      "eye": [
+        456,
+        210
+      ],
+      "chin": 290
+    },
+    "chibi": {
+      "name": "幼狐巴卫·万宝槌缩小装",
+      "mode": "small",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@35ae06bdc5375befe92c25503f165a3579941217/mikage-shrine/assets/wardrobe/restyle-v130/tomoe-chibi-portrait.png",
+        "sha256": "a21ad8035c9ab93983843519a1c7eec3f4060f32996aad22b6c76d33cf744937",
+        "bytes": 1196919
+      },
+      "bounds": [
+        321,
+        623,
+        852,
+        1497
+      ]
+    },
+    "kariginu": {
+      "name": "神乐狩衣",
+      "mode": "adult",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@35ae06bdc5375befe92c25503f165a3579941217/mikage-shrine/assets/wardrobe/restyle-v130/tomoe-kariginu-portrait.png",
+        "sha256": "139ec6e592d197dd58e0745f87f23f6b674fd90b688f19d8838fafa5a7dcd57c",
+        "bytes": 2292210
+      },
+      "eye": [
+        554,
+        205
+      ],
+      "chin": 278
+    },
+    "butler": {
+      "name": "学园祭执事服",
+      "mode": "adult",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@35ae06bdc5375befe92c25503f165a3579941217/mikage-shrine/assets/wardrobe/restyle-v130/tomoe-butler-portrait.png",
+        "sha256": "cdc50f267f4b578b08472eee01062c34400018214bcc0d571bc6dd42289ef6ad",
+        "bytes": 1764872
+      },
+      "eye": [
+        554,
+        187
+      ],
+      "chin": 267
+    },
+    "wedding": {
+      "name": "黑纹付羽织袴",
+      "mode": "adult",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@35ae06bdc5375befe92c25503f165a3579941217/mikage-shrine/assets/wardrobe/restyle-v130/tomoe-wedding-portrait.png",
+        "sha256": "92de4f052b833b8f77bede3b56b430282f46ca95208bd8fd64fc3e496fd86595",
+        "bytes": 1515353
+      },
+      "eye": [
+        547,
+        153
+      ],
+      "chin": 230
+    }
+  }
+}
