@@ -23,6 +23,14 @@ try{
    if(process.env.MIKAGE_SCREENSHOT_DIR){const dir=process.env.MIKAGE_SCREENSHOT_DIR+'/'+width;await mkdir(dir,{recursive:true});await frame.locator('#scene').screenshot({path:dir+'/'+id+'.png'});}
   }
  }
+ // Passive hotspot labels must not cover the bust; explicit hover/focus still reveals them.
+ await page.mouse.move(0,0);
+ const spot=frame.locator('.region-hotspot.is-near').first();
+ assert(await spot.count());
+ assert.equal(await spot.locator('.spot-label').evaluate(n=>getComputedStyle(n).visibility),'hidden');
+ await spot.hover();assert.equal(await spot.locator('.spot-label').evaluate(n=>getComputedStyle(n).visibility),'visible');
+ await page.mouse.move(0,0);await spot.focus();assert.equal(await spot.locator('.spot-label').evaluate(n=>getComputedStyle(n).visibility),'visible');
+ await spot.evaluate(n=>n.blur());
  // Unknown outfit data uses the default registered art, and image failure stays unobtrusive.
  await frame.evaluate(initial=>{MikagePresentation.render({...initial,巴卫:{...initial.巴卫,服装:'unknown'}});},f.initial);
  assert.equal(await frame.locator('#scene-portrait').getAttribute('data-outfit'),'usual');

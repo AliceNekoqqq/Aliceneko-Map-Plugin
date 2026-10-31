@@ -4,7 +4,7 @@
   "delivery": "full-card checkpoint; fixed Git loaders",
   "cause": "face registration alone retained narrow26%holder, clipping upper-body sides",
   "scope": [
-    "wide scene image style and hall label moved left to avoid face overlap",
+    "wide scene image style; passive hotspot labels hidden while portrait visible, hover/focus labels retained",
     "source-verified framing metadata",
     "pure placement plus resize/load lifecycle",
     "scene version/card metadata"
