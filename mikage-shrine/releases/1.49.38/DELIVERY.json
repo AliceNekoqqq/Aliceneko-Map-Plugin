@@ -1,0 +1,52 @@
+{
+  "release": "1.49.38",
+  "source_commit": "3786b5d61cf724a057001315c64194a8c673a63e",
+  "branch": "codex/mikage-scene-fixes-14938",
+  "card": {
+    "filename": "巴卫_御影神社_v1.49.38_双视图交互修复版.json",
+    "bytes": 363175,
+    "sha256": "cebafce33d10f607c244ab12776ad08ef513412d7d519e267dfe1a012cd74823",
+    "library_file_id": "libfile_00b7d60afbf48191bcff4b9a6c684ef5"
+  },
+  "gifs": [
+    {
+      "filename": "mikage-pause-resume-v14938.gif",
+      "bytes": 677565,
+      "sha256": "a5757ada56a22e518eabdd3fd012c65cbc92b807403aa7f5533dfe77fe36f6fb",
+      "frames": 44,
+      "seconds": 8.8,
+      "library_file_id": "libfile_e391c45af85c8191a264dd0574a0ccfd"
+    },
+    {
+      "filename": "mikage-portrait-retry-v14938.gif",
+      "bytes": 642183,
+      "sha256": "5032efa1434c49facfd64fcb32a3302f4040e63338a2d7fd3dbc6bf981dea485",
+      "frames": 42,
+      "seconds": 8.4,
+      "library_file_id": "libfile_bff953f5859c8191be881a9712555374"
+    }
+  ],
+  "resolved": [
+    "F01 hidden-map movement and arrival callbacks",
+    "F02 direct retry after image failure",
+    "F03 visible status for failure/offsite and focus recovery",
+    "F04 scene labels across regions"
+  ],
+  "checks": [
+    "37baseline fails and38focused cases pass",
+    "paused actors/routes,arrival once,refresh/media guard",
+    "three user-requested image attempts,zero automatic retry,late old-image load",
+    "offsite/focus and retry layouts at320/375/760",
+    "sixviewport pairs,51outfit head/sides,tenregions actual movement and position retention",
+    "normal prose/swipe/error/dispose",
+    "source/card inverse,fiveother modules,17original asset hashes",
+    "sixfinal fixed Git loaders and six Git module object hashes",
+    "two final GIFs fully decoded and sampled; recording module hashes match final scene"
+  ],
+  "paid_model_calls": 0,
+  "real_save_writes": 0,
+  "real_host": "pending",
+  "online_execution": "pending",
+  "Android": "pending",
+  "author_accepted": false
+}
