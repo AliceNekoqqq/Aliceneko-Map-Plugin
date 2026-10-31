@@ -1,0 +1,80 @@
+{
+  "release": "1.49.35",
+  "date": "2026-10-31",
+  "repository": "AliceNekoqqq/Aliceneko-Map-Plugin",
+  "branch": "codex/mikage-portrait-fit-14935",
+  "source_commit": "bb2da282566c0691c9eab6ed5942259ed6b9eeb5",
+  "source_tree": "eb393ddeb88b2e22dd3a40a8fe2927930ea0c273",
+  "artifact": {
+    "filename": "巴卫_御影神社_v1.49.35_场景立绘校准版.json",
+    "bytes": 361163,
+    "sha256": "784cf55bbd155223efd903995fbbdd15e99a9cc5a7cd12e981ae763151eb2707",
+    "source_commit": "bb2da282566c0691c9eab6ed5942259ed6b9eeb5",
+    "source_parity": true,
+    "six_git_objects_match": true,
+    "loaders": 6,
+    "regexes": 5,
+    "worldbook_entries": 39
+  },
+  "gifs": [
+    {
+      "name": "portrait-common",
+      "bytes": 251671,
+      "frames": 42,
+      "duration_seconds": 8.4,
+      "sha256": "4a5f047d98231229c355ea34628ff2bfe4412125c384d55b0a6437c88e658e3c",
+      "filename": "mikage-portrait-common-v14935.gif",
+      "module_sha256": "b972d0c0613858946fd66e86dfcf8fa99ab5fcb1641454d6543bdf51c0def7e1",
+      "outfits": [
+        "usual",
+        "school",
+        "usual",
+        "school-human",
+        "wedding",
+        "usual"
+      ],
+      "all_frames_decoded": true,
+      "paid_model_calls": 0,
+      "game_writes": 0
+    },
+    {
+      "name": "portrait-all",
+      "bytes": 709576,
+      "frames": 84,
+      "duration_seconds": 16.8,
+      "sha256": "dcdbcf61f48ac435668503a50a8e0ad2dae5981e4682be9039a6bbd9a7bed46d",
+      "filename": "mikage-portrait-all-v14935.gif",
+      "module_sha256": "b972d0c0613858946fd66e86dfcf8fa99ab5fcb1641454d6543bdf51c0def7e1",
+      "outfits": [
+        "usual",
+        "work",
+        "festival",
+        "aoba",
+        "journey",
+        "grove",
+        "moon",
+        "swim",
+        "yako",
+        "city",
+        "winter",
+        "school",
+        "school-human",
+        "chibi",
+        "kariginu",
+        "butler",
+        "wedding"
+      ],
+      "all_frames_decoded": true,
+      "paid_model_calls": 0,
+      "game_writes": 0
+    }
+  ],
+  "media": "17existing cached images verified; original URLs/bytes unchanged; remote transport pending",
+  "preserved": "normal prose,1.8scene controls,39worldbook entries/5regexes/6script IDs/5other modules",
+  "real_host": "pending",
+  "online_cdn_execution": "pending",
+  "real_device": "pending",
+  "actual_model": "pending",
+  "driver_accepted": false,
+  "author_accepted": false
+}
