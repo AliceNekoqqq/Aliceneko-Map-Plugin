@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {sceneFixture} from './scene-layout-fixture.mjs';
-const spec=JSON.parse(await readFile(new URL('../src/scene-portrait-framing.json',import.meta.url)));
+const spec=JSON.parse((await readFile(new URL('../releases/1.49.35/statusbar.html',import.meta.url),'utf8')).match(/const SCENE_PORTRAIT_FRAMING=(.*);\n/)[1]);
 const f=await sceneFixture({width:375,height:1100},'1.49.35');const {page,frame}=f;
 const near=(a,b,msg)=>assert(Math.abs(a-b)<.002,msg+': '+a+' vs '+b);
 const evidence={release:'1.49.35',widths:[320,375,760],adultCount:16,smallCount:1,cases:[],source:'actual scene host/srcdoc with synthetic floor data',realHost:false,paidModelCalls:0};

@@ -1,0 +1,27 @@
+{
+  "release": "1.49.36",
+  "paid_model_calls": 0,
+  "real_host": false,
+  "driver_accepted": false,
+  "author_accepted": false,
+  "checks": {
+    "guarded_build_inverse": true,
+    "cached_source_assets": 17,
+    "browser_widths": [
+      320,
+      375,
+      760
+    ],
+    "outfit_cases": 51,
+    "adult_face_scale_unchanged": true,
+    "adult_top_lateral_containment": true,
+    "small_body_containment": true,
+    "whole_message_and_hotspots": true
+  },
+  "limits": [
+    "synthetic host/floor; no real save writes",
+    "alpha>16 visible bounds; original images unchanged",
+    "bottom cropping intentional per author",
+    "real ST/online/Android pending"
+  ]
+}

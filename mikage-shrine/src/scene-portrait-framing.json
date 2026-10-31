@@ -1,8 +1,8 @@
 {
-  "version": "1.49.35",
+  "version": "1.49.36",
   "target": {
     "adult": {
-      "eyeX": 0.5,
+      "eyeX": 0.53,
       "eyeY": 0.34,
       "chinSpan": 0.115
     },
@@ -12,7 +12,7 @@
       "widthLimit": 0.94
     }
   },
-  "policy": "16 adult outfits use audited face center/eye line/chin span; chibi keeps a smaller full-body pose; original pixels and URLs unchanged",
+  "policy": "Wide scene portrait region; fixed adult face scale and eye line, full lateral silhouette and head retained; lower body may cross scene bottom; original images/URLs unchanged",
   "outfits": {
     "usual": {
       "name": "常服",
@@ -28,7 +28,13 @@
         555,
         187
       ],
-      "chin": 266
+      "chin": 266,
+      "visibleBounds": [
+        246,
+        15,
+        884,
+        1515
+      ]
     },
     "work": {
       "name": "修缮装",
@@ -44,7 +50,13 @@
         555,
         187
       ],
-      "chin": 266
+      "chin": 266,
+      "visibleBounds": [
+        265,
+        16,
+        883,
+        1515
+      ]
     },
     "festival": {
       "name": "祭典羽织",
@@ -60,7 +72,13 @@
         555,
         187
       ],
-      "chin": 266
+      "chin": 266,
+      "visibleBounds": [
+        245,
+        15,
+        885,
+        1515
+      ]
     },
     "aoba": {
       "name": "青岚羽织",
@@ -76,7 +94,13 @@
         288,
         147
       ],
-      "chin": 200
+      "chin": 200,
+      "visibleBounds": [
+        53,
+        23,
+        522,
+        1059
+      ]
     },
     "journey": {
       "name": "潮汐远行",
@@ -92,7 +116,13 @@
         291,
         147
       ],
-      "chin": 201
+      "chin": 201,
+      "visibleBounds": [
+        39,
+        23,
+        537,
+        1057
+      ]
     },
     "grove": {
       "name": "林间行装",
@@ -108,7 +138,13 @@
         288,
         147
       ],
-      "chin": 200
+      "chin": 200,
+      "visibleBounds": [
+        63,
+        24,
+        514,
+        1057
+      ]
     },
     "moon": {
       "name": "月下礼装",
@@ -124,7 +160,13 @@
         288,
         147
       ],
-      "chin": 200
+      "chin": 200,
+      "visibleBounds": [
+        53,
+        24,
+        522,
+        1060
+      ]
     },
     "swim": {
       "name": "晴汐浪纹",
@@ -140,7 +182,13 @@
         456,
         202
       ],
-      "chin": 280
+      "chin": 280,
+      "visibleBounds": [
+        145,
+        13,
+        802,
+        1658
+      ]
     },
     "yako": {
       "name": "野狐旧影",
@@ -156,7 +204,13 @@
         451,
         217
       ],
-      "chin": 300
+      "chin": 300,
+      "visibleBounds": [
+        42,
+        24,
+        874,
+        1699
+      ]
     },
     "city": {
       "name": "绀夜归途",
@@ -172,7 +226,13 @@
         454,
         233
       ],
-      "chin": 321
+      "chin": 321,
+      "visibleBounds": [
+        107,
+        31,
+        858,
+        1723
+      ]
     },
     "winter": {
       "name": "檐下薄雪",
@@ -188,7 +248,13 @@
         457,
         224
       ],
-      "chin": 310
+      "chin": 310,
+      "visibleBounds": [
+        87,
+        31,
+        839,
+        1697
+      ]
     },
     "school": {
       "name": "樱坂薄暮",
@@ -204,7 +270,13 @@
         456,
         210
       ],
-      "chin": 290
+      "chin": 290,
+      "visibleBounds": [
+        106,
+        21,
+        842,
+        1695
+      ]
     },
     "school-human": {
       "name": "樱坂薄暮·人间伪装",
@@ -220,7 +292,13 @@
         456,
         210
       ],
-      "chin": 290
+      "chin": 290,
+      "visibleBounds": [
+        107,
+        76,
+        708,
+        1695
+      ]
     },
     "chibi": {
       "name": "幼狐巴卫·万宝槌缩小装",
@@ -237,6 +315,12 @@
         623,
         852,
         1497
+      ],
+      "visibleBounds": [
+        320,
+        622,
+        853,
+        1498
       ]
     },
     "kariginu": {
@@ -253,7 +337,13 @@
         554,
         205
       ],
-      "chin": 278
+      "chin": 278,
+      "visibleBounds": [
+        83,
+        8,
+        996,
+        1528
+      ]
     },
     "butler": {
       "name": "学园祭执事服",
@@ -269,7 +359,13 @@
         554,
         187
       ],
-      "chin": 267
+      "chin": 267,
+      "visibleBounds": [
+        148,
+        13,
+        985,
+        1528
+      ]
     },
     "wedding": {
       "name": "黑纹付羽织袴",
@@ -285,7 +381,13 @@
         547,
         153
       ],
-      "chin": 230
+      "chin": 230,
+      "visibleBounds": [
+        185,
+        36,
+        860,
+        1520
+      ]
     }
   }
 }
