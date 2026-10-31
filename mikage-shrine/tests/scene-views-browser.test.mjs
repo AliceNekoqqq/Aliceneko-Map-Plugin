@@ -2,11 +2,12 @@ import assert from 'node:assert/strict';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {sceneFixture} from './scene-layout-fixture.mjs';
 const spec=JSON.parse(await readFile(new URL('../src/scene-portrait-framing.json',import.meta.url)));
-const f=await sceneFixture({width:375,height:1100},'1.49.37');let {frame}=f;const {page}=f;
+const release=process.env.MIKAGE_SCENE_VIEWS_RELEASE||'1.49.37';
+const f=await sceneFixture({width:375,height:1100},release);let {frame}=f;const {page}=f;
 const emit=()=>page.evaluate(()=>{for(const fn of test.listeners.variables||[])fn();});
 const portrait=async()=>{await frame.locator('#scene-portrait-view').click();await frame.waitForFunction(()=>document.getElementById('scene-portrait').dataset.loaded==='true');await frame.locator('#scene-portrait-image').evaluate(n=>n.decode());};
 const walk=()=>frame.locator('#scene-walk-view').click();
-const evidence={release:'1.49.37',viewports:[],outfits:[],regions:[],paidModelCalls:0,realHost:false};
+const evidence={release,viewports:[],outfits:[],regions:[],paidModelCalls:0,realHost:false};
 try{
  const prose=await page.locator('#normal-prose').evaluate(n=>({html:n.outerHTML,ref:!!(window.keptProse=n)}));
  assert(await frame.locator('#scene').isVisible());assert(await frame.locator('#portrait-view').isHidden());assert.equal(await frame.locator('#scene-portrait-image').getAttribute('src'),null,'default map does not download large portrait');assert.equal(await frame.locator('#scene #scene-portrait').count(),0);

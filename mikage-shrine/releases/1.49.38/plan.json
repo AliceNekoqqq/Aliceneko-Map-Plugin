@@ -1,0 +1,40 @@
+{
+  "base": "1.49.37",
+  "target": "1.49.38",
+  "delivery": "full-card checkpoint; fixed Git loaders",
+  "authorized": "continue audited F01-F04 fixes",
+  "scope": [
+    "view lifecycle pauses walking and arrival callbacks",
+    "image recovery and visible availability states",
+    "cross-region labels"
+  ],
+  "preserve": [
+    "walk routing and game state ownership",
+    "17outfits and framing",
+    "normal prose",
+    "five other modules",
+    "39worldbook entries/5regexes/6script IDs"
+  ],
+  "checks": [
+    "audited37 baseline",
+    "guarded build and inverse scope",
+    "paused coordinates/routes/arrival-once",
+    "direct image retry with no model call",
+    "offsite/status/focus/cross-region labels",
+    "view/asset/card regression and actual-source GIFs"
+  ],
+  "routing": {
+    "mode": "manual",
+    "skill": "code-quality-workflow",
+    "standing": "A0",
+    "guides": [
+      "ST-C2",
+      "ST-D7"
+    ],
+    "router_run": false
+  },
+  "paid_model_calls_added": 0,
+  "real_host": "pending",
+  "driver_accepted": false,
+  "author_accepted": false
+}

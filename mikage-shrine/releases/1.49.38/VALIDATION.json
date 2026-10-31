@@ -1,0 +1,347 @@
+{
+  "release": "1.49.38",
+  "baseline37": {
+    "expected_failure": true,
+    "assertion": "both actors must stay paused in portrait view",
+    "basis": "same focused regression run against actual1.49.37 failed before change"
+  },
+  "focused": {
+    "release": "1.49.38",
+    "source": "actual scene host/srcdoc and original walking engine; synthetic floor data",
+    "checks": [
+      {
+        "id": "pause-resume-both-actors",
+        "paused": {
+          "player": [
+            "44.25",
+            "87.57"
+          ],
+          "tomoe": [
+            "49.00",
+            "86.00"
+          ]
+        },
+        "after": {
+          "player": [
+            "68.34",
+            "79.31"
+          ],
+          "tomoe": [
+            "64.34",
+            "80.31"
+          ]
+        }
+      },
+      {
+        "id": "arrival-once-after-resume"
+      },
+      {
+        "id": "direct-image-retry",
+        "requests": 3,
+        "automaticRetries": 0
+      },
+      {
+        "id": "visible-offsite-state-and-focus"
+      },
+      {
+        "id": "late-load-validates-requested-not-current-outfit"
+      },
+      {
+        "id": "cross-region-labels",
+        "regions": [
+          "R02",
+          "R09"
+        ]
+      },
+      {
+        "id": "retry-layout-three-widths",
+        "widths": [
+          320,
+          375,
+          760
+        ]
+      }
+    ],
+    "paidModelCalls": 0,
+    "realHost": false
+  },
+  "regression": {
+    "release": "1.49.38",
+    "viewports": [
+      {
+        "width": 320,
+        "height": 520
+      },
+      {
+        "width": 320,
+        "height": 1100
+      },
+      {
+        "width": 375,
+        "height": 520
+      },
+      {
+        "width": 375,
+        "height": 1100
+      },
+      {
+        "width": 760,
+        "height": 520
+      },
+      {
+        "width": 760,
+        "height": 1100
+      }
+    ],
+    "outfits": [
+      {
+        "width": 320,
+        "id": "usual"
+      },
+      {
+        "width": 320,
+        "id": "work"
+      },
+      {
+        "width": 320,
+        "id": "festival"
+      },
+      {
+        "width": 320,
+        "id": "aoba"
+      },
+      {
+        "width": 320,
+        "id": "journey"
+      },
+      {
+        "width": 320,
+        "id": "grove"
+      },
+      {
+        "width": 320,
+        "id": "moon"
+      },
+      {
+        "width": 320,
+        "id": "swim"
+      },
+      {
+        "width": 320,
+        "id": "yako"
+      },
+      {
+        "width": 320,
+        "id": "city"
+      },
+      {
+        "width": 320,
+        "id": "winter"
+      },
+      {
+        "width": 320,
+        "id": "school"
+      },
+      {
+        "width": 320,
+        "id": "school-human"
+      },
+      {
+        "width": 320,
+        "id": "chibi"
+      },
+      {
+        "width": 320,
+        "id": "kariginu"
+      },
+      {
+        "width": 320,
+        "id": "butler"
+      },
+      {
+        "width": 320,
+        "id": "wedding"
+      },
+      {
+        "width": 375,
+        "id": "usual"
+      },
+      {
+        "width": 375,
+        "id": "work"
+      },
+      {
+        "width": 375,
+        "id": "festival"
+      },
+      {
+        "width": 375,
+        "id": "aoba"
+      },
+      {
+        "width": 375,
+        "id": "journey"
+      },
+      {
+        "width": 375,
+        "id": "grove"
+      },
+      {
+        "width": 375,
+        "id": "moon"
+      },
+      {
+        "width": 375,
+        "id": "swim"
+      },
+      {
+        "width": 375,
+        "id": "yako"
+      },
+      {
+        "width": 375,
+        "id": "city"
+      },
+      {
+        "width": 375,
+        "id": "winter"
+      },
+      {
+        "width": 375,
+        "id": "school"
+      },
+      {
+        "width": 375,
+        "id": "school-human"
+      },
+      {
+        "width": 375,
+        "id": "chibi"
+      },
+      {
+        "width": 375,
+        "id": "kariginu"
+      },
+      {
+        "width": 375,
+        "id": "butler"
+      },
+      {
+        "width": 375,
+        "id": "wedding"
+      },
+      {
+        "width": 760,
+        "id": "usual"
+      },
+      {
+        "width": 760,
+        "id": "work"
+      },
+      {
+        "width": 760,
+        "id": "festival"
+      },
+      {
+        "width": 760,
+        "id": "aoba"
+      },
+      {
+        "width": 760,
+        "id": "journey"
+      },
+      {
+        "width": 760,
+        "id": "grove"
+      },
+      {
+        "width": 760,
+        "id": "moon"
+      },
+      {
+        "width": 760,
+        "id": "swim"
+      },
+      {
+        "width": 760,
+        "id": "yako"
+      },
+      {
+        "width": 760,
+        "id": "city"
+      },
+      {
+        "width": 760,
+        "id": "winter"
+      },
+      {
+        "width": 760,
+        "id": "school"
+      },
+      {
+        "width": 760,
+        "id": "school-human"
+      },
+      {
+        "width": 760,
+        "id": "chibi"
+      },
+      {
+        "width": 760,
+        "id": "kariginu"
+      },
+      {
+        "width": 760,
+        "id": "butler"
+      },
+      {
+        "width": 760,
+        "id": "wedding"
+      }
+    ],
+    "regions": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10"
+    ],
+    "paidModelCalls": 0,
+    "realHost": false
+  },
+  "static": {
+    "guarded_build_dry_run_check": true,
+    "controller_inverse_except_lifecycle": true,
+    "full_card_inverse": true,
+    "five_other_modules_preserved": true,
+    "worldbook_entries": 39,
+    "regexes": 5,
+    "script_ids": 6,
+    "original_assets": 17,
+    "framing_unchanged": true
+  },
+  "paid_model_calls": 0,
+  "real_save_writes": 0,
+  "real_host": "pending",
+  "Android": "pending",
+  "online_execution": "pending",
+  "driver_accepted": false,
+  "author_accepted": false,
+  "scope_review": {
+    "coverage": "default full tracked staged+unstaged and untracked; supporting generated release included",
+    "preset": "custom",
+    "max_files": 40,
+    "max_known_lines": 6500,
+    "observed_files_before_receipt_update": 20,
+    "observed_known_lines_before_receipt_update": 5296,
+    "maintained_logic_churn": 61,
+    "strict_checker_exit": 2,
+    "remaining_warning": "pre-existing untracked Python bytecode has unknown line churn; untouched and unstaged",
+    "new_files_utf8_and_git_numstat_verified": true
+  }
+}

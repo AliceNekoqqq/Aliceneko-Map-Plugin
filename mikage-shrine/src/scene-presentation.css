@@ -48,6 +48,9 @@
 #shrine-game .scene-view-switch button{min-height:44px;border:1px solid #c8ad88;border-radius:4px;background:#fff8ec;color:#754958;font:inherit;font-size:13px;letter-spacing:1px;padding:8px}
 #shrine-game .scene-view-switch button[aria-pressed=true]{background:#754958;color:#fff5e3;border-color:#754958;box-shadow:inset 0 0 0 2px #f8ead940}
 #shrine-game .scene-view-switch button:disabled{opacity:.55;cursor:default}
+#shrine-game .scene-view-notice{display:flex;align-items:center;gap:10px;padding:8px 10px;background:#f6ecdd;border-bottom:1px solid #c8ad88;color:#754958;font-size:12px}
+#shrine-game .scene-view-notice p{flex:1;min-width:0;margin:0;line-height:1.6}
+#shrine-game .scene-view-notice button{min-height:44px;min-width:88px;padding:8px;border:1px solid #b49765;border-radius:4px;background:#fff8ec;color:#754958;font:inherit}
 #shrine-game .portrait-view{position:relative;aspect-ratio:3/2;border:6px solid #fff8eb;border-bottom-width:5px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 60%,#c9a3ad65,transparent 64%),#fbf4e8 var(--hg-paper-art) center/cover}
 #shrine-game .portrait-caption{position:absolute;top:14px;left:14px;z-index:1041;max-width:27%;pointer-events:none;color:#694654;border-left:2px solid #b49765;padding-left:8px;overflow-wrap:anywhere}
 #shrine-game .portrait-caption strong{display:block;font-size:22px;font-weight:500;letter-spacing:3px}
