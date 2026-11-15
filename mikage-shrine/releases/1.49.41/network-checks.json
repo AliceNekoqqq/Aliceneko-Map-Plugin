@@ -1,0 +1,44 @@
+[
+  {
+    "target": "module-cdn",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "target": "module-git",
+    "status": 200,
+    "bytes": 34797,
+    "sha256_match": true,
+    "type": "text/plain; charset=utf-8"
+  },
+  {
+    "target": "knot-divider-v2.png",
+    "status": 200,
+    "bytes": 570643,
+    "sha256_match": true,
+    "type": "image/png"
+  },
+  {
+    "target": "paper-frame-v2.png",
+    "status": 200,
+    "bytes": 389448,
+    "sha256_match": true,
+    "type": "image/png"
+  },
+  {
+    "target": "veranda-header-v2.png",
+    "status": 200,
+    "bytes": 2620981,
+    "sha256_match": true,
+    "type": "image/png"
+  },
+  {
+    "target": "testingcf.jsdelivr.net",
+    "status": 200,
+    "bytes": 34797,
+    "sha256_match": true
+  },
+  {
+    "target": "fastly.jsdelivr.net",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

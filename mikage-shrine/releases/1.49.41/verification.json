@@ -1,0 +1,47 @@
+{
+  "version": "1.49.41",
+  "bytes": 397234,
+  "sha256": "de6fd8c5c5e3326eb926c9829e17d4733a778424137be75224d7220c9f3441f0",
+  "changed_fields": [
+    "/data/character_version",
+    "/data/extensions/tavern_helper/scripts/6/name",
+    "/data/extensions/tavern_helper/scripts/6/content",
+    "/character_version"
+  ],
+  "scripts": 7,
+  "script_bytes": [
+    8885,
+    8915,
+    8917,
+    8931,
+    8907,
+    8919,
+    8912
+  ],
+  "worldbook_entries": 41,
+  "regex_rules": 5,
+  "six_old_scripts_equal": true,
+  "status": "candidate",
+  "real_sillytavern": "pending",
+  "module_commit": "f82c888edaa0ad53178fd69d7401226bee7c7ea6",
+  "module_sha256": "ff3de2a8a21958cd2f3b8a724f566c26338d22fedb116d8f0b5dfa993acdfe40",
+  "art_commit": "fb8538d08732d8bd0388f268ffdb1b28fd5711f1",
+  "gates": {
+    "module_syntax": "pass",
+    "all_7_loaders_syntax": "pass",
+    "reproducible_build": "pass",
+    "reader_DOM": "pass",
+    "existing_iframe_integration": "pass",
+    "Git_loader_fallback": "pass",
+    "unknown_metadata_preservation": "pass",
+    "base64_rejected_before_write": "pass",
+    "duplicate_UUID_rejected_before_write": "pass",
+    "card_budget": "pass",
+    "worldbook_regex_unknown_fields_preserved": "pass",
+    "live_GitHub_raw_module_sha256": "pass",
+    "all_3_live_art_sha256": "pass",
+    "real_sillytavern": "pending",
+    "mobile_visual_touch": "pending",
+    "live_testingcf_module_sha256_mime_cors": "pass"
+  }
+}
