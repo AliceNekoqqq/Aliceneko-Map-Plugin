@@ -1,0 +1,21 @@
+{
+  "version": "art-v2",
+  "status": "runtime-assets",
+  "files": [
+    {
+      "path": "knot-divider-v2.png",
+      "bytes": 570643,
+      "sha256": "27584685c67c194efd9051e43ad6c5d7165db5495d191c658540fc5715a05a71"
+    },
+    {
+      "path": "paper-frame-v2.png",
+      "bytes": 389448,
+      "sha256": "d3efbd13c255351be3be8036f0f120457f2ebba2ed4f36da5cc2c73792bfbb4d"
+    },
+    {
+      "path": "veranda-header-v2.png",
+      "bytes": 2620981,
+      "sha256": "2b386d18c9bce1eee65200efafecaaa6e4b0193cdd9fa46b65156f508c7e9b4a"
+    }
+  ]
+}
