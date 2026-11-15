@@ -148,7 +148,7 @@ const MikageOpeningHost=(()=>{
   }
   function eligible(){
     const row=first();if(!row)return null;
-    if(/^\s*<MikageOpeningScreen\/>\s*(?:<StatusPlaceHolderImpl\/>\s*)?$/.test(row.message))return row;
+    if(/^\s*<MikageOpeningScreen\/>\s*(?:<StatusPlaceHolderImpl\/>\s*)?$/.test(row.message))return {...row,message:marker};
     if(row.id!==getLastMessageId()||typeof substitudeMacros!=='function')return null;
     try{return row.message===substitudeMacros(OpeningStories[0]?.text)?row:null;}catch{return null;}
   }
