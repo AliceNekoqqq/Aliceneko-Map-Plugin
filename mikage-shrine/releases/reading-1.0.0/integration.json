@@ -1,0 +1,16 @@
+{
+  "cardVersion": "1.49.40",
+  "sourceCommit": "86a393ae7cfd9a9d56d953a8cf1684681c98ac6b",
+  "previousAuthoringBlob": "c4a361e8c8590140b7de4a82187511ff641b5db5",
+  "cardBlob": "2b3c010dc46dd8210909be5045540370c44268df",
+  "component": "mikage-shrine/components/mikage-reading-1.0.0.json",
+  "checks": {
+    "originalCardFields": "preserved apart from version and appended reader",
+    "componentFormat": "passed",
+    "readerDomRegression": "passed",
+    "existingIframeIntegration": "passed",
+    "loaderRegression": "passed",
+    "realSillyTavern": "pending",
+    "browserVisual": "pending: socket restrictions prevent Chromium startup"
+  }
+}
