@@ -13,6 +13,7 @@
       "git_blob": "55a878d89c9cb26f4d19ecd2c982235628cd5d39",
       "bytes": 216570,
       "asset_url_replacements": 0,
+      "compatibility_patches": [],
       "source": {
         "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
         "path": "mikage-shrine/releases/1.49.27/mvu.mjs",
@@ -28,6 +29,7 @@
       "git_blob": "4aa27e0e1c2e6a6fbdb8ec52b1f6f270fd18a108",
       "bytes": 438087,
       "asset_url_replacements": 95,
+      "compatibility_patches": [],
       "source": {
         "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
         "path": "mikage-shrine/releases/1.49.32/panels.mjs",
@@ -38,11 +40,15 @@
       "module_id": "scene",
       "script_id": "f763b9d7-c17c-5f0f-b0bd-36d9f37a3383",
       "path": "mikage-shrine/releases/1.49.39/modules/scene.mjs",
-      "version": "1.49.38",
-      "sha256": "730730528622fb66b7816ccc883de68816a9d5f8a41275b587ef62dbb3ee1e59",
-      "git_blob": "e9e04649e6a64cfbea8a4bebc1dc9d749466518d",
-      "bytes": 331531,
+      "version": "1.49.39",
+      "sha256": "b52f8113691e4431883d7986b883881b633df0bedb3327faab339f8efd1793f2",
+      "git_blob": "20e2cd5493d9a4d4baa4b729bd85e8259f7425fe",
+      "bytes": 331692,
       "asset_url_replacements": 187,
+      "compatibility_patches": [
+        "allow-optional-opening-status-marker",
+        "defer-statusbar-until-opening-completes"
+      ],
       "source": {
         "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
         "path": "mikage-shrine/releases/1.49.38/scene.mjs",
@@ -58,6 +64,7 @@
       "git_blob": "dad0f8916910e6a06b75610567c758028e7a0522",
       "bytes": 424032,
       "asset_url_replacements": 53,
+      "compatibility_patches": [],
       "source": {
         "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
         "path": "mikage-shrine/releases/1.48.3/minigames.mjs",
@@ -73,6 +80,7 @@
       "git_blob": "8063535716289fa083e20355a6570744ec328a51",
       "bytes": 117240,
       "asset_url_replacements": 13,
+      "compatibility_patches": [],
       "source": {
         "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
         "path": "mikage-shrine/releases/1.49.24/tomoe.mjs",
@@ -88,6 +96,7 @@
       "git_blob": "17edf30ddcbbb29c820576d5650a3ee4d026c0e6",
       "bytes": 42271,
       "asset_url_replacements": 6,
+      "compatibility_patches": [],
       "source": {
         "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
         "path": "mikage-shrine/releases/1.49.33/archive.mjs",
@@ -119,6 +128,7 @@
     }
   ],
   "asset_refs_preserved": true,
-  "transport_only": true,
-  "runtime_snapshot_bytes": 1569731
+  "transport_only": false,
+  "scope": "asset URL delivery plus two bounded opening-marker compatibility guards",
+  "runtime_snapshot_bytes": 1569892
 }

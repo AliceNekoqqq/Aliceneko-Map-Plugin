@@ -2,7 +2,7 @@
 // Base scene: 514e496447e7968c4cb97ace93a4f5dba1935eef.
 // Rebuild with hotfixes/1.16.3/patch_views.py.
 const protocol = 1;
-const version = '1.49.38';
+const version = '1.49.39';
 const scriptId = 'scene';
 const VERSION = version;
 const SCRIPT_ID = scriptId;
@@ -148,7 +148,7 @@ const MikageOpeningHost=(()=>{
   }
   function eligible(){
     const row=first();if(!row)return null;
-    if(row.message===marker)return row;
+    if(/^\s*<MikageOpeningScreen\/>\s*(?:<StatusPlaceHolderImpl\/>\s*)?$/.test(row.message))return row;
     if(row.id!==getLastMessageId()||typeof substitudeMacros!=='function')return null;
     try{return row.message===substitudeMacros(OpeningStories[0]?.text)?row:null;}catch{return null;}
   }
@@ -374,7 +374,7 @@ const MikageStatusbarHost=(()=>{
     const from=Math.max(0,last-MAX_READ+1);let rows=[];
     try{rows=getChatMessages(`${from}-${last}`,{include_swipes:true})||[];}catch{try{rows=getChatMessages(`${from}-${last}`)||[];}catch{}}
     const candidates=[];
-    for(const raw of rows){const selected=selectedRow(raw);if(!selected)continue;const {id,swipe,row}=selected;if(!Number.isInteger(id)||id<from||id>last||!roleIsAssistant(row)||!hasRealMarker(row.message))continue;
+    for(const raw of rows){const selected=selectedRow(raw);if(!selected)continue;const {id,swipe,row}=selected;if(/^\s*<MikageOpeningScreen\/>\s*(?:<StatusPlaceHolderImpl\/>\s*)?$/.test(row.message))continue;if(!Number.isInteger(id)||id<from||id>last||!roleIsAssistant(row)||!hasRealMarker(row.message))continue;
       const el=messageElement(id),body=messageBody(el);if(!body)continue;
       const meta={id,swipe};const nodes=markerNodes(body);const tags=markerElements(body);candidates.push({meta,body,nodes,tags});
     }
