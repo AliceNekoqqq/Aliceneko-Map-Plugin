@@ -1,0 +1,55 @@
+{
+  "version": "art-v2",
+  "status": "design-assets-not-integrated",
+  "files": [
+    {
+      "path": "previews/01-home.png",
+      "width": 941,
+      "height": 1672,
+      "mode": "RGB",
+      "sha256": "a506049a2cdbe7ea7ea97fa43fe0da21d5daf42d62a8ca1d1690c4e93941756d"
+    },
+    {
+      "path": "previews/02-opening.png",
+      "width": 941,
+      "height": 1672,
+      "mode": "RGB",
+      "sha256": "7e1b2f3977bf50939de0d6235ec2aa81638edfa6a0d850b27743de9b928a4e13"
+    },
+    {
+      "path": "previews/03-regular.png",
+      "width": 941,
+      "height": 1671,
+      "mode": "RGB",
+      "sha256": "e20c3102d009923375b60a9072aca6f78417a139344f7d016d45d5d03596a230"
+    },
+    {
+      "path": "previews/04-night.png",
+      "width": 941,
+      "height": 1671,
+      "mode": "RGB",
+      "sha256": "c9b61d7338abc9bc3d9029898c0fcb801e05bc523b11fc320fc1fb2485ffde0a"
+    },
+    {
+      "path": "assets/paper-frame-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "d3efbd13c255351be3be8036f0f120457f2ebba2ed4f36da5cc2c73792bfbb4d"
+    },
+    {
+      "path": "assets/veranda-header-v2.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "sha256": "2b386d18c9bce1eee65200efafecaaa6e4b0193cdd9fa46b65156f508c7e9b4a"
+    },
+    {
+      "path": "assets/knot-divider-v2.png",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "sha256": "27584685c67c194efd9051e43ad6c5d7165db5495d191c658540fc5715a05a71"
+    }
+  ]
+}
