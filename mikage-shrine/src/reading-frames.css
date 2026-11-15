@@ -1,0 +1,18 @@
+/* Shared reading theme injected only into known Mikage iframe documents. */
+html[data-mikage-reading-theme]{--mr-paper:#f5ecdf;--mr-ink:#302936;--mr-line:#c7ad88;--mr-rose:#824766;--mr-night:#302336}
+html[data-mikage-reading-theme=night]{--mr-paper:#302937;--mr-ink:#f0e4d5;--mr-line:#806650;--mr-rose:#e2b6c7}
+html[data-mikage-reading-theme] .shrine-game{background:var(--mr-paper);color:var(--mr-ink);border:1px solid #987344;border-radius:0 0 5px 5px;box-shadow:inset 0 0 0 2px #c5a575}
+html[data-mikage-reading-theme] .game-hud,html[data-mikage-reading-theme] .scene-dock{background:var(--mr-night);color:#f4e5ce;border-color:#c5a575}
+html[data-mikage-reading-theme] .dock-button{color:#f4e5ce;font-size:12px;min-height:52px;border-radius:0}
+html[data-mikage-reading-theme] .dock-button:hover,html[data-mikage-reading-theme] .dock-button[aria-expanded=true]{background:#67455f;color:#fff1db}
+html[data-mikage-reading-theme] .game-ledger,html[data-mikage-reading-theme] .roam-journal,html[data-mikage-reading-theme] .buildings-sheet{background:var(--mr-paper);color:var(--mr-ink);border-color:var(--mr-line)}
+html[data-mikage-reading-theme] .game-ledger button,html[data-mikage-reading-theme] .game-ledger b,html[data-mikage-reading-theme] .growth,html[data-mikage-reading-theme] .story-track{color:var(--mr-ink)}
+html[data-mikage-reading-theme] .paper,html[data-mikage-reading-theme] .panel-dialog,html[data-mikage-reading-theme] .life-dialog{background-color:var(--mr-paper);color:var(--mr-ink);border-color:var(--mr-line)}
+html[data-mikage-reading-theme] .paper-heading{border-color:var(--mr-line)}
+html[data-mikage-reading-theme] .story-choice{border-color:#c4a176;border-left-color:#a4656e;background:var(--mr-paper);color:var(--mr-ink)}
+html[data-mikage-reading-theme] .wood{background:linear-gradient(#614158,#3a293d);color:#f5e7d0;border-color:#c7a575;text-shadow:none;box-shadow:0 3px 0 #261c2d,inset 0 0 0 1px #835d71}
+html[data-mikage-reading-theme] .game{border-color:#61414e;box-shadow:inset 0 0 0 2px #d4b27a}
+html[data-mikage-reading-theme] .title-block h1{color:#fff0d5}
+html[data-mikage-reading-theme=night] .paper-content,html[data-mikage-reading-theme=night] .paper-content p,html[data-mikage-reading-theme=night] .paper-content h3,html[data-mikage-reading-theme=night] .paper h2,html[data-mikage-reading-theme=night] .close,html[data-mikage-reading-theme=night] .story-choice span,html[data-mikage-reading-theme=night] .story-choice small{color:var(--mr-ink)}
+html[data-mikage-reading-decor=false] .petals{display:none}
+html[data-mikage-reading-motion=false] .game *,html[data-mikage-reading-motion=false] .game *::before,html[data-mikage-reading-motion=false] .game *::after{animation:none!important;transition:none!important}

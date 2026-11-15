@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Build the independent, self-contained reading module; preserve all other card scripts."""
+import argparse, hashlib, json, re
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[2]
+SCRIPT_ID='942e5145-090d-52b2-8e13-455609375d17'
+
+def digest(body):return hashlib.sha256(body).hexdigest()
+
+def build_module():
+    src=ROOT/'mikage-shrine/src'
+    text=(src/'reading.mjs').read_text()
+    for key,name in [('__HOST_CSS__','reading.css'),('__FRAME_CSS__','reading-frames.css')]:
+        needle="'"+key+"'"
+        if text.count(needle)!=1:raise ValueError('Template drift: '+key)
+        text=text.replace(needle,json.dumps((src/name).read_text(),ensure_ascii=False),1)
+    return text.encode()
+
+def component(commit,module):
+    if not re.fullmatch('[0-9a-f]{40}',commit):raise ValueError('Immutable commit required')
+    text=(ROOT/'mikage-shrine/tools/loader-template.js').read_text()
+    for key,value in {'__COMMIT__':commit,'__SCRIPT_ID__':'reading','__MODULE_PATH__':'mikage-shrine/releases/reading-1.0.0/reading.mjs','__VERSION__':'1.0.0','__SHA256__':digest(module),'__LABEL__':'御影神社·正文美化'}.items():text=text.replace(key,value)
+    return {'type':'script','enabled':True,'name':'御影神社·正文美化 1.0.0 CDN','id':SCRIPT_ID,'content':text,
+            'info':'和纸正文、夜读与字号设置，开场题图和状态栏共用主题；仅改变显示，不改原文、变量与世界书。独立组件已在角色卡中启用时，无需重复导入。',
+            'button':{'enabled':True,'buttons':[{'name':'正文阅读设置','visible':True},{'name':'重新加载资源','visible':True}]},
+            'data':{},'export_with':{'data':False,'button':True}}
+
+def main():
+    ap=argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--commit');ap.add_argument('--card',type=Path);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--dry-run',action='store_true')
+    args=ap.parse_args();body=build_module()
+    files={'reading.mjs':body,'manifest.json':(json.dumps({'version':'1.0.0','script_id':SCRIPT_ID,'module_id':'reading','sha256':digest(body),'bytes':len(body),'source':['src/reading.mjs','src/reading.css','src/reading-frames.css'],'runtime':'Tavern Helper character script; existing Mikage art/status interfaces optional','stateWrites':False},ensure_ascii=False,indent=2)+'\n').encode()}
+    if args.commit:
+        script=component(args.commit,body);files['mikage-reading.json']=(json.dumps(script,ensure_ascii=False,indent=2)+'\n').encode()
+        if args.card:
+            card=json.loads(args.card.read_text());scripts=card['data']['extensions']['tavern_helper']['scripts']
+            if any(s['id']==SCRIPT_ID for s in scripts):raise ValueError('Reading component already present')
+            scripts.append(script)
+            card['character_version']='1.49.40';card['data']['character_version']='1.49.40'
+            files['巴卫_御影神社_v1.49.40_正文美化版.json']=(json.dumps(card,ensure_ascii=False,indent=2)+'\n').encode()
+    if args.out.exists():raise ValueError('Use a fresh output directory')
+    if not args.dry_run:
+        args.out.mkdir(parents=True)
+        for name,content in files.items():(args.out/name).write_bytes(content)
+    print(json.dumps({'dry_run':args.dry_run,'files':{k:len(v)for k,v in files.items()},'module_sha256':digest(body)},ensure_ascii=False))
+
+if __name__=='__main__':main()
