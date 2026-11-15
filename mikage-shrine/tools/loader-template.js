@@ -19,8 +19,9 @@
   const urls = [
     `https://cdn.jsdelivr.net/gh/${resource}`,
     `https://testingcf.jsdelivr.net/gh/${resource}`,
-    `https://raw.githubusercontent.com/${config.repository}/${config.commit}/${config.modulePath}`,
+    `https://fastly.jsdelivr.net/gh/${resource}`,
   ];
+  const gitUrl = `https://raw.githubusercontent.com/${config.repository}/${config.commit}/${config.modulePath}`;
   function removeNotice() {
     state.node?.remove();
     state.node = null;
@@ -62,6 +63,28 @@
       ]);
     } finally { clearTimeout(timer); }
   }
+  async function importVerifiedGit(url) {
+    if (!/^[0-9a-f]{64}$/.test(config.sha256) || !globalThis.crypto?.subtle) {
+      throw new Error('备用脚本需要有效的SHA256及安全浏览器环境');
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), config.timeoutMs);
+    let objectUrl;
+    try {
+      const response = await fetch(url, {credentials:'omit', redirect:'error', signal:controller.signal});
+      if (!response.ok) throw new Error(`Git资源返回${response.status}`);
+      if (Number(response.headers.get('content-length') || 0) > 4 * 1024 * 1024) throw new Error('备用脚本超过大小限制');
+      const bytes = await response.arrayBuffer();
+      if (bytes.byteLength > 4 * 1024 * 1024) throw new Error('备用脚本超过大小限制');
+      const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(n => n.toString(16).padStart(2,'0')).join('');
+      if (digest !== config.sha256) throw new Error('备用脚本SHA256校验失败');
+      objectUrl = URL.createObjectURL(new Blob([bytes], {type:'text/javascript'}));
+      return await importWithTimeout(objectUrl);
+    } finally {
+      clearTimeout(timer);
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+    }
+  }
   async function load() {
     if (state.status === 'running' || state.status === 'starting' || state.status === 'blocked') return false;
     if (state.promise) return state.promise;
@@ -86,6 +109,18 @@
           break;
         } catch (error) {
           errors.push(`${new URL(url).hostname}: ${String(error?.message || error)}`);
+        }
+      }
+      if (!module) {
+        try {
+          const requestUrl = state.attempt === 1 ? gitUrl : `${gitUrl}?mikage_retry=${state.attempt}`;
+          const candidate = await importVerifiedGit(requestUrl);
+          if (candidate.VERSION !== config.version || candidate.SCRIPT_ID !== config.scriptId || typeof candidate.start !== 'function') {
+            throw new Error('备用模块版本或标识不匹配');
+          }
+          module = candidate;
+        } catch (error) {
+          errors.push(`Git校验备用: ${String(error?.message || error)}`);
         }
       }
       if (!module) {
@@ -152,6 +187,7 @@
   modulePath: '__MODULE_PATH__',
   scriptId: '__SCRIPT_ID__',
   version: '__VERSION__',
+  sha256: '__SHA256__',
   label: '__LABEL__',
   retryButton: '重新加载资源',
   timeoutMs: 15000,

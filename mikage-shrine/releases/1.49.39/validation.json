@@ -1,0 +1,539 @@
+{
+  "date": "2026-11-15",
+  "card": {
+    "changed_paths": [
+      "/data/character_version",
+      "/data/extensions/tavern_helper/scripts/0/content",
+      "/data/extensions/tavern_helper/scripts/1/content",
+      "/data/extensions/tavern_helper/scripts/2/name",
+      "/data/extensions/tavern_helper/scripts/2/content",
+      "/data/extensions/tavern_helper/scripts/3/content",
+      "/data/extensions/tavern_helper/scripts/4/content",
+      "/data/extensions/tavern_helper/scripts/5/content",
+      "/character_version"
+    ],
+    "worldbook_entries": 41,
+    "worldbook_identical": true,
+    "round_trip_identical": true,
+    "bytes": 387203,
+    "sha256": "3b5e90223751f37613e195bef533418750e72e3483602338185886d4283525b1"
+  },
+  "delivery": {
+    "release": "1.49.39",
+    "runtime": {
+      "commit": "99136a2d0b98cf27d1f2f2ebc467b0365741faf0",
+      "tree": "4dac33c9421f6a7aa81e33dbca3b9b9c2d2bfec1",
+      "branch": "cdn-runtime",
+      "bytes": 1569912
+    },
+    "assets": [
+      {
+        "branch": "cdn-assets-01",
+        "commit": "39b808836cf9b6fc8991c3762e1dabbf890d2913",
+        "tree": "0be30389e5210435345b514c0fbac45a707a5675",
+        "bytes": 33553756,
+        "files": 22
+      },
+      {
+        "branch": "cdn-assets-02",
+        "commit": "cb19e0b8443741faf291f12606230c33911c838f",
+        "tree": "cb7adaf04ce3eb094aeaaeb626acb42a8496798f",
+        "bytes": 33547286,
+        "files": 50
+      },
+      {
+        "branch": "cdn-assets-03",
+        "commit": "d4f5e387a904985b099340fe7246964c697c18e2",
+        "tree": "e8597fc2aa0b65109144cc703bd4f04778bef5cd",
+        "bytes": 21590916,
+        "files": 88
+      }
+    ],
+    "sourceCardBlob": "f764a79675a744006ae4ea607a6401b1f173b82f",
+    "sourceCommit": "1f5712d022c68e87dccf88e2932d11044c95298e"
+  },
+  "probe_summary": {
+    "module_get_hash_checks": 6,
+    "asset_head_checks": 160,
+    "all_http_200": true
+  },
+  "runtime": {
+    "host": "SillyTavern 1.19.0",
+    "tavern_helper": "4.12.1",
+    "ejs": "1.17.9",
+    "browser": "Chrome Headless Shell 134.0.6998.35",
+    "viewport_checks": [
+      {
+        "width": 1100,
+        "height": 850
+      },
+      {
+        "width": 375,
+        "height": 812
+      }
+    ],
+    "external_transport": "Validated HTTPS responses bridged into the browser preserving response MIME/status/bytes; exact-byte project mirror disabled. May reuse verified HTTP response cache. Original MVU runtime and installed extensions run locally.",
+    "intentional_outage": "Only this project module URLs on all three jsDelivr import domains aborted; image URLs and original extension dependencies remain available.",
+    "results": {
+      "normal": {
+        "host_acceptance": {
+          "boundary": "Real SillyTavern 1.19.0 and installed extensions; validated HTTPS transport bridge; project module mirror=0; intentional code CDN outage=0",
+          "checks": [
+            {
+              "name": "Fresh-chat MVU initialization",
+              "pass": true,
+              "detail": {
+                "code": "ready",
+                "message": "第0楼御影神社MVU记录已读取。",
+                "messageId": 0,
+                "error": null
+              }
+            },
+            {
+              "name": "Opening click mounts one statusbar",
+              "pass": true,
+              "detail": {
+                "diagnosis": {
+                  "code": "ready",
+                  "message": "第0楼御影神社MVU记录已读取。",
+                  "messageId": 0,
+                  "error": null
+                },
+                "statusbars": 1,
+                "messages": 1
+              }
+            },
+            {
+              "name": "13 EJS entries evaluated by installed extension with actual message variables",
+              "pass": true,
+              "detail": {
+                "out": [
+                  {
+                    "id": 54,
+                    "chars": 238,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 57,
+                    "chars": 3,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 64,
+                    "chars": 4,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 67,
+                    "chars": 3,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 69,
+                    "chars": 3,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 71,
+                    "chars": 3,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 73,
+                    "chars": 4,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 76,
+                    "chars": 4,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 17,
+                    "chars": 825,
+                    "unexpanded": false,
+                    "relationship": true
+                  },
+                  {
+                    "id": 77,
+                    "chars": 468,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 84,
+                    "chars": 555,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 85,
+                    "chars": 0,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 86,
+                    "chars": 0,
+                    "unexpanded": false,
+                    "relationship": null
+                  }
+                ],
+                "unchanged": true
+              }
+            },
+            {
+              "name": "Fox game full pointer/keyboard flow and once-only local keepsake; MVU unchanged",
+              "pass": true,
+              "detail": {
+                "callbacks": 1,
+                "result": {
+                  "region": "R08",
+                  "title": "檐下守护幼狐",
+                  "stamp": "檐下守护笺",
+                  "complete": true,
+                  "cleared": 3,
+                  "total": 3,
+                  "sheltered": true,
+                  "ending": "rest",
+                  "mood": "wary",
+                  "waits": 2,
+                  "misses": 0,
+                  "foodPlaced": false,
+                  "delivery": "tracks",
+                  "rank": "把选择留给他",
+                  "detail": "在鸣神殿解开3 / 3张雷网，檐下干地与挡风物已布好，台阶退路留着。巴卫自己蜷在避风处休息。没有投喂。照着石地上的爪迹留了一笔。紫电雷光散尽，微凉的风掠过檐廊。石地上只留下一抹浅浅的银白落爪，与掌心残存的微温。",
+                  "activityVersion": "fox-1.37.0",
+                  "memories": [
+                    {
+                      "id": "R08-FOX",
+                      "region": "R08",
+                      "place": "鸣神殿·雷光神宫",
+                      "item": "檐下守护笺",
+                      "line": "把退路清出，在廊柱旁留出一方空隙。只是安静守在阶前，任他在阴影中平复惊悸。",
+                      "detail": "在鸣神殿解开3 / 3张雷网，檐下干地与挡风物已布好，台阶退路留着。巴卫自己蜷在避风处休息。没有投喂。照着石地上的爪迹留了一笔。紫电雷光散尽，微凉的风掠过檐廊。石地上只留下一抹浅浅的银白落爪，与掌心残存的微温。",
+                      "firstSeen": "2026-11-15T00:04:15.542Z",
+                      "lastSeen": "2026-11-15T02:30:24.737Z",
+                      "plays": 4,
+                      "newlyAdded": false,
+                      "persistent": true
+                    }
+                  ]
+                },
+                "plays": 4
+              }
+            },
+            {
+              "name": "Game close removes modal and restores scrolling",
+              "pass": true,
+              "detail": {
+                "width": 375,
+                "height": 812
+              }
+            },
+            {
+              "name": "Validated quest action writes next floor and preserves earlier floor",
+              "pass": true,
+              "detail": {
+                "zero": "",
+                "one": "EMA-1"
+              }
+            },
+            {
+              "name": "Full-page reload and reopening the same chat preserve exact-floor variables and game keepsake",
+              "pass": true,
+              "detail": {
+                "zero": "",
+                "one": "EMA-1",
+                "plays": 4
+              }
+            },
+            {
+              "name": "Six actual project loaders running",
+              "pass": true,
+              "detail": [
+                {
+                  "id": "archive",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "mvu",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "tomoe",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "panels",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "minigames",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "scene",
+                  "status": "running",
+                  "error": null
+                }
+              ]
+            }
+          ]
+        },
+        "page_errors": [],
+        "intentional_cdn_aborts": 0,
+        "git_fallback_module_requests": 0,
+        "unexpected_resource_failures": []
+      },
+      "fallback": {
+        "host_acceptance": {
+          "boundary": "Real SillyTavern 1.19.0 and installed extensions; validated HTTPS transport bridge; project module mirror=0; intentional code CDN outage=1",
+          "checks": [
+            {
+              "name": "Fresh-chat MVU initialization",
+              "pass": true,
+              "detail": {
+                "code": "ready",
+                "message": "第0楼御影神社MVU记录已读取。",
+                "messageId": 0,
+                "error": null
+              }
+            },
+            {
+              "name": "Opening click mounts one statusbar",
+              "pass": true,
+              "detail": {
+                "diagnosis": {
+                  "code": "ready",
+                  "message": "第0楼御影神社MVU记录已读取。",
+                  "messageId": 0,
+                  "error": null
+                },
+                "statusbars": 1,
+                "messages": 1
+              }
+            },
+            {
+              "name": "13 EJS entries evaluated by installed extension with actual message variables",
+              "pass": true,
+              "detail": {
+                "out": [
+                  {
+                    "id": 54,
+                    "chars": 238,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 57,
+                    "chars": 3,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 64,
+                    "chars": 4,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 67,
+                    "chars": 3,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 69,
+                    "chars": 3,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 71,
+                    "chars": 3,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 73,
+                    "chars": 4,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 76,
+                    "chars": 4,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 17,
+                    "chars": 825,
+                    "unexpanded": false,
+                    "relationship": true
+                  },
+                  {
+                    "id": 77,
+                    "chars": 468,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 84,
+                    "chars": 555,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 85,
+                    "chars": 0,
+                    "unexpanded": false,
+                    "relationship": null
+                  },
+                  {
+                    "id": 86,
+                    "chars": 0,
+                    "unexpanded": false,
+                    "relationship": null
+                  }
+                ],
+                "unchanged": true
+              }
+            },
+            {
+              "name": "Fox game full pointer/keyboard flow and once-only local keepsake; MVU unchanged",
+              "pass": true,
+              "detail": {
+                "callbacks": 1,
+                "result": {
+                  "region": "R08",
+                  "title": "檐下守护幼狐",
+                  "stamp": "檐下守护笺",
+                  "complete": true,
+                  "cleared": 3,
+                  "total": 3,
+                  "sheltered": true,
+                  "ending": "rest",
+                  "mood": "wary",
+                  "waits": 2,
+                  "misses": 0,
+                  "foodPlaced": false,
+                  "delivery": "tracks",
+                  "rank": "把选择留给他",
+                  "detail": "在鸣神殿解开3 / 3张雷网，檐下干地与挡风物已布好，台阶退路留着。巴卫自己蜷在避风处休息。没有投喂。照着石地上的爪迹留了一笔。紫电雷光散尽，微凉的风掠过檐廊。石地上只留下一抹浅浅的银白落爪，与掌心残存的微温。",
+                  "activityVersion": "fox-1.37.0",
+                  "memories": [
+                    {
+                      "id": "R08-FOX",
+                      "region": "R08",
+                      "place": "鸣神殿·雷光神宫",
+                      "item": "檐下守护笺",
+                      "line": "把退路清出，在廊柱旁留出一方空隙。只是安静守在阶前，任他在阴影中平复惊悸。",
+                      "detail": "在鸣神殿解开3 / 3张雷网，檐下干地与挡风物已布好，台阶退路留着。巴卫自己蜷在避风处休息。没有投喂。照着石地上的爪迹留了一笔。紫电雷光散尽，微凉的风掠过檐廊。石地上只留下一抹浅浅的银白落爪，与掌心残存的微温。",
+                      "firstSeen": "2026-11-15T00:04:15.542Z",
+                      "lastSeen": "2026-11-15T02:29:19.373Z",
+                      "plays": 3,
+                      "newlyAdded": false,
+                      "persistent": true
+                    }
+                  ]
+                },
+                "plays": 3
+              }
+            },
+            {
+              "name": "Game close removes modal and restores scrolling",
+              "pass": true,
+              "detail": {
+                "width": 375,
+                "height": 812
+              }
+            },
+            {
+              "name": "Validated quest action writes next floor and preserves earlier floor",
+              "pass": true,
+              "detail": {
+                "zero": "",
+                "one": "EMA-1"
+              }
+            },
+            {
+              "name": "Full-page reload and reopening the same chat preserve exact-floor variables and game keepsake",
+              "pass": true,
+              "detail": {
+                "zero": "",
+                "one": "EMA-1",
+                "plays": 3
+              }
+            },
+            {
+              "name": "Six actual project loaders running",
+              "pass": true,
+              "detail": [
+                {
+                  "id": "archive",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "mvu",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "tomoe",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "panels",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "minigames",
+                  "status": "running",
+                  "error": null
+                },
+                {
+                  "id": "scene",
+                  "status": "running",
+                  "error": null
+                }
+              ]
+            }
+          ]
+        },
+        "page_errors": [],
+        "intentional_cdn_aborts": 36,
+        "git_fallback_module_requests": 12,
+        "unexpected_resource_failures": []
+      }
+    }
+  },
+  "bounded_tests": [
+    "loader-git.test.cjs: verified raw fallback, digest/size/crypto/identity refusal, timeout cleanup, once-only start",
+    "opening-marker-compat.test.cjs: canonical fresh marker identity and defer statusbar"
+  ],
+  "not_claimed": [
+    "Android/Termux browser execution or reachability to the user device",
+    "Every mini-game and every branch of play",
+    "LLM-generated story, prompt injection ordering during a paid generation, or provider API",
+    "Offline operation or GitHub/raw network availability in every region",
+    "Entire historical fixture-dependent repository test suite"
+  ]
+}

@@ -1,0 +1,1004 @@
+[
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@99136a2d0b98cf27d1f2f2ebc467b0365741faf0/mikage-shrine/releases/1.49.39/modules/mvu.mjs",
+    "kind": "module",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "hash_match": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@99136a2d0b98cf27d1f2f2ebc467b0365741faf0/mikage-shrine/releases/1.49.39/modules/panels.mjs",
+    "kind": "module",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "hash_match": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@99136a2d0b98cf27d1f2f2ebc467b0365741faf0/mikage-shrine/releases/1.49.39/modules/scene.mjs",
+    "kind": "module",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "hash_match": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@99136a2d0b98cf27d1f2f2ebc467b0365741faf0/mikage-shrine/releases/1.49.39/modules/minigames.mjs",
+    "kind": "module",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "hash_match": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@99136a2d0b98cf27d1f2f2ebc467b0365741faf0/mikage-shrine/releases/1.49.39/modules/tomoe.mjs",
+    "kind": "module",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "hash_match": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@99136a2d0b98cf27d1f2f2ebc467b0365741faf0/mikage-shrine/releases/1.49.39/modules/archive.mjs",
+    "kind": "module",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "hash_match": true
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/eebc135a7fff8e19e67ec24f423f24841185a292.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/7bc5c41b8b4b8900facd158decd98b96957614ac.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/061c66dd74f3b0927545b85d12454a60580808bc.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/9b7abf7edc5595ec8349f7c49b19bcedce511beb.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/982578b5986216a1d2a16f61a2d02b217abb8708.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/890876b9bc7959fda8cd07380a3ca5318b50030c.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/596094438d7fb9e3c80cefd06fc9c9a3904d22bb.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/7cfeac950680ac6959ba8fd8f82c4fbfe1837071.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/3a0f50922deb26630cd070c18fc8ae36abfeead1.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/fb1409ac84b24412816af5320e9d8c1661bcbf6d.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/e7e9737941a373685af89fe1acbf11ee9d2e2e6c.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/e87f3c8655449a53e9deb29c0aa9f6c8c7f4af74.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/28470edbb85822d7baef3ccb63a807a21bb7dba6.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/66d806b2eb0ad9d9966a12b559d6e1179a18d440.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/e6d6c00c79189434b0c5c528ec1b3f261670ec91.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/76ae7a3a6e9ca87caebd6be6675f87047670f281.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/3a491e341ecebd7fc6564a34d5b52cd917833d70.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/9b94fefcdb8f20023a9ff6ee41137186a4ae26b2.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/c2eaec07a96a9753df35599c612f86439e99624e.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/558dc88ea4d6a7dcf210645d73a60ab10233ddf9.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/00c1d783f07cc4067cf4a03398e3248c5e684fa5.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/683e97867be0ab9cee83cfe642b1ecb3f5a7f66b.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/1b81b3bfa5823f2ef82cddfa6cba8620ddc1a3c0.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/69abb91831438dbb522f9db58d37ec20662225bd.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/cf2a5ef971888623cba2c03cadc812742d22b185.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/eede57577b88dabed670785bccea2b146ad44dc3.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/1165d19fe474df0649b9b756b5376c78c6b44da6.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/b91247d8d5c79bd8ac081db6741285f336e00c00.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/e2ee4da72522efef737f88111170833bb8def0b8.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/43255c9c4663557783bd5f198a3d5ca930aa3d24.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/2bda4f75aeecf2d09eb099ea2d19dffcb6160e56.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/679465fc690f92d545e447c7fe26547cb4cfdec4.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/5b24e695d84846543945f985935b11a1dcf5b922.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/5befe2b00840c6eff3adb6df0d43303402bf1221.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/17557898acec3039d914fb87feea33ed8e8b52a8.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/9224400f9dec8eee3ae5709489a2adc20537d6a1.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/f13e697df81df29b4278136fc1cae75c04ea55de.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/2d1e298ac1ed2fdcf875c73eb24ed09419db61c1.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/834aede7acebba71b29572593f3b624099ecb277.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/ea42c8bbb2baeae6f7ea09f554d5b6a92eeb853f.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/ea177232f8dd73a7459a80de8811e2e22556a478.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/e85b39b91e12c56de7f157c6c75d539c1cc5bdb4.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/f606d9086ad0e36b1cd1056e88602fbfed24db93.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/fdfd5051c2287325d2ea4c87da150c86fd71ab3a.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/ca69ec9fb0caa6585ce7c51de3928a904d79bf52.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/bb2fc525e1e53cf29492867e7ae2d0ab5d821c38.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/5bf808a6cc1f4598ebfc49380034c5eec0eccc24.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/f6c1e61f6fc5b07b1a125ae0146cb19ecb588483.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/b2411e0af341476299ef35d04559c0d23a4f14c2.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/18efc531274b54cf924d5e54e2acd4dfc04e8cac.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/4af897049ce64cebebd913e4b5a1eec4d78a96db.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/43e7b97867d4a358a4b8e5a6a486e48d812b437a.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/e46b77b3ac4fb743ee5a9d104e335223fe9c03ee.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/8e04c23ec0121c8e317dd13c78926fb50a728014.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/3237a70db0494b258547f4c8069d0061e6e158a2.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/4952a62a91195b86923e9fcb9cc926556fb8dc66.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/51d158f06b407d7a6fe9581123789031b4191afb.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/fa606f005c94474c37bceba8c1ab9f227b37ec74.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/6ed4b5c413e32aaba09b6423da9d69f191dae2b7.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/1f93a675141839b9947e417ddb8f4ba6c5edeef0.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/9320a7ede8981d2a35eb20b48e169dd632b6dc46.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/bb4cb42e88c2ce90419c02eb3176221caaf30962.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/8cef80aa40ad6a06294597bdbce2c209755a6e5a.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/20df8bca0c836f08fd6fa17c4446f7459a3faa36.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/4133a7f63271677e6f620ad2fcf77275170dff04.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/4aa0a42cb6dc4b03f7c4d99845ac9d211ad41b15.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/01b124bacbb9fbd2ecc9791e7aced3f5a20acbff.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/a7e03b7d7b594d4f218c911856184ff3708d294d.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/55223b545c092e048760a38c177e5a532389e783.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/bd5460e3f4638c8507e20ffb042544a2e2e4ff0a.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/641d9ec47dc8120b5120c253f666c1f79d941372.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/4ec15c17fe3f68cea3179a6309283a53a8282448.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/3c9be3ec45cd257d7d65de8a8ddd9ebe29cd46e4.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/4bb5b9ec0f35d03ec0187a6a5c8414ed8fd852e7.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/209b5e65bf15b532dae4f0a19c4218dbd84bf88a.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/abe397787417eb7fcffee2a69fb445d878bb261e.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/3d14fe8883134ce36f21c704823b80c96775d936.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/cb05c1ff9b4e931e363c6fbd7a62aaf4b590ca70.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/8d45dc1c20d81c9fdbab62e43ee02e692a800740.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/b22d23571b1031ca1363d855e4dc61ef4773b98f.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/6166e9d886077b6a3d6002f608c7e57899d2f416.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/8a6926aef2add82de07c880b9d6b522f3d85c9b9.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/ba6d12e6ca6b9bb1cc7a5f71f91378dda8afcb9c.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/82417ff82764aa984811a6f20fb6da87e848de73.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/f5b612f69dbcb5193a6d60a65e56338f26354b95.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/2e1068cf6ee98f48024de7c25b6e1a64f3ea5bd7.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/cee9cae75f6f0224d5096f84091e42d66c34b27c.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/d4d1bc5c7e89e6b86bd409e0d8669e3b6af278d9.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/cbb7005fd7ffa138e45f890855ca7c17fbe4890c.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/dfd3ea4a63069284499b98ce6838585cd5a7cf68.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/3c09bacef5c5b6751060bf4f820d964a7c34bfd1.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/275d655235e762b2200cc7d1eaa2faf4e999db00.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/254faee78b6cb49a4a21733682f2d050468d58ce.woff2",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/woff2"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/26803caeb1e659006139328d50727532c7fc1938.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/4eb1b31af186285a53189b9d6e7f3d532e5c3684.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/60efa1696e7f6da607b23a3146561f13f5f9a2a0.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/b848ea9c6e813888b2d962cbae045c043cf1e864.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/7d34c4599c2952eb34bf9627570964eb7ee68120.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/373c408f61ff27b0fcfeb75ec4980cb2cb455153.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/41bf20c0a1dfa3bb2b2cbb8d39f6e31f9d10ad75.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/0126c7ecbfef4c8c633f3585316601241f550b29.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/af59e38307c51991d9f6bccdef3920f1b9235d54.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/a2f7c296e4ad7474194045db2acaa6eee24e4d35.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/ed686d55e6e7336ce1b66731471f2289d643769c.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/a3a7ddf3962df57cc1e9ca44e429301a7d31e02c.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/65c1564b318d11bbdc512db4fe4d173e41752c0e.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/5a4de787600f4337e470c0f8dbbd2e6a8f50e957.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/2aca2592108cbcde7135da0dfff1584a5b0bb68d.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/18f7320ac93e7a2dc3a6499e2d082c88c8eae30a.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/241fb5f07709e1bae1f84089b40ec099cf81a9a1.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/70e962ed4865b46276c4ad7db5a0a6b87aae4a87.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/574749582d0100ed56fa6ae491e4af37ac50b849.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/421c35dccbbd5f8f33b3e4671ea8b7eb3a1ce595.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/9ea4a02cecc0aeb490d9abbb88b2c2e43fbfd5bb.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/e13b0bb391fb09619e9e50ca06daf6d6d8e678a7.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/e750873f571f493b369b0cc4749c0a9b825cb7bf.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/201a8066bedd52cb3988585eb276472fac914824.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/f83cc1655b4029b6add462c491021ed0dc00ccea.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/f2403e849c96fce74ca578d0f8414150e0e7e0bc.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/fa047b20a8521e059411936fb8ebdf64298211c5.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/66485c05a23f9bd46c695c6d697af3d4272ec658.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/bffe4ebb96b03de39bbd6ed13144295d3b4bfe32.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/aa473faede114d7d4b24892cddde2da84cd94300.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/0891d4f03c7222727a8d6f4350a03a44c2033499.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/f240ea793355730e93e2b9458424d15c57d01842.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/447cfae68bca886fd3bce37f7ecfc3d7177e34af.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/781055155954a642091ee1889f1c52181347b2bc.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/10a71ecf18d9549862ba7696559107b484e07e4a.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/1b907d749c89367a13dcb22d89bde262c6706d74.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/082a1876d54c98c0636bc69fdb47238e72184179.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/ddfb1200aeab91b907807d92287565ec1c575880.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/7e9998d8b00986c9d3a41adf64ef868f649401b3.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/4a28c45d0d860b42f1e0d9911f938dab823ddf79.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/8fbedf8d489bc639c8b73f8fc27dbc6b6dccac6c.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/95ed8ecdb3bf78740e5640c40bef5a9974356af3.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/7fc2725df9056af8c236736c285871508a85dfc6.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/7488f396b6f2c6b95c0d971dbd5afaa402bf5d9d.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/d5f01880026fbdaa31dd94046de4858a0756e2ae.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/62421160e572523df3b7d7fdaabbab15961fbfc5.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/f35075517460e26947fd4f105c0af2fe93068a78.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/49b9b827557ca5b9098487bfe9cbb1e4549584bf.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/96b9ec76aacd09ce3cc3b2e7e2ac8b5e1b37b02d.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/4f1518aac637da00985800dfaf75b1c492e5dfff.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/ba0a4c2cefa236bef84c6c0f2c0dc2f804e47a3f.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/86617aea298d524532b55578f4a60dfa0badaabf.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/306f95999abaef1a8c895a8c94f57ea8af513bf3.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/2a20b4116359217be122307dd2bb2b88734a1a2e.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/494aab44abf77968a9ef50a12ca5dab20b1b1702.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@39b808836cf9b6fc8991c3762e1dabbf890d2913/assets/1b011ce6e577122803f37be0f9f844ef085eac70.png",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/png"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/4aa607c89949909ad3f66d257a87535ae7b258f3.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/a4b990b33b0da1b85594062a3c68819f26a54cd3.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/b04a353869c880140d8dfbbdd763a2946bdabeb6.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/00382e244e7314e66d3a0ceeb98f84d38be5c525.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/6ed7846fe7af58db80c5bcb0c69e4aedaf70856f.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/167e1e5942d8ccad261ce0927f30a82092489318.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/d6c947d7f990a4418bd3992f5bfd26079f7e90bc.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/745300d9c91050824145ae50c0669f6be0715c2f.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/64a976b398dd200aa4fc8730d1dff85350154492.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@d4f5e387a904985b099340fe7246964c697c18e2/assets/4e0e8fc47aa09313694d6116b36a642f331b5a8e.webp",
+    "kind": "asset",
+    "status": 200,
+    "type": "image/webp"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@cb19e0b8443741faf291f12606230c33911c838f/assets/36fae64eaed467198a61d063ab9679817d223446.ttf",
+    "kind": "asset",
+    "status": 200,
+    "type": "font/ttf"
+  }
+]

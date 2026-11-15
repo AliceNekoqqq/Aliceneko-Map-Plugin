@@ -26,10 +26,12 @@ def build(source, manifest, commit):
         if hashlib.sha256(path.read_bytes()).hexdigest() != module['sha256']:
             raise ValueError('Module source differs: ' + module['path'])
         script = by_id[module['script_id']]
+        script['name'] = re.sub(r' \d+\.\d+\.\d+ CDN$', f" {module['version']} CDN", script['name'])
         code = template
         for key, value in {
             '__COMMIT__': commit, '__SCRIPT_ID__': module['module_id'],
             '__MODULE_PATH__': module['path'], '__VERSION__': module['version'],
+            '__SHA256__': module['sha256'],
             '__LABEL__': script['name'].split(' ')[0],
         }.items():
             code = code.replace(key, value)

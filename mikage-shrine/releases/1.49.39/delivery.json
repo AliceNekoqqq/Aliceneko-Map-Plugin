@@ -1,0 +1,34 @@
+{
+  "release": "1.49.39",
+  "runtime": {
+    "commit": "99136a2d0b98cf27d1f2f2ebc467b0365741faf0",
+    "tree": "4dac33c9421f6a7aa81e33dbca3b9b9c2d2bfec1",
+    "branch": "cdn-runtime",
+    "bytes": 1569912
+  },
+  "assets": [
+    {
+      "branch": "cdn-assets-01",
+      "commit": "39b808836cf9b6fc8991c3762e1dabbf890d2913",
+      "tree": "0be30389e5210435345b514c0fbac45a707a5675",
+      "bytes": 33553756,
+      "files": 22
+    },
+    {
+      "branch": "cdn-assets-02",
+      "commit": "cb19e0b8443741faf291f12606230c33911c838f",
+      "tree": "cb7adaf04ce3eb094aeaaeb626acb42a8496798f",
+      "bytes": 33547286,
+      "files": 50
+    },
+    {
+      "branch": "cdn-assets-03",
+      "commit": "d4f5e387a904985b099340fe7246964c697c18e2",
+      "tree": "e8597fc2aa0b65109144cc703bd4f04778bef5cd",
+      "bytes": 21590916,
+      "files": 88
+    }
+  ],
+  "sourceCardBlob": "f764a79675a744006ae4ea607a6401b1f173b82f",
+  "sourceCommit": "1f5712d022c68e87dccf88e2932d11044c95298e"
+}
