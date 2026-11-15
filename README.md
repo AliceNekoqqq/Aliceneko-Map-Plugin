@@ -1,2 +1,5 @@
-# Aliceneko-Map-Plugin
-红豆粉通用地图 · 酒馆助手独立脚本，模块化制图、世界地理与玩家当前位置
+# Aliceneko immutable asset delivery 3
+
+This branch contains only 88 referenced image/font blobs (21590916 bytes).
+Source authoring remains on main. Character cards pin this snapshot by its full Git commit.
+Existing Git blobs are reused without recompression or media edits.
