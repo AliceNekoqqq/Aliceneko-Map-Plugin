@@ -43,5 +43,14 @@
     "real_sillytavern": "pending",
     "mobile_visual_touch": "pending",
     "live_testingcf_module_sha256_mime_cors": "pass"
+  },
+  "runtime_access_probe": {
+    "date": "2026-11-16",
+    "target": "user-local SillyTavern previously specified as 127.0.0.1:8000",
+    "execution_host_loopback": "connection refused; does not establish state of user machine",
+    "command_line_chromium": "launch failed",
+    "native_browser": "launched; input blocked by unavailable AT-SPI provider",
+    "result": "real host, browser visuals and touch acceptance remain pending",
+    "source_changes": false
   }
 }
