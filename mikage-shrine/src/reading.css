@@ -41,3 +41,37 @@
 @keyframes mr-page-in{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:400px){.mr-hero{min-height:190px}.mr-hero-copy{padding-left:18px;padding-top:78px}.mr-hero-title{font-size:18px}.mr-hero-art{width:43%;right:0}.mr-settings-backdrop{padding:10px}}
 @media(prefers-reduced-motion:reduce){[data-mikage-reading]{animation:none!important}}
+/* Approved v2 art: independent border slices; text remains native and fluid. */
+[data-mikage-reading]{--mr-pad:clamp(12px,3.5%,26px);--mr-paper:#fff0dc;--mr-ink:#30252b;--mr-rose:#793268;border:9px solid #56352e;border-image-source:var(--mr-frame);border-image-slice:125;border-image-width:9px;border-image-repeat:stretch;border-radius:0;padding:18px var(--mr-pad) 18px!important;background-clip:padding-box;box-shadow:0 5px 20px #20142130;line-height:1.85!important;font-family:"Mikage Serif","Noto Serif SC","Songti SC",SimSun,serif}
+[data-mikage-reading]::before{inset:12px 7px;border-color:#bf956133}
+[data-mikage-reading][data-reading-theme=night]{--mr-paper:#2b2635;--mr-ink:#eadfd0;--mr-rose:#dfb2c6}
+[data-mikage-reading] p{margin:0 0 .9em!important}
+.mr-tools{margin:-6px 0 14px;padding:0 0 6px;gap:8px;min-height:44px;font-size:13px}
+.mr-tools .mr-context{flex:1;letter-spacing:.04em;line-height:1.6;overflow-wrap:anywhere}
+.mr-tools::before{content:"❀";border:1px solid #b17b5b;color:#a34e4a;background:#f7e1c0;width:26px;height:30px;font-size:21px}
+.mr-tools button{font-size:13px;min-width:60px}
+.mr-hero{margin:0 calc(-1 * var(--mr-pad)) 22px;min-height:220px;border-radius:0;border-bottom:1px solid #b78852}
+.mr-hero::before{background-image:linear-gradient(90deg,#25192c65,transparent 68%),var(--mr-hero-image);background-position:center;background-size:cover;filter:saturate(.82)}
+.mr-hero::after,.mr-lantern{display:none}
+.mr-hero-copy{width:54%;padding:92px 0 18px 16px}
+.mr-hero-title{font-size:clamp(17px,2.7vw,25px);padding:8px 9px;letter-spacing:.06em;background:#fff0dcf5;border:1px solid #c48f54;box-shadow:none}
+.mr-hero-place{font-size:13px;padding-top:10px;overflow-wrap:anywhere}
+.mr-hero-art{top:10px;bottom:0;height:auto;width:44%;right:0;filter:drop-shadow(-3px 3px 4px #24162530)}
+.mr-hero-art img{image-rendering:pixelated}
+.mr-bridge{isolation:isolate;min-height:58px;margin:20px calc(-1 * var(--mr-pad)) 0;padding:0;border:0;background:transparent;color:#382536;letter-spacing:.12em;font-weight:650;font-size:13px;overflow:hidden}
+.mr-bridge::before{content:"";position:absolute;inset:0;background-image:var(--mr-divider);background-size:100% auto;background-position:center;background-repeat:no-repeat;pointer-events:none;z-index:-1}
+.mr-bridge::after{display:none}.mr-bridge span{position:relative;padding:1px 5px;background:#fff0dcf2;border-radius:3px;font-size:13px;font-weight:500}
+[data-mikage-reading][data-reading-theme=night] .mr-hero-title{background:#2b2635ed;color:var(--mr-ink);border-color:var(--mr-line)}
+[data-mikage-reading][data-reading-theme=night] .mr-bridge::before{filter:brightness(.68) saturate(.65)}
+[data-mikage-reading][data-reading-theme=night] .mr-bridge span{background:var(--mr-paper);color:var(--mr-ink)}
+[data-mikage-reading][data-reading-theme=night] .mr-tools::before{background:#493644;color:#f0c0cc;border-color:#ab8668}
+.mr-settings[data-reading-theme=night]{background:#2b2635;color:#eadfd0;border-color:#806650;color-scheme:dark}
+.mr-settings[data-reading-theme=night] button{background:#3b3043;color:#eadfd0;border-color:#806650}
+.mr-settings[data-reading-theme=night] [aria-pressed=true]{background:#dfb2c6;color:#302536;border-color:#dfb2c6}
+.mr-settings[data-reading-theme=night] p{color:#cdb9aa}
+[data-mikage-reading] [data-mikage-status-host]{margin-bottom:-18px;border-radius:0}
+[data-mikage-reading][data-reading-decor=false]{border-image:none;border-width:1px;border-color:var(--mr-line)}
+[data-mikage-reading][data-reading-decor=false] .mr-bridge::before{display:none}
+[data-mikage-reading][data-reading-decor=false] .mr-bridge{min-height:44px;border-top:1px solid var(--mr-line)}
+[data-mikage-reading][data-reading-decor=false] .mr-bridge span{background:transparent;color:var(--mr-ink)}
+@media(max-width:350px){[data-mikage-reading]{border-width:7px;border-image-width:7px;--mr-pad:10px}.mr-tools{gap:5px}.mr-tools::before{width:22px;font-size:18px}.mr-tools .mr-context{font-size:13px}.mr-hero{min-height:210px}.mr-hero-copy{width:53%;padding:90px 0 16px 10px}.mr-hero-title{font-size:17px}.mr-hero-art{width:45%}}
