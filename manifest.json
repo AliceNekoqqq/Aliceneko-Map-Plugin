@@ -1,0 +1,124 @@
+{
+  "release": "1.49.39",
+  "source_card_sha256": "7346784ae5ad270fc6583725ee786c8433cbe9e042e252944bf7ce73dbda7639",
+  "source_card_path": "authoring/current-card.json",
+  "loader_template": "mikage-shrine/tools/loader-template.js",
+  "modules": [
+    {
+      "module_id": "mvu",
+      "script_id": "272c672c-6eed-5524-9d0b-1823b056fff4",
+      "path": "mikage-shrine/releases/1.49.39/modules/mvu.mjs",
+      "version": "1.49.27",
+      "sha256": "05d9ec582c36edbb8a5f44cf3b7e3ba042ab79d44df7967b204feba7aee8048d",
+      "git_blob": "55a878d89c9cb26f4d19ecd2c982235628cd5d39",
+      "bytes": 216570,
+      "asset_url_replacements": 0,
+      "source": {
+        "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
+        "path": "mikage-shrine/releases/1.49.27/mvu.mjs",
+        "sha256": "05d9ec582c36edbb8a5f44cf3b7e3ba042ab79d44df7967b204feba7aee8048d"
+      }
+    },
+    {
+      "module_id": "panels",
+      "script_id": "86a49572-142e-5d86-af3f-2e96d2f8a244",
+      "path": "mikage-shrine/releases/1.49.39/modules/panels.mjs",
+      "version": "1.49.32",
+      "sha256": "437e8403a4885b3af0d31dcd11dab799069e0c1584728a585f53148910953ade",
+      "git_blob": "4aa27e0e1c2e6a6fbdb8ec52b1f6f270fd18a108",
+      "bytes": 438087,
+      "asset_url_replacements": 95,
+      "source": {
+        "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
+        "path": "mikage-shrine/releases/1.49.32/panels.mjs",
+        "sha256": "661bcdc12bd0eed153040345bf66be1b2aa2b8c2a92419bae4fd916e3ecf9d6f"
+      }
+    },
+    {
+      "module_id": "scene",
+      "script_id": "f763b9d7-c17c-5f0f-b0bd-36d9f37a3383",
+      "path": "mikage-shrine/releases/1.49.39/modules/scene.mjs",
+      "version": "1.49.38",
+      "sha256": "730730528622fb66b7816ccc883de68816a9d5f8a41275b587ef62dbb3ee1e59",
+      "git_blob": "e9e04649e6a64cfbea8a4bebc1dc9d749466518d",
+      "bytes": 331531,
+      "asset_url_replacements": 187,
+      "source": {
+        "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
+        "path": "mikage-shrine/releases/1.49.38/scene.mjs",
+        "sha256": "357e904e2e29ca1a5a639a9035d01f06bcfb49138502357ff3fd6b2a34bd2f08"
+      }
+    },
+    {
+      "module_id": "minigames",
+      "script_id": "d3560ad0-892c-4b31-b783-11f80a23b90f",
+      "path": "mikage-shrine/releases/1.49.39/modules/minigames.mjs",
+      "version": "1.48.3",
+      "sha256": "45a18be123a2f9ad6a6fbda9c3d6163686dcc29d932ed330757aaa2cec7b8e1d",
+      "git_blob": "dad0f8916910e6a06b75610567c758028e7a0522",
+      "bytes": 424032,
+      "asset_url_replacements": 53,
+      "source": {
+        "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
+        "path": "mikage-shrine/releases/1.48.3/minigames.mjs",
+        "sha256": "8f61aafa009676283838d8e789c5333f2bf5fc3be5ae4f791795fd1f0c378b29"
+      }
+    },
+    {
+      "module_id": "tomoe",
+      "script_id": "2c2d44bb-488b-5a17-b756-1920d1ba38a6",
+      "path": "mikage-shrine/releases/1.49.39/modules/tomoe.mjs",
+      "version": "0.1.1",
+      "sha256": "ec2b030173613d734b956285c723bce33b65dde1a38433a4cba20361bbcb51c7",
+      "git_blob": "8063535716289fa083e20355a6570744ec328a51",
+      "bytes": 117240,
+      "asset_url_replacements": 13,
+      "source": {
+        "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
+        "path": "mikage-shrine/releases/1.49.24/tomoe.mjs",
+        "sha256": "49137f4c57aa38eba2f2d9c955b1d49e93a6c9ad5016a9fb7e8a6d72111ca34b"
+      }
+    },
+    {
+      "module_id": "archive",
+      "script_id": "0a3b1114-3aa4-5fe3-9574-9b987b220e85",
+      "path": "mikage-shrine/releases/1.49.39/modules/archive.mjs",
+      "version": "1.49.33",
+      "sha256": "be37bf300c95b7e496ec5fc0f41d930b80a23f1124ae370fc6312e7307c42bec",
+      "git_blob": "17edf30ddcbbb29c820576d5650a3ee4d026c0e6",
+      "bytes": 42271,
+      "asset_url_replacements": 6,
+      "source": {
+        "commit": "3786b5d61cf724a057001315c64194a8c673a63e",
+        "path": "mikage-shrine/releases/1.49.33/archive.mjs",
+        "sha256": "063c59788c7674350f39b431fba21b979d0759cd6cf6f550a8160caf11327494"
+      }
+    }
+  ],
+  "asset_groups": [
+    {
+      "branch": "cdn-assets-01",
+      "commit": "39b808836cf9b6fc8991c3762e1dabbf890d2913",
+      "tree": "0be30389e5210435345b514c0fbac45a707a5675",
+      "bytes": 33553756,
+      "files": 22
+    },
+    {
+      "branch": "cdn-assets-02",
+      "commit": "cb19e0b8443741faf291f12606230c33911c838f",
+      "tree": "cb7adaf04ce3eb094aeaaeb626acb42a8496798f",
+      "bytes": 33547286,
+      "files": 50
+    },
+    {
+      "branch": "cdn-assets-03",
+      "commit": "d4f5e387a904985b099340fe7246964c697c18e2",
+      "tree": "e8597fc2aa0b65109144cc703bd4f04778bef5cd",
+      "bytes": 21590916,
+      "files": 88
+    }
+  ],
+  "asset_refs_preserved": true,
+  "transport_only": true,
+  "runtime_snapshot_bytes": 1569731
+}

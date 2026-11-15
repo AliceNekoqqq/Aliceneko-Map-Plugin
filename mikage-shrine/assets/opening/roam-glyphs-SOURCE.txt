@@ -1,7 +1,0 @@
-Source family: Noto Serif SC
-Author: The Noto Project Authors
-License: SIL Open Font License, Version 1.1 (see roam-glyphs-OFL.txt)
-Source: https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf
-License source: https://raw.githubusercontent.com/google/fonts/main/ofl/notoserifsc/OFL.txt
-Derivative: static wght=500 subset; only characters missing from the existing Mikage fonts.
-Source SHA256: 050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9
