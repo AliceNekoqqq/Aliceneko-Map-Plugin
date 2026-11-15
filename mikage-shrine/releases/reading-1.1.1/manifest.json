@@ -1,0 +1,15 @@
+{
+  "version": "1.1.1",
+  "script_id": "942e5145-090d-52b2-8e13-455609375d17",
+  "module_id": "reading",
+  "sha256": "c17d0893960f0c1621397fafbba5e098226bb58349c57cde0ffef90b67add9c7",
+  "bytes": 34797,
+  "source": [
+    "src/reading.mjs",
+    "src/reading.css",
+    "src/reading-frames.css",
+    "src/time-scenes.json"
+  ],
+  "runtime": "Tavern Helper character script; existing Mikage art/status interfaces optional",
+  "stateWrites": false
+}

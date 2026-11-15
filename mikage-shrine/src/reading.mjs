@@ -1,16 +1,18 @@
 /** Read-only DOM presentation. Built as a self-contained module for the existing CDN loader. */
-export const VERSION = '1.0.0';
+export const VERSION = '1.1.1';
 export const SCRIPT_ID = 'reading';
 const HOST_CSS = '__HOST_CSS__';
 const FRAME_CSS = '__FRAME_CSS__';
 const ASSET_REF = 'e72763467967bffaabc77e7b1984ea6a91d92721';
 const ASSET_ROOT = `https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@${ASSET_REF}/mikage-shrine/assets/`;
+const ART_ROOT = 'https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@c94bb0cd849474082c153fac316f4c8f89a936be/mikage-shrine/assets/reading-v2/';
+const TIME_SCENES = '__TIME_SCENES__';
 const STORAGE = 'mikage:reading:1';
 const SCRIPT_UUID = '942e5145-090d-52b2-8e13-455609375d17';
 const TITLES = {'opening-1':'修缮现场初遇','opening-2':'带着心愿的来访者','opening-3':'神社的安静午后'};
-const DEFAULTS = Object.freeze({enabled:true,theme:'paper',size:16,decor:true,motion:true});
+const DEFAULTS = Object.freeze({enabled:true,theme:'paper',size:18,decor:true,motion:true});
 function normalized(value){
-  return {enabled:value?.enabled!==false,theme:value?.theme==='night'?'night':'paper',size:[16,18,20].includes(value?.size)?value.size:16,decor:value?.decor!==false,motion:value?.motion!==false};
+  return {enabled:value?.enabled!==false,theme:value?.theme==='night'?'night':'paper',size:[16,18,20].includes(value?.size)?value.size:18,decor:value?.decor!==false,motion:value?.motion!==false};
 }
 function svgURL(svg){return 'url("data:image/svg+xml,'+encodeURIComponent(svg)+'")';}
 // Original UI ornament, independent of narrative content and remotely supplied markup.
@@ -22,7 +24,7 @@ export function start(){
   try{host=window.parent;doc=host.document;if(!doc?.body)throw Error('页面未就绪');}catch{throw Object.assign(Error('正文美化暂时无法访问聊天页面'),{mikageRetryableStart:true});}
   if(typeof getChatMessages!=='function')throw Object.assign(Error('请启用酒馆助手后重试正文美化'),{mikageRetryableStart:true});
   host.MikageReading?.dispose?.();
-  let settings={...DEFAULTS},disposed=false,queued=false,dialog=null,focusBefore=null;
+  let settings={...DEFAULTS},disposed=false,queued=false,dialog=null,focusBefore=null,hasScanned=false;
   try{settings=normalized(JSON.parse(host.localStorage.getItem(STORAGE)||'null'));}catch{}
   const stops=[],owned=new Map(),frames=new Map(),styledDocs=new Map(),rowCache=new Map();
   const style=doc.createElement('style');style.dataset.mikageReadingStyle='host';style.textContent=HOST_CSS;doc.head.append(style);
@@ -45,7 +47,7 @@ export function start(){
     if(record.portrait)try{record.art?.releasePortrait?.(record.portrait);}catch{}
     for(const el of record.nodes)el.remove();
     record.body.removeAttribute('data-mikage-reading');record.body.removeAttribute('data-reading-theme');record.body.removeAttribute('data-reading-motion');record.body.removeAttribute('data-reading-decor');
-    for(const key of ['--mr-size','--mr-flower','--mr-branches'])record.body.style.removeProperty(key);
+    for(const key of ['--mr-size','--mr-flower','--mr-branches','--mr-frame','--mr-divider'])record.body.style.removeProperty(key);
     owned.delete(record.body);
   }
   function restoreDoc(child){const s=styledDocs.get(child);s?.remove();styledDocs.delete(child);try{for(const key of ['data-mikage-reading-theme','data-mikage-reading-motion','data-mikage-reading-decor'])child.documentElement.removeAttribute(key);}catch{}}
@@ -58,30 +60,34 @@ export function start(){
   }
   function apply(record){
     const body=record.body;body.setAttribute('data-mikage-reading','1');body.setAttribute('data-reading-theme',settings.theme);body.setAttribute('data-reading-decor',String(settings.decor));
-    if(!body.hasAttribute('data-reading-motion'))body.setAttribute('data-reading-motion',String(settings.motion));
+    body.setAttribute('data-reading-motion',String(settings.motion&&record.animate));
+    body.style.setProperty('--mr-frame',`url("${ART_ROOT}paper-frame-v2.png")`);body.style.setProperty('--mr-divider',`url("${ART_ROOT}knot-divider-v2.png")`);
     body.style.setProperty('--mr-size',(settings.size/16)+'rem');body.style.setProperty('--mr-flower',FLOWER);body.style.setProperty('--mr-branches',BRANCHES);
   }
   function header(record,row){
     const match=String(row.message||'').match(/<!--MikageOpeningStarted:(opening-[123])-->/);
     const toolbar=node('div');toolbar.className='mr-tools';toolbar.dataset.mrOwned='toolbar';
-    toolbar.append(node('span','御影神社'));const button=node('button','阅读设置');button.type='button';button.addEventListener('click',showSettings);toolbar.append(button);
+    const label=node('span','巴卫');label.className='mr-context';toolbar.append(label);record.context=label;const button=node('button','阅读设置');button.type='button';button.addEventListener('click',showSettings);toolbar.append(button);
     record.body.prepend(toolbar);record.nodes.push(toolbar);
     if(!match)return;
     const hero=node('header');hero.className='mr-hero';hero.dataset.mrOwned='hero';hero.style.setProperty('--mr-hero-image',`url("${ASSET_ROOT}statusbar/shrine-courtyard-v1.webp")`);
     const copy=node('div');copy.className='mr-hero-copy';const title=node('span',TITLES[match[1]]);title.className='mr-hero-title';copy.append(title);
-    const place=row.data?.stat_data?.环境?.所在位置||row.data?.stat_data?.环境?.地点;
-    if(typeof place==='string'&&place){const sub=node('span',place.slice(0,120));sub.className='mr-hero-place';copy.append(sub);}
-    hero.append(copy);const lantern=node('span');lantern.className='mr-lantern';lantern.setAttribute('aria-hidden','true');hero.append(lantern);
-    record.body.insertBefore(hero,toolbar);record.nodes.push(hero);record.hero=hero;
+    record.place=node('span');record.place.className='mr-hero-place';copy.append(record.place);hero.append(copy);
+    toolbar.after(hero);record.nodes.push(hero);record.hero=hero;
     updatePortrait(record,row);
   }
   function updatePortrait(record,row){
     if(!record.hero)return;
     const art=host.MikageCharacterArt,outfit=row.data?.stat_data?.巴卫?.服装;
-    try{const scene=art?.scene?.('courtyard');if(typeof scene==='string'&&/^https:\/\//.test(scene))record.hero.style.setProperty('--mr-hero-image',`url("${scene.replaceAll('"','%22')}")`);}catch{}
-    if(!art?.portrait||!art?.portraitPlacement||typeof outfit!=='string'||!outfit)return;
+    const env=row.data?.stat_data?.环境||{};
+    const period=['凌晨','夜晚','night'].includes(env.时段)?'night':['黄昏','傍晚','dusk'].includes(env.时段)?'dusk':'day';
+    // The approved veranda is afternoon-only; story time and reader theme are independent.
+    const scene=env.时段==='午后'?ART_ROOT+'veranda-header-v2.png':TIME_SCENES[period];
+    if(typeof scene==='string'&&/^https:\/\//.test(scene))record.hero.style.setProperty('--mr-hero-image',`url("${scene.replaceAll('"','%22')}")`);
+    if(record.place)record.place.textContent=[env.所在位置||env.地点,env.时段].filter(x=>typeof x==='string'&&x).join(' · ').slice(0,140);
+    if(!art?.portrait||!art?.portraitPlacement||typeof outfit!=='string'||!outfit){if(record.portrait){record.portraitResize?.disconnect();record.portrait.remove();record.portrait=null;record.artSignature=null;}return;}
     const signature=[art.fingerprint,art.rendererRevision,outfit].join(':');if(record.artSignature===signature)return;
-    if(record.portrait){record.portraitResize?.disconnect();record.portrait.remove();record.portrait=null;}
+    if(record.portrait){record.portraitResize?.disconnect();record.art?.releasePortrait?.(record.portrait);record.portrait.remove();record.portrait=null;}
     const portrait=node('div');portrait.className='mr-hero-art';const image=node('img');image.dataset.mrPortrait='true';image.alt='巴卫当前衣装';portrait.append(image);record.hero.append(portrait);
     try{
       const url=art.portrait('tomoe',outfit);if(typeof url!=='string'||!/^https:\/\//.test(url))throw Error('Invalid portrait URL');image.src=url;
@@ -95,13 +101,15 @@ export function start(){
   function refreshBridge(record){
     const anchor=record.body.querySelector('[data-mikage-status-host]');
     if(!anchor){record.bridge?.remove();record.bridge=null;return;}
-    if(!record.bridge?.isConnected){const divider=node('div','檐下此刻');divider.className='mr-bridge';divider.dataset.mrOwned='bridge';record.bridge=divider;record.nodes.push(divider);}
+    if(!record.bridge?.isConnected){const divider=node('div');divider.append(node('span','檐下此刻'));divider.className='mr-bridge';divider.dataset.mrOwned='bridge';record.bridge=divider;record.nodes.push(divider);}
     if(anchor.previousElementSibling!==record.bridge)anchor.before(record.bridge);
   }
   function scan(){
     queued=false;if(disposed)return;const active=settings.enabled&&scopeActive();
     for(const record of [...owned.values()])if(!active||!record.body.isConnected)release(record);
-    if(active)for(const el of doc.querySelectorAll('#chat .mes[mesid]')){
+    const messages=[...doc.querySelectorAll('#chat .mes[mesid]')];
+    const latest=messages.filter(el=>rowFor(el)).at(-1);
+    if(active)for(const el of messages){
       const body=el.querySelector('.mes_text');if(!body||body.querySelector('textarea')||el.querySelector('.edit_textarea')){if(owned.has(body))release(owned.get(body));continue;}
       const row=rowFor(el);const text=String(row?.message||'');
       if(!row||row.is_system===true||/^\s*<MikageOpeningScreen\/>\s*(?:<StatusPlaceHolderImpl\/>\s*)?$/.test(text)){
@@ -110,9 +118,13 @@ export function start(){
       const signature=String(row.swipe_id??0)+':'+(text.match(/<!--MikageOpeningStarted:[^>]+-->/)?.[0]||'');
       let record=owned.get(body);
       if(record&&(record.signature!==signature||!record.nodes[0]?.isConnected)){release(record);record=null;}
-      if(!record){record={body,nodes:[],signature,portrait:null,bridge:null};owned.set(body,record);header(record,row);}
+      if(!record){record={body,nodes:[],signature,portrait:null,bridge:null,animate:hasScanned&&el===latest};owned.set(body,record);header(record,row);}
+      if(el!==latest)record.animate=false;
+      const place=row.data?.stat_data?.环境?.所在位置||row.data?.stat_data?.环境?.地点;
+      if(record.context)record.context.textContent='巴卫'+(typeof place==='string'&&place?' · '+place.slice(0,100):'');
       apply(record);updatePortrait(record,row);refreshBridge(record);
     }
+    hasScanned=true;
     const eligible=new Set(doc.querySelectorAll('iframe[title="游戏标题页"],iframe[title="游戏标题页重播"],iframe[title="御影神社状态栏"],iframe[data-mikage-panel-frame]'));
     for(const [frame,fn] of frames)if(!frame.isConnected||!eligible.has(frame)){frame.removeEventListener('load',fn);try{restoreDoc(frame.contentDocument);}catch{}frames.delete(frame);}
     for(const frame of eligible){if(!frames.has(frame)){const load=()=>themeFrame(frame);frame.addEventListener('load',load);frames.set(frame,load);}themeFrame(frame);}
@@ -120,15 +132,15 @@ export function start(){
   }
   function schedule(){if(disposed||queued)return;queued=true;queueMicrotask(scan);}
   function invalidate(){rowCache.clear();schedule();}
-  function save(){try{host.localStorage.setItem(STORAGE,JSON.stringify(settings));}catch{}schedule();}
+  function save(){try{host.localStorage.setItem(STORAGE,JSON.stringify(settings));}catch{}if(dialog)dialog.querySelector('.mr-settings')?.setAttribute('data-reading-theme',settings.theme);schedule();}
   function closeSettings(){if(!dialog)return;dialog.remove();dialog=null;focusBefore?.focus?.();focusBefore=null;}
   function showSettings(){
     if(disposed)return;closeSettings();focusBefore=doc.activeElement;
-    const backdrop=node('div');backdrop.className='mr-settings-backdrop';const panel=node('section');panel.className='mr-settings';panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','正文阅读设置');
+    const backdrop=node('div');backdrop.className='mr-settings-backdrop';const panel=node('section');panel.className='mr-settings';panel.setAttribute('data-reading-theme',settings.theme);panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','正文阅读设置');
     const heading=node('header');heading.append(node('span','正文阅读设置'));const close=node('button','关闭');close.type='button';close.addEventListener('click',closeSettings);heading.append(close);panel.append(heading);
     function choices(label,key,items){const group=node('fieldset');group.append(node('legend',label));const options=node('div');options.className='mr-options';for(const [value,title]of items){const b=node('button',title);b.type='button';b.dataset.setting=key;b.dataset.value=String(value);b.setAttribute('aria-pressed',String(settings[key]===value));b.addEventListener('click',()=>{settings={...settings,[key]:value};save();for(const item of options.children)item.setAttribute('aria-pressed',String(item===b));});options.append(b);}group.append(options);panel.append(group);}
     choices('阅读底色','theme',[['paper','和纸'],['night','夜读']]);choices('正文字号','size',[[16,'标准'],[18,'大字'],[20,'更大']]);
-    for(const [key,title]of [['decor','樱枝与装饰'],['motion','入场动效'],['enabled','启用正文美化']]){const label=node('label');const input=node('input');input.type='checkbox';input.checked=settings[key];input.addEventListener('change',()=>{settings={...settings,[key]:input.checked};save();});label.append(input,node('span',title));panel.append(label);}
+    for(const [key,title]of [['decor','页框与装饰'],['motion','入场动效'],['enabled','启用正文美化']]){const label=node('label');const input=node('input');input.type='checkbox';input.checked=settings[key];input.addEventListener('change',()=>{settings={...settings,[key]:input.checked};save();});label.append(input,node('span',title));panel.append(label);}
     panel.append(node('p','设置只影响阅读显示，关闭后恢复原有正文。'));backdrop.append(panel);backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeSettings();});
     backdrop.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();closeSettings();return;}if(e.key!=='Tab')return;const list=[...panel.querySelectorAll('button,input')];const first=list[0],last=list.at(-1);if(e.shiftKey&&doc.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&doc.activeElement===last){e.preventDefault();first.focus();}});
     dialog=backdrop;doc.body.append(backdrop);close.focus();

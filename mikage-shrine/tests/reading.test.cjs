@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const deps=process.env.MIKAGE_DEBUG_DEPS||'/tmp/mikage-debug/node_modules';
 const {JSDOM}=require(path.join(deps,'jsdom'));
-const src=fs.readFileSync(path.resolve(__dirname,'../releases/reading-1.0.0/reading.mjs'),'utf8').replace(/^export /gm,'');
+const src=fs.readFileSync(path.resolve(__dirname,'../releases/reading-1.1.1/reading.mjs'),'utf8').replace(/^export /gm,'');
 const ID='942e5145-090d-52b2-8e13-455609375d17';
 const tick=()=>new Promise(r=>setTimeout(r,15));
 function fixture(){
@@ -23,9 +23,11 @@ function fixture(){
  const f=fixture(),{w,add,emit}=f;
  const opening=add(0,'<MikageOpeningScreen/>\n<StatusPlaceHolderImpl/>');
  const user=add(1,'玩家说的话','user');const turn=add(2,'正文中的 <script>alert(1)</script> 保持为文字');
+ w.localStorage.setItem('mikage:reading:1',JSON.stringify({size:16,motion:false}));
  const original=turn.p;const dataBefore=JSON.stringify(turn.row.data);let api=w.runReading();await tick();
  assert(!opening.body.hasAttribute('data-mikage-reading'));assert(!user.body.hasAttribute('data-mikage-reading'));
  assert(turn.body.hasAttribute('data-mikage-reading'));assert.equal(turn.body.querySelector('p'),original);assert.equal(turn.body.querySelectorAll('script').length,0);
+ assert.equal(api.getSettings().size,16,'Existing size preference survives upgrade');assert.equal(turn.body.getAttribute('data-reading-motion'),'false');
  assert.equal(turn.body.querySelectorAll('.mr-tools').length,1);
  for(let i=0;i<6;i++)emit('MESSAGE_UPDATED');await tick();assert.equal(turn.body.querySelectorAll('.mr-tools').length,1);assert(!user.body.hasAttribute('data-mikage-reading'));
  // Streamed text modifies the same node; presentation never rewrites it.
@@ -39,10 +41,26 @@ function fixture(){
  frame.dispatchEvent(new w.Event('load'));await tick();assert.equal(frame.contentDocument.documentElement.getAttribute('data-mikage-reading-theme'),'paper');
  api.showSettings();assert.equal(w.document.querySelectorAll('[role=dialog]').length,1);
  w.document.querySelector('[data-setting=theme][data-value=night]').click();await tick();assert.equal(turn.body.getAttribute('data-reading-theme'),'night');assert.equal(frame.contentDocument.documentElement.getAttribute('data-mikage-reading-theme'),'night');
+ assert.equal(w.document.querySelector('.mr-settings').getAttribute('data-reading-theme'),'night','Open settings change theme with the reading surface');
  w.document.querySelector('[data-setting=size][data-value="20"]').click();await tick();assert.equal(api.getSettings().size,20);
  w.document.querySelector('.mr-settings-backdrop').dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert.equal(w.document.querySelectorAll('[role=dialog]').length,0);
  // Fresh opening completion mounts one hero from an actual marker, never a fake title.
  opening.row.message='开场正文\n<!--MikageOpeningStarted:opening-1-->';opening.p.textContent='开场正文';emit('MESSAGE_UPDATED');await tick();assert.equal(opening.body.querySelectorAll('.mr-hero').length,1);assert.equal(opening.body.querySelector('.mr-hero-title').textContent,'修缮现场初遇');
+
+ // Scene image comes from story time, while night theme stays an independent preference.
+ assert.equal(opening.body.querySelectorAll('.mr-lantern').length,0,'Do not duplicate the lantern already in the illustration');
+ opening.row.data.stat_data.环境.时段='夜晚';emit('MESSAGE_UPDATED');await tick();
+ assert(opening.body.querySelector('.mr-hero').style.getPropertyValue('--mr-hero-image').includes('r01-night.webp'));
+ opening.row.data.stat_data.环境.时段='午后';emit('MESSAGE_UPDATED');await tick();
+ assert(opening.body.querySelector('.mr-hero').style.getPropertyValue('--mr-hero-image').includes('veranda-header-v2.png'));
+ assert.equal(opening.body.getAttribute('data-reading-theme'),'night');
+ opening.row.data.stat_data.环境.所在位置='神社回廊';emit('MESSAGE_UPDATED');await tick();
+ assert(opening.body.querySelector('.mr-context').textContent.includes('神社回廊'));
+ // A missing wardrobe record clears the old portrait instead of showing stale clothes.
+ w.MikageCharacterArt={fingerprint:'fixture',rendererRevision:'fixture',portrait:()=> 'https://fixture.invalid/portrait.png',portraitPlacement:()=>({width:100,height:150,left:0,top:0,visibleTop:0})};emit('MESSAGE_UPDATED');await tick();
+ assert.equal(opening.body.querySelectorAll('.mr-hero-art').length,1);
+ delete opening.row.data.stat_data.巴卫.服装;emit('MESSAGE_UPDATED');await tick();
+ assert.equal(opening.body.querySelectorAll('.mr-hero-art').length,0);
  assert.equal(f.writes(),0);assert.equal(JSON.stringify(turn.row.data),dataBefore);assert.equal(w.document.querySelector('#send_textarea').value,'existing draft');
  // Idempotent script reload cleans listeners and old theme sheets.
  api=w.runReading();await tick();assert.equal(turn.body.querySelectorAll('.mr-tools').length,1);assert.equal(w.document.querySelectorAll('style[data-mikage-reading-style=host]').length,1);assert.equal(f.bus.get('button:正文阅读设置').size,1);

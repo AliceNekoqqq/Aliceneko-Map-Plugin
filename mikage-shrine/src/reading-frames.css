@@ -16,3 +16,18 @@ html[data-mikage-reading-theme] .title-block h1{color:#fff0d5}
 html[data-mikage-reading-theme=night] .paper-content,html[data-mikage-reading-theme=night] .paper-content p,html[data-mikage-reading-theme=night] .paper-content h3,html[data-mikage-reading-theme=night] .paper h2,html[data-mikage-reading-theme=night] .close,html[data-mikage-reading-theme=night] .story-choice span,html[data-mikage-reading-theme=night] .story-choice small{color:var(--mr-ink)}
 html[data-mikage-reading-decor=false] .petals{display:none}
 html[data-mikage-reading-motion=false] .game *,html[data-mikage-reading-motion=false] .game *::before,html[data-mikage-reading-motion=false] .game *::after{animation:none!important;transition:none!important}
+/* Keep all six original controls and handlers; four primary, two secondary. */
+html[data-mikage-reading-theme] #shrine-game .scene-dock{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:0;padding:0;aspect-ratio:auto;border-top:1px solid #bd975d;border-bottom:0;background:#39293e}
+html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button{position:relative;inset:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;width:auto;height:auto;min-width:0;min-height:82px;padding:10px 4px;gap:5px;font-size:14px;border:0;border-radius:0;color:#f9e7ce;background:#49334b}
+html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button>.board-sprite{position:static;inset:auto;flex:none;width:36px;height:36px}
+html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button>span:last-of-type{position:static;width:auto;height:auto;font-size:14px;line-height:1.5;letter-spacing:0;color:inherit;white-space:normal}
+html[data-mikage-reading-theme] #shrine-game .scene-dock #journal-button,html[data-mikage-reading-theme] #shrine-game .scene-dock #buildings{grid-column:span 2;min-height:48px;flex-direction:row;gap:8px;background:#38293e}
+html[data-mikage-reading-theme] #shrine-game .scene-dock #journal-button>.board-sprite,html[data-mikage-reading-theme] #shrine-game .scene-dock #buildings>.board-sprite{width:25px;height:25px}
+html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button:hover,html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button:focus-visible,html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button[aria-expanded=true]{background:#795367;color:#fff4d6}
+html[data-mikage-reading-theme=night] #shrine-game{background:var(--mr-paper);color:var(--mr-ink)}
+html[data-mikage-reading-theme=night] #shrine-game .game-hud{background:#302336;color:var(--mr-ink)}
+html[data-mikage-reading-theme=night] #shrine-game .game-hud>.skin-art{opacity:.25}
+html[data-mikage-reading-theme=night] #shrine-game .vn-task,html[data-mikage-reading-theme=night] #shrine-game .vn-records,html[data-mikage-reading-theme=night] #shrine-game .scene-view-switch,html[data-mikage-reading-theme=night] #shrine-game .scene-view-notice,html[data-mikage-reading-theme=night] #shrine-game .game-ledger{background:var(--mr-paper);color:var(--mr-ink);border-color:var(--mr-line)}
+html[data-mikage-reading-theme=night] #shrine-game .vn-task strong,html[data-mikage-reading-theme=night] #shrine-game .vn-records>summary,html[data-mikage-reading-theme=night] #shrine-game .game-ledger :is(b,strong,span,button){color:var(--mr-ink)}
+html[data-mikage-reading-theme=night] #shrine-game .scene-view-switch button,html[data-mikage-reading-theme=night] #shrine-game .scene-view-notice button{background:#3b3043;color:var(--mr-ink);border-color:var(--mr-line)}
+html[data-mikage-reading-theme=night] #shrine-game .scene-view-switch button[aria-pressed=true]{background:#dfb2c6;color:#302536;border-color:#dfb2c6}
