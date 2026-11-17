@@ -1,0 +1,41 @@
+{
+  "version": "1.49.43",
+  "status": "candidate",
+  "base_card_blob": "e4646955fa62d39d643c1097d03c6517091db8e6",
+  "module_commit": "f705294ea60389dfc6f293931fe538b9f84e3180",
+  "module_version": "1.1.3",
+  "module_bytes": 44419,
+  "module_sha256": "4e26e8e577b01b17dbabb1b54b2a19478750cd19999f899fb65b3cac0e5c7875",
+  "card_bytes": 397234,
+  "card_sha256": "fdc46afca24ec8a6116b72543496dd4286ab2a376ae0d3c9a6d1d4a57476641f",
+  "changed_fields": [
+    "/data/character_version",
+    "/data/extensions/tavern_helper/scripts/6/name",
+    "/data/extensions/tavern_helper/scripts/6/content",
+    "/character_version"
+  ],
+  "unchanged": [
+    "worldbook",
+    "regexes",
+    "six original loaders",
+    "MVU and initialization logic",
+    "unknown extension fields"
+  ],
+  "source_churn": 96,
+  "checks": {
+    "module_syntax": "pass",
+    "all_seven_loaders_syntax": "pass",
+    "reproducible_build": "pass",
+    "reader_lifecycle": "pass",
+    "three_assistant_markers": "pass",
+    "existing_iframe_integration": "pass",
+    "fixed_Git_loader": "pass",
+    "label_transparent_day_night": "pass",
+    "modal_outside_transformed_body": "pass",
+    "visualViewport_height_offset_resize": "pass",
+    "sticky_modal_header": "pass",
+    "viewport_listener_cleanup": "pass",
+    "card_budget_and_field_parity": "pass",
+    "actual_mobile_visual_and_touch": "pending"
+  }
+}

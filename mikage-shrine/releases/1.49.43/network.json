@@ -1,0 +1,38 @@
+{
+  "first_check": [
+    {
+      "route": "main-CDN",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "route": "testingcf-CDN",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "route": "GitHub-verified-fallback",
+      "status": 200,
+      "sha256_match": true,
+      "bytes": 44419,
+      "mime": "text/plain; charset=utf-8",
+      "cors": "*"
+    }
+  ],
+  "cdn_recheck": [
+    {
+      "route": "cdn.jsdelivr.net",
+      "status": 200,
+      "bytes": 44419,
+      "sha256_match": true,
+      "mime": "application/javascript; charset=utf-8",
+      "cors": "*"
+    },
+    {
+      "route": "testingcf.jsdelivr.net",
+      "status": 200,
+      "bytes": 44419,
+      "sha256_match": true,
+      "mime": "application/javascript; charset=utf-8",
+      "cors": "*"
+    }
+  ]
+}
