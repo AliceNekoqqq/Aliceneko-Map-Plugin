@@ -22,8 +22,8 @@ def build_module():
 def component(commit,module):
     if not re.fullmatch('[0-9a-f]{40}',commit):raise ValueError('Immutable commit required')
     text=(ROOT/'mikage-shrine/tools/loader-template.js').read_text()
-    for key,value in {'__COMMIT__':commit,'__SCRIPT_ID__':'reading','__MODULE_PATH__':'mikage-shrine/releases/reading-1.1.2/reading.mjs','__VERSION__':'1.1.2','__SHA256__':digest(module),'__LABEL__':'御影神社·正文美化'}.items():text=text.replace(key,value)
-    return {'type':'script','enabled':True,'name':'御影神社·正文美化 1.1.2 CDN','id':SCRIPT_ID,'content':text,
+    for key,value in {'__COMMIT__':commit,'__SCRIPT_ID__':'reading','__MODULE_PATH__':'mikage-shrine/releases/reading-1.1.3/reading.mjs','__VERSION__':'1.1.3','__SHA256__':digest(module),'__LABEL__':'御影神社·正文美化'}.items():text=text.replace(key,value)
+    return {'type':'script','enabled':True,'name':'御影神社·正文美化 1.1.3 CDN','id':SCRIPT_ID,'content':text,
             'info':'和纸正文、夜读与字号设置，开场题图和状态栏共用主题；仅改变显示，不改原文、变量与世界书。独立组件已在角色卡中启用时，无需重复导入。',
             'button':{'enabled':True,'buttons':[{'name':'正文阅读设置','visible':True},{'name':'重新加载资源','visible':True}]},
             'data':{},'export_with':{'data':False,'button':True}}
@@ -32,7 +32,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--commit');ap.add_argument('--card',type=Path);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--dry-run',action='store_true')
     args=ap.parse_args();body=build_module()
-    files={'reading.mjs':body,'manifest.json':(json.dumps({'version':'1.1.2','script_id':SCRIPT_ID,'module_id':'reading','sha256':digest(body),'bytes':len(body),'source':['src/reading.mjs','src/reading.css','src/reading-frames.css','src/time-scenes.json'],'runtime':'Tavern Helper character script; existing Mikage art/status interfaces optional','stateWrites':False},ensure_ascii=False,indent=2)+'\n').encode()}
+    files={'reading.mjs':body,'manifest.json':(json.dumps({'version':'1.1.3','script_id':SCRIPT_ID,'module_id':'reading','sha256':digest(body),'bytes':len(body),'source':['src/reading.mjs','src/reading.css','src/reading-frames.css','src/time-scenes.json'],'runtime':'Tavern Helper character script; existing Mikage art/status interfaces optional','stateWrites':False},ensure_ascii=False,indent=2)+'\n').encode()}
     if args.commit:
         script=component(args.commit,body);files['mikage-reading.json']=(json.dumps(script,ensure_ascii=False,indent=2)+'\n').encode()
         if args.card:
@@ -42,13 +42,13 @@ def main():
             if matches:
                 scripts[matches[0]].update({k:script[k] for k in ('name','content')})
             else:scripts.append(script)
-            card['character_version']='1.49.42';card['data']['character_version']='1.49.42'
+            card['character_version']='1.49.43';card['data']['character_version']='1.49.43'
             packed=(json.dumps(card,ensure_ascii=False,indent=2)+'\n').encode()
             if b';base64,' in packed.lower() or len(packed)>512*1024:
                 raise ValueError('Lightweight card budget exceeded or Base64 embedded')
             if any(len(s.get('content','').encode())>16*1024 for s in scripts):
                 raise ValueError('Expected small remote loaders in lightweight card')
-            files['巴卫_御影神社_v1.49.42_正文美术升级版.json']=packed
+            files['巴卫_御影神社_v1.49.43_正文美术升级版.json']=packed
     if args.out.exists():raise ValueError('Use a fresh output directory')
     if not args.dry_run:
         args.out.mkdir(parents=True)

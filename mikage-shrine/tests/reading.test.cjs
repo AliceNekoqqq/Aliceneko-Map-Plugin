@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const deps=process.env.MIKAGE_DEBUG_DEPS||'/tmp/mikage-debug/node_modules';
 const {JSDOM}=require(path.join(deps,'jsdom'));
-const src=fs.readFileSync(path.resolve(__dirname,'../releases/reading-1.1.2/reading.mjs'),'utf8').replace(/^export /gm,'');
+const src=fs.readFileSync(path.resolve(__dirname,'../releases/reading-1.1.3/reading.mjs'),'utf8').replace(/^export /gm,'');
 const ID='942e5145-090d-52b2-8e13-455609375d17';
 const tick=()=>new Promise(r=>setTimeout(r,15));
 function fixture(){
@@ -39,11 +39,22 @@ function fixture(){
  const anchor=w.document.createElement('span');anchor.setAttribute('data-mikage-status-host','true');const frame=w.document.createElement('iframe');frame.title='御影神社状态栏';anchor.append(frame);turn.body.append(anchor);await tick();
  assert.equal(turn.body.querySelectorAll('.mr-bridge').length,1);assert.equal(frame.parentNode,anchor);assert.equal(anchor.previousElementSibling.className,'mr-bridge');assert(!user.body.hasAttribute('data-mikage-reading'));
  frame.dispatchEvent(new w.Event('load'));await tick();assert.equal(frame.contentDocument.documentElement.getAttribute('data-mikage-reading-theme'),'paper');
+ assert.equal(w.getComputedStyle(turn.body.querySelector('.mr-bridge span')).backgroundColor,'rgba(0, 0, 0, 0)');
+ const viewport=new w.EventTarget();Object.assign(viewport,{width:355,height:520,offsetTop:24,offsetLeft:0});
+ Object.defineProperty(w,'visualViewport',{value:viewport,configurable:true});w.document.body.style.transform='translateZ(0)';
  api.showSettings();assert.equal(w.document.querySelectorAll('[role=dialog]').length,1);
+ const backdrop=w.document.querySelector('.mr-settings-backdrop'),settingsPanel=backdrop.querySelector('[role=dialog]');
+ assert.equal(backdrop.parentNode,w.document.documentElement,'Portal escapes transformed body');
+ assert.equal(backdrop.style.top,'24px');assert.equal(backdrop.style.height,'520px');assert.equal(settingsPanel.style.maxHeight,'496px');
+ assert.equal(w.getComputedStyle(settingsPanel.querySelector('header')).position,'sticky');
+ viewport.height=320;viewport.offsetTop=120;viewport.dispatchEvent(new w.Event('resize'));
+ assert.equal(backdrop.style.top,'120px');assert.equal(backdrop.style.height,'320px');assert.equal(settingsPanel.style.maxHeight,'296px');
  w.document.querySelector('[data-setting=theme][data-value=night]').click();await tick();assert.equal(turn.body.getAttribute('data-reading-theme'),'night');assert.equal(frame.contentDocument.documentElement.getAttribute('data-mikage-reading-theme'),'night');
  assert.equal(w.document.querySelector('.mr-settings').getAttribute('data-reading-theme'),'night','Open settings change theme with the reading surface');
+ assert.equal(w.getComputedStyle(turn.body.querySelector('.mr-bridge span')).backgroundColor,'rgba(0, 0, 0, 0)');
  w.document.querySelector('[data-setting=size][data-value="20"]').click();await tick();assert.equal(api.getSettings().size,20);
  w.document.querySelector('.mr-settings-backdrop').dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert.equal(w.document.querySelectorAll('[role=dialog]').length,0);
+ viewport.height=220;viewport.dispatchEvent(new w.Event('resize'));assert.equal(backdrop.style.height,'320px','Closed popup removed viewport listeners');
  // Fresh opening completion mounts one hero from an actual marker, never a fake title.
  opening.row.message='开场正文\n<!--MikageOpeningStarted:opening-1-->';opening.p.textContent='开场正文';emit('MESSAGE_UPDATED');await tick();assert.equal(opening.body.querySelectorAll('.mr-hero').length,1);assert.equal(opening.body.querySelector('.mr-hero-title').textContent,'修缮现场初遇');
 

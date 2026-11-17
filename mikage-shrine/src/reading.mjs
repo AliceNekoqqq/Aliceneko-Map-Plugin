@@ -1,5 +1,5 @@
 /** Read-only DOM presentation. Built as a self-contained module for the existing CDN loader. */
-export const VERSION = '1.1.2';
+export const VERSION = '1.1.3';
 export const SCRIPT_ID = 'reading';
 const HOST_CSS = '__HOST_CSS__';
 const FRAME_CSS = '__FRAME_CSS__';
@@ -24,7 +24,7 @@ export function start(){
   try{host=window.parent;doc=host.document;if(!doc?.body)throw Error('页面未就绪');}catch{throw Object.assign(Error('正文美化暂时无法访问聊天页面'),{mikageRetryableStart:true});}
   if(typeof getChatMessages!=='function')throw Object.assign(Error('请启用酒馆助手后重试正文美化'),{mikageRetryableStart:true});
   host.MikageReading?.dispose?.();
-  let settings={...DEFAULTS},disposed=false,queued=false,dialog=null,focusBefore=null,hasScanned=false;
+  let settings={...DEFAULTS},disposed=false,queued=false,dialog=null,dialogCleanup=null,focusBefore=null,hasScanned=false;
   try{settings=normalized(JSON.parse(host.localStorage.getItem(STORAGE)||'null'));}catch{}
   const stops=[],owned=new Map(),frames=new Map(),styledDocs=new Map(),rowCache=new Map();
   const style=doc.createElement('style');style.dataset.mikageReadingStyle='host';style.textContent=HOST_CSS;doc.head.append(style);
@@ -134,7 +134,7 @@ export function start(){
   function schedule(){if(disposed||queued)return;queued=true;queueMicrotask(scan);}
   function invalidate(){rowCache.clear();schedule();}
   function save(){try{host.localStorage.setItem(STORAGE,JSON.stringify(settings));}catch{}if(dialog)dialog.querySelector('.mr-settings')?.setAttribute('data-reading-theme',settings.theme);schedule();}
-  function closeSettings(){if(!dialog)return;dialog.remove();dialog=null;focusBefore?.focus?.();focusBefore=null;}
+  function closeSettings(){if(!dialog)return;dialogCleanup?.();dialogCleanup=null;dialog.remove();dialog=null;focusBefore?.focus?.({preventScroll:true});focusBefore=null;}
   function showSettings(){
     if(disposed)return;closeSettings();focusBefore=doc.activeElement;
     const backdrop=node('div');backdrop.className='mr-settings-backdrop';const panel=node('section');panel.className='mr-settings';panel.setAttribute('data-reading-theme',settings.theme);panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','正文阅读设置');
@@ -144,7 +144,18 @@ export function start(){
     for(const [key,title]of [['decor','页框与装饰'],['motion','入场动效'],['enabled','启用正文美化']]){const label=node('label');const input=node('input');input.type='checkbox';input.checked=settings[key];input.addEventListener('change',()=>{settings={...settings,[key]:input.checked};save();});label.append(input,node('span',title));panel.append(label);}
     panel.append(node('p','设置只影响阅读显示，关闭后恢复原有正文。'));backdrop.append(panel);backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeSettings();});
     backdrop.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();closeSettings();return;}if(e.key!=='Tab')return;const list=[...panel.querySelectorAll('button,input')];const first=list[0],last=list.at(-1);if(e.shiftKey&&doc.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&doc.activeElement===last){e.preventDefault();first.focus();}});
-    dialog=backdrop;doc.body.append(backdrop);close.focus();
+    // Escape transformed chat/body containers and follow the visual viewport.
+    backdrop.dataset.mikageModal='reading';
+    const viewport=host.visualViewport;
+    const fit=()=>{
+      const width=Math.max(1,Number(viewport?.width||host.innerWidth||doc.documentElement.clientWidth));
+      const height=Math.max(1,Number(viewport?.height||host.innerHeight||doc.documentElement.clientHeight));
+      for(const [key,value]of Object.entries({left:(viewport?.offsetLeft||0)+'px',top:(viewport?.offsetTop||0)+'px',width:width+'px',height:height+'px'}))backdrop.style.setProperty(key,value,'important');
+      panel.style.setProperty('max-height',Math.max(1,height-24)+'px','important');
+    };
+    host.addEventListener('resize',fit);viewport?.addEventListener('resize',fit);viewport?.addEventListener('scroll',fit);
+    dialogCleanup=()=>{host.removeEventListener('resize',fit);viewport?.removeEventListener('resize',fit);viewport?.removeEventListener('scroll',fit);};
+    dialog=backdrop;doc.documentElement.append(backdrop);fit();panel.scrollTop=0;close.focus({preventScroll:true});
   }
   const observer=new host.MutationObserver(records=>{if(records.some(r=>{const target=r.target.nodeType===1?r.target:r.target.parentElement;if(target?.closest?.('[data-mr-owned],.mr-settings-backdrop'))return false;if(r.type==='childList'&&[...r.addedNodes,...r.removedNodes].every(n=>n.nodeType===1&&(n.hasAttribute?.('data-mr-owned')||n.hasAttribute?.('data-mikage-reading-style'))))return false;return true;}))schedule();});
   observer.observe(doc.body,{childList:true,subtree:true,characterData:true});
