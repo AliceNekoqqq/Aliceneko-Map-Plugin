@@ -1,0 +1,26 @@
+[
+  {
+    "route": "main-CDN",
+    "status": 200,
+    "bytes": 39215,
+    "sha256_match": true,
+    "mime": "application/javascript; charset=utf-8",
+    "cors": "*"
+  },
+  {
+    "route": "testingcf-CDN",
+    "status": 200,
+    "bytes": 39215,
+    "sha256_match": true,
+    "mime": "application/javascript; charset=utf-8",
+    "cors": "*"
+  },
+  {
+    "route": "GitHub-verified-fallback",
+    "status": 200,
+    "bytes": 39215,
+    "sha256_match": true,
+    "mime": "text/plain; charset=utf-8",
+    "cors": "*"
+  }
+]

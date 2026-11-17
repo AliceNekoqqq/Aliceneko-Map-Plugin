@@ -1,0 +1,37 @@
+{
+  "version": "1.49.42",
+  "status": "candidate",
+  "base_card_blob": "5d0c17d03f5387faa37232a44e4f37bf05f8e3f2",
+  "module_commit": "f27952f378d3760d62cdd2ee44e2f431cad8a006",
+  "module_version": "1.1.2",
+  "module_bytes": 39215,
+  "module_sha256": "08350bad8e9f077a8ab7daeea9aba3b3101167197edc94f8cfc9ea865706c9ca",
+  "card_bytes": 397234,
+  "card_sha256": "f72e158480c9b985a2651742fd2e1f8a0a89e837c69d2719b9ca578be89884e8",
+  "changed_fields": [
+    "/data/character_version",
+    "/data/extensions/tavern_helper/scripts/6/name",
+    "/data/extensions/tavern_helper/scripts/6/content",
+    "/character_version"
+  ],
+  "preserved": [
+    "41 worldbook entries",
+    "5 regexes",
+    "six previous loaders",
+    "all unrelated/unknown fields",
+    "all game/initialization logic"
+  ],
+  "checks": {
+    "module_and_all_7_loader_syntax": "pass",
+    "assistant_marker_regression": "pass",
+    "user_message_exclusion": "pass",
+    "DOM_lifecycle": "pass",
+    "existing_iframe_integration": "pass",
+    "source_to_artifact_rebuild": "pass",
+    "Git_loader_regression": "pass",
+    "contrast_minimum_ratio": 4.91,
+    "actual_statusbar_CSS_parsing_and_control_presence": "pass",
+    "real_SillyTavern_and_mobile_visual": "pending"
+  },
+  "source_patch_lines": 116
+}
