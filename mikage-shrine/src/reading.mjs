@@ -1,5 +1,5 @@
 /** Read-only DOM presentation. Built as a self-contained module for the existing CDN loader. */
-export const VERSION = '1.1.1';
+export const VERSION = '1.1.2';
 export const SCRIPT_ID = 'reading';
 const HOST_CSS = '__HOST_CSS__';
 const FRAME_CSS = '__FRAME_CSS__';
@@ -37,10 +37,11 @@ export function start(){
       return Array.isArray(scripts)&&scripts.some(s=>s.id===SCRIPT_UUID&&s.enabled!==false);
     }catch{return false;}
   }
+  const isAssistant=row=>row?.role==='assistant'||row?.is_user===false||row?.mes_type==='assistant';
   function rowFor(el){
     const id=Number(el.getAttribute('mesid'));if(!Number.isInteger(id)||id<0)return null;
-    if(rowCache.has(id)){const cached=rowCache.get(id);return cached?.role==='assistant'?cached:null;}
-    try{const rows=getChatMessages(id,{include_swipes:false});const row=rows?.find(r=>Number(r.message_id)===id);if(row)rowCache.set(id,row);return row?.role==='assistant'?row:null;}catch{return null;}
+    if(rowCache.has(id)){const cached=rowCache.get(id);return isAssistant(cached)?cached:null;}
+    try{const rows=getChatMessages(id,{include_swipes:false});const row=rows?.find(r=>Number(r.message_id)===id);if(row)rowCache.set(id,row);return isAssistant(row)?row:null;}catch{return null;}
   }
   function release(record){
     record.portraitResize?.disconnect();

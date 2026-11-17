@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),Module=require('node:modul
 const filename=path.join(__dirname,'startup-integration.test.cjs');let source=fs.readFileSync(filename,'utf8');
 const anchor="const src=id=>fs.readFileSync(path.resolve(project,'..',manifest.modules.find(m=>m.module_id===id).path),'utf8');";
 if(!source.includes(anchor))throw Error('Integration harness changed');
-source=source.replace(anchor,"const src=id=>id==='reading'?fs.readFileSync(path.resolve(project,'releases/reading-1.1.1/reading.mjs'),'utf8').replace(/^export /gm,''):fs.readFileSync(path.resolve(project,'..',manifest.modules.find(m=>m.module_id===id).path),'utf8');");
+source=source.replace(anchor,"const src=id=>id==='reading'?fs.readFileSync(path.resolve(project,'releases/reading-1.1.2/reading.mjs'),'utf8').replace(/^export /gm,''):fs.readFileSync(path.resolve(project,'..',manifest.modules.find(m=>m.module_id===id).path),'utf8');");
 source=source.replace("run('scene');run('panels');run('minigames');run('mvu');await tick();await tick();","run('scene');run('panels');run('minigames');run('mvu');run('reading');await tick();await tick();");
 const checkpoint="assert.equal(host.document.querySelectorAll('iframe[title=\"御影神社状态栏\"]').length,1,'Statusbar should mount after starting');";
 if(!source.includes(checkpoint))throw Error('Integration checkpoint changed');

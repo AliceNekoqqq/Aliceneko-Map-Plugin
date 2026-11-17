@@ -1,6 +1,6 @@
 /* Shared reading theme injected only into known Mikage iframe documents. */
-html[data-mikage-reading-theme]{--mr-paper:#f5ecdf;--mr-ink:#302936;--mr-line:#c7ad88;--mr-rose:#824766;--mr-night:#302336}
-html[data-mikage-reading-theme=night]{--mr-paper:#302937;--mr-ink:#f0e4d5;--mr-line:#806650;--mr-rose:#e2b6c7}
+html[data-mikage-reading-theme]{--mr-paper:#fbf6ee;--mr-ink:#352e38;--mr-line:#d5c2a1;--mr-rose:#80556f;--mr-night:#332b3b;--mr-soft:#eee5ee;--mr-muted:#776773;--mr-accent:#754d68;--mr-accent-ink:#fffaf4}
+html[data-mikage-reading-theme=night]{--mr-paper:#302b37;--mr-ink:#eee4d8;--mr-line:#786455;--mr-rose:#e5bcd2;--mr-soft:#3c3243;--mr-muted:#cdbfcb;--mr-accent:#e5bcd2;--mr-accent-ink:#302b37}
 html[data-mikage-reading-theme] .shrine-game{background:var(--mr-paper);color:var(--mr-ink);border:1px solid #987344;border-radius:0 0 5px 5px;box-shadow:inset 0 0 0 2px #c5a575}
 html[data-mikage-reading-theme] .game-hud,html[data-mikage-reading-theme] .scene-dock{background:var(--mr-night);color:#f4e5ce;border-color:#c5a575}
 html[data-mikage-reading-theme] .dock-button{color:#f4e5ce;font-size:12px;min-height:52px;border-radius:0}
@@ -17,17 +17,44 @@ html[data-mikage-reading-theme=night] .paper-content,html[data-mikage-reading-th
 html[data-mikage-reading-decor=false] .petals{display:none}
 html[data-mikage-reading-motion=false] .game *,html[data-mikage-reading-motion=false] .game *::before,html[data-mikage-reading-motion=false] .game *::after{animation:none!important;transition:none!important}
 /* Keep all six original controls and handlers; four primary, two secondary. */
-html[data-mikage-reading-theme] #shrine-game .scene-dock{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:0;padding:0;aspect-ratio:auto;border-top:1px solid #bd975d;border-bottom:0;background:#39293e}
-html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button{position:relative;inset:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;width:auto;height:auto;min-width:0;min-height:82px;padding:10px 4px;gap:5px;font-size:14px;border:0;border-radius:0;color:#f9e7ce;background:#49334b}
-html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button>.board-sprite{position:static;inset:auto;flex:none;width:36px;height:36px}
-html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button>span:last-of-type{position:static;width:auto;height:auto;font-size:14px;line-height:1.5;letter-spacing:0;color:inherit;white-space:normal}
-html[data-mikage-reading-theme] #shrine-game .scene-dock #journal-button,html[data-mikage-reading-theme] #shrine-game .scene-dock #buildings{grid-column:span 2;min-height:48px;flex-direction:row;gap:8px;background:#38293e}
+html[data-mikage-reading-theme] #shrine-game .scene-dock{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:0;padding:0;aspect-ratio:auto;border-top:1px solid var(--mr-line);border-bottom:0;background:var(--mr-line)}
+html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button{position:relative;inset:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;width:auto;height:auto;min-width:0;min-height:70px;padding:8px 4px;gap:4px;font-size:13px;border:0;border-radius:0;color:var(--mr-ink);background:linear-gradient(155deg,var(--mr-paper),var(--mr-soft))}
+html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button>.board-sprite{position:static;inset:auto;flex:none;width:32px;height:32px}
+html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button>span:last-of-type{position:static;width:auto;height:auto;font-size:13px;line-height:1.5;letter-spacing:0;color:inherit;white-space:normal}
+html[data-mikage-reading-theme] #shrine-game .scene-dock #journal-button,html[data-mikage-reading-theme] #shrine-game .scene-dock #buildings{grid-column:span 2;min-height:44px;flex-direction:row;gap:8px;background:var(--mr-paper)}
 html[data-mikage-reading-theme] #shrine-game .scene-dock #journal-button>.board-sprite,html[data-mikage-reading-theme] #shrine-game .scene-dock #buildings>.board-sprite{width:25px;height:25px}
-html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button:hover,html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button:focus-visible,html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button[aria-expanded=true]{background:#795367;color:#fff4d6}
+html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button:hover,html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button:focus-visible,html[data-mikage-reading-theme] #shrine-game .scene-dock .dock-button[aria-expanded=true]{background:var(--mr-accent);color:var(--mr-accent-ink)}
 html[data-mikage-reading-theme=night] #shrine-game{background:var(--mr-paper);color:var(--mr-ink)}
 html[data-mikage-reading-theme=night] #shrine-game .game-hud{background:#302336;color:var(--mr-ink)}
 html[data-mikage-reading-theme=night] #shrine-game .game-hud>.skin-art{opacity:.25}
 html[data-mikage-reading-theme=night] #shrine-game .vn-task,html[data-mikage-reading-theme=night] #shrine-game .vn-records,html[data-mikage-reading-theme=night] #shrine-game .scene-view-switch,html[data-mikage-reading-theme=night] #shrine-game .scene-view-notice,html[data-mikage-reading-theme=night] #shrine-game .game-ledger{background:var(--mr-paper);color:var(--mr-ink);border-color:var(--mr-line)}
 html[data-mikage-reading-theme=night] #shrine-game .vn-task strong,html[data-mikage-reading-theme=night] #shrine-game .vn-records>summary,html[data-mikage-reading-theme=night] #shrine-game .game-ledger :is(b,strong,span,button){color:var(--mr-ink)}
 html[data-mikage-reading-theme=night] #shrine-game .scene-view-switch button,html[data-mikage-reading-theme=night] #shrine-game .scene-view-notice button{background:#3b3043;color:var(--mr-ink);border-color:var(--mr-line)}
-html[data-mikage-reading-theme=night] #shrine-game .scene-view-switch button[aria-pressed=true]{background:#dfb2c6;color:#302536;border-color:#dfb2c6}
+html[data-mikage-reading-theme=night] #shrine-game .scene-view-switch button[aria-pressed=true]{background:var(--mr-accent);color:var(--mr-accent-ink);border-color:var(--mr-accent)}
+
+/* Reading 1.1.2: one paper surface, compact controls and quiet gold rules. */
+html[data-mikage-reading-theme] #shrine-game{border:1px solid var(--mr-line);border-radius:0 0 9px 9px;box-shadow:none;background:var(--mr-paper);color:var(--mr-ink)}
+html[data-mikage-reading-theme] #shrine-game .torii-portal{display:grid;grid-template-columns:minmax(0,1fr) auto;background:var(--mr-paper)}
+html[data-mikage-reading-theme] #shrine-game .torii-portal>*{grid-column:1 / -1;min-width:0}
+html[data-mikage-reading-theme] #shrine-game .game-hud{grid-row:1;min-height:70px;padding:12px 50px 10px 14px;gap:3px 8px;background:linear-gradient(125deg,var(--mr-paper),var(--mr-soft))!important;border:0;border-bottom:1px solid var(--mr-line);color:var(--mr-ink)}
+html[data-mikage-reading-theme] #shrine-game .game-hud>.skin-art{opacity:.12}
+html[data-mikage-reading-theme] #shrine-game .torii-title{font-size:22px;line-height:1.3;letter-spacing:2px;color:var(--mr-accent);text-shadow:none}
+html[data-mikage-reading-theme] #shrine-game .torii-title:after{font-size:10px;letter-spacing:.14em;margin-top:3px;color:var(--mr-muted)}
+html[data-mikage-reading-theme] #shrine-game .torii-meta,html[data-mikage-reading-theme] #shrine-game .torii-phase{font-size:11px;line-height:1.5;color:var(--mr-muted);text-shadow:none}
+html[data-mikage-reading-theme] #shrine-game .game-hud #board-bell{top:10px;right:9px}
+html[data-mikage-reading-theme] #shrine-game .scene-view-switch{grid-column:1;grid-row:2;display:flex;gap:4px;min-width:0;padding:7px 4px 7px 10px;border:0;background:transparent}
+html[data-mikage-reading-theme] #shrine-game .scene-view-switch button{flex:1;min-width:0;min-height:44px;padding:5px 8px;font-size:12px;line-height:1.4;border:1px solid var(--mr-line);border-radius:7px;background:var(--mr-paper);color:var(--mr-ink);box-shadow:none}
+html[data-mikage-reading-theme] #shrine-game .scene-view-switch button[aria-pressed=true]{background:var(--mr-accent);border-color:var(--mr-accent);color:var(--mr-accent-ink)}
+html[data-mikage-reading-theme] #shrine-game .scene-mode-bar{grid-column:2;grid-row:2;display:flex;align-items:center;min-width:0;padding:7px 10px 7px 3px;border:0;background:transparent}
+html[data-mikage-reading-theme] #shrine-game .scene-art-controls{gap:0}
+html[data-mikage-reading-theme] #shrine-game .scene-art-controls>span,html[data-mikage-reading-theme] #shrine-game #scene-return-controls>span{display:none}
+html[data-mikage-reading-theme] #shrine-game .scene-mode-bar button{min-height:44px;padding:5px 8px;font-size:11px;line-height:1.4;border:1px solid var(--mr-line);border-radius:7px;background:var(--mr-soft);color:var(--mr-accent)}
+html[data-mikage-reading-theme] #shrine-game .skin-map{margin:0 8px 8px}
+html[data-mikage-reading-theme] #shrine-game .story-track{padding:7px 12px;font-size:11px;border-color:var(--mr-line);background:transparent;color:var(--mr-muted)}
+html[data-mikage-reading-theme] #shrine-game .vn-task{margin:0;padding:10px 12px;font-size:12px;line-height:1.6;border:0;border-bottom:1px solid var(--mr-line);border-radius:0;background:var(--mr-paper);color:var(--mr-ink)}
+html[data-mikage-reading-theme] #shrine-game .vn-task strong{color:var(--mr-accent);margin-right:8px}
+html[data-mikage-reading-theme] #shrine-game .vn-records{margin:0;padding:0 12px;border:0;border-bottom:1px solid var(--mr-line);background:var(--mr-paper);color:var(--mr-ink)}
+html[data-mikage-reading-theme] #shrine-game .vn-records>summary{min-height:44px;padding:10px 0;font-size:12px;line-height:1.7;border:0;background:transparent;color:var(--mr-accent)}
+html[data-mikage-reading-theme] #shrine-game .torii-watermark{min-height:38px;height:auto;margin:0;padding:10px 40px;font-size:10px;line-height:1.8;border:0;border-radius:0;background:var(--mr-soft);color:var(--mr-muted);text-shadow:none}
+html[data-mikage-reading-theme] #shrine-game .torii-watermark>.skin-art{display:none}
+html[data-mikage-reading-theme] #shrine-game #board-fox{width:32px;height:32px;left:4px;bottom:2px}

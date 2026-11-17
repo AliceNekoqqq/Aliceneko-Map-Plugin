@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const deps=process.env.MIKAGE_DEBUG_DEPS||'/tmp/mikage-debug/node_modules';
 const {JSDOM}=require(path.join(deps,'jsdom'));
-const src=fs.readFileSync(path.resolve(__dirname,'../releases/reading-1.1.1/reading.mjs'),'utf8').replace(/^export /gm,'');
+const src=fs.readFileSync(path.resolve(__dirname,'../releases/reading-1.1.2/reading.mjs'),'utf8').replace(/^export /gm,'');
 const ID='942e5145-090d-52b2-8e13-455609375d17';
 const tick=()=>new Promise(r=>setTimeout(r,15));
 function fixture(){
@@ -67,5 +67,13 @@ function fixture(){
  // Switching away from this card restores native content and frame styling.
  f.scripts.length=0;emit('CHAT_CHANGED');await tick();assert(!turn.body.hasAttribute('data-mikage-reading'));assert(!frame.contentDocument.documentElement.hasAttribute('data-mikage-reading-theme'));
  api.dispose();assert.equal(w.document.querySelectorAll('[data-mr-owned]').length,0);assert.equal(w.document.querySelectorAll('style[data-mikage-reading-style]').length,0);assert.equal(turn.body.firstChild,original);assert.equal(f.bus.get('button:正文阅读设置').size,0);
- w.close();console.log('PASS reader: original nodes/data/draft preserved; opening; stream; edit; swipe; iframe theme; settings; reload; scope; dispose');
+ w.close();
+ for(const [marker,expected]of [[{role:'assistant'},true],[{is_user:false},true],[{mes_type:'assistant'},true],[{is_user:true},false]]){
+  const g=fixture(),item=g.add(0,'正文<!--MikageOpeningStarted:opening-1-->');delete item.row.role;Object.assign(item.row,marker);
+  const data=JSON.stringify(item.row.data),reader=g.w.runReading();await tick();
+  assert.equal(item.body.hasAttribute('data-mikage-reading'),expected,JSON.stringify(marker));
+  assert.equal(item.body.querySelectorAll('.mr-hero').length,expected?1:0);assert.equal(JSON.stringify(item.row.data),data);assert.equal(g.writes(),0);
+  reader.dispose();g.w.close();
+ }
+ console.log('PASS reader: native content and state preserved; lifecycle; all 3 assistant markers; user excluded');
 })().catch(error=>{console.error(error);process.exitCode=1});
