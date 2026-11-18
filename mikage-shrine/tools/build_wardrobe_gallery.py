@@ -58,21 +58,21 @@ def build_panel():
     return source
 
 
-def build_card(source, module, commit):
+def build_card(source, module, commit, *, version=VERSION):
     if not re.fullmatch(r'[0-9a-f]{40}', commit):
         raise ValueError('A complete immutable Git commit is required')
     card = json.loads(source.read_text())
     scripts = card['data']['extensions']['tavern_helper']['scripts']
     script, = [item for item in scripts if item['id'] == SCRIPT_ID]
     for field in (card, card['data']):
-        field['character_version'] = VERSION
-    script['name'] = re.sub(r' \d+\.\d+\.\d+ CDN$', f' {VERSION} CDN', script['name'])
+        field['character_version'] = version
+    script['name'] = re.sub(r' \d+\.\d+\.\d+ CDN$', f' {version} CDN', script['name'])
     loader = (ROOT / 'tools/loader-template.js').read_text()
     for key, value in {
         'COMMIT': commit,
         'SCRIPT_ID': 'panels',
-        'MODULE_PATH': f'mikage-shrine/releases/{VERSION}/modules/panels.mjs',
-        'VERSION': VERSION,
+        'MODULE_PATH': f'mikage-shrine/releases/{version}/modules/panels.mjs',
+        'VERSION': version,
         'SHA256': hashlib.sha256(module.read_bytes()).hexdigest(),
         'LABEL': script['name'].split(' ')[0],
     }.items():
