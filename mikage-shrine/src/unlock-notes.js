@@ -1,14 +1,10 @@
 const UNLOCK_GROUPS = {
-  region: ['地区开放', 'map', '看地图'],
-  outfit: ['衣橱新收', 'wardrobe', '看衣橱'],
-  feature: ['生活功能', 'life', '看生活'],
-  recipe: ['新配方', 'life', '看生活'],
-  quest: ['衣装支线', 'wardrobe', '看衣橱'],
-  main: ['主线绘马', 'board', '看绘马'],
-};
-const LIFE_FEATURE_NAMES = {
-  decorate: '布置', craft: '手作', grow: '小菜圃', cook: '料理', shop: '生活商店',
-  travel: '出行手帐', photos: '记录风景', yokaiGuests: '妖怪来客', festival: '祭典筹备',
+  region: ['地区开放', 'map'],
+  outfit: ['衣橱新收', 'wardrobe'],
+  feature: ['生活功能', 'life'],
+  recipe: ['新配方', 'life'],
+  quest: ['衣装支线', 'wardrobe'],
+  main: ['主线绘马', 'board'],
 };
 
 function unlockSnapshot(state, engine) {
@@ -34,7 +30,8 @@ function unlockSnapshot(state, engine) {
 
   if (state.生活) try {
     const life = engine.life.view(state);
-    groups.feature = new Map(Object.entries(LIFE_FEATURE_NAMES).filter(([id]) => life.unlocked.features[id] === true));
+    groups.feature = new Map(Object.entries(JOURNAL_FEATURES)
+      .filter(([id]) => life.unlocked.features[id] === true).map(([id, [name]]) => [id, name]));
     groups.recipe = new Map(life.recipes.map(({id, name}) => [id, name]));
   } catch { /* A legacy snapshot can lack the fields required by the life view. */ }
 
@@ -52,10 +49,11 @@ function unlockSnapshot(state, engine) {
 
 function newUnlocks(before, after) {
   if (!before || !after) return [];
-  return Object.entries(UNLOCK_GROUPS).flatMap(([kind, [label, panel, action]]) => {
+  return Object.entries(UNLOCK_GROUPS).flatMap(([kind, [label, panel]]) => {
     const previous = before[kind], current = after[kind];
     if (!previous || !current) return [];
-    const names = [...current].filter(([id]) => !previous.has(id)).map(([, name]) => name);
-    return names.length ? [{kind, label, panel, action, names}] : [];
+    const items = [...current].filter(([id]) => !previous.has(id))
+      .map(([id, name]) => ({id, name, panel:kind === 'feature' ? JOURNAL_FEATURES[id][1] : panel}));
+    return items.length ? [{kind, label, items}] : [];
   });
 }

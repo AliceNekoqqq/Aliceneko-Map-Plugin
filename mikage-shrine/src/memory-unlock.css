@@ -4,4 +4,6 @@
  background:linear-gradient(118deg,#f4e8da,#fcf7ed 60%);color:#392c36;font-size:14px;line-height:1.5;
 }
 .mkg-memory-unlock strong{display:block;color:#804451;font-size:12px;letter-spacing:.08em}
+.mkg-memory-links{display:flex;flex-wrap:wrap;gap:6px}
 .mkg-memory-unlock button{color:#755463;background:#fffaf2;border:1px solid #d5b995;min-height:44px}
+.mka-memory-episode:focus{outline:2px solid #b88b67;outline-offset:2px}

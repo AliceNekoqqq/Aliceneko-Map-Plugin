@@ -1,0 +1,15 @@
+.dialog .journal-guide{
+ margin:0 0 12px;padding:0 12px 0;border:1px solid #ae8771;border-radius:6px;
+ color:#412e3c;background:linear-gradient(120deg,#f5e8da,#fcf6eb 48%);
+ font:14px/1.55 system-ui,sans-serif;
+}
+.journal-guide summary{min-height:44px;padding:10px 2px;box-sizing:border-box;color:#764659;cursor:pointer;font-weight:650;overflow-wrap:anywhere}
+.journal-guide ol{margin:0 0 8px;padding-inline-start:22px}
+.journal-guide li+li{margin-top:4px}
+.journal-guide-actions{display:flex;flex-wrap:wrap;gap:6px}
+.journal-guide button{min-height:44px;padding:4px 10px;margin-bottom:8px;border:1px solid #caaa91;border-radius:5px;background:#fff9f0;color:#764659;cursor:pointer}
+.journal-guide :is(summary,button):focus-visible{outline:2px solid #8b465d;outline-offset:2px}
+[data-journal-target]{outline:2px solid #9f5e73!important;outline-offset:2px;scroll-margin-block:12px}
+html[data-mikage-reading-theme=night] .dialog .journal-guide{color:#f4e7dc;background:#342b38;border-color:#a78270}
+html[data-mikage-reading-theme=night] .journal-guide :is(summary,button){color:#edbeca}
+html[data-mikage-reading-theme=night] .journal-guide button{background:#4a3447;border-color:#a78270}

@@ -1,0 +1,17 @@
+{
+  "version": "1.1.5",
+  "script_id": "942e5145-090d-52b2-8e13-455609375d17",
+  "module_id": "reading",
+  "sha256": "327621321b3fada839a3d73c8c1893387aa8cf648dabe01f6977295c38cf6163",
+  "bytes": 54297,
+  "source": [
+    "src/reading.mjs",
+    "src/reading.css",
+    "src/reading-frames.css",
+    "src/time-scenes.json",
+    "src/unlock-notes.js",
+    "src/journal/feature-links.js"
+  ],
+  "runtime": "Tavern Helper character script; unlock notes read the Mikage MVU runtime",
+  "stateWrites": false
+}

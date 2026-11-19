@@ -82,13 +82,14 @@
   outline:1px solid var(--note-accent);outline-offset:-4px;border-radius:3px;color:var(--note-accent);
   font:600 13px/1 serif;transform:rotate(-6deg);
 }
-.mr-unlocks-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px 9px;
-  padding:5px 0;border-top:1px solid var(--note-rule);overflow-wrap:anywhere}
+.mr-unlocks-row{padding:6px 0;border-top:1px solid var(--note-rule);overflow-wrap:anywhere}
 .mr-unlocks-row small{display:block;color:var(--note-muted);font-size:11px;font-weight:600;letter-spacing:.06em}
+.mr-unlocks-items{display:flex;flex-wrap:wrap;gap:5px;margin:3px 0}
 .mr-unlocks-row button{
-  min-height:44px;min-width:54px;padding:0 8px;border:1px solid var(--note-rule);border-radius:5px;
+  min-height:44px;max-width:100%;padding:4px 8px;border:1px solid var(--note-rule);border-radius:5px;
   background:var(--note-button);box-shadow:none;color:var(--note-muted);font:600 12px/1.25 system-ui,sans-serif;
 }
+.mr-unlocks-row button:not(:disabled)::after{content:" ↗";color:var(--note-accent)}
 .mr-unlocks-row button:hover,.mr-unlocks-row button:focus-visible{border-color:var(--note-accent);color:var(--note-accent)}
 .mr-unlocks-error{padding:5px 0;color:var(--note-accent);font-size:12px}
 

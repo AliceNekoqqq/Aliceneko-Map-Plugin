@@ -1,5 +1,5 @@
 /** Read-only DOM presentation. Built as a self-contained module for the existing CDN loader. */
-export const VERSION = '1.1.4';
+export const VERSION = '1.1.5';
 export const SCRIPT_ID = 'reading';
 const HOST_CSS = '__HOST_CSS__';
 const FRAME_CSS = '__FRAME_CSS__';
@@ -148,21 +148,26 @@ export function start(){
       const element=node('section');element.className='mr-unlocks';element.dataset.mrOwned='unlocks';element.setAttribute('aria-label','本回合新解锁');
       const heading=node('div');heading.className='mr-unlocks-heading';
       const seal=node('span','启');seal.className='mr-unlocks-seal';seal.setAttribute('aria-hidden','true');
-      const count=groups.reduce((sum,group)=>sum+group.names.length,0);
+      const count=groups.reduce((sum,group)=>sum+group.items.length,0);
       heading.append(seal,node('strong','神社新笺'),node('span',`${count} 项新解锁`));element.append(heading);
-      for(const {kind,label,panel,action,names} of groups){
+      for(const {kind,label,items} of groups){
         const line=node('div');line.className='mr-unlocks-row';line.dataset.unlockKind=kind;
-        const copy=node('div');copy.append(node('small',label),node('div',names.join('、')));line.append(copy);
-        if(host.MikageShrinePanels?.open){
-          const button=node('button',action);button.type='button';
+        const links=node('div');links.className='mr-unlocks-items';
+        line.append(node('small',label),links);
+        for(const {id,name,panel} of items){
+          const button=node('button',name);button.type='button';
+          button.dataset.unlockId=id;
+          button.setAttribute('aria-label','查看'+name);
+          button.disabled=!host.MikageShrinePanels?.open;
           button.addEventListener('click',async()=>{
-            try{await host.MikageShrinePanels.open(panel);}catch{error.hidden=false;}
+            error.hidden=true;
+            try{await host.MikageShrinePanels.open(panel,{kind,id});}catch{error.hidden=false;}
           });
-          line.append(button);
+          links.append(button);
         }
         element.append(line);
       }
-      const error=node('div','面板暂时无法打开，请稍后再试。');error.className='mr-unlocks-error';error.setAttribute('role','status');error.hidden=true;element.append(error);
+      const error=node('div','手帖暂时打不开，请再点一次。');error.className='mr-unlocks-error';error.setAttribute('role','status');error.hidden=true;element.append(error);
       entry={element,signature};unlockNotes.set(body,entry);
     }
     entry.element.dataset.readingTheme=settings.theme;

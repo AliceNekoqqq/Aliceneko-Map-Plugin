@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const deps=process.env.MIKAGE_DEBUG_DEPS||'/tmp/mikage-debug/node_modules';
 const {JSDOM}=require(path.join(deps,'jsdom'));
-const src=fs.readFileSync(path.resolve(__dirname,'../releases/reading-1.1.4/reading.mjs'),'utf8').replace(/^export /gm,'');
+const src=fs.readFileSync(path.resolve(__dirname,'../releases/reading-1.1.5/reading.mjs'),'utf8').replace(/^export /gm,'');
 const ID='942e5145-090d-52b2-8e13-455609375d17';
 const tick=()=>new Promise(r=>setTimeout(r,15));
 function fixture(){

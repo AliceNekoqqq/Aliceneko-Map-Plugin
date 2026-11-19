@@ -5,8 +5,8 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
 SCRIPT_ID='942e5145-090d-52b2-8e13-455609375d17'
-VERSION='1.1.4'
-CARD_VERSION='1.49.47'
+VERSION='1.1.5'
+CARD_VERSION='1.49.48'
 MODULE_PATH=f'mikage-shrine/releases/reading-{VERSION}/reading.mjs'
 
 def digest(body):return hashlib.sha256(body).hexdigest()
@@ -21,7 +21,8 @@ def build_module():
     if text.count("'__TIME_SCENES__'")!=1:raise ValueError('Template drift: time scenes')
     text=text.replace("'__TIME_SCENES__'",json.dumps(json.loads((src/'time-scenes.json').read_text())['R01'],ensure_ascii=False))
     if text.count('// __UNLOCK_NOTES__')!=1:raise ValueError('Template drift: unlock notes')
-    text=text.replace('// __UNLOCK_NOTES__',(src/'unlock-notes.js').read_text().rstrip())
+    scripts=[src/'journal/feature-links.js',src/'unlock-notes.js']
+    text=text.replace('// __UNLOCK_NOTES__','\n'.join(p.read_text().rstrip() for p in scripts))
     return text.encode()
 
 def component(commit,module):
@@ -37,7 +38,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--commit');ap.add_argument('--card',type=Path);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--dry-run',action='store_true')
     args=ap.parse_args();body=build_module()
-    files={'reading.mjs':body,'manifest.json':(json.dumps({'version':VERSION,'script_id':SCRIPT_ID,'module_id':'reading','sha256':digest(body),'bytes':len(body),'source':['src/reading.mjs','src/reading.css','src/reading-frames.css','src/time-scenes.json','src/unlock-notes.js'],'runtime':'Tavern Helper character script; unlock notes read the Mikage MVU runtime','stateWrites':False},ensure_ascii=False,indent=2)+'\n').encode()}
+    files={'reading.mjs':body,'manifest.json':(json.dumps({'version':VERSION,'script_id':SCRIPT_ID,'module_id':'reading','sha256':digest(body),'bytes':len(body),'source':['src/reading.mjs','src/reading.css','src/reading-frames.css','src/time-scenes.json','src/unlock-notes.js','src/journal/feature-links.js'],'runtime':'Tavern Helper character script; unlock notes read the Mikage MVU runtime','stateWrites':False},ensure_ascii=False,indent=2)+'\n').encode()}
     if args.commit:
         script=component(args.commit,body);files['mikage-reading.json']=(json.dumps(script,ensure_ascii=False,indent=2)+'\n').encode()
         if args.card:

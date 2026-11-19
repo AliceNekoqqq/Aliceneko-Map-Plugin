@@ -11,7 +11,7 @@ from build_wardrobe_gallery import ROOT, build_card, replace_once
 
 BASE = ROOT / 'releases/1.49.46/modules/minigames.mjs'
 BASE_SHA256 = '3231fb3607e87b36fdaf39865bf5dcaa93baae74ebd80304bcaa21366e4bb920'
-VERSION = '1.49.47'
+VERSION = '1.49.48'
 MINIGAMES_ID = 'd3560ad0-892c-4b31-b783-11f80a23b90f'
 
 
@@ -34,6 +34,12 @@ def build_module():
     if(episodes.length)onEpisodeUnlock(episodes.map(episode=>episode.title));''')
     source = replace_once(source, 'known=new Set(Object.keys(book.entries).filter(id=>MEMORY_ITEMS.some(item=>item.id===id)))', 'known=knownMemoryIds(book)')
     source = replace_once(source, "      MEMORY_EPISODES.forEach(episode=>{const unlocked=count>=episode.at,", "      const unlockedSet=new Set(unlockedEpisodes(count));\n      MEMORY_EPISODES.forEach(episode=>{const unlocked=unlockedSet.has(episode),")
+    source = replace_once(source, 'function openMemoryBook(root,bookButton)', 'function openMemoryBook(root,bookButton,episodeTitle)')
+    source = replace_once(source, "      const episodes=el('div','mka-memory-episodes');", "      let linkedEpisode;\n      const episodes=el('div','mka-memory-episodes');")
+    source = replace_once(source, "episodes.append(row);", "if(unlocked && episode.title===episodeTitle)linkedEpisode=row;episodes.append(row);")
+    source = replace_once(source, "root.append(overlay);close.focus({preventScroll:true});", """root.append(overlay);
+      if(linkedEpisode){linkedEpisode.tabIndex=-1;linkedEpisode.focus({preventScroll:true});linkedEpisode.scrollIntoView?.({block:'nearest',behavior:'auto'});}
+      else close.focus({preventScroll:true});""")
     source = replace_once(source, '  const activities = createMikageActivities(host);', '  const activities = createMikageActivities(host,titles=>current?.showEpisodeUnlocks(titles));')
     source = replace_once(source, '    dialog.append(bar,intro,foot,gameArea);', '''    const unlockNote = doc.createElement('aside');
     unlockNote.className = 'mkg-memory-unlock';
@@ -42,14 +48,10 @@ def build_module():
     unlockText.setAttribute('role','status');
     const unlockTitle = doc.createElement('strong');
     unlockTitle.textContent = '回忆短篇已解锁';
-    const unlockNames = doc.createElement('span');
-    unlockText.append(unlockTitle,unlockNames);
-    const unlockBook = doc.createElement('button');
-    unlockBook.type = 'button';
-    unlockBook.className = 'mkg-leave';
-    unlockBook.textContent = '翻开回忆册';
-    unlockBook.addEventListener('click',()=>{if(!bookButton.disabled)activities.openMemoryBook(dialog,unlockBook);});
-    unlockNote.append(unlockText,unlockBook);
+    unlockText.append(unlockTitle);
+    const unlockLinks = doc.createElement('div');
+    unlockLinks.className = 'mkg-memory-links';
+    unlockNote.append(unlockText,unlockLinks);
     dialog.append(bar,intro,foot,gameArea,unlockNote);''')
     source = replace_once(source, '    function syncBookEntry(){const s=game?.getState?.();', '''    let previousPhase;
     function syncBookEntry(){const s=game?.getState?.();
@@ -57,7 +59,15 @@ def build_module():
       previousPhase=s?.phase;''')
     return replace_once(source, '    const handle = { close };', '''    const handle = {
       close,
-      showEpisodeUnlocks(titles){unlockNames.textContent=titles.join('、');unlockNote.hidden=false;},
+      showEpisodeUnlocks(titles){
+        unlockLinks.replaceChildren(...titles.map(title=>{
+          const button=doc.createElement('button');button.type='button';button.className='mkg-leave';
+          button.textContent=title;button.setAttribute('aria-label','阅读'+title);
+          button.addEventListener('click',()=>{if(!bookButton.disabled)activities.openMemoryBook(dialog,button,title);});
+          return button;
+        }));
+        unlockNote.hidden=false;
+      },
     };''')
 
 

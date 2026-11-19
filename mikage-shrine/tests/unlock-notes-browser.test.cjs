@@ -5,14 +5,15 @@ const { chromium } = require('playwright');
 
 const project = path.resolve(__dirname, '..');
 const moduleText = file => fs.readFileSync(path.join(project, 'releases', file), 'utf8');
-const reader = moduleText('reading-1.1.4/reading.mjs');
+const reader = moduleText('reading-1.1.5/reading.mjs');
 const mvu = moduleText('1.49.39/modules/mvu.mjs');
 const scene = moduleText('1.49.39/modules/scene.mjs');
-const minigames = moduleText('1.49.47/modules/minigames.mjs');
+const minigames = moduleText('1.49.48/modules/minigames.mjs');
+const panels = moduleText('1.49.48/modules/panels.mjs');
 const initial = JSON.parse(mvu.match(/^const ShrineInitial = (.*);$/m)[1]);
 // Use the actual versioned rules without the external MVU and Zod bootstrap.
 const engineScript = mvu.split('let startupPromise=null,bootstrapCommitted=false;')[0] +
-  'window.MikageShrineRuntime={engine:ShrineCard}; } start();';
+  'window.MikageShrineRuntime={engine:ShrineCard,version:"0.6.0"}; } start();';
 
 async function run() {
   const portable = process.env.CHROMIUM_PACKAGE && require(process.env.CHROMIUM_PACKAGE);
@@ -33,7 +34,7 @@ async function run() {
   try {
     await page.goto('https://mikage.test/');
     await page.evaluate(initial => {
-      const bus = new Map(), opened = [];
+      const bus = new Map();
       const rows = window.rows = [];
       const saved = window.saved = new Map();
       const events = window.tavern_events = Object.fromEntries(['CHAT_CHANGED','MESSAGE_RECEIVED','MESSAGE_UPDATED','MESSAGE_SWIPED','MESSAGE_DELETED'].map(name => [name,name]));
@@ -50,8 +51,8 @@ async function run() {
       };
       window.Mvu = {events:{VARIABLE_UPDATE_ENDED:'save',VARIABLE_INITIALIZED:'init'},
         getMvuData:({message_id}) => structuredClone(saved.get(message_id))};
-      window.MikageShrinePanels = {open: async kind => opened.push(kind)};
-      window.opened = opened;
+      window.getButtonEvent = name => name;
+      window.appendInexistentScriptButtons = () => {};
       window.addTurn = (id, state, {role='assistant', text='巴卫把手中的旧绘马放回木匣。檐角的风铃响了一声。', marker=false}={}) => {
         rows.push({message_id:id, swipe_id:0, role, message:text+(marker?'\n<StatusPlaceHolderImpl/>':''), data:state?{stat_data:state}:{}});
         const message = document.createElement('article');
@@ -65,6 +66,7 @@ async function run() {
     }, initial);
     await page.addScriptTag({content:engineScript});
     await page.addScriptTag({content:`{${scene.replace(/^export .*$/m, '')}\nstart();}`});
+    await page.addScriptTag({content:`{${panels.replace(/^export .*$/m, '')}\nstart();}`});
     await page.addScriptTag({content:`{${reader.replace(/^export /gm, '')}\nwindow.bootReader=start;start();}`});
 
     const note = id => page.locator(`.mes[mesid="${id}"] .mr-unlocks`);
@@ -86,13 +88,51 @@ async function run() {
     }
     await page.evaluate(() => { saved.set(2,{stat_data:stageTwo});emit('save'); });
     await note(2).waitFor();
-    assert.match(await note(2).innerText(), /妖怪横丁、夜森神社/);
-    assert.match(await note(2).innerText(), /手作、小菜圃、料理、生活商店/);
-    assert.match(await note(2).innerText(), /木制御守、便当、茶点、番茄饭团便当/);
+    assert.deepEqual(await note(2).locator('[data-unlock-kind=region] button').allTextContents(),['妖怪横丁','夜森神社']);
+    assert.deepEqual(await note(2).locator('[data-unlock-kind=feature] button').allTextContents(),['手作','料理','小菜圃','生活商店']);
+    assert.deepEqual(await note(2).locator('[data-unlock-kind=recipe] button').allTextContents(),['木制御守','便当','茶点','番茄饭团便当']);
     assert.equal(await note(2).evaluate(el => el.previousElementSibling.className), 'mr-bridge');
     assert.equal(await note(2).evaluate(el => el.nextElementSibling.hasAttribute('data-mikage-status-host')),true);
-    await note(2).getByRole('button',{name:'看地图'}).click();
-    assert.deepEqual(await page.evaluate(() => opened),['map']);
+    const panel = page.frameLocator('iframe[data-mikage-panel-frame]');
+    const guide = pageName => panel.locator('#'+pageName+'-dialog .journal-guide');
+    const jump = (id,name) => note(id).getByRole('button',{name:'查看'+name,exact:true}).click();
+    const closePanel = () => panel.getByRole('button',{name:'关闭御影手帖'}).click();
+    await jump(2,'夜森神社');
+    const place = panel.locator('#place-card[data-journal-target]');
+    await place.waitFor();
+    assert.match(await place.innerText(),/夜森神社/);
+    assert.equal(await guide('map').evaluate(el=>el.open),true);
+    await guide('map').getByRole('button',{name:'收起说明'}).click();
+    await closePanel();
+    assert.equal(await page.evaluate(()=>document.activeElement?.dataset.unlockId),'R04');
+    await jump(2,'妖怪横丁');
+    await place.waitFor();
+    assert.match(await place.innerText(),/妖怪横丁/);
+    assert.equal(await guide('map').evaluate(el=>el.open),false);
+    await guide('map').locator('summary').click();
+    assert.equal(await guide('map').evaluate(el=>el.open),true);
+    await closePanel();
+    await jump(2,'小菜圃');
+    await panel.locator('[data-life-tab=garden][aria-pressed=true]').waitFor();
+    assert.match(await guide('life').innerText(),/选择|播种/);
+    await closePanel();
+    await jump(2,'便当');
+    const recipe = panel.locator('[data-journal-target].life-card');
+    await recipe.waitFor();
+    assert.equal(await recipe.locator('[data-life-craft]').getAttribute('data-life-craft'),'bento');
+    assert.equal(await panel.locator('[data-life-tab=craft]').evaluate(el=>{
+      const button=el.getBoundingClientRect(), nav=el.parentElement.getBoundingClientRect();
+      return button.left>=nav.left && button.right<=nav.right;
+    }),true);
+    if (process.env.NOTE_PREVIEW_DIR) {
+      await page.screenshot({path:path.join(process.env.NOTE_PREVIEW_DIR,'guide.png'),animations:'disabled'});
+    }
+    await guide('life').getByRole('button',{name:'查看已定位条目'}).click();
+    assert.equal(await recipe.evaluate(el=>el.ownerDocument.activeElement===el),true);
+    if (process.env.NOTE_PREVIEW_DIR) {
+      await page.screenshot({path:path.join(process.env.NOTE_PREVIEW_DIR,'recipe.png'),animations:'disabled'});
+    }
+    await closePanel();
 
     for (const width of [320,390,920]) {
       await page.setViewportSize({width,height:820});
@@ -120,8 +160,12 @@ async function run() {
     await note(4).waitFor();
     assert.match(await note(4).innerText(), /樱染散策（玩家）/);
     assert.equal(await note(5).count(),0,'Repeating a saved snapshot does not grant any new item');
-    await note(4).getByRole('button',{name:'看衣橱'}).click();
-    assert.deepEqual(await page.evaluate(() => opened),['map','wardrobe']);
+    await jump(4,'樱染散策（玩家）');
+    const look = panel.locator('#wardrobe-look-name[data-journal-target]');
+    await look.waitFor();
+    assert.match(await look.innerText(),/樱染散策/);
+    assert.equal(await page.evaluate(()=>bought.玩家.衣装),'daily');
+    await closePanel();
 
     await page.evaluate(() => {
       saved.set(4,{stat_data:rows[3].data.stat_data});rows[4].swipe_id=1;emit('MESSAGE_SWIPED');
@@ -150,6 +194,7 @@ async function run() {
       third.主线.已完成.push({编号:'M02'});
       third.主线.已显现.push({编号:'M03'});
       engine.deriveProgress(third);
+      third.绘马板.绘马.push({...structuredClone(rows[0].data.stat_data.绘马板.绘马[0]),编号:'M03',标题:'水镜与山风',性质:'主线',材料档:3});
       const fourth = structuredClone(third);
       fourth.主线.已完成.push({编号:'M03'});
       engine.deriveProgress(fourth);
@@ -165,6 +210,14 @@ async function run() {
     assert.match(await note(5).innerText(), /水镜与山风/);
     assert.match(await note(6).innerText(), /旧匣中的衣纹/);
     assert.equal(await note(8).count(),0);
+    await jump(5,'水镜与山风');
+    await panel.locator('#panel-ema-sheet .ema-back').waitFor();
+    assert.equal(await panel.locator('[data-ema-id=M03]').evaluate(el=>el.classList.contains('is-flipped')),true);
+    await closePanel();
+    await jump(6,'旧匣中的衣纹');
+    await panel.locator('#wardrobe-quest[data-journal-target]').waitFor();
+    assert.match(await panel.locator('#wardrobe-quest').innerText(),/悬挂衣装支线/);
+    await closePanel();
     await page.evaluate(() => {
       window.MikageDeveloperSandbox = {active:true,getState:()=>bought};dispatchEvent(new Event('mikage:dev-changed'));
     });
@@ -196,8 +249,9 @@ async function run() {
     const memory = page.locator('.mkg-memory-unlock');
     await memory.waitFor();
     assert.match(await memory.innerText(),/傍晚的糖纸/);
-    await memory.getByRole('button',{name:'翻开回忆册'}).click();
+    await memory.getByRole('button',{name:'阅读傍晚的糖纸'}).click();
     await page.getByRole('dialog',{name:'旧物回忆册'}).waitFor();
+    assert.match(await page.locator('.mka-memory-episode:focus').innerText(),/傍晚的糖纸/);
     await page.evaluate(() => MikageMinigames.close());
     await finishTea();
     assert.equal(await memory.isVisible(),false,'Replaying a collected memory does not reopen its episode');
