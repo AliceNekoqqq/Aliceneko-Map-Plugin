@@ -1,0 +1,260 @@
+/* One cover and one reading surface for every chapter of the journal. */
+body.dialog-open[data-view] {
+  --volume-cover: url('https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@f6739dd71f16bfb7cc9a52ed85557ce3d5684058/mikage-shrine/assets/ui/map-header.webp');
+  --volume-gutter: clamp(13px, 3.5vw, 38px);
+  --volume-paper: #f6eddf;
+  --volume-film: #f9f1e5cd;
+  --volume-sheet: #fcf6ec;
+  --volume-inset: #eee0cd;
+  --volume-line: #ceb89b;
+  --volume-ink: #44333a;
+  --volume-muted: #725e60;
+  --volume-accent: #805364;
+  --volume-selected: #efe1e4;
+  --volume-active-ink: #fff7ec;
+  --volume-brass: #dcc394;
+  --volume-cover-ink: #fff2df;
+  --volume-cover-shade: #2f2432;
+  --volume-cover-size: clamp(200px, 32vw, 350px);
+  --volume-nav-size: 76px;
+  color: var(--volume-ink);
+  background: var(--volume-paper);
+}
+html:has(body.dialog-open[data-view] .journal-volume) {scroll-padding-block-start:76px;}
+.journal-volume {display:none;}
+body.dialog-open[data-view] .journal-volume {
+  display:block;
+  min-height:100vh;
+  isolation:isolate;
+  background:
+    linear-gradient(180deg, #2f243210, var(--volume-paper) 94%) center top/100% var(--volume-cover-size) no-repeat,
+    var(--volume-cover) center top/100% auto no-repeat,
+    repeating-linear-gradient(0deg, #8d6a4510 0 1px, transparent 1px 6px) var(--volume-paper);
+}
+body.dialog-open[data-view] .journal-volume .experience-nav {
+  min-height:var(--volume-nav-size);
+  padding:8px var(--volume-gutter) 5px;
+  gap:0 15px;
+  border-bottom:1px solid var(--volume-brass);
+  background:
+    linear-gradient(90deg,#2f2432ee 0%,#2f2432cc 42%,#2f243290 100%),
+    var(--volume-cover) center top/100% auto no-repeat var(--volume-cover-shade);
+  color:var(--volume-cover-ink);
+  box-shadow:0 4px 12px #39212a22;
+  backdrop-filter:none;
+}
+.journal-volume .experience-nav .nav-brand > span {
+  font-family:'Mikage Panel Extended','Mikage Panel','Noto Serif CJK SC',serif;
+  font-size:clamp(16px, 2.3vw, 23px);
+  letter-spacing:.12em;
+}
+body.dialog-open[data-view] .journal-volume .nav-pages {
+  width:min(100%,465px);
+  align-self:end;
+}
+body.dialog-open[data-view] .journal-volume .nav-pages button {
+  border-radius:7px 7px 0 0;
+  box-shadow:none;
+  color:var(--volume-cover-ink);
+}
+body.dialog-open[data-view] .journal-volume .nav-pages button[aria-current=page] {
+  border-color:#e1c79575;
+  color:#fff6e8;
+  background:#6a4a5eea;
+  box-shadow:inset 0 -3px var(--volume-brass);
+}
+body.dialog-open[data-view] .journal-volume .journal-close {
+  border-color:#e1c79588;
+  background:#35263586;
+}
+body.dialog-open[data-view] .journal-volume #dialog-layer {
+  background:
+    linear-gradient(90deg,#ad876528 0,#be9b7730 1px,transparent 1px) var(--volume-gutter) 0/1px 100% no-repeat,
+    linear-gradient(180deg,var(--volume-film) 0,var(--volume-paper) 185px);
+}
+body.dialog-open[data-view] .journal-volume .dialog {
+  width:100%;
+  max-width:1080px;
+  margin:0 auto;
+  min-height:calc(100vh - var(--volume-nav-size));
+  padding:12px var(--volume-gutter) 26px !important;
+  color:var(--volume-ink);
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.journal-volume .journal-chapter {
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:54px;
+  margin:0 0 10px;
+  padding:1px 0 4px 12px;
+  border-bottom:1px solid var(--volume-line);
+}
+.journal-volume .journal-chapter::before {
+  content:'';
+  position:absolute;
+  inset-inline-start:0;
+  width:3px;
+  height:21px;
+  background:var(--volume-accent);
+  border-radius:2px;
+}
+.journal-volume .journal-chapter h2 {
+  min-width:0;
+  margin:0;
+  color:var(--volume-ink);
+  font:600 clamp(19px,3.1vw,29px)/1.35 'Mikage Panel Extended','Mikage Panel','Noto Serif CJK SC',serif;
+  letter-spacing:.08em;
+  text-shadow:none;
+}
+#board-dialog .journal-chapter .ema-toy {
+  position:relative;
+  inset:auto;
+  flex:0 0 44px;
+  width:44px;
+  height:44px;
+  padding:6px;
+  border:1px solid var(--volume-line);
+  border-radius:6px;
+  color:var(--volume-accent);
+  background:var(--volume-sheet);
+}
+#board-dialog .journal-chapter .ema-toy-bell {margin-inline-start:auto;}
+#board-dialog .journal-chapter .ema-toy-bell {font:600 17px/1 serif;}
+#board-dialog .journal-chapter .ema-toy-cherry::before {content:'❀';font-size:21px;}
+.journal-volume .dialog .journal-guide {
+  margin:0 0 12px;
+  padding:0 10px;
+  border:0;
+  border-inline-start:2px solid var(--volume-line);
+  border-radius:0;
+  background:#ac785112;
+  color:var(--volume-ink);
+  font-size:13px;
+}
+.journal-volume .journal-guide :is(summary,button) {color:var(--volume-accent);}
+.journal-volume .journal-guide button {
+  background:var(--volume-sheet);
+  border-color:var(--volume-line);
+}
+body.dialog-open[data-view] .journal-volume :is(.place-card,.panel-map-index,.panel-board-tools,.panel-ema-sheet .ema-back,
+  #panel-archive-view,.wardrobe-collection,.panel-robe-extras,.life-card,.life-home-entry,.life-context-wrap,
+  .life-decor-palette,.life-decor-inspector,.quiet-corner,.strange-notebook,.festival-journal) {
+  background:var(--volume-sheet);
+  border:1px solid var(--volume-line);
+  border-radius:8px;
+  box-shadow:none;
+  color:var(--volume-ink);
+}
+body.dialog-open[data-view] .journal-volume :is(#panel-ema-status,.wardrobe-tabs,.life-tabs) {
+  background:#a8784c12;
+  border:1px solid var(--volume-line);
+  border-radius:7px;
+  box-shadow:none;
+}
+body.dialog-open[data-view] .journal-volume :is(#panel-ema-status,.wardrobe-tabs,.life-tabs) button[aria-pressed=true] {
+  border-color:var(--volume-accent);
+  background:var(--volume-accent);
+  color:var(--volume-active-ink);
+  box-shadow:none;
+}
+body.dialog-open[data-view] .journal-volume #map-dialog .map-atlas {
+  border:1px solid #a38a70;
+  border-radius:8px;
+  outline:1px solid #e2c79a80;
+  outline-offset:-4px;
+  box-shadow:none;
+  background-color:#4f3942;
+}
+#map-dialog #journal-map-location {
+  max-width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-size:clamp(10px,2.8vw,21px);
+  letter-spacing:.12em;
+}
+body.dialog-open[data-view] .journal-volume #map-dialog .map-desk-ticket {
+  background:#3b2938;
+  color:#fff2dc;
+}
+body.dialog-open[data-view] .journal-volume :is(.life-desk-scene,.place-card > .life-region-art) {
+  border-radius:7px;
+  box-shadow:none;
+}
+.journal-volume #wardrobe-dialog {
+  --wardrobe-line:var(--volume-line);
+  --wardrobe-ink:var(--volume-ink);
+  --wardrobe-muted:var(--volume-muted);
+  --wardrobe-plum:var(--volume-accent);
+}
+body.dialog-open[data-view] .journal-volume #wardrobe-dialog .wardrobe-portrait-wrap {
+  background:radial-gradient(ellipse at 52% 40%,#fcf5e8,var(--volume-inset) 80%);
+  border:1px solid var(--volume-line);
+  border-radius:8px;
+  box-shadow:none;
+}
+.journal-volume .dialog [data-journal-target] {
+  scroll-margin-block-start:12px;
+}
+@media (max-width:530px) {
+  body.dialog-open[data-view] {--volume-nav-size:98px;}
+  html:has(body.dialog-open[data-view] .journal-volume) {scroll-padding-block-start:98px;}
+  body.dialog-open[data-view] .journal-volume .experience-nav {
+    gap:0 5px;
+    padding:4px var(--volume-gutter) 4px;
+  }
+  .journal-volume .journal-chapter {min-height:51px;}
+  #board-dialog .journal-chapter .ema-toy {padding:8px;}
+}
+@media (max-width:345px) {
+  body.dialog-open[data-view] .journal-volume .nav-pages button {gap:4px;}
+  body.dialog-open[data-view] .journal-volume .nav-pages button svg {width:15px;}
+}
+html[data-mikage-reading-theme=night] body.dialog-open[data-view] {
+  --volume-paper:#302935;
+  --volume-film:#302935ec;
+  --volume-sheet:#3c323c;
+  --volume-inset:#433541;
+  --volume-line:#806653;
+  --volume-ink:#f4e8df;
+  --volume-muted:#dac2c2;
+  --volume-accent:#e4b4c7;
+  --volume-selected:#513a4d;
+  --volume-active-ink:#302230;
+}
+html[data-mikage-reading-theme=night] .journal-volume .dialog :is(
+  .dialog-hint,.life-note,.life-card h3,.life-card h4,.life-card p,.life-card small,
+  .life-context-wrap h3,.life-context-wrap p,.life-home-entry strong,
+  .life-decor-palette h3,.life-decor-inspector h3,.quiet-corner h3,.quiet-corner p,
+  .strange-notebook h3,.strange-notebook p,.festival-journal h3,.festival-journal p,
+  .wardrobe-current,.wardrobe-look-note strong,.wardrobe-look-note p,.wardrobe-look-note span,
+  #life-tabs button:not([aria-pressed=true]),#panel-ema-status button:not([aria-pressed=true]),
+  .wardrobe-tabs button:not([aria-pressed=true]),#place-card h3,#place-card p,#place-card small
+) {color:var(--volume-muted);}
+html[data-mikage-reading-theme=night] body.dialog-open[data-view] .journal-volume :is(#life-dialog,#wardrobe-dialog,#board-dialog,#map-dialog) :is(
+  .place-card,.panel-map-index,.panel-board-tools,#panel-ema-status,#panel-archive-view,
+  .wardrobe-collection,.panel-robe-extras,.wardrobe-look-note,.wardrobe-tabs,
+  .life-tabs,.life-card,.life-home-entry,.life-context-wrap,.life-decor-palette,.life-decor-inspector
+) {background:var(--volume-sheet);border-color:var(--volume-line);}
+html[data-mikage-reading-theme=night] .journal-volume #life-dialog :is(
+  .life-home-entry small,.life-home-hint
+) {color:var(--volume-muted);}
+html[data-mikage-reading-theme=night] .journal-volume .dialog :is(
+  .life-note,.wardrobe-look-note,.wardrobe-current
+) {background:var(--volume-sheet);border-color:var(--volume-line);}
+html[data-mikage-reading-theme=night] body.dialog-open[data-view] .journal-volume #wardrobe-dialog .wardrobe-portrait-wrap {
+  background:radial-gradient(ellipse at 52% 40%,#7b6570,var(--volume-inset) 80%);
+}
+html[data-mikage-reading-theme=night] .journal-volume #wardrobe-dialog .outfit-choice {
+  background:var(--volume-sheet);
+  border-color:var(--volume-line);
+}
+html[data-mikage-reading-theme=night] .journal-volume #wardrobe-dialog .outfit-choice:is(.is-worn,[aria-pressed=true]) {
+  background:var(--volume-selected);
+  border-color:var(--volume-accent);
+}
