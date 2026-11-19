@@ -1,5 +1,5 @@
 /** Read-only DOM presentation. Built as a self-contained module for the existing CDN loader. */
-export const VERSION = '1.1.3';
+export const VERSION = '1.1.4';
 export const SCRIPT_ID = 'reading';
 const HOST_CSS = '__HOST_CSS__';
 const FRAME_CSS = '__FRAME_CSS__';
@@ -7,6 +7,7 @@ const ASSET_REF = 'e72763467967bffaabc77e7b1984ea6a91d92721';
 const ASSET_ROOT = `https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@${ASSET_REF}/mikage-shrine/assets/`;
 const ART_ROOT = 'https://cdn.jsdelivr.net/gh/AliceNekoqqq/Aliceneko-Map-Plugin@fb8538d08732d8bd0388f268ffdb1b28fd5711f1/mikage-shrine/assets/reading-v2/';
 const TIME_SCENES = '__TIME_SCENES__';
+// __UNLOCK_NOTES__
 const STORAGE = 'mikage:reading:1';
 const SCRIPT_UUID = '942e5145-090d-52b2-8e13-455609375d17';
 const TITLES = {'opening-1':'修缮现场初遇','opening-2':'带着心愿的来访者','opening-3':'神社的安静午后'};
@@ -27,6 +28,7 @@ export function start(){
   let settings={...DEFAULTS},disposed=false,queued=false,dialog=null,dialogCleanup=null,focusBefore=null,hasScanned=false;
   try{settings=normalized(JSON.parse(host.localStorage.getItem(STORAGE)||'null'));}catch{}
   const stops=[],owned=new Map(),frames=new Map(),styledDocs=new Map(),rowCache=new Map();
+  const unlockCache=new Map(),unlockNotes=new Map();
   const style=doc.createElement('style');style.dataset.mikageReadingStyle='host';style.textContent=HOST_CSS;doc.head.append(style);
   const node=(tag,text)=>{const el=doc.createElement(tag);if(text!==undefined)el.textContent=text;return el;};
   function scopeActive(){
@@ -38,10 +40,14 @@ export function start(){
     }catch{return false;}
   }
   const isAssistant=row=>row?.role==='assistant'||row?.is_user===false||row?.mes_type==='assistant';
+  function readRow(id){
+    if(!Number.isInteger(id)||id<0)return null;
+    if(rowCache.has(id))return rowCache.get(id);
+    try{const rows=getChatMessages(id,{include_swipes:false});const row=rows?.find(r=>Number(r.message_id)===id);if(row)rowCache.set(id,row);return row??null;}catch{return null;}
+  }
   function rowFor(el){
-    const id=Number(el.getAttribute('mesid'));if(!Number.isInteger(id)||id<0)return null;
-    if(rowCache.has(id)){const cached=rowCache.get(id);return isAssistant(cached)?cached:null;}
-    try{const rows=getChatMessages(id,{include_swipes:false});const row=rows?.find(r=>Number(r.message_id)===id);if(row)rowCache.set(id,row);return isAssistant(row)?row:null;}catch{return null;}
+    const row=readRow(Number(el.getAttribute('mesid')));
+    return isAssistant(row)?row:null;
   }
   function release(record){
     record.portraitResize?.disconnect();
@@ -103,19 +109,81 @@ export function start(){
     const anchor=record.body.querySelector('[data-mikage-status-host]');
     if(!anchor){record.bridge?.remove();record.bridge=null;return;}
     if(!record.bridge?.isConnected){const divider=node('div');divider.append(node('span','檐下此刻'));divider.className='mr-bridge';divider.dataset.mrOwned='bridge';record.bridge=divider;record.nodes.push(divider);}
-    if(anchor.previousElementSibling!==record.bridge)anchor.before(record.bridge);
+    const next=unlockNotes.get(record.body)?.element;
+    const target=next?.nextElementSibling===anchor?next:anchor;
+    if(target.previousElementSibling!==record.bridge)target.before(record.bridge);
+  }
+  function savedUnlocks(id,row,engine){
+    if(unlockCache.has(id))return unlockCache.get(id);
+    let state;
+    try{state=(typeof Mvu==='undefined'?host.Mvu:Mvu)?.getMvuData?.({type:'message',message_id:id})?.stat_data;}catch{}
+    const snapshot=unlockSnapshot(state??row.data?.stat_data,engine);
+    unlockCache.set(id,snapshot);
+    return snapshot;
+  }
+  function previousUnlocks(id,engine){
+    for(let prior=id-1;prior>=Math.max(0,id-64);prior--){
+      const row=readRow(prior);
+      if(!row)return null;
+      if(row.is_system===true)continue;
+      const snapshot=savedUnlocks(prior,row,engine);
+      if(snapshot||isAssistant(row))return snapshot;
+    }
+    return null;
+  }
+  function removeUnlockNote(body){
+    unlockNotes.get(body)?.element.remove();unlockNotes.delete(body);
+  }
+  function refreshUnlockNote(body,row){
+    const engine=host.MikageShrineRuntime?.engine,id=Number(row.message_id);
+    if(!engine||id===0||host.MikageDeveloperSandbox?.active){removeUnlockNote(body);return;}
+    const after=savedUnlocks(id,row,engine);
+    const groups=after?newUnlocks(previousUnlocks(id,engine),after):[];
+    if(!groups.length){removeUnlockNote(body);return;}
+
+    const signature=JSON.stringify([id,row.swipe_id??0,groups,!!host.MikageShrinePanels?.open]);
+    let entry=unlockNotes.get(body);
+    if(entry?.signature!==signature){
+      removeUnlockNote(body);
+      const element=node('section');element.className='mr-unlocks';element.dataset.mrOwned='unlocks';element.setAttribute('aria-label','本回合新解锁');
+      const heading=node('div');heading.className='mr-unlocks-heading';
+      const seal=node('span','启');seal.className='mr-unlocks-seal';seal.setAttribute('aria-hidden','true');
+      const count=groups.reduce((sum,group)=>sum+group.names.length,0);
+      heading.append(seal,node('strong','神社新笺'),node('span',`${count} 项新解锁`));element.append(heading);
+      for(const {kind,label,panel,action,names} of groups){
+        const line=node('div');line.className='mr-unlocks-row';line.dataset.unlockKind=kind;
+        const copy=node('div');copy.append(node('small',label),node('div',names.join('、')));line.append(copy);
+        if(host.MikageShrinePanels?.open){
+          const button=node('button',action);button.type='button';
+          button.addEventListener('click',async()=>{
+            try{await host.MikageShrinePanels.open(panel);}catch{error.hidden=false;}
+          });
+          line.append(button);
+        }
+        element.append(line);
+      }
+      const error=node('div','面板暂时无法打开，请稍后再试。');error.className='mr-unlocks-error';error.setAttribute('role','status');error.hidden=true;element.append(error);
+      entry={element,signature};unlockNotes.set(body,entry);
+    }
+    entry.element.dataset.readingTheme=settings.theme;
+    const anchor=body.querySelector('[data-mikage-status-host]');
+    if(anchor){if(anchor.previousElementSibling!==entry.element)anchor.before(entry.element);}
+    else if(body.lastElementChild!==entry.element)body.append(entry.element);
   }
   function scan(){
-    queued=false;if(disposed)return;const active=settings.enabled&&scopeActive();
+    queued=false;if(disposed)return;const scoped=scopeActive(),active=settings.enabled&&scoped;
     for(const record of [...owned.values()])if(!active||!record.body.isConnected)release(record);
+    for(const body of unlockNotes.keys())if(!scoped||!body.isConnected)removeUnlockNote(body);
     const messages=[...doc.querySelectorAll('#chat .mes[mesid]')];
     const latest=messages.filter(el=>rowFor(el)).at(-1);
-    if(active)for(const el of messages){
-      const body=el.querySelector('.mes_text');if(!body||body.querySelector('textarea')||el.querySelector('.edit_textarea')){if(owned.has(body))release(owned.get(body));continue;}
+    if(scoped)for(const el of messages){
+      const body=el.querySelector('.mes_text');if(!body||body.querySelector('textarea')||el.querySelector('.edit_textarea')){if(owned.has(body))release(owned.get(body));removeUnlockNote(body);continue;}
       const row=rowFor(el);const text=String(row?.message||'');
       if(!row||row.is_system===true||/^\s*<MikageOpeningScreen\/>\s*(?:<StatusPlaceHolderImpl\/>\s*)?$/.test(text)){
-        if(owned.has(body))release(owned.get(body));continue;
+        if(owned.has(body))release(owned.get(body));removeUnlockNote(body);continue;
       }
+      refreshUnlockNote(body,row);
+      if(!active)continue;
       const signature=String(row.swipe_id??0)+':'+(text.match(/<!--MikageOpeningStarted:[^>]+-->/)?.[0]||'');
       let record=owned.get(body);
       if(record&&(record.signature!==signature||!record.nodes[0]?.isConnected)){release(record);record=null;}
@@ -132,7 +200,7 @@ export function start(){
     for(const child of [...styledDocs.keys()])if(!active||!child.defaultView?.frameElement?.isConnected)restoreDoc(child);
   }
   function schedule(){if(disposed||queued)return;queued=true;queueMicrotask(scan);}
-  function invalidate(){rowCache.clear();schedule();}
+  function invalidate(){rowCache.clear();unlockCache.clear();schedule();}
   function save(){try{host.localStorage.setItem(STORAGE,JSON.stringify(settings));}catch{}if(dialog)dialog.querySelector('.mr-settings')?.setAttribute('data-reading-theme',settings.theme);schedule();}
   function closeSettings(){if(!dialog)return;dialogCleanup?.();dialogCleanup=null;dialog.remove();dialog=null;focusBefore?.focus?.({preventScroll:true});focusBefore=null;}
   function showSettings(){
@@ -161,8 +229,23 @@ export function start(){
   observer.observe(doc.body,{childList:true,subtree:true,characterData:true});
   function onHost(name,fn=schedule){host.addEventListener(name,fn);stops.push(()=>host.removeEventListener(name,fn));}
   for(const event of ['mikage:art-ready','mikage:panels-ready','mikage:mvu-message-replaced','mikage:dev-changed'])onHost(event,invalidate);
+  let mvuRefresh;
+  function refreshSavedState(){clearTimeout(mvuRefresh);mvuRefresh=setTimeout(invalidate,0);}
+  onHost('mikage:mvu-status',refreshSavedState);
+  let mvuAttached=false;
+  function attachMvu(){
+    const events=(typeof Mvu==='undefined'?host.Mvu:Mvu)?.events;
+    if(disposed||mvuAttached||!events||typeof eventOn!=='function')return;
+    mvuAttached=true;
+    for(const event of [events.VARIABLE_UPDATE_ENDED,events.VARIABLE_INITIALIZED])if(event){
+      const sub=eventOn(event,refreshSavedState);stops.push(()=>sub?.stop?.());
+    }
+    invalidate();
+  }
+  attachMvu();
+  if(typeof waitGlobalInitialized==='function')Promise.resolve().then(()=>waitGlobalInitialized('Mvu')).then(attachMvu).catch(()=>{});
   if(typeof eventOn==='function'&&typeof tavern_events==='object')for(const key of ['CHAT_CHANGED','MESSAGE_RECEIVED','MESSAGE_UPDATED','MESSAGE_SWIPED','MESSAGE_DELETED'])if(tavern_events[key]){const subscription=eventOn(tavern_events[key],()=>{if(key==='CHAT_CHANGED')closeSettings();invalidate();});stops.push(()=>subscription?.stop?.());}
   if(typeof eventOn==='function'&&typeof getButtonEvent==='function'){const sub=eventOn(getButtonEvent('正文阅读设置'),showSettings);stops.push(()=>sub?.stop?.());}
-  function dispose(){if(disposed)return;disposed=true;observer.disconnect();closeSettings();for(const stop of stops)stop();for(const record of [...owned.values()])release(record);for(const [frame,fn]of frames)frame.removeEventListener('load',fn);frames.clear();for(const child of [...styledDocs.keys()])restoreDoc(child);style.remove();window.removeEventListener('pagehide',dispose);if(host.MikageReading===api)delete host.MikageReading;}
+  function dispose(){if(disposed)return;disposed=true;clearTimeout(mvuRefresh);observer.disconnect();closeSettings();for(const stop of stops)stop();for(const body of unlockNotes.keys())removeUnlockNote(body);for(const record of [...owned.values()])release(record);for(const [frame,fn]of frames)frame.removeEventListener('load',fn);frames.clear();for(const child of [...styledDocs.keys()])restoreDoc(child);style.remove();window.removeEventListener('pagehide',dispose);if(host.MikageReading===api)delete host.MikageReading;}
   const api={version:VERSION,showSettings,rescan:schedule,dispose,getSettings:()=>({...settings})};host.MikageReading=api;window.addEventListener('pagehide',dispose,{once:true});schedule();return api;
 }

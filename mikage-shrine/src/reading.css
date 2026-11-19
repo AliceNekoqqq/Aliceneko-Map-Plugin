@@ -61,6 +61,37 @@
 .mr-bridge{isolation:isolate;min-height:44px;margin:16px calc(-1 * var(--mr-pad)) 0;padding:0;border:0;background:transparent;color:#382536;letter-spacing:.12em;font-weight:650;font-size:13px;overflow:hidden}
 .mr-bridge::before{content:"";position:absolute;inset:0;background-image:var(--mr-divider);background-size:100% auto;background-position:center;background-repeat:no-repeat;pointer-events:none;z-index:-1}
 .mr-bridge::after{display:none}.mr-bridge span{position:relative;padding:1px 5px;background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0;font-size:13px;font-weight:500}
+
+/* Unlock slips sit between the reading divider and the existing status frame. */
+.mr-unlocks[data-mr-owned]{
+  --note-paper:#fcf7ed;--note-wash:#f4e8da;--note-ink:#392c36;--note-muted:#755463;
+  --note-line:#d5b995;--note-rule:#e3d2be;--note-accent:#8f4353;--note-button:#fffaf2;
+  isolation:isolate;position:relative;display:block;box-sizing:border-box;min-width:0;
+  margin:7px 0 12px;padding:3px clamp(10px,3%,18px);border:1px solid var(--note-line);border-radius:7px;
+  background:linear-gradient(118deg,var(--note-wash),var(--note-paper) 40%);color:var(--note-ink);
+  box-shadow:0 2px 5px #64453312;text-align:start;font:14px/1.45 system-ui,sans-serif;
+}
+.mr-unlocks[data-reading-theme=night]{
+  --note-paper:#322a36;--note-wash:#3e2e3d;--note-ink:#f3e8d8;--note-muted:#d9b9c5;
+  --note-line:#a78369;--note-rule:#634858;--note-accent:#ebadb9;--note-button:#473143;
+}
+.mr-unlocks-heading{display:flex;align-items:center;gap:9px;min-height:44px;color:var(--note-muted);font-size:12px}
+.mr-unlocks-heading strong{margin-inline-end:auto;color:var(--note-ink);font-size:15px;letter-spacing:.1em}
+.mr-unlocks .mr-unlocks-seal{
+  display:grid;flex:0 0 24px;place-items:center;height:24px;border:1px solid var(--note-accent);
+  outline:1px solid var(--note-accent);outline-offset:-4px;border-radius:3px;color:var(--note-accent);
+  font:600 13px/1 serif;transform:rotate(-6deg);
+}
+.mr-unlocks-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px 9px;
+  padding:5px 0;border-top:1px solid var(--note-rule);overflow-wrap:anywhere}
+.mr-unlocks-row small{display:block;color:var(--note-muted);font-size:11px;font-weight:600;letter-spacing:.06em}
+.mr-unlocks-row button{
+  min-height:44px;min-width:54px;padding:0 8px;border:1px solid var(--note-rule);border-radius:5px;
+  background:var(--note-button);box-shadow:none;color:var(--note-muted);font:600 12px/1.25 system-ui,sans-serif;
+}
+.mr-unlocks-row button:hover,.mr-unlocks-row button:focus-visible{border-color:var(--note-accent);color:var(--note-accent)}
+.mr-unlocks-error{padding:5px 0;color:var(--note-accent);font-size:12px}
+
 [data-mikage-reading][data-reading-theme=night] .mr-hero-title{background:#302b37ed;color:var(--mr-ink);border-color:var(--mr-line)}
 [data-mikage-reading][data-reading-theme=night] .mr-bridge::before{filter:brightness(.68) saturate(.65)}
 [data-mikage-reading][data-reading-theme=night] .mr-bridge span{background:transparent!important;color:var(--mr-ink)}
