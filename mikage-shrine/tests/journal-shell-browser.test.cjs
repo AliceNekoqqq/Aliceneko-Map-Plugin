@@ -6,7 +6,7 @@ const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const base = 'mikage-shrine/releases/1.49.39';
-const panel = read('mikage-shrine/releases/1.49.49/modules/panels.mjs');
+const panel = read('mikage-shrine/releases/1.49.50/modules/panels.mjs');
 const scene = read(base + '/modules/scene.mjs');
 const art = scene.slice(scene.indexOf('((host)=>{', scene.indexOf('/* One immutable asset catalog')),
   scene.indexOf('/* Tavern Helper adapter'));
@@ -62,10 +62,12 @@ async function checkShell(page, width, height) {
   const nav = child.getByRole('navigation', { name: '神社手帖' });
   const surface = () => nav.evaluate(el => getComputedStyle(el).backgroundImage);
   const background = await surface();
-  assert.match(background, /map-header\.webp/);
+  assert.match(background, /journal-paper-cover\.webp/);
+  assert.equal(await nav.locator('.paper-nav-icon svg').count(),4);
   const volume = child.locator('.journal-volume');
   const paper = await volume.evaluate(el=>getComputedStyle(el).backgroundImage);
-  assert.match(paper,/map-header\.webp/);
+  assert.match(paper,/journal-paper-cover\.webp/);
+  assert.equal(await volume.evaluate(el=>getComputedStyle(el,'::after').pointerEvents),'none');
   await volume.evaluate(el=>{el.dataset.fixtureVolume='original';});
 
   for (const [kind, label] of [['map', '巡游'], ['board', '绘马'], ['wardrobe', '衣橱'], ['life', '生活']]) {
@@ -105,7 +107,7 @@ async function checkShell(page, width, height) {
   await volume.evaluate(el=>{el.ownerDocument.documentElement.dataset.mikageReadingTheme='night';});
   const dark = await volume.evaluate(el=>getComputedStyle(el).getPropertyValue('--volume-sheet').trim());
   assert.notEqual(light,dark);
-  assert.equal(await child.locator('#life-tabs').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(60, 50, 60)');
+  assert.equal(await child.locator('#life-tabs').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(61, 48, 51)');
   if(process.env.JOURNAL_CAPTURE && width===375)await page.screenshot({path:path.join(process.env.JOURNAL_CAPTURE,'journal-night.png')});
 
   await close.click();

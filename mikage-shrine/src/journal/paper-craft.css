@@ -1,0 +1,132 @@
+/* Paper-craft treatment for the existing journal shell. */
+body.dialog-open[data-view] {
+  --volume-cover: url('__PAPER_COVER__');
+  --volume-paper: #f5ead9;
+  --volume-film: #f6ead8e8;
+  --volume-sheet: #fff6e9;
+  --volume-inset: #ead9be;
+  --volume-line: #cdb18a;
+  --volume-ink: #432e29;
+  --volume-muted: #705950;
+  --volume-accent: #84392e;
+  --volume-selected: #f0dcd4;
+  --volume-brass: #dfba76;
+  --volume-cover-shade: #31201e;
+  --paper-metal: #e2bd79;
+  --paper-metal-shade: #87603f;
+}
+html[data-mikage-reading-theme=night] body.dialog-open[data-view] {
+  --volume-paper:#30272b;
+  --volume-film:#34292de9;
+  --volume-sheet:#3d3033;
+  --volume-inset:#473535;
+  --volume-line:#876b53;
+  --volume-ink:#f7e8d9;
+  --volume-muted:#dfc4af;
+  --volume-accent:#edba9d;
+  --volume-selected:#573c3a;
+}
+body.dialog-open[data-view] .journal-volume #dialog-layer {
+  background:
+    repeating-linear-gradient(112deg,#80532e08 0 1px,transparent 1px 9px) center top/100% 100%,
+    linear-gradient(180deg,var(--volume-film),var(--volume-paper) 150px);
+}
+body.dialog-open[data-view] .journal-volume .experience-nav {
+  background:
+    linear-gradient(90deg,#24171aef 0%,#2e1c21cf 34%,#331b219c 68%,#2f18205e 100%),
+    linear-gradient(0deg,#271819e8,transparent 74%),
+    var(--volume-cover) center 20%/100% auto no-repeat var(--volume-cover-shade);
+  border-color:var(--paper-metal);
+  box-shadow:inset 0 -3px #e2bd792a,0 4px 9px #29160e39;
+}
+body.dialog-open[data-view] .journal-volume .nav-brand > svg {
+  box-sizing:border-box;width:32px;height:32px;padding:4px;
+  color:#ffda9c;border:1px solid #e0b976;
+  background:#78372bea;border-radius:5px;
+  box-shadow:inset 0 0 0 2px #f4c48b2c;
+}
+body.dialog-open[data-view] .journal-volume .nav-brand > span {
+  color:#fff0d8;text-shadow:0 1px 4px #10080a,0 0 12px #1d1013;
+}
+body.dialog-open[data-view] .journal-volume .nav-pages button {
+  gap:6px;
+  background:#29191dd9;
+  border-color:#c49b695c;
+  color:#ffebcf;
+  border-radius:6px 6px 2px 2px;
+  transition:background-color .16s,border-color .16s;
+}
+.paper-nav-icon {
+  display:grid;place-items:center;flex:0 0 24px;
+  width:24px;height:24px;
+  border:1px solid #ebc38391;
+  border-radius:4px;
+  background:linear-gradient(145deg,#63352e,#422927);
+  color:#ffe1a6;
+  box-shadow:inset 0 0 0 2px #f8c9831a;
+}
+.paper-nav-icon svg {display:block;width:15px;height:15px;}
+body.dialog-open[data-view] .journal-volume .nav-pages button[aria-current=page] {
+  color:#fff6e5;background:#82392f;
+  border-color:#e8bf80;
+  box-shadow:inset 0 -2px #ecc482;
+}
+.nav-pages button[aria-current=page] .paper-nav-icon {background:#a14a35;border-color:#f3cc8c;}
+body.dialog-open[data-view] .journal-volume #board-dialog #panel-ema-status button[aria-pressed=true] {
+  border-color:var(--volume-accent);
+  background:var(--volume-accent);
+  color:var(--volume-active-ink);
+  box-shadow:none;
+}
+html[data-mikage-reading-theme=night] .journal-volume .dialog .journal-guide {
+  background:var(--volume-sheet);
+  color:var(--volume-ink);
+  border-color:var(--volume-line);
+}
+html[data-mikage-reading-theme=night] .journal-volume .journal-guide :is(summary,button) {color:var(--volume-accent);}
+html[data-mikage-reading-theme=night] .journal-volume .journal-guide button {
+  background:var(--volume-selected);
+  border-color:var(--volume-line);
+}
+body.dialog-open[data-view] .journal-volume .journal-close {
+  border:1px solid #e5c081;
+  color:#ffedcd;background:#331f20eb;
+  box-shadow:inset 0 0 0 2px #e2be7b29;
+}
+.journal-volume::after {
+  content:'';position:fixed;inset:5px;z-index:40;pointer-events:none;
+  border:1px solid #e2bd796b;border-radius:inherit;
+  background:
+    linear-gradient(var(--paper-metal),var(--paper-metal)) left top/19px 1px,
+    linear-gradient(var(--paper-metal),var(--paper-metal)) left top/1px 19px,
+    linear-gradient(var(--paper-metal),var(--paper-metal)) right top/19px 1px,
+    linear-gradient(var(--paper-metal),var(--paper-metal)) right top/1px 19px,
+    linear-gradient(var(--paper-metal-shade),var(--paper-metal-shade)) left bottom/19px 1px,
+    linear-gradient(var(--paper-metal-shade),var(--paper-metal-shade)) left bottom/1px 19px,
+    linear-gradient(var(--paper-metal-shade),var(--paper-metal-shade)) right bottom/19px 1px,
+    linear-gradient(var(--paper-metal-shade),var(--paper-metal-shade)) right bottom/1px 19px;
+  background-repeat:no-repeat;
+}
+.journal-volume .journal-chapter {padding-inline-start:15px;}
+.journal-volume .journal-chapter::before {
+  width:6px;height:6px;inset-inline-start:1px;
+  rotate:45deg;border:1px solid var(--volume-accent);border-radius:0;
+  background:var(--volume-accent);box-shadow:0 0 0 2px var(--volume-paper);
+}
+body.dialog-open[data-view] .journal-volume #map-dialog .map-atlas,
+body.dialog-open[data-view] .journal-volume #wardrobe-dialog .wardrobe-portrait-wrap,
+body.dialog-open[data-view] .journal-volume :is(.life-desk-scene,.place-card > .life-region-art) {
+  border-color:var(--volume-line);
+  outline:1px solid #d2a76e85;
+  outline-offset:-4px;
+}
+@media(hover:hover) {
+  body.dialog-open[data-view] .journal-volume .nav-pages button:hover {background:#674135;}
+  body.dialog-open[data-view] .journal-volume .nav-pages button[aria-current=page]:hover {background:#8a4234;}
+}
+@media(max-width:345px){
+  body.dialog-open[data-view] .journal-volume .nav-pages button {gap:4px;}
+  .paper-nav-icon{width:20px;height:20px;flex-basis:20px;}
+  .paper-nav-icon svg{width:13px;height:13px;}
+}
+@media(prefers-reduced-motion:reduce){.journal-volume .nav-pages button{transition:none;}}
