@@ -6,7 +6,7 @@ const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const base = 'mikage-shrine/releases/1.49.39';
-const panel = read('mikage-shrine/releases/1.49.50/modules/panels.mjs');
+const panel = read('mikage-shrine/releases/1.49.51/modules/panels.mjs');
 const scene = read(base + '/modules/scene.mjs');
 const art = scene.slice(scene.indexOf('((host)=>{', scene.indexOf('/* One immutable asset catalog')),
   scene.indexOf('/* Tavern Helper adapter'));
@@ -109,6 +109,50 @@ async function checkShell(page, width, height) {
   assert.notEqual(light,dark);
   assert.equal(await child.locator('#life-tabs').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(61, 48, 51)');
   if(process.env.JOURNAL_CAPTURE && width===375)await page.screenshot({path:path.join(process.env.JOURNAL_CAPTURE,'journal-night.png')});
+
+  const lifeTabs = child.locator('#life-tabs');
+  const destinations = await lifeTabs.evaluate(el => {
+    const nav = el.getBoundingClientRect();
+    return [...el.querySelectorAll('button')].map(button => {
+      const {left, right, height} = button.getBoundingClientRect();
+      return left >= nav.left && right <= nav.right && height >= 44;
+    });
+  });
+  assert.equal(destinations.length, 9);
+  assert(destinations.every(Boolean), 'Every life destination fits the index at ' + width);
+  const boardTab = nav.getByRole('button', {name:'绘马', exact:true});
+  await boardTab.click();
+  const detail = child.locator('#panel-ema-sheet .ema-back');
+  if (!await detail.isVisible()) await child.locator('.ema-card .flip-button').first().click();
+  await detail.waitFor();
+  assert.equal(await detail.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(61, 48, 51)');
+  await child.locator('.panel-board-tools > summary').click();
+  await child.getByRole('button', {name:'请求设置', exact:true}).click();
+  const settings = child.locator('#settings-dialog');
+  assert.equal(await nav.locator('[aria-current=page]').count(), 1);
+  assert.equal(await boardTab.getAttribute('aria-current'), 'page');
+  assert.equal(await settings.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(61, 48, 51)');
+  await settings.getByRole('radio', {name:/独立 API 预设/}).check();
+  const model = settings.getByLabel('模型名称');
+  assert.equal(await model.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(48, 39, 43)');
+  await volume.evaluate(el=>{el.ownerDocument.documentElement.dataset.mikageReadingTheme='paper';});
+  assert.notEqual(await settings.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(61, 48, 51)');
+  await settings.getByRole('button', {name:'返回绘马板'}).click();
+  await child.locator('#board-dialog').waitFor();
+  assert.equal(await boardTab.getAttribute('aria-current'), 'page');
+
+  await page.evaluate(() => {
+    fixtureState.主线.已完成.push({编号:'M01'});
+    MikageShrineRuntime.engine.deriveProgress(fixtureState);
+  });
+  await volume.evaluate(el=>{el.ownerDocument.documentElement.dataset.mikageReadingTheme='night';});
+  await nav.getByRole('button', {name:'生活', exact:true}).click();
+  await lifeTabs.getByRole('button', {name:'手作与料理'}).click();
+  const craftLabel = child.getByText('制作批数', {exact:true}).first();
+  await craftLabel.waitFor();
+  assert.equal(await craftLabel.evaluate(el=>getComputedStyle(el).color),'rgb(247, 232, 217)');
+  assert.equal(await craftLabel.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(71, 53, 53)');
+  assert.equal(await craftLabel.evaluate(el=>getComputedStyle(el.control).backgroundColor),'rgb(48, 39, 43)');
 
   await close.click();
   await frame.waitFor({ state: 'detached' });

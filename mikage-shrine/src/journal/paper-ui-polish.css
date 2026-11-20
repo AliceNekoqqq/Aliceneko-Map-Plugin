@@ -1,0 +1,98 @@
+/* All life destinations stay visible without a horizontal gesture. */
+#life-dialog #life-tabs {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%, 68px),1fr));
+  gap:5px;
+  padding:5px;
+  overflow:visible;
+}
+#life-dialog #life-tabs .life-button {
+  min-width:0;
+  padding:6px 3px;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  line-height:1.3;
+}
+@media(max-width:700px) {
+  #life-dialog #life-tabs {grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+
+/* Match the inner pages and controls to the journal's night palette. */
+html[data-mikage-reading-theme=night] .journal-volume #dialog-layer {
+  color-scheme:dark;
+  --volume-error:#ffb7a7;
+}
+html[data-mikage-reading-theme=night] body.dialog-open[data-view] .journal-volume :is(
+  #settings-dialog,
+  #board-dialog #panel-ema-sheet .ema-back,
+  #board-dialog .panel-empty,
+  #life-dialog :is(.life-festival-form,.life-home-caption)
+) {
+  background:var(--volume-sheet);
+  border-color:var(--volume-line);
+  color:var(--volume-ink);
+}
+html[data-mikage-reading-theme=night] .journal-volume :is(
+  #board-dialog .panel-ema-sheet .ema-title,
+  #board-dialog #panel-archive-view :is(h3,h4),
+  #settings-dialog :is(.ema-mode-card strong,.ema-field label),
+  #life-dialog .life-card label.life-note
+) {color:var(--volume-ink);}
+html[data-mikage-reading-theme=night] .journal-volume :is(
+  #board-dialog .panel-ema-sheet :is(.ema-detail,.ema-meta,.reward-box),
+  #board-dialog #panel-archive-view :is(p,strong),
+  #settings-dialog :is(.ema-settings-top,legend,.ema-mode-description,.ema-mode-card small,.ema-field small,.ema-local-note)
+) {color:var(--volume-muted);}
+html[data-mikage-reading-theme=night] .journal-volume #life-dialog :is(.life-note,.life-decor-hint) {
+  background:var(--volume-inset);
+  border-color:var(--volume-line);
+  color:var(--volume-ink);
+}
+html[data-mikage-reading-theme=night] .journal-volume :is(
+  #board-dialog #panel-archive-view :is(header,article),
+  #settings-dialog :is(.ema-mode-grid,.ema-profile-editor,.ema-settings-footer)
+) {border-color:var(--volume-line);}
+html[data-mikage-reading-theme=night] .journal-volume :is(
+  #board-dialog .panel-ema-sheet :is(.reward-box,.ema-kind),
+  #settings-dialog :is(.ema-mode-card,.secondary-button,#ema-settings-feedback:not(:empty)),
+  #life-dialog #life-feedback:not(:empty)
+) {
+  background:var(--volume-inset);
+  border-color:var(--volume-line);
+  color:var(--volume-ink);
+  box-shadow:none;
+}
+html[data-mikage-reading-theme=night] .journal-volume #settings-dialog .ema-mode-card:has(input:checked) {
+  background:var(--volume-selected);
+  border-color:var(--volume-accent);
+  box-shadow:inset 3px 0 var(--volume-accent);
+}
+html[data-mikage-reading-theme=night] .journal-volume :is(#life-dialog,#settings-dialog) :is(
+  input:not([type=radio],[type=checkbox]),select,textarea
+) {
+  background:var(--volume-paper);
+  border-color:var(--volume-line);
+  color:var(--volume-ink);
+  box-shadow:none;
+}
+html[data-mikage-reading-theme=night] .journal-volume :is(#life-dialog,#settings-dialog) :is(input,textarea)::placeholder {
+  color:var(--volume-muted);
+  opacity:1;
+}
+html[data-mikage-reading-theme=night] .journal-volume :is(#life-dialog,#settings-dialog) :is(input,select,textarea):disabled {
+  opacity:1;
+  color:var(--volume-muted);
+  background:var(--volume-inset);
+}
+html[data-mikage-reading-theme=night] .journal-volume :is(#life-dialog,#settings-dialog) :is([type=radio],[type=checkbox]) {
+  accent-color:var(--volume-accent);
+}
+html[data-mikage-reading-theme=night] .journal-volume :is(#board-dialog,#settings-dialog) .primary-button:not(:disabled) {
+  color:var(--volume-active-ink);
+  background:var(--volume-accent);
+  border-color:var(--volume-accent);
+}
+html[data-mikage-reading-theme=night] .journal-volume :is(
+  #life-feedback[data-state=error]:not(:empty),
+  #ema-settings-feedback[data-state=error]:not(:empty)
+) {color:var(--volume-error);}
