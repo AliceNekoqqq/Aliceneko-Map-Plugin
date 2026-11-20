@@ -9,7 +9,7 @@ const reader = moduleText('reading-1.1.5/reading.mjs');
 const mvu = moduleText('1.49.39/modules/mvu.mjs');
 const scene = moduleText('1.49.39/modules/scene.mjs');
 const minigames = moduleText('1.49.48/modules/minigames.mjs');
-const panels = moduleText('1.49.51/modules/panels.mjs');
+const panels = moduleText('1.49.52/modules/panels.mjs');
 const initial = JSON.parse(mvu.match(/^const ShrineInitial = (.*);$/m)[1]);
 // Use the actual versioned rules without the external MVU and Zod bootstrap.
 const engineScript = mvu.split('let startupPromise=null,bootstrapCommitted=false;')[0] +

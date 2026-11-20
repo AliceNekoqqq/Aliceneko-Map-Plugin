@@ -6,7 +6,7 @@ const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const base = 'mikage-shrine/releases/1.49.39';
-const panel = read('mikage-shrine/releases/1.49.51/modules/panels.mjs');
+const panel = read('mikage-shrine/releases/1.49.52/modules/panels.mjs');
 const scene = read(base + '/modules/scene.mjs');
 const art = scene.slice(scene.indexOf('((host)=>{', scene.indexOf('/* One immutable asset catalog')),
   scene.indexOf('/* Tavern Helper adapter'));
@@ -143,6 +143,7 @@ async function checkShell(page, width, height) {
 
   await page.evaluate(() => {
     fixtureState.主线.已完成.push({编号:'M01'});
+    Object.assign(fixtureState.生活.库存, {wind_chime:2, lantern:1});
     MikageShrineRuntime.engine.deriveProgress(fixtureState);
   });
   await volume.evaluate(el=>{el.ownerDocument.documentElement.dataset.mikageReadingTheme='night';});
@@ -151,8 +152,31 @@ async function checkShell(page, width, height) {
   const craftLabel = child.getByText('制作批数', {exact:true}).first();
   await craftLabel.waitFor();
   assert.equal(await craftLabel.evaluate(el=>getComputedStyle(el).color),'rgb(247, 232, 217)');
-  assert.equal(await craftLabel.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(71, 53, 53)');
+  const recipe = child.locator('.life-item-row').first();
+  assert.equal(await recipe.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(61, 48, 51)');
+  assert.equal(await craftLabel.evaluate(el=>getComputedStyle(el).backgroundColor),'rgba(0, 0, 0, 0)');
   assert.equal(await craftLabel.evaluate(el=>getComputedStyle(el.control).backgroundColor),'rgb(48, 39, 43)');
+  const recipeLayout = await recipe.evaluate(el => {
+    const select = el.querySelector('select').getBoundingClientRect();
+    const action = el.querySelector('button').getBoundingClientRect();
+    return select.height >= 44 && action.height >= 44 &&
+      Math.abs(select.top - action.top) < 1 && select.right < action.left;
+  });
+  assert(recipeLayout, 'Recipe controls fit side by side at ' + width);
+  await lifeTabs.getByRole('button', {name:'商店'}).click();
+  const product = child.locator('.life-item-row').filter({has:child.locator('[data-life-buy]')}).first();
+  await product.waitFor();
+  assert.equal(await product.locator('p').count(), 1);
+  assert.match(await product.locator('p').textContent(), /奉纳.+今日余量/);
+  assert((await product.boundingBox()).height < 100);
+  await lifeTabs.getByRole('button', {name:'布置'}).click();
+  const decoration = child.locator('.life-decor-item').first();
+  await decoration.waitFor();
+  assert((await decoration.boundingBox()).height < 70);
+  await decoration.click();
+  assert.equal(await decoration.getAttribute('aria-pressed'), 'true');
+  assert.equal(await child.locator('body').evaluate(el =>
+    el.ownerDocument.documentElement.scrollWidth <= el.ownerDocument.defaultView.innerWidth), true);
 
   await close.click();
   await frame.waitFor({ state: 'detached' });

@@ -1,0 +1,106 @@
+/* Item lists share the paper surface and use dividers instead of nested frames. */
+#life-dialog #life-content .life-item-row {
+  align-items:start;
+  gap:8px;
+  min-height:0;
+  margin:0;
+  padding:8px;
+  background:var(--volume-sheet);
+  border:0;
+  border-bottom:1px solid var(--volume-line);
+  border-radius:0;
+  outline:0;
+  box-shadow:none;
+}
+#life-dialog #life-content .life-grid:has(> .life-item-row) {gap:4px 12px;}
+#life-dialog #life-content .life-item-row > .life-prop {
+  flex:0 0 30px;
+  width:30px;
+  height:30px;
+  border-radius:5px;
+  font-size:14px;
+}
+#life-dialog #life-content .life-item-row .life-card-body {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:3px 6px;
+}
+#life-dialog #life-content .life-item-row .life-card-body > :is(h3,p,label) {
+  grid-column:1/-1;
+  min-width:0;
+  margin:0;
+}
+#life-dialog #life-content .life-item-row .life-card-body > h3 {
+  font-size:14px;
+  line-height:1.45;
+  color:var(--volume-ink);
+}
+#life-dialog #life-content .life-item-row .life-card-body > p {
+  font-size:12px;
+  line-height:1.55;
+  color:var(--volume-muted);
+}
+#life-dialog #life-content .life-item-row label.life-note {
+  background:transparent;
+  border:0;
+  padding:2px 0 0;
+  color:var(--volume-ink);
+  font-size:12px;
+  line-height:1.35;
+}
+#life-dialog #life-content .life-item-row .life-card-body > :is(select,button) {
+  min-width:0;
+  min-height:44px;
+  margin:0;
+  border-radius:5px;
+}
+#life-dialog #life-content .life-item-row .life-card-body > select {width:100%;}
+#life-dialog #life-content .life-item-row .life-card-body > button {
+  justify-self:start;
+  padding:4px 7px;
+  font-size:12px;
+  line-height:1.3;
+  white-space:normal;
+}
+#life-dialog #life-content .life-item-row .life-card-body:not(:has(select)) > button:only-of-type {
+  grid-area:1 / 2 / span 2;
+  justify-self:end;
+  max-width:96px;
+}
+#life-dialog #life-content .life-item-row .life-card-body:not(:has(select)):has(> button:only-of-type) > :is(h3,p) {
+  grid-column:1;
+}
+#life-dialog .life-decor-inventory {gap:5px;}
+#life-dialog .life-decor-inventory .life-decor-item {
+  display:grid;
+  grid-template-columns:26px minmax(0,1fr);
+  grid-template-rows:auto auto;
+  align-content:center;
+  align-items:center;
+  gap:0 5px;
+  min-height:44px;
+  padding:4px 5px;
+  border-color:var(--volume-line);
+  border-radius:5px;
+  background:var(--volume-sheet);
+  color:var(--volume-ink);
+  line-height:1.4;
+  text-align:start;
+  overflow-wrap:anywhere;
+}
+#life-dialog .life-decor-inventory .life-decor-item > .life-prop {
+  grid-row:1/span 2;
+  width:26px;
+  height:26px;
+  font-size:12px;
+}
+#life-dialog .life-decor-inventory .life-decor-item > small {
+  grid-column:2;
+  color:var(--volume-muted);
+}
+#life-dialog .life-decor-inventory .life-decor-item[aria-pressed=true] {
+  background:var(--volume-selected);
+  border-color:var(--volume-accent);
+  box-shadow:inset 0 -2px var(--volume-accent);
+}
