@@ -6,7 +6,7 @@ const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const base = 'mikage-shrine/releases/1.49.39';
-const panel = read('mikage-shrine/releases/1.49.52/modules/panels.mjs');
+const panel = read('mikage-shrine/releases/1.49.53/modules/panels.mjs');
 const scene = read(base + '/modules/scene.mjs');
 const art = scene.slice(scene.indexOf('((host)=>{', scene.indexOf('/* One immutable asset catalog')),
   scene.indexOf('/* Tavern Helper adapter'));
@@ -96,9 +96,33 @@ async function checkShell(page, width, height) {
     if (kind === 'wardrobe') {
       assert.equal(await child.locator('.outfit-thumb').count(), 14);
       assert.equal(await child.locator('.panel-outfit-image').count(), 0);
+      const outfit = child.locator('.outfit-choice').first();
+      assert((await outfit.boundingBox()).height < 76);
+      await child.locator('.outfit-choice.is-locked').first().click();
+      assert.match(await child.locator('#wardrobe-look-state').innerText(), /仅供预览/);
+      assert((await child.locator('#wardrobe-look-source').innerText()).length > 0);
     }
-    if(kind==='map')assert.equal(await child.locator('#journal-map-location').textContent(),'御影神社');
-    if(kind==='life')await child.locator('#life-content').locator(':scope > *').first().waitFor();
+    if (kind === 'map') {
+      assert.equal(await child.locator('#journal-map-location').textContent(),'御影神社');
+      const place = child.locator('#place-card');
+      await place.locator('.map-travel').waitFor();
+      assert((await place.boundingBox()).height < 150);
+      assert.equal(await place.locator('.life-region-art').isVisible(), false);
+      await place.locator('summary').click();
+      assert.equal(await place.locator('.life-region-art').isVisible(), true);
+      assert.equal(await place.locator('.place-experience').isVisible(), true);
+      await place.locator('summary').click();
+    }
+    if (kind === 'life') {
+      const entries = child.locator('.life-home-entries');
+      await entries.locator('.life-home-entry').first().waitFor();
+      assert((await entries.boundingBox()).height < 375);
+      const entry = entries.locator('[data-life-entry=quiet]');
+      await entry.click();
+      await child.locator('.quiet-corner').waitFor();
+      await child.locator('[data-life-tab=home]').click();
+      await entries.waitFor();
+    }
     if (process.env.JOURNAL_CAPTURE && width === 375) {
       await page.screenshot({ path: path.join(process.env.JOURNAL_CAPTURE, 'journal-' + kind + '.png') });
     }
@@ -127,6 +151,7 @@ async function checkShell(page, width, height) {
   await detail.waitFor();
   assert.equal(await detail.evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(61, 48, 51)');
   await child.locator('.panel-board-tools > summary').click();
+  await child.locator('.panel-board-tools').getByRole('button', {name:'任务档案', exact:true}).waitFor();
   await child.getByRole('button', {name:'请求设置', exact:true}).click();
   const settings = child.locator('#settings-dialog');
   assert.equal(await nav.locator('[aria-current=page]').count(), 1);

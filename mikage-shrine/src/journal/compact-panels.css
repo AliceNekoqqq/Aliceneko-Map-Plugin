@@ -1,0 +1,143 @@
+/* Keep the essentials readable while repeated entries use less vertical space. */
+#life-dialog .life-home-entries {gap:6px;margin-top:10px;}
+#life-dialog .life-home-entries .life-home-entry {
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr);
+  align-items:center;
+  gap:4px 7px;
+  min-height:58px;
+  padding:6px;
+  border-radius:6px;
+  text-align:start;
+  align-content:center;
+}
+#life-dialog .life-home-entry .life-home-thumb {
+  grid-row:1/span 2;
+  width:44px;
+  height:44px;
+  margin:0;
+  border-radius:4px;
+}
+#life-dialog .life-home-entry strong {
+  font-size:13px;
+  line-height:1.45;
+  color:var(--volume-ink);
+}
+#life-dialog .life-home-entry small {
+  margin:0;
+  padding:0;
+  font-size:11px;
+  line-height:1.4;
+  color:var(--volume-muted);
+}
+#life-dialog .life-home-entry::after {content:none;}
+#life-dialog .life-context-wrap {margin-top:10px;padding:8px 10px;}
+#life-dialog .life-context-wrap h3 {margin:0 0 2px;}
+#life-dialog #life-context {margin:0;line-height:1.55;color:var(--volume-muted);}
+
+#map-dialog #place-card {position:relative;padding:10px 12px;}
+.place-overview {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(94px,auto);
+  align-items:center;
+  gap:6px 10px;
+}
+#map-dialog .place-overview h3 {
+  margin:0;
+  font-size:18px;
+  line-height:1.4;
+  color:var(--volume-ink);
+}
+#map-dialog .place-overview :is(.place-code,.place-stage) {
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+  color:var(--volume-muted);
+  line-height:1.4;
+}
+#map-dialog .place-overview .map-travel {
+  min-height:44px;
+  max-width:125px;
+  margin:0;
+  padding:6px 8px;
+  white-space:normal;
+  color:var(--volume-active-ink);
+  background:var(--volume-accent);
+  border-color:var(--volume-accent);
+  font-size:12px;
+  line-height:1.35;
+}
+#map-dialog .place-overview .map-travel:disabled {
+  color:var(--volume-muted);
+  background:var(--volume-inset);
+  border-color:var(--volume-line);
+  opacity:1;
+}
+#map-dialog .place-details {margin-top:6px;border-top:1px solid var(--volume-line);}
+#map-dialog .place-details summary {
+  min-height:44px;
+  padding:10px 54px 9px 0;
+  cursor:pointer;
+  color:var(--volume-accent);
+  font-size:13px;
+}
+#map-dialog .place-details .life-region-art {
+  aspect-ratio:16/10;
+  margin:0;
+  border:1px solid var(--volume-line);
+  border-radius:5px;
+}
+#map-dialog .place-details .place-roster {min-height:48px;}
+#map-dialog #place-card .map-desk-fox {right:6px;bottom:4px;width:48px;height:44px;}
+
+#board-dialog .panel-board-tools > summary {color:var(--volume-ink);}
+#board-dialog #panel-ema-count {
+  float:inline-end;
+  color:var(--volume-muted);
+  font-variant-numeric:tabular-nums;
+}
+#board-dialog #panel-ema-status {margin-top:5px;padding:4px;}
+#board-dialog .panel-board-tools {margin:0 0 5px;}
+#board-dialog .panel-board-tools .panel-paper-button {min-height:44px;}
+
+#wardrobe-dialog .wardrobe-options {
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,128px),1fr));
+  grid-auto-rows:auto;
+  gap:5px;
+}
+#wardrobe-dialog .wardrobe-options .outfit-choice {
+  flex-direction:row;
+  justify-content:flex-start;
+  gap:6px;
+  min-height:48px;
+  padding:4px 5px;
+  text-align:start;
+}
+#wardrobe-dialog .wardrobe-options .outfit-choice .outfit-thumb.character-sprite {
+  flex:0 0 36px;
+  width:36px;
+  height:36px;
+}
+#wardrobe-dialog .outfit-choice .outfit-copy {align-items:flex-start;}
+#wardrobe-dialog .outfit-choice .outfit-name {line-height:1.35;}
+#wardrobe-dialog .wardrobe-look-note {margin:6px 0 0;padding:7px 9px;outline:0;}
+#wardrobe-dialog .wardrobe-look-note > p {margin:4px 0 0;}
+#wardrobe-dialog .wardrobe-look-note .wardrobe-current {margin-top:4px;}
+
+.journal-volume .dialog .journal-guide {margin-bottom:7px;}
+.journal-guide .guide-quick {
+  display:block;
+  margin-inline-start:13px;
+  color:var(--volume-muted);
+  font-size:12px;
+  font-weight:400;
+  line-height:1.45;
+}
+.journal-guide[open] .guide-quick,.journal-guide .guide-quick:empty {display:none;}
+
+@media(max-width:700px) {
+  #life-dialog .life-home-entry small {display:none;}
+  #life-dialog .life-home-entry .life-home-thumb {grid-row:auto;}
+  #wardrobe-dialog .wardrobe-options {grid-template-columns:repeat(2,minmax(0,1fr));}
+}

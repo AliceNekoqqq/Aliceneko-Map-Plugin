@@ -9,7 +9,7 @@ const reader = moduleText('reading-1.1.5/reading.mjs');
 const mvu = moduleText('1.49.39/modules/mvu.mjs');
 const scene = moduleText('1.49.39/modules/scene.mjs');
 const minigames = moduleText('1.49.48/modules/minigames.mjs');
-const panels = moduleText('1.49.52/modules/panels.mjs');
+const panels = moduleText('1.49.53/modules/panels.mjs');
 const initial = JSON.parse(mvu.match(/^const ShrineInitial = (.*);$/m)[1]);
 // Use the actual versioned rules without the external MVU and Zod bootstrap.
 const engineScript = mvu.split('let startupPromise=null,bootstrapCommitted=false;')[0] +
@@ -101,7 +101,9 @@ async function run() {
     const place = panel.locator('#place-card[data-journal-target]');
     await place.waitFor();
     assert.match(await place.innerText(),/夜森神社/);
-    assert.equal(await guide('map').evaluate(el=>el.open),true);
+    assert.equal(await guide('map').evaluate(el=>el.open),false);
+    await guide('map').locator('.guide-quick').waitFor();
+    await guide('map').locator('summary').click();
     await guide('map').getByRole('button',{name:'收起说明'}).click();
     await closePanel();
     assert.equal(await page.evaluate(()=>document.activeElement?.dataset.unlockId),'R04');
@@ -127,6 +129,7 @@ async function run() {
     if (process.env.NOTE_PREVIEW_DIR) {
       await page.screenshot({path:path.join(process.env.NOTE_PREVIEW_DIR,'guide.png'),animations:'disabled'});
     }
+    await guide('life').locator('summary').click();
     await guide('life').getByRole('button',{name:'查看已定位条目'}).click();
     assert.equal(await recipe.evaluate(el=>el.ownerDocument.activeElement===el),true);
     if (process.env.NOTE_PREVIEW_DIR) {
